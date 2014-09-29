@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      5 reasons for adding a post-installation message to your gem &middot; Hrvoje Šimić
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto|Roboto+Slab' rel='stylesheet' type='text/css'>
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-27157518-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            <li>
+              <a href='/'>About</a>
+            </li>
+            <li>
+              <a href='/archive'>Archive</a>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">5 reasons for adding a post-installation message to your gem</h1>
+    <div class="published">
+      30 Nov 2013 on
+      ruby
+    </div>
+  </div>
+  <p>Wondering whether you should add a post-installation message to your gem? Here&#39;s a list situations
+in which doing so is desirable:</p>
+
+<ul style="list-style: none">
+  <li>1.</li>
+  <li>2.</li>
+  <li>3.</li>
+  <li>4.</li>
+  <li>5.</li>
+</ul>
+
+<p>No, seriously - <em>don&#39;t do it</em>!</p>
+
+<h2>but having fun is important</h2>
+
+<p>Yes, I know. Maybe this seems a little harsh, we are a Ruby programmers after all. We are fun and interesting,
+still kids in our hearts and we are so different from those stuffy statically typed language programmers. They are
+those grumpy ones, not having fun at all, doing everything by the book.</p>
+
+<p>Why can&#39;t we have a little fun, tell people something nice when they&#39;re installing things so that they are reminded
+to have fun? After all, you should love what you do - it should still be fun to you.</p>
+
+<p>Well, yes - please have fun, but please remember that if you&#39;re going to have fun with post-installation messages,
+you&#39;re also going to exploit the functionality that was given to you by the community to tell people important
+stuff they should be aware off.</p>
+
+<p>What happens if a gem developer decides to add a post-installation messages with ASCII art, for example? Yes, every
+developer out there will be aware of the presence of that gem in her project. It will stand out among other bunch.</p>
+
+<p>What happens if every gem developer decides to do so? Perhaps <code>STDOUT</code> overflow would be a right naming for it.</p>
+
+<h2>workarounds for gems that currently have post-installation messages</h2>
+
+<p>You can still avoid having any post-installation messages. Bundler has a flag for it</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">bundle install --quiet
+</code></pre></div>
+<p>Although, Linux people (like me) will of course wonder why is that flag even present, when you can just ditch it
+to the black hole</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">bundle install &gt; /dev/null
+</code></pre></div>
+<h2>dangers of workarounds and conclusion</h2>
+
+<p>This will of course mean, that you will not see any of the critical warnings that might be present and were added by gem authors that cared enough to add it there.</p>
+
+<p>Why would anyone put warnings there? Well, when people can&#39;t use anything else (like normal deprecation warnings), they&#39;ll still
+fallback to this method.</p>
+
+<p>An example of this would be when a gem changes its name, like how <code>sqlite3-ruby</code> did:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Hello! The sqlite3-ruby gem has changed it&#39;s name to just sqlite3.
+Rather than installing sqlite3-ruby, you should install sqlite3.
+Please update your dependencies accordingly.
+</code></pre></div>
+<p>Useful, right?</p>
+
+<p>What about:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">When you HTTParty, you must party hard!
+</code></pre></div>
+<p>Must you <code>party --hard</code>? I don&#39;t think so. I didn&#39;t and I&#39;m still here.</p>
+
+
+  <div class="bottom">
+    <div class="isLeft">
+      <h5 class="writtenby"><span>Written by</span></h5>
+      <section class="author">
+        <h4>Hrvoje Šimić</h4>
+        <p class="bio">
+
+          <a href="https://twitter.com/shimetweets">
+            @shimetweets
+          </a>
+        </p>
+        <hr>
+      </section>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
