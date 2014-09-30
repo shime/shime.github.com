@@ -4,7 +4,7 @@
  <title>Hrvoje Šimić</title>
  <link href="http://shime.github.io/atom.xml" rel="self"/>
  <link href="http://shime.github.io/"/>
- <updated>2014-09-29T23:39:04+02:00</updated>
+ <updated>2014-09-30T22:30:45+02:00</updated>
  <id>http://shime.github.io</id>
  <author>
    <name>Hrvoje Šimić</name>
@@ -333,7 +333,7 @@ Please update your dependencies accordingly.
  </entry>
  
  <entry>
-   <title>be the change you want to see</title>
+   <title>Be the change you want to see</title>
    <link href="http://shime.github.io/be-the-change-you-want-to-see"/>
    <updated>2013-10-13T00:00:00+02:00</updated>
    <id>http://shime.github.io/be-the-change-you-want-to-see</id>
@@ -382,7 +382,7 @@ Please update your dependencies accordingly.
  </entry>
  
  <entry>
-   <title>guard down, vim and tmux are here!</title>
+   <title>Guard down, Vim and Tmux are here!</title>
    <link href="http://shime.github.io/guard-down-vim-and-tmux-are-here"/>
    <updated>2013-08-11T00:00:00+02:00</updated>
    <id>http://shime.github.io/guard-down-vim-and-tmux-are-here</id>
@@ -499,7 +499,7 @@ It&amp;#39;s easy to write if you know a little bit of Vimscript:&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>long time no see</title>
+   <title>Long time no see</title>
    <link href="http://shime.github.io/long-time-no-see"/>
    <updated>2013-06-17T00:00:00+02:00</updated>
    <id>http://shime.github.io/long-time-no-see</id>
@@ -562,7 +562,7 @@ Let&amp;#39;s hope I&amp;#39;ll continue to do so. Let&amp;#39;s also hope I&amp
  </entry>
  
  <entry>
-   <title>overriding instance method with a module</title>
+   <title>Overriding instance method with a module</title>
    <link href="http://shime.github.io/overriding-instance-method-with-a-module"/>
    <updated>2012-08-06T00:00:00+02:00</updated>
    <id>http://shime.github.io/overriding-instance-method-with-a-module</id>
@@ -935,7 +935,7 @@ I&amp;#39;ve written this post with the intent of describing that interesting te
  </entry>
  
  <entry>
-   <title>forwardable explained</title>
+   <title>Forwardable explained</title>
    <link href="http://shime.github.io/forwardable-explained"/>
    <updated>2012-05-12T00:00:00+02:00</updated>
    <id>http://shime.github.io/forwardable-explained</id>
@@ -968,7 +968,7 @@ I&amp;#39;ve written this post with the intent of describing that interesting te
  </entry>
  
  <entry>
-   <title>uninitialized class variable @@current_spec in minitest</title>
+   <title>Uninitialized class variable @@current_spec in Minitest</title>
    <link href="http://shime.github.io/uninitialized-class-variable-at-at-current-spec-in-minitest"/>
    <updated>2012-04-30T00:00:00+02:00</updated>
    <id>http://shime.github.io/uninitialized-class-variable-at-at-current-spec-in-minitest</id>
@@ -983,7 +983,7 @@ I&amp;#39;ve written this post with the intent of describing that interesting te
  </entry>
  
  <entry>
-   <title>using edge rails locally</title>
+   <title>Using edge Rails locally</title>
    <link href="http://shime.github.io/using-edge-rails-locally"/>
    <updated>2012-04-03T00:00:00+02:00</updated>
    <id>http://shime.github.io/using-edge-rails-locally</id>
@@ -995,7 +995,7 @@ I&amp;#39;ve written this post with the intent of describing that interesting te
  </entry>
  
  <entry>
-   <title>insane can't find executable rails for rails error</title>
+   <title>Insane can't find executable Rails for Rails error</title>
    <link href="http://shime.github.io/insane-cant-find-executable-rails-for-rails-error"/>
    <updated>2012-02-17T00:00:00+01:00</updated>
    <id>http://shime.github.io/insane-cant-find-executable-rails-for-rails-error</id>
@@ -1010,7 +1010,7 @@ I&amp;#39;ve written this post with the intent of describing that interesting te
  </entry>
  
  <entry>
-   <title>autotest and rspec2 problems</title>
+   <title>Autotest and RSpec problems</title>
    <link href="http://shime.github.io/autotest-and-rspec2-problems"/>
    <updated>2012-01-29T00:00:00+01:00</updated>
    <id>http://shime.github.io/autotest-and-rspec2-problems</id>
@@ -1037,7 +1037,7 @@ No tests matched spec/helpers/showings_helper_spec.rb
  </entry>
  
  <entry>
-   <title>hello world in sinatra</title>
+   <title>Hello world in Sinatra</title>
    <link href="http://shime.github.io/hello-world-in-sinatra"/>
    <updated>2012-01-26T00:00:00+01:00</updated>
    <id>http://shime.github.io/hello-world-in-sinatra</id>
@@ -1050,7 +1050,7 @@ $ ruby -rrubygems -e &amp;quot;require &amp;#39;sinatra&amp;#39;; get(&amp;#39;/
  </entry>
  
  <entry>
-   <title>debugging active record queries in a rails console</title>
+   <title>Debugging ActiveRecord queries in a Rails console</title>
    <link href="http://shime.github.io/debugging-active-record-queries-in-a-rails-console"/>
    <updated>2012-01-19T00:00:00+01:00</updated>
    <id>http://shime.github.io/debugging-active-record-queries-in-a-rails-console</id>
@@ -1064,7 +1064,7 @@ It&amp;#39;s very useful when debugging your application in a console.&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>git stash is awesome</title>
+   <title>Git stash is awesome</title>
    <link href="http://shime.github.io/git-stash-is-awesome"/>
    <updated>2012-01-16T00:00:00+01:00</updated>
    <id>http://shime.github.io/git-stash-is-awesome</id>
