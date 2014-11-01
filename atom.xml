@@ -4,7 +4,7 @@
  <title>Hrvoje Šimić</title>
  <link href="http://shime.github.io/atom.xml" rel="self"/>
  <link href="http://shime.github.io/"/>
- <updated>2014-10-19T22:18:05+02:00</updated>
+ <updated>2014-11-01T22:46:02+01:00</updated>
  <id>http://shime.github.io</id>
  <author>
    <name>Hrvoje Šimić</name>
@@ -168,7 +168,7 @@ Ryan Dahl - creator of Node.js&lt;/p&gt;
 
 &lt;p&gt;It kinda feels like Java now, everyone going crazy about OO patterns, code cleanliness and 100% test coverage. Is that the most important thing? When did we forgot how to play?&lt;/p&gt;
 
-&lt;p&gt;Go and make something crazy! Node people &lt;a href=&quot;http://progrium.com/blog/2013/01/05/executable-tweets-and-programs-in-short-urls/&quot;&gt;are&lt;/a&gt; &lt;a href=&quot;http://studio.substack.net/r-experiments&quot;&gt;good at this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Go and make something crazy! Node people &lt;a href=&quot;http://studio.substack.net/r-experiments&quot;&gt;are good at this&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;There is also another side to this medal, of course. I have zero experience with running Node.js in production, but I&amp;#39;m guessing it will be harder than with Rails. That&amp;#39;s okay, I like challenges in things I know nothing about.&lt;/p&gt;
 
