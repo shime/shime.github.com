@@ -636,3 +636,13 @@ a.pagination-item:hover {
 .posts h3 {
   font-weight: 400;
 }
+
+.read-next {
+  text-align: center;
+  width: 100%;
+}
+
+.read-next i {
+  text-decoration: underline;
+  font-size: small;
+}

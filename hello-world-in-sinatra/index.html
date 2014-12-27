@@ -3,6 +3,10 @@
 
   <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Redirect index page to the most recent post -->
+  
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -45,7 +49,7 @@
         <div class="container">
           <ul class="masthead-navigation">
             <li>
-              <a href='/'>About</a>
+              <a href='/about'>About</a>
             </li>
             <li>
               <a href='/archive'>Archive</a>
@@ -71,19 +75,23 @@ $ ruby -rrubygems -e &quot;require &#39;sinatra&#39;; get(&#39;/&#39;){ &#39;hel
 <p>Take a look at <a href="http://0.0.0.0:4567/">0.0.0.0:4567</a> and you&#39;ll see the results.</p>
 
 
-  <div class="bottom">
-    <div class="isLeft">
-      <h5 class="writtenby"><span>Written by</span></h5>
-      <section class="author">
-        <h4>Hrvoje Šimić</h4>
-        <p class="bio">
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
 
-          <a href="https://twitter.com/shimetweets">
-            @shimetweets
-          </a>
-        </p>
-        <hr>
-      </section>
+        <a href="https://twitter.com/shimetweets">
+          @shimetweets
+        </a>
+      </p>
+      <hr>
+    </section>
+    <div class="read-next"> 
+      <i>Read next</i>
+      <h2>
+        <a href=/debugging-active-record-queries-in-a-rails-console> Debugging ActiveRecord queries in a Rails console </a>
+      </h2>
     </div>
   </div>
 </div>
