@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Hrvoje Šimić</title>
+		<description></description>		
+		<link>http://shime.github.io</link>
+		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Headless testing of Ember apps with Gulp and Jasmine</title>
+				
+					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: use &lt;a href=&quot;http://karma-runner.github.io/0.12/index.html&quot;&gt;Karma&lt;/a&gt; as a test runner for your JS apps. It&amp;#39;s great because it adds DOM support without any effort and you need DOM support when you&amp;#39;re testing browser apps.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Thu, 28 Aug 2014 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</link>
+				<guid isPermaLink="true">http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</guid>
+			</item>
+		
+			<item>
+				<title>Blogging with Ghost</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve been switching blog engines a lot lately. Currently I&amp;#39;m using the latest hotness on the block, &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 17 Aug 2014 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/blogging-with-ghost</link>
+				<guid isPermaLink="true">http://shime.github.io/blogging-with-ghost</guid>
+			</item>
+		
+			<item>
+				<title>Rubyist&#39;s view on Node JS</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve been a Ruby developer for some time, but I&amp;#39;m recently getting pulled into the vortex of streams and modules called Node.js.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Fri, 15 Aug 2014 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/rubyists-view-on-nodejs</link>
+				<guid isPermaLink="true">http://shime.github.io/rubyists-view-on-nodejs</guid>
+			</item>
+		
+			<item>
+				<title>MicroMachineJS - a minimal state machine for JavaScript</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve published a simple JavaScript library the other day. Its goal is to help dealing
+with states and it provides a simple API for managing a minimalistic implementation of a state machine.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 06 Jan 2014 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</link>
+				<guid isPermaLink="true">http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</guid>
+			</item>
+		
+			<item>
+				<title>5 reasons for adding a post-installation message to your gem</title>
+				
+					<description>&lt;p&gt;Wondering whether you should add a post-installation message to your gem? Here&amp;#39;s a list situations
+in which doing so is desirable:&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 30 Nov 2013 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
+				<guid isPermaLink="true">http://shime.github.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
+			</item>
+		
+			<item>
+				<title>Be the change you want to see</title>
+				
+					<description>&lt;p&gt;World wide web is such a great medium. Its impact is gaining momentum every single day and I couldn&amp;#39;t be more happy about it. I&amp;#39;m convinced it will replace all other mediums and that it may eventually become a &lt;a href=&quot;http://theratchet.ca/what-is-the-global-brain&quot;&gt;global brain&lt;/a&gt; of sorts. Transparency is probably why I like it the most and I&amp;#39;m under impression that most of the society is not aware how important role transparency plays in our lives.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 13 Oct 2013 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/be-the-change-you-want-to-see</link>
+				<guid isPermaLink="true">http://shime.github.io/be-the-change-you-want-to-see</guid>
+			</item>
+		
+			<item>
+				<title>Guard down, Vim and Tmux are here!</title>
+				
+					<description>&lt;p&gt;Do you practice &lt;a href=&quot;http://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test Driven Development&lt;/a&gt;?  If you do, how do you do it?&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 11 Aug 2013 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/guard-down-vim-and-tmux-are-here</link>
+				<guid isPermaLink="true">http://shime.github.io/guard-down-vim-and-tmux-are-here</guid>
+			</item>
+		
+			<item>
+				<title>Long time no see</title>
+				
+					<description>&lt;p&gt;It&amp;#39;s been a while.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 17 Jun 2013 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/long-time-no-see</link>
+				<guid isPermaLink="true">http://shime.github.io/long-time-no-see</guid>
+			</item>
+		
+			<item>
+				<title>Overriding instance method with a module</title>
+				
+					<description>&lt;p&gt;This is the problem I come across every now and then, so I think a little write up explaining what&amp;#39;s happening could help me understand it better.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 06 Aug 2012 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/overriding-instance-method-with-a-module</link>
+				<guid isPermaLink="true">http://shime.github.io/overriding-instance-method-with-a-module</guid>
+			</item>
+		
+			<item>
+				<title>Forwardable explained</title>
+				
+					<description>&lt;p&gt;There&amp;#39;s a pretty cool module called &lt;a href=&quot;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/forwardable/rdoc/Forwardable.html&quot;&gt;Forwardable&lt;/a&gt; and it&amp;#39;s used for delegation. Let me explain this a little better...&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 12 May 2012 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/forwardable-explained</link>
+				<guid isPermaLink="true">http://shime.github.io/forwardable-explained</guid>
+			</item>
+		
+	</channel>
+</rss>
