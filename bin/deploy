@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+jekyll build
+cd _site
+git add -A .
+git commit -m "site updated at `date +"%R %:z, %d-%b-%y"`"
+git push
+cd -
