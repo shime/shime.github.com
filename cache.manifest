@@ -1,10 +1,9 @@
 CACHE MANIFEST
-# rev 2015-01-04T15:31:49+01:00
+# rev 2015-01-04T15:32:22+01:00
 /index.html
 /css/main.css
 /css/syntax.css
 /favicon.ico
-/carrots-are-cool/
 /people-are-priceless/
 /headless-testing-of-ember-apps-with-gulp-and-jasmine/
 /blogging-with-ghost/
