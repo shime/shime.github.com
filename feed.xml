@@ -7,6 +7,17 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Carrots are cool</title>
+				
+					<description>&lt;p&gt;Hell yeah!&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 05 Jan 2015 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/carrots-are-cool</link>
+				<guid isPermaLink="true">http://shime.github.io/carrots-are-cool</guid>
+			</item>
+		
+			<item>
 				<title>People are priceless</title>
 				
 					<description>&lt;blockquote&gt;
@@ -107,17 +118,6 @@ in which doing so is desirable:&lt;/p&gt;
                         	<pubDate>Mon, 17 Jun 2013 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/long-time-no-see</link>
 				<guid isPermaLink="true">http://shime.github.io/long-time-no-see</guid>
-			</item>
-		
-			<item>
-				<title>Overriding instance method with a module</title>
-				
-					<description>&lt;p&gt;This is the problem I come across every now and then, so I think a little write up explaining what&amp;#39;s happening could help me understand it better.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Mon, 06 Aug 2012 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/overriding-instance-method-with-a-module</link>
-				<guid isPermaLink="true">http://shime.github.io/overriding-instance-method-with-a-module</guid>
 			</item>
 		
 	</channel>
