@@ -7,6 +7,19 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>People are priceless</title>
+				
+					<description>&lt;blockquote&gt;
+&lt;p&gt;Neurotic Time-Wasting often takes the form of reading articles from news sites such as Hacker News, &lt;strong&gt;attending meetups&lt;/strong&gt;, and futzing with A/B tests that don’t ask important questions, and don’t collect sufficient data.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+				
+                        	<pubDate>Sun, 04 Jan 2015 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/people-are-priceless</link>
+				<guid isPermaLink="true">http://shime.github.io/people-are-priceless</guid>
+			</item>
+		
+			<item>
 				<title>Headless testing of Ember apps with Gulp and Jasmine</title>
 				
 					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: use &lt;a href=&quot;http://karma-runner.github.io/0.12/index.html&quot;&gt;Karma&lt;/a&gt; as a test runner for your JS apps. It&amp;#39;s great because it adds DOM support without any effort and you need DOM support when you&amp;#39;re testing browser apps.&lt;/p&gt;
@@ -105,17 +118,6 @@ in which doing so is desirable:&lt;/p&gt;
                         	<pubDate>Mon, 06 Aug 2012 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/overriding-instance-method-with-a-module</link>
 				<guid isPermaLink="true">http://shime.github.io/overriding-instance-method-with-a-module</guid>
-			</item>
-		
-			<item>
-				<title>Forwardable explained</title>
-				
-					<description>&lt;p&gt;There&amp;#39;s a pretty cool module called &lt;a href=&quot;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/forwardable/rdoc/Forwardable.html&quot;&gt;Forwardable&lt;/a&gt; and it&amp;#39;s used for delegation. Let me explain this a little better...&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sat, 12 May 2012 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/forwardable-explained</link>
-				<guid isPermaLink="true">http://shime.github.io/forwardable-explained</guid>
 			</item>
 		
 	</channel>
