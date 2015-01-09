@@ -3,12 +3,24 @@
 # create-post
 
 # usage: create-post <OPTIONS> <TITLE>
-# 
+#
 # Creates Jekyll post in ./_posts with the required format.
-# 
+#
 # Options:
-# 
+#
 #   --draft  Creates a draft.
+
+if [[ $# -eq 0 || $1 =~ --help ]]; then
+  echo "create-post <OPTIONS> <TITLE>
+
+Creates Jekyll post in ./_posts with the required format.
+
+Options:
+
+ --draft  Creates a draft.
+ "
+fi
+
 
 dir="_posts"
 original_title=$@
@@ -21,8 +33,8 @@ fi
 # replaces spaces in title with dashes
 title="`echo $original_title| tr ' ' '-'`"
 # adds required date format to file name of the post
-title="`date +"%Y-%m-%d"`-$title"        
-cat <<EOF > $dir/$title.md      
+title="`date +"%Y-%m-%d"`-$title"
+cat <<EOF > $dir/$title.md
 ---
 layout: post
 title: `echo "${original_title^}"`
