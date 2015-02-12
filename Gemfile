@@ -2,6 +2,7 @@
 source "https://rubygems.org"
 
 gem "jekyll"
+gem 'jemoji'
 
 require 'json'
 require 'open-uri'

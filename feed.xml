@@ -7,9 +7,21 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Introducing conversational English improvement collective</title>
+				
+					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; I&amp;#39;m assembling a team of people that would work on their conversational English. If you&amp;#39;re a native speaker,
+this is not for you -- sorry.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Thu, 12 Feb 2015 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/introducing-conversational-english-improvement-collective</link>
+				<guid isPermaLink="true">http://shime.github.io/introducing-conversational-english-improvement-collective</guid>
+			</item>
+		
+			<item>
 				<title>Complexity prettified</title>
 				
-					<description>&lt;!-- I&#39;m afraid of large Gemfiles. --&gt;
+					<description>&lt;p&gt;Ruby community is influenced with Rails opinions of conveniences and conventions. Ruby became popular through Rails and its huge influence is unsurprising. Popularity of DSLs among Rubyists is also unsurprising.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Fri, 09 Jan 2015 00:00:00 +0100</pubDate>
@@ -107,17 +119,6 @@ in which doing so is desirable:&lt;/p&gt;
                         	<pubDate>Sun, 11 Aug 2013 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/guard-down-vim-and-tmux-are-here</link>
 				<guid isPermaLink="true">http://shime.github.io/guard-down-vim-and-tmux-are-here</guid>
-			</item>
-		
-			<item>
-				<title>Long time no see</title>
-				
-					<description>&lt;p&gt;It&amp;#39;s been a while.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Mon, 17 Jun 2013 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/long-time-no-see</link>
-				<guid isPermaLink="true">http://shime.github.io/long-time-no-see</guid>
 			</item>
 		
 	</channel>
