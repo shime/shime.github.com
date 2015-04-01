@@ -646,3 +646,15 @@ a.pagination-item:hover {
   text-decoration: underline;
   font-size: small;
 }
+
+figcaption {
+  font-size: medium;
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+
+figure img {
+  margin: auto;
+}
+

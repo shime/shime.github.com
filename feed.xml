@@ -7,6 +7,18 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>OSX adventures</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve borrowed a MacBook Air for a week and decided to share my
+thoughts as I look back.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Wed, 01 Apr 2015 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/osx-adventures</link>
+				<guid isPermaLink="true">http://shime.github.io/osx-adventures</guid>
+			</item>
+		
+			<item>
 				<title>Introducing conversational English improvement collective</title>
 				
 					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; I&amp;#39;m assembling a team of people that would work on their conversational English. If you&amp;#39;re a native speaker,
@@ -108,17 +120,6 @@ in which doing so is desirable:&lt;/p&gt;
                         	<pubDate>Sun, 13 Oct 2013 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/be-the-change-you-want-to-see</link>
 				<guid isPermaLink="true">http://shime.github.io/be-the-change-you-want-to-see</guid>
-			</item>
-		
-			<item>
-				<title>Guard down, Vim and Tmux are here!</title>
-				
-					<description>&lt;p&gt;Do you practice &lt;a href=&quot;http://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test Driven Development&lt;/a&gt;?  If you do, how do you do it?&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sun, 11 Aug 2013 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/guard-down-vim-and-tmux-are-here</link>
-				<guid isPermaLink="true">http://shime.github.io/guard-down-vim-and-tmux-are-here</guid>
 			</item>
 		
 	</channel>
