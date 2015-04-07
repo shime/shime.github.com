@@ -654,7 +654,14 @@ figcaption {
   text-align: center;
 }
 
-figure img {
+.post figure img {
+  margin-top: 10px;
   margin: auto;
+  margin-bottom: 10px;
+}
+
+.post figure {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
