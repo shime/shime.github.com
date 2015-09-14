@@ -3,8 +3,8 @@
 	<channel>
 		<title>Hrvoje Šimić</title>
 		<description></description>		
-		<link>http://shime.github.io</link>
-		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://shime.io</link>
+		<atom:link href="http://shime.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>OSX adventures</title>
@@ -14,8 +14,8 @@ thoughts as I look back.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Wed, 01 Apr 2015 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/osx-adventures</link>
-				<guid isPermaLink="true">http://shime.github.io/osx-adventures</guid>
+				<link>http://shime.io/osx-adventures</link>
+				<guid isPermaLink="true">http://shime.io/osx-adventures</guid>
 			</item>
 		
 			<item>
@@ -26,8 +26,8 @@ this is not for you -- sorry.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Thu, 12 Feb 2015 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/introducing-conversational-english-improvement-collective</link>
-				<guid isPermaLink="true">http://shime.github.io/introducing-conversational-english-improvement-collective</guid>
+				<link>http://shime.io/introducing-conversational-english-improvement-collective</link>
+				<guid isPermaLink="true">http://shime.io/introducing-conversational-english-improvement-collective</guid>
 			</item>
 		
 			<item>
@@ -37,8 +37,8 @@ this is not for you -- sorry.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Fri, 09 Jan 2015 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/complexity-prettified</link>
-				<guid isPermaLink="true">http://shime.github.io/complexity-prettified</guid>
+				<link>http://shime.io/complexity-prettified</link>
+				<guid isPermaLink="true">http://shime.io/complexity-prettified</guid>
 			</item>
 		
 			<item>
@@ -50,8 +50,8 @@ this is not for you -- sorry.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sun, 04 Jan 2015 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/people-are-priceless</link>
-				<guid isPermaLink="true">http://shime.github.io/people-are-priceless</guid>
+				<link>http://shime.io/people-are-priceless</link>
+				<guid isPermaLink="true">http://shime.io/people-are-priceless</guid>
 			</item>
 		
 			<item>
@@ -61,8 +61,8 @@ this is not for you -- sorry.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Thu, 28 Aug 2014 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</link>
-				<guid isPermaLink="true">http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</guid>
+				<link>http://shime.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</link>
+				<guid isPermaLink="true">http://shime.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</guid>
 			</item>
 		
 			<item>
@@ -72,8 +72,8 @@ this is not for you -- sorry.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sun, 17 Aug 2014 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/blogging-with-ghost</link>
-				<guid isPermaLink="true">http://shime.github.io/blogging-with-ghost</guid>
+				<link>http://shime.io/blogging-with-ghost</link>
+				<guid isPermaLink="true">http://shime.io/blogging-with-ghost</guid>
 			</item>
 		
 			<item>
@@ -83,8 +83,8 @@ this is not for you -- sorry.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Fri, 15 Aug 2014 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/rubyists-view-on-nodejs</link>
-				<guid isPermaLink="true">http://shime.github.io/rubyists-view-on-nodejs</guid>
+				<link>http://shime.io/rubyists-view-on-nodejs</link>
+				<guid isPermaLink="true">http://shime.io/rubyists-view-on-nodejs</guid>
 			</item>
 		
 			<item>
@@ -95,8 +95,8 @@ with states and it provides a simple API for managing a minimalistic implementat
 </description>
 				
                         	<pubDate>Mon, 06 Jan 2014 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</link>
-				<guid isPermaLink="true">http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</guid>
+				<link>http://shime.io/micromachinejs-a-minimal-state-machine-for-javascript</link>
+				<guid isPermaLink="true">http://shime.io/micromachinejs-a-minimal-state-machine-for-javascript</guid>
 			</item>
 		
 			<item>
@@ -107,8 +107,8 @@ in which doing so is desirable:&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 30 Nov 2013 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
-				<guid isPermaLink="true">http://shime.github.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
+				<link>http://shime.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
+				<guid isPermaLink="true">http://shime.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
 			</item>
 		
 			<item>
@@ -118,8 +118,8 @@ in which doing so is desirable:&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sun, 13 Oct 2013 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/be-the-change-you-want-to-see</link>
-				<guid isPermaLink="true">http://shime.github.io/be-the-change-you-want-to-see</guid>
+				<link>http://shime.io/be-the-change-you-want-to-see</link>
+				<guid isPermaLink="true">http://shime.io/be-the-change-you-want-to-see</guid>
 			</item>
 		
 	</channel>
