@@ -434,3 +434,7 @@ a.pagination-item:hover {
 .centered {
   text-align: center;
 }
+
+.page.no-title {
+  margin-top: 100px;
+}
