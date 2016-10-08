@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Hrvoje Šimić",
-    "label": "Full Stack Web Developer",
+    "label": "Full Stack Developer",
     "picture": "https://avatars1.githubusercontent.com/u/703563?v=3&s=466",
     "email": "hrvoje@twobucks.co",
     "website": "https://shime.github.io",
@@ -43,7 +43,7 @@
     },
     {
       "company": "Synectics Media",
-      "position": "Full Stack Web Developer",
+      "position": "Full Stack Developer",
       "website": "http://synecticsmedia.com/",
       "startDate": "2016-04-01",
       "summary": "Currently building an MVP of an online marketplace focused on automotive parts and primarily intended for mobile use.",
@@ -54,7 +54,7 @@
     },
     {
       "company": "Airbrake",
-      "position": "Full Stack Web Developer",
+      "position": "Full Stack Developer",
       "website": "https://airbrake.io",
       "startDate": "2016-01-01",
       "endDate": "2016-04-01",
@@ -65,7 +65,7 @@
     },
     {
       "company": "Lessonhub",
-      "position": "Full Stack Web Developer",
+      "position": "Full Stack Developer",
       "website": "https://www.catapulthub.com/",
       "startDate": "2015-01-01",
       "endDate": "2016-01-01",
@@ -78,7 +78,7 @@
     },
     {
       "company": "Particle",
-      "position": "Full Stack Web Developer",
+      "position": "Full Stack Developer",
       "website": "https://www.particle.io/",
       "startDate": "2013-10-01",
       "endDate": "2015-01-01",
@@ -90,7 +90,7 @@
     },
     {
       "company": "Betterdoc",
-      "position": "Backend Web Developer",
+      "position": "Backend Developer",
       "website": "https://www.betterdoc.org/",
       "startDate": "2013-08-01",
       "endDate": "2013-10-01",
@@ -112,7 +112,7 @@
     },
     {
       "company": "Hiiro",
-      "position": "Full Stack Web Developer",
+      "position": "Full Stack Developer",
       "website": "",
       "startDate": "2013-02-01",
       "endDate": "2013-05-01",
@@ -125,7 +125,7 @@
     },
     {
       "company": "Airbrake",
-      "position": "Backend Web Developer",
+      "position": "Backend Developer",
       "website": "https://airbrake.io",
       "startDate": "2012-02-01",
       "endDate": "2013-02-01",
@@ -138,7 +138,7 @@
     },
     {
       "company": "Showmojo",
-      "position": "Full Stack Web Developer",
+      "position": "Full Stack Developer",
       "website": "http://showmojo.com",
       "startDate": "2011-09-01",
       "endDate": "2012-02-01",
