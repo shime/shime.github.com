@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Rubyist's view on Node JS &middot; Hrvoje Šimić
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto|Roboto+Slab' rel='stylesheet' type='text/css'>
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-27157518-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/'>Home</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/archive'>Archive</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/feed.xml'>RSS</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Rubyist's view on Node JS</h1>
+    <div class="published">
+      15 Aug 2014 on
+      random
+    </div>
+  </div>
+  <p>I&#39;ve been a Ruby developer for some time, but I&#39;m recently getting pulled into the vortex of streams and modules called Node.js.</p>
+
+<p>I might not come back and if that happens, here are some reasons.</p>
+
+<blockquote>
+<p>I want programming computers to be like coloring with crayons and playing with duplo blocks.
+<br/>
+Ryan Dahl - creator of Node.js</p>
+</blockquote>
+
+<h2>404 hype not found</h2>
+
+<p>There is little to say about this, after these great <a href="http://gilesbowkett.blogspot.com/2013/02/nodejs-hatred-reveals-significant.html">blog</a> <a href="http://gilesbowkett.blogspot.com/2012/02/rails-went-off-rails-why-im-rebuilding.html">posts</a> by Giles Bowkett.</p>
+
+<p>I&#39;ve found that in order to become better programmer, I need to have open mind for things I haven&#39;t tried yet. I need to experiment.</p>
+
+<p>By having more experiences with weird, unexplored stuff I become better. Hype has a negative connotation for me, so it&#39;s here to prevent me from that - therefore it&#39;s not desirable.</p>
+
+<p>I try to pretend hype doesn&#39;t exist, as I gain nothing from it.</p>
+
+<h2>modules all the way down</h2>
+
+<p>GNU/Linux is an operating system I&#39;ve been using a lot and I really like all <a href="http://www.faqs.org/docs/artu/ch01s06.html">the philosophy behind it</a>. Node was inspired by Unix, but mostly  with these two rules:</p>
+
+<ul>
+<li>Rule of Modularity: Write simple parts connected by clean interfaces.</li>
+<li>Rule of Composition: Design programs to be connected to other programs.</li>
+</ul>
+
+<p>Ryan Dahl&#39;s quote above is just a playful rephrasing of these rules. That&#39;s basically a Node&#39;s mantra and it&#39;s even more evident if you browse around on <a href="http://npmjs.org">npm</a> a little or when you read the source code of <a href="https://github.com/maxogden/torrent/blob/master/cli.js">some libraries</a> written by prominent Node people. It feels like they use a lot more requires than we do, in the Ruby land.</p>
+
+<p>The modules are also very minimalistic and they tend to be single-purpose libraries, which leads to this look of dependency graphs, representing the <a href="http://www.yasiv.com/npm#view/dat">structure of Node ecosystem</a>.</p>
+
+<p>There are some attempts to achieve the same in Ruby, of which <a href="http://microrb.com/">microrb.com</a> is the most evident one. It isn&#39;t very popular at the moment, but I&#39;m hoping it will be in the future, as Rails starts getting more competitors like <a href="https://github.com/lotus/lotus#readme">Lotus</a>. Yes, it needs more competitors. Rails currently thinks it&#39;s alone in the kingdom and I would like to see some changes with that.</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>large codebases are just failed ecosystems</p>&mdash; James Halliday (@substack) <a href="https://twitter.com/substack/statuses/429536060880596992">February 1, 2014</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2>community</h2>
+
+<p>I&#39;m under impression that Node people are much more relaxed about computers and rules than Ruby people. Maybe I&#39;m exaggerating a bit, but <a href="https://www.youtube.com/watch?v=giS-aIq0Kaw">Dominic Tarr</a> reminds me of <a href="https://www.youtube.com/watch?v=giS-aIq0Kaw">Why the lucky stiff</a>. Maybe it&#39;s just because they&#39;re both disguised, I&#39;m not sure.</p>
+
+<p>There isn&#39;t much obsession with TDD/BDD/DDD in the Node land and that is a great thing. We are programmers, god dammnit - we shouldn&#39;t be obsessed with things. We should be allowed to break them!</p>
+
+<p>I&#39;m under impression that there&#39;s a lot less drama around everything here, everything feels more laid back. No one will dramatize if you write a Unix tool like <code>sed</code> or <code>awk</code> in Node. Do whatever you want, we don&#39;t care. After being a Rails developer for some time, this feels very refreshing.</p>
+
+<h2>gems vs modules</h2>
+
+<p>Since there are a lot of mad scientists in the kingdom of Node, it&#39;s common to stumble upon things with bugs and even unmaintained things. I think this is where Node community needs to learn from Ruby community, where you&#39;ll find so many awesome people dedicated to maintenance of a vastly used gem.</p>
+
+<p>Node is a cutting edge technology, so playing with it comes with that cost, but there are two faces of that medal. You&#39;ll also develop a skill of module picking over time - something I&#39;ve not experienced that much in Ruby. In Ruby you rarely have to think twice before choosing the right gem for your problem, but here it&#39;s common to see dozens of modules for the same thing. That&#39;s probably because of the tendency for node modules to be much smaller in size than Ruby gems - it&#39;s much easier to provide alternatives.</p>
+
+<p>Because of all this, you&#39;ll become more intimate with modules you use and you&#39;ll start recognizing authors whose packages are worth a require.</p>
+
+<h2>node is weird</h2>
+
+<p>Let&#39;s admit it - Ruby is not weird anymore. People don&#39;t do crazy things in it and I&#39;m not sure what&#39;s the reason why. Maybe those conventions and rules influenced our thinking and have put our minds inside the box?</p>
+
+<p>It kinda feels like Java now, everyone going crazy about OO patterns, code cleanliness and 100% test coverage. Is that the most important thing? When did we forgot how to play?</p>
+
+<p>Go and make something crazy! Node people <a href="http://studio.substack.net/r-experiments">are good at this</a>.</p>
+
+<p>There is also another side to this medal, of course. I have zero experience with running Node.js in production, but I&#39;m guessing it will be harder than with Rails. That&#39;s okay, I like challenges in things I know nothing about.</p>
+
+<h2>the future</h2>
+
+<p>Things that are happening in Node and JavaScript right now are the things that are blowing my mind. I think that&#39;s the biggest reason why I&#39;m attracted to it so much. I think I&#39;ve got a little bored with Ruby since it&#39;s the only language I&#39;ve worked with for years.</p>
+
+<p>My plan is to stick with something that is blowing my mind - I think that&#39;s the right path to improve myself. It used to be Ruby some while ago - now it changed to Node.</p>
+
+<p>I know this post is biased and it&#39;s reasonable because I&#39;m excited the most with trying new things. Node is not the silver bullet, but I currently enjoy playing with it. Maybe I&#39;ll change my mind, like with Rails - maybe I won&#39;t.</p>
+
+<p>At least I&#39;ll be richer for a fun experience.</p>
+
+
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+
+        <a href="https://twitter.com/shimetweets">
+          @shimetweets
+        </a>
+      </p>
+      <hr>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

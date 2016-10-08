@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo '<style> html { zoom: 0.68; } </style>' >> resume.html && html-pdf --border 2cm resume.html resume.pdf && sed -i '' -e '$ d' resume.html

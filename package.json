@@ -1,0 +1,25 @@
+{
+  "name": "shime.github.com",
+  "version": "1.0.0",
+  "description": "The source code for my blog, hosted at [shime.github.io](http://shime.github.io).",
+  "main": "index.js",
+  "dependencies": {
+    "html-pdf": "github:shime/node-html-pdf",
+    "resume-cli": "github:shime/resume-cli"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shime/shime.github.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shime/shime.github.com/issues"
+  },
+  "homepage": "https://github.com/shime/shime.github.com#readme"
+}

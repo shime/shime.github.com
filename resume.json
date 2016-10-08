@@ -1,0 +1,239 @@
+{
+  "basics": {
+    "name": "Hrvoje Šimić",
+    "label": "Full Stack Web Developer",
+    "picture": "https://avatars1.githubusercontent.com/u/703563?v=3&s=466",
+    "email": "hrvoje@twobucks.co",
+    "website": "https://shime.github.io",
+    "summary": "",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Zagreb",
+      "countryCode": "Croatia",
+      "region": ""
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "shime",
+        "url": "https://github.com/shime"
+      },
+      {
+        "network": "stack-overflow",
+        "username": "shime",
+        "url": "http://stackoverflow.com/users/726020/shime"
+      },
+      {
+        "network": "Twitter",
+        "username": "shimetweets",
+        "url": "https://twitter.com/shimetweets"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Two Bucks",
+      "position": "Co-founder",
+      "website": "https://twobucks.co",
+      "startDate": "2015-08-01",
+      "summary": "Two Bucks Ltd. is a small web development studio from Zagreb, Croatia.",
+      "highlights": [
+      ]
+    },
+    {
+      "company": "Synectics Media",
+      "position": "Full Stack Web Developer",
+      "website": "http://synecticsmedia.com/",
+      "startDate": "2016-04-01",
+      "summary": "Currently building an MVP of an online marketplace focused on automotive parts and primarily intended for mobile use.",
+      "highlights": [
+        "Built an MVP from scratch using Ember.js and Ruby on Rails",
+        "Implemented integration with peer to peer payment services using both PayPal and Stripe"
+      ]
+    },
+    {
+      "company": "Airbrake",
+      "position": "Full Stack Web Developer",
+      "website": "https://airbrake.io",
+      "startDate": "2016-01-01",
+      "endDate": "2016-04-01",
+      "summary": "Airbrake is the first and the most popular exception tracking service.",
+      "highlights": [
+        "Maintained an open-source JavaScript and Node.js libraries with thousands of downloads"
+      ]
+    },
+    {
+      "company": "Lessonhub",
+      "position": "Full Stack Web Developer",
+      "website": "https://www.catapulthub.com/",
+      "startDate": "2015-01-01",
+      "endDate": "2016-01-01",
+      "summary": "Lessonhub is a custom education-focused content management system used by teachers across the US.",
+      "highlights": [
+        "Built a custom content management system from scratch, with support for math functions and various custom lesson elements, used by teachers for their educational purposes every day",
+        "Implemented frontend in Ember.js and the backend in Ruby on Rails",
+        "Was in charge of everything related to development, including managing other people that worked on the project"
+      ]
+    },
+    {
+      "company": "Particle",
+      "position": "Full Stack Web Developer",
+      "website": "https://www.particle.io/",
+      "startDate": "2013-10-01",
+      "endDate": "2015-01-01",
+      "summary": "Particle is an internet of things cloud platform with a focus of providing easy internet access to Arduino-like boards.",
+      "highlights": [
+        "Built a custom browser-based IDE for their platform from scratch, using Ember.js that communicated with multiple APIs",
+        "Built a Rails API with support for submissions of custom third party libraries for the IDE usage "
+      ]
+    },
+    {
+      "company": "Betterdoc",
+      "position": "Backend Web Developer",
+      "website": "https://www.betterdoc.org/",
+      "startDate": "2013-08-01",
+      "endDate": "2013-10-01",
+      "summary": "Betterdoc is a SaaS that helps its customers with finding the best doctor for their needs.",
+      "highlights": [
+        "Improved the test suite and raised the quality of the existing Ruby on Rails codebase"
+      ]
+    },
+    {
+      "company": "Rackspace",
+      "position": "Backend Developer",
+      "website": "https://rackspace.com",
+      "startDate": "2013-04-01",
+      "endDate": "2013-08-01",
+      "summary": "Rackspace acquired Airbrake so I was hired by Rackspace as a part of the Airbrake team.",
+      "highlights": [
+        "Added support for newer versions of Rails to an open source gem with millions of downloads"
+      ]
+    },
+    {
+      "company": "Hiiro",
+      "position": "Full Stack Web Developer",
+      "website": "",
+      "startDate": "2013-02-01",
+      "endDate": "2013-05-01",
+      "summary": "Hiiro was a SaaS for finding high quality contractors, meant to be an alternative to Toptal. Unfortunately, it didn't gain enough traction, so development was discontinued.",
+      "highlights": [
+        "Implemented private exception tracking system for the Ruby on Rails API",
+        "Implemented various features using TDD for frontend that was using Angular.js and the backend which was using Ruby on Rails",
+        "Refactored large portion of codebase which improved the performance of the API"
+      ]
+    },
+    {
+      "company": "Airbrake",
+      "position": "Backend Web Developer",
+      "website": "https://airbrake.io",
+      "startDate": "2012-02-01",
+      "endDate": "2013-02-01",
+      "summary": "Airbrake is the first and the most popular exception tracking service.",
+      "highlights": [
+        "Implemented various third party service integrations like Engineyard, Heroku and Jira using TDD",
+        "Maintained an open source Ruby gem that integrates with Rails with millions of downloads",
+        "Resolved support issues for over 40,000 monthly active users"
+      ]
+    },
+    {
+      "company": "Showmojo",
+      "position": "Full Stack Web Developer",
+      "website": "http://showmojo.com",
+      "startDate": "2011-09-01",
+      "endDate": "2012-02-01",
+      "summary": "Showmojo is a small website for managing real estate showings. Backend is written in Ruby on Rails and the frontend is using jQuery.",
+      "highlights": [
+        "Implemented analytics for images rendered on third-party services",
+        "Implemented various CSS and JavaScript hacks for IE6",
+        "Improved user experience for photo uploads"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Zagreb",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2008-06-01",
+      "endDate": "2013-01-01",
+      "courses": [
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Ruby"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "Bash"
+    },
+    {
+      "name": "Linux"
+    },
+    {
+      "name": "Docker"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Croatian",
+      "fluency": "Native Speaker"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Open source",
+      "website": "",
+      "position": "Author, Maintainer",
+      "startDate": "2011-09-01",
+      "summary": "Actively contributing to raising quality of open source software.",
+      "highlights": [
+        "Contributed to Ruby on Rails and made it to top 200 Ruby on Rails contributors of all time",
+        "Maintained multiple Ruby gems with millions of downloads",
+        "Authored multiple NPM packages with thousands of downloads",
+        "Authored a popular Markdown preview tool called Livedown"
+      ]
+    },
+    {
+      "organization": "JavaScript Zagreb",
+      "website": "http://www.meetup.com/JavaScript-Zagreb/",
+      "position": "Co-organizer",
+      "startDate": "2015-10-01",
+      "summary": "JavaScript users meetup group for Zagreb, Croatia.",
+      "highlights": [
+        "Co-organized dozens of meetups in various places",
+        "Gave multiple talks about testing and Ember.js"
+      ]
+    },
+    {
+      "organization": "NodeSchool Zagreb",
+      "website": "http://nodeschool.io/zagreb",
+      "position": "Co-organizer",
+      "startDate": "2015-05-01",
+      "summary": "NodeSchool chapter for Zagreb, Croatia.",
+      "highlights": [
+        "Co-hosted dozens of events for teaching programming"
+      ]
+    },
+    {
+      "organization": "Ruby Zagreb",
+      "website": "http://www.meetup.com/rubyzg/",
+      "position": "Organizer",
+      "startDate": "2014-03-01",
+      "endDate": "2015-10-01",
+      "summary": "Ruby users meetup group for Zagreb, Croatia.",
+      "highlights": [
+        "Started Ruby meetups in Zagreb, Croatia and organized dozens of meetups and drinkups",
+        "Gave a couple of talks about various Ruby topics"
+      ]
+    }
+  ]
+}
