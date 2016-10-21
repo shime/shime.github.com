@@ -33,15 +33,6 @@
   },
   "work": [
     {
-      "company": "Two Bucks",
-      "position": "Co-founder",
-      "website": "https://twobucks.co",
-      "startDate": "2015-08-01",
-      "summary": "Two Bucks Ltd. is a small web development studio from Zagreb, Croatia.",
-      "highlights": [
-      ]
-    },
-    {
       "company": "Synectics Media",
       "position": "Full Stack Developer",
       "website": "http://synecticsmedia.com/",
@@ -53,7 +44,7 @@
       ]
     },
     {
-      "company": "Airbrake",
+      "company": "Rackspace",
       "position": "Full Stack Developer",
       "website": "https://airbrake.io",
       "startDate": "2016-01-01",
@@ -100,17 +91,6 @@
       ]
     },
     {
-      "company": "Rackspace",
-      "position": "Backend Developer",
-      "website": "https://rackspace.com",
-      "startDate": "2013-04-01",
-      "endDate": "2013-08-01",
-      "summary": "Rackspace acquired Airbrake so I was hired by Rackspace as a part of the Airbrake team.",
-      "highlights": [
-        "Added support for newer versions of Rails to an open source gem with millions of downloads"
-      ]
-    },
-    {
       "company": "Hiiro",
       "position": "Full Stack Developer",
       "website": "",
@@ -124,15 +104,16 @@
       ]
     },
     {
-      "company": "Airbrake",
+      "company": "Rackspace",
       "position": "Backend Developer",
-      "website": "https://airbrake.io",
+      "website": "https://rackspace.com",
       "startDate": "2012-02-01",
-      "endDate": "2013-02-01",
-      "summary": "Airbrake is the first and the most popular exception tracking service.",
+      "endDate": "2013-08-01",
+      "summary": "Rackspace is a popular cloud provider and I worked on Airbrake. Airbrake is the first and the most popular exception tracking service.",
       "highlights": [
         "Implemented various third party service integrations like Engineyard, Heroku and Jira using TDD",
         "Maintained an open source Ruby gem that integrates with Rails with millions of downloads",
+        "Added support for newer versions of Rails to an open source gem",
         "Resolved support issues for over 40,000 monthly active users"
       ]
     },
