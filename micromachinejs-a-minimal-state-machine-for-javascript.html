@@ -88,15 +88,15 @@ with states and it provides a simple API for managing a minimalistic implementat
 <h3>Installation</h3>
 
 <p>Give it a go by installing its node package:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install micro-machine
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install micro-machine
 </code></pre></div>
 <p>or use it in the browser with:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//rawgithub.com/shime/micro-machine-js/master/dist/micro-machine.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//rawgithub.com/shime/micro-machine-js/master/dist/micro-machine.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <h3>Examples</h3>
 
 <p>Here&#39;s a walkthrough of its features.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// create a new instance and set its initial state to &quot;pending&quot;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="c1">// create a new instance and set its initial state to &quot;pending&quot;</span>
 <span class="kd">var</span> <span class="nx">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MicroMachine</span><span class="p">(</span><span class="s2">&quot;pending&quot;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs &#39;pending&#39;</span>
 
@@ -125,7 +125,7 @@ with states and it provides a simple API for managing a minimalistic implementat
 <h3>Composition capabilities</h3>
 
 <p>Adding MicroMachine to your objects is piece of cake - just use composition!</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">User</span><span class="p">(){</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">User</span><span class="p">(){</span>
   <span class="kd">var</span> <span class="nx">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MicroMachine</span><span class="p">(</span><span class="s2">&quot;pending&quot;</span><span class="p">);</span>
 
   <span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="p">{</span><span class="nx">pending</span><span class="o">:</span> <span class="s1">&#39;confirmed&#39;</span><span class="p">};</span>

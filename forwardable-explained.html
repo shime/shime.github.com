@@ -12,7 +12,7 @@
 
   <title>
     
-      Hello world in Sinatra &middot; Hrvoje Šimić
+      Forwardable explained &middot; Hrvoje Šimić
     
   </title>
 
@@ -72,17 +72,37 @@
       <div class="container content">
         <div class="post">
   <div class="post-meta">
-    <h1 class="post-title">Hello world in Sinatra</h1>
+    <h1 class="post-title">Forwardable explained</h1>
     <div class="published">
-      26 Jan 2012 on
+      12 May 2012 on
       ruby
     </div>
   </div>
-  <p>All you have to do to get a hello world in <a href="https://github.com/sinatra/sinatra">Sinatra</a> is this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ gem install sinatra
-$ ruby -rrubygems -e &quot;require &#39;sinatra&#39;; get(&#39;/&#39;){ &#39;hello world&#39; }&quot;
+  <p>There&#39;s a pretty cool module called <a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/forwardable/rdoc/Forwardable.html">Forwardable</a> and it&#39;s used for delegation. Let me explain this a little better...</p>
+
+<p>Delegation is a design pattern in which an object delegates its own method to another object.</p>
+
+<p><em>Why would you ever need that?</em></p>
+
+<p>Here&#39;s an example:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;forwardable&#39;</span>
+
+<span class="k">class</span> <span class="nc">Employers</span>
+  <span class="kp">extend</span> <span class="no">Forwardable</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:all</span>
+
+  <span class="n">def_delegator</span> <span class="ss">:@all</span><span class="p">,</span><span class="ss">:length</span><span class="p">,</span><span class="ss">:size</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">ids</span><span class="p">)</span>
+    <span class="vi">@all</span> <span class="o">=</span> <span class="n">ids</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">employers</span> <span class="o">=</span> <span class="no">Employers</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">employers</span><span class="o">.</span><span class="n">size</span> <span class="c1"># =&gt; 4</span>
 </code></pre></div>
-<p>Take a look at <a href="http://0.0.0.0:4567/">0.0.0.0:4567</a> and you&#39;ll see the results.</p>
+<p>We have declared a new method on our instance variable, so we when we call size on it, it will forward our call to <em>length</em>.</p>
 
 
   <div class='bottom'>

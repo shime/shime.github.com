@@ -88,7 +88,7 @@ know that it runs every time you save a file. Same can apply to any other autote
 <h3>What&#39;s itching me</h3>
 
 <p>I&#39;m a Vim user and I&#39;m used to saving my files frequently, this keybinding makes it super-easy to do so:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot;&quot; saving with ctrl+s</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot;&quot; saving with ctrl+s</span>
 map <span class="p">&lt;</span>C<span class="p">-</span>S<span class="p">&gt;</span> :<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 imap <span class="p">&lt;</span>C<span class="p">-</span>S<span class="p">&gt;</span> <span class="p">&lt;</span>Esc<span class="p">&gt;</span>:<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </code></pre></div>
@@ -125,17 +125,17 @@ current file in Vim, while vimux is a tool for interacting with tmux from Vim. T
 the most relevant test and adds some of its own default mappings.</p>
 
 <p>These are the default Turbux mappings:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">t</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span>map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">t</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
 map <span class="p">&lt;</span>leader<span class="p">&gt;</span>T <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendFocusedTestToTmux
 </code></pre></div>
 <p>The default mappings clashed with my Command-T mappings, so I had to rebind them to <code>&lt;leader&gt;s</code>.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; disable default turbux mappings because they clash with Command-T</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; disable default turbux mappings because they clash with Command-T</span>
 <span class="k">let</span> <span class="k">g</span>:no_turbux_mappings <span class="p">=</span> <span class="s2">&quot;true&quot;</span>
-map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">s</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
+map <span class="p">&lt;</span>leader<span class="p">&gt;</span>s <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
 map <span class="p">&lt;</span>leader<span class="p">&gt;</span>S <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendFocusedTestToTmux
 </code></pre></div>
 <p>As you might have guessed, my leader is mapped to comma.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">let</span> mapleader<span class="p">=</span><span class="s2">&quot;,&quot;</span>                                   <span class="c">&quot; map leader to , instead of to slash</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="k">let</span> mapleader<span class="p">=</span><span class="s2">&quot;,&quot;</span>                                   <span class="c">&quot; map leader to , instead of to slash</span>
 </code></pre></div>
 <h2>Trouble with Zeus</h2>
 
@@ -148,7 +148,7 @@ That&#39;s why I have all that <code>include</code> lines in my model.</p>
 <p>While Zeus is slowing things down here, it certainly speeds up things in all other kinds of tests. I want to be able to turn it off and on inside Vim.</p>
 
 <p>Helpfile for Turbux suggests this:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">Use the following <span class="k">in</span> your vimrc <span class="k">to</span> <span class="k">set</span> <span class="k">a</span> common command prefix <span class="k">for</span> prepending
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span>Use the following <span class="k">in</span> your vimrc <span class="k">to</span> <span class="k">set</span> <span class="k">a</span> common command prefix <span class="k">for</span> prepending
 <span class="k">all</span> commands:
 <span class="p">&gt;</span>
           <span class="k">let</span> <span class="k">g</span>:turbux_command_prefix <span class="p">=</span> <span class="s1">&#39;bundle exec&#39;</span> <span class="c">&quot; default: (empty)</span>
@@ -156,7 +156,7 @@ That&#39;s why I have all that <code>include</code> lines in my model.</p>
 </code></pre></div>
 <p>So I could set my <code>g:turbux_command_prefix</code> to <code>zeus</code>, but that means I would use Zeus all the time. I need something different, like a toggle function for this.
 It&#39;s easy to write if you know a little bit of Vimscript:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">&quot; I mostly use zeus to run tests</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; I mostly use zeus to run tests</span>
 <span class="c">&quot; I don&#39;t use it all the time though</span>
 <span class="c">&quot; this function enables toggling when using turbux</span>
 <span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>z :<span class="k">call</span> ToggleZeus<span class="p">()&lt;</span><span class="k">cr</span><span class="p">&gt;</span>

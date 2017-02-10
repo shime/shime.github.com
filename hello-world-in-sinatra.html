@@ -12,7 +12,7 @@
 
   <title>
     
-      Insane can't find executable Rails for Rails error &middot; Hrvoje Šimić
+      Hello world in Sinatra &middot; Hrvoje Šimić
     
   </title>
 
@@ -72,20 +72,18 @@
       <div class="container content">
         <div class="post">
   <div class="post-meta">
-    <h1 class="post-title">Insane can't find executable Rails for Rails error</h1>
+    <h1 class="post-title">Hello world in Sinatra</h1>
     <div class="published">
-      17 Feb 2012 on
+      26 Jan 2012 on
       ruby
     </div>
   </div>
-  <p>After running any rails command I was getting this error:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/home/hrvoje/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/rubygems.rb:340:in
-`bin_path&#39;: can&#39;t find executable rails for rails-3.2.1 (Gem::Exception)
-  from /home/hrvoje/.rvm/gems/ruby-1.9.2-p290/bin/rails:19:in `&lt;main&gt;&#39;
+  <p>All you have to do to get a hello world in <a href="https://github.com/sinatra/sinatra">Sinatra</a> is this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ gem install sinatra
+$ ruby -rrubygems -e &quot;require &#39;sinatra&#39;; get(&#39;/&#39;){ &#39;hello world&#39; }&quot;
 </code></pre></div>
-<p>Installing latest <em>railties</em> fixes it:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ gem install railties --pre
-</code></pre></div>
+<p>Take a look at <a href="http://0.0.0.0:4567/">0.0.0.0:4567</a> and you&#39;ll see the results.</p>
+
 
   <div class='bottom'>
     <h5 class="writtenby"><span>Written by</span></h5>

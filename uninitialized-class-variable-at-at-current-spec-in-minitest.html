@@ -12,7 +12,7 @@
 
   <title>
     
-      Using edge Rails locally &middot; Hrvoje Šimić
+      Uninitialized class variable @@current_spec in Minitest &middot; Hrvoje Šimić
     
   </title>
 
@@ -72,17 +72,20 @@
       <div class="container content">
         <div class="post">
   <div class="post-meta">
-    <h1 class="post-title">Using edge Rails locally</h1>
+    <h1 class="post-title">Uninitialized class variable @@current_spec in Minitest</h1>
     <div class="published">
-      03 Apr 2012 on
-      rails
+      30 Apr 2012 on
+      ruby
     </div>
   </div>
-  <p>If you ever wanted to test the latest rails version locally, here&#39;s the command which helps you a lot.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ ruby /path/to/rails/railties/bin/rails new myapp --dev
-</code></pre></div>
-<p>With this, you use your local clone of rails/rails to develop new applications.</p>
+  <p>When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.</p>
 
+<p>It was happening because I used to run the tests with</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ rspec spec
+</code></pre></div>
+<p>The case is - you don&#39;t need rspec to run minitests. Just run it like this</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ruby spec/path/to/your/spec.rb
+</code></pre></div>
 
   <div class='bottom'>
     <h5 class="writtenby"><span>Written by</span></h5>
