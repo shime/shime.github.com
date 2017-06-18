@@ -7,6 +7,53 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Introducing ephemeral P2P screenshot sharing</title>
+				
+					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; A couple of months ago we released &lt;a href=&quot;http://seedshot.io/&quot;&gt;Seedshot&lt;/a&gt;, a tool for peer to peer screenshot sharing.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 25 Apr 2016 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</link>
+				<guid isPermaLink="true">http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</guid>
+			</item>
+		
+			<item>
+				<title>On criticism</title>
+				
+					<description>&lt;blockquote&gt;
+&lt;p&gt;The best way to complain is to make things.
+James Murphy&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+				
+                        	<pubDate>Thu, 21 Apr 2016 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/on-criticism</link>
+				<guid isPermaLink="true">http://shime.github.io/on-criticism</guid>
+			</item>
+		
+			<item>
+				<title>Just ship it</title>
+				
+					<description>&lt;p&gt;&lt;em&gt;Just ship it&lt;/em&gt; should not be related to the software industry only, because it can be used in so much real life situations. Publishing a blog post, for example.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Fri, 15 Apr 2016 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/just-ship-it</link>
+				<guid isPermaLink="true">http://shime.github.io/just-ship-it</guid>
+			</item>
+		
+			<item>
+				<title>Sleep is for the weak</title>
+				
+					<description>&lt;p&gt;In today’s era of 24/7 business, sleep is becoming more and more underrated, and yet — no one is questioning the benefits healthy sleep gives us.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 26 Sep 2015 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/sleep-is-for-the-weak</link>
+				<guid isPermaLink="true">http://shime.github.io/sleep-is-for-the-weak</guid>
+			</item>
+		
+			<item>
 				<title>OSX adventures</title>
 				
 					<description>&lt;p&gt;I&amp;#39;ve borrowed a MacBook Air for a week and decided to share my
@@ -74,51 +121,6 @@ with states and it provides a simple API for managing a minimalistic implementat
                         	<pubDate>Mon, 06 Jan 2014 00:00:00 +0100</pubDate>
 				<link>http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</link>
 				<guid isPermaLink="true">http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</guid>
-			</item>
-		
-			<item>
-				<title>5 reasons for adding a post-installation message to your gem</title>
-				
-					<description>&lt;p&gt;Wondering whether you should add a post-installation message to your gem? Here&amp;#39;s a list situations
-in which doing so is desirable:&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sat, 30 Nov 2013 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
-				<guid isPermaLink="true">http://shime.github.io/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
-			</item>
-		
-			<item>
-				<title>Be the change you want to see</title>
-				
-					<description>&lt;p&gt;World wide web is such a great medium. Its impact is gaining momentum every single day and I couldn&amp;#39;t be more happy about it. I&amp;#39;m convinced it will replace all other mediums and it is a &lt;a href=&quot;http://theratchet.ca/what-is-the-global-brain&quot;&gt;global brain&lt;/a&gt; of sorts. Transparency is probably why I like it the most and I&amp;#39;m under impression that most of the society is not aware how important role transparency plays in our lives.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sun, 13 Oct 2013 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/be-the-change-you-want-to-see</link>
-				<guid isPermaLink="true">http://shime.github.io/be-the-change-you-want-to-see</guid>
-			</item>
-		
-			<item>
-				<title>Guard down, Vim and Tmux are here!</title>
-				
-					<description>&lt;p&gt;Do you practice &lt;a href=&quot;http://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test Driven Development&lt;/a&gt;?  If you do, how do you do it?&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sun, 11 Aug 2013 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/guard-down-vim-and-tmux-are-here</link>
-				<guid isPermaLink="true">http://shime.github.io/guard-down-vim-and-tmux-are-here</guid>
-			</item>
-		
-			<item>
-				<title>Long time no see</title>
-				
-					<description>&lt;p&gt;It&amp;#39;s been a while.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Mon, 17 Jun 2013 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/long-time-no-see</link>
-				<guid isPermaLink="true">http://shime.github.io/long-time-no-see</guid>
 			</item>
 		
 	</channel>
