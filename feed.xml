@@ -7,6 +7,19 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>The 8-week writing challenge</title>
+				
+					<description>&lt;p&gt;I&amp;#39;m starting a new habit. I&amp;#39;m gonna write every day and publish a blog post once a week for the next 8 weeks.
+I&amp;#39;m going to publish non-programming related stuff here on &lt;a href=&quot;/archive&quot;&gt;my blog&lt;/a&gt; and for the programming stuff
+I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&amp;#39; Blog&lt;/a&gt;. &lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 19 Jun 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/the-8-week-writing-challenge</link>
+				<guid isPermaLink="true">http://shime.github.io/the-8-week-writing-challenge</guid>
+			</item>
+		
+			<item>
 				<title>Introducing ephemeral P2P screenshot sharing</title>
 				
 					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; A couple of months ago we released &lt;a href=&quot;http://seedshot.io/&quot;&gt;Seedshot&lt;/a&gt;, a tool for peer to peer screenshot sharing.&lt;/p&gt;
@@ -109,18 +122,6 @@ thoughts as I look back.&lt;/p&gt;
                         	<pubDate>Fri, 15 Aug 2014 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/rubyists-view-on-nodejs</link>
 				<guid isPermaLink="true">http://shime.github.io/rubyists-view-on-nodejs</guid>
-			</item>
-		
-			<item>
-				<title>MicroMachineJS - a minimal state machine for JavaScript</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve published a simple JavaScript library the other day. Its goal is to help dealing
-with states and it provides a simple API for managing a minimalistic implementation of a state machine.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Mon, 06 Jan 2014 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</link>
-				<guid isPermaLink="true">http://shime.github.io/micromachinejs-a-minimal-state-machine-for-javascript</guid>
 			</item>
 		
 	</channel>
