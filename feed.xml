@@ -7,6 +7,18 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>4 tips from 6 years of remote freelancing</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve been freelancing remotely for the past 6 years. Here are some of the things
+I&amp;#39;ve learned over the years.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</link>
+				<guid isPermaLink="true">http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</guid>
+			</item>
+		
+			<item>
 				<title>The 8-week writing challenge</title>
 				
 					<description>&lt;p&gt;I&amp;#39;m starting a new habit. I&amp;#39;m gonna write every day and publish a blog post once a week for the next 8 weeks.
@@ -111,17 +123,6 @@ thoughts as I look back.&lt;/p&gt;
                         	<pubDate>Thu, 28 Aug 2014 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</link>
 				<guid isPermaLink="true">http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</guid>
-			</item>
-		
-			<item>
-				<title>Rubyist's view on Node JS</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve been a Ruby developer for some time, but I&amp;#39;m recently getting pulled into the vortex of streams and modules called Node.js.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Fri, 15 Aug 2014 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/rubyists-view-on-nodejs</link>
-				<guid isPermaLink="true">http://shime.github.io/rubyists-view-on-nodejs</guid>
 			</item>
 		
 	</channel>
