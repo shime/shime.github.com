@@ -7,6 +7,19 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Thanks via email</title>
+				
+					<description>&lt;p&gt;I&amp;#39;m a programmer, so in my daily work I depend on the work of others. Others
+who have put in the time and created the tools that my work depends on. Their work
+is indirectly putting bread on my table, so I think a small act of gratitude goes a long way.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/thanks-via-email</link>
+				<guid isPermaLink="true">http://shime.github.io/thanks-via-email</guid>
+			</item>
+		
+			<item>
 				<title>4 tips from 6 years of remote freelancing</title>
 				
 					<description>&lt;p&gt;I&amp;#39;ve been freelancing remotely for the past 6 years. Here are some of the things
@@ -112,17 +125,6 @@ thoughts as I look back.&lt;/p&gt;
                         	<pubDate>Sun, 04 Jan 2015 00:00:00 +0100</pubDate>
 				<link>http://shime.github.io/people-are-priceless</link>
 				<guid isPermaLink="true">http://shime.github.io/people-are-priceless</guid>
-			</item>
-		
-			<item>
-				<title>Headless testing of Ember apps with Gulp and Jasmine</title>
-				
-					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: use &lt;a href=&quot;http://karma-runner.github.io/0.12/index.html&quot;&gt;Karma&lt;/a&gt; as a test runner for your JS apps. It&amp;#39;s great because it adds DOM support without any effort and you need DOM support when you&amp;#39;re testing browser apps.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Thu, 28 Aug 2014 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</link>
-				<guid isPermaLink="true">http://shime.github.io/headless-testing-of-ember-apps-with-gulp-and-jasmine</guid>
 			</item>
 		
 	</channel>
