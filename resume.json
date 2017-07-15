@@ -4,7 +4,7 @@
     "label": "Full Stack Developer",
     "picture": "https://avatars1.githubusercontent.com/u/703563?v=3&s=466",
     "email": "hrvoje@twobucks.co",
-    "website": "https://shime.github.io",
+    "website": "https://shime.sh",
     "summary": "Full stack Ruby and JavaScript developer with 6+ years of experience. Worked with various US based startups over the years and made some commits to Ruby on Rails core. Focused on working with small teams and building small products from ground up.",
     "location": {
       "address": "",
@@ -33,10 +33,29 @@
   },
   "work": [
     {
+      "company": "Timegeek",
+      "position": "Full Stack Developer",
+      "website": "http://vegas.timegeek.com/",
+      "startDate": "2017-05-01",
+      "summary": "Currently building an MVP of a time tracking application ",
+      "highlights": [
+      ]
+    },
+    {
+      "company": "Ivyspace",
+      "position": "Frontend developer",
+      "website": "http://ivyspace.com/",
+      "startDate": "2017-05-01",
+      "summary": "Ivypsace is an online knowledge sharing service between mentors from Ivy-league colleges with students from China.",
+      "highlights": [
+        "Converted Reflux based React application to Redux and Redux Saga"
+      ]
+    },
+    {
       "company": "Synectics Media",
       "position": "Full Stack Developer",
       "website": "http://synecticsmedia.com/",
-      "startDate": "2016-04-01",
+      "startDate": "2016-08-01",
       "summary": "Currently building an MVP of an online marketplace focused on automotive parts and primarily intended for mobile use.",
       "highlights": [
         "Built an MVP from scratch using Ember.js and Ruby on Rails",
@@ -72,7 +91,7 @@
       "position": "Full Stack Developer",
       "website": "https://www.particle.io/",
       "startDate": "2013-10-01",
-      "endDate": "2015-01-01",
+      "endDate": "2014-06-01",
       "summary": "Particle is an internet of things cloud platform with a focus of providing easy internet access to Arduino-like boards.",
       "highlights": [
         "Built a custom browser-based IDE for their platform from scratch, using Ember.js that communicated with multiple APIs",

@@ -4,8 +4,7 @@
   "description": "The source code for my blog, hosted at [shime.github.io](http://shime.github.io).",
   "main": "index.js",
   "dependencies": {
-    "html-pdf": "github:shime/node-html-pdf",
-    "resume-cli": "github:shime/resume-cli"
+    "html-pdf": "github:shime/node-html-pdf"
   },
   "devDependencies": {},
   "scripts": {
