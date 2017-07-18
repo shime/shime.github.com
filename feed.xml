@@ -3,8 +3,8 @@
 	<channel>
 		<title>Hrvoje Šimić</title>
 		<description></description>		
-		<link>http://localhost:4000</link>
-		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://shime.github.io</link>
+		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Landing that remote job</title>
@@ -13,8 +13,8 @@
 </description>
 				
                         	<pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/landing-that-remote-job</link>
-				<guid isPermaLink="true">http://localhost:4000/landing-that-remote-job</guid>
+				<link>http://shime.github.io/landing-that-remote-job</link>
+				<guid isPermaLink="true">http://shime.github.io/landing-that-remote-job</guid>
 			</item>
 		
 			<item>
@@ -26,8 +26,8 @@ is indirectly putting bread on my table, so I think a small act of gratitude goe
 </description>
 				
                         	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/thanks-via-email</link>
-				<guid isPermaLink="true">http://localhost:4000/thanks-via-email</guid>
+				<link>http://shime.github.io/thanks-via-email</link>
+				<guid isPermaLink="true">http://shime.github.io/thanks-via-email</guid>
 			</item>
 		
 			<item>
@@ -38,21 +38,8 @@ I&amp;#39;ve learned over the years.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/4-tips-from-6-years-of-remote-freelancing</link>
-				<guid isPermaLink="true">http://localhost:4000/4-tips-from-6-years-of-remote-freelancing</guid>
-			</item>
-		
-			<item>
-				<title>My 3 day trip to Singapore</title>
-				
-					<description>&lt;p&gt;I visited Singapore last year and went back home after just 3 days.
-That might not seem crazy to you, but it should after I tell you 
-that Singapore is 12,000 kilometers away from my hometown in Croatia. 🙈&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Mon, 19 Jun 2017 06:59:09 +0200</pubDate>
-				<link>http://localhost:4000/my-3-day-trip-to-singapore</link>
-				<guid isPermaLink="true">http://localhost:4000/my-3-day-trip-to-singapore</guid>
+				<link>http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</link>
+				<guid isPermaLink="true">http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</guid>
 			</item>
 		
 			<item>
@@ -64,41 +51,8 @@ I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&am
 </description>
 				
                         	<pubDate>Mon, 19 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/the-8-week-writing-challenge</link>
-				<guid isPermaLink="true">http://localhost:4000/the-8-week-writing-challenge</guid>
-			</item>
-		
-			<item>
-				<title>Why I love programming</title>
-				
-					<description>&lt;p&gt;Get inspiration from this: https://medium.com/editors-picks/you-can-already-code-you-just-dont-know-it-yet-862044601a5a&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sun, 18 Jun 2017 13:05:05 +0200</pubDate>
-				<link>http://localhost:4000/why-i-love-programming</link>
-				<guid isPermaLink="true">http://localhost:4000/why-i-love-programming</guid>
-			</item>
-		
-			<item>
-				<title>I want to open source everything</title>
-				
-					<description>&lt;p&gt;Data - the currency of the interent and how they&amp;#39;re stealing it in front of our noses&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sun, 18 Jun 2017 13:05:05 +0200</pubDate>
-				<link>http://localhost:4000/i-want-to-open-source-everything</link>
-				<guid isPermaLink="true">http://localhost:4000/i-want-to-open-source-everything</guid>
-			</item>
-		
-			<item>
-				<title>Cross browser UI testing</title>
-				
-					<description>&lt;p&gt;Testing is hard. UI testing is harder. Cross browser UI testing is probably the hardest thing since Flappy Bird.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sun, 18 Jun 2017 13:05:05 +0200</pubDate>
-				<link>http://localhost:4000/cross-browser-ui-testing</link>
-				<guid isPermaLink="true">http://localhost:4000/cross-browser-ui-testing</guid>
+				<link>http://shime.github.io/the-8-week-writing-challenge</link>
+				<guid isPermaLink="true">http://shime.github.io/the-8-week-writing-challenge</guid>
 			</item>
 		
 			<item>
@@ -108,8 +62,8 @@ I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&am
 </description>
 				
                         	<pubDate>Mon, 25 Apr 2016 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/introducing-ephemeral-P2P-screenshot-sharing</link>
-				<guid isPermaLink="true">http://localhost:4000/introducing-ephemeral-P2P-screenshot-sharing</guid>
+				<link>http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</link>
+				<guid isPermaLink="true">http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</guid>
 			</item>
 		
 			<item>
@@ -122,8 +76,53 @@ James Murphy&lt;/p&gt;
 </description>
 				
                         	<pubDate>Thu, 21 Apr 2016 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/on-criticism</link>
-				<guid isPermaLink="true">http://localhost:4000/on-criticism</guid>
+				<link>http://shime.github.io/on-criticism</link>
+				<guid isPermaLink="true">http://shime.github.io/on-criticism</guid>
+			</item>
+		
+			<item>
+				<title>Just ship it</title>
+				
+					<description>&lt;p&gt;&lt;em&gt;Just ship it&lt;/em&gt; should not be related to the software industry only, because it can be used in so much real life situations. Publishing a blog post, for example.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Fri, 15 Apr 2016 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/just-ship-it</link>
+				<guid isPermaLink="true">http://shime.github.io/just-ship-it</guid>
+			</item>
+		
+			<item>
+				<title>Sleep is for the weak</title>
+				
+					<description>&lt;p&gt;In today’s era of 24/7 business, sleep is becoming more and more underrated, and yet — no one is questioning the benefits healthy sleep gives us.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 26 Sep 2015 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/sleep-is-for-the-weak</link>
+				<guid isPermaLink="true">http://shime.github.io/sleep-is-for-the-weak</guid>
+			</item>
+		
+			<item>
+				<title>OSX adventures</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve borrowed a MacBook Air for a week and decided to share my
+thoughts as I look back.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Wed, 01 Apr 2015 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/osx-adventures</link>
+				<guid isPermaLink="true">http://shime.github.io/osx-adventures</guid>
+			</item>
+		
+			<item>
+				<title>Complexity prettified</title>
+				
+					<description>&lt;p&gt;Ruby community is influenced with Rails opinions of conveniences and conventions. Ruby became popular through Rails and its huge influence is unsurprising. Popularity of DSLs among Rubyists is also unsurprising.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Fri, 09 Jan 2015 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/complexity-prettified</link>
+				<guid isPermaLink="true">http://shime.github.io/complexity-prettified</guid>
 			</item>
 		
 	</channel>
