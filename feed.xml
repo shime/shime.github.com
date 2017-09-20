@@ -7,12 +7,23 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Money and time</title>
+				
+					<description>&lt;p&gt;Working part time for a couple of years now makes me realize how non-conventional it is. I&amp;#39;m the only weirdo I know in my circle of developers that&amp;#39;s working part time. It seems to me that money is overvalued and that very often people like to sacrifice time in order to accumulate more money. But is more money equal to better life quality all the time?&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Wed, 20 Sep 2017 00:00:00 +0300</pubDate>
+				<link>http://shime.github.io/money-and-time</link>
+				<guid isPermaLink="true">http://shime.github.io/money-and-time</guid>
+			</item>
+		
+			<item>
 				<title>Landing that remote job</title>
 				
 					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: The bigest problem is standing out. How do you do it?&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
+                        	<pubDate>Sat, 15 Jul 2017 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/landing-that-remote-job</link>
 				<guid isPermaLink="true">http://shime.github.io/landing-that-remote-job</guid>
 			</item>
@@ -25,7 +36,7 @@ who have put in the time and created the tools that my work depends on. Their wo
 is indirectly putting bread on my table, so I think a small act of gratitude goes a long way.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
+                        	<pubDate>Sun, 02 Jul 2017 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/thanks-via-email</link>
 				<guid isPermaLink="true">http://shime.github.io/thanks-via-email</guid>
 			</item>
@@ -37,7 +48,7 @@ is indirectly putting bread on my table, so I think a small act of gratitude goe
 I&amp;#39;ve learned over the years.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
+                        	<pubDate>Sat, 24 Jun 2017 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</link>
 				<guid isPermaLink="true">http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</guid>
 			</item>
@@ -50,7 +61,7 @@ I&amp;#39;m going to publish non-programming related stuff here on &lt;a href=&q
 I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&amp;#39; Blog&lt;/a&gt;. &lt;/p&gt;
 </description>
 				
-                        	<pubDate>Mon, 19 Jun 2017 00:00:00 +0200</pubDate>
+                        	<pubDate>Mon, 19 Jun 2017 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/the-8-week-writing-challenge</link>
 				<guid isPermaLink="true">http://shime.github.io/the-8-week-writing-challenge</guid>
 			</item>
@@ -61,7 +72,7 @@ I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&am
 					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; A couple of months ago we released &lt;a href=&quot;http://seedshot.io/&quot;&gt;Seedshot&lt;/a&gt;, a tool for peer to peer screenshot sharing.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Mon, 25 Apr 2016 00:00:00 +0200</pubDate>
+                        	<pubDate>Mon, 25 Apr 2016 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</link>
 				<guid isPermaLink="true">http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</guid>
 			</item>
@@ -75,7 +86,7 @@ James Murphy&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
 				
-                        	<pubDate>Thu, 21 Apr 2016 00:00:00 +0200</pubDate>
+                        	<pubDate>Thu, 21 Apr 2016 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/on-criticism</link>
 				<guid isPermaLink="true">http://shime.github.io/on-criticism</guid>
 			</item>
@@ -86,7 +97,7 @@ James Murphy&lt;/p&gt;
 					<description>&lt;p&gt;&lt;em&gt;Just ship it&lt;/em&gt; should not be related to the software industry only, because it can be used in so much real life situations. Publishing a blog post, for example.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Fri, 15 Apr 2016 00:00:00 +0200</pubDate>
+                        	<pubDate>Fri, 15 Apr 2016 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/just-ship-it</link>
 				<guid isPermaLink="true">http://shime.github.io/just-ship-it</guid>
 			</item>
@@ -97,7 +108,7 @@ James Murphy&lt;/p&gt;
 					<description>&lt;p&gt;In today’s era of 24/7 business, sleep is becoming more and more underrated, and yet — no one is questioning the benefits healthy sleep gives us.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Sat, 26 Sep 2015 00:00:00 +0200</pubDate>
+                        	<pubDate>Sat, 26 Sep 2015 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/sleep-is-for-the-weak</link>
 				<guid isPermaLink="true">http://shime.github.io/sleep-is-for-the-weak</guid>
 			</item>
@@ -109,20 +120,9 @@ James Murphy&lt;/p&gt;
 thoughts as I look back.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Wed, 01 Apr 2015 00:00:00 +0200</pubDate>
+                        	<pubDate>Wed, 01 Apr 2015 00:00:00 +0300</pubDate>
 				<link>http://shime.github.io/osx-adventures</link>
 				<guid isPermaLink="true">http://shime.github.io/osx-adventures</guid>
-			</item>
-		
-			<item>
-				<title>Complexity prettified</title>
-				
-					<description>&lt;p&gt;Ruby community is influenced with Rails opinions of conveniences and conventions. Ruby became popular through Rails and its huge influence is unsurprising. Popularity of DSLs among Rubyists is also unsurprising.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Fri, 09 Jan 2015 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/complexity-prettified</link>
-				<guid isPermaLink="true">http://shime.github.io/complexity-prettified</guid>
 			</item>
 		
 	</channel>
