@@ -7,6 +7,17 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Programming for $ until I'm too old to</title>
+				
+					<description>&lt;p&gt;The question I get from time to time is this one:&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.github.io/programming-for-money-until-I'm-too-old-to</link>
+				<guid isPermaLink="true">http://shime.github.io/programming-for-money-until-I'm-too-old-to</guid>
+			</item>
+		
+			<item>
 				<title>Money and time</title>
 				
 					<description>&lt;blockquote&gt;
@@ -113,18 +124,6 @@ James Murphy&lt;/p&gt;
                         	<pubDate>Sat, 26 Sep 2015 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/sleep-is-for-the-weak</link>
 				<guid isPermaLink="true">http://shime.github.io/sleep-is-for-the-weak</guid>
-			</item>
-		
-			<item>
-				<title>OSX adventures</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve borrowed a MacBook Air for a week and decided to share my
-thoughts as I look back.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Wed, 01 Apr 2015 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/osx-adventures</link>
-				<guid isPermaLink="true">http://shime.github.io/osx-adventures</guid>
 			</item>
 		
 	</channel>
