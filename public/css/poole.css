@@ -438,3 +438,25 @@ a.pagination-item:hover {
 .page.no-title {
   margin-top: 100px;
 }
+
+.books-summary {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+section.book + section.book {
+  margin-top: 50px;
+}
+
+section.book img {
+  width: 300px;
+  margin: 0 auto;
+}
+
+section.book .description {
+  width: 450px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
