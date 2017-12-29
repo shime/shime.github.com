@@ -454,9 +454,15 @@ section.book img {
 }
 
 section.book .description {
-  width: 450px;
+  max-width: 300px;
   display: block;
   margin: 0 auto;
   text-align: center;
   margin-top: 20px;
+}
+
+@media (min-width: 30em) {
+  section.book .description {
+    max-width: 30rem;
+  }
 }
