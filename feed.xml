@@ -7,6 +7,17 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Freedom</title>
+				
+					<description>&lt;p&gt;I&amp;#39;m a freelancer and I love what I do. There is a thing I value the most in this type of work.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/freedom</link>
+				<guid isPermaLink="true">http://shime.github.io/freedom</guid>
+			</item>
+		
+			<item>
 				<title>Programming for $ until I'm too old to</title>
 				
 					<description>&lt;p&gt;The question I get from time to time is this one:&lt;/p&gt;
@@ -113,17 +124,6 @@ James Murphy&lt;/p&gt;
                         	<pubDate>Fri, 15 Apr 2016 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/just-ship-it</link>
 				<guid isPermaLink="true">http://shime.github.io/just-ship-it</guid>
-			</item>
-		
-			<item>
-				<title>Sleep is for the weak</title>
-				
-					<description>&lt;p&gt;In today’s era of 24/7 business, sleep is becoming more and more underrated, and yet — no one is questioning the benefits healthy sleep gives us.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sat, 26 Sep 2015 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/sleep-is-for-the-weak</link>
-				<guid isPermaLink="true">http://shime.github.io/sleep-is-for-the-weak</guid>
 			</item>
 		
 	</channel>
