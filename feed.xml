@@ -7,6 +7,17 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Loving Vim</title>
+				
+					<description>&lt;p&gt;&lt;em&gt;This post is inspired by &lt;a href=&quot;https://michaelsoolee.com/love-vim-again/&quot;&gt;Falling in love with Vim again&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/michaelsoolee&quot;&gt;@michaelsoolee&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/loving-vim</link>
+				<guid isPermaLink="true">http://shime.github.io/loving-vim</guid>
+			</item>
+		
+			<item>
 				<title>Freedom</title>
 				
 					<description>&lt;p&gt;I&amp;#39;m a freelancer and I love what I do. There is a thing I value the most in this type of work.&lt;/p&gt;
@@ -113,17 +124,6 @@ James Murphy&lt;/p&gt;
                         	<pubDate>Thu, 21 Apr 2016 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/on-criticism</link>
 				<guid isPermaLink="true">http://shime.github.io/on-criticism</guid>
-			</item>
-		
-			<item>
-				<title>Just ship it</title>
-				
-					<description>&lt;p&gt;&lt;em&gt;Just ship it&lt;/em&gt; should not be related to the software industry only, because it can be used in so much real life situations. Publishing a blog post, for example.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Fri, 15 Apr 2016 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/just-ship-it</link>
-				<guid isPermaLink="true">http://shime.github.io/just-ship-it</guid>
 			</item>
 		
 	</channel>
