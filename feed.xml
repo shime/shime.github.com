@@ -7,6 +7,20 @@
 		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Git commit message syntax highlighting in Vim</title>
+				
+					<description>&lt;p&gt;Writing git commit messages should be done inside your
+editor because it allows you to add a lengthier commit
+description, as opposed to &lt;code&gt;git commit -m&lt;/code&gt; which just
+puts everything as the first line.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.github.io/git-commit-message-syntax-highlighting-in-vim</link>
+				<guid isPermaLink="true">http://shime.github.io/git-commit-message-syntax-highlighting-in-vim</guid>
+			</item>
+		
+			<item>
 				<title>Loving Vim</title>
 				
 					<description>&lt;p&gt;&lt;em&gt;This post is inspired by &lt;a href=&quot;https://michaelsoolee.com/love-vim-again/&quot;&gt;Falling in love with Vim again&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/michaelsoolee&quot;&gt;@michaelsoolee&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -110,20 +124,6 @@ I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&am
                         	<pubDate>Mon, 25 Apr 2016 00:00:00 +0200</pubDate>
 				<link>http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</link>
 				<guid isPermaLink="true">http://shime.github.io/introducing-ephemeral-P2P-screenshot-sharing</guid>
-			</item>
-		
-			<item>
-				<title>On criticism</title>
-				
-					<description>&lt;blockquote&gt;
-&lt;p&gt;The best way to complain is to make things.
-James Murphy&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-				
-                        	<pubDate>Thu, 21 Apr 2016 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/on-criticism</link>
-				<guid isPermaLink="true">http://shime.github.io/on-criticism</guid>
 			</item>
 		
 	</channel>

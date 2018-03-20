@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href="//fonts.googleapis.com/css?family=Inconsolata|Merriweather" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/'>Home</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/thoughts'>Thoughts</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/books'>Books</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/feed.xml'>RSS</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/resume'>CV</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Git commit message syntax highlighting in Vim</h1>
+    <div class="published">
+      20 Mar 2018 on
+      vim, git
+    </div>
+  </div>
+  <p>Writing git commit messages should be done inside your
+editor because it allows you to add a lengthier commit
+description, as opposed to <code>git commit -m</code> which just
+puts everything as the first line.</p>
+
+<p>Well if your editor of choice is Vim, this is what
+happens after you enter <code>git commit</code>.</p>
+
+<p><img src="/public/vim-commit-old.png" alt=""></p>
+
+<p>Notice how first 50 chars of a commit message are
+highlighted in red. This is used to notify you about
+the length of the first line of a commit message so you
+know when it&#39;s too lengthy. For Vim, 50 chars is the
+suggested size of the first line of commit message.</p>
+
+<p>Well this isn&#39;t a good default for me, since the only
+thing that&#39;s worrying me is the truncation of the first
+line of commit message when my code ends up on Github. 
+I&#39;m only interested if the first line of my commit
+message is short enough to be displayed in full
+on Github.</p>
+
+<p>If that&#39;s not the case I&#39;ll end up with something
+like this.</p>
+
+<div style="text-align: center">
+ <img src="/public/long-commit.png" style="margin: auto"/>
+</div>
+
+<p>Yuck.</p>
+
+<p>Preventing this is easy. Just make Vim highlight the first
+72 chars in red, which is the maximum number of characters
+Github allows in the first line.</p>
+
+<p>In order to do so, alter Vim&#39;s syntax rules for git commit
+messages, by editing <code>~/.vim/after/syntax/gitcommit.vim</code>
+like this.</p>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="k">syn</span> clear gitcommitSummary
+<span class="k">syn</span> <span class="k">match</span> gitcommitSummary    <span class="s2">&quot;^.\{0,72\}&quot;</span> contained containedin<span class="p">=</span>gitcommitFirstLine nextgroup<span class="p">=</span>gitcommitOverflow contains<span class="p">=</span>@Spell
+</code></pre></div>
+<p>This will make Vim look like this.</p>
+
+<p><img src="/public/vim-commit-new.png" alt=""></p>
+
+<p>Now you&#39;ll be notified if you cross the length limit
+for the first line of git commit message on Github and you
+know exactly where it starts truncating it.</p>
+
+<p>Friends don&#39;t let friends over the Github char limit.</p>
+
+
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+
+        <a href="https://twitter.com/shimewastaken">
+          @shimewastaken
+        </a>
+      </p>
+      <hr>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
