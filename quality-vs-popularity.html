@@ -119,12 +119,21 @@ for determining the quality we&#39;ll go with
 the larger one and we&#39;ll perceive the smaller
 one as collecting dust.</p>
 
+<p>We could say that the time of last commit
+is a useful metric when determining if library
+is maintained or not. I agree with this
+and it&#39;s the approach I use when determining if
+a library is maintained, combined with the
+number of open/closed issues and number of maintainers.
+Higher maintainability doesn&#39;t always mean
+higher quality, though.</p>
+
 <p>If we used libraries that are focused on a single feature
 more, we would end up having codebases that
 are more easily understandable by a single person in
-their entireties. </p>
+their entireties. [<a href="#wirth">1</a>]</p>
 
-<p>We could argue that the point of having
+<p>We could say that the point of having
 libraries is abstraction, which hides away
 the nasty implementation details in a black
 box. In my opinion, programmers need to know
@@ -137,12 +146,24 @@ with libraries with narrower scope.</p>
 source code of libraries to be included is investing
 time in libraries we&#39;re not going to end up using.
 Good practice for alleviating this risk is by
-only considering small libraries. </p>
+only considering small libraries. [<a href="#microrb">2</a>]</p>
 
 <p>There are a lot of benefits from reading the source
 code, so why not do it more often? Especially
 when it comes to something as critical as deciding
 if library should be used or not.</p>
+
+<hr>
+
+<ol>
+<li><p><a name="wirth"></a> Niklaus Wirth writes that
+a system that&#39;s not understood by a single person
+in it&#39;s entirety shouldn&#39;t be built. Read more about
+that in his excellent paper <em><a href="http://cr.yp.to/bib/1995/wirth.pdf">A Plea for Lean Software [1995]</a></em>.</p></li>
+<li><p><a name="microrb"></a> Check out
+a mirror of <a href="https://eloyesp.github.io/microrb.com/">microrb.com</a>
+as a way of finding small libraries in Ruby community.</p></li>
+</ol>
 
 
   <div class='bottom'>
