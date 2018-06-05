@@ -3,8 +3,8 @@
 	<channel>
 		<title>Hrvoje Šimić</title>
 		<description></description>		
-		<link>http://shime.github.io</link>
-		<atom:link href="http://shime.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://shime.sh</link>
+		<atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Quality vs popularity</title>
@@ -20,8 +20,8 @@ of following everybody else.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/quality-vs-popularity</link>
-				<guid isPermaLink="true">http://shime.github.io/quality-vs-popularity</guid>
+				<link>http://shime.sh/quality-vs-popularity</link>
+				<guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
 			</item>
 		
 			<item>
@@ -34,8 +34,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/git-commit-message-syntax-highlighting-in-vim</link>
-				<guid isPermaLink="true">http://shime.github.io/git-commit-message-syntax-highlighting-in-vim</guid>
+				<link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
+				<guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
 			</item>
 		
 			<item>
@@ -45,8 +45,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/loving-vim</link>
-				<guid isPermaLink="true">http://shime.github.io/loving-vim</guid>
+				<link>http://shime.sh/loving-vim</link>
+				<guid isPermaLink="true">http://shime.sh/loving-vim</guid>
 			</item>
 		
 			<item>
@@ -56,8 +56,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.github.io/freedom</link>
-				<guid isPermaLink="true">http://shime.github.io/freedom</guid>
+				<link>http://shime.sh/freedom</link>
+				<guid isPermaLink="true">http://shime.sh/freedom</guid>
 			</item>
 		
 			<item>
@@ -67,8 +67,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/programming-for-money-until-I'm-too-old-to</link>
-				<guid isPermaLink="true">http://shime.github.io/programming-for-money-until-I'm-too-old-to</guid>
+				<link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
+				<guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
 			</item>
 		
 			<item>
@@ -80,8 +80,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/money-and-time</link>
-				<guid isPermaLink="true">http://shime.github.io/money-and-time</guid>
+				<link>http://shime.sh/money-and-time</link>
+				<guid isPermaLink="true">http://shime.sh/money-and-time</guid>
 			</item>
 		
 			<item>
@@ -91,8 +91,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/landing-that-remote-job</link>
-				<guid isPermaLink="true">http://shime.github.io/landing-that-remote-job</guid>
+				<link>http://shime.sh/landing-that-remote-job</link>
+				<guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
 			</item>
 		
 			<item>
@@ -104,8 +104,8 @@ is indirectly putting bread on my table, so I think a small act of gratitude goe
 </description>
 				
                         	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/thanks-via-email</link>
-				<guid isPermaLink="true">http://shime.github.io/thanks-via-email</guid>
+				<link>http://shime.sh/thanks-via-email</link>
+				<guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
 			</item>
 		
 			<item>
@@ -116,8 +116,8 @@ I&amp;#39;ve learned over the years.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</link>
-				<guid isPermaLink="true">http://shime.github.io/4-tips-from-6-years-of-remote-freelancing</guid>
+				<link>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</link>
+				<guid isPermaLink="true">http://shime.sh/4-tips-from-6-years-of-remote-freelancing</guid>
 			</item>
 		
 			<item>
@@ -129,8 +129,8 @@ I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&am
 </description>
 				
                         	<pubDate>Mon, 19 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.github.io/the-8-week-writing-challenge</link>
-				<guid isPermaLink="true">http://shime.github.io/the-8-week-writing-challenge</guid>
+				<link>http://shime.sh/the-8-week-writing-challenge</link>
+				<guid isPermaLink="true">http://shime.sh/the-8-week-writing-challenge</guid>
 			</item>
 		
 	</channel>
