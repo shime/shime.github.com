@@ -467,3 +467,9 @@ section.book .description {
     max-width: 30rem;
   }
 }
+
+.intro {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 100px;
+}
