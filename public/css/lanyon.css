@@ -136,11 +136,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 48em) {
-  .masthead-title {
+  .masthead-navigation {
     text-align: center;
-  }
-  .masthead-title small {
-    display: none;
+    padding-left: 0;
+    float: none;
   }
 }
 

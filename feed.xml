@@ -3,8 +3,21 @@
 	<channel>
 		<title>Hrvoje Šimić</title>
 		<description></description>		
-		<link>http://localhost:4000</link>
-		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://shime.sh</link>
+		<atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>A short guide for wasting hundreds of hours on your idea</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve killed two products I&amp;#39;ve spent a considerable amount of time
+building. Essentially, I&amp;#39;ve wasted hundreds, if not thousands of hours
+this way. The cliched &amp;quot;at least I&amp;#39;ve learned something&amp;quot; is my only consolation.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 14 Jul 2018 00:00:00 +0200</pubDate>
+				<link>http://shime.sh/a-guide-for-building-it-and-failing-miserably</link>
+				<guid isPermaLink="true">http://shime.sh/a-guide-for-building-it-and-failing-miserably</guid>
+			</item>
 		
 			<item>
 				<title>Quality vs popularity</title>
@@ -20,8 +33,8 @@ of following everybody else.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://localhost:4000/quality-vs-popularity</link>
-				<guid isPermaLink="true">http://localhost:4000/quality-vs-popularity</guid>
+				<link>http://shime.sh/quality-vs-popularity</link>
+				<guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
 			</item>
 		
 			<item>
@@ -34,8 +47,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://localhost:4000/git-commit-message-syntax-highlighting-in-vim</link>
-				<guid isPermaLink="true">http://localhost:4000/git-commit-message-syntax-highlighting-in-vim</guid>
+				<link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
+				<guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
 			</item>
 		
 			<item>
@@ -45,8 +58,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://localhost:4000/loving-vim</link>
-				<guid isPermaLink="true">http://localhost:4000/loving-vim</guid>
+				<link>http://shime.sh/loving-vim</link>
+				<guid isPermaLink="true">http://shime.sh/loving-vim</guid>
 			</item>
 		
 			<item>
@@ -56,8 +69,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://localhost:4000/freedom</link>
-				<guid isPermaLink="true">http://localhost:4000/freedom</guid>
+				<link>http://shime.sh/freedom</link>
+				<guid isPermaLink="true">http://shime.sh/freedom</guid>
 			</item>
 		
 			<item>
@@ -67,8 +80,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/programming-for-money-until-I'm-too-old-to</link>
-				<guid isPermaLink="true">http://localhost:4000/programming-for-money-until-I'm-too-old-to</guid>
+				<link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
+				<guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
 			</item>
 		
 			<item>
@@ -80,8 +93,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/money-and-time</link>
-				<guid isPermaLink="true">http://localhost:4000/money-and-time</guid>
+				<link>http://shime.sh/money-and-time</link>
+				<guid isPermaLink="true">http://shime.sh/money-and-time</guid>
 			</item>
 		
 			<item>
@@ -91,8 +104,8 @@ puts everything as the first line.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/landing-that-remote-job</link>
-				<guid isPermaLink="true">http://localhost:4000/landing-that-remote-job</guid>
+				<link>http://shime.sh/landing-that-remote-job</link>
+				<guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
 			</item>
 		
 			<item>
@@ -104,8 +117,8 @@ is indirectly putting bread on my table, so I think a small act of gratitude goe
 </description>
 				
                         	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/thanks-via-email</link>
-				<guid isPermaLink="true">http://localhost:4000/thanks-via-email</guid>
+				<link>http://shime.sh/thanks-via-email</link>
+				<guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
 			</item>
 		
 			<item>
@@ -116,21 +129,8 @@ I&amp;#39;ve learned over the years.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/4-tips-from-6-years-of-remote-freelancing</link>
-				<guid isPermaLink="true">http://localhost:4000/4-tips-from-6-years-of-remote-freelancing</guid>
-			</item>
-		
-			<item>
-				<title>The 8-week writing challenge</title>
-				
-					<description>&lt;p&gt;I&amp;#39;m starting a new habit. I&amp;#39;m gonna write every day and publish a blog post once a week for the next 8 weeks.
-I&amp;#39;m going to publish non-programming related stuff here on &lt;a href=&quot;/thoughts&quot;&gt;my blog&lt;/a&gt; and for the programming stuff
-I&amp;#39;ll use &lt;a href=&quot;https://blog.twobucks.co&quot;&gt;Two Bucks&amp;#39; Blog&lt;/a&gt;. &lt;/p&gt;
-</description>
-				
-                        	<pubDate>Mon, 19 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/the-8-week-writing-challenge</link>
-				<guid isPermaLink="true">http://localhost:4000/the-8-week-writing-challenge</guid>
+				<link>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</link>
+				<guid isPermaLink="true">http://shime.sh/4-tips-from-6-years-of-remote-freelancing</guid>
 			</item>
 		
 	</channel>
