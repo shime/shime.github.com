@@ -22,7 +22,7 @@ body {
 
 .logo a {
   font-size: 2.5rem;
-  color: rgba(255, 255, 255);
+  color: #fff;
 }
 
 a {
@@ -58,9 +58,8 @@ li {
 }
 
 .logo ul a.active {
-  color: rgba(255, 255, 255);
+  color: #fff;
 }
-
 
 .images {
   column-count: 3;
