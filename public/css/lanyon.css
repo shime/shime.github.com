@@ -102,6 +102,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
+.masthead .container {
+}
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -120,7 +122,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .masthead-navigation {
   list-style-type: none;
-  float: right;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.masthead-navigation {
+  font-size: 1rem;
 }
 
 .clear {
@@ -129,10 +139,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .masthead-navigation li {
   display: inline;
-}
-
-.masthead-navigation li + li:before {
-  content: "-"
 }
 
 @media (max-width: 48em) {
