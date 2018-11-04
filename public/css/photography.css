@@ -95,4 +95,11 @@ footer li {
     column-count: 2;
     max-width: 480px;
   }
+
+  .image {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+  }
 }
