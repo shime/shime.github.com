@@ -40,11 +40,13 @@ footer {
 }
 
 ul {
+  margin: 0 auto;
   margin-top: 20px;
   list-style: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 265px;
 }
 
 li {

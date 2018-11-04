@@ -48,11 +48,11 @@ ul {
   align-items: stretch;
   justify-content: space-between;
   flex-direction: row;
+  width: 265px;
 }
 
 li {
-  margin-right: 25px;
-  flex: 0 1 auto;
+  display: inline;
 }
 
 .logo span:last-child {
