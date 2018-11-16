@@ -3,81 +3,8 @@
 	<channel>
 		<title>Hrvoje Šimić</title>
 		<description></description>		
-		<link>http://localhost:4000</link>
-		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-		
-			<item>
-				<title>How I found my best client with a single email</title>
-				
-					<description>&lt;p&gt;I&amp;#39;m currently freelancing for a client that&amp;#39;s a lot better than any other client I&amp;#39;ve had in the past, so my best client [&lt;a href=&quot;#best&quot;&gt;1&lt;/a&gt;], and I&amp;#39;ve only sent one cover letter. &lt;/p&gt;
-</description>
-				
-                        	<pubDate>Wed, 14 Nov 2018 00:00:00 +0100</pubDate>
-				<link>http://localhost:4000/how-i-found-my-best-client-with-a-single-email</link>
-				<guid isPermaLink="true">http://localhost:4000/how-i-found-my-best-client-with-a-single-email</guid>
-			</item>
-		
-			<item>
-				<title>Or</title>
-				
-					<description>&lt;p&gt;Imagine you have a following table:&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sat, 11 Aug 2018 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/or</link>
-				<guid isPermaLink="true">http://localhost:4000/or</guid>
-			</item>
-		
-			<item>
-				<title>You might not need a pagination library</title>
-				
-					<description>&lt;p&gt;Since I use Ruby to build the backend,
-while having React on the frontend, I&amp;#39;ve found
-that adding some sort of pagination library
-is not worth it.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sat, 11 Aug 2018 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/dead-simple-pagination</link>
-				<guid isPermaLink="true">http://localhost:4000/dead-simple-pagination</guid>
-			</item>
-		
-			<item>
-				<title>Defending career capital</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve briefly switched from Ruby to Node and
-learned why it wasn&amp;#39;t a good decision the hard way.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Tue, 17 Jul 2018 09:54:01 +0200</pubDate>
-				<link>http://localhost:4000/defending-career-capital</link>
-				<guid isPermaLink="true">http://localhost:4000/defending-career-capital</guid>
-			</item>
-		
-			<item>
-				<title>My 3 day trip to Singapore</title>
-				
-					<description>&lt;p&gt;I visited Singapore last year and went back home after just 3 days.
-That might not seem crazy to you, but it should after I tell you 
-that Singapore is 12,000 kilometers away from my hometown in Croatia.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Tue, 17 Jul 2018 09:08:12 +0200</pubDate>
-				<link>http://localhost:4000/my-3-day-trip-to-singapore</link>
-				<guid isPermaLink="true">http://localhost:4000/my-3-day-trip-to-singapore</guid>
-			</item>
-		
-			<item>
-				<title>Taking time off from network tools</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve been away from all websites I spend the most
-of my time for 3 months.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Tue, 17 Jul 2018 00:02:11 +0200</pubDate>
-				<link>http://localhost:4000/network-tools-detox</link>
-				<guid isPermaLink="true">http://localhost:4000/network-tools-detox</guid>
-			</item>
+		<link>http://shime.sh</link>
+		<atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>A short guide for wasting hundreds of hours on your idea</title>
@@ -88,40 +15,122 @@ this way. The clichéd &amp;quot;at least I&amp;#39;ve learned something&amp;quo
 </description>
 				
                         	<pubDate>Sat, 14 Jul 2018 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000/how-to-waste-time-on-your-idea</link>
-				<guid isPermaLink="true">http://localhost:4000/how-to-waste-time-on-your-idea</guid>
+				<link>http://shime.sh/how-to-waste-time-on-your-idea</link>
+				<guid isPermaLink="true">http://shime.sh/how-to-waste-time-on-your-idea</guid>
 			</item>
 		
 			<item>
-				<title>A case against call</title>
+				<title>Quality vs popularity</title>
 				
-					<description></description>
-				
-                        	<pubDate>Thu, 22 Mar 2018 09:23:32 +0100</pubDate>
-				<link>http://localhost:4000/a-case-against-call</link>
-				<guid isPermaLink="true">http://localhost:4000/a-case-against-call</guid>
-			</item>
-		
-			<item>
-				<title>Why I love programming</title>
-				
-					<description>&lt;p&gt;Get inspiration from this: https://medium.com/editors-picks/you-can-already-code-you-just-dont-know-it-yet-862044601a5a&lt;/p&gt;
+					<description>&lt;p&gt;When validating library quality, we like to 
+take a look at some metrics like
+the time of the last commit or the number of
+stars as if those relate to quality.
+It&amp;#39;s the easiest thing to do, instead of
+validating the quality by other means,
+we go with the easiest approach
+of following everybody else.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Thu, 22 Mar 2018 07:46:30 +0100</pubDate>
-				<link>http://localhost:4000/why-i-love-programming</link>
-				<guid isPermaLink="true">http://localhost:4000/why-i-love-programming</guid>
+                        	<pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.sh/quality-vs-popularity</link>
+				<guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
 			</item>
 		
 			<item>
-				<title>I want to open source everything</title>
+				<title>Git commit message syntax highlighting in Vim</title>
 				
-					<description>&lt;p&gt;Data - the currency of the interent and how they&amp;#39;re stealing it in front of our noses&lt;/p&gt;
+					<description>&lt;p&gt;Writing git commit messages should be done inside your
+editor because it allows you to add a lengthier commit
+description, as opposed to &lt;code&gt;git commit -m&lt;/code&gt; which just
+puts everything as the first line.&lt;/p&gt;
 </description>
 				
-                        	<pubDate>Thu, 22 Mar 2018 07:46:30 +0100</pubDate>
-				<link>http://localhost:4000/i-want-to-open-source-everything</link>
-				<guid isPermaLink="true">http://localhost:4000/i-want-to-open-source-everything</guid>
+                        	<pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
+				<guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
+			</item>
+		
+			<item>
+				<title>Loving Vim</title>
+				
+					<description>&lt;p&gt;&lt;em&gt;This post is inspired by &lt;a href=&quot;https://michaelsoolee.com/love-vim-again/&quot;&gt;Falling in love with Vim again&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/michaelsoolee&quot;&gt;@michaelsoolee&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.sh/loving-vim</link>
+				<guid isPermaLink="true">http://shime.sh/loving-vim</guid>
+			</item>
+		
+			<item>
+				<title>Freedom</title>
+				
+					<description>&lt;p&gt;I&amp;#39;m a freelancer and I love what I do. There is a thing I value the most in this type of work.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
+				<link>http://shime.sh/freedom</link>
+				<guid isPermaLink="true">http://shime.sh/freedom</guid>
+			</item>
+		
+			<item>
+				<title>Programming for $ until I'm too old to</title>
+				
+					<description>&lt;p&gt;The question I get from time to time is this one:&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
+				<guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
+			</item>
+		
+			<item>
+				<title>Money and time</title>
+				
+					<description>&lt;blockquote&gt;
+&lt;p&gt;It&amp;#39;s absolutely maddening to see so many people work a job they don&amp;#39;t want to work, so that they can pay for stuff they don&amp;#39;t really need. Time is by far the most valuable &amp;quot;thing/piece of stuff&amp;quot;. How much are you selling an hour of your life for (the whole aspect of the hour... time away from your family, time away from the things you enjoy doing)? Is it worth it?&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+				
+                        	<pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.sh/money-and-time</link>
+				<guid isPermaLink="true">http://shime.sh/money-and-time</guid>
+			</item>
+		
+			<item>
+				<title>Landing that remote job</title>
+				
+					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: The bigest problem is standing out. How do you do it?&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.sh/landing-that-remote-job</link>
+				<guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
+			</item>
+		
+			<item>
+				<title>Thanks via email</title>
+				
+					<description>&lt;p&gt;I&amp;#39;m a programmer, so in my daily work I depend on the work of others. Others
+who have put in the time and created the tools that my work depends on. Their work
+is indirectly putting bread on my table, so I think a small act of gratitude goes a long way.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.sh/thanks-via-email</link>
+				<guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
+			</item>
+		
+			<item>
+				<title>4 tips from 6 years of remote freelancing</title>
+				
+					<description>&lt;p&gt;I&amp;#39;ve been freelancing remotely for the past six years. Here are some of the things
+I&amp;#39;ve learned over the years.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
+				<link>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</link>
+				<guid isPermaLink="true">http://shime.sh/4-tips-from-6-years-of-remote-freelancing</guid>
 			</item>
 		
 	</channel>
