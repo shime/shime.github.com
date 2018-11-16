@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    Hrvoje Šimić &middot; You might not need a pagination library
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">You might not need a pagination library</h1>
+    <div class="published">
+      11 Aug 2018 on
+      ruby
+    </div>
+  </div>
+  <p>Since I use Ruby to build the backend,
+while having React on the frontend, I&#39;ve found
+that adding some sort of pagination library
+is not worth it.</p>
+
+<p>Those libraries are meant to be used in full-stack
+Rails apps, while I only need it for the backend layer - if I use Rails,
+I only use it with the <code>--api</code> switch.
+I separately deal with problems that those libraries are solving
+in the view layer, since I have React as a view layer.</p>
+
+<p>That&#39;s why I wanted to see how hard would it be to implement
+my own pagination library. Turns out it&#39;s not that hard.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Pagination</span>
+   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">per_page</span>
+     <span class="mi">25</span>
+   <span class="k">end</span>
+
+   <span class="n">scope</span> <span class="ss">:paginate</span><span class="p">,</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">page</span><span class="p">){</span>
+     <span class="n">offset</span> <span class="o">=</span> <span class="o">[</span><span class="n">page</span><span class="o">.</span><span class="n">to_i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="o">].</span><span class="n">max</span> <span class="o">*</span> <span class="n">per_page</span>
+     <span class="n">offset</span><span class="p">(</span><span class="n">offset</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">per_page</span><span class="p">)</span>
+   <span class="p">}</span> <span class="k">do</span>
+     <span class="k">def</span> <span class="nf">total</span>
+       <span class="n">except</span><span class="p">(</span><span class="ss">:limit</span><span class="p">,</span> <span class="ss">:offset</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span>
+     <span class="k">end</span>
+
+     <span class="k">def</span> <span class="nf">current_page</span>
+       <span class="n">page</span>
+     <span class="k">end</span>
+
+     <span class="k">def</span> <span class="nf">total_pages</span>
+       <span class="p">(</span><span class="n">total</span><span class="o">.</span><span class="n">to_f</span> <span class="o">/</span> <span class="n">per_page</span><span class="p">)</span><span class="o">.</span><span class="n">ceil</span>
+     <span class="k">end</span>
+
+     <span class="k">def</span> <span class="nf">more_available?</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+       <span class="n">page</span> <span class="o">=</span> <span class="o">[</span><span class="n">page</span><span class="o">.</span><span class="n">to_i</span><span class="p">,</span> <span class="mi">1</span><span class="o">].</span><span class="n">max</span>
+       <span class="n">page</span> <span class="o">&lt;</span> <span class="n">total_pages</span>
+     <span class="k">end</span>
+   <span class="k">end</span>
+ <span class="k">end</span>
+</code></pre></div>
+<p>Include this in any Active Record model and you&#39;re good
+to go.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="kp">extend</span> <span class="no">Pagination</span>
+<span class="k">end</span>
+
+<span class="no">User</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">scope</span><span class="p">(</span><span class="ss">:admin</span><span class="p">),</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="ss">:role</span><span class="p">,</span> <span class="ss">:admin</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="no">User</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+      </p>
+      <hr>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
