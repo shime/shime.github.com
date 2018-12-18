@@ -100,7 +100,7 @@ It usually shaves off ~10s when reseeding the database.</p>
       <span class="n">reject</span> <span class="p">{</span><span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="n">t</span> <span class="o">=~</span> <span class="sr">/ar_internal_metadata|schema_migrations/</span><span class="p">}</span><span class="o">.</span>
       <span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
         <span class="nb">putc</span> <span class="s2">&quot;.&quot;</span>
-        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;TRUNCATE TABLE </span><span class="si">#{</span><span class="n">table</span><span class="si">}</span><span class="s2"> RESTART IDENTITY CASCADE&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;TRUNCATE TABLE </span><span class="si">#{</span><span class="n">t</span><span class="si">}</span><span class="s2"> RESTART IDENTITY CASCADE&quot;</span>
         <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
       <span class="k">end</span>
     <span class="nb">puts</span>
