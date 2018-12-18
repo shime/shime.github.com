@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    Hrvoje Šimić &middot; Faster database resets in Rails
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Faster database resets in Rails</h1>
+    <div class="published">
+      18 Dec 2018 on
+      rails
+    </div>
+  </div>
+  <p>After I&#39;ve made a significant change to the 
+relationships of the models on the application
+I&#39;m working on; I wanted to update the seeds file
+to accommodate new relationships.</p>
+
+<p>Rails&#39; default command to reset the database <code>rails db:reset</code>
+drops the database and then recreates all the tables from the schema.
+Dropping and recreating like this adds some overhead to the command&#39;s run time.
+I wanted to mitigate that since I didn&#39;t do any schema updates and I just wanted to clear the tables.</p>
+
+<p>It turns out there is a SQL command made precisely for this scenario: <code>TRUNCATE</code>.
+The only trick is to use the <code>TRUNCATE</code> command with <code>CASCADE</code> to also truncate the tables 
+with foreign key references to the truncated table and <code>RESTART IDENTITY</code> to reset the auto sequences.
+I also needed to avoid truncating the <code>schema_migrations</code> table which
+is used in Rails to store which migrations have been
+run and <code>ar_internal_metadata</code> which stores Active Record&#39;s internal metadata.</p>
+
+<p>Here is the Rake task I&#39;ve ended up with.
+It usually shaves off ~10s when reseeding the database.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">namespace</span> <span class="ss">:db</span> <span class="k">do</span>
+  <span class="n">desc</span> <span class="s1">&#39;Clears the database and then seeds it&#39;</span>
+  <span class="n">task</span> <span class="ss">reseed</span><span class="p">:</span> <span class="ss">:environment</span> <span class="k">do</span> 
+    <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s2">&quot;db:truncate&quot;</span><span class="o">].</span><span class="n">invoke</span>
+    <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s2">&quot;db:seed&quot;</span><span class="o">].</span><span class="n">invoke</span>
+  <span class="k">end</span>
+
+  <span class="n">desc</span> <span class="s1">&#39;Clears the database&#39;</span>
+  <span class="n">task</span> <span class="ss">truncate</span><span class="p">:</span> <span class="ss">:environment</span> <span class="k">do</span> 
+    <span class="nb">puts</span> <span class="s2">&quot;Truncating database&quot;</span>
+    <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span>
+      <span class="n">tables</span><span class="o">.</span>
+      <span class="n">reject</span> <span class="p">{</span><span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="n">t</span> <span class="o">=~</span> <span class="sr">/ar_internal_metadata|schema_migrations/</span><span class="p">}</span><span class="o">.</span>
+      <span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+        <span class="nb">putc</span> <span class="s2">&quot;.&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;TRUNCATE TABLE </span><span class="si">#{</span><span class="n">table</span><span class="si">}</span><span class="s2"> RESTART IDENTITY CASCADE&quot;</span>
+        <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="nb">puts</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+      </p>
+      <hr>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

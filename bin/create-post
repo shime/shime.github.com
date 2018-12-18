@@ -9,6 +9,7 @@
 # Options:
 # 
 #   --draft  Creates a draft.
+#   --til    Creates a TIL post.
 
 dir="_posts"
 original_title=$@
@@ -18,11 +19,17 @@ if [[ $1 =~ --draft ]]; then
   original_title="${@:2}"
 fi
 
+if [[ $1 =~ --til ]]; then
+  dir="til"
+  original_title="${@:2}"
+fi
+
 # replaces spaces in title with dashes
 title="`echo $original_title| tr ' ' '-'`"
 # adds required date format to file name of the post
-title="`date +"%Y-%m-%d"`-$title"        
-cat <<EOF > $dir/$title.md      
+title="`date +"%Y-%m-%d"`-$title"
+filename="`echo $title | tr '[:upper:]' '[:lower:]'`"
+cat <<EOF > $dir/$filename.md
 ---
 layout: post
 title: `echo "${original_title^}"`
