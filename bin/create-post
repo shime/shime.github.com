@@ -29,10 +29,12 @@ title="`echo $original_title| tr ' ' '-'`"
 # adds required date format to file name of the post
 title="`date +"%Y-%m-%d"`-$title"
 filename="`echo $title | tr '[:upper:]' '[:lower:]'`"
-cat <<EOF > $dir/$filename.md
+fullpath="$dir/$filename.md"
+cat <<EOF > $fullpath
 ---
 layout: post
 title: `echo "${original_title^}"`
 categories: random
 ---
 EOF
+vim $fullpath

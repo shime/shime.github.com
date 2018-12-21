@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    Hrvoje Šimić &middot; Enforcing strong parameters
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Enforcing strong parameters</h1>
+    <div class="published">
+      19 Dec 2018 on
+      javascript
+    </div>
+  </div>
+  <p>In order to enforce strong parameters in JavaScript,
+à la Ruby, you can provide a function that checks
+the existence of the paramater as a default parameter.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="kr">const</span> <span class="nx">required</span> <span class="o">=</span> <span class="nx">p</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="sb">`Missing parameter: </span><span class="si">${</span><span class="nx">p</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">FancyStruct</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">({</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">required</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">),</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">required</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)}</span> <span class="o">=</span> <span class="p">{})</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">new</span> <span class="nx">FancyStruct</span><span class="p">()</span> <span class="c1">// Uncaught Error: Missing parameter: type</span>
+<span class="k">new</span> <span class="nx">FancyStruct</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span> <span class="p">})</span> <span class="c1">// Uncaught Error: Missing parameter: value</span>
+
+<span class="kr">const</span> <span class="nx">struct</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FancyStruct</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">})</span> 
+<span class="nx">struct</span><span class="p">.</span><span class="nx">type</span>  <span class="c1">// &quot;foo&quot;</span>
+<span class="nx">struct</span><span class="p">.</span><span class="nx">value</span> <span class="c1">// &quot;bar&quot;</span>
+</code></pre></div>
+<p>Even better, you can use tagged templates to shorten the invocation of the
+helper function.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="kr">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">p</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="sb">`Missing parameter: </span><span class="si">${</span><span class="nx">p</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">FancyStruct</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">({</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">req</span><span class="sb">`type`</span><span class="p">,</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">req</span><span class="sb">`value`</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{})</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">struct</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FancyStruct</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span> <span class="p">})</span> 
+<span class="nx">struct</span><span class="p">.</span><span class="nx">type</span>  <span class="c1">// &quot;foo&quot;</span>
+<span class="nx">struct</span><span class="p">.</span><span class="nx">value</span> <span class="c1">// &quot;bar&quot;</span>
+</code></pre></div>
+<h3>Credits</h3>
+
+<p><a href="https://gist.github.com/MarkTiedemann/17ebf5b38b5b7566478de7f623e1defd">Mark Tiedemann&#39;s Gist</a></p>
+
+
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+      </p>
+      <hr>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
