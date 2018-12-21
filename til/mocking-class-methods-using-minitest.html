@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    Hrvoje Šimić &middot; Mocking class methods using Minitest
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Mocking class methods using Minitest</h1>
+    <div class="published">
+      21 Dec 2018 on
+      ruby
+    </div>
+  </div>
+  <p>Minitest has a convoluted API for mocking 
+class methods, so in order to do so you&#39;ll
+have to use another gem.</p>
+
+<p>I suggest Mocha.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;mocha/minitest&quot;</span>
+
+<span class="k">class</span> <span class="nc">CronJobProcessor</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">process</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+     <span class="c1"># ...</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">CronEngine</span>
+  <span class="k">def</span> <span class="nf">process_job</span>
+    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+    <span class="no">EmailSender</span><span class="o">.</span><span class="n">send_notification</span><span class="p">(</span><span class="ss">to</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">describe</span> <span class="no">CronEngine</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s2">&quot;does what cron engines do&quot;</span> <span class="k">do</span>
+    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+    <span class="no">EmailSender</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
+
+    <span class="no">CronEngine</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">process_job</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+  <div class='bottom'>
+    <h5 class="writtenby"><span>Written by</span></h5>
+    <section class="author">
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+      </p>
+      <hr>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
