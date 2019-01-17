@@ -13,7 +13,6 @@
  * https://github.com/poole/lanyon.
  */
 
-
 /*
  * Contents
  *
@@ -26,7 +25,6 @@
  * Reverse layout
  * Themes
  */
-
 
 /*
  * Global resets
@@ -46,14 +44,18 @@ html {
   font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   /* font-family: "Roboto Slab", sans-serif; */
   font-family: "Lora", serif;
   font-weight: 400;
   color: #313131;
   /* letter-spacing: -.025rem; */
 }
-
 
 /*
  * Wrapper
@@ -67,7 +69,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
 }
-
 
 /*
  * Container
@@ -89,7 +90,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 /*
  * Masthead
  *
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 .masthead {
-  padding-top:    1rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #eee;
@@ -149,7 +149,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 /*
  * Sidebar
  *
@@ -175,15 +174,15 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
   overflow-y: auto;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-size: .875rem; /* 15px */
-  color: rgba(255,255,255,.6);
+  font-size: 0.875rem; /* 15px */
+  color: rgba(255, 255, 255, 0.6);
   background-color: #202020;
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 @media (min-width: 30em) {
   .sidebar {
-    font-size: .75rem; /* 14px */
+    font-size: 0.75rem; /* 14px */
   }
 }
 
@@ -201,18 +200,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sidebar nav */
 .sidebar-nav {
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .sidebar-nav-item {
   display: block;
-  padding: .5rem 1rem;
-  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .sidebar-nav-item.active,
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: none;
-  background-color: rgba(255,255,255,.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: transparent;
 }
 
@@ -221,7 +220,7 @@ a.sidebar-nav-item:focus {
     padding: 1.5rem;
   }
   .sidebar-nav-item {
-    padding-left:  1.5rem;
+    padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
@@ -234,11 +233,11 @@ a.sidebar-nav-item:focus {
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
-  top:  1rem;
+  top: 1rem;
   left: 1rem;
   display: block;
   width: 2.2rem;
-  padding: .5rem .65rem;
+  padding: 0.5rem 0.65rem;
   color: #505050;
   background-color: #fff;
   border-radius: 4px;
@@ -248,14 +247,14 @@ a.sidebar-nav-item:focus {
   display: block;
   content: "";
   width: 100%;
-  padding-bottom: .125rem;
-  border-top: .375rem double;
-  border-bottom: .125rem solid;
+  padding-bottom: 0.125rem;
+  border-top: 0.375rem double;
+  border-bottom: 0.125rem solid;
 
   /* Make the border inside the box */
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .sidebar-toggle:active,
@@ -270,12 +269,11 @@ a.sidebar-nav-item:focus {
     width: 2.25rem;
   }
   .sidebar-toggle:before {
-    padding-bottom: .15rem;
-    border-top-width: .45rem;
-    border-bottom-width: .15rem;
+    padding-bottom: 0.15rem;
+    border-top-width: 0.45rem;
+    border-bottom-width: 0.15rem;
   }
 }
-
 
 /* Slide effect
  *
@@ -294,13 +292,13 @@ a.sidebar-nav-item:focus {
 .sidebar,
 .sidebar-toggle {
   -webkit-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-          backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .wrap,
 .sidebar-toggle {
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-          transition: transform .3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 #sidebar-checkbox:checked + .sidebar {
@@ -311,10 +309,9 @@ a.sidebar-nav-item:focus {
 #sidebar-checkbox:checked ~ .wrap,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   -webkit-transform: translateX(14rem);
-      -ms-transform: translateX(14rem);
-          transform: translateX(14rem);
+  -ms-transform: translateX(14rem);
+  transform: translateX(14rem);
 }
-
 
 /*
  * Posts and pages
@@ -328,7 +325,12 @@ div.post {
   margin-bottom: 4em;
 }
 
-.post h1, h2, h3, h4, h5, h6 {
+.post h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 2rem;
 }
 
@@ -343,8 +345,6 @@ div.post {
   margin-top: 0;
 }
 
-
-
 .page-title {
   text-align: center;
   margin-bottom: 2rem;
@@ -353,7 +353,7 @@ div.post {
 /* Meta data line below post title */
 .post-date {
   display: block;
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
 }
@@ -366,17 +366,16 @@ div.post {
   float: left;
 }
 
-.writtenby {
+.bottom {
   border-top: 1px solid #dededc;
   margin: 0;
   padding: 16px 0 0 0;
 }
 
-.writtenby span {
-  color: #b3b3b1;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .author h4 {
@@ -386,10 +385,29 @@ div.post {
   margin-top: 0.2rem;
 }
 
+.author img {
+  border-radius: 100%;
+  width: 80px;
+  margin: 0;
+  margin-right: 1.5rem;
+  align-self: flex-start;
+}
+
+.author div {
+  align-self: baseline;
+}
+
 .author a {
   font-size: 0.7rem;
   line-height: 1.1;
   font-weight: 400;
+}
+
+.author small {
+  display: block;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 16px;
 }
 
 .post-meta .published {
@@ -404,7 +422,7 @@ div.post {
 }
 
 .post-meta .post-title {
-  margin-bottom: .1rem;
+  margin-bottom: 0.1rem;
 }
 
 .post-meta {
@@ -435,7 +453,6 @@ div.post {
 .related-posts li a:hover small {
   color: inherit;
 }
-
 
 /*
  * Pagination
@@ -478,16 +495,15 @@ a.pagination-item:hover {
   }
   .pagination-item:first-child {
     margin-bottom: 0;
-    border-top-left-radius:    4px;
+    border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
   .pagination-item:last-child {
     margin-left: -1px;
-    border-top-right-radius:    4px;
+    border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 }
-
 
 /*
  * Reverse layout
@@ -509,10 +525,9 @@ a.pagination-item:hover {
 .layout-reverse #sidebar-checkbox:checked ~ .wrap,
 .layout-reverse #sidebar-checkbox:checked ~ .sidebar-toggle {
   -webkit-transform: translateX(-14rem);
-      -ms-transform: translateX(-14rem);
-          transform: translateX(-14rem);
+  -ms-transform: translateX(-14rem);
+  transform: translateX(-14rem);
 }
-
 
 /*
  * Themes
@@ -617,7 +632,6 @@ a.pagination-item:hover {
   color: #8f5536;
 }
 
-
 /*
  * Overlay sidebar
  *
@@ -627,19 +641,19 @@ a.pagination-item:hover {
 
 .sidebar-overlay #sidebar-checkbox:checked ~ .wrap {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 .sidebar-overlay #sidebar-checkbox:checked ~ .sidebar-toggle {
-  box-shadow: 0 0 0 .25rem #fff;
+  box-shadow: 0 0 0 0.25rem #fff;
 }
 .sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
-  box-shadow: .25rem 0 .5rem rgba(0,0,0,.1);
+  box-shadow: 0.25rem 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
-  box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+  box-shadow: -0.25rem 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .posts h3 {
