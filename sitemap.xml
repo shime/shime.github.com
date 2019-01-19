@@ -7,7 +7,7 @@
   
     <url>
       <loc>/feed.xml</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -16,7 +16,7 @@
   
     <url>
       <loc>/articles/</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -25,7 +25,7 @@
   
     <url>
       <loc>/til/</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -34,7 +34,7 @@
   
     <url>
       <loc>/</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -43,7 +43,7 @@
   
     <url>
       <loc>/reading/</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -52,7 +52,7 @@
   
     <url>
       <loc>/photography/</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -61,7 +61,7 @@
   
     <url>
       <loc>/sitemap.xml</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -70,7 +70,7 @@
   
     <url>
       <loc>/how-to-waste-hours-on-your-idea</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -79,7 +79,7 @@
   
     <url>
       <loc>/thoughts</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -88,7 +88,7 @@
   
     <url>
       <loc>/thoughts</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -97,7 +97,7 @@
   
     <url>
       <loc>/books</loc>
-      <lastmod>2019-01-18</lastmod>
+      <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -110,245 +110,245 @@
   
   <url>
     <loc>/how-to-waste-time-on-your-idea</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/quality-vs-popularity</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/git-commit-message-syntax-highlighting-in-vim</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/loving-vim</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/freedom</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/programming-for-money-until-I'm-too-old-to</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/money-and-time</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/landing-that-remote-job</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/thanks-via-email</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/4-tips-from-6-years-of-remote-freelancing</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/the-8-week-writing-challenge</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/introducing-ephemeral-P2P-screenshot-sharing</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/on-criticism</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/just-ship-it</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/sleep-is-for-the-weak</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/osx-adventures</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/complexity-prettified</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/people-are-priceless</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/headless-testing-of-ember-apps-with-gulp-and-jasmine</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/rubyists-view-on-nodejs</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/micromachinejs-a-minimal-state-machine-for-javascript</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/5-reasons-for-adding-a-post-installation-message-to-your-gem</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/be-the-change-you-want-to-see</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/guard-down-vim-and-tmux-are-here</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/long-time-no-see</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/overriding-instance-method-with-a-module</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/forwardable-explained</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/using-edge-rails-locally</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/insane-cant-find-executable-rails-for-rails-error</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/autotest-and-rspec2-problems</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/hello-world-in-sinatra</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/debugging-active-record-queries-in-a-rails-console</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/git-stash-is-awesome</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/ruby-y-u-so-beautiful</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -357,28 +357,28 @@
   
   <url>
     <loc>/til/adding-new-hidden-collection-in-jekyll</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/til/faster-database-resets-in-rails</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/til/strong-parameters-in-javascript</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>/til/mocking-class-methods-using-minitest</loc>
-    <lastmod>2019-01-18</lastmod>
+    <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
