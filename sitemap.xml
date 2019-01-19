@@ -6,7 +6,7 @@
   
   
     <url>
-      <loc>/feed.xml</loc>
+      <loc>http://shime.sh/feed.xml</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -15,7 +15,7 @@
   
   
     <url>
-      <loc>/articles/</loc>
+      <loc>http://shime.sh/articles/</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -24,7 +24,7 @@
   
   
     <url>
-      <loc>/til/</loc>
+      <loc>http://shime.sh/til/</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -33,7 +33,7 @@
   
   
     <url>
-      <loc>/</loc>
+      <loc>http://shime.sh/</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -42,7 +42,7 @@
   
   
     <url>
-      <loc>/reading/</loc>
+      <loc>http://shime.sh/reading/</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -51,7 +51,7 @@
   
   
     <url>
-      <loc>/photography/</loc>
+      <loc>http://shime.sh/photography/</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -60,7 +60,7 @@
   
   
     <url>
-      <loc>/sitemap.xml</loc>
+      <loc>http://shime.sh/sitemap.xml</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -69,7 +69,7 @@
   
   
     <url>
-      <loc>/how-to-waste-hours-on-your-idea</loc>
+      <loc>http://shime.sh/how-to-waste-hours-on-your-idea</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -78,7 +78,7 @@
   
   
     <url>
-      <loc>/thoughts</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -87,7 +87,7 @@
   
   
     <url>
-      <loc>/thoughts</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -96,7 +96,7 @@
   
   
     <url>
-      <loc>/books</loc>
+      <loc>http://shime.sh/books</loc>
       <lastmod>2019-01-19</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -109,245 +109,245 @@
 
   
   <url>
-    <loc>/how-to-waste-time-on-your-idea</loc>
+    <loc>http://shime.sh/how-to-waste-time-on-your-idea</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/quality-vs-popularity</loc>
+    <loc>http://shime.sh/quality-vs-popularity</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/git-commit-message-syntax-highlighting-in-vim</loc>
+    <loc>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/loving-vim</loc>
+    <loc>http://shime.sh/loving-vim</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/freedom</loc>
+    <loc>http://shime.sh/freedom</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/programming-for-money-until-I'm-too-old-to</loc>
+    <loc>http://shime.sh/programming-for-money-until-I'm-too-old-to</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/money-and-time</loc>
+    <loc>http://shime.sh/money-and-time</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/landing-that-remote-job</loc>
+    <loc>http://shime.sh/landing-that-remote-job</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/thanks-via-email</loc>
+    <loc>http://shime.sh/thanks-via-email</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/4-tips-from-6-years-of-remote-freelancing</loc>
+    <loc>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/the-8-week-writing-challenge</loc>
+    <loc>http://shime.sh/the-8-week-writing-challenge</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/introducing-ephemeral-P2P-screenshot-sharing</loc>
+    <loc>http://shime.sh/introducing-ephemeral-P2P-screenshot-sharing</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/on-criticism</loc>
+    <loc>http://shime.sh/on-criticism</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/just-ship-it</loc>
+    <loc>http://shime.sh/just-ship-it</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/sleep-is-for-the-weak</loc>
+    <loc>http://shime.sh/sleep-is-for-the-weak</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/osx-adventures</loc>
+    <loc>http://shime.sh/osx-adventures</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/complexity-prettified</loc>
+    <loc>http://shime.sh/complexity-prettified</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/people-are-priceless</loc>
+    <loc>http://shime.sh/people-are-priceless</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/headless-testing-of-ember-apps-with-gulp-and-jasmine</loc>
+    <loc>http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/rubyists-view-on-nodejs</loc>
+    <loc>http://shime.sh/rubyists-view-on-nodejs</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/micromachinejs-a-minimal-state-machine-for-javascript</loc>
+    <loc>http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/5-reasons-for-adding-a-post-installation-message-to-your-gem</loc>
+    <loc>http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/be-the-change-you-want-to-see</loc>
+    <loc>http://shime.sh/be-the-change-you-want-to-see</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/guard-down-vim-and-tmux-are-here</loc>
+    <loc>http://shime.sh/guard-down-vim-and-tmux-are-here</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/long-time-no-see</loc>
+    <loc>http://shime.sh/long-time-no-see</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/overriding-instance-method-with-a-module</loc>
+    <loc>http://shime.sh/overriding-instance-method-with-a-module</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/forwardable-explained</loc>
+    <loc>http://shime.sh/forwardable-explained</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
+    <loc>http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/using-edge-rails-locally</loc>
+    <loc>http://shime.sh/using-edge-rails-locally</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/insane-cant-find-executable-rails-for-rails-error</loc>
+    <loc>http://shime.sh/insane-cant-find-executable-rails-for-rails-error</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/autotest-and-rspec2-problems</loc>
+    <loc>http://shime.sh/autotest-and-rspec2-problems</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/hello-world-in-sinatra</loc>
+    <loc>http://shime.sh/hello-world-in-sinatra</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/debugging-active-record-queries-in-a-rails-console</loc>
+    <loc>http://shime.sh/debugging-active-record-queries-in-a-rails-console</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/git-stash-is-awesome</loc>
+    <loc>http://shime.sh/git-stash-is-awesome</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/ruby-y-u-so-beautiful</loc>
+    <loc>http://shime.sh/ruby-y-u-so-beautiful</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -356,28 +356,28 @@
 
   
   <url>
-    <loc>/til/adding-new-hidden-collection-in-jekyll</loc>
+    <loc>http://shime.sh/til/adding-new-hidden-collection-in-jekyll</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/til/faster-database-resets-in-rails</loc>
+    <loc>http://shime.sh/til/faster-database-resets-in-rails</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/til/strong-parameters-in-javascript</loc>
+    <loc>http://shime.sh/til/strong-parameters-in-javascript</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/til/mocking-class-methods-using-minitest</loc>
+    <loc>http://shime.sh/til/mocking-class-methods-using-minitest</loc>
     <lastmod>2019-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
