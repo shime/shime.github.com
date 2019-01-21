@@ -10,8 +10,8 @@
 				<title>Testing Stimulus</title>
 				
 					<description>&lt;p&gt;Since the &lt;a href=&quot;https://stimulusjs.org/handbook/origin&quot;&gt;official Stimulus handbook&lt;/a&gt;
-doesn&amp;#39;t cover testing, I&amp;#39;d like to share how I&amp;#39;ve approached testing
-of a Stimulus controller.&lt;/p&gt;
+doesn&amp;#39;t include testing, and my team at &lt;a href=&quot;https://boosterstage.net/&quot;&gt;Booster Stage&lt;/a&gt;
+recently had to cover a Stimulus controller with tests, I&amp;#39;d like to share our approach.&lt;/p&gt;
 </description>
 				
                         	<pubDate>Sat, 19 Jan 2019 00:00:00 +0100</pubDate>
