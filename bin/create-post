@@ -20,7 +20,7 @@ if [[ $1 =~ --draft ]]; then
 fi
 
 if [[ $1 =~ --til ]]; then
-  dir="til"
+  dir="_til"
   original_title="${@:2}"
 fi
 

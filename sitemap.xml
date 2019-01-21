@@ -11,8 +11,11 @@
     
   
   
+    
+  
+  
     <url>
-      <loc>http://shime.sh/til/2019-01-21-pretty-format-json</loc>
+      <loc>http://shime.sh/feed.xml</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -20,11 +23,8 @@
     
   
   
-    
-  
-  
     <url>
-      <loc>http://shime.sh/feed.xml</loc>
+      <loc>http://shime.sh/til/</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -61,15 +61,6 @@
   
     <url>
       <loc>http://shime.sh/articles/</loc>
-      <lastmod>2019-01-21</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-  
-  
-    <url>
-      <loc>http://shime.sh/til/</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -403,6 +394,13 @@
   
   <url>
     <loc>http://shime.sh/til/mocking-class-methods-using-minitest</loc>
+    <lastmod>2019-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shime.sh/til/pretty-format-json</loc>
     <lastmod>2019-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
