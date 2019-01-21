@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1548107388839993000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1548107388839993000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1548107388839993000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548108185580894000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548108185580894000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548108185580894000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -106,7 +106,7 @@
     </div>
   </div>
   <p>Since the <a href="https://stimulusjs.org/handbook/origin">official Stimulus handbook</a>
-doesn&#39;t include testing, and my team at <a href="https://boosterstage.net/">Booster Stage</a>
+doesn&#39;t include testing, and my team at <a href="https://boosterstage.net">Booster Stage</a>
 recently had to cover a Stimulus controller with tests, I&#39;d like to share our approach.</p>
 
 <h2>Install dependencies</h2>
@@ -117,8 +117,8 @@ npm packages to make this work.</p>
 yarn add <span class="nt">--dev</span> babel-jest babel-preset-es2015
 yarn add <span class="nt">--dev</span> mutationobserver-shim
 </code></pre></div>
-<p>We&#39;re going to use Jest for testing, Babel packages to make it play nice with
-Jest and mutationobserver-shim fo shimming <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver</a>
+<p>We&#39;re going to use Jest for testing; Babel packages to make it play nice with
+Jest and mutationobserver-shim for shimming <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver</a>
 API which is required by Stimulus. We need that shim since
 Jest uses jsdom by default and jsdom doesn&#39;t have support
 for MutationObserver as of this writing.</p>
@@ -161,8 +161,8 @@ each test and execute it. Place this in <code>package.json</code>:</p>
 <p>Now that we have our shim in place, we need to write
 our first failing test.</p>
 
-<p>We need to setup Babel to play nice with Jest first.
-We need to add <code>&quot;es2015&quot;</code> to <code>&quot;presets&quot;</code>.
+<p>We need to set up Babel to play nice with Jest first.
+To do that, add <code>&quot;es2015&quot;</code> to <code>&quot;presets&quot;</code>.
 Place this in your <code>.babelrc</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">"presets"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"es2015"</span><span class="p">,</span>
@@ -182,9 +182,9 @@ Place this in your <code>.babelrc</code>:</p>
 <p>And run it with:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/first_test.js
 </code></pre></div>
-<p>Congrats, you should see your first test fail.</p>
+<p>Congrats, you should see your first test fail! Woohoo!</p>
 
-<p>If you have some sort of linter running, it will
+<p>If you have some linter running, it will
 complain about <code>&quot;describe&quot;</code> and <code>&quot;it&quot;</code>. In my
 case that was <code>eslint</code>, so I had to place this
 in <code>.eslintrc</code>:</p>
@@ -210,7 +210,7 @@ Replace your <code>test/javascript/first_test.js</code> with:</p>
 
 <h2>Write a Stimulus controller test</h2>
 
-<p>Now that we&#39;ve written the trivial assertion, let&#39;s
+<p>Now that we&#39;ve written the trivial assertion let&#39;s
 get serious and write a real Stimulus controller test.</p>
 
 <p>Put this in <code>test/javascript/basic_controller_test.js</code>:</p>
@@ -257,7 +257,7 @@ get serious and write a real Stimulus controller test.</p>
 <p>This test should fail, which means you have just
 written your first failing Stimulus test.</p>
 
-<p>To make it pass, just replace the expected value to <code>&quot;foo&quot;</code>:</p>
+<p>To make it pass, replace the expected value to <code>&quot;foo&quot;</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
 
 <span class="kd">class</span> <span class="nx">BasicController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
@@ -301,10 +301,10 @@ have just written your first passing Stimulus controller test.</p>
 
 <h2>Write a more complex Stimulus controller test</h2>
 
-<p>It&#39;s time to write something more complex, real Stimulus controllers
+<p>It&#39;s time to write something more complex; real Stimulus controllers
 usually do something more complicated than copying a value from
 one input to another. Like copying a value from input to a paragraph.
-It can&#39;t get more complex than that! Just kidding, I&#39;d like to show
+It can&#39;t get more complicated than that! Just kidding, I&#39;d like to show
 how to handle some non-default actions with this example.</p>
 
 <p>Put this in <code>test/javascript/advanced_controller_test.js</code>:</p>
@@ -405,17 +405,16 @@ text inside a paragraph.</p>
 we wanted on the input element. We need to do that for any
 event when testing Stimulus controllers. We had used the
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/click"><code>HTMLElement.click()</code></a> helper
-in the basic test for simulating click on an element, but unfortunately 
-those helpers don&#39;t exist for most of other events.</p>
+in the basic test for simulating a click on an element, but unfortunately those helpers don&#39;t exist for most of the other events.</p>
 
 <h2>Configure your environment for the real world</h2>
 
 <p>Now that you know how to test a Stimulus controller,
-you might be interested in how to setup your environment
+you might be interested in how to set up your environment
 for testing your Stimulus application.</p>
 
 <p>You probably don&#39;t write Stimulus controllers in your
-test files, like we did here, so you&#39;ll need to instruct
+test files, as we did here, so you&#39;ll need to instruct
 Jest how to import those controllers.  I&#39;m going to assume your 
 Stimulus controllers are located in <code>app/javascript/controllers</code>.</p>
 
@@ -446,13 +445,13 @@ with <code>_test.js</code>.</p>
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Let&#39;s say we have moved our <code>AdvancedController</code> from test file
+<p>Let&#39;s say we have moved our <code>AdvancedController</code> from the test file
 to <code>app/javascript/controllers/advanced_controller.js</code> and added
 the correct export to the end of that file:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
 
 <span class="kd">class</span> <span class="nx">AdvancedController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
-  <span class="c1">// rest of the controller copied from test</span>
+  <span class="c1">// rest of the controller copied from the test</span>
 <span class="p">}</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">AdvancedController</span><span class="p">;</span>
@@ -522,7 +521,7 @@ add this to your <code>Rakefile</code>:</p>
 <p>Or all tests with:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">rake
 </code></pre></div>
-<p>And that&#39;s it, you&#39;re now ready to test your 
+<p>That&#39;s it; you&#39;re now ready to test your 
 Stimulus controllers!</p>
 
 
