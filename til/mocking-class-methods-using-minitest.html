@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Mocking class methods using Minitest","dateModified":"2018-12-21T00:00:00+01:00","datePublished":"2018-12-21T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mocking-class-methods-using-minitest"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/mocking-class-methods-using-minitest","@context":"http://schema.org"}</script>
+{"datePublished":"2018-12-21T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mocking-class-methods-using-minitest"},"dateModified":"2018-12-21T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/mocking-class-methods-using-minitest","headline":"Mocking class methods using Minitest","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Mocking class methods using Minitest &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Mocking class methods using Minitest &middot; Hrvoje Šimić">
+  <meta name="title" content="Mocking class methods using Minitest &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,7 +101,7 @@
   <div class="post-meta">
     <h1 class="post-title">Mocking class methods using Minitest</h1>
     <div class="published">
-      21 Dec 2018 in
+      December 21, 2018 in
       ruby
     </div>
   </div>
@@ -110,7 +110,7 @@ class methods, so in order to do so you&#39;ll
 have to use another gem.</p>
 
 <p>I suggest <a href="https://github.com/freerange/mocha">Mocha</a>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;mocha/minitest&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"mocha/minitest"</span>
 
 <span class="k">class</span> <span class="nc">CronJobProcessor</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">process</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
@@ -120,17 +120,17 @@ have to use another gem.</p>
 
 <span class="k">class</span> <span class="nc">CronEngine</span>
   <span class="k">def</span> <span class="nf">process_job</span>
-    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="o">.</span><span class="n">send_notification</span><span class="p">(</span><span class="ss">to</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">)</span>
+    <span class="no">CronJobProcessor</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="ss">foo: </span><span class="s2">"bar"</span><span class="p">)</span>
+    <span class="no">EmailSender</span><span class="p">.</span><span class="nf">send_notification</span><span class="p">(</span><span class="ss">to: </span><span class="s2">"user@example.com"</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="n">describe</span> <span class="no">CronEngine</span> <span class="k">do</span>
-  <span class="n">it</span> <span class="s2">&quot;does what cron engines do&quot;</span> <span class="k">do</span>
-    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
+  <span class="n">it</span> <span class="s2">"does what cron engines do"</span> <span class="k">do</span>
+    <span class="no">CronJobProcessor</span><span class="p">.</span><span class="nf">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="ss">foo: </span><span class="s2">"bar"</span><span class="p">)</span>
+    <span class="no">EmailSender</span><span class="p">.</span><span class="nf">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
 
-    <span class="no">CronEngine</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">process_job</span>
+    <span class="no">CronEngine</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">process_job</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>

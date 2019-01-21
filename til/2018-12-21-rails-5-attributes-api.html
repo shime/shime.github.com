@@ -43,27 +43,23 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="Forwardable explained" />
+<meta property="og:title" content="Rails 5 attributes API" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="There&#39;s a pretty cool module called Forwardable and it&#39;s used for delegation. Let me explain this a little better..." />
-<meta property="og:description" content="There&#39;s a pretty cool module called Forwardable and it&#39;s used for delegation. Let me explain this a little better..." />
-<link rel="canonical" href="http://shime.sh/forwardable-explained" />
-<meta property="og:url" content="http://shime.sh/forwardable-explained" />
+<link rel="canonical" href="http://shime.sh/til/2018-12-21-rails-5-attributes-api" />
+<meta property="og:url" content="http://shime.sh/til/2018-12-21-rails-5-attributes-api" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2012-05-12T00:00:00+02:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"datePublished":"2012-05-12T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/forwardable-explained"},"dateModified":"2012-05-12T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"There&#39;s a pretty cool module called Forwardable and it&#39;s used for delegation. Let me explain this a little better...","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/forwardable-explained","headline":"Forwardable explained","@context":"http://schema.org"}</script>
+{"author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"WebPage","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/2018-12-21-rails-5-attributes-api","headline":"Rails 5 attributes API","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title> Forwardable explained &middot; Hrvoje Šimić </title>
-  <meta name="title" content="Forwardable explained &middot; Hrvoje Šimić">
+  <title> Rails 5 attributes API &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Rails 5 attributes API &middot; Hrvoje Šimić">
 </head>
 
 
@@ -99,37 +95,20 @@
       <div class="container content">
         <div class="post">
   <div class="post-meta">
-    <h1 class="post-title">Forwardable explained</h1>
+    <h1 class="post-title">Rails 5 attributes API</h1>
     <div class="published">
-      May 12, 2012 in
-      ruby
+       in
+      rails
     </div>
   </div>
-  <p>There&#39;s a pretty cool module called <a href="http://www.ruby-doc.org/stdlib-1.9.3/libdoc/forwardable/rdoc/Forwardable.html">Forwardable</a> and it&#39;s used for delegation. Let me explain this a little better...</p>
+  <p>Write how cool it was when you discovered 
+attributes. Check the donation model in Dime
+commit b707645.</p>
 
-<p>Delegation is a design pattern in which an object delegates its own method to another object.</p>
-
-<p><em>Why would you ever need that?</em></p>
-
-<p>Here&#39;s an example:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'forwardable'</span>
-
-<span class="k">class</span> <span class="nc">Employers</span>
-  <span class="kp">extend</span> <span class="no">Forwardable</span>
-
-  <span class="nb">attr_reader</span> <span class="ss">:all</span>
-
-  <span class="n">def_delegator</span> <span class="ss">:@all</span><span class="p">,</span><span class="ss">:length</span><span class="p">,</span><span class="ss">:size</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">ids</span><span class="p">)</span>
-    <span class="vi">@all</span> <span class="o">=</span> <span class="n">ids</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="n">employers</span> <span class="o">=</span> <span class="no">Employers</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">employers</span><span class="p">.</span><span class="nf">size</span> <span class="c1"># =&gt; 4</span>
-</code></pre></div>
-<p>We have declared a new method on our instance variable, so we when we call size on it, it will forward our call to <em>length</em>.</p>
+<p>The coolest part was how much casting 
+cover_fees to boolean helped in views, since
+checkbox was returning &quot;1&quot; when set and
+&quot;0&quot; otherwise.</p>
 
 
   <div class='bottom'>

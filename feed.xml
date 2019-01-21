@@ -7,6 +7,19 @@
 		<atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Testing Stimulus</title>
+				
+					<description>&lt;p&gt;Since the &lt;a href=&quot;https://stimulusjs.org/handbook/origin&quot;&gt;official Stimulus handbook&lt;/a&gt;
+doesn&amp;#39;t cover testing, I&amp;#39;d like to share how I&amp;#39;ve approached testing
+of a Stimulus controller.&lt;/p&gt;
+</description>
+				
+                        	<pubDate>Sat, 19 Jan 2019 00:00:00 +0100</pubDate>
+				<link>http://shime.sh/testing-stimulus</link>
+				<guid isPermaLink="true">http://shime.sh/testing-stimulus</guid>
+			</item>
+		
+			<item>
 				<title>A short guide for wasting hundreds of hours on your idea</title>
 				
 					<description>&lt;p&gt;I&amp;#39;ve killed two products I&amp;#39;ve spent a considerable amount of time
@@ -119,18 +132,6 @@ is indirectly putting bread on my table, so I think a small act of gratitude goe
                         	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
 				<link>http://shime.sh/thanks-via-email</link>
 				<guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
-			</item>
-		
-			<item>
-				<title>4 tips from 6 years of remote freelancing</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve been freelancing remotely for the past six years. Here are some of the things
-I&amp;#39;ve learned over the years.&lt;/p&gt;
-</description>
-				
-                        	<pubDate>Sat, 24 Jun 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</link>
-				<guid isPermaLink="true">http://shime.sh/4-tips-from-6-years-of-remote-freelancing</guid>
 			</item>
 		
 	</channel>

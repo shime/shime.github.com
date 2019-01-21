@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Overriding instance method with a module","dateModified":"2012-08-06T00:00:00+02:00","datePublished":"2012-08-06T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/overriding-instance-method-with-a-module"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/overriding-instance-method-with-a-module","@context":"http://schema.org"}</script>
+{"datePublished":"2012-08-06T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/overriding-instance-method-with-a-module"},"dateModified":"2012-08-06T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/overriding-instance-method-with-a-module","headline":"Overriding instance method with a module","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Overriding instance method with a module &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Overriding instance method with a module &middot; Hrvoje Šimić">
+  <meta name="title" content="Overriding instance method with a module &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,22 +101,22 @@
   <div class="post-meta">
     <h1 class="post-title">Overriding instance method with a module</h1>
     <div class="published">
-      06 Aug 2012 in
+      August 6, 2012 in
       ruby
     </div>
   </div>
   <p>This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.</p>
 
 <p>Let me describe the problem:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -124,8 +124,8 @@
   <span class="kp">include</span> <span class="no">CanCook</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I don&#39;t know how to bake tortillas :(</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I don't know how to bake tortillas :(</span>
 </code></pre></div>
 <p>Poor Mario doesn&#39;t know how to bake anything. We want to teach him how to bake, to stand out from other programmers!</p>
 
@@ -138,15 +138,15 @@
 <ul>
 <li>Subclass Programmer and then include module</li>
 </ul>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -154,8 +154,8 @@
   <span class="kp">include</span> <span class="no">CanCook</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">CulinaryProgrammer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">CulinaryProgrammer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p><em>What&#39;s wrong with this?</em></p>
 
@@ -164,21 +164,21 @@
 <ul>
 <li>Extend just the instances you need</li>
 </ul>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">extend</span> <span class="no">CanCook</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">extend</span> <span class="no">CanCook</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p><em>What&#39;s wrong with this?</em></p>
 
@@ -187,21 +187,21 @@
 <ul>
 <li>Perform a gross hack that removes the original method</li>
 </ul>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+    <span class="n">base</span><span class="p">.</span><span class="nf">class_eval</span> <span class="k">do</span>
       <span class="n">remove_method</span> <span class="ss">:bake</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -209,8 +209,8 @@
   <span class="kp">include</span> <span class="no">CanCook</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p><em>What&#39;s wrong with this?</em></p>
 
@@ -221,21 +221,21 @@ The good part is that your instances of <em>Programmer</em> will now know how to
 <ul>
 <li>   No need to use module if using remove_method</li>
 </ul>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Programmer</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="n">alias_method</span> <span class="ss">:_real_bake</span><span class="p">,</span> <span class="ss">:bake</span>
+  <span class="kp">alias_method</span> <span class="ss">:_real_bake</span><span class="p">,</span> <span class="ss">:bake</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p><em>What&#39;s wrong with this?</em></p>
 
@@ -244,41 +244,41 @@ The original method is preserved and available for later usage. However, this is
 Modules are used to describe behavior that can be shared between objects. This removes that flexibility.</p>
 
 <p>Here&#39;s the alternative:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">override_bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="kp">include</span> <span class="no">CanCook</span>
-  <span class="n">alias_method</span> <span class="ss">:bake</span><span class="p">,</span> <span class="ss">:override_bake</span>
+  <span class="kp">alias_method</span> <span class="ss">:bake</span><span class="p">,</span> <span class="ss">:override_bake</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p>I like this more since it still preserves the original, but we&#39;re still using a module, even though the methods don&#39;t share the name.</p>
 
 <ul>
 <li>Use (prepend) library by John Mair</li>
 </ul>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;prepend&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"prepend"</span>
 <span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -286,8 +286,8 @@ Modules are used to describe behavior that can be shared between objects. This r
   <span class="n">prepend</span> <span class="no">CanCook</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p><em>What&#39;s wrong with this?</em></p>
 
@@ -301,10 +301,10 @@ Does any of these make you jump around your room screaming how great this code i
 I didn&#39;t think so.</p>
 
 <p>But behold! This is the solution by <a href="https://github.com/rkh">@rkh</a> which pretty much encapsulates why I love his work.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Prepending</span>
   <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
     <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
+    <span class="n">base</span><span class="p">.</span><span class="nf">extend</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">).</span><span class="nf">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -313,13 +313,13 @@ I didn&#39;t think so.</p>
   <span class="kp">extend</span> <span class="no">Prepending</span>
 
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -327,8 +327,8 @@ I didn&#39;t think so.</p>
   <span class="kp">include</span> <span class="no">CanCook</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p>I&#39;m going to describe this solution in detail, so if you&#39;re not amazed, this post will not get any more interesting.</p>
 
@@ -359,23 +359,23 @@ Our code is nicely organised, but the whole beauty lays in a module named <em>Pr
 In our code it happens when we include CanCook into Programmer on line 24.</p>
 
 <p>Note that self will refer to CanCook, and base will refer to Programmer class.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span>    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
 </code></pre></div>
 <p><em>Save this module to a variable, so we can use it later.</em></p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">base</span><span class="p">.</span><span class="nf">extend</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">).</span><span class="nf">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
 </code></pre></div>
 <p><em>Extend the Programmer class with anonymous module.</em></p>
 
 <p>This is somewhat more expressive:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Prepending</span>
   <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
     <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">beauty</span> <span class="o">=</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span>
+    <span class="n">beauty</span> <span class="o">=</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
       <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
-        <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
+        <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">).</span><span class="nf">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
       <span class="k">end</span>
     <span class="k">end</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="n">beauty</span>
+    <span class="n">base</span><span class="p">.</span><span class="nf">extend</span> <span class="n">beauty</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -384,15 +384,15 @@ In our code it happens when we include CanCook into Programmer on line 24.</p>
 <p>By defining the module and the method in block, we stay in the same lexical closure, so we can access the local variables.</p>
 
 <p><em>What is wrong with this line of code?</em></p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Prepending</span>
   <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
     <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">beauty</span> <span class="o">=</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span>
+    <span class="n">beauty</span> <span class="o">=</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
       <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-        <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
+        <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">).</span><span class="nf">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
       <span class="k">end</span>
     <span class="k">end</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="n">beauty</span>
+    <span class="n">base</span><span class="p">.</span><span class="nf">extend</span> <span class="n">beauty</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -411,11 +411,11 @@ This enables overriding instance methods.</p>
 
 <p><a href="https://github.com/ryanlecompte">Ryan LeCompte</a> has another, more easily understandable solution.
 Instead of using an anonymous module, we could simply use <em>define<em>singleton</em>method</em>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Prepending</span>
   <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
     <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">define_singleton_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
-      <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
+    <span class="n">base</span><span class="p">.</span><span class="nf">define_singleton_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">).</span><span class="nf">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -425,13 +425,13 @@ Instead of using an anonymous module, we could simply use <em>define<em>singleto
   <span class="kp">extend</span> <span class="no">Prepending</span>
 
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -440,28 +440,28 @@ Instead of using an anonymous module, we could simply use <em>define<em>singleto
   <span class="kp">include</span> <span class="no">CanCook</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p>As Markus explains, we could have extended the instance directly in a constructor.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="nb">self</span><span class="o">.</span><span class="n">extend</span> <span class="no">CanCook</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">extend</span> <span class="no">CanCook</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
+    <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
+<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="p">.</span><span class="nf">new</span>
+<span class="no">Mario</span><span class="p">.</span><span class="nf">bake</span><span class="p">(</span><span class="s2">"tortillas"</span><span class="p">)</span> <span class="c1">#=&gt; I'm baking the tortillas!</span>
 </code></pre></div>
 <p><a href="http://twitter.com/hanke">Florian Hanke</a> explains that this code doesn&#39;t express its intent very well and I couldn&#39;t agree more with him.
 I was very excited when I first saw Konstantin Haase&#39;s technique of achieving this behavior (here is the original <a href="https://gist.github.com/2720016">gist</a>).

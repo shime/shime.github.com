@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Autotest and RSpec problems","dateModified":"2012-01-29T00:00:00+01:00","datePublished":"2012-01-29T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only Test::Unit files and googling around retrieved several solutions. Some of them included creating ~/.autotest file which is read before any autotest session. In that file you should add","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/autotest-and-rspec2-problems"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/autotest-and-rspec2-problems","@context":"http://schema.org"}</script>
+{"datePublished":"2012-01-29T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/autotest-and-rspec2-problems"},"dateModified":"2012-01-29T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only Test::Unit files and googling around retrieved several solutions. Some of them included creating ~/.autotest file which is read before any autotest session. In that file you should add","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/autotest-and-rspec2-problems","headline":"Autotest and RSpec problems","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Autotest and RSpec problems &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Autotest and RSpec problems &middot; Hrvoje Šimić">
+  <meta name="title" content="Autotest and RSpec problems &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,27 +101,27 @@
   <div class="post-meta">
     <h1 class="post-title">Autotest and RSpec problems</h1>
     <div class="published">
-      29 Jan 2012 in
+      January 29, 2012 in
       rspec, ruby
     </div>
   </div>
   <p>I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only <em>Test::Unit</em> files and googling around retrieved several solutions.
 Some of them included creating <em>~/.autotest</em> file which is read before any autotest session. In that file you should add</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Autotest</span><span class="o">.</span><span class="n">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
-  <span class="n">at</span><span class="o">.</span><span class="n">add_mapping</span><span class="p">(</span><span class="sr">%r{^lib/.*\.rb$}</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="p">,</span> <span class="n">_</span><span class="o">|</span>
-    <span class="no">Dir</span><span class="o">[</span><span class="s1">&#39;spec/**/*.rb&#39;</span><span class="o">]</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+  <span class="n">at</span><span class="p">.</span><span class="nf">add_mapping</span><span class="p">(</span><span class="sr">%r{^lib/.*</span><span class="se">\.</span><span class="sr">rb$}</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="p">,</span> <span class="n">_</span><span class="o">|</span>
+    <span class="no">Dir</span><span class="p">[</span><span class="s1">'spec/**/*.rb'</span><span class="p">]</span>
   <span class="p">}</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>This however, didn&#39;t work for me. Running <code>autotest -v</code> provided verbose output including:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>No tests matched spec/requests/emails_about_cancellation.rb
+<div class="highlight"><pre><code class="language-" data-lang="">No tests matched spec/requests/emails_about_cancellation.rb
 No tests matched spec/requests/emails_when_owner_schedules.rb
 No tests matched spec/helpers/showings_helper_spec.rb
 </code></pre></div>
 <p>So basically <em>autotest</em> was unable to recognize <em>rspec</em> for some reason.</p>
 
 <p>After an hour of research I&#39;ve finally found the solution which is as simple as:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ autotest -s rspec2
+<div class="highlight"><pre><code class="language-" data-lang="">$ autotest -s rspec2
 </code></pre></div>
 <p>And now the <em>autotest</em> runs my specs and is watching them for changes. Why is this not documented anywhere remains a mystery to me.</p>
 

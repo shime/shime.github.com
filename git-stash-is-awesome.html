@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Git stash is awesome","dateModified":"2012-01-16T00:00:00+01:00","datePublished":"2012-01-16T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I really like git stash command. It lets you save your current progress and rollback the head state to the last commit.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-stash-is-awesome"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/git-stash-is-awesome","@context":"http://schema.org"}</script>
+{"datePublished":"2012-01-16T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-stash-is-awesome"},"dateModified":"2012-01-16T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I really like git stash command. It lets you save your current progress and rollback the head state to the last commit.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/git-stash-is-awesome","headline":"Git stash is awesome","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Git stash is awesome &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Git stash is awesome &middot; Hrvoje Šimić">
+  <meta name="title" content="Git stash is awesome &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,37 +101,37 @@
   <div class="post-meta">
     <h1 class="post-title">Git stash is awesome</h1>
     <div class="published">
-      16 Jan 2012 in
+      January 16, 2012 in
       git
     </div>
   </div>
   <p>I really like <code>git stash</code> command. It lets you save your current progress and rollback the head state to the last commit.</p>
 
 <p>Let&#39;s say this is my current situation:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git status
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git status
 
-<span class="c1"># On branch master</span>
-<span class="c1"># Changes not staged for commit:</span>
-<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
-<span class="c1">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
-<span class="c1">#</span>
-<span class="c1"># modified:   Gemfile.lock</span>
-<span class="c1"># modified:   Rakefile</span>
-<span class="c1"># modified:   _config.yml</span>
-<span class="c1">#</span>
-<span class="c1"># Untracked files:</span>
-<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="c1">#</span>
-<span class="c1"># sass/</span>
-<span class="c1"># source/</span>
-no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+<span class="c"># On branch master</span>
+<span class="c"># Changes not staged for commit:</span>
+<span class="c">#   (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span class="c">#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span>
+<span class="c">#</span>
+<span class="c"># modified:   Gemfile.lock</span>
+<span class="c"># modified:   Rakefile</span>
+<span class="c"># modified:   _config.yml</span>
+<span class="c">#</span>
+<span class="c"># Untracked files:</span>
+<span class="c">#   (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span class="c">#</span>
+<span class="c"># sass/</span>
+<span class="c"># source/</span>
+no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span>
 </code></pre></div>
 <p>We&#39;re going to save everything into stash.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git add .
-$ git stash save
-$ git status
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add <span class="nb">.</span>
+<span class="nv">$ </span>git stash save
+<span class="nv">$ </span>git status
 
-<span class="c1"># On branch source</span>
+<span class="c"># On branch source</span>
 nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
 </code></pre></div>
 <p>So it basically cleaned up the working directory.
@@ -141,17 +141,17 @@ With this command you basically put your changes elsewhere and you&#39;re able t
 <p>After the ordinary <code>git add -A &amp;&amp; git commit &amp;&amp; git push</code> command flow, you can issue <code>git stash list</code>. This shows you the current stash status.</p>
 
 <p>You can have multiple items in your stash, and when you do it&#39;s very handy to mark them with messages like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git stash save <span class="s2">&quot;started to work on task 3.2&quot;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git stash save <span class="s2">"started to work on task 3.2"</span>
 </code></pre></div>
 <p>So let&#39;s say you got multiple items in your stash:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git stash list
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git stash list
 
-stash@<span class="o">{</span><span class="m">0</span><span class="o">}</span>: WIP on master: e106412 <span class="nb">test</span> fix and price display fix
-stash@<span class="o">{</span><span class="m">1</span><span class="o">}</span>: On master: fixing humanized attributes
+stash@<span class="o">{</span>0<span class="o">}</span>: WIP on master: e106412 <span class="nb">test </span>fix and price display fix
+stash@<span class="o">{</span>1<span class="o">}</span>: On master: fixing humanized attributes
 </code></pre></div>
 <p>If you execute <code>git stash apply</code> now, the last added item will be pulled out of the stash and merged with master (stashes really follow LIFO principle).
 We can still merge an item named “fixing humanized attributes” like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git stash apply stash@<span class="o">{</span><span class="m">1</span><span class="o">}</span>.
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git stash apply stash@<span class="o">{</span>1<span class="o">}</span><span class="nb">.</span>
 </code></pre></div>
 <p>This is not the only scenario where stash comes handy. It also does when you wish to switch branches, rollback states, but would like to keep your current changes.</p>
 

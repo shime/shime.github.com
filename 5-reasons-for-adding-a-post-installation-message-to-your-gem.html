@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"5 reasons for adding a post-installation message to your gem","dateModified":"2013-11-30T00:00:00+01:00","datePublished":"2013-11-30T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Wondering whether you should add a post-installation message to your gem? Here&#39;s a list situations in which doing so is desirable:","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem","@context":"http://schema.org"}</script>
+{"datePublished":"2013-11-30T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem"},"dateModified":"2013-11-30T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Wondering whether you should add a post-installation message to your gem? Here&#39;s a list situations in which doing so is desirable:","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem","headline":"5 reasons for adding a post-installation message to your gem","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> 5 reasons for adding a post-installation message to your gem &middot; Hrvoje Šimić </title>
-	<meta name="title" content="5 reasons for adding a post-installation message to your gem &middot; Hrvoje Šimić">
+  <meta name="title" content="5 reasons for adding a post-installation message to your gem &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,7 +101,7 @@
   <div class="post-meta">
     <h1 class="post-title">5 reasons for adding a post-installation message to your gem</h1>
     <div class="published">
-      30 Nov 2013 in
+      November 30, 2013 in
       ruby
     </div>
   </div>
@@ -139,11 +139,11 @@ developer out there will be aware of the presence of that gem in her project. It
 <h2>workarounds for gems that currently have post-installation messages</h2>
 
 <p>You can still avoid having any post-installation messages. Bundler has a flag for it</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>bundle install --quiet
+<div class="highlight"><pre><code class="language-" data-lang="">bundle install --quiet
 </code></pre></div>
 <p>Although, Linux people (like me) will of course wonder why is that flag even present, when you can just ditch it
 to the black hole</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>bundle install &gt; /dev/null
+<div class="highlight"><pre><code class="language-" data-lang="">bundle install &gt; /dev/null
 </code></pre></div>
 <h2>dangers of workarounds and conclusion</h2>
 
@@ -153,14 +153,14 @@ to the black hole</p>
 fallback to this method.</p>
 
 <p>An example of this would be when a gem changes its name, like how <code>sqlite3-ruby</code> did:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Hello! The sqlite3-ruby gem has changed it&#39;s name to just sqlite3.
+<div class="highlight"><pre><code class="language-" data-lang="">Hello! The sqlite3-ruby gem has changed it's name to just sqlite3.
 Rather than installing sqlite3-ruby, you should install sqlite3.
 Please update your dependencies accordingly.
 </code></pre></div>
 <p>Useful, right?</p>
 
 <p>What about:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>When you HTTParty, you must party hard!
+<div class="highlight"><pre><code class="language-" data-lang="">When you HTTParty, you must party hard!
 </code></pre></div>
 <p>Must you <code>party --hard</code>? I don&#39;t think so. I didn&#39;t and I&#39;m still here.</p>
 

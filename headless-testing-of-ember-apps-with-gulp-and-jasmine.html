@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Headless testing of Ember apps with Gulp and Jasmine","dateModified":"2014-08-28T00:00:00+02:00","datePublished":"2014-08-28T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"TL;DR: use Karma as a test runner for your JS apps. It&#39;s great because it adds DOM support without any effort and you need DOM support when you&#39;re testing browser apps.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine","@context":"http://schema.org"}</script>
+{"datePublished":"2014-08-28T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine"},"dateModified":"2014-08-28T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"TL;DR: use Karma as a test runner for your JS apps. It&#39;s great because it adds DOM support without any effort and you need DOM support when you&#39;re testing browser apps.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine","headline":"Headless testing of Ember apps with Gulp and Jasmine","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Headless testing of Ember apps with Gulp and Jasmine &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Headless testing of Ember apps with Gulp and Jasmine &middot; Hrvoje Šimić">
+  <meta name="title" content="Headless testing of Ember apps with Gulp and Jasmine &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,7 +101,7 @@
   <div class="post-meta">
     <h1 class="post-title">Headless testing of Ember apps with Gulp and Jasmine</h1>
     <div class="published">
-      28 Aug 2014 in
+      August 28, 2014 in
       javascript
     </div>
   </div>
@@ -122,7 +122,7 @@
 <p>Having said all this, it&#39;s time to test this Ember app.</p>
 
 <p>When you try to setup your Ember app for testing with something like this:</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;ember-testing-container&quot;&gt;&lt;div id=&quot;ember-testing&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;div id="ember-testing-container"&gt;&lt;div id="ember-testing"&gt;&lt;/div&gt;&lt;/div&gt;'</span><span class="p">);</span>
 </code></pre></div>
 <p>You&#39;ll receive this error message:
 <code>

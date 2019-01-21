@@ -687,3 +687,7 @@ figcaption {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
+pre {
+  color: #f8f8f2;
+}

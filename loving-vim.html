@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Loving Vim","dateModified":"2018-03-19T00:00:00+01:00","datePublished":"2018-03-19T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"This post is inspired by Falling in love with Vim again by @michaelsoolee.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/loving-vim"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/loving-vim","@context":"http://schema.org"}</script>
+{"datePublished":"2018-03-19T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/loving-vim"},"dateModified":"2018-03-19T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"This post is inspired by Falling in love with Vim again by @michaelsoolee.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/loving-vim","headline":"Loving Vim","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Loving Vim &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Loving Vim &middot; Hrvoje Šimić">
+  <meta name="title" content="Loving Vim &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,7 +101,7 @@
   <div class="post-meta">
     <h1 class="post-title">Loving Vim</h1>
     <div class="published">
-      19 Mar 2018 in
+      March 19, 2018 in
       vim
     </div>
   </div>
@@ -170,14 +170,14 @@ your settings if something happens to them locally. </p>
 <p><img src="/public/ctrlp.gif" alt=""></p>
 
 <p>Here&#39;s how I&#39;ve configured it.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; Set CTRL-P to ignore anything matching this regex</span>
-<span class="k">let</span> <span class="k">g</span>:ctrlp_custom_ignore <span class="p">=</span> <span class="s1">&#39;DS_Store\|tmp\|node_modules&#39;</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">" Set CTRL-P to ignore anything matching this regex</span>
+<span class="k">let</span> <span class="nv">g:ctrlp_custom_ignore</span> <span class="p">=</span> <span class="s1">'DS_Store\|tmp\|node_modules'</span>
 
-<span class="c">&quot; Set CTRL-P to lookup files based on regex, instead of basename only</span>
-<span class="k">let</span> <span class="k">g</span>:ctrlp_regexp <span class="p">=</span> <span class="m">1</span>
+<span class="c">" Set CTRL-P to lookup files based on regex, instead of basename only</span>
+<span class="k">let</span> <span class="nv">g:ctrlp_regexp</span> <span class="p">=</span> <span class="m">1</span>
 
-<span class="c">&quot; Set CTRL-P working directory to the first ancestor directory that contains .git/</span>
-<span class="k">let</span> <span class="k">g</span>:ctrlp_working_path_mode <span class="p">=</span> <span class="m">2</span>
+<span class="c">" Set CTRL-P working directory to the first ancestor directory that contains .git/</span>
+<span class="k">let</span> <span class="nv">g:ctrlp_working_path_mode</span> <span class="p">=</span> <span class="m">2</span>
 </code></pre></div>
 <h3>2. <a href="https://github.com/tpope/vim-unimpaired">unimpaired</a></h3>
 
@@ -195,17 +195,17 @@ a replacement for grep under the hood.</p>
 <p><img src="/public/ag.gif" alt=""></p>
 
 <p>Notice how I use <code>[q</code> and <code>]q</code> to navigate between results. Here&#39;s my configuration.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; Tell ag.vim to stop using regex search</span>
-<span class="k">let</span> <span class="k">g</span>:ackprg <span class="p">=</span> <span class="s1">&#39;ag --nogroup --nocolor --column --literal&#39;</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">" Tell ag.vim to stop using regex search</span>
+<span class="k">let</span> <span class="nv">g:ackprg</span> <span class="p">=</span> <span class="s1">'ag --nogroup --nocolor --column --literal'</span>
 
-<span class="c">&quot; Abbreviate ag to Ag</span>
+<span class="c">" Abbreviate ag to Ag</span>
 cabbrev ag Ag
 
-<span class="c">&quot; Map CTRL+A to Ag</span>
-map <span class="p">&lt;</span>C<span class="p">-</span><span class="k">a</span><span class="p">&gt;</span> :Ag 
+<span class="c">" Map CTRL+A to Ag</span>
+map <span class="p">&lt;</span>C<span class="p">-</span><span class="k">a</span><span class="p">&gt;</span> <span class="p">:</span>Ag 
 
-<span class="c">&quot; Search for word under cursor with ag</span>
-<span class="nb">noremap</span> <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">a</span> :Ag <span class="p">&lt;</span>cword<span class="p">&gt;&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+<span class="c">" Search for word under cursor with ag</span>
+noremap <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">a</span> <span class="p">:</span>Ag <span class="p">&lt;</span>cword<span class="p">&gt;&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>And that&#39;s it, those are the most essential plugins I would recommend.
 Other than those plugins, I use <code>&lt;C-o&gt;</code> and <code>&lt;C-i&gt;</code> to navigate between files a lot.</p>

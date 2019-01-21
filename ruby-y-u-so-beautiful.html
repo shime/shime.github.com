@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/syntax.css?1547921882081913000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1547921882081913000">
+  <link rel="stylesheet" href="/public/css/poole.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548106502888714000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548106502888714000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -58,12 +58,12 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Ruby! Y U SO BEAUTIFUL?","dateModified":"2011-11-20T00:00:00+01:00","datePublished":"2011-11-20T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/ruby-y-u-so-beautiful"},"@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/ruby-y-u-so-beautiful","@context":"http://schema.org"}</script>
+{"datePublished":"2011-11-20T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/ruby-y-u-so-beautiful"},"dateModified":"2011-11-20T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/ruby-y-u-so-beautiful","headline":"Ruby! Y U SO BEAUTIFUL?","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <title> Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić </title>
-	<meta name="title" content="Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić">
+  <meta name="title" content="Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić">
 </head>
 
 
@@ -101,24 +101,24 @@
   <div class="post-meta">
     <h1 class="post-title">Ruby! Y U SO BEAUTIFUL?</h1>
     <div class="published">
-      20 Nov 2011 in
+      November 20, 2011 in
       ruby
     </div>
   </div>
   <p>Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how
 I do it:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">String</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">String</span><span class="p">.</span><span class="nf">class_eval</span> <span class="k">do</span>
  <span class="k">def</span> <span class="nf">a_or_an</span>
-   <span class="sx">%w(a e i o u)</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">downcase</span><span class="o">.</span><span class="n">first</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;an </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="s2">&quot;a </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span>
+   <span class="sx">%w(a e i o u)</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">downcase</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span> <span class="p">?</span> <span class="s2">"an </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">"</span> <span class="p">:</span> <span class="s2">"a </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">"</span>
  <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>If you put this baby in some file inside config/initializers of your
 app, you will be able to do this:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="s2">&quot;carrot&quot;</span><span class="o">.</span><span class="n">a_or_an</span>
-<span class="o">=&gt;</span> <span class="s2">&quot;a carrot&quot;</span>
-<span class="s2">&quot;apple&quot;</span><span class="o">.</span><span class="n">a_or_an</span>
-<span class="o">=&gt;</span> <span class="s2">&quot;an apple&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s2">"carrot"</span><span class="p">.</span><span class="nf">a_or_an</span>
+<span class="o">=&gt;</span> <span class="s2">"a carrot"</span>
+<span class="s2">"apple"</span><span class="p">.</span><span class="nf">a_or_an</span>
+<span class="o">=&gt;</span> <span class="s2">"an apple"</span>
 </code></pre></div>
 <p>Yeah I know, it&#39;s awesome! I&#39;ve just thought every instance of class &quot;String&quot; how to do something new.
 This is called metaprogramming and this is one of the coolest things I&#39;ve found out about Ruby. However, don&#39;t use my
