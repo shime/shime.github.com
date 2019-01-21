@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
+    
+  
+  
     <url>
-      <loc>http://shime.sh/til/2018-12-21-rails-5-attributes-api</loc>
+      <loc>http://shime.sh/feed.xml</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -11,11 +14,8 @@
     
   
   
-    
-  
-  
     <url>
-      <loc>http://shime.sh/feed.xml</loc>
+      <loc>http://shime.sh/articles/</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -60,15 +60,6 @@
   
   
     <url>
-      <loc>http://shime.sh/articles/</loc>
-      <lastmod>2019-01-21</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-  
-  
-    <url>
       <loc>http://shime.sh/sitemap.xml</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
@@ -96,7 +87,7 @@
   
   
     <url>
-      <loc>http://shime.sh/books</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -105,7 +96,7 @@
   
   
     <url>
-      <loc>http://shime.sh/thoughts</loc>
+      <loc>http://shime.sh/books</loc>
       <lastmod>2019-01-21</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -394,6 +385,13 @@
   
   <url>
     <loc>http://shime.sh/til/mocking-class-methods-using-minitest</loc>
+    <lastmod>2019-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shime.sh/til/rails-5-attributes-api</loc>
     <lastmod>2019-01-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
