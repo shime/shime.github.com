@@ -1,6 +1,6 @@
-* { 
-  margin: 0; 
-  padding: 0; 
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -46,7 +46,7 @@ ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 265px;
+  width: 400px;
 }
 
 li {
@@ -78,7 +78,6 @@ li {
 @media screen and (min-width: 1984px) {
   .images {
     max-width: 2000px;
-
   }
 }
 
@@ -106,5 +105,11 @@ li {
     width: 100%;
     text-align: center;
     margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 38em) {
+  html {
+    font-size: 20px;
   }
 }

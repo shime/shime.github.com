@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css?1548528603513907000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1548528603513907000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1548528603513907000">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Make HTTP requests from Vim" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="After discovering that there is a Visual Studio code plugin which enables HTTP requests from inside the editor, I was delighted to find that there&#39;s also a Vim plugin for that." />
+<meta property="og:description" content="After discovering that there is a Visual Studio code plugin which enables HTTP requests from inside the editor, I was delighted to find that there&#39;s also a Vim plugin for that." />
+<link rel="canonical" href="http://shime.sh/til/make-http-requests-from-vim" />
+<meta property="og:url" content="http://shime.sh/til/make-http-requests-from-vim" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-26T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/make-http-requests-from-vim","headline":"Make HTTP requests from Vim","dateModified":"2019-01-26T00:00:00+01:00","datePublished":"2019-01-26T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/make-http-requests-from-vim"},"description":"After discovering that there is a Visual Studio code plugin which enables HTTP requests from inside the editor, I was delighted to find that there&#39;s also a Vim plugin for that.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <title> Make HTTP requests from Vim &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Make HTTP requests from Vim &middot; Hrvoje Šimić">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles/'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/til/'>TIL</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography/'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading/'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Make HTTP requests from Vim</h1>
+    <div class="published">
+      January 26, 2019 in
+      vim
+    </div>
+  </div>
+  <p>After discovering that there is a Visual Studio code <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">plugin which
+enables HTTP requests from inside the editor</a>,
+I was delighted to find that there&#39;s also a <a href="https://github.com/nicwest/vim-http">Vim
+plugin</a> for that.</p>
+
+<p>Who needs Postman or httpie when you can do
+it from your editor like this:</p>
+<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="nf">GET</span> <span class="nn">http://httpbin.org/get</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+Accept: application/json
+</code></pre></div>
+<p>Just hit <code>:Http</code> and you&#39;ll get a nicely formatted response:</p>
+<div class="highlight"><pre><code class="language-http" data-lang="http"><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+<span class="na">Server</span><span class="p">:</span> <span class="s">gunicorn/19.9.0</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Sat, 26 Jan 2019 17:53:00 GMT</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">303</span>
+<span class="na">Access-Control-Allow-Origin</span><span class="p">:</span> <span class="s">*</span>
+<span class="na">Access-Control-Allow-Credentials</span><span class="p">:</span> <span class="s">true</span>
+<span class="na">Via</span><span class="p">:</span> <span class="s">1.1 vegur</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> 
+  </span><span class="s2">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Accept"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*/*"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"Connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"close"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"Content-Length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/x-www-form-urlencoded"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"Host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"httpbin.org"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"User-Agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"curl/7.54.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://httpbin.org/get"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+
+  <div class='bottom'>
+    <section class="author">
+      <img src='/public/shime.jpg' alt='' />
+      <div>
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+
+        <small>
+          I'm a Ruby developer focused on building MVPs with Ruby on Rails.
+        </small>
+      </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
