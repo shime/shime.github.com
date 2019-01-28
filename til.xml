@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hrvoje Šimić's TIL</title>
+    <description>A collection of Hrvoje Šimić's short form articles</description>		
+    <link>http://shime.sh</link>
+    <atom:link href="http://shime.sh/til.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pretty format JSON in Vim</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
+in a &lt;a href=&quot;/til/pretty-format-json&quot;&gt;previous TIL post&lt;/a&gt;, but
+I&amp;#39;ve discovered another great tool for the job,
+with the shorter name.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/pretty-format-json-in-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/pretty-format-json-in-vim</guid>
+    </item>
+    
+    <item>
+      <title>Make HTTP requests from Vim</title>
+      
+      <description>&lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
+enables HTTP requests from inside the editor&lt;/a&gt;,
+I was delighted to find that there&amp;#39;s also a &lt;a href=&quot;https://github.com/nicwest/vim-http&quot;&gt;Vim
+plugin&lt;/a&gt; for that.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/make-http-requests-from-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/make-http-requests-from-vim</guid>
+    </item>
+    
+    <item>
+      <title>Pretty format JSON</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve used to use some silly NPM
+package for pretty formatting of
+JSON before.&lt;/p&gt;
+</description>
+      
+      <pubDate>Mon, 21 Jan 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/pretty-format-json</link>
+      <guid isPermaLink="true">http://shime.sh/til/pretty-format-json</guid>
+    </item>
+    
+    <item>
+      <title>Mocking class methods using Minitest</title>
+      
+      <description>&lt;p&gt;Minitest has a convoluted API for mocking 
+class methods, so in order to do so you&amp;#39;ll
+have to use another gem.&lt;/p&gt;
+</description>
+      
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/mocking-class-methods-using-minitest</link>
+      <guid isPermaLink="true">http://shime.sh/til/mocking-class-methods-using-minitest</guid>
+    </item>
+    
+    <item>
+      <title>Enforcing strong parameters</title>
+      
+      <description>&lt;p&gt;In order to enforce strong parameters in JavaScript,
+à la Ruby, you can provide a function that checks
+the existence of the paramater as a default parameter.&lt;/p&gt;
+</description>
+      
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/strong-parameters-in-javascript</link>
+      <guid isPermaLink="true">http://shime.sh/til/strong-parameters-in-javascript</guid>
+    </item>
+    
+    <item>
+      <title>Faster database resets</title>
+      
+      <description>&lt;p&gt;After I&amp;#39;ve made a significant change to the 
+relationships of the models on the application
+I&amp;#39;m working on; I wanted to update the seeds file
+to accommodate new relationships.&lt;/p&gt;
+</description>
+      
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/faster-database-resets-in-rails</link>
+      <guid isPermaLink="true">http://shime.sh/til/faster-database-resets-in-rails</guid>
+    </item>
+    
+    <item>
+      <title>Adding a hidden collection</title>
+      
+      <description>&lt;p&gt;TIL is the hidden section of this site, and since
+I&amp;#39;m using Jekyll as an engine, I needed to
+learn how to add a new section.&lt;/p&gt;
+</description>
+      
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/adding-new-hidden-collection-in-jekyll</link>
+      <guid isPermaLink="true">http://shime.sh/til/adding-new-hidden-collection-in-jekyll</guid>
+    </item>
+    
+  </channel>
+</rss>

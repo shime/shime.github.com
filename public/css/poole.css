@@ -445,7 +445,8 @@ a.pagination-item:hover {
   text-align: center;
 }
 
-section.til .description {
+section.til,
+.posts .description {
   text-align: center;
   margin: 0 auto;
   max-width: 400px;

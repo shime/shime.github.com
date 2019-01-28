@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Hrvoje Šimić</title>
-		<description></description>		
-		<link>http://shime.sh</link>
-		<atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
-		
-			<item>
-				<title>Testing Stimulus</title>
-				
-					<description>&lt;p&gt;Since the &lt;a href=&quot;https://stimulusjs.org/handbook/origin&quot;&gt;official Stimulus handbook&lt;/a&gt;
+  <channel>
+    <title>Hrvoje Šimić's Articles</title>
+    <description>A collection of Hrvoje Šimić's long form articles</description>		
+    <link>http://shime.sh</link>
+    <atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
+
+    
+    <item>
+      <title>Testing Stimulus</title>
+      
+      <description>&lt;p&gt;Since the &lt;a href=&quot;https://stimulusjs.org/handbook/origin&quot;&gt;official Stimulus handbook&lt;/a&gt;
 doesn&amp;#39;t include testing, and my team at &lt;a href=&quot;https://boosterstage.net&quot;&gt;Booster Stage&lt;/a&gt;
 recently had to cover a Stimulus controller with tests, I&amp;#39;d like to share our approach.&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Sat, 19 Jan 2019 00:00:00 +0100</pubDate>
-				<link>http://shime.sh/testing-stimulus</link>
-				<guid isPermaLink="true">http://shime.sh/testing-stimulus</guid>
-			</item>
-		
-			<item>
-				<title>A short guide for wasting hundreds of hours on your idea</title>
-				
-					<description>&lt;p&gt;I&amp;#39;ve killed two products I&amp;#39;ve spent a considerable amount of time
+      
+      <pubDate>Sat, 19 Jan 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/testing-stimulus</link>
+      <guid isPermaLink="true">http://shime.sh/testing-stimulus</guid>
+    </item>
+    
+    <item>
+      <title>A short guide for wasting hundreds of hours on your idea</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve killed two products I&amp;#39;ve spent a considerable amount of time
 building. I&amp;#39;ve wasted hundreds of hours
 this way. The clichéd &amp;quot;at least I&amp;#39;ve learned something&amp;quot; is my only consolation.&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Sat, 14 Jul 2018 00:00:00 +0200</pubDate>
-				<link>http://shime.sh/how-to-waste-time-on-your-idea</link>
-				<guid isPermaLink="true">http://shime.sh/how-to-waste-time-on-your-idea</guid>
-			</item>
-		
-			<item>
-				<title>Quality vs popularity</title>
-				
-					<description>&lt;p&gt;When validating library quality, we like to 
+      
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/how-to-waste-time-on-your-idea</link>
+      <guid isPermaLink="true">http://shime.sh/how-to-waste-time-on-your-idea</guid>
+    </item>
+    
+    <item>
+      <title>Quality vs popularity</title>
+      
+      <description>&lt;p&gt;When validating library quality, we like to 
 take a look at some metrics like
 the time of the last commit or the number of
 stars as if those relate to quality.
@@ -44,95 +45,95 @@ validating the quality by other means,
 we go with the easiest approach
 of following everybody else.&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.sh/quality-vs-popularity</link>
-				<guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
-			</item>
-		
-			<item>
-				<title>Git commit message syntax highlighting in Vim</title>
-				
-					<description>&lt;p&gt;Writing git commit messages should be done inside your
+      
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/quality-vs-popularity</link>
+      <guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
+    </item>
+    
+    <item>
+      <title>Git commit message syntax highlighting in Vim</title>
+      
+      <description>&lt;p&gt;Writing git commit messages should be done inside your
 editor because it allows you to add a lengthier commit
 description, as opposed to &lt;code&gt;git commit -m&lt;/code&gt; which just
 puts everything as the first line.&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
-				<guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
-			</item>
-		
-			<item>
-				<title>Loving Vim</title>
-				
-					<description>&lt;p&gt;&lt;em&gt;This post is inspired by &lt;a href=&quot;https://michaelsoolee.com/love-vim-again/&quot;&gt;Falling in love with Vim again&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/michaelsoolee&quot;&gt;@michaelsoolee&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+      
+      <pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
+      <guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
+    </item>
+    
+    <item>
+      <title>Loving Vim</title>
+      
+      <description>&lt;p&gt;&lt;em&gt;This post is inspired by &lt;a href=&quot;https://michaelsoolee.com/love-vim-again/&quot;&gt;Falling in love with Vim again&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/michaelsoolee&quot;&gt;@michaelsoolee&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.sh/loving-vim</link>
-				<guid isPermaLink="true">http://shime.sh/loving-vim</guid>
-			</item>
-		
-			<item>
-				<title>Freedom</title>
-				
-					<description>&lt;p&gt;I&amp;#39;m a freelancer and I love what I do. There is a thing I value the most in this type of work.&lt;/p&gt;
+      
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/loving-vim</link>
+      <guid isPermaLink="true">http://shime.sh/loving-vim</guid>
+    </item>
+    
+    <item>
+      <title>Freedom</title>
+      
+      <description>&lt;p&gt;I&amp;#39;m a freelancer and I love what I do. There is a thing I value the most in this type of work.&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
-				<link>http://shime.sh/freedom</link>
-				<guid isPermaLink="true">http://shime.sh/freedom</guid>
-			</item>
-		
-			<item>
-				<title>Programming for $ until I'm too old to</title>
-				
-					<description>&lt;p&gt;The question I get from time to time is this one:&lt;/p&gt;
+      
+      <pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/freedom</link>
+      <guid isPermaLink="true">http://shime.sh/freedom</guid>
+    </item>
+    
+    <item>
+      <title>Programming for $ until I'm too old to</title>
+      
+      <description>&lt;p&gt;The question I get from time to time is this one:&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
-				<guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
-			</item>
-		
-			<item>
-				<title>Money and time</title>
-				
-					<description>&lt;blockquote&gt;
+      
+      <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
+      <guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
+    </item>
+    
+    <item>
+      <title>Money and time</title>
+      
+      <description>&lt;blockquote&gt;
 &lt;p&gt;It&amp;#39;s absolutely maddening to see so many people work a job they don&amp;#39;t want to work, so that they can pay for stuff they don&amp;#39;t really need. Time is by far the most valuable &amp;quot;thing/piece of stuff&amp;quot;. How much are you selling an hour of your life for (the whole aspect of the hour... time away from your family, time away from the things you enjoy doing)? Is it worth it?&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-				
-                        	<pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.sh/money-and-time</link>
-				<guid isPermaLink="true">http://shime.sh/money-and-time</guid>
-			</item>
-		
-			<item>
-				<title>Landing that remote job</title>
-				
-					<description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: The bigest problem is standing out. How do you do it?&lt;/p&gt;
+      
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/money-and-time</link>
+      <guid isPermaLink="true">http://shime.sh/money-and-time</guid>
+    </item>
+    
+    <item>
+      <title>Landing that remote job</title>
+      
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: The bigest problem is standing out. How do you do it?&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.sh/landing-that-remote-job</link>
-				<guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
-			</item>
-		
-			<item>
-				<title>Thanks via email</title>
-				
-					<description>&lt;p&gt;I&amp;#39;m a programmer, so in my daily work I depend on the work of others. Others
+      
+      <pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/landing-that-remote-job</link>
+      <guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
+    </item>
+    
+    <item>
+      <title>Thanks via email</title>
+      
+      <description>&lt;p&gt;I&amp;#39;m a programmer, so in my daily work I depend on the work of others. Others
 who have put in the time and created the tools that my work depends on. Their work
 is indirectly putting bread on my table, so I think a small act of gratitude goes a long way.&lt;/p&gt;
 </description>
-				
-                        	<pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
-				<link>http://shime.sh/thanks-via-email</link>
-				<guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
-			</item>
-		
-	</channel>
+      
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/thanks-via-email</link>
+      <guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
+    </item>
+    
+  </channel>
 </rss>
