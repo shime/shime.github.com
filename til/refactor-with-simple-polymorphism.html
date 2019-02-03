@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css?1549233631785148000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1549233631785148000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1549233631785148000">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Refactor with simple polymorphism" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I&#39;m in the process of writing a gem, and I&#39;ve not been really focused on writing the best possible code, in order to build something in the least amount of time. I now have some time on my hands, so I&#39;ve decided to try to make it clearer." />
+<meta property="og:description" content="I&#39;m in the process of writing a gem, and I&#39;ve not been really focused on writing the best possible code, in order to build something in the least amount of time. I now have some time on my hands, so I&#39;ve decided to try to make it clearer." />
+<link rel="canonical" href="http://shime.sh/til/refactor-with-simple-polymorphism" />
+<meta property="og:url" content="http://shime.sh/til/refactor-with-simple-polymorphism" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-02T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactor-with-simple-polymorphism","headline":"Refactor with simple polymorphism","dateModified":"2019-02-02T00:00:00+01:00","datePublished":"2019-02-02T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactor-with-simple-polymorphism"},"description":"I&#39;m in the process of writing a gem, and I&#39;ve not been really focused on writing the best possible code, in order to build something in the least amount of time. I now have some time on my hands, so I&#39;ve decided to try to make it clearer.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <title> Refactor with simple polymorphism &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Refactor with simple polymorphism &middot; Hrvoje Šimić">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles/'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/til/'>TIL</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography/'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading/'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Refactor with simple polymorphism</h1>
+    <div class="published">
+      February 2, 2019 in
+      ruby
+    </div>
+  </div>
+  <p>I&#39;m in the process of writing a gem, and I&#39;ve 
+not been really focused on writing the best possible
+code, in order to build something in the least 
+amount of time. I now have some time on my hands,
+so I&#39;ve decided to try to make it clearer.</p>
+
+<p>This is the code I&#39;ve had:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Output</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'GET'</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s1">''</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">sort_headers</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">to_h</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_http</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> HTTP/1.1</span><span class="se">\n\n</span><span class="s2">"</span>
+
+    <span class="n">headers</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+      <span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">end</span>
+
+    <span class="n">output</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Parser</span>
+  <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="nb">format</span><span class="p">:)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">output</span> <span class="o">=</span> <span class="no">Output</span><span class="p">.</span><span class="nf">new</span>
+
+    <span class="n">output</span><span class="p">.</span><span class="nf">sort_headers</span>
+
+    <span class="k">case</span> <span class="nb">format</span>
+    <span class="k">when</span> <span class="ss">:json</span>
+      <span class="n">output</span><span class="p">.</span><span class="nf">to_h</span><span class="p">.</span><span class="nf">to_json</span>
+    <span class="k">when</span> <span class="ss">:http</span>
+      <span class="n">output</span><span class="p">.</span><span class="nf">to_http</span>
+    <span class="k">else</span>
+      <span class="n">output</span><span class="p">.</span><span class="nf">to_h</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>What&#39;s itching me is how <code>Output</code> knows about the different formats
+this gem supports. What happens when another format is introduced?</p>
+
+<p>I&#39;ve decided to tackle this problem with some good ol&#39; polymorphism.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">
+<span class="no">Output</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'GET'</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s1">''</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">sort_headers</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">to_h</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">convert</span>
+    <span class="k">raise</span> <span class="no">NotImplementedError</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">HTTPOutput</span> <span class="o">&lt;</span> <span class="no">Output</span>
+  <span class="k">def</span> <span class="nf">convert</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> HTTP/1.1</span><span class="se">\n</span><span class="s2">"</span>
+
+    <span class="n">headers</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+      <span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">end</span>
+
+    <span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="n">output</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">JSONOutput</span> <span class="o">&lt;</span> <span class="no">Output</span>
+  <span class="k">def</span> <span class="nf">convert</span>
+    <span class="n">to_h</span><span class="p">.</span><span class="nf">to_json</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">HashOutput</span> <span class="o">&lt;</span> <span class="no">Output</span>
+  <span class="k">def</span> <span class="nf">convert</span>
+    <span class="n">to_h</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Parser</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="ss">format: </span><span class="kp">nil</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">output</span> <span class="o">=</span> <span class="n">create_output</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+
+    <span class="n">output</span><span class="p">.</span><span class="nf">sort_headers</span>
+    <span class="n">output</span><span class="p">.</span><span class="nf">convert</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="no">OUTPUTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="ss">http: </span><span class="no">HTTPOutput</span><span class="p">,</span>
+    <span class="ss">json: </span><span class="no">JSONOutput</span><span class="p">,</span>
+    <span class="ss">hash: </span><span class="no">HashOutput</span>
+  <span class="p">}.</span><span class="nf">freeze</span>
+
+  <span class="k">def</span> <span class="nf">create_output</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+    <span class="no">OUTPUTS</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span> <span class="p">{</span> <span class="no">HashOutput</span> <span class="p">}.</span><span class="nf">new</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Notice how we know have a nice hash of all the formats
+we support and how easy it is to introduce another format.</p>
+
+
+  <div class='bottom'>
+    <section class="author">
+      <img src='/public/shime.jpg' alt='' />
+      <div>
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+
+        <small>
+          I'm a Ruby developer focused on building MVPs with Ruby on Rails.
+        </small>
+      </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

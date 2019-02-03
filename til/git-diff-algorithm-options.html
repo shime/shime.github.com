@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css?1549233631785148000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1549233631785148000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1549233631785148000">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Git diff algorithm options" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I&#39;ve recently refactored a method with a large case statement and wanted to check a diff of the changes." />
+<meta property="og:description" content="I&#39;ve recently refactored a method with a large case statement and wanted to check a diff of the changes." />
+<link rel="canonical" href="http://shime.sh/til/git-diff-algorithm-options" />
+<meta property="og:url" content="http://shime.sh/til/git-diff-algorithm-options" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-03T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/git-diff-algorithm-options","headline":"Git diff algorithm options","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/git-diff-algorithm-options"},"description":"I&#39;ve recently refactored a method with a large case statement and wanted to check a diff of the changes.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <title> Git diff algorithm options &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Git diff algorithm options &middot; Hrvoje Šimić">
+</head>
+
+
+  <body>
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <ul class="masthead-navigation">
+            
+              <li>
+                
+                  <a href='/articles/'>Articles</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/til/'>TIL</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/photography/'>Photography</a>
+                
+              </li>
+            
+              <li>
+                
+                  <a href='/reading/'>Reading list</a>
+                
+              </li>
+            
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <div class="post-meta">
+    <h1 class="post-title">Git diff algorithm options</h1>
+    <div class="published">
+      February 3, 2019 in
+      git
+    </div>
+  </div>
+  <p>I&#39;ve recently refactored a method with
+a large case statement and wanted to check
+a diff of the changes.</p>
+
+<p>I describe the refactoring in <a href="/til/refactor-a-large-case-statement">another post</a>,
+but the original method looked something like this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+  <span class="k">case</span> <span class="n">word</span>
+  <span class="k">when</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="p">.</span><span class="nf">make_regexp</span>
+    <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="n">word</span>
+  <span class="k">when</span> <span class="sr">/\A(-H|--header)\Z/</span>
+    <span class="n">parse_header</span>
+  <span class="k">when</span> <span class="sr">/\A--compressed\Z/</span>
+    <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Accept-Encoding'</span><span class="p">]</span> <span class="o">||=</span> <span class="s1">'deflate, gzip'</span>
+  <span class="c1"># ... (more conditionals) ...</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>I&#39;ve replaced the case with a single module method
+call and created a bunch of classes, to match
+each of the scenarios I&#39;d like to cover.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+    <span class="n">base_class</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
+    <span class="n">subclass</span> <span class="o">=</span> <span class="n">base_class</span><span class="p">.</span><span class="nf">subclasses</span>
+                         <span class="p">.</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
+    <span class="n">subclass</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">class</span> <span class="nc">Base</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
+      <span class="vi">@words</span> <span class="o">=</span> <span class="n">words</span>
+      <span class="vi">@request</span> <span class="o">=</span> <span class="n">request</span>
+    <span class="k">end</span>
+
+    <span class="c1"># List of subclasses, first-inherited class appears first.</span>
+    <span class="k">def</span> <span class="nf">subclasses</span>
+      <span class="no">ObjectSpace</span><span class="p">.</span><span class="nf">each_object</span><span class="p">(</span><span class="no">Base</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">).</span>
+        <span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}.</span><span class="nf">reverse</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">===</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+      <span class="n">regex</span> <span class="o">=~</span> <span class="n">word</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
+      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn't have regex defined"</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+    <span class="nb">attr_reader</span> <span class="ss">:words</span>
+    <span class="nb">attr_reader</span> <span class="ss">:request</span>
+  <span class="k">end</span>
+
+  <span class="k">class</span> <span class="nc">Header</span> <span class="o">&lt;</span> <span class="no">Base</span><span class="p">;</span> <span class="k">end</span>
+  <span class="k">class</span> <span class="nc">Compressed</span> <span class="o">&lt;</span> <span class="no">Base</span><span class="p">;</span> <span class="k">end</span>
+  <span class="c1"># ...(bunch of other class definitions)...</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+  <span class="no">Word</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Git uses Myers&#39; algorithm as a default for
+diffs, which gave me the following output:</p>
+<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
+-      case word
+-      when URI::DEFAULT_PARSER.make_regexp
+-        request.url = word
+-      when /\A(-H|--header)\Z/
+-        parse_header
+-      when /\A--compressed\Z/
+</span><span class="gi">+    module Word
++      def self.parse(request, words, word)
++        base_class = Word::Base.new(request, words)
++        subclass = base_class.subclasses
++                             .detect { |klass| klass === word }
++        subclass&amp;.new(words, request)&amp;.parse(word)
++      end
++
++      class Base
++        def initialize(words, request)
++          @words = words
++          @request = request
++        end
++
++        # List of subclasses, first-inherited class appears first.
++        def subclasses
++          ObjectSpace.each_object(Base.singleton_class).reject { |klass| klass == Base }.reverse
++        end
++
++        def self.===(word)
++          regex =~ word
++        end
++
++        def self.regex
++          raise NotImplementedError, "#{name} doesn't have regex defined"
++        end
++
++        private
++
++        attr_reader :words
++        attr_reader :request
++      end
++
++      class Header &lt; Base; end
++      class Compressed &lt; Base
++        def self.regex
++          /\A--compressed\Z/.freeze
++        end
++
++        def parse(*)
+</span>           request.headers['Accept-Encoding'] ||= 'deflate, gzip'
+<span class="gd">-      case /\A-X|\A--request\Z/
+</span><span class="gi">+        end
++      end
++
++      class Request &lt; Base
++        def self.regex
+</span></code></pre></div>
+<p>Notice how diff output breaks the old method and inserts
+the new code in the middle of it. Super ugly.  I&#39;ve recently
+discovered that the diff command comes with some <a href="https://git-scm.com/docs/diff-config#diff-config-diffalgorithm">options
+you can pass them</a>.</p>
+
+<p>So entering this in the console:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git diff <span class="nt">--histogram</span>
+</code></pre></div>
+<p>Which gave me:</p>
+<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
+-      case word
+-      when URI::DEFAULT_PARSER.make_regexp
+-        request.url = word
+-      when /\A(-H|--header)\Z/
+-        parse_header
+-      when /\A'--compressed'\Z/
+-        request.headers['Accept-Encoding'] ||= 'deflate, gzip'
+-      when /\A-X|\A--request\Z/
+-        request.method = extract_method(word)
+-      when /\A(-u|--user)\Z/
+-        request.headers['Authorization'] ||= "Basic #{Base64.strict_encode64(words.shift)}"
+-      when /\A(-b|--cookie)\Z/
+-        request.headers['Set-Cookie'] ||= words.shift
+-      when /\A(-A|--user-agent)\Z/
+-        request.headers['User-Agent'] ||= words.shift
+-      when /\A(-I|--head)\Z/
+-        request.method = 'HEAD'
+-      when /\A(-d|--data|--data-ascii)\Z/
+-        parse_data
+-      when /\A--data-binary\Z/
+-        parse_data(strip_newlines: false)
+-      when /\A--data-raw\Z/
+-        parse_data(raw: true)
+-      when /\A--data-urlencode\Z/
+-        parse_data(url_encode: true)
+-      when /\./
+-        request.url = "http://#{word}" if request.url == ''
+</span><span class="gi">+    module Word
++      def self.parse(request, words, word)
++        base_class = Word::Base.new(request, words)
++        subclass = base_class.subclasses
++                             .detect { |klass| klass === word }
++        subclass&amp;.new(words, request)&amp;.parse(word)
++      end
++
++      class Base
++        def initialize(words, request)
++          @words = words
++          @request = request
++        end
++
++        # List of subclasses, first-inherited class appears first.
++        def subclasses
++          ObjectSpace.each_object(Base.singleton_class)
++                     .reject { |klass| klass == Base }.reverse
++        end
++
++        def self.===(word)
++          regex =~ word
++        end
++
++        def self.regex
++          raise NotImplementedError, "#{name} doesn't have regex defined"
++        end
++
++        private
++
++        attr_reader :words
++        attr_reader :request
++      end
+</span></code></pre></div>
+<p>Much better if you ask me, since now it&#39;s more obvious I&#39;ve
+replaced the case statement in the method.</p>
+
+
+  <div class='bottom'>
+    <section class="author">
+      <img src='/public/shime.jpg' alt='' />
+      <div>
+      <h4>Hrvoje Šimić</h4>
+      <p class="bio">
+        <a href="https://twitter.com/shime_sh">
+          @shime_sh
+        </a>
+
+        <small>
+          I'm a Ruby developer focused on building MVPs with Ruby on Rails.
+        </small>
+      </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -8,6 +8,61 @@
     
     
     <item>
+      <title>Refactor a large case statement</title>
+      
+      <description>&lt;p&gt;I&amp;#39;m currently building a gem for converting
+curl commands to something else and one early
+problem I needed to deal with was parsing the 
+curl command arguments.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/refactor-a-large-case-statement</link>
+      <guid isPermaLink="true">http://shime.sh/til/refactor-a-large-case-statement</guid>
+    </item>
+    
+    <item>
+      <title>Git diff algorithm options</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve recently refactored a method with
+a large case statement and wanted to check
+a diff of the changes.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/git-diff-algorithm-options</link>
+      <guid isPermaLink="true">http://shime.sh/til/git-diff-algorithm-options</guid>
+    </item>
+    
+    <item>
+      <title>Resize panes in tmux with a shortcut</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve been using tmux for years now, but
+I keep forgetting the shortcuts for resizing
+panes.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/resize-panes-in-tmux-with-a-shortcut</link>
+      <guid isPermaLink="true">http://shime.sh/til/resize-panes-in-tmux-with-a-shortcut</guid>
+    </item>
+    
+    <item>
+      <title>Refactor with simple polymorphism</title>
+      
+      <description>&lt;p&gt;I&amp;#39;m in the process of writing a gem, and I&amp;#39;ve 
+not been really focused on writing the best possible
+code, in order to build something in the least 
+amount of time. I now have some time on my hands,
+so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/refactor-with-simple-polymorphism</link>
+      <guid isPermaLink="true">http://shime.sh/til/refactor-with-simple-polymorphism</guid>
+    </item>
+    
+    <item>
       <title>Pretty format JSON in Vim</title>
       
       <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
@@ -86,19 +141,6 @@ to accommodate new relationships.&lt;/p&gt;
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/faster-database-resets-in-rails</link>
       <guid isPermaLink="true">http://shime.sh/til/faster-database-resets-in-rails</guid>
-    </item>
-    
-    <item>
-      <title>Adding a hidden collection</title>
-      
-      <description>&lt;p&gt;TIL is the hidden section of this site, and since
-I&amp;#39;m using Jekyll as an engine, I needed to
-learn how to add a new section.&lt;/p&gt;
-</description>
-      
-      <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/adding-new-hidden-collection-in-jekyll</link>
-      <guid isPermaLink="true">http://shime.sh/til/adding-new-hidden-collection-in-jekyll</guid>
     </item>
     
   </channel>
