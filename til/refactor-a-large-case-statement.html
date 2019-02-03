@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1549233807939807000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1549233807939807000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1549233807939807000">
+  <link rel="stylesheet" href="/public/css/poole.css?1549234688386913000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1549234688386913000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1549234688386913000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -46,8 +46,8 @@
 <meta property="og:title" content="Refactor a large case statement" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I&#39;m currently building a gem for converting curl commands to something else and one early problem I needed to deal with was parsing the curl command arguments." />
-<meta property="og:description" content="I&#39;m currently building a gem for converting curl commands to something else and one early problem I needed to deal with was parsing the curl command arguments." />
+<meta name="description" content="I&#39;m currently building a gem for converting curl commands to something else, and one early problem I needed to deal with was parsing the curl command arguments." />
+<meta property="og:description" content="I&#39;m currently building a gem for converting curl commands to something else, and one early problem I needed to deal with was parsing the curl command arguments." />
 <link rel="canonical" href="http://shime.sh/til/refactor-a-large-case-statement" />
 <meta property="og:url" content="http://shime.sh/til/refactor-a-large-case-statement" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
@@ -58,7 +58,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactor-a-large-case-statement","headline":"Refactor a large case statement","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactor-a-large-case-statement"},"description":"I&#39;m currently building a gem for converting curl commands to something else and one early problem I needed to deal with was parsing the curl command arguments.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactor-a-large-case-statement","headline":"Refactor a large case statement","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactor-a-large-case-statement"},"description":"I&#39;m currently building a gem for converting curl commands to something else, and one early problem I needed to deal with was parsing the curl command arguments.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -112,16 +112,16 @@
     </div>
   </div>
   <p>I&#39;m currently building a gem for converting
-curl commands to something else and one early
+curl commands to something else, and one early
 problem I needed to deal with was parsing the 
 curl command arguments.</p>
 
 <p>The basic idea for a gem is to convert curl command to
-a nicely looking hash, that we can use to do
+a sweet looking hash that we can use to do
 magical things. So when given:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://isrubydead.com/
 </code></pre></div>
-<p>Our program will convert it to:</p>
+<p>Our program converts it to:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
   <span class="s2">"body"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
@@ -199,7 +199,7 @@ I&#39;ve ended up with this very appealing class:</p>
 
 <p>What&#39;s also very nice is that this class
 also have to know everything about parsing curl arguments;
-from header and method arguments to various data argument options.</p>
+from header and method arguments to various data arguments.</p>
 
 <p>Super nice! Just look at these beautiful methods, that
 all belong to this class:</p>
@@ -271,7 +271,7 @@ all belong to this class:</p>
 </code></pre></div>
 <p>Marvelous! This class knows absolutely everything
 about curl and all the arguments and options.
-We could ask it the curl&#39;s shoe size
+We could ask it the curl&#39;s shoe size, 
 and it would give us the answer.</p>
 
 <p>Now that we have thought this class so much, and it
@@ -287,11 +287,11 @@ but then you turn around and it <a href="https://www.youtube.com/watch?v=aFuA50H
 from this class and let&#39;s spread it to other classes.</p>
 
 <p><em>I&#39;ll now start explaining the refactoring step by step,
-and you can take a look at the <a href="#final">the end result</a>, if you&#39;d like to
+but you can take a look at the <a href="#final">the result</a> if you&#39;d like to
 skip.</em></p>
 
-<p>This class will from now on be totally ignorant about curl arguments
-and the humongous case statement will be replaced with this:</p>
+<p>This class will from now on be ignorant of curl arguments
+so the humongous case statement becomes:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Parser</span>
   <span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="no">Word</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
@@ -302,7 +302,7 @@ and the humongous case statement will be replaced with this:</p>
 of the regex check, the idea is to abstract those into 
 class.</p>
 
-<p>This will be the <code>Word::Base</code> class:</p>
+<p>Introducing the <code>Word::Base</code> class:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Base</span>
     <span class="c1"># Used to check if the word given matches the subclass' regex.</span>
@@ -347,9 +347,9 @@ scenario we&#39;d like to cover. Here&#39;s the first example of one such class:
 <span class="k">end</span>
 </code></pre></div>
 <p>This class stores information about everything that&#39;s needed to
-parse a header argument. From detection (when the curl command includes
-<code>-H</code> or <code>--header</code> in arguments) to conversion to something 
-we can work with.</p>
+parse a header argument. It detects the argument (when the curl command includes
+<code>-H</code> or <code>--header</code> in arguments) and then changes the request hash,
+which we return in the end.</p>
 
 <p>Since this class has to know about <code>words</code> and <code>request</code>
 too, we&#39;ll add that to the base class. We expect other descendants
@@ -368,7 +368,7 @@ to need that too:</p>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>The next problem we have, is that there&#39;s no connection between
+<p>The next problem we have is that there&#39;s no connection between
 the original <code>parse_word</code> method and this new class we have created,
 so let&#39;s write a method that connects those two:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
@@ -388,8 +388,8 @@ so let&#39;s write a method that connects those two:</p>
 <span class="k">end</span>
 </code></pre></div>
 <p>With this method we can find a <code>Word::Base</code> subclass that matches the word
-that was given and then parse that word. If we find the subclass,
-we try to parse the word. So our current code will work
+that was given and then parses that word. If we find the subclass,
+we try to parse the word. So our current code works
 for parsing <code>--header</code> or <code>-h</code> words from curl.</p>
 
 <p>Our code now supports parsing headers, so let&#39;s proceed to add
@@ -827,9 +827,9 @@ classes for every argument we&#39;d like to support:</p>
 </code></pre></div>
 <p>Note how each class contains knowledge specific to the 
 argument we&#39;re trying to cover with it and nothing else. I
-think that&#39;s an improvement, since it&#39;s still easy to 
-support new arguments and we don&#39;t polute a single class
-with a lot of methods.</p>
+think that&#39;s an improvement since it&#39;s still easy to 
+support new arguments, and we don&#39;t pollute a single class
+with many methods.</p>
 
 
   <div class='bottom'>
