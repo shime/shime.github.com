@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1549233631785148000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1549233631785148000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1549233631785148000">
+  <link rel="stylesheet" href="/public/css/poole.css?1549233807939807000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1549233807939807000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1549233807939807000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -567,12 +567,6 @@ classes for every argument we&#39;d like to support:</p>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>Note how each class contains knowledge specific to the 
-argument we&#39;re trying to cover with it and nothing else. I
-think that&#39;s an improvement, since it&#39;s still easy to 
-support new arguments and we don&#39;t polute a single class
-with a lot of methods.</p>
-
 <p>Here&#39;s the <a name="final">final</a> code we end up with:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
@@ -831,6 +825,12 @@ with a lot of methods.</p>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
+<p>Note how each class contains knowledge specific to the 
+argument we&#39;re trying to cover with it and nothing else. I
+think that&#39;s an improvement, since it&#39;s still easy to 
+support new arguments and we don&#39;t polute a single class
+with a lot of methods.</p>
+
 
   <div class='bottom'>
     <section class="author">
