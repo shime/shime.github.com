@@ -400,35 +400,35 @@
   </url>
   
   <url>
-    <loc>http://shime.sh/til/pretty-format-json</loc>
+    <loc>http://shime.sh/til/pretty-formatting-json</loc>
     <lastmod>2019-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shime.sh/til/make-http-requests-from-vim</loc>
+    <loc>http://shime.sh/til/making-http-requests-from-vim</loc>
     <lastmod>2019-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shime.sh/til/pretty-format-json-in-vim</loc>
+    <loc>http://shime.sh/til/pretty-formatting-json-in-vim</loc>
     <lastmod>2019-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shime.sh/til/refactor-with-simple-polymorphism</loc>
+    <loc>http://shime.sh/til/refactoring-with-simple-polymorphism</loc>
     <lastmod>2019-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shime.sh/til/resize-panes-in-tmux-with-a-shortcut</loc>
+    <loc>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</loc>
     <lastmod>2019-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -442,7 +442,7 @@
   </url>
   
   <url>
-    <loc>http://shime.sh/til/refactor-a-large-case-statement</loc>
+    <loc>http://shime.sh/til/refactoring-a-large-case-statement</loc>
     <lastmod>2019-02-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

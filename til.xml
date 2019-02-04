@@ -8,7 +8,7 @@
     
     
     <item>
-      <title>Refactor a large case statement</title>
+      <title>Refactoring a large case statement</title>
       
       <description>&lt;p&gt;I&amp;#39;m currently building a gem for converting
 curl commands to something else, and one early
@@ -17,8 +17,8 @@ curl command arguments.&lt;/p&gt;
 </description>
       
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/refactor-a-large-case-statement</link>
-      <guid isPermaLink="true">http://shime.sh/til/refactor-a-large-case-statement</guid>
+      <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
+      <guid isPermaLink="true">http://shime.sh/til/refactoring-a-large-case-statement</guid>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ a diff of the changes.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Resize panes in tmux with a shortcut</title>
+      <title>Resizing panes in tmux with a shortcut</title>
       
       <description>&lt;p&gt;I&amp;#39;ve been using tmux for years now, but
 I keep forgetting the shortcuts for resizing
@@ -43,12 +43,12 @@ panes.&lt;/p&gt;
 </description>
       
       <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/resize-panes-in-tmux-with-a-shortcut</link>
-      <guid isPermaLink="true">http://shime.sh/til/resize-panes-in-tmux-with-a-shortcut</guid>
+      <link>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</link>
+      <guid isPermaLink="true">http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</guid>
     </item>
     
     <item>
-      <title>Refactor with simple polymorphism</title>
+      <title>Refactoring with simple polymorphism</title>
       
       <description>&lt;p&gt;I&amp;#39;m in the process of writing a gem, and I&amp;#39;ve 
 not been really focused on writing the best possible
@@ -58,12 +58,12 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
 </description>
       
       <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/refactor-with-simple-polymorphism</link>
-      <guid isPermaLink="true">http://shime.sh/til/refactor-with-simple-polymorphism</guid>
+      <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
+      <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
     </item>
     
     <item>
-      <title>Pretty format JSON in Vim</title>
+      <title>Pretty formatting JSON in Vim</title>
       
       <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
 in a &lt;a href=&quot;/til/pretty-format-json&quot;&gt;previous TIL post&lt;/a&gt;, but
@@ -72,12 +72,12 @@ with the shorter name.&lt;/p&gt;
 </description>
       
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/pretty-format-json-in-vim</link>
-      <guid isPermaLink="true">http://shime.sh/til/pretty-format-json-in-vim</guid>
+      <link>http://shime.sh/til/pretty-formatting-json-in-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json-in-vim</guid>
     </item>
     
     <item>
-      <title>Make HTTP requests from Vim</title>
+      <title>Making HTTP requests from Vim</title>
       
       <description>&lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
 enables HTTP requests from inside the editor&lt;/a&gt;,
@@ -86,12 +86,12 @@ plugin&lt;/a&gt; for that.&lt;/p&gt;
 </description>
       
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/make-http-requests-from-vim</link>
-      <guid isPermaLink="true">http://shime.sh/til/make-http-requests-from-vim</guid>
+      <link>http://shime.sh/til/making-http-requests-from-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/making-http-requests-from-vim</guid>
     </item>
     
     <item>
-      <title>Pretty format JSON</title>
+      <title>Pretty formatting JSON</title>
       
       <description>&lt;p&gt;I&amp;#39;ve used to use some silly NPM
 package for pretty formatting of
@@ -99,8 +99,8 @@ JSON before.&lt;/p&gt;
 </description>
       
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/pretty-format-json</link>
-      <guid isPermaLink="true">http://shime.sh/til/pretty-format-json</guid>
+      <link>http://shime.sh/til/pretty-formatting-json</link>
+      <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json</guid>
     </item>
     
     <item>
