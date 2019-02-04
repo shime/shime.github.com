@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1549274770406718000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1549274770406718000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1549274770406718000">
+  <link rel="stylesheet" href="/public/css/poole.css?1549277261056028000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1549277261056028000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1549277261056028000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -115,7 +115,7 @@
 a large case statement and wanted to check
 a diff of the changes.</p>
 
-<p>I describe the refactoring in <a href="/til/refactor-a-large-case-statement">another post</a>,
+<p>I describe the refactoring in <a href="/til/refactoring-a-large-case-statement">another post</a>,
 but the original method looked something like this:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
   <span class="k">case</span> <span class="n">word</span>
@@ -234,13 +234,13 @@ diffs, which gave me the following output:</p>
 </span></code></pre></div>
 <p>Notice how diff output breaks the old method and inserts
 the new code in the middle of it. Super ugly.  I&#39;ve recently
-discovered that the diff command comes with some <a href="https://git-scm.com/docs/diff-config#diff-config-diffalgorithm">options
-you can pass them</a>.</p>
+discovered that the diff command supports some <a href="https://git-scm.com/docs/diff-config#diff-config-diffalgorithm">options
+you can pass it</a>.</p>
 
 <p>So entering this in the console:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">git diff <span class="nt">--histogram</span>
 </code></pre></div>
-<p>Which gave me:</p>
+<p>Gave me:</p>
 <div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
 -      case word
 -      when URI::DEFAULT_PARSER.make_regexp
