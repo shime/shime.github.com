@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1549273022807090000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1549273022807090000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1549273022807090000">
+  <link rel="stylesheet" href="/public/css/poole.css?1549274770406718000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1549274770406718000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1549274770406718000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -139,8 +139,37 @@ magical things. So when given:</p>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
+<p>Our program should expect the curl command as a command line
+argument, so let&#39;s use <code>ARGV.first</code> to read the curl
+command:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'shellwords'</span>
+
+<span class="k">module</span> <span class="nn">ParseCurl</span>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">request</span> <span class="o">=</span> <span class="no">Request</span><span class="p">.</span><span class="nf">new</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">parser</span> <span class="o">=</span> <span class="no">Parser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+      <span class="n">parser</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">Shellwords</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="nf">strip</span><span class="p">))</span>
+
+      <span class="n">request</span><span class="p">.</span><span class="nf">to_h</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+    <span class="nb">attr_accessor</span> <span class="ss">:request</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:parser</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ParseCurl</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span>
+</code></pre></div>
+<p>We use <code>Shellwords</code> here to convert the curl command
+to an array of tokens, to make it easier to parse.</p>
+
 <p>Now that we have a place to store the result of parsing 
-the curl command, it&#39;s time to write an actual parser.</p>
+the curl command, and we are passing the command line
+argument to a parser, it&#39;s time to write an actual parser.</p>
 
 <p>Being a very serious and very senior developer,
 I&#39;ve ended up with this very appealing class:</p>
@@ -298,7 +327,7 @@ skip.</em></p>
 <span class="k">end</span>
 </code></pre></div>
 <p>Since every scenario we have to cover in the case statement consists
-of the regex check, the idea is to abstract those into 
+of the regex check and the parsing part, the idea is to abstract those into 
 class.</p>
 
 <p>Let&#39;s introduce the <code>Word::Base</code> class:</p>
@@ -324,7 +353,7 @@ scenario we&#39;d like to cover. Here&#39;s the first example of one such class:
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Header</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-H|--header)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-H|--header)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -396,7 +425,7 @@ classes for every argument we&#39;d like to support:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Compressed</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A--compressed\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A--compressed\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -406,7 +435,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Request</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A-X|\A--request\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A-X|\A--request\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -429,7 +458,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Authorization</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-u|--user)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-u|--user)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -440,7 +469,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Cookie</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-b|--cookie)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-b|--cookie)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -460,7 +489,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Head</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-I|--head)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-I|--head)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -609,7 +638,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Header</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-H|--header)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-H|--header)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -631,7 +660,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Compressed</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A--compressed\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A--compressed\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -641,7 +670,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Request</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A-X|\A--request\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A-X|\A--request\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -664,7 +693,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Authorization</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-u|--user)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-u|--user)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -675,7 +704,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Cookie</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-b|--cookie)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-b|--cookie)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -695,7 +724,7 @@ classes for every argument we&#39;d like to support:</p>
 
   <span class="k">class</span> <span class="nc">Head</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="sr">/\A(-I|--head)\Z/</span><span class="p">.</span><span class="nf">freeze</span>
+      <span class="sr">/\A(-I|--head)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
@@ -823,6 +852,26 @@ classes for every argument we&#39;d like to support:</p>
     <span class="no">Word</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
+
+<span class="k">module</span> <span class="nn">ParseCurl</span>
+  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">request</span> <span class="o">=</span> <span class="no">Request</span><span class="p">.</span><span class="nf">new</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">parser</span> <span class="o">=</span> <span class="no">Parser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+      <span class="n">parser</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">Shellwords</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="nf">strip</span><span class="p">))</span>
+
+      <span class="n">request</span><span class="p">.</span><span class="nf">to_h</span>
+    <span class="k">end</span>
+
+    <span class="kp">private</span>
+
+    <span class="nb">attr_accessor</span> <span class="ss">:request</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:parser</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">ParseCurl</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span>
 </code></pre></div>
 <p>Note how each class contains knowledge specific to the 
 argument we&#39;re trying to cover with it and nothing else. I
