@@ -8,6 +8,18 @@
     
     
     <item>
+      <title>From class components to function components with hooks</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in the super secret app I&amp;#39;m working on, and I appreciate the simplicity improvement.
+The learning curve is pretty minimal, and there are fewer levels of abstraction. The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.&lt;/p&gt;
+</description>
+      
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/from-class-components-to-function-components-with-hooks</link>
+      <guid isPermaLink="true">http://shime.sh/til/from-class-components-to-function-components-with-hooks</guid>
+    </item>
+    
+    <item>
       <title>Refactoring a large case statement</title>
       
       <description>&lt;p&gt;I&amp;#39;m currently building a gem for converting
@@ -63,20 +75,6 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Pretty formatting JSON in Vim</title>
-      
-      <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
-in a &lt;a href=&quot;/til/pretty-format-json&quot;&gt;previous TIL post&lt;/a&gt;, but
-I&amp;#39;ve discovered another great tool for the job,
-with the shorter name.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/pretty-formatting-json-in-vim</link>
-      <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json-in-vim</guid>
-    </item>
-    
-    <item>
       <title>Making HTTP requests from Vim</title>
       
       <description>&lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
@@ -88,6 +86,20 @@ plugin&lt;/a&gt; for that.&lt;/p&gt;
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/making-http-requests-from-vim</link>
       <guid isPermaLink="true">http://shime.sh/til/making-http-requests-from-vim</guid>
+    </item>
+    
+    <item>
+      <title>Pretty formatting JSON in Vim</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
+in a &lt;a href=&quot;/til/pretty-format-json&quot;&gt;previous TIL post&lt;/a&gt;, but
+I&amp;#39;ve discovered another great tool for the job,
+with the shorter name.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/pretty-formatting-json-in-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json-in-vim</guid>
     </item>
     
     <item>
@@ -127,20 +139,6 @@ the existence of the paramater as a default parameter.&lt;/p&gt;
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/strong-parameters-in-javascript</link>
       <guid isPermaLink="true">http://shime.sh/til/strong-parameters-in-javascript</guid>
-    </item>
-    
-    <item>
-      <title>Faster database resets</title>
-      
-      <description>&lt;p&gt;After I&amp;#39;ve made a significant change to the 
-relationships of the models on the application
-I&amp;#39;m working on; I wanted to update the seeds file
-to accommodate new relationships.&lt;/p&gt;
-</description>
-      
-      <pubDate>Tue, 18 Dec 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/faster-database-resets-in-rails</link>
-      <guid isPermaLink="true">http://shime.sh/til/faster-database-resets-in-rails</guid>
     </item>
     
   </channel>
