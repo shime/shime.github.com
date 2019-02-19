@@ -10,8 +10,10 @@
     <item>
       <title>From class components to function components with hooks</title>
       
-      <description>&lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in the super secret app I&amp;#39;m working on, and I appreciate the simplicity improvement.
-The learning curve is pretty minimal, and there are fewer levels of abstraction. The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in
+the super secret app I&amp;#39;m working on, and I appreciate the simplicity improvement.
+The learning curve is pretty minimal, and there are fewer levels of abstraction.
+The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.&lt;/p&gt;
 </description>
       
       <pubDate>Tue, 19 Feb 2019 00:00:00 +0100</pubDate>
