@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1550593807147850000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1550593807147850000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1550593807147850000">
+  <link rel="stylesheet" href="/public/css/poole.css?1550594060968872000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1550594060968872000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1550594060968872000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -117,7 +117,7 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 <p>The first thing that was annoying was the standard consumer wrap:</p>
 <div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
 
-<span class="kd">const</span> <span class="nx">myContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
 <span class="kd">class</span> <span class="nx">Provider</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
@@ -144,9 +144,9 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
         <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -207,11 +207,11 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
     <span class="k">return</span> <span class="p">(</span>
      <span class="p">&lt;</span><span class="nc">Provider</span><span class="p">&gt;</span>
        <span class="si">{</span> <span class="cm">/* This is the annoying part. */</span> <span class="si">}</span>
-       <span class="p">&lt;</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
          <span class="si">{</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
            <span class="p">&lt;</span><span class="nc">Timer</span> <span class="na">store=</span><span class="si">{</span><span class="nx">store</span><span class="si">}</span><span class="p">/&gt;</span>
          <span class="p">)</span><span class="si">}</span>
-       <span class="p">&lt;/</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+       <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
      <span class="p">&lt;/</span><span class="nc">Provider</span><span class="p">&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
@@ -221,7 +221,7 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 <div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
 
 <span class="c1">// Our good old context.</span>
-<span class="kd">const</span> <span class="nx">myContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
 <span class="kd">class</span> <span class="nx">Provider</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
@@ -248,9 +248,9 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
         <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -309,11 +309,11 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 <span class="c1">// Not great.</span>
 <span class="kd">const</span> <span class="nx">withContext</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
       <span class="si">{</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
         <span class="p">&lt;</span><span class="nc">Component</span> <span class="err">{</span><span class="p">...</span><span class="nt">props</span><span class="err">}</span> <span class="na">context=</span><span class="si">{</span><span class="nx">context</span><span class="si">}</span><span class="p">/&gt;</span>
       <span class="p">)</span><span class="si">}</span>
-    <span class="p">&lt;/</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
 
@@ -386,7 +386,7 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 
 <span class="c1">// The context yet again.</span>
 <span class="c1">// Boring.</span>
-<span class="kd">const</span> <span class="nx">myContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
 <span class="kd">class</span> <span class="nx">Provider</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
@@ -413,17 +413,16 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
         <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">myContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// The Timer class has been converted to function.</span>
 <span class="kd">function</span> <span class="nx">Timer</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">timerContext</span><span class="p">)</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">context</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">timerContext</span><span class="p">)</span>
 
   <span class="kd">const</span> <span class="p">[</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">setTab</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">'timer'</span><span class="p">)</span>
 
