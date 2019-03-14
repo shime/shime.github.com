@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552547473492087000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552547473492087000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552547473492087000">
+  <link rel="stylesheet" href="/public/css/poole.css?1552548932355872000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1552548932355872000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1552548932355872000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -135,6 +135,11 @@ on this link:</p>
 is that you can be sure it&#39;s a link to Github since it only
 allows shortening of Github links.</p>
 
+<p>Bonus points if you turn it into a script:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/env bash</span>
+
+curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=</span><span class="nv">$1</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-Fi</span> Location | cut <span class="nt">-d</span> <span class="s1">' '</span> <span class="nt">-f</span> 2
+</code></pre></div>
 
   <div class='bottom'>
     <section class="author">
