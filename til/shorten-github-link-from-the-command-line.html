@@ -43,27 +43,27 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="Uninitialized class variable @@current_spec in Minitest" />
+<meta property="og:title" content="Shorten Github link from the command line" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes." />
-<meta property="og:description" content="When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes." />
-<link rel="canonical" href="http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest" />
-<meta property="og:url" content="http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest" />
+<meta name="description" content="There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it." />
+<meta property="og:description" content="There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it." />
+<link rel="canonical" href="http://shime.sh/til/shorten-github-link-from-the-command-line" />
+<meta property="og:url" content="http://shime.sh/til/shorten-github-link-from-the-command-line" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2012-04-30T00:00:00+02:00" />
+<meta property="article:published_time" content="2019-03-12T00:00:00+01:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest","headline":"Uninitialized class variable @@current_spec in Minitest","dateModified":"2012-04-30T00:00:00+02:00","datePublished":"2012-04-30T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest"},"description":"When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/shorten-github-link-from-the-command-line","headline":"Shorten Github link from the command line","dateModified":"2019-03-12T00:00:00+01:00","datePublished":"2019-03-12T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/shorten-github-link-from-the-command-line"},"description":"There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title> Uninitialized class variable @@current_spec in Minitest &middot; Hrvoje Šimić </title>
-  <meta name="title" content="Uninitialized class variable @@current_spec in Minitest &middot; Hrvoje Šimić">
+  <title> Shorten Github link from the command line &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Shorten Github link from the command line &middot; Hrvoje Šimić">
 </head>
 
 
@@ -105,20 +105,36 @@
       <div class="container content">
         <div class="post">
   <div class="post-meta">
-    <h1 class="post-title">Uninitialized class variable @@current_spec in Minitest</h1>
+    <h1 class="post-title">Shorten Github link from the command line</h1>
     <div class="published">
-      April 30, 2012 in
-      ruby
+      March 12, 2019 in
+      github
     </div>
   </div>
-  <p>When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.</p>
+  <p>There&#39;s a tool for shortening 
+links from Github that I&#39;ve known for a while
+but I imagine not everyone is aware of it.</p>
 
-<p>It was happening because I used to run the tests with</p>
-<div class="highlight"><pre><code class="language-" data-lang="">$ rspec spec
+<p>It&#39;s called <a href="https://git.io/">git.io</a>, and the best
+thing about it is that you can use it from the command
+line with curl.</p>
+
+<p>Use it like this:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">curl -si https://git.io -F "url=https://github.com/rails/rails" | grep -Fi Location
 </code></pre></div>
-<p>The case is - you don&#39;t need rspec to run minitests. Just run it like this</p>
-<div class="highlight"><pre><code class="language-" data-lang="">$ ruby spec/path/to/your/spec.rb
+<p>I use it all the time for linking to anything that&#39;s on Github
+from code comments. The most recent example is linking to
+a deprecated Rails method, <code>deep_merge</code> which is available
+on this link:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">https://github.com/rails/rails/blob/c0c87922baf47eed64a53d3afceba978bb175da9/activesupport/lib/active_support/core_ext/hash/diff.rb/#L9
 </code></pre></div>
+<p>That&#39;s a huge link, so it&#39;s much better to have it shortened to:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">https://git.io/fhjSr
+</code></pre></div>
+<p>The advantage for using this instead of some other link shortening service
+is that you can be sure it&#39;s a link to Github since it only
+allows shortening of Github links.</p>
+
 
   <div class='bottom'>
     <section class="author">

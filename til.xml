@@ -8,6 +8,19 @@
     
     
     <item>
+      <title>Shorten Github link from the command line</title>
+      
+      <description>&lt;p&gt;There&amp;#39;s a tool for shortening 
+links from Github that I&amp;#39;ve known for a while
+but I imagine not everyone is aware of it.&lt;/p&gt;
+</description>
+      
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/shorten-github-link-from-the-command-line</link>
+      <guid isPermaLink="true">http://shime.sh/til/shorten-github-link-from-the-command-line</guid>
+    </item>
+    
+    <item>
       <title>From class components to function components with hooks</title>
       
       <description>&lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in
@@ -128,19 +141,6 @@ have to use another gem.&lt;/p&gt;
       <pubDate>Fri, 21 Dec 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/mocking-class-methods-using-minitest</link>
       <guid isPermaLink="true">http://shime.sh/til/mocking-class-methods-using-minitest</guid>
-    </item>
-    
-    <item>
-      <title>Enforcing strong parameters</title>
-      
-      <description>&lt;p&gt;In order to enforce strong parameters in JavaScript,
-à la Ruby, you can provide a function that checks
-the existence of the paramater as a default parameter.&lt;/p&gt;
-</description>
-      
-      <pubDate>Wed, 19 Dec 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/strong-parameters-in-javascript</link>
-      <guid isPermaLink="true">http://shime.sh/til/strong-parameters-in-javascript</guid>
     </item>
     
   </channel>
