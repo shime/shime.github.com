@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552549628923850000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552549628923850000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552549628923850000">
+  <link rel="stylesheet" href="/public/css/poole.css?1552549744727213000">
+  <link rel="stylesheet" href="/public/css/lanyon.css?1552549744727213000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1552549744727213000">
   <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
@@ -136,7 +136,9 @@ is that you can be sure it&#39;s a link to Github since it only
 allows shortening of Github links.</p>
 
 <p>Bonus points if you turn it into a script:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">url</span><span class="o">=</span><span class="nv">$1</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/env bash</span>
+
+<span class="nv">url</span><span class="o">=</span><span class="nv">$1</span>
 
 <span class="c"># Append http:// to links wihtout it.</span>
 <span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">'/^http/! s/^/http:\/\//'</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
