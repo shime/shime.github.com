@@ -132,7 +132,6 @@ a {
 
   & code {
     @apply text-sm text-black leading-normal font-mono;
-    @apply p-1;
     @apply bg-grey-lighter;
     border-radius: 3px;
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
