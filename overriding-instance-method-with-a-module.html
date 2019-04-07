@@ -11,10 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552549898668856000">
-  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/monokai.css?1554656870157798000">
+  <link rel="stylesheet" href="/public/css/style.css?1554656870157798000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -67,51 +65,116 @@
 </head>
 
 
-  <body>
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <ul class="masthead-navigation">
-            
-              <li>
-                
-                  <a href='/articles/'>Articles</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/til/'>TIL</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/photography/'>Photography</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/reading/'>Reading list</a>
-                
-              </li>
-            
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
+  <body class="font-sans">
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
 
-      <div class="container content">
-        <div class="post">
-  <div class="post-meta">
-    <h1 class="post-title">Overriding instance method with a module</h1>
-    <div class="published">
-      August 6, 2012 in
-      ruby
+
+
+  
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+      </ul>
     </div>
   </div>
-  <p>This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.</p>
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="post max-w-full md:max-w-md">
+          <div class="mb-8">
+            <h1>Overriding instance method with a module</h1>
+            <div class="text-grey">
+              August 6, 2012
+            </div>
+
+            <div class="flex my-2">
+              
+                <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                  ruby
+                </span>
+              
+            </div>
+          </div>
+
+          <p>This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.</p>
 
 <p>Let me describe the problem:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
@@ -141,9 +204,7 @@
 
 <p>There&#39;s a <a href="http://stackoverflow.com/a/5944385/726020">post on StackOverflow</a> where Gavin presents workarounds for this. I&#39;m going to explain them and add some more:</p>
 
-<ul>
-<li>Subclass Programmer and then include module</li>
-</ul>
+<h2>Subclass Programmer and then include module</h2>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
     <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
@@ -167,9 +228,7 @@
 
 <p>This isn&#39;t a real world example, just a simple one that describes this behavior. This would rarely fit you, since you now have to create instances of a new class that will fit your needs. In the real world, you would want instances of the original class to behave like this.</p>
 
-<ul>
-<li>Extend just the instances you need</li>
-</ul>
+<h2>Extend just the instances you need</h2>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
     <span class="s2">"I'm baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!"</span>
@@ -190,9 +249,7 @@
 
 <p>This is better than the previous solution, it skips the part of inheriting the original class, but you still have to extend each instance. What happens with already used instances in your application?</p>
 
-<ul>
-<li>Perform a gross hack that removes the original method</li>
-</ul>
+<h2>Perform a gross hack that removes the original method</h2>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
     <span class="n">base</span><span class="p">.</span><span class="nf">class_eval</span> <span class="k">do</span>
@@ -224,9 +281,7 @@
 Your old method will be deleted and you will not going to be able to use it afterwards. This is the best solution so far, even though <em>remove_method</em> seems dirty.
 The good part is that your instances of <em>Programmer</em> will now know how to bake things automatically. Hooray!</p>
 
-<ul>
-<li>   No need to use module if using remove_method</li>
-</ul>
+<h2>No need to use module if using remove_method</h2>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Programmer</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
     <span class="s2">"I don't know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :("</span>
@@ -272,9 +327,7 @@ Modules are used to describe behavior that can be shared between objects. This r
 </code></pre></div>
 <p>I like this more since it still preserves the original, but we&#39;re still using a module, even though the methods don&#39;t share the name.</p>
 
-<ul>
-<li>Use (prepend) library by John Mair</li>
-</ul>
+<h2>Use (prepend) library by John Mair</h2>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"prepend"</span>
 <span class="k">module</span> <span class="nn">CanCook</span>
   <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
@@ -370,7 +423,7 @@ In our code it happens when we include CanCook into Programmer on line 24.</p>
 <p><em>Save this module to a variable, so we can use it later.</em></p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">base</span><span class="p">.</span><span class="nf">extend</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">).</span><span class="nf">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
 </code></pre></div>
-<p><em>Extend the Programmer class with anonymous module.</em></p>
+<h2>Extend the Programmer class with anonymous module</h2>
 
 <p>This is somewhat more expressive:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Prepending</span>
@@ -477,27 +530,51 @@ I&#39;ve written this post with the intent of describing that interesting techni
 
 <p>Finally, thanks to <a href="https://twitter.com/neektza">Nikica</a> for a suggestion about lexical context.</p>
 
-
-  <div class='bottom'>
-    <section class="author">
-      <img src='/public/shime.jpg' alt='' />
-      <div>
-      <h4>Hrvoje Šimić</h4>
-      <p class="bio">
-        <a href="https://twitter.com/shime_sh">
-          @shime_sh
-        </a>
-
-        <small>
-          I'm a Ruby developer focused on building MVPs with Ruby on Rails.
-        </small>
-      </p>
-      </div>
-    </section>
-  </div>
-</div>
-
+        </div>
       </div>
     </div>
   </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+</script>
+
 </html>
+

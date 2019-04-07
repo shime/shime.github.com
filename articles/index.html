@@ -11,10 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552549898668856000">
-  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/monokai.css?1554656870157798000">
+  <link rel="stylesheet" href="/public/css/style.css?1554656870157798000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -65,498 +63,521 @@
 </head>
 
 
-  <body>
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <ul class="masthead-navigation">
-            
-              <li>
-                
-                  Articles
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/til/'>TIL</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/photography/'>Photography</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/reading/'>Reading list</a>
-                
-              </li>
-            
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
+  <body class="font-sans">
+    <div class="w-full flex content-center justify-center">
+      <div class="lg:pt-16 lg:pb-32 p-6 relative">
+        
 
-      <div class="container content">
-        <div class="page">
-  <section class="articles">
-  <h1 class="page-title">Articles</h1>
 
-  <div class="description">
+
+  
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <span class="font-medium text-xs text-grey no-underline uppercase mr-2 text-blue-light" >Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+    <li class="my-2">
+      
+        <span class="font-semibold text-xl no-underline uppercase text-blue-light" >Articles</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+        <div class="max-w-sm text-lg mt-16 text-grey-darker font-light leading-normal">
+          <div class="page-description">
+  <p>
     A collection of long form articles I've
     written over the years. Topics include
     programming (Ruby and JavaScript), freelancing
     and building side projects. 
+  </p>
 
-    <br />
-    <br />
-
-    You can <a href="/feed.xml">subscribe to the RSS feed </a> if you'd like to follow along.
-  </div>
-
-  <ul class="posts">
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/testing-stimulus">
-          Testing Stimulus
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 19, 2019 <small> in stimulus </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/how-to-waste-time-on-your-idea">
-          A short guide for wasting hundreds of hours on your idea
-        </a>
-      </h3>
-
-      <span class="post-date">
-        July 14, 2018 <small> in side projects </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/quality-vs-popularity">
-          Quality vs popularity
-        </a>
-      </h3>
-
-      <span class="post-date">
-        March 21, 2018 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/git-commit-message-syntax-highlighting-in-vim">
-          Git commit message syntax highlighting in Vim
-        </a>
-      </h3>
-
-      <span class="post-date">
-        March 20, 2018 <small> in vim, git </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/loving-vim">
-          Loving Vim
-        </a>
-      </h3>
-
-      <span class="post-date">
-        March 19, 2018 <small> in vim </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/freedom">
-          Freedom
-        </a>
-      </h3>
-
-      <span class="post-date">
-        March 6, 2018 <small> in freelancing </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/programming-for-money-until-I'm-too-old-to">
-          Programming for $ until I'm too old to
-        </a>
-      </h3>
-
-      <span class="post-date">
-        September 24, 2017 <small> in freelancing </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/money-and-time">
-          Money and time
-        </a>
-      </h3>
-
-      <span class="post-date">
-        September 20, 2017 <small> in freelancing </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/landing-that-remote-job">
-          Landing that remote job
-        </a>
-      </h3>
-
-      <span class="post-date">
-        July 15, 2017 <small> in freelancing </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/thanks-via-email">
-          Thanks via email
-        </a>
-      </h3>
-
-      <span class="post-date">
-        July 2, 2017 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/4-tips-from-6-years-of-remote-freelancing">
-          4 tips from 6 years of remote freelancing
-        </a>
-      </h3>
-
-      <span class="post-date">
-        June 24, 2017 <small> in freelancing </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/the-8-week-writing-challenge">
-          The 8-week writing challenge
-        </a>
-      </h3>
-
-      <span class="post-date">
-        June 19, 2017 <small> in writing </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/introducing-ephemeral-P2P-screenshot-sharing">
-          Introducing ephemeral P2P screenshot sharing
-        </a>
-      </h3>
-
-      <span class="post-date">
-        April 25, 2016 <small> in p2p </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/on-criticism">
-          On criticism
-        </a>
-      </h3>
-
-      <span class="post-date">
-        April 21, 2016 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/just-ship-it">
-          Just ship it
-        </a>
-      </h3>
-
-      <span class="post-date">
-        April 15, 2016 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/sleep-is-for-the-weak">
-          Sleep is for the weak
-        </a>
-      </h3>
-
-      <span class="post-date">
-        September 26, 2015 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/osx-adventures">
-          OSX adventures
-        </a>
-      </h3>
-
-      <span class="post-date">
-        April 1, 2015 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/complexity-prettified">
-          Complexity prettified
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 9, 2015 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/people-are-priceless">
-          People are priceless
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 4, 2015 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/headless-testing-of-ember-apps-with-gulp-and-jasmine">
-          Headless testing of Ember apps with Gulp and Jasmine
-        </a>
-      </h3>
-
-      <span class="post-date">
-        August 28, 2014 <small> in javascript </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/rubyists-view-on-nodejs">
-          Rubyist's view on Node JS
-        </a>
-      </h3>
-
-      <span class="post-date">
-        August 15, 2014 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/micromachinejs-a-minimal-state-machine-for-javascript">
-          MicroMachineJS - a minimal state machine for JavaScript
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 6, 2014 <small> in javascript </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/5-reasons-for-adding-a-post-installation-message-to-your-gem">
-          5 reasons for adding a post-installation message to your gem
-        </a>
-      </h3>
-
-      <span class="post-date">
-        November 30, 2013 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/be-the-change-you-want-to-see">
-          Be the change you want to see
-        </a>
-      </h3>
-
-      <span class="post-date">
-        October 13, 2013 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/guard-down-vim-and-tmux-are-here">
-          Guard down, Vim and Tmux are here!
-        </a>
-      </h3>
-
-      <span class="post-date">
-        August 11, 2013 <small> in tmux, ruby, vim </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/long-time-no-see">
-          Long time no see
-        </a>
-      </h3>
-
-      <span class="post-date">
-        June 17, 2013 <small> in random </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/overriding-instance-method-with-a-module">
-          Overriding instance method with a module
-        </a>
-      </h3>
-
-      <span class="post-date">
-        August 6, 2012 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/forwardable-explained">
-          Forwardable explained
-        </a>
-      </h3>
-
-      <span class="post-date">
-        May 12, 2012 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/uninitialized-class-variable-at-at-current-spec-in-minitest">
-          Uninitialized class variable @@current_spec in Minitest
-        </a>
-      </h3>
-
-      <span class="post-date">
-        April 30, 2012 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/using-edge-rails-locally">
-          Using edge Rails locally
-        </a>
-      </h3>
-
-      <span class="post-date">
-        April 3, 2012 <small> in rails </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/insane-cant-find-executable-rails-for-rails-error">
-          Insane can't find executable Rails for Rails error
-        </a>
-      </h3>
-
-      <span class="post-date">
-        February 17, 2012 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/autotest-and-rspec2-problems">
-          Autotest and RSpec problems
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 29, 2012 <small> in rspec, ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/hello-world-in-sinatra">
-          Hello world in Sinatra
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 26, 2012 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/debugging-active-record-queries-in-a-rails-console">
-          Debugging ActiveRecord queries in a Rails console
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 19, 2012 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/git-stash-is-awesome">
-          Git stash is awesome
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 16, 2012 <small> in git </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/ruby-y-u-so-beautiful">
-          Ruby! Y U SO BEAUTIFUL?
-        </a>
-      </h3>
-
-      <span class="post-date">
-        November 20, 2011 <small> in ruby </small>
-      </span>
-    </li>
-    
-  </ul>
-</section>
-
+  <p class="mt-2">
+    You can <a  href="/feed.xml">subscribe to the RSS feed </a> if you'd like to follow along.
+  </p>
 </div>
 
+<ul class="list-reset tracking-wide">
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/testing-stimulus">
+      Testing Stimulus
+    </a>
+
+    <p class="text-grey">
+      January 19, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/how-to-waste-time-on-your-idea">
+      A short guide for wasting hundreds of hours on your idea
+    </a>
+
+    <p class="text-grey">
+      July 14, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/quality-vs-popularity">
+      Quality vs popularity
+    </a>
+
+    <p class="text-grey">
+      March 21, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/git-commit-message-syntax-highlighting-in-vim">
+      Git commit message syntax highlighting in Vim
+    </a>
+
+    <p class="text-grey">
+      March 20, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/loving-vim">
+      Loving Vim
+    </a>
+
+    <p class="text-grey">
+      March 19, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/freedom">
+      Freedom
+    </a>
+
+    <p class="text-grey">
+      March 6, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/programming-for-money-until-I'm-too-old-to">
+      Programming for $ until I'm too old to
+    </a>
+
+    <p class="text-grey">
+      September 24, 2017
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/money-and-time">
+      Money and time
+    </a>
+
+    <p class="text-grey">
+      September 20, 2017
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/landing-that-remote-job">
+      Landing that remote job
+    </a>
+
+    <p class="text-grey">
+      July 15, 2017
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/thanks-via-email">
+      Thanks via email
+    </a>
+
+    <p class="text-grey">
+      July 2, 2017
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/4-tips-from-6-years-of-remote-freelancing">
+      4 tips from 6 years of remote freelancing
+    </a>
+
+    <p class="text-grey">
+      June 24, 2017
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/the-8-week-writing-challenge">
+      The 8-week writing challenge
+    </a>
+
+    <p class="text-grey">
+      June 19, 2017
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/introducing-ephemeral-P2P-screenshot-sharing">
+      Introducing ephemeral P2P screenshot sharing
+    </a>
+
+    <p class="text-grey">
+      April 25, 2016
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/on-criticism">
+      On criticism
+    </a>
+
+    <p class="text-grey">
+      April 21, 2016
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/just-ship-it">
+      Just ship it
+    </a>
+
+    <p class="text-grey">
+      April 15, 2016
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/sleep-is-for-the-weak">
+      Sleep is for the weak
+    </a>
+
+    <p class="text-grey">
+      September 26, 2015
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/osx-adventures">
+      OSX adventures
+    </a>
+
+    <p class="text-grey">
+      April 1, 2015
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/complexity-prettified">
+      Complexity prettified
+    </a>
+
+    <p class="text-grey">
+      January 9, 2015
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/people-are-priceless">
+      People are priceless
+    </a>
+
+    <p class="text-grey">
+      January 4, 2015
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/headless-testing-of-ember-apps-with-gulp-and-jasmine">
+      Headless testing of Ember apps with Gulp and Jasmine
+    </a>
+
+    <p class="text-grey">
+      August 28, 2014
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/rubyists-view-on-nodejs">
+      Rubyist's view on Node JS
+    </a>
+
+    <p class="text-grey">
+      August 15, 2014
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/micromachinejs-a-minimal-state-machine-for-javascript">
+      MicroMachineJS - a minimal state machine for JavaScript
+    </a>
+
+    <p class="text-grey">
+      January 6, 2014
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/5-reasons-for-adding-a-post-installation-message-to-your-gem">
+      5 reasons for adding a post-installation message to your gem
+    </a>
+
+    <p class="text-grey">
+      November 30, 2013
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/be-the-change-you-want-to-see">
+      Be the change you want to see
+    </a>
+
+    <p class="text-grey">
+      October 13, 2013
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/guard-down-vim-and-tmux-are-here">
+      Guard down, Vim and Tmux are here!
+    </a>
+
+    <p class="text-grey">
+      August 11, 2013
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/long-time-no-see">
+      Long time no see
+    </a>
+
+    <p class="text-grey">
+      June 17, 2013
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/overriding-instance-method-with-a-module">
+      Overriding instance method with a module
+    </a>
+
+    <p class="text-grey">
+      August 6, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/forwardable-explained">
+      Forwardable explained
+    </a>
+
+    <p class="text-grey">
+      May 12, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/uninitialized-class-variable-at-at-current-spec-in-minitest">
+      Uninitialized class variable @@current_spec in Minitest
+    </a>
+
+    <p class="text-grey">
+      April 30, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/using-edge-rails-locally">
+      Using edge Rails locally
+    </a>
+
+    <p class="text-grey">
+      April 3, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/insane-cant-find-executable-rails-for-rails-error">
+      Insane can't find executable Rails for Rails error
+    </a>
+
+    <p class="text-grey">
+      February 17, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/autotest-and-rspec2-problems">
+      Autotest and RSpec problems
+    </a>
+
+    <p class="text-grey">
+      January 29, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/hello-world-in-sinatra">
+      Hello world in Sinatra
+    </a>
+
+    <p class="text-grey">
+      January 26, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/debugging-active-record-queries-in-a-rails-console">
+      Debugging ActiveRecord queries in a Rails console
+    </a>
+
+    <p class="text-grey">
+      January 19, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/git-stash-is-awesome">
+      Git stash is awesome
+    </a>
+
+    <p class="text-grey">
+      January 16, 2012
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/ruby-y-u-so-beautiful">
+      Ruby! Y U SO BEAUTIFUL?
+    </a>
+
+    <p class="text-grey">
+      November 20, 2011
+    </p>
+  </li>
+  
+</ul>
+
+        </div>
       </div>
     </div>
   </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+</script>
+
 </html>

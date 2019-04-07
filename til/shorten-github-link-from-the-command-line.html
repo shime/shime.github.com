@@ -11,10 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552549898668856000">
-  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/monokai.css?1554656870157798000">
+  <link rel="stylesheet" href="/public/css/style.css?1554656870157798000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -67,51 +65,116 @@
 </head>
 
 
-  <body>
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <ul class="masthead-navigation">
-            
-              <li>
-                
-                  <a href='/articles/'>Articles</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/til/'>TIL</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/photography/'>Photography</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/reading/'>Reading list</a>
-                
-              </li>
-            
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
+  <body class="font-sans">
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
 
-      <div class="container content">
-        <div class="post">
-  <div class="post-meta">
-    <h1 class="post-title">Shorten Github link from the command line</h1>
-    <div class="published">
-      March 12, 2019 in
-      github
+
+
+  
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+      </ul>
     </div>
   </div>
-  <p>There&#39;s a tool for shortening 
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="post max-w-full md:max-w-md">
+          <div class="mb-8">
+            <h1>Shorten Github link from the command line</h1>
+            <div class="text-grey">
+              March 12, 2019
+            </div>
+
+            <div class="flex my-2">
+              
+                <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                  github
+                </span>
+              
+            </div>
+          </div>
+
+          <p>There&#39;s a tool for shortening 
 links from Github that I&#39;ve known for a while
 but I imagine not everyone is aware of it.</p>
 
@@ -152,27 +215,51 @@ curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span
 <p>And call it with:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">shorten github.com/rails/rails
 </code></pre></div>
-
-  <div class='bottom'>
-    <section class="author">
-      <img src='/public/shime.jpg' alt='' />
-      <div>
-      <h4>Hrvoje Šimić</h4>
-      <p class="bio">
-        <a href="https://twitter.com/shime_sh">
-          @shime_sh
-        </a>
-
-        <small>
-          I'm a Ruby developer focused on building MVPs with Ruby on Rails.
-        </small>
-      </p>
-      </div>
-    </section>
-  </div>
-</div>
-
+        </div>
       </div>
     </div>
   </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+</script>
+
 </html>
+

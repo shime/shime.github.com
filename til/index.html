@@ -11,10 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552549898668856000">
-  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/monokai.css?1554656870157798000">
+  <link rel="stylesheet" href="/public/css/style.css?1554656870157798000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -65,221 +63,290 @@
 </head>
 
 
-  <body>
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <ul class="masthead-navigation">
-            
-              <li>
-                
-                  <a href='/articles/'>Articles</a>
-                
-              </li>
-            
-              <li>
-                
-                  TIL
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/photography/'>Photography</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/reading/'>Reading list</a>
-                
-              </li>
-            
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
+  <body class="font-sans">
+    <div class="w-full flex content-center justify-center">
+      <div class="lg:pt-16 lg:pb-32 p-6 relative">
+        
 
-      <div class="container content">
-        <div class="page">
-  <section class="til">
-  <h1 class="page-title">Today I Learned</h1>
 
-  <div class="description">
-    A collection of short tips and tricks about things I discover
-    during my work hours.
 
-    <br />
-    <br />
+  
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
 
-    You can <a href="/til.xml">subscribe to the RSS feed </a> if you'd like to follow along.
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <span class="font-medium text-xs text-grey no-underline uppercase mr-2 text-blue-light" >TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+      </ul>
+    </div>
   </div>
 
-  <ul class="posts">
-    
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/shorten-github-link-from-the-command-line">
-          Shorten Github link from the command line
-        </a>
-      </h3>
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
 
-      <span class="post-date">
-        March 12, 2019 <small> in github </small>
-      </span>
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
     </li>
     
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/from-class-components-to-function-components-with-hooks">
-          From class components to function components with hooks
-        </a>
-      </h3>
-
-      <span class="post-date">
-        February 19, 2019 <small> in react </small>
-      </span>
+    <li class="my-2">
+      
+        <span class="font-semibold text-xl no-underline uppercase text-blue-light" >TIL</a>
+      
     </li>
     
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/refactoring-a-large-case-statement">
-          Refactoring a large case statement
-        </a>
-      </h3>
-
-      <span class="post-date">
-        February 3, 2019 <small> in ruby </small>
-      </span>
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
     </li>
     
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/git-diff-algorithm-options">
-          Git diff algorithm options
-        </a>
-      </h3>
-
-      <span class="post-date">
-        February 3, 2019 <small> in git </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/resizing-panes-in-tmux-with-a-shortcut">
-          Resizing panes in tmux with a shortcut
-        </a>
-      </h3>
-
-      <span class="post-date">
-        February 2, 2019 <small> in tmux </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/refactoring-with-simple-polymorphism">
-          Refactoring with simple polymorphism
-        </a>
-      </h3>
-
-      <span class="post-date">
-        February 2, 2019 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/making-http-requests-from-vim">
-          Making HTTP requests from Vim
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 26, 2019 <small> in vim </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/pretty-formatting-json-in-vim">
-          Pretty formatting JSON in Vim
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 26, 2019 <small> in vim </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/pretty-formatting-json">
-          Pretty formatting JSON
-        </a>
-      </h3>
-
-      <span class="post-date">
-        January 21, 2019 <small> in bash </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/mocking-class-methods-using-minitest">
-          Mocking class methods using Minitest
-        </a>
-      </h3>
-
-      <span class="post-date">
-        December 21, 2018 <small> in ruby </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/strong-parameters-in-javascript">
-          Enforcing strong parameters
-        </a>
-      </h3>
-
-      <span class="post-date">
-        December 19, 2018 <small> in javascript </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/adding-new-hidden-collection-in-jekyll">
-          Adding a hidden collection
-        </a>
-      </h3>
-
-      <span class="post-date">
-        December 18, 2018 <small> in jekyll </small>
-      </span>
-    </li>
-    
-    <li class="post">
-      <h3 class="post-title">
-        <a href="/til/faster-database-resets-in-rails">
-          Faster database resets
-        </a>
-      </h3>
-
-      <span class="post-date">
-        December 18, 2018 <small> in rails </small>
-      </span>
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
     </li>
     
   </ul>
-</section>
-
 </div>
 
+
+        <div class="max-w-sm text-lg mt-16 text-grey-darker font-light leading-normal">
+          <div class="page-description">
+  <p>
+    A collection of short tips and tricks about things I discover
+    during my work hours.
+  </p>
+
+  <p class="mt-2">
+  You can <a class="text-black font-bold no-underline font-extrabold" href="/til.xml">subscribe to the RSS feed </a> if you'd like to follow along.
+  </p>
+</div>
+
+<ul class="list-reset tracking-wide">
+  
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/shorten-github-link-from-the-command-line">
+      Shorten Github link from the command line
+    </a>
+
+    <p class="text-grey">
+      March 12, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/from-class-components-to-function-components-with-hooks">
+      From class components to function components with hooks
+    </a>
+
+    <p class="text-grey">
+      February 19, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/refactoring-a-large-case-statement">
+      Refactoring a large case statement
+    </a>
+
+    <p class="text-grey">
+      February 3, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/git-diff-algorithm-options">
+      Git diff algorithm options
+    </a>
+
+    <p class="text-grey">
+      February 3, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/resizing-panes-in-tmux-with-a-shortcut">
+      Resizing panes in tmux with a shortcut
+    </a>
+
+    <p class="text-grey">
+      February 2, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/refactoring-with-simple-polymorphism">
+      Refactoring with simple polymorphism
+    </a>
+
+    <p class="text-grey">
+      February 2, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/making-http-requests-from-vim">
+      Making HTTP requests from Vim
+    </a>
+
+    <p class="text-grey">
+      January 26, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/pretty-formatting-json-in-vim">
+      Pretty formatting JSON in Vim
+    </a>
+
+    <p class="text-grey">
+      January 26, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/pretty-formatting-json">
+      Pretty formatting JSON
+    </a>
+
+    <p class="text-grey">
+      January 21, 2019
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/mocking-class-methods-using-minitest">
+      Mocking class methods using Minitest
+    </a>
+
+    <p class="text-grey">
+      December 21, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/strong-parameters-in-javascript">
+      Enforcing strong parameters
+    </a>
+
+    <p class="text-grey">
+      December 19, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/adding-new-hidden-collection-in-jekyll">
+      Adding a hidden collection
+    </a>
+
+    <p class="text-grey">
+      December 18, 2018
+    </p>
+  </li>
+  
+  <li class="my-4">
+    <a class="text-xl font-bold leading-tight" href="/til/faster-database-resets-in-rails">
+      Faster database resets
+    </a>
+
+    <p class="text-grey">
+      December 18, 2018
+    </p>
+  </li>
+  
+</ul>
+
+        </div>
       </div>
     </div>
   </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+</script>
+
 </html>

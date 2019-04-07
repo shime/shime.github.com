@@ -11,10 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/lanyon.css?1552549898668856000">
-  <link rel="stylesheet" href="/public/css/monokai.css?1552549898668856000">
-  <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,700" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/monokai.css?1554656870157798000">
+  <link rel="stylesheet" href="/public/css/style.css?1554656870157798000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -65,49 +63,106 @@
 </head>
 
 
-  <body>
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <ul class="masthead-navigation">
-            
-              <li>
-                
-                  <a href='/articles/'>Articles</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/til/'>TIL</a>
-                
-              </li>
-            
-              <li>
-                
-                  <a href='/photography/'>Photography</a>
-                
-              </li>
-            
-              <li>
-                
-                  Reading list
-                
-              </li>
-            
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
+  <body class="font-sans">
+    <div class="w-full flex content-center justify-center">
+      <div class="lg:pt-16 lg:pb-32 p-6 relative">
+        
 
-      <div class="container content">
-        <div class="page">
-  <section class="books-summary book">
-  <div class="description">
-    I love reading books.
+
+
+  
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <span class="font-medium text-xs text-grey no-underline uppercase mr-2 text-blue-light" >Reading list</a>
+          
+        </li>
+        
+      </ul>
+    </div>
   </div>
 
-  <div class='description' style="text-align: left">
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+    <li class="my-2">
+      
+        <span class="font-semibold text-xl no-underline uppercase text-blue-light" >Reading list</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+        <div class="max-w-sm text-lg mt-16 text-grey-darker font-light leading-normal">
+          <div class="page-description">
+  <p>
+    I love reading books.
+  </p>
+
+  <p class="mt-4">
     I didn't use to, but since buying a Nook
     the amount of books I've read
     has increased significantly.
@@ -115,85 +170,125 @@
     I read non-fiction almost exclusively. I mostly 
     read about psychology, productivity and
     philosophy.
-  </div>
+  </p>
 
-  <div class="description" style="text-align: left">
+  <p class="py-4">
     Here's the list of my favorite books,
     which I hope you will enjoy as much
     as I did.
-  </div>
-</section>
-
-<section class="book">
-  <img src='/public/how-to-win-friends-and-influence-people.jpg' alt='How to win friends and influence people' />
-  <small class="description">A must read for anyone dealing with people in their day to day work (everyone). Packed with great advice for effective work relationships. Although its title might suggest so, this isn't a self-help book.  </small>
-</section>
-
-<section class="book">
-  <img src='/public/the-talent-code.jpg' alt='The talent code' />
-  <small class="description">This book explores how brains work and how we reach our peek performance in both sports and art. Sheds some light on reasons behind talent pools like Brazil in soccer, Renaissance Florence in art, Russia in woman tennis etc.</small>
-</section>
-
-<section class="book">
-  <img src='/public/stop-stealing-dreams.jpg' alt='Stop stealing dreams' />
-  <small class="description">Great critique of our current education system and how it's obsolete for the modern age. Explores history behind modern schools and lays out the problems they cause.</small>
-</section>
-
-<section class="book">
-  <img src='/public/hackers-and-painters.jpeg' alt='Hackers and painters' />
-  <small class="description">
-    Although my first thought about this book was that it's going to lay out the differences between painters and programmers, this book explores the similarities between them. Interesting read for any programmer out there, although some chapters are mildly annoying with extreme libertarian agenda.
-  </small>
-</section>
-
-<section class="book">
-  <img src='/public/the-pragmatic-programmer.jpg' alt='The pragmatic programmer' />
-  <small class="description">
-    If I had to pick one book for every programmer to read, it would be this book. Packed with great advice from people that spent decades in software development.
-  </small>
-</section>
-
-<section class="book">
-  <img src='/public/mastery.jpg' alt='Mastery' />
-  <small class="description">
-    Exploration of what it takes to become a master. In this book, the author describes lives of famous masters of their craft like Leonardo da Vinci and Albert Einstein and explains how finding your niche is key to becoming master.
-  </small>
-</section>
-
-<section class="book">
-  <img src='/public/outliers.jpg' alt='Outliers' />
-  <small class="description">
-    This book describes how most people are only interested in what talented people are like and completely ignore the fact of their environment and the time they were born at. It explores how the environment affected the success of many people we consider talented like Bill Gates and the Beatles.
-  </small>
-</section>
-
-<section class="book">
-  <img src='/public/to-have-or-to-be.jpg' alt='To have or to be' />
-  <small class="description">
-    Great book that describes two modes of existence: the being and the having mode. It lays out the problem of the pointlessness of having mode and just acquiring things and suggests to reader to focus more on the being mode. A must read for anyone displeased with consumerism of our age.
-  </small>
-</section>
-
-<section class="book">
-  <img src='/public/the-obstacle-is-the-way.jpg' alt='The obstacle is the way' />
-  <small class="description">
-    If you're looking for an introduction to Stoicism, start with this book. It explains how Stoics view obstacles in life as opportunities and how many successful people in history followed the Stoic philosophy to get through difficult times in their lives.
-  </small>
-</section>
-
-<section class="book">
-  <img src='/public/a-power-governments-cannot-suppress.jpg' alt='A power governments cannot suppress' />
-  <small class="description">
-    A book that explores current political situation in the US. It concludes how civil disobedience is the key to democracy and is telling the truth about war and politics, being anti-war. It also gives criticism on celebrated US heroes like Columbus.
-  </small>
-</section>
-
-<br />
-<br />
-
+  </p>
 </div>
 
+<ul class="books">
+  <li>
+    <img class="w-64" src='/public/how-to-win-friends-and-influence-people.jpg' alt='How to win friends and influence people' />
+    <p>A must read for anyone dealing with people in their day to day work (everyone). Packed with great advice for effective work relationships. Although its title might suggest so, this isn't a self-help book.  </p>
+  </li>
+
+  <li>
+    <img src='/public/the-talent-code.jpg' alt='The talent code' />
+    <p>This book explores how brains work and how we reach our peek performance in both sports and art. Sheds some light on reasons behind talent pools like Brazil in soccer, Renaissance Florence in art, Russia in woman tennis etc.</p>
+  </li>
+
+  <li>
+    <img src='/public/stop-stealing-dreams.jpg' alt='Stop stealing dreams' />
+    <p>Great critique of our current education system and how it's obsolete for the modern age. Explores history behind modern schools and lays out the problems they cause.</p>
+  </li>
+
+  <li>
+    <img src='/public/hackers-and-painters.jpeg' alt='Hackers and painters' />
+    <p>
+      Although my first thought about this book was that it's going to lay out the differences between painters and programmers, this book explores the similarities between them. Interesting read for any programmer out there, although some chapters are mildly annoying with extreme libertarian agenda.
+    </p>
+  </li>
+
+  <li>
+    <img src='/public/the-pragmatic-programmer.jpg' alt='The pragmatic programmer' />
+    <p>
+      If I had to pick one book for every programmer to read, it would be this book. Packed with great advice from people that spent decades in software development.
+    </p>
+  </li>
+
+  <li>
+    <img src='/public/mastery.jpg' alt='Mastery' />
+    <p>
+      Exploration of what it takes to become a master. In this book, the author describes lives of famous masters of their craft like Leonardo da Vinci and Albert Einstein and explains how finding your niche is key to becoming master.
+    </p>
+  </li>
+
+  <li>
+    <img src='/public/outliers.jpg' alt='Outliers' />
+    <p>
+      This book describes how most people are only interested in what talented people are like and completely ignore the fact of their environment and the time they were born at. It explores how the environment affected the success of many people we consider talented like Bill Gates and the Beatles.
+    </p>
+  </li>
+
+  <li>
+    <img src='/public/to-have-or-to-be.jpg' alt='To have or to be' />
+    <p>
+      Great book that describes two modes of existence: the being and the having mode. It lays out the problem of the pointlessness of having mode and just acquiring things and suggests to reader to focus more on the being mode. A must read for anyone displeased with consumerism of our age.
+    </p>
+  </li>
+
+  <li>
+    <img src='/public/the-obstacle-is-the-way.jpg' alt='The obstacle is the way' />
+    <p>
+      If you're looking for an introduction to Stoicism, start with this book. It explains how Stoics view obstacles in life as opportunities and how many successful people in history followed the Stoic philosophy to get through difficult times in their lives.
+    </p>
+  </li>
+
+  <li>
+    <img src='/public/a-power-governments-cannot-suppress.jpg' alt='A power governments cannot suppress' />
+    <p>
+      A book that explores current political situation in the US. It concludes how civil disobedience is the key to democracy and is telling the truth about war and politics, being anti-war. It also gives criticism on celebrated US heroes like Columbus.
+    </p>
+  </li>
+</ul>
+
+        </div>
       </div>
     </div>
   </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+</script>
+
 </html>
