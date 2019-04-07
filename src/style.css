@@ -94,8 +94,12 @@ a {
   }
 }
 
-.medium-zoom-overlay ~ img {
+.medium-zoom-overlay {
   @apply z-30;
+
+  & ~ img {
+    @apply z-30;
+  }
 }
 
 .post {
