@@ -95,7 +95,7 @@ a {
 }
 
 .medium-zoom-overlay ~ img {
-  z-index: 30;
+  @apply z-30;
 }
 
 .post {
