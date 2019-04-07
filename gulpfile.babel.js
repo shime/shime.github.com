@@ -54,6 +54,7 @@ task("processStyles", done => {
         !devBuild,
         new purgecss({
           content: ["_site/**/*.html"],
+          whitelist: ["medium-zoom-overlay"],
           extractors: [
             {
               extractor: TailwindExtractor,
