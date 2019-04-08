@@ -8,6 +8,22 @@
 
     
     <item>
+      <title>Replacing Google Fonts with system fonts</title>
+      
+      <description>&lt;p&gt;Redesigning this website was a fun little project I did over the past
+weekend.
+The most exciting part was removing the need for Google Fonts and
+replacing them with system fonts.
+Google Fonts was the last Google&amp;#39;s tentacle on this website,
+so it&amp;#39;s now 100% Google free!&lt;/p&gt;
+</description>
+      
+      <pubDate>Mon, 08 Apr 2019 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/replacing-google-fonts-with-system-fonts</link>
+      <guid isPermaLink="true">http://shime.sh/replacing-google-fonts-with-system-fonts</guid>
+    </item>
+    
+    <item>
       <title>Testing Stimulus</title>
       
       <description>&lt;p&gt;Since the &lt;a href=&quot;https://stimulusjs.org/handbook/origin&quot;&gt;official Stimulus handbook&lt;/a&gt;
@@ -120,19 +136,6 @@ puts everything as the first line.&lt;/p&gt;
       <pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
       <link>http://shime.sh/landing-that-remote-job</link>
       <guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
-    </item>
-    
-    <item>
-      <title>Thanks via email</title>
-      
-      <description>&lt;p&gt;I&amp;#39;m a programmer, so in my daily work I depend on the work of others. Others
-who have put in the time and created the tools that my work depends on. Their work
-is indirectly putting bread on my table, so I think a small act of gratitude goes a long way.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 02 Jul 2017 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/thanks-via-email</link>
-      <guid isPermaLink="true">http://shime.sh/thanks-via-email</guid>
     </item>
     
   </channel>
