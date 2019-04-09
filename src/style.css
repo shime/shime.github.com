@@ -70,24 +70,31 @@ a {
 }
 
 .books {
-  @apply list-reset;
-
-  & li {
-    @apply flex flex-col items-center my-16;
+  & img {
+    @apply w-64;
   }
 
-  & img {
-    @apply w-64 mb-4;
+  & .column {
+    @apply p-12 text-center;
+    @apply bg-blue-lightest;
+    @apply border-t-4 border-blue-light;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+
+    & p {
+      @apply text-grey-dark mt-8 text-left;
+    }
   }
 }
 
-.images {
+.columns {
   column-count: 3;
   columns: 480px;
   margin: 0 auto;
   @apply mb-12;
 
-  & .image {
+  & .column {
     margin: 0;
     margin-bottom: 25px;
     width: 480px;
@@ -192,30 +199,30 @@ a {
 }
 
 @media screen and (min-width: 1984px) {
-  .images {
+  .columns {
     max-width: 2000px;
   }
 }
 
 @media screen and (max-width: 1984px) {
-  .images {
+  .columns {
     max-width: 1500px;
   }
 }
 
 @media screen and (max-width: 1500px) {
-  .images {
+  .columns {
     column-count: 2;
     max-width: 1000px;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .images {
+  .columns {
     column-count: 2;
     max-width: 480px;
 
-    & .image {
+    & .column {
       margin: 0 auto;
       width: 100%;
       text-align: center;
