@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555006796636237000">
-  <link rel="stylesheet" href="/public/css/style.css?1555006796636237000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1555012122799207000">
+  <link rel="stylesheet" href="/public/css/style.css?1555012122799207000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -41,27 +41,27 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="Git commit message syntax highlighting in Vim" />
+<meta property="og:title" content="Ruby! Y U SO BEAUTIFUL?" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line." />
-<meta property="og:description" content="Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line." />
-<link rel="canonical" href="http://shime.sh/git-commit-message-syntax-highlighting-in-vim" />
-<meta property="og:url" content="http://shime.sh/git-commit-message-syntax-highlighting-in-vim" />
+<meta name="description" content="Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:" />
+<meta property="og:description" content="Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:" />
+<link rel="canonical" href="http://shime.sh/til/ruby-y-u-so-beautiful" />
+<meta property="og:url" content="http://shime.sh/til/ruby-y-u-so-beautiful" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-03-20T00:00:00+01:00" />
+<meta property="article:published_time" content="2011-11-20T00:00:00+01:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim","headline":"Git commit message syntax highlighting in Vim","dateModified":"2018-03-20T00:00:00+01:00","datePublished":"2018-03-20T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim"},"description":"Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"headline":"Ruby! Y U SO BEAUTIFUL?","dateModified":"2011-11-20T00:00:00+01:00","datePublished":"2011-11-20T00:00:00+01:00","url":"http://shime.sh/til/ruby-y-u-so-beautiful","image":"http://shime.sh/public/social.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/ruby-y-u-so-beautiful"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title> Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić </title>
-  <meta name="title" content="Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić">
+  <title> Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić">
 </head>
 
 
@@ -160,75 +160,39 @@
       <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
         <div class="post max-w-full md:max-w-md">
           <div class="mb-8">
-            <h1>Git commit message syntax highlighting in Vim</h1>
+            <h1>Ruby! Y U SO BEAUTIFUL?</h1>
             <div class="text-grey">
-              March 20, 2018
+              November 20, 2011
             </div>
 
             <div class="flex my-2">
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  vim
-                </span>
-              
-                <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  git
+                  ruby
                 </span>
               
             </div>
           </div>
 
-          <p>Writing git commit messages should be done inside your
-editor because it allows you to add a lengthier commit
-description, as opposed to <code>git commit -m</code> which just
-puts everything as the first line.</p>
-
-<p>Well if your editor of choice is Vim, this is what
-happens after you enter <code>git commit</code>.</p>
-
-<p><img src="/public/vim-commit-old.png" alt=""></p>
-
-<p>Notice how first 50 chars of a commit message are
-highlighted in red. This is used to notify you about
-the length of the first line of a commit message so you
-know when it&#39;s too lengthy. For Vim, 50 chars is the
-suggested size of the first line of commit message.</p>
-
-<p>Well this isn&#39;t a good default for me, since the only
-thing that&#39;s worrying me is the truncation of the first
-line of commit message when my code ends up on Github. 
-I&#39;m only interested if the first line of my commit
-message is short enough to be displayed in full
-on Github.</p>
-
-<p>If that&#39;s not the case I&#39;ll end up with something
-like this.</p>
-
-<div style="text-align: center">
- <img src="/public/long-commit.png" style="margin: auto"/>
-</div>
-
-<p>Yuck.</p>
-
-<p>Preventing this is easy. Just make Vim highlight the first
-72 chars in red, which is the maximum number of characters
-Github allows in the first line.</p>
-
-<p>In order to do so, alter Vim&#39;s syntax rules for git commit
-messages, by editing <code>~/.vim/after/syntax/gitcommit.vim</code>
-like this.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">syn</span> <span class="k">clear</span> gitcommitSummary
-<span class="k">syn</span> <span class="k">match</span> gitcommitSummary    <span class="s2">"^.\{0,72\}"</span> contained containedin<span class="p">=</span>gitcommitFirstLine nextgroup<span class="p">=</span>gitcommitOverflow contains<span class="p">=</span>@Spell
+          <p>Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how
+I do it:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">String</span><span class="p">.</span><span class="nf">class_eval</span> <span class="k">do</span>
+  <span class="k">def</span> <span class="nf">a_or_an</span>
+    <span class="sx">%w(a e i o u)</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">downcase</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span> <span class="p">?</span> <span class="s2">"an </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">"</span> <span class="p">:</span> <span class="s2">"a </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </code></pre></div>
-<p>This will make Vim look like this.</p>
-
-<p><img src="/public/vim-commit-new.png" alt=""></p>
-
-<p>Now you&#39;ll be notified if you cross the length limit
-for the first line of git commit message on Github and you&#39;ll
-know exactly where it starts truncating it.</p>
-
-<p>Friends don&#39;t let friends over the Github char limit.</p>
+<p>If you put this baby in some file inside config/initializers of your
+app, you will be able to do this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s2">"carrot"</span><span class="p">.</span><span class="nf">a_or_an</span>
+<span class="o">=&gt;</span> <span class="s2">"a carrot"</span>
+<span class="s2">"apple"</span><span class="p">.</span><span class="nf">a_or_an</span>
+<span class="o">=&gt;</span> <span class="s2">"an apple"</span>
+</code></pre></div>
+<p>Yeah I know, it&#39;s awesome! I&#39;ve just thought every instance of class &quot;String&quot; how to do something new.
+This is called metaprogramming and this is one of the coolest things I&#39;ve found out about Ruby. However, don&#39;t use my
+solution if you have more complex requirements, like support for
+acronyms and abbreviations.</p>
 
         </div>
       </div>

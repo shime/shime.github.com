@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555006796636237000">
-  <link rel="stylesheet" href="/public/css/style.css?1555006796636237000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1555012064728260000">
+  <link rel="stylesheet" href="/public/css/style.css?1555012064728260000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -41,27 +41,27 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="Git commit message syntax highlighting in Vim" />
+<meta property="og:title" content="Autotest and RSpec problems" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line." />
-<meta property="og:description" content="Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line." />
-<link rel="canonical" href="http://shime.sh/git-commit-message-syntax-highlighting-in-vim" />
-<meta property="og:url" content="http://shime.sh/git-commit-message-syntax-highlighting-in-vim" />
+<meta name="description" content="I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only Test::Unit files and googling around retrieved several solutions. Some of them included creating ~/.autotest file which is read before any autotest session. In that file you should add" />
+<meta property="og:description" content="I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only Test::Unit files and googling around retrieved several solutions. Some of them included creating ~/.autotest file which is read before any autotest session. In that file you should add" />
+<link rel="canonical" href="http://shime.sh/til/autotest-and-rspec2-problems" />
+<meta property="og:url" content="http://shime.sh/til/autotest-and-rspec2-problems" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-03-20T00:00:00+01:00" />
+<meta property="article:published_time" content="2012-01-29T00:00:00+01:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim","headline":"Git commit message syntax highlighting in Vim","dateModified":"2018-03-20T00:00:00+01:00","datePublished":"2018-03-20T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim"},"description":"Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"headline":"Autotest and RSpec problems","dateModified":"2012-01-29T00:00:00+01:00","datePublished":"2012-01-29T00:00:00+01:00","url":"http://shime.sh/til/autotest-and-rspec2-problems","image":"http://shime.sh/public/social.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/autotest-and-rspec2-problems"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only Test::Unit files and googling around retrieved several solutions. Some of them included creating ~/.autotest file which is read before any autotest session. In that file you should add","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title> Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić </title>
-  <meta name="title" content="Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić">
+  <title> Autotest and RSpec problems &middot; Hrvoje Šimić </title>
+  <meta name="title" content="Autotest and RSpec problems &middot; Hrvoje Šimić">
 </head>
 
 
@@ -160,75 +160,43 @@
       <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
         <div class="post max-w-full md:max-w-md">
           <div class="mb-8">
-            <h1>Git commit message syntax highlighting in Vim</h1>
+            <h1>Autotest and RSpec problems</h1>
             <div class="text-grey">
-              March 20, 2018
+              January 29, 2012
             </div>
 
             <div class="flex my-2">
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  vim
+                  rspec
                 </span>
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  git
+                  ruby
                 </span>
               
             </div>
           </div>
 
-          <p>Writing git commit messages should be done inside your
-editor because it allows you to add a lengthier commit
-description, as opposed to <code>git commit -m</code> which just
-puts everything as the first line.</p>
-
-<p>Well if your editor of choice is Vim, this is what
-happens after you enter <code>git commit</code>.</p>
-
-<p><img src="/public/vim-commit-old.png" alt=""></p>
-
-<p>Notice how first 50 chars of a commit message are
-highlighted in red. This is used to notify you about
-the length of the first line of a commit message so you
-know when it&#39;s too lengthy. For Vim, 50 chars is the
-suggested size of the first line of commit message.</p>
-
-<p>Well this isn&#39;t a good default for me, since the only
-thing that&#39;s worrying me is the truncation of the first
-line of commit message when my code ends up on Github. 
-I&#39;m only interested if the first line of my commit
-message is short enough to be displayed in full
-on Github.</p>
-
-<p>If that&#39;s not the case I&#39;ll end up with something
-like this.</p>
-
-<div style="text-align: center">
- <img src="/public/long-commit.png" style="margin: auto"/>
-</div>
-
-<p>Yuck.</p>
-
-<p>Preventing this is easy. Just make Vim highlight the first
-72 chars in red, which is the maximum number of characters
-Github allows in the first line.</p>
-
-<p>In order to do so, alter Vim&#39;s syntax rules for git commit
-messages, by editing <code>~/.vim/after/syntax/gitcommit.vim</code>
-like this.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">syn</span> <span class="k">clear</span> gitcommitSummary
-<span class="k">syn</span> <span class="k">match</span> gitcommitSummary    <span class="s2">"^.\{0,72\}"</span> contained containedin<span class="p">=</span>gitcommitFirstLine nextgroup<span class="p">=</span>gitcommitOverflow contains<span class="p">=</span>@Spell
+          <p>I was experiencing problems with running specs with autotest. By default it&#39;s configured to run only <em>Test::Unit</em> files and googling around retrieved several solutions.
+Some of them included creating <em>~/.autotest</em> file which is read before any autotest session. In that file you should add</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Autotest</span><span class="p">.</span><span class="nf">add_hook</span> <span class="ss">:ran_command</span> <span class="k">do</span> <span class="o">|</span><span class="n">at</span><span class="o">|</span>
+  <span class="n">at</span><span class="p">.</span><span class="nf">add_mapping</span><span class="p">(</span><span class="sr">%r{^lib/.*</span><span class="se">\.</span><span class="sr">rb$}</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="p">,</span> <span class="n">_</span><span class="o">|</span>
+    <span class="no">Dir</span><span class="p">[</span><span class="s1">'spec/**/*.rb'</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="k">end</span>
 </code></pre></div>
-<p>This will make Vim look like this.</p>
+<p>This however, didn&#39;t work for me. Running <code>autotest -v</code> provided verbose output including:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">No tests matched spec/requests/emails_about_cancellation.rb
+No tests matched spec/requests/emails_when_owner_schedules.rb
+No tests matched spec/helpers/showings_helper_spec.rb
+</code></pre></div>
+<p>So basically <em>autotest</em> was unable to recognize <em>rspec</em> for some reason.</p>
 
-<p><img src="/public/vim-commit-new.png" alt=""></p>
-
-<p>Now you&#39;ll be notified if you cross the length limit
-for the first line of git commit message on Github and you&#39;ll
-know exactly where it starts truncating it.</p>
-
-<p>Friends don&#39;t let friends over the Github char limit.</p>
+<p>After an hour of research I&#39;ve finally found the solution which is as simple as:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">$ autotest -s rspec2
+</code></pre></div>
+<p>And now the <em>autotest</em> runs my specs and is watching them for changes. Why is this not documented anywhere remains a mystery to me.</p>
 
         </div>
       </div>

@@ -147,7 +147,7 @@ a {
 
   & code {
     @apply text-sm text-black leading-normal font-mono;
-    @apply bg-grey-lighter;
+    @apply bg-grey-lighter p-2;
     border-radius: 3px;
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
       monospace;
@@ -164,7 +164,7 @@ a {
     word-wrap: break-word;
 
     & code {
-      @apply bg-transparent;
+      @apply bg-transparent p-0;
       color: #f8f8f2;
     }
   }
