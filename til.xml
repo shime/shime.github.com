@@ -8,6 +8,18 @@
     
     
     <item>
+      <title>Filtering records with endless ranges</title>
+      
+      <description>&lt;p&gt;Ruby 2.6 has added support for &lt;a href=&quot;https://ruby-doc.org/core-2.6/Range.html#class-Range-label-Endless+Ranges&quot;&gt;endless ranges&lt;/a&gt;,
+which means ranges no longer require the end argument.&lt;/p&gt;
+</description>
+      
+      <pubDate>Thu, 11 Apr 2019 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/filtering-records-with-endless-ranges</link>
+      <guid isPermaLink="true">http://shime.sh/til/filtering-records-with-endless-ranges</guid>
+    </item>
+    
+    <item>
       <title>Shorten Github link from the command line</title>
       
       <description>&lt;p&gt;There&amp;#39;s a tool for shortening 
@@ -90,20 +102,6 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Making HTTP requests from Vim</title>
-      
-      <description>&lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
-enables HTTP requests from inside the editor&lt;/a&gt;,
-I was delighted to find that there&amp;#39;s also a &lt;a href=&quot;https://github.com/nicwest/vim-http&quot;&gt;Vim
-plugin&lt;/a&gt; for that.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/making-http-requests-from-vim</link>
-      <guid isPermaLink="true">http://shime.sh/til/making-http-requests-from-vim</guid>
-    </item>
-    
-    <item>
       <title>Pretty formatting JSON in Vim</title>
       
       <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
@@ -118,6 +116,20 @@ with the shorter name.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Making HTTP requests from Vim</title>
+      
+      <description>&lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
+enables HTTP requests from inside the editor&lt;/a&gt;,
+I was delighted to find that there&amp;#39;s also a &lt;a href=&quot;https://github.com/nicwest/vim-http&quot;&gt;Vim
+plugin&lt;/a&gt; for that.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/making-http-requests-from-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/making-http-requests-from-vim</guid>
+    </item>
+    
+    <item>
       <title>Pretty formatting JSON</title>
       
       <description>&lt;p&gt;I&amp;#39;ve used to use some silly NPM
@@ -128,19 +140,6 @@ JSON before.&lt;/p&gt;
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/pretty-formatting-json</link>
       <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json</guid>
-    </item>
-    
-    <item>
-      <title>Mocking class methods using Minitest</title>
-      
-      <description>&lt;p&gt;Minitest has a convoluted API for mocking 
-class methods, so in order to do so you&amp;#39;ll
-have to use another gem.&lt;/p&gt;
-</description>
-      
-      <pubDate>Fri, 21 Dec 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/mocking-class-methods-using-minitest</link>
-      <guid isPermaLink="true">http://shime.sh/til/mocking-class-methods-using-minitest</guid>
     </item>
     
   </channel>
