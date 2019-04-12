@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555012895631637000">
-  <link rel="stylesheet" href="/public/css/style.css?1555012895631637000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1555054594305053000">
+  <link rel="stylesheet" href="/public/css/style.css?1555054594305053000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -190,10 +190,10 @@ records that were created after a date, for example.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">User</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="ss">created_at: </span><span class="mi">1</span><span class="p">.</span><span class="nf">year</span><span class="p">.</span><span class="nf">ago</span><span class="o">..</span><span class="p">)</span>
 </code></pre></div>
 <p>Unfortunately, this is currently not supported
-with the current stable version of Rails<sup>5.2.3</sup>, but it will
-be supported in the next major release of Rails<sup>6.0.0</sup>.</p>
+with the current stable version of Rails<sup>(5.2.3)</sup>, but it will
+be supported in the next major release of Rails<sup>(6.0.0)</sup>.</p>
 
-<p>Speaking of next releases, it <a href="https://github.com/ruby/ruby/commit/95f7992b89efd35de6b28ac095c4d3477019c583">looks like</a> the next minor version of Ruby<sup>2.7.0</sup>
+<p>Speaking of next releases, it <a href="https://github.com/ruby/ruby/commit/95f7992b89efd35de6b28ac095c4d3477019c583">looks like</a> the next minor version of Ruby<sup>(2.7.0)</sup>
 will come with support for beginless ranges.</p>
 
 <p>When Rails adds support for that, filtering records older than a date will be pretty straightforward:</p>
