@@ -11,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555066910087012000">
-  <link rel="stylesheet" href="/public/css/style.css?1555066910087012000">
+  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -62,6 +63,8 @@
 
   <title> Refactoring a large case statement &middot; Hrvoje Šimić </title>
   <meta name="title" content="Refactoring a large case statement &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 
 
@@ -182,7 +185,7 @@ curl command arguments.</p>
 <p>The basic idea for a gem is to convert curl command to
 a sweet looking hash that we can use to do
 magical things. So when given:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://isrubydead.com/
+<div class="highlight"><pre><code class="language-" data-lang="">curl https://isrubydead.com/
 </code></pre></div>
 <p>Our program converts it to:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
@@ -986,7 +989,14 @@ with many methods.</p>
       })
     }
   }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
 </script>
+<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 

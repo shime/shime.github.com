@@ -11,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555066910087012000">
-  <link rel="stylesheet" href="/public/css/style.css?1555066910087012000">
+  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -62,6 +63,8 @@
 
   <title> Git diff algorithm options &middot; Hrvoje Šimić </title>
   <meta name="title" content="Git diff algorithm options &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 
 
@@ -240,14 +243,14 @@ each of the scenarios I&#39;d like to cover.</p>
 </code></pre></div>
 <p>Git uses Myers&#39; algorithm as a default for
 diffs, which gave me the following output:</p>
-<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
+<div class="highlight"><pre><code class="language-git" data-lang="git">-    def parse_word(word)
 -      case word
 -      when URI::DEFAULT_PARSER.make_regexp
 -        request.url = word
 -      when /\A(-H|--header)\Z/
 -        parse_header
 -      when /\A--compressed\Z/
-</span><span class="gi">+    module Word
++    module Word
 +      def self.parse(request, words, word)
 +        base_class = Word::Base.new(request, words)
 +        subclass = base_class.subclasses
@@ -287,24 +290,24 @@ diffs, which gave me the following output:</p>
 +        end
 +
 +        def parse(*)
-</span>           request.headers['Accept-Encoding'] ||= 'deflate, gzip'
-<span class="gd">-      case /\A-X|\A--request\Z/
-</span><span class="gi">+        end
+           request.headers['Accept-Encoding'] ||= 'deflate, gzip'
+-      case /\A-X|\A--request\Z/
++        end
 +      end
 +
 +      class Request &lt; Base
 +        def self.regex
-</span></code></pre></div>
+</code></pre></div>
 <p>Notice how diff output breaks the old method and inserts
 the new code in the middle of it. Super ugly.  I&#39;ve recently
 discovered that the diff command supports some <a href="https://git-scm.com/docs/diff-config#diff-config-diffalgorithm">options
 you can pass it</a>.</p>
 
 <p>So entering this in the console:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git diff <span class="nt">--histogram</span>
+<div class="highlight"><pre><code class="language-" data-lang="">git diff --histogram
 </code></pre></div>
 <p>Gave me:</p>
-<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
+<div class="highlight"><pre><code class="language-git" data-lang="git">-    def parse_word(word)
 -      case word
 -      when URI::DEFAULT_PARSER.make_regexp
 -        request.url = word
@@ -332,7 +335,7 @@ you can pass it</a>.</p>
 -        parse_data(url_encode: true)
 -      when /\./
 -        request.url = "http://#{word}" if request.url == ''
-</span><span class="gi">+    module Word
++    module Word
 +      def self.parse(request, words, word)
 +        base_class = Word::Base.new(request, words)
 +        subclass = base_class.subclasses
@@ -365,7 +368,7 @@ you can pass it</a>.</p>
 +        attr_reader :words
 +        attr_reader :request
 +      end
-</span></code></pre></div>
+</code></pre></div>
 <p>Much better if you ask me, since now it&#39;s more obvious I&#39;ve
 replaced the case statement in the method.</p>
 
@@ -413,7 +416,14 @@ replaced the case statement in the method.</p>
       })
     }
   }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
 </script>
+<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 

@@ -11,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555066910087012000">
-  <link rel="stylesheet" href="/public/css/style.css?1555066910087012000">
+  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -62,6 +63,8 @@
 
   <title> Shorten Github link from the command line &middot; Hrvoje Šimić </title>
   <meta name="title" content="Shorten Github link from the command line &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 
 
@@ -183,16 +186,16 @@ thing about it is that you can use it from the command
 line with curl.</p>
 
 <p>Use it like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=https://github.com/rails/rails"</span> | <span class="nb">grep</span> <span class="nt">-Fi</span> Location
+<div class="highlight"><pre><code class="language-" data-lang="">curl -si https://git.io -F "url=https://github.com/rails/rails" | grep -Fi Location
 </code></pre></div>
 <p>I use it all the time for linking to anything that&#39;s on Github
 from code comments. The most recent example is linking to
 a deprecated Rails method, <code>deep_merge</code> which is available
 on this link:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">https://github.com/rails/rails/blob/c0c87922baf47eed64a53d3afceba978bb175da9/activesupport/lib/active_support/core_ext/hash/diff.rb/#L9
+<div class="highlight"><pre><code class="language-" data-lang="">https://github.com/rails/rails/blob/c0c87922baf47eed64a53d3afceba978bb175da9/activesupport/lib/active_support/core_ext/hash/diff.rb/#L9
 </code></pre></div>
 <p>That&#39;s a huge link, so it&#39;s much better to have it shortened to:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">https://git.io/fhjSr
+<div class="highlight"><pre><code class="language-" data-lang="">https://git.io/fhjSr
 </code></pre></div>
 <p>The advantage for using this instead of some other link shortening service
 is that you can be sure it&#39;s a link to Github since it only
@@ -213,7 +216,7 @@ curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span
   cut <span class="nt">-d</span> <span class="s1">' '</span> <span class="nt">-f</span> 2
 </code></pre></div>
 <p>And call it with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">shorten github.com/rails/rails
+<div class="highlight"><pre><code class="language-" data-lang="">shorten github.com/rails/rails
 </code></pre></div>
         </div>
       </div>
@@ -259,7 +262,14 @@ curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span
       })
     }
   }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
 </script>
+<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 

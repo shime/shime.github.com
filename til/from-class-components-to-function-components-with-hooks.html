@@ -11,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555066910087012000">
-  <link rel="stylesheet" href="/public/css/style.css?1555066910087012000">
+  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -62,6 +63,8 @@
 
   <title> From class components to function components with hooks &middot; Hrvoje Šimić </title>
   <meta name="title" content="From class components to function components with hooks &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 
 
@@ -180,7 +183,7 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.</p>
 
 <p>The first thing that was annoying was the standard consumer wrap:</p>
-<div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
 
 <span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
@@ -283,7 +286,7 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
 <span class="p">}</span>
 </code></pre></div>
 <p>The second thing that was annoying was the fact that I had to wrap the consumer wrap in a higher-order component, to be able to use the context outside a render:</p>
-<div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
 
 <span class="c1">// Our good old context.</span>
 <span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
@@ -447,7 +450,12 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
 <p>I&#39;ve managed to get rid of those annoyances by upgrading to the latest React<sup>16.8.2</sup>, converting my class components to function components and replacing my nasty HOC with a simple hook.</p>
 
 <p>Here&#39;s the result:</p>
-<div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useContext</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">useContext</span><span class="p">,</span>
+  <span class="nx">useState</span><span class="p">,</span>
+  <span class="nx">Component</span><span class="p">,</span>
+  <span class="nx">createContext</span>
+<span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
 
 <span class="c1">// The context yet again.</span>
 <span class="c1">// Boring.</span>
@@ -486,6 +494,7 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
 <span class="p">}</span>
 
 <span class="c1">// The Timer class has been converted to function.</span>
+
 <span class="kd">function</span> <span class="nx">Timer</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">timerContext</span><span class="p">)</span>
 
@@ -579,7 +588,14 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
       })
     }
   }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
 </script>
+<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 

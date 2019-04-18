@@ -11,8 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555066910087012000">
-  <link rel="stylesheet" href="/public/css/style.css?1555066910087012000">
+  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -62,6 +63,8 @@
 
   <title> 4 tips from 6 years of remote freelancing &middot; Hrvoje Šimić </title>
   <meta name="title" content="4 tips from 6 years of remote freelancing &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 
 
@@ -261,7 +264,14 @@ working day with it.</p>
       })
     }
   }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
 </script>
+<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 
