@@ -11,9 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
-  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
-  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1555606105044111000">
+  <link rel="stylesheet" href="/public/css/style.css?1555606105044111000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -191,7 +190,7 @@ saved in <code>ugly.json</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span><span class="s2">"foo"</span><span class="p">:</span><span class="s2">"bar"</span><span class="p">,</span><span class="s2">"wat"</span><span class="p">:</span><span class="s2">"lol"</span><span class="p">,</span><span class="s2">"user"</span><span class="p">:{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bugs Bunny"</span><span class="p">,</span><span class="s2">"address"</span><span class="p">:{</span><span class="s2">"street"</span><span class="p">:</span><span class="s2">"underground street"</span><span class="p">,</span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"acme town"</span><span class="p">}}}</span>
 </code></pre></div>
 <p>I&#39;ve used this command to pretty print it before:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">cat ugly.json | json
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cat </span>ugly.json | json
 </code></pre></div>
 <p>Which outputs:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
@@ -212,7 +211,7 @@ is not available anymore.</p>
 
 <p>Luckily, I&#39;ve found out that I don&#39;t need the NPM package
 at all. There&#39;s a Linux command that does this:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">cat ugly.json | json_pp
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cat </span>ugly.json | json_pp
 </code></pre></div>
 <p>Which outputs the same pretty formated JSON:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
@@ -230,7 +229,7 @@ at all. There&#39;s a Linux command that does this:</p>
 <p>I took it even further for my use case and
 directly copied the pretty JSON into clipboard
 which I then shared with someone:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">cat ugly.json | json_pp | pbcopy
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cat </span>ugly.json | json_pp | pbcopy
 </code></pre></div>
 <p><code>pbcopy</code> is OSX command for copying text
 to clipboard, use <code>xclip -sel clip</code> on Linux.</p>
@@ -286,7 +285,6 @@ to clipboard, use <code>xclip -sel clip</code> on Linux.</p>
   }
   anchors.add()
 </script>
-<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 

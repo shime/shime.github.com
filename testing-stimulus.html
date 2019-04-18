@@ -11,9 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/prism.css?1555574779355146000">
-  <link rel="stylesheet" href="/public/css/duotone_sea.css?1555574779355146000">
-  <link rel="stylesheet" href="/public/css/style.css?1555574779355146000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1555606105044111000">
+  <link rel="stylesheet" href="/public/css/style.css?1555606105044111000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -185,9 +184,9 @@ recently had to cover a Stimulus controller with tests, I&#39;d like to share ou
 
 <p>The first step is installing the required
 npm packages to make this work.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">yarn add --dev jest
-yarn add --dev babel-jest babel-preset-es2015
-yarn add --dev mutationobserver-shim
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn add <span class="nt">--dev</span> jest
+yarn add <span class="nt">--dev</span> babel-jest babel-preset-es2015
+yarn add <span class="nt">--dev</span> mutationobserver-shim
 </code></pre></div>
 <p>We&#39;re going to use Jest for testing; Babel packages to make it play nice with
 Jest and mutationobserver-shim for shimming <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver</a>
@@ -252,7 +251,7 @@ Place this in your <code>.babelrc</code>:</p>
 <span class="p">});</span>
 </code></pre></div>
 <p>And run it with:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">yarn run jest test/javascript/first_test.js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/first_test.js
 </code></pre></div>
 <p>Congrats, you should see your first test fail! Woohoo!</p>
 
@@ -324,7 +323,7 @@ get serious and write a real Stimulus controller test.</p>
 <span class="p">});</span>
 </code></pre></div>
 <p>And run it with:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">yarn run jest test/javascript/basic_controller_test.js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/basic_controller_test.js
 </code></pre></div>
 <p>This test should fail, which means you have just
 written your first failing Stimulus test.</p>
@@ -423,7 +422,7 @@ how to handle some non-default actions with this example.</p>
 <span class="p">});</span>
 </code></pre></div>
 <p>And run it with Jest again:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">yarn run jest test/javascript/advanced_controller_test.js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/advanced_controller_test.js
 </code></pre></div>
 <p>Congrats if it fails! Change the expectation to match the actual
 text inside a paragraph.</p>
@@ -571,7 +570,7 @@ by configuring the standard <code>&quot;scripts&quot;</code> property in <code>p
 <span class="p">}</span>
 </code></pre></div>
 <p>We can now run JavaScript tests with:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">yarn test
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn <span class="nb">test</span>
 </code></pre></div>
 <h2>Set up Rake to run JavaScript tests</h2>
 
@@ -587,7 +586,7 @@ add this to your <code>Rakefile</code>:</p>
 <span class="k">end</span>
 </code></pre></div>
 <p>It&#39;s so easy to run JavaScript tests now with:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">rake test:js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rake <span class="nb">test</span>:js
 </code></pre></div>
 <p>Or all tests with:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">rake
@@ -646,7 +645,6 @@ Stimulus controllers!</p>
   }
   anchors.add()
 </script>
-<script src="/public/prism.js?1555574779355146000"></script>
 
 </html>
 
