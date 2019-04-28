@@ -8,6 +8,16 @@
 
     
     <item>
+      <title></title>
+      
+      <description></description>
+      
+      <pubDate>Fri, 19 Apr 2019 10:49:22 +0200</pubDate>
+      <link>http://shime.sh/2019-04-19-ruby-deep-dive-minitest</link>
+      <guid isPermaLink="true">http://shime.sh/2019-04-19-ruby-deep-dive-minitest</guid>
+    </item>
+    
+    <item>
       <title>Replacing Google Fonts with system fonts</title>
       
       <description>&lt;p&gt;Redesigning this website was a fun little project I did over the past
@@ -125,17 +135,6 @@ puts everything as the first line.&lt;/p&gt;
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
       <link>http://shime.sh/money-and-time</link>
       <guid isPermaLink="true">http://shime.sh/money-and-time</guid>
-    </item>
-    
-    <item>
-      <title>Landing that remote job</title>
-      
-      <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: The bigest problem is standing out. How do you do it?&lt;/p&gt;
-</description>
-      
-      <pubDate>Sat, 15 Jul 2017 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/landing-that-remote-job</link>
-      <guid isPermaLink="true">http://shime.sh/landing-that-remote-job</guid>
     </item>
     
   </channel>
