@@ -15,15 +15,6 @@
   
   
     <url>
-      <loc>http://shime.sh/photography/</loc>
-      <lastmod>2019-04-30</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-  
-  
-    <url>
       <loc>http://shime.sh/articles/</loc>
       <lastmod>2019-04-30</lastmod>
       <changefreq>daily</changefreq>
@@ -42,6 +33,15 @@
   
   
     <url>
+      <loc>http://shime.sh/</loc>
+      <lastmod>2019-04-30</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
       <loc>http://shime.sh/reading/</loc>
       <lastmod>2019-04-30</lastmod>
       <changefreq>daily</changefreq>
@@ -51,7 +51,16 @@
   
   
     <url>
-      <loc>http://shime.sh/</loc>
+      <loc>http://shime.sh/photography/</loc>
+      <lastmod>2019-04-30</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
+      <loc>http://shime.sh/microblog.xml</loc>
       <lastmod>2019-04-30</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -177,7 +186,7 @@
   
   
     <url>
-      <loc>http://shime.sh/books</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2019-04-30</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -186,7 +195,7 @@
   
   
     <url>
-      <loc>http://shime.sh/thoughts</loc>
+      <loc>http://shime.sh/books</loc>
       <lastmod>2019-04-30</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>

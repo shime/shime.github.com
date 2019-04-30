@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microblog • Hrvoje Šimić</title>
+    <description>Microblog of Hrvoje Šimić</description>		
+    <link>http://shime.sh</link>
+    <atom:link href="http://shime.sh/microblog.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AA6BAB73-1530-4AB9-A1B0-D0960E588719</title>
+      <description>&lt;p&gt;I&amp;#39;ve just discovered microblogging. Took me a while. I&amp;#39;ve already made an attempt to move away from Twitter and tried Mastodon before. Ditched it shortly after since it didn&amp;#39;t feel right. This looks much healthier!&lt;/p&gt;
+</description>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/microblog/AA6BAB73-1530-4AB9-A1B0-D0960E588719</link>
+      <guid isPermaLink="true">http://shime.sh/microblog/AA6BAB73-1530-4AB9-A1B0-D0960E588719</guid>
+    </item>
+    
+  </channel>
+</rss>
