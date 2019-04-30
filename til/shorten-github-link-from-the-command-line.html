@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Shorten Github link from the command line" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/shorten-github-link-from-the-command-line","headline":"Shorten Github link from the command line","dateModified":"2019-03-12T00:00:00+01:00","datePublished":"2019-03-12T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/shorten-github-link-from-the-command-line"},"description":"There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/shorten-github-link-from-the-command-line","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it.","headline":"Shorten Github link from the command line","dateModified":"2019-03-12T00:00:00+01:00","datePublished":"2019-03-12T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/shorten-github-link-from-the-command-line"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -185,37 +185,37 @@ thing about it is that you can use it from the command
 line with curl.</p>
 
 <p>Use it like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=https://github.com/rails/rails"</span> | <span class="nb">grep</span> <span class="nt">-Fi</span> Location
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>curl -si https://git.io -F <span class="s2">&quot;url=https://github.com/rails/rails&quot;</span> <span class="p">|</span> grep -Fi Location
 </code></pre></div>
 <p>I use it all the time for linking to anything that&#39;s on Github
 from code comments. The most recent example is linking to
 a deprecated Rails method, <code>deep_merge</code> which is available
 on this link:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">https://github.com/rails/rails/blob/c0c87922baf47eed64a53d3afceba978bb175da9/activesupport/lib/active_support/core_ext/hash/diff.rb/#L9
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>https://github.com/rails/rails/blob/c0c87922baf47eed64a53d3afceba978bb175da9/activesupport/lib/active_support/core_ext/hash/diff.rb/#L9
 </code></pre></div>
 <p>That&#39;s a huge link, so it&#39;s much better to have it shortened to:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">https://git.io/fhjSr
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>https://git.io/fhjSr
 </code></pre></div>
 <p>The advantage for using this instead of some other link shortening service
 is that you can be sure it&#39;s a link to Github since it only
 allows shortening of Github links.</p>
 
 <p>Bonus points if you turn it into a script:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/env bash</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="ch">#!/usr/bin/env bash</span>
 
 <span class="nv">url</span><span class="o">=</span><span class="nv">$1</span>
 
-<span class="c"># Append http:// to links without it.</span>
-<span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">'/^http/! s/^/http:\/\//'</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
-<span class="c"># Convert http:// to https:// since git.io requires HTTPS.</span>
-<span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">'s/^http:/https:/'</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
+<span class="c1"># Append http:// to links without it.</span>
+<span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">&#39;/^http/! s/^/http:\/\//&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
+<span class="c1"># Convert http:// to https:// since git.io requires HTTPS.</span>
+<span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">&#39;s/^http:/https:/&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
 
-curl <span class="nt">-si</span> https://git.io <span class="nt">-F</span> <span class="s2">"url=</span><span class="nv">$url</span><span class="s2">"</span> |
-  <span class="nb">grep</span> <span class="nt">-Fi</span> Location |
-  cut <span class="nt">-d</span> <span class="s1">' '</span> <span class="nt">-f</span> 2
+curl -si https://git.io -F <span class="s2">&quot;url=</span><span class="nv">$url</span><span class="s2">&quot;</span> <span class="p">|</span>
+  grep -Fi Location <span class="p">|</span>
+  cut -d <span class="s1">&#39; &#39;</span> -f <span class="m">2</span>
 </code></pre></div>
 <p>And call it with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">shorten github.com/rails/rails
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>shorten github.com/rails/rails
 </code></pre></div>
         </div>
       </div>

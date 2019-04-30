@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Uninitialized class variable @@current_spec in Minitest" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest","headline":"Uninitialized class variable @@current_spec in Minitest","dateModified":"2012-04-30T00:00:00+02:00","datePublished":"2012-04-30T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest"},"description":"When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.","headline":"Uninitialized class variable @@current_spec in Minitest","dateModified":"2012-04-30T00:00:00+02:00","datePublished":"2012-04-30T00:00:00+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -179,10 +179,10 @@
           <p>When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.</p>
 
 <p>It was happening because I used to run the tests with</p>
-<div class="highlight"><pre><code class="language-" data-lang="">$ rspec spec
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ rspec spec
 </code></pre></div>
 <p>The case is - you don&#39;t need rspec to run minitests. Just run it like this</p>
-<div class="highlight"><pre><code class="language-" data-lang="">$ ruby spec/path/to/your/spec.rb
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ruby spec/path/to/your/spec.rb
 </code></pre></div>
         </div>
       </div>

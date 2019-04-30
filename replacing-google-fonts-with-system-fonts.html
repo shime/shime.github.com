@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Replacing Google Fonts with system fonts" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/replacing-google-fonts-with-system-fonts","headline":"Replacing Google Fonts with system fonts","dateModified":"2019-04-08T00:00:00+02:00","datePublished":"2019-04-08T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/replacing-google-fonts-with-system-fonts"},"description":"Redesigning this website was a fun little project I did over the past weekend. The most exciting part was removing the need for Google Fonts and replacing them with system fonts. Google Fonts was the last Google&#39;s tentacle on this website, so it&#39;s now 100% Google free!","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/replacing-google-fonts-with-system-fonts","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Redesigning this website was a fun little project I did over the past weekend. The most exciting part was removing the need for Google Fonts and replacing them with system fonts. Google Fonts was the last Google&#39;s tentacle on this website, so it&#39;s now 100% Google free!","headline":"Replacing Google Fonts with system fonts","dateModified":"2019-04-08T00:00:00+02:00","datePublished":"2019-04-08T00:00:00+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/replacing-google-fonts-with-system-fonts"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -200,16 +200,16 @@ used to seeing this font in their operating system.</li>
 
 <p>Since this site has been updated to use <a href="https://tailwindcss.com/">Tailwind</a>,
 I&#39;m using their default CSS rule for sans font:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.font-sans</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="n">system-ui</span><span class="p">,</span> <span class="n">BlinkMacSystemFont</span><span class="p">,</span> <span class="n">-apple-system</span><span class="p">,</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">font-sans</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="n">system-ui</span><span class="p">,</span> <span class="n">BlinkMacSystemFont</span><span class="p">,</span> <span class="o">-</span><span class="n">apple-system</span><span class="p">,</span>
                <span class="n">Segoe</span> <span class="n">UI</span><span class="p">,</span> <span class="n">Roboto</span><span class="p">,</span> <span class="n">Oxygen</span><span class="p">,</span> <span class="n">Ubuntu</span><span class="p">,</span> <span class="n">Cantarell</span><span class="p">,</span>
-               <span class="n">Fira</span> <span class="n">Sans</span><span class="p">,</span> <span class="n">Droid</span> <span class="n">Sans</span><span class="p">,</span> <span class="n">Helvetica</span> <span class="n">Neue</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+               <span class="n">Fira</span> <span class="n">Sans</span><span class="p">,</span> <span class="n">Droid</span> <span class="n">Sans</span><span class="p">,</span> <span class="n">Helvetica</span> <span class="n">Neue</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>I&#39;m using another CSS rule for system fonts in code blocks:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.font-code</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"SFMono-Regular"</span><span class="p">,</span> <span class="n">Consolas</span><span class="p">,</span> <span class="s1">"Liberation Mono"</span><span class="p">,</span>
-                <span class="n">Menlo</span><span class="p">,</span> <span class="n">Courier</span><span class="p">,</span> <span class="nb">monospace</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">font-code</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;SFMono-Regular&quot;</span><span class="p">,</span> <span class="n">Consolas</span><span class="p">,</span> <span class="s2">&quot;Liberation Mono&quot;</span><span class="p">,</span>
+                <span class="n">Menlo</span><span class="p">,</span> <span class="n">Courier</span><span class="p">,</span> <span class="kc">monospace</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Those are the only CSS rules I have for fonts.</p>

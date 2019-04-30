@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="From class components to function components with hooks" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/from-class-components-to-function-components-with-hooks","headline":"From class components to function components with hooks","dateModified":"2019-02-19T00:00:00+01:00","datePublished":"2019-02-19T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/from-class-components-to-function-components-with-hooks"},"description":"I&#39;ve been using React 16.5.2 context instead of Redux in the super secret app I&#39;m working on, and I appreciate the simplicity improvement. The learning curve is pretty minimal, and there are fewer levels of abstraction. The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/from-class-components-to-function-components-with-hooks","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve been using React 16.5.2 context instead of Redux in the super secret app I&#39;m working on, and I appreciate the simplicity improvement. The learning curve is pretty minimal, and there are fewer levels of abstraction. The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.","headline":"From class components to function components with hooks","dateModified":"2019-02-19T00:00:00+01:00","datePublished":"2019-02-19T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/from-class-components-to-function-components-with-hooks"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -182,52 +182,52 @@ The learning curve is pretty minimal, and there are fewer levels of abstraction.
 The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.</p>
 
 <p>The first thing that was annoying was the standard consumer wrap:</p>
-<div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
 
-<span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
-<span class="kd">class</span> <span class="nx">Provider</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">()</span>
+<span class="kr">class</span> <span class="nx">Provider</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">()</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">store</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">active</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="na">stop</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+      <span class="nx">store</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">active</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">stop</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
       <span class="p">},</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">stop</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">timerContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/timerContext.Provider&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nx">Timer</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">()</span>
+<span class="kr">class</span> <span class="nx">Timer</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">()</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">activeTab</span><span class="p">:</span> <span class="s1">'timer'</span>
+      <span class="nx">activeTab</span><span class="o">:</span> <span class="s1">&#39;timer&#39;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">buttonClick</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">store</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
@@ -239,99 +239,99 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
   <span class="p">}</span>
 
   <span class="nx">changeTab</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">activeTab</span><span class="p">:</span> <span class="nx">value</span> <span class="p">})</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">activeTab</span><span class="o">:</span> <span class="nx">value</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
 
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">'timer'</span><span class="si">}</span>
-               <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'timer'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-               Timer
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">'manual'</span><span class="si">}</span> 
-               <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'manual'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-               Manual
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">&#39;timer&#39;</span><span class="p">}</span>
+               <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;timer&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+               <span class="nx">Timer</span>
+          <span class="o">&lt;</span><span class="err">/li&gt;</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">&#39;manual&#39;</span><span class="p">}</span> 
+               <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;manual&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+               <span class="nx">Manual</span>
+          <span class="o">&lt;</span><span class="err">/li&gt;</span>
+        <span class="o">&lt;</span><span class="err">/ul&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">active=</span><span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="si">}</span>
-                <span class="na">onClick=</span><span class="si">{</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
-          <span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="p">?</span> <span class="s1">'Stop'</span> <span class="p">:</span> <span class="s1">'Start'</span> <span class="si">}</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">}</span>
+                <span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="o">?</span> <span class="s1">&#39;Stop&#39;</span> <span class="o">:</span> <span class="s1">&#39;Start&#39;</span> <span class="p">}</span>
+        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Not an actual layout, provider and consumer </span>
 <span class="c1">// are not that near each other.</span>
-<span class="kd">class</span> <span class="nx">Layout</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+<span class="kr">class</span> <span class="nx">Layout</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-     <span class="p">&lt;</span><span class="nc">Provider</span><span class="p">&gt;</span>
-       <span class="si">{</span> <span class="cm">/* This is the annoying part. */</span> <span class="si">}</span>
-       <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
-         <span class="si">{</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
-           <span class="p">&lt;</span><span class="nc">Timer</span> <span class="na">store=</span><span class="si">{</span><span class="nx">store</span><span class="si">}</span><span class="p">/&gt;</span>
-         <span class="p">)</span><span class="si">}</span>
-       <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
-     <span class="p">&lt;/</span><span class="nc">Provider</span><span class="p">&gt;</span>
+     <span class="o">&lt;</span><span class="nx">Provider</span><span class="o">&gt;</span>
+       <span class="p">{</span> <span class="cm">/* This is the annoying part. */</span> <span class="p">}</span>
+       <span class="o">&lt;</span><span class="nx">timerContext</span><span class="p">.</span><span class="nx">Consumer</span><span class="o">&gt;</span>
+         <span class="p">{({</span> <span class="nx">store</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">(</span>
+           <span class="o">&lt;</span><span class="nx">Timer</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">/&gt;</span>
+         <span class="p">)}</span>
+       <span class="o">&lt;</span><span class="err">/timerContext.Consumer&gt;</span>
+     <span class="o">&lt;</span><span class="err">/Provider&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>The second thing that was annoying was the fact that I had to wrap the consumer wrap in a higher-order component, to be able to use the context outside a render:</p>
-<div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
 
 <span class="c1">// Our good old context.</span>
-<span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
-<span class="kd">class</span> <span class="nx">Provider</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">()</span>
+<span class="kr">class</span> <span class="nx">Provider</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">()</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">store</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">active</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="na">stop</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+      <span class="nx">store</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">active</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">stop</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
       <span class="p">},</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">stop</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">timerContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/timerContext.Provider&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nx">Timer</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">()</span>
+<span class="kr">class</span> <span class="nx">Timer</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">()</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">activeTab</span><span class="p">:</span> <span class="s1">'timer'</span>
+      <span class="nx">activeTab</span><span class="o">:</span> <span class="s1">&#39;timer&#39;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">buttonClick</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">store</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
@@ -343,59 +343,59 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
   <span class="p">}</span>
 
   <span class="nx">changeTab</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">activeTab</span><span class="p">:</span> <span class="nx">value</span> <span class="p">})</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">activeTab</span><span class="o">:</span> <span class="nx">value</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
 
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">'timer'</span><span class="si">}</span>
-               <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'timer'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-               Timer
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">'manual'</span><span class="si">}</span> 
-               <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'manual'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-               Manual
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">&#39;timer&#39;</span><span class="p">}</span>
+               <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;timer&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+               <span class="nx">Timer</span>
+          <span class="o">&lt;</span><span class="err">/li&gt;</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">&#39;manual&#39;</span><span class="p">}</span> 
+               <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;manual&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+               <span class="nx">Manual</span>
+          <span class="o">&lt;</span><span class="err">/li&gt;</span>
+        <span class="o">&lt;</span><span class="err">/ul&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">active=</span><span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="si">}</span>
-                <span class="na">onClick=</span><span class="si">{</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
-          <span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="p">?</span> <span class="s1">'Stop'</span> <span class="p">:</span> <span class="s1">'Start'</span> <span class="si">}</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">}</span>
+                <span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="o">?</span> <span class="s1">&#39;Stop&#39;</span> <span class="o">:</span> <span class="s1">&#39;Start&#39;</span> <span class="p">}</span>
+        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">// HOC we're introducing just to</span>
+<span class="c1">// HOC we&#39;re introducing just to</span>
 <span class="c1">// allow usage of context outside of render.</span>
 <span class="c1">// Not great.</span>
-<span class="kd">const</span> <span class="nx">withContext</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-        <span class="p">&lt;</span><span class="nc">Component</span> <span class="err">{</span><span class="p">...</span><span class="nt">props</span><span class="err">}</span> <span class="na">context=</span><span class="si">{</span><span class="nx">context</span><span class="si">}</span><span class="p">/&gt;</span>
-      <span class="p">)</span><span class="si">}</span>
-    <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+<span class="kr">const</span> <span class="nx">withContext</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">timerContext</span><span class="p">.</span><span class="nx">Consumer</span><span class="o">&gt;</span>
+      <span class="p">{(</span><span class="nx">context</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="nx">context</span><span class="o">=</span><span class="p">{</span><span class="nx">context</span><span class="p">}</span><span class="o">/&gt;</span>
+      <span class="p">)}</span>
+    <span class="o">&lt;</span><span class="err">/timerContext.Consumer&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
 
 
 <span class="c1">// The Timer component is wrapped in HOC now.</span>
-<span class="kd">const</span> <span class="nx">TimerWithContext</span> <span class="o">=</span> <span class="nx">withContext</span><span class="p">(</span><span class="kd">class</span> <span class="nx">Timer</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">TimerWithContext</span> <span class="o">=</span> <span class="nx">withContext</span><span class="p">(</span><span class="kr">class</span> <span class="nx">Timer</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">()</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">activeTab</span><span class="p">:</span> <span class="s1">'timer'</span>
+      <span class="nx">activeTab</span><span class="o">:</span> <span class="s1">&#39;timer&#39;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">buttonClick</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">store</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
@@ -407,41 +407,41 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
   <span class="p">}</span>
 
   <span class="nx">changeTab</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">activeTab</span><span class="p">:</span> <span class="nx">value</span> <span class="p">})</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">activeTab</span><span class="o">:</span> <span class="nx">value</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">context</span>
 
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">'timer'</span><span class="si">}</span>
-               <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'timer'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-               Timer
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">'manual'</span><span class="si">}</span> 
-               <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'manual'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-               Manual
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">&#39;timer&#39;</span><span class="p">}</span>
+               <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;timer&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+               <span class="nx">Timer</span>
+          <span class="o">&lt;</span><span class="err">/li&gt;</span>
+          <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">activeTab</span> <span class="o">===</span> <span class="s1">&#39;manual&#39;</span><span class="p">}</span> 
+               <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">changeTab</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;manual&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+               <span class="nx">Manual</span>
+          <span class="o">&lt;</span><span class="err">/li&gt;</span>
+        <span class="o">&lt;</span><span class="err">/ul&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">active=</span><span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="si">}</span>
-                <span class="na">onClick=</span><span class="si">{</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
-          <span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="p">?</span> <span class="s1">'Stop'</span> <span class="p">:</span> <span class="s1">'Start'</span> <span class="si">}</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">}</span>
+                <span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="o">?</span> <span class="s1">&#39;Stop&#39;</span> <span class="o">:</span> <span class="s1">&#39;Start&#39;</span> <span class="p">}</span>
+        <span class="o">&lt;</span><span class="err">/button&gt;</span>
+      <span class="o">&lt;</span><span class="err">/div&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">})</span>
 
-<span class="kd">class</span> <span class="nx">Layout</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+<span class="kr">class</span> <span class="nx">Layout</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-     <span class="p">&lt;</span><span class="nc">Provider</span><span class="p">&gt;</span>
-       <span class="si">{</span> <span class="cm">/* No longer that annoying, but we've introduced HOC. */</span> <span class="si">}</span>
-       <span class="p">&lt;</span><span class="nc">TimerWithContext</span> <span class="p">/&gt;</span>
-     <span class="p">&lt;/</span><span class="nc">Provider</span><span class="p">&gt;</span>
+     <span class="o">&lt;</span><span class="nx">Provider</span><span class="o">&gt;</span>
+       <span class="p">{</span> <span class="cm">/* No longer that annoying, but we&#39;ve introduced HOC. */</span> <span class="p">}</span>
+       <span class="o">&lt;</span><span class="nx">TimerWithContext</span> <span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="err">/Provider&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -449,51 +449,51 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
 <p>I&#39;ve managed to get rid of those annoyances by upgrading to the latest React<sup>16.8.2</sup>, converting my class components to function components and replacing my nasty HOC with a simple hook.</p>
 
 <p>Here&#39;s the result:</p>
-<div class="highlight"><pre><code class="language-react" data-lang="react"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useContext</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useContext</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
 
 <span class="c1">// The context yet again.</span>
 <span class="c1">// Boring.</span>
-<span class="kd">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">timerContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">()</span>
 
-<span class="kd">class</span> <span class="nx">Provider</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">()</span>
+<span class="kr">class</span> <span class="nx">Provider</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">()</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">store</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">active</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="na">stop</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+      <span class="nx">store</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">active</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">stop</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
       <span class="p">},</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">stop</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span>
-    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="na">active</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
+    <span class="nx">store</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">store</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">store</span> <span class="p">})</span>
   <span class="p">}</span>
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="p">&lt;</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">timerContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">timerContext</span><span class="p">.</span><span class="nx">Provider</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/timerContext.Provider&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// The Timer class has been converted to function.</span>
 <span class="kd">function</span> <span class="nx">Timer</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">timerContext</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">timerContext</span><span class="p">)</span>
 
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">setTab</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">'timer'</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">tab</span><span class="p">,</span> <span class="nx">setTab</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;timer&#39;</span><span class="p">)</span>
 
-  <span class="kd">const</span> <span class="nx">buttonClick</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">buttonClick</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">store</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -504,33 +504,33 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="nx">tab</span> <span class="o">===</span> <span class="s1">'timer'</span><span class="si">}</span> 
-             <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTab</span><span class="p">(</span><span class="s1">'timer'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-             Timer
-        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">active=</span><span class="si">{</span><span class="nx">tab</span> <span class="o">===</span> <span class="s1">'manual'</span><span class="si">}</span>
-             <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTab</span><span class="p">(</span><span class="s1">'manual'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
-             Manual
-        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="nx">tab</span> <span class="o">===</span> <span class="s1">&#39;timer&#39;</span><span class="p">}</span> 
+             <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setTab</span><span class="p">(</span><span class="s1">&#39;timer&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+             <span class="nx">Timer</span>
+        <span class="o">&lt;</span><span class="err">/li&gt;</span>
+        <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="nx">tab</span> <span class="o">===</span> <span class="s1">&#39;manual&#39;</span><span class="p">}</span>
+             <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setTab</span><span class="p">(</span><span class="s1">&#39;manual&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+             <span class="nx">Manual</span>
+        <span class="o">&lt;</span><span class="err">/li&gt;</span>
+      <span class="o">&lt;</span><span class="err">/ul&gt;</span>
 
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">active=</span><span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="si">}</span> 
-              <span class="na">onClick=</span><span class="si">{</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="p">?</span> <span class="s1">'Stop'</span> <span class="p">:</span> <span class="s1">'Start'</span> <span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">active</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span><span class="p">}</span> 
+              <span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">buttonClick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">}}</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">store</span><span class="p">.</span><span class="nx">active</span> <span class="o">?</span> <span class="s1">&#39;Stop&#39;</span> <span class="o">:</span> <span class="s1">&#39;Start&#39;</span> <span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">/button&gt;</span>
+    <span class="o">&lt;</span><span class="err">/div&gt;</span>
   <span class="p">)</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nx">Layout</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+<span class="kr">class</span> <span class="nx">Layout</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-     <span class="p">&lt;</span><span class="nc">Provider</span><span class="p">&gt;</span>
-       <span class="si">{</span> <span class="cm">/* Very slick now */</span> <span class="si">}</span>
-       <span class="p">&lt;</span><span class="nc">Timer</span> <span class="p">/&gt;</span>
-     <span class="p">&lt;/</span><span class="nc">Provider</span><span class="p">&gt;</span>
+     <span class="o">&lt;</span><span class="nx">Provider</span><span class="o">&gt;</span>
+       <span class="p">{</span> <span class="cm">/* Very slick now */</span> <span class="p">}</span>
+       <span class="o">&lt;</span><span class="nx">Timer</span> <span class="o">/&gt;</span>
+     <span class="o">&lt;</span><span class="err">/Provider&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>

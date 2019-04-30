@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="MicroMachineJS - a minimal state machine for JavaScript" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript","headline":"MicroMachineJS - a minimal state machine for JavaScript","dateModified":"2014-01-06T00:00:00+01:00","datePublished":"2014-01-06T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript"},"description":"I&#39;ve published a simple JavaScript library the other day. Its goal is to help dealing with states and it provides a simple API for managing a minimalistic implementation of a state machine.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve published a simple JavaScript library the other day. Its goal is to help dealing with states and it provides a simple API for managing a minimalistic implementation of a state machine.","headline":"MicroMachineJS - a minimal state machine for JavaScript","dateModified":"2014-01-06T00:00:00+01:00","datePublished":"2014-01-06T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -186,56 +186,56 @@ with states and it provides a simple API for managing a minimalistic implementat
 <h3>Installation</h3>
 
 <p>Give it a go by installing its node package:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install micro-machine
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install micro-machine
 </code></pre></div>
 <p>or use it in the browser with:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//rawgithub.com/shime/micro-machine-js/master/dist/micro-machine.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//rawgithub.com/shime/micro-machine-js/master/dist/micro-machine.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <h3>Examples</h3>
 
 <p>Here&#39;s a walkthrough of its features.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// create a new instance and set its initial state to "pending"</span>
-<span class="kd">var</span> <span class="nx">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MicroMachine</span><span class="p">(</span><span class="s2">"pending"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs 'pending'</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="c1">// create a new instance and set its initial state to &quot;pending&quot;</span>
+<span class="kd">var</span> <span class="nx">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MicroMachine</span><span class="p">(</span><span class="s2">&quot;pending&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs &#39;pending&#39;</span>
 
 <span class="c1">// define transitions</span>
-<span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="p">{</span><span class="na">pending</span><span class="p">:</span> <span class="s1">'confirmed'</span><span class="p">};</span>
-<span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">ignore</span> <span class="o">=</span> <span class="p">{</span><span class="na">pending</span><span class="p">:</span> <span class="s1">'ignored'</span><span class="p">};</span>
-<span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="p">{</span><span class="na">confirmed</span><span class="p">:</span> <span class="s1">'pending'</span><span class="p">,</span> <span class="na">ignored</span><span class="p">:</span> <span class="s1">'pending'</span><span class="p">};</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="p">{</span><span class="nx">pending</span><span class="o">:</span> <span class="s1">&#39;confirmed&#39;</span><span class="p">};</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">ignore</span> <span class="o">=</span> <span class="p">{</span><span class="nx">pending</span><span class="o">:</span> <span class="s1">&#39;ignored&#39;</span><span class="p">};</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="p">{</span><span class="nx">confirmed</span><span class="o">:</span> <span class="s1">&#39;pending&#39;</span><span class="p">,</span> <span class="nx">ignored</span><span class="o">:</span> <span class="s1">&#39;pending&#39;</span><span class="p">};</span>
 
-<span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'confirm'</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs 'confirmed'</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;confirm&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs &#39;confirmed&#39;</span>
 
 <span class="c1">// define callbacks</span>
-<span class="nx">machine</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'reset'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"resetting..."</span><span class="p">);</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;resetting...&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'reset'</span><span class="p">);</span> <span class="c1">// resets state and outputs 'resetting...'</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">);</span> <span class="c1">// resets state and outputs &#39;resetting...&#39;</span>
 
 <span class="c1">// define special callback that will be called after any transition</span>
-<span class="nx">machine</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'any'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">machine</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"transitioned to '"</span> <span class="o">+</span> <span class="nx">machine</span><span class="p">.</span><span class="nx">state</span> <span class="o">+</span> <span class="s2">"'"</span><span class="p">);</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">machine</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;transitioned to &#39;&quot;</span> <span class="o">+</span> <span class="nx">machine</span><span class="p">.</span><span class="nx">state</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">);</span> <span class="c1">// outputs "transitioned to 'ignored'"</span>
+<span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">);</span> <span class="c1">// outputs &quot;transitioned to &#39;ignored&#39;&quot;</span>
 </code></pre></div>
 <h3>Composition capabilities</h3>
 
 <p>Adding MicroMachine to your objects is piece of cake - just use composition!</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">User</span><span class="p">(){</span>
-  <span class="kd">var</span> <span class="nx">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MicroMachine</span><span class="p">(</span><span class="s2">"pending"</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">User</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">User</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MicroMachine</span><span class="p">(</span><span class="s2">&quot;pending&quot;</span><span class="p">);</span>
 
-  <span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="p">{</span><span class="na">pending</span><span class="p">:</span> <span class="s1">'confirmed'</span><span class="p">};</span>
-  <span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="p">{</span><span class="na">confirmed</span><span class="p">:</span> <span class="s1">'pending'</span><span class="p">};</span>
+  <span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="p">{</span><span class="nx">pending</span><span class="o">:</span> <span class="s1">&#39;confirmed&#39;</span><span class="p">};</span>
+  <span class="nx">machine</span><span class="p">.</span><span class="nx">transitionsFor</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="p">{</span><span class="nx">confirmed</span><span class="o">:</span> <span class="s1">&#39;pending&#39;</span><span class="p">};</span>
 
-  <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-  <span class="nx">machine</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"any"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">machine</span><span class="p">){</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
+  <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="nx">machine</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;any&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">machine</span><span class="p">){</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">machine</span><span class="p">.</span><span class="nx">state</span><span class="p">;</span>
   <span class="p">});</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'confirm'</span><span class="p">);</span>
+    <span class="nx">machine</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;confirm&#39;</span><span class="p">);</span>
   <span class="p">};</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
@@ -247,7 +247,7 @@ with states and it provides a simple API for managing a minimalistic implementat
 
 <span class="nx">user</span><span class="p">.</span><span class="nx">confirm</span><span class="p">();</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs 'confirmed'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span> <span class="c1">// outputs &#39;confirmed&#39;</span>
 </code></pre></div>
 <p>That&#39;s all there is to it. Go give it a spin!</p>
 

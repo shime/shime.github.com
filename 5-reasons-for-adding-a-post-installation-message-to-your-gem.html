@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="5 reasons for adding a post-installation message to your gem" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem","headline":"5 reasons for adding a post-installation message to your gem","dateModified":"2013-11-30T00:00:00+01:00","datePublished":"2013-11-30T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem"},"description":"Wondering whether you should add a post-installation message to your gem? Here&#39;s a list situations in which doing so is desirable:","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Wondering whether you should add a post-installation message to your gem? Here&#39;s a list situations in which doing so is desirable:","headline":"5 reasons for adding a post-installation message to your gem","dateModified":"2013-11-30T00:00:00+01:00","datePublished":"2013-11-30T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -210,11 +210,11 @@ developer out there will be aware of the presence of that gem in her project. It
 <h2>workarounds for gems that currently have post-installation messages</h2>
 
 <p>You can still avoid having any post-installation messages. Bundler has a flag for it</p>
-<div class="highlight"><pre><code class="language-" data-lang="">bundle install --quiet
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>bundle install --quiet
 </code></pre></div>
 <p>Although, Linux people (like me) will of course wonder why is that flag even present, when you can just ditch it
 to the black hole</p>
-<div class="highlight"><pre><code class="language-" data-lang="">bundle install &gt; /dev/null
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>bundle install &gt; /dev/null
 </code></pre></div>
 <h2>dangers of workarounds and conclusion</h2>
 
@@ -224,14 +224,14 @@ to the black hole</p>
 fallback to this method.</p>
 
 <p>An example of this would be when a gem changes its name, like how <code>sqlite3-ruby</code> did:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">Hello! The sqlite3-ruby gem has changed it's name to just sqlite3.
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Hello! The sqlite3-ruby gem has changed it&#39;s name to just sqlite3.
 Rather than installing sqlite3-ruby, you should install sqlite3.
 Please update your dependencies accordingly.
 </code></pre></div>
 <p>Useful, right?</p>
 
 <p>What about:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">When you HTTParty, you must party hard!
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>When you HTTParty, you must party hard!
 </code></pre></div>
 <p>Must you <code>party --hard</code>? I don&#39;t think so. I didn&#39;t and I&#39;m still here.</p>
 

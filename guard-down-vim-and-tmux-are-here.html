@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Guard down, Vim and Tmux are here!" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/guard-down-vim-and-tmux-are-here","headline":"Guard down, Vim and Tmux are here!","dateModified":"2013-08-11T00:00:00+02:00","datePublished":"2013-08-11T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/guard-down-vim-and-tmux-are-here"},"description":"Do you practice Test Driven Development? If you do, how do you do it?","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/guard-down-vim-and-tmux-are-here","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Do you practice Test Driven Development? If you do, how do you do it?","headline":"Guard down, Vim and Tmux are here!","dateModified":"2013-08-11T00:00:00+02:00","datePublished":"2013-08-11T00:00:00+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/guard-down-vim-and-tmux-are-here"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -194,9 +194,9 @@ know that it runs every time you save a file. Same can apply to any other autote
 <h3>What&#39;s itching me</h3>
 
 <p>I&#39;m a Vim user and I&#39;m used to saving my files frequently, this keybinding makes it super-easy to do so:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">"" saving with ctrl+s</span>
-map <span class="p">&lt;</span>C<span class="p">-</span>S<span class="p">&gt;</span> <span class="p">:</span><span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-imap <span class="p">&lt;</span>C<span class="p">-</span>S<span class="p">&gt;</span> <span class="p">&lt;</span>Esc<span class="p">&gt;:</span><span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot;&quot; saving with ctrl+s</span>
+map <span class="p">&lt;</span>C<span class="p">-</span>S<span class="p">&gt;</span> :<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+imap <span class="p">&lt;</span>C<span class="p">-</span>S<span class="p">&gt;</span> <span class="p">&lt;</span>Esc<span class="p">&gt;</span>:<span class="k">w</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </code></pre></div>
 <p>So let me explain what do I mean by &quot;<em>too often</em>&quot;.</p>
 
@@ -231,17 +231,17 @@ current file in Vim, while vimux is a tool for interacting with tmux from Vim. T
 the most relevant test and adds some of its own default mappings.</p>
 
 <p>These are the default Turbux mappings:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">t</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span>map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">t</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
 map <span class="p">&lt;</span>leader<span class="p">&gt;</span>T <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendFocusedTestToTmux
 </code></pre></div>
 <p>The default mappings clashed with my Command-T mappings, so I had to rebind them to <code>&lt;leader&gt;s</code>.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">" disable default turbux mappings because they clash with Command-T</span>
-<span class="k">let</span> <span class="nv">g:no_turbux_mappings</span> <span class="p">=</span> <span class="s2">"true"</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; disable default turbux mappings because they clash with Command-T</span>
+<span class="k">let</span> <span class="k">g</span>:no_turbux_mappings <span class="p">=</span> <span class="s2">&quot;true&quot;</span>
 map <span class="p">&lt;</span>leader<span class="p">&gt;</span>s <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendTestToTmux
 map <span class="p">&lt;</span>leader<span class="p">&gt;</span>S <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendFocusedTestToTmux
 </code></pre></div>
 <p>As you might have guessed, my leader is mapped to comma.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">let</span> mapleader<span class="p">=</span><span class="s2">","</span>                                   " map leader <span class="k">to</span> <span class="p">,</span> instead of <span class="k">to</span> slash
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="k">let</span> mapleader<span class="p">=</span><span class="s2">&quot;,&quot;</span>                                   <span class="c">&quot; map leader to , instead of to slash</span>
 </code></pre></div>
 <h2>Trouble with Zeus</h2>
 
@@ -254,25 +254,25 @@ That&#39;s why I have all that <code>include</code> lines in my model.</p>
 <p>While Zeus is slowing things down here, it certainly speeds up things in all other kinds of tests. I want to be able to turn it off and on inside Vim.</p>
 
 <p>Helpfile for Turbux suggests this:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">Use the following <span class="k">in</span> your vimrc <span class="k">to</span> <span class="k">set</span> <span class="k">a</span> common command prefix <span class="k">for</span> prepending
-<span class="k">all</span> commands<span class="p">:</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span>Use the following <span class="k">in</span> your vimrc <span class="k">to</span> <span class="k">set</span> <span class="k">a</span> common command prefix <span class="k">for</span> prepending
+<span class="k">all</span> commands:
 <span class="p">&gt;</span>
-          <span class="k">let</span> <span class="nv">g:turbux_command_prefix</span> <span class="p">=</span> <span class="s1">'bundle exec'</span> " default<span class="p">:</span> <span class="p">(</span>empty<span class="p">)</span>
+          <span class="k">let</span> <span class="k">g</span>:turbux_command_prefix <span class="p">=</span> <span class="s1">&#39;bundle exec&#39;</span> <span class="c">&quot; default: (empty)</span>
 <span class="p">&lt;</span>
 </code></pre></div>
 <p>So I could set my <code>g:turbux_command_prefix</code> to <code>zeus</code>, but that means I would use Zeus all the time. I need something different, like a toggle function for this.
 It&#39;s easy to write if you know a little bit of Vimscript:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">" I mostly use zeus to run tests</span>
-<span class="c">" I don't use it all the time though</span>
-<span class="c">" this function enables toggling when using turbux</span>
-nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span>z <span class="p">:</span><span class="k">call</span> ToggleZeus<span class="p">()&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; I mostly use zeus to run tests</span>
+<span class="c">&quot; I don&#39;t use it all the time though</span>
+<span class="c">&quot; this function enables toggling when using turbux</span>
+<span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>z :<span class="k">call</span> ToggleZeus<span class="p">()&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 <span class="k">function</span><span class="p">!</span> ToggleZeus<span class="p">()</span>
-  <span class="k">if</span> <span class="nv">g:turbux_command_prefix</span> <span class="p">==</span> <span class="s1">'zeus'</span>
-    echo <span class="s1">'zeus disabled'</span>
-    <span class="k">let</span> <span class="nv">g:turbux_command_prefix</span> <span class="p">=</span> <span class="s1">''</span>
+  <span class="k">if</span> <span class="k">g</span>:turbux_command_prefix <span class="p">==</span> <span class="s1">&#39;zeus&#39;</span>
+    echo <span class="s1">&#39;zeus disabled&#39;</span>
+    <span class="k">let</span> <span class="k">g</span>:turbux_command_prefix <span class="p">=</span> <span class="s1">&#39;&#39;</span>
   <span class="k">else</span>
-    echo <span class="s1">'zeus enabled'</span>
-    <span class="k">let</span> <span class="nv">g:turbux_command_prefix</span> <span class="p">=</span> <span class="s1">'zeus'</span>
+    echo <span class="s1">&#39;zeus enabled&#39;</span>
+    <span class="k">let</span> <span class="k">g</span>:turbux_command_prefix <span class="p">=</span> <span class="s1">&#39;zeus&#39;</span>
   <span class="k">endif</span>
 <span class="k">endfunction</span>
 </code></pre></div>

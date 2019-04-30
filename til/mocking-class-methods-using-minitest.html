@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Mocking class methods using Minitest" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/mocking-class-methods-using-minitest","headline":"Mocking class methods using Minitest","dateModified":"2018-12-21T00:00:00+01:00","datePublished":"2018-12-21T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mocking-class-methods-using-minitest"},"description":"Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/mocking-class-methods-using-minitest","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem.","headline":"Mocking class methods using Minitest","dateModified":"2018-12-21T00:00:00+01:00","datePublished":"2018-12-21T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mocking-class-methods-using-minitest"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -181,7 +181,7 @@ class methods, so in order to do so you&#39;ll
 have to use another gem.</p>
 
 <p>I suggest <a href="https://github.com/freerange/mocha">Mocha</a>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"mocha/minitest"</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;mocha/minitest&quot;</span>
 
 <span class="k">class</span> <span class="nc">CronJobProcessor</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">process</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
@@ -191,17 +191,17 @@ have to use another gem.</p>
 
 <span class="k">class</span> <span class="nc">CronEngine</span>
   <span class="k">def</span> <span class="nf">process_job</span>
-    <span class="no">CronJobProcessor</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="ss">foo: </span><span class="s2">"bar"</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="p">.</span><span class="nf">send_notification</span><span class="p">(</span><span class="ss">to: </span><span class="s2">"user@example.com"</span><span class="p">)</span>
+    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+    <span class="no">EmailSender</span><span class="o">.</span><span class="n">send_notification</span><span class="p">(</span><span class="ss">to</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="n">describe</span> <span class="no">CronEngine</span> <span class="k">do</span>
-  <span class="n">it</span> <span class="s2">"does what cron engines do"</span> <span class="k">do</span>
-    <span class="no">CronJobProcessor</span><span class="p">.</span><span class="nf">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="ss">foo: </span><span class="s2">"bar"</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="p">.</span><span class="nf">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
+  <span class="n">it</span> <span class="s2">&quot;does what cron engines do&quot;</span> <span class="k">do</span>
+    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+    <span class="no">EmailSender</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
 
-    <span class="no">CronEngine</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">process_job</span>
+    <span class="no">CronEngine</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">process_job</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>

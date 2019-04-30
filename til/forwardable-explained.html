@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Forwardable explained" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/forwardable-explained","headline":"Forwardable explained","dateModified":"2012-05-12T00:00:00+02:00","datePublished":"2012-05-12T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/forwardable-explained"},"description":"There&#39;s a pretty cool module called Forwardable and it&#39;s used for delegation. Let me explain this a little better...","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/forwardable-explained","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"There&#39;s a pretty cool module called Forwardable and it&#39;s used for delegation. Let me explain this a little better...","headline":"Forwardable explained","dateModified":"2012-05-12T00:00:00+02:00","datePublished":"2012-05-12T00:00:00+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/forwardable-explained"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -183,12 +183,12 @@
 <p><em>Why would you ever need that?</em></p>
 
 <p>Here&#39;s an example:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'forwardable'</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;forwardable&#39;</span>
 
 <span class="k">class</span> <span class="nc">Employers</span>
   <span class="kp">extend</span> <span class="no">Forwardable</span>
 
-  <span class="nb">attr_reader</span> <span class="ss">:all</span>
+  <span class="kp">attr_reader</span> <span class="ss">:all</span>
 
   <span class="n">def_delegator</span> <span class="ss">:@all</span><span class="p">,</span><span class="ss">:length</span><span class="p">,</span><span class="ss">:size</span>
 
@@ -197,8 +197,8 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="n">employers</span> <span class="o">=</span> <span class="no">Employers</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">employers</span><span class="p">.</span><span class="nf">size</span> <span class="c1"># =&gt; 4</span>
+<span class="n">employers</span> <span class="o">=</span> <span class="no">Employers</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">employers</span><span class="o">.</span><span class="n">size</span> <span class="c1"># =&gt; 4</span>
 </code></pre></div>
 <p>We have declared a new method on our instance variable, so we when we call size on it, it will forward our call to <em>length</em>.</p>
 

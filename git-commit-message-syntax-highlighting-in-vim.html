@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Git commit message syntax highlighting in Vim" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim","headline":"Git commit message syntax highlighting in Vim","dateModified":"2018-03-20T00:00:00+01:00","datePublished":"2018-03-20T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim"},"description":"Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Writing git commit messages should be done inside your editor because it allows you to add a lengthier commit description, as opposed to git commit -m which just puts everything as the first line.","headline":"Git commit message syntax highlighting in Vim","dateModified":"2018-03-20T00:00:00+01:00","datePublished":"2018-03-20T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -219,8 +219,8 @@ Github allows in the first line.</p>
 <p>In order to do so, alter Vim&#39;s syntax rules for git commit
 messages, by editing <code>~/.vim/after/syntax/gitcommit.vim</code>
 like this.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">syn</span> <span class="k">clear</span> gitcommitSummary
-<span class="k">syn</span> <span class="k">match</span> gitcommitSummary    <span class="s2">"^.\{0,72\}"</span> contained containedin<span class="p">=</span>gitcommitFirstLine nextgroup<span class="p">=</span>gitcommitOverflow contains<span class="p">=</span>@Spell
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="k">syn</span> clear gitcommitSummary
+<span class="k">syn</span> <span class="k">match</span> gitcommitSummary    <span class="s2">&quot;^.\{0,72\}&quot;</span> contained containedin<span class="p">=</span>gitcommitFirstLine nextgroup<span class="p">=</span>gitcommitOverflow contains<span class="p">=</span>@Spell
 </code></pre></div>
 <p>This will make Vim look like this.</p>
 

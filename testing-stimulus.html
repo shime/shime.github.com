@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Testing Stimulus" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/testing-stimulus","headline":"Testing Stimulus","dateModified":"2019-01-19T00:00:00+01:00","datePublished":"2019-01-19T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/testing-stimulus"},"description":"Since the official Stimulus handbook doesn&#39;t include testing, and my team at Booster Stage recently had to cover a Stimulus controller with tests, I&#39;d like to share our approach.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/testing-stimulus","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Since the official Stimulus handbook doesn&#39;t include testing, and my team at Booster Stage recently had to cover a Stimulus controller with tests, I&#39;d like to share our approach.","headline":"Testing Stimulus","dateModified":"2019-01-19T00:00:00+01:00","datePublished":"2019-01-19T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/testing-stimulus"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -184,9 +184,9 @@ recently had to cover a Stimulus controller with tests, I&#39;d like to share ou
 
 <p>The first step is installing the required
 npm packages to make this work.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn add <span class="nt">--dev</span> jest
-yarn add <span class="nt">--dev</span> babel-jest babel-preset-es2015
-yarn add <span class="nt">--dev</span> mutationobserver-shim
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn add --dev jest
+yarn add --dev babel-jest babel-preset-es2015
+yarn add --dev mutationobserver-shim
 </code></pre></div>
 <p>We&#39;re going to use Jest for testing; Babel packages to make it play nice with
 Jest and mutationobserver-shim for shimming <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver</a>
@@ -197,31 +197,31 @@ for MutationObserver as of this writing.</p>
 <h2>Instruct Jest to use the MutationObserver shim</h2>
 
 <p>Place this in <code>./test/javascript/setup.js</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Setup MutationObserver shim since jsdom doesn't</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="c1">// Setup MutationObserver shim since jsdom doesn&#39;t</span>
 <span class="c1">// support it out of the box.</span>
 
-<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">shim</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span>
+<span class="kr">const</span> <span class="nx">shim</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span>
  <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span>
-    <span class="s2">"node_modules"</span><span class="p">,</span>
-    <span class="s2">"mutationobserver-shim"</span><span class="p">,</span>
-    <span class="s2">"dist"</span><span class="p">,</span>
-    <span class="s2">"mutationobserver.min.js"</span>
+    <span class="s2">&quot;node_modules&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mutationobserver-shim&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dist&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mutationobserver.min.js&quot;</span>
   <span class="p">),</span>
-  <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="s2">"utf-8"</span> <span class="p">}</span>
+  <span class="p">{</span> <span class="nx">encoding</span><span class="o">:</span> <span class="s2">&quot;utf-8&quot;</span> <span class="p">}</span>
 <span class="p">);</span>
-<span class="kd">const</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"script"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
 <span class="nx">script</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">shim</span><span class="p">;</span>
 
 <span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
 </code></pre></div>
 <p>We need to tell Jest to lookup this file before
 each test and execute it. Place this in <code>package.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="s2">"jest"</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">"setupFiles"</span><span class="p">:</span> <span class="p">[</span>
-     <span class="s2">"./test/javascript/setup.js"</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span> <span class="s2">&quot;jest&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s2">&quot;setupFiles&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="s2">&quot;./test/javascript/setup.js&quot;</span>
    <span class="p">]</span>
  <span class="p">}</span>
 </code></pre></div>
@@ -235,23 +235,23 @@ our first failing test.</p>
 <p>We need to set up Babel to play nice with Jest first.
 To do that, add <code>&quot;es2015&quot;</code> to <code>&quot;presets&quot;</code>.
 Place this in your <code>.babelrc</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
-  <span class="s2">"presets"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"es2015"</span><span class="p">,</span>
-    <span class="p">[</span> <span class="s2">"env"</span><span class="p">:</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
+  <span class="s2">&quot;presets&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;es2015&quot;</span><span class="p">,</span>
+    <span class="p">[</span> <span class="s2">&quot;env&quot;</span><span class="o">:</span> <span class="p">{</span>
       <span class="c1">// rest of env config</span>
     <span class="p">}]</span>
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Place this in <code>test/javascript/first_test.js</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s2">"Failing test"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">it</span><span class="p">(</span><span class="s2">"Fails spectacularly"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Failing test&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Fails spectacularly&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">expect</span><span class="p">(</span><span class="kc">false</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>And run it with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/first_test.js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn run jest test/javascript/first_test.js
 </code></pre></div>
 <p>Congrats, you should see your first test fail! Woohoo!</p>
 
@@ -259,23 +259,23 @@ Place this in your <code>.babelrc</code>:</p>
 complain about <code>&quot;describe&quot;</code> and <code>&quot;it&quot;</code>. In my
 case that was <code>eslint</code>, so I had to place this
 in <code>.eslintrc</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">env</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">jest</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">env</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">jest</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="c1">// rest of env config</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Once you have set that up, let&#39;s fix our failing test.
 Replace your <code>test/javascript/first_test.js</code> with:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s2">"Passing test"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">it</span><span class="p">(</span><span class="s2">"Passes spectacularly"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Passing test&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Passes spectacularly&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">expect</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>Run it with the same command:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">yarn run jest test/javascript/first_test.js
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>yarn run jest test/javascript/first_test.js
 </code></pre></div>
 <p>And you should see the test passing.</p>
 
@@ -285,84 +285,84 @@ Replace your <code>test/javascript/first_test.js</code> with:</p>
 get serious and write a real Stimulus controller test.</p>
 
 <p>Put this in <code>test/javascript/basic_controller_test.js</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;stimulus&quot;</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nx">BasicController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"input"</span><span class="p">,</span> <span class="s2">"output"</span><span class="p">];</span>
+<span class="kr">class</span> <span class="nx">BasicController</span> <span class="kr">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">];</span>
 
   <span class="nx">copy</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"output"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"input"</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">"BasicController"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">describe</span><span class="p">(</span><span class="s2">"#copy"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;div data-controller="basic"&gt;
-        &lt;input id="input" data-target="basic.input" /&gt;
-        &lt;input id="output" data-target="basic.output" /&gt;
-        &lt;button id="button" data-action="basic#copy" /&gt;
-      &lt;/div&gt;`</span><span class="p">;</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;BasicController&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;#copy&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;div data-controller=&quot;basic&quot;&gt;</span>
+<span class="sb">        &lt;input id=&quot;input&quot; data-target=&quot;basic.input&quot; /&gt;</span>
+<span class="sb">        &lt;input id=&quot;output&quot; data-target=&quot;basic.output&quot; /&gt;</span>
+<span class="sb">        &lt;button id=&quot;button&quot; data-action=&quot;basic#copy&quot; /&gt;</span>
+<span class="sb">      &lt;/div&gt;`</span><span class="p">;</span>
 
-      <span class="kd">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">"basic"</span><span class="p">,</span> <span class="nx">BasicController</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span> <span class="nx">BasicController</span><span class="p">);</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">"copies input and sets it on output"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"output"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"button"</span><span class="p">);</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;copies input and sets it on output&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
 
-      <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">"foo"</span><span class="p">;</span>
+      <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">;</span>
       <span class="nx">button</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">value</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">"bar"</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">value</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>And run it with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/basic_controller_test.js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn run jest test/javascript/basic_controller_test.js
 </code></pre></div>
 <p>This test should fail, which means you have just
 written your first failing Stimulus test.</p>
 
 <p>To make it pass, replace the expected value to <code>&quot;foo&quot;</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;stimulus&quot;</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nx">BasicController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"input"</span><span class="p">,</span> <span class="s2">"output"</span><span class="p">];</span>
+<span class="kr">class</span> <span class="nx">BasicController</span> <span class="kr">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">];</span>
 
   <span class="nx">copy</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"output"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"input"</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">"BasicController"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">describe</span><span class="p">(</span><span class="s2">"#copy"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;div data-controller="basic"&gt;
-        &lt;input id="input" data-target="basic.input" /&gt;
-        &lt;input id="output" data-target="basic.output" /&gt;
-        &lt;button id="button" data-action="basic#copy" /&gt;
-      &lt;/div&gt;`</span><span class="p">;</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;BasicController&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;#copy&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;div data-controller=&quot;basic&quot;&gt;</span>
+<span class="sb">        &lt;input id=&quot;input&quot; data-target=&quot;basic.input&quot; /&gt;</span>
+<span class="sb">        &lt;input id=&quot;output&quot; data-target=&quot;basic.output&quot; /&gt;</span>
+<span class="sb">        &lt;button id=&quot;button&quot; data-action=&quot;basic#copy&quot; /&gt;</span>
+<span class="sb">      &lt;/div&gt;`</span><span class="p">;</span>
 
-      <span class="kd">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">"basic"</span><span class="p">,</span> <span class="nx">BasicController</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span> <span class="nx">BasicController</span><span class="p">);</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">"copies input and sets it on output"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"output"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"button"</span><span class="p">);</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;copies input and sets it on output&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
 
-      <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">"foo"</span><span class="p">;</span>
+      <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">;</span>
       <span class="nx">button</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
 
       <span class="c1">// This line has changed its expectations.</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">value</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">value</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span>
@@ -379,92 +379,92 @@ It can&#39;t get more complicated than that! Just kidding, I&#39;d like to show
 how to handle some non-default actions with this example.</p>
 
 <p>Put this in <code>test/javascript/advanced_controller_test.js</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;stimulus&quot;</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nx">AdvancedController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"result"</span><span class="p">];</span>
+<span class="kr">class</span> <span class="nx">AdvancedController</span> <span class="kr">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">];</span>
 
   <span class="nx">valueChanged</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"result"</span><span class="p">).</span>
-      <span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Some input has changed its value"</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">).</span>
+      <span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Some input has changed its value&quot;</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">changeValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">eventType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">eventType</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">changeValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">eventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">eventType</span><span class="p">);</span>
   <span class="nx">element</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
   <span class="nx">element</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">"AdvancedController"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">describe</span><span class="p">(</span><span class="s2">"#valueChanged"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;div data-controller="advanced"&gt;
-        &lt;input id="input" data-action="keyup-&gt;advanced#valueChanged"/&gt;
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;AdvancedController&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;#valueChanged&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;div data-controller=&quot;advanced&quot;&gt;</span>
+<span class="sb">        &lt;input id=&quot;input&quot; data-action=&quot;keyup-&gt;advanced#valueChanged&quot;/&gt;</span>
 
-        &lt;p id="result" data-target="advanced.result"/&gt;
-      &lt;/div&gt;`</span><span class="p">;</span>
+<span class="sb">        &lt;p id=&quot;result&quot; data-target=&quot;advanced.result&quot;/&gt;</span>
+<span class="sb">      &lt;/div&gt;`</span><span class="p">;</span>
 
-      <span class="kd">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">"advanced"</span><span class="p">,</span> <span class="nx">AdvancedController</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">&quot;advanced&quot;</span><span class="p">,</span> <span class="nx">AdvancedController</span><span class="p">);</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">"copies input and sets it on output"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"result"</span><span class="p">);</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;copies input and sets it on output&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">);</span>
 
-      <span class="nx">changeValue</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"keyup"</span><span class="p">);</span>
+      <span class="nx">changeValue</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;keyup&quot;</span><span class="p">);</span>
 
       <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">).</span>
-        <span class="nx">toEqual</span><span class="p">(</span><span class="s2">"This will fail, right?"</span><span class="p">);</span>
+        <span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;This will fail, right?&quot;</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>And run it with Jest again:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn run jest <span class="nb">test</span>/javascript/advanced_controller_test.js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn run jest test/javascript/advanced_controller_test.js
 </code></pre></div>
 <p>Congrats if it fails! Change the expectation to match the actual
 text inside a paragraph.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;stimulus&quot;</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nx">AdvancedController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"result"</span><span class="p">];</span>
+<span class="kr">class</span> <span class="nx">AdvancedController</span> <span class="kr">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">];</span>
 
   <span class="nx">valueChanged</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">"result"</span><span class="p">).</span>
-      <span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Some input has changed its value"</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">targets</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">).</span>
+      <span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Some input has changed its value&quot;</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">const</span> <span class="nx">changeValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">eventType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">eventType</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">changeValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">eventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">eventType</span><span class="p">);</span>
   <span class="nx">element</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
   <span class="nx">element</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">"AdvancedController"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">describe</span><span class="p">(</span><span class="s2">"#valueChanged"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;div data-controller="advanced"&gt;
-        &lt;input id="input" data-action="keyup-&gt;advanced#valueChanged"/&gt;
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;AdvancedController&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;#valueChanged&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;div data-controller=&quot;advanced&quot;&gt;</span>
+<span class="sb">        &lt;input id=&quot;input&quot; data-action=&quot;keyup-&gt;advanced#valueChanged&quot;/&gt;</span>
 
-        &lt;p id="result" data-target="advanced.result"/&gt;
-      &lt;/div&gt;`</span><span class="p">;</span>
+<span class="sb">        &lt;p id=&quot;result&quot; data-target=&quot;advanced.result&quot;/&gt;</span>
+<span class="sb">      &lt;/div&gt;`</span><span class="p">;</span>
 
-      <span class="kd">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">"advanced"</span><span class="p">,</span> <span class="nx">AdvancedController</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">&quot;advanced&quot;</span><span class="p">,</span> <span class="nx">AdvancedController</span><span class="p">);</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">"copies input and sets it on output"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"result"</span><span class="p">);</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;copies input and sets it on output&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">);</span>
 
-      <span class="nx">changeValue</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"keyup"</span><span class="p">);</span>
+      <span class="nx">changeValue</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;keyup&quot;</span><span class="p">);</span>
 
       <span class="c1">// This line has changed its expectations.</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">).</span>
-        <span class="nx">toEqual</span><span class="p">(</span><span class="s2">"Some input has changed its value"</span><span class="p">);</span>
+        <span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;Some input has changed its value&quot;</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span>
@@ -501,95 +501,95 @@ with <code>_test.js</code>.</p>
 <code>&quot;roots&quot;</code> and <code>&quot;testRegex&quot;</code> properties in Jest configuration.</p>
 
 <p>Here&#39;s how that Jest configuration would look like in <code>package.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">"jest"</span><span class="p">:</span> <span class="p">{</span>
-  <span class="s2">"setupFiles"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">"./test/javascript/setup.js"</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="s2">&quot;jest&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;setupFiles&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;./test/javascript/setup.js&quot;</span>
   <span class="p">],</span>
-  <span class="s2">"testRegex"</span><span class="p">:</span> <span class="s2">".*_test.js"</span><span class="p">,</span>
-  <span class="s2">"roots"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">"test/javascript"</span>
+  <span class="s2">&quot;testRegex&quot;</span><span class="o">:</span> <span class="s2">&quot;.*_test.js&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;roots&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;test/javascript&quot;</span>
   <span class="p">],</span>
-  <span class="s2">"moduleDirectories"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">"node_modules"</span><span class="p">,</span>
-    <span class="s2">"app/javascript/controllers"</span>
+  <span class="s2">&quot;moduleDirectories&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;node_modules&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;app/javascript/controllers&quot;</span>
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Let&#39;s say we have moved our <code>AdvancedController</code> from the test file
 to <code>app/javascript/controllers/advanced_controller.js</code> and added
 the correct export to the end of that file:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Controller</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;stimulus&quot;</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nx">AdvancedController</span> <span class="kd">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+<span class="kr">class</span> <span class="nx">AdvancedController</span> <span class="kr">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
   <span class="c1">// rest of the controller copied from the test</span>
 <span class="p">}</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="nx">AdvancedController</span><span class="p">;</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">AdvancedController</span><span class="p">;</span>
 </code></pre></div>
 <p>The <code>&quot;moduleDirectories&quot;</code> property enables us to import those
 Stimulus controllers very easily in tests now:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">import</span> <span class="p">{</span> <span class="nx">Application</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"stimulus"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">AdvancedController</span> <span class="k">from</span> <span class="s2">"advanced_controller"</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Application</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;stimulus&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">AdvancedController</span> <span class="nx">from</span> <span class="s2">&quot;advanced_controller&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">changeValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">eventType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">eventType</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">changeValue</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">eventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">eventType</span><span class="p">);</span>
   <span class="nx">element</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
   <span class="nx">element</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">"AdvancedController"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">describe</span><span class="p">(</span><span class="s2">"#valueChanged"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;div data-controller="advanced"&gt;
-        &lt;input id="input" data-action="keyup-&gt;advanced#valueChanged"/&gt;
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;AdvancedController&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;#valueChanged&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="sb">`&lt;div data-controller=&quot;advanced&quot;&gt;</span>
+<span class="sb">        &lt;input id=&quot;input&quot; data-action=&quot;keyup-&gt;advanced#valueChanged&quot;/&gt;</span>
 
-        &lt;p id="result" data-target="advanced.result"/&gt;
-      &lt;/div&gt;`</span><span class="p">;</span>
+<span class="sb">        &lt;p id=&quot;result&quot; data-target=&quot;advanced.result&quot;/&gt;</span>
+<span class="sb">      &lt;/div&gt;`</span><span class="p">;</span>
 
-      <span class="kd">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
-      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">"advanced"</span><span class="p">,</span> <span class="nx">AdvancedController</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">application</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+      <span class="nx">application</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s2">&quot;advanced&quot;</span><span class="p">,</span> <span class="nx">AdvancedController</span><span class="p">);</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s2">"copies input and sets it on output"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"input"</span><span class="p">);</span>
-      <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"result"</span><span class="p">);</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;copies input and sets it on output&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">);</span>
+      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">);</span>
 
-      <span class="nx">changeValue</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"keyup"</span><span class="p">);</span>
+      <span class="nx">changeValue</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;keyup&quot;</span><span class="p">);</span>
 
       <span class="c1">// This line has changed its expectations.</span>
       <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">).</span>
-        <span class="nx">toEqual</span><span class="p">(</span><span class="s2">"Some input has changed its value"</span><span class="p">);</span>
+        <span class="nx">toEqual</span><span class="p">(</span><span class="s2">&quot;Some input has changed its value&quot;</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>We can also run all our JavaScript tests with a single command,
 by configuring the standard <code>&quot;scripts&quot;</code> property in <code>package.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
-  <span class="s2">"test"</span><span class="p">:</span> <span class="s2">"jest"</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="s2">&quot;scripts&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;test&quot;</span><span class="o">:</span> <span class="s2">&quot;jest&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>We can now run JavaScript tests with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">yarn <span class="nb">test</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn <span class="nb">test</span>
 </code></pre></div>
 <h2>Set up Rake to run JavaScript tests</h2>
 
 <p>If you&#39;re using Rails, you probably run all your tests
 with <code>rake</code>. To include JavaScript tests in your default task,
 add this to your <code>Rakefile</code>:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">task</span> <span class="ss">default: </span><span class="p">[</span><span class="s1">'test:system'</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">,</span> <span class="s1">'test:js'</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">task</span> <span class="ss">default</span><span class="p">:</span> <span class="o">[</span><span class="s1">&#39;test:system&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;test:js&#39;</span><span class="o">]</span>
 
 <span class="n">namespace</span> <span class="ss">:test</span> <span class="k">do</span>
   <span class="n">task</span> <span class="ss">:js</span> <span class="k">do</span>
-    <span class="n">sh</span> <span class="s1">'yarn test'</span>
+    <span class="n">sh</span> <span class="s1">&#39;yarn test&#39;</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>It&#39;s so easy to run JavaScript tests now with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rake <span class="nb">test</span>:js
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>rake test:js
 </code></pre></div>
 <p>Or all tests with:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">rake
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>rake
 </code></pre></div>
 <p>That&#39;s it; you&#39;re now ready to test your 
 Stimulus controllers!</p>

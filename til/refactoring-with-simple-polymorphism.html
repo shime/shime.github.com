@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Refactoring with simple polymorphism" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactoring-with-simple-polymorphism","headline":"Refactoring with simple polymorphism","dateModified":"2019-02-02T00:00:00+01:00","datePublished":"2019-02-02T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactoring-with-simple-polymorphism"},"description":"I&#39;m in the process of writing a gem, and I&#39;ve not been really focused on writing the best possible code, in order to build something in the least amount of time. I now have some time on my hands, so I&#39;ve decided to try to make it clearer.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactoring-with-simple-polymorphism","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;m in the process of writing a gem, and I&#39;ve not been really focused on writing the best possible code, in order to build something in the least amount of time. I now have some time on my hands, so I&#39;ve decided to try to make it clearer.","headline":"Refactoring with simple polymorphism","dateModified":"2019-02-02T00:00:00+01:00","datePublished":"2019-02-02T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactoring-with-simple-polymorphism"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -183,23 +183,23 @@ amount of time. I now have some time on my hands,
 so I&#39;ve decided to try to make it clearer.</p>
 
 <p>This is the code I&#39;ve had:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Output</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Output</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span>
   <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'GET'</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">''</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;GET&#39;</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">sort_headers</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">to_h</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">sort</span><span class="o">.</span><span class="n">to_h</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">to_http</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> HTTP/1.1</span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> HTTP/1.1</span><span class="se">\n\n</span><span class="s2">&quot;</span>
 
-    <span class="n">headers</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-      <span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">headers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+      <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="k">end</span>
 
     <span class="n">output</span>
@@ -208,17 +208,17 @@ so I&#39;ve decided to try to make it clearer.</p>
 
 <span class="k">class</span> <span class="nc">Parser</span>
   <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="nb">format</span><span class="p">:)</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">output</span> <span class="o">=</span> <span class="no">Output</span><span class="p">.</span><span class="nf">new</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="no">Output</span><span class="o">.</span><span class="n">new</span>
 
-    <span class="n">output</span><span class="p">.</span><span class="nf">sort_headers</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">sort_headers</span>
 
     <span class="k">case</span> <span class="nb">format</span>
     <span class="k">when</span> <span class="ss">:json</span>
-      <span class="n">output</span><span class="p">.</span><span class="nf">to_h</span><span class="p">.</span><span class="nf">to_json</span>
+      <span class="n">output</span><span class="o">.</span><span class="n">to_h</span><span class="o">.</span><span class="n">to_json</span>
     <span class="k">when</span> <span class="ss">:http</span>
-      <span class="n">output</span><span class="p">.</span><span class="nf">to_http</span>
+      <span class="n">output</span><span class="o">.</span><span class="n">to_http</span>
     <span class="k">else</span>
-      <span class="n">output</span><span class="p">.</span><span class="nf">to_h</span>
+      <span class="n">output</span><span class="o">.</span><span class="n">to_h</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -227,17 +227,16 @@ so I&#39;ve decided to try to make it clearer.</p>
 this gem supports. What happens when another format is introduced?</p>
 
 <p>I&#39;ve decided to tackle this problem with some good ol&#39; polymorphism.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">
-<span class="no">Output</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span> <span class="k">do</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Output</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span> <span class="k">do</span>
   <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'GET'</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">''</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;GET&#39;</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">sort_headers</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">to_h</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">sort</span><span class="o">.</span><span class="n">to_h</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">convert</span>
@@ -247,13 +246,13 @@ this gem supports. What happens when another format is introduced?</p>
 
 <span class="k">class</span> <span class="nc">HTTPOutput</span> <span class="o">&lt;</span> <span class="no">Output</span>
   <span class="k">def</span> <span class="nf">convert</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> HTTP/1.1</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">method</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2"> HTTP/1.1</span><span class="se">\n</span><span class="s2">&quot;</span>
 
-    <span class="n">headers</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-      <span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">headers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+      <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="k">end</span>
 
-    <span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">&quot;</span>
 
     <span class="n">output</span>
   <span class="k">end</span>
@@ -261,7 +260,7 @@ this gem supports. What happens when another format is introduced?</p>
 
 <span class="k">class</span> <span class="nc">JSONOutput</span> <span class="o">&lt;</span> <span class="no">Output</span>
   <span class="k">def</span> <span class="nf">convert</span>
-    <span class="n">to_h</span><span class="p">.</span><span class="nf">to_json</span>
+    <span class="n">to_h</span><span class="o">.</span><span class="n">to_json</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
@@ -272,23 +271,23 @@ this gem supports. What happens when another format is introduced?</p>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Parser</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="ss">format: </span><span class="kp">nil</span><span class="p">)</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">output</span> <span class="o">=</span> <span class="n">create_output</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">create_output</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
 
-    <span class="n">output</span><span class="p">.</span><span class="nf">sort_headers</span>
-    <span class="n">output</span><span class="p">.</span><span class="nf">convert</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">sort_headers</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">convert</span>
   <span class="k">end</span>
 
   <span class="kp">private</span>
 
   <span class="no">OUTPUTS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="ss">http: </span><span class="no">HTTPOutput</span><span class="p">,</span>
-    <span class="ss">json: </span><span class="no">JSONOutput</span><span class="p">,</span>
-    <span class="ss">hash: </span><span class="no">HashOutput</span>
-  <span class="p">}.</span><span class="nf">freeze</span>
+    <span class="ss">http</span><span class="p">:</span> <span class="no">HTTPOutput</span><span class="p">,</span>
+    <span class="ss">json</span><span class="p">:</span> <span class="no">JSONOutput</span><span class="p">,</span>
+    <span class="nb">hash</span><span class="p">:</span> <span class="no">HashOutput</span>
+  <span class="p">}</span><span class="o">.</span><span class="n">freeze</span>
 
   <span class="k">def</span> <span class="nf">create_output</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-    <span class="no">OUTPUTS</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span> <span class="p">{</span> <span class="no">HashOutput</span> <span class="p">}.</span><span class="nf">new</span>
+    <span class="no">OUTPUTS</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span> <span class="p">{</span> <span class="no">HashOutput</span> <span class="p">}</span><span class="o">.</span><span class="n">new</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>

@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Git diff algorithm options" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/git-diff-algorithm-options","headline":"Git diff algorithm options","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/git-diff-algorithm-options"},"description":"I&#39;ve recently refactored a method with a large case statement and wanted to check a diff of the changes.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/git-diff-algorithm-options","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve recently refactored a method with a large case statement and wanted to check a diff of the changes.","headline":"Git diff algorithm options","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/git-diff-algorithm-options"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -182,14 +182,14 @@ a diff of the changes.</p>
 
 <p>I describe the refactoring in <a href="/til/refactoring-a-large-case-statement">another post</a>,
 but the original method looked something like this:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
   <span class="k">case</span> <span class="n">word</span>
-  <span class="k">when</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="p">.</span><span class="nf">make_regexp</span>
-    <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="n">word</span>
+  <span class="k">when</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="o">.</span><span class="n">make_regexp</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">word</span>
   <span class="k">when</span> <span class="sr">/\A(-H|--header)\Z/</span>
     <span class="n">parse_header</span>
   <span class="k">when</span> <span class="sr">/\A--compressed\Z/</span>
-    <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Accept-Encoding'</span><span class="p">]</span> <span class="o">||=</span> <span class="s1">'deflate, gzip'</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Accept-Encoding&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;deflate, gzip&#39;</span>
   <span class="c1"># ... (more conditionals) ...</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -197,12 +197,12 @@ but the original method looked something like this:</p>
 <p>I&#39;ve replaced the case with a single module method
 call and created a bunch of classes, to match
 each of the scenarios I&#39;d like to cover.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
-    <span class="n">base_class</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
-    <span class="n">subclass</span> <span class="o">=</span> <span class="n">base_class</span><span class="p">.</span><span class="nf">subclasses</span>
-                         <span class="p">.</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
-    <span class="n">subclass</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">base_class</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
+    <span class="n">subclass</span> <span class="o">=</span> <span class="n">base_class</span><span class="o">.</span><span class="n">subclasses</span>
+                         <span class="o">.</span><span class="n">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
+    <span class="n">subclass</span><span class="o">&amp;.</span><span class="n">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;.</span><span class="n">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">Base</span>
@@ -213,8 +213,8 @@ each of the scenarios I&#39;d like to cover.</p>
 
     <span class="c1"># List of subclasses, first-inherited class appears first.</span>
     <span class="k">def</span> <span class="nf">subclasses</span>
-      <span class="no">ObjectSpace</span><span class="p">.</span><span class="nf">each_object</span><span class="p">(</span><span class="no">Base</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">).</span>
-        <span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}.</span><span class="nf">reverse</span>
+      <span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="no">Base</span><span class="o">.</span><span class="n">singleton_class</span><span class="p">)</span><span class="o">.</span>
+        <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}</span><span class="o">.</span><span class="n">reverse</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">===</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -222,13 +222,13 @@ each of the scenarios I&#39;d like to cover.</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn't have regex defined"</span>
+      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn&#39;t have regex defined&quot;</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
-    <span class="nb">attr_reader</span> <span class="ss">:words</span>
-    <span class="nb">attr_reader</span> <span class="ss">:request</span>
+    <span class="kp">attr_reader</span> <span class="ss">:words</span>
+    <span class="kp">attr_reader</span> <span class="ss">:request</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">Header</span> <span class="o">&lt;</span> <span class="no">Base</span><span class="p">;</span> <span class="k">end</span>
@@ -237,137 +237,137 @@ each of the scenarios I&#39;d like to cover.</p>
 <span class="k">end</span>
 
 <span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-  <span class="no">Word</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+  <span class="no">Word</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>Git uses Myers&#39; algorithm as a default for
 diffs, which gave me the following output:</p>
-<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
--      case word
--      when URI::DEFAULT_PARSER.make_regexp
--        request.url = word
--      when /\A(-H|--header)\Z/
--        parse_header
--      when /\A--compressed\Z/
-</span><span class="gi">+    module Word
-+      def self.parse(request, words, word)
-+        base_class = Word::Base.new(request, words)
-+        subclass = base_class.subclasses
-+                             .detect { |klass| klass === word }
-+        subclass&amp;.new(words, request)&amp;.parse(word)
-+      end
-+
-+      class Base
-+        def initialize(words, request)
-+          @words = words
-+          @request = request
-+        end
-+
-+        # List of subclasses, first-inherited class appears first.
-+        def subclasses
-+          ObjectSpace.each_object(Base.singleton_class).reject { |klass| klass == Base }.reverse
-+        end
-+
-+        def self.===(word)
-+          regex =~ word
-+        end
-+
-+        def self.regex
-+          raise NotImplementedError, "#{name} doesn't have regex defined"
-+        end
-+
-+        private
-+
-+        attr_reader :words
-+        attr_reader :request
-+      end
-+
-+      class Header &lt; Base; end
-+      class Compressed &lt; Base
-+        def self.regex
-+          /\A--compressed\Z/.freeze
-+        end
-+
-+        def parse(*)
-</span>           request.headers['Accept-Encoding'] ||= 'deflate, gzip'
-<span class="gd">-      case /\A-X|\A--request\Z/
-</span><span class="gi">+        end
-+      end
-+
-+      class Request &lt; Base
-+        def self.regex
-</span></code></pre></div>
+<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span></span><span class="gd">-    def parse_word(word)</span>
+<span class="gd">-      case word</span>
+<span class="gd">-      when URI::DEFAULT_PARSER.make_regexp</span>
+<span class="gd">-        request.url = word</span>
+<span class="gd">-      when /\A(-H|--header)\Z/</span>
+<span class="gd">-        parse_header</span>
+<span class="gd">-      when /\A--compressed\Z/</span>
+<span class="gi">+    module Word</span>
+<span class="gi">+      def self.parse(request, words, word)</span>
+<span class="gi">+        base_class = Word::Base.new(request, words)</span>
+<span class="gi">+        subclass = base_class.subclasses</span>
+<span class="gi">+                             .detect { |klass| klass === word }</span>
+<span class="gi">+        subclass&amp;.new(words, request)&amp;.parse(word)</span>
+<span class="gi">+      end</span>
+<span class="gi">+</span>
+<span class="gi">+      class Base</span>
+<span class="gi">+        def initialize(words, request)</span>
+<span class="gi">+          @words = words</span>
+<span class="gi">+          @request = request</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        # List of subclasses, first-inherited class appears first.</span>
+<span class="gi">+        def subclasses</span>
+<span class="gi">+          ObjectSpace.each_object(Base.singleton_class).reject { |klass| klass == Base }.reverse</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        def self.===(word)</span>
+<span class="gi">+          regex =~ word</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        def self.regex</span>
+<span class="gi">+          raise NotImplementedError, &quot;#{name} doesn&#39;t have regex defined&quot;</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        private</span>
+<span class="gi">+</span>
+<span class="gi">+        attr_reader :words</span>
+<span class="gi">+        attr_reader :request</span>
+<span class="gi">+      end</span>
+<span class="gi">+</span>
+<span class="gi">+      class Header &lt; Base; end</span>
+<span class="gi">+      class Compressed &lt; Base</span>
+<span class="gi">+        def self.regex</span>
+<span class="gi">+          /\A--compressed\Z/.freeze</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        def parse(*)</span>
+           request.headers[&#39;Accept-Encoding&#39;] ||= &#39;deflate, gzip&#39;
+<span class="gd">-      case /\A-X|\A--request\Z/</span>
+<span class="gi">+        end</span>
+<span class="gi">+      end</span>
+<span class="gi">+</span>
+<span class="gi">+      class Request &lt; Base</span>
+<span class="gi">+        def self.regex</span>
+</code></pre></div>
 <p>Notice how diff output breaks the old method and inserts
 the new code in the middle of it. Super ugly.  I&#39;ve recently
 discovered that the diff command supports some <a href="https://git-scm.com/docs/diff-config#diff-config-diffalgorithm">options
 you can pass it</a>.</p>
 
 <p>So entering this in the console:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git diff <span class="nt">--histogram</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git diff --histogram
 </code></pre></div>
 <p>Gave me:</p>
-<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span class="gd">-    def parse_word(word)
--      case word
--      when URI::DEFAULT_PARSER.make_regexp
--        request.url = word
--      when /\A(-H|--header)\Z/
--        parse_header
--      when /\A'--compressed'\Z/
--        request.headers['Accept-Encoding'] ||= 'deflate, gzip'
--      when /\A-X|\A--request\Z/
--        request.method = extract_method(word)
--      when /\A(-u|--user)\Z/
--        request.headers['Authorization'] ||= "Basic #{Base64.strict_encode64(words.shift)}"
--      when /\A(-b|--cookie)\Z/
--        request.headers['Set-Cookie'] ||= words.shift
--      when /\A(-A|--user-agent)\Z/
--        request.headers['User-Agent'] ||= words.shift
--      when /\A(-I|--head)\Z/
--        request.method = 'HEAD'
--      when /\A(-d|--data|--data-ascii)\Z/
--        parse_data
--      when /\A--data-binary\Z/
--        parse_data(strip_newlines: false)
--      when /\A--data-raw\Z/
--        parse_data(raw: true)
--      when /\A--data-urlencode\Z/
--        parse_data(url_encode: true)
--      when /\./
--        request.url = "http://#{word}" if request.url == ''
-</span><span class="gi">+    module Word
-+      def self.parse(request, words, word)
-+        base_class = Word::Base.new(request, words)
-+        subclass = base_class.subclasses
-+                             .detect { |klass| klass === word }
-+        subclass&amp;.new(words, request)&amp;.parse(word)
-+      end
-+
-+      class Base
-+        def initialize(words, request)
-+          @words = words
-+          @request = request
-+        end
-+
-+        # List of subclasses, first-inherited class appears first.
-+        def subclasses
-+          ObjectSpace.each_object(Base.singleton_class)
-+                     .reject { |klass| klass == Base }.reverse
-+        end
-+
-+        def self.===(word)
-+          regex =~ word
-+        end
-+
-+        def self.regex
-+          raise NotImplementedError, "#{name} doesn't have regex defined"
-+        end
-+
-+        private
-+
-+        attr_reader :words
-+        attr_reader :request
-+      end
-</span></code></pre></div>
+<div class="highlight"><pre><code class="language-diff" data-lang="diff"><span></span><span class="gd">-    def parse_word(word)</span>
+<span class="gd">-      case word</span>
+<span class="gd">-      when URI::DEFAULT_PARSER.make_regexp</span>
+<span class="gd">-        request.url = word</span>
+<span class="gd">-      when /\A(-H|--header)\Z/</span>
+<span class="gd">-        parse_header</span>
+<span class="gd">-      when /\A&#39;--compressed&#39;\Z/</span>
+<span class="gd">-        request.headers[&#39;Accept-Encoding&#39;] ||= &#39;deflate, gzip&#39;</span>
+<span class="gd">-      when /\A-X|\A--request\Z/</span>
+<span class="gd">-        request.method = extract_method(word)</span>
+<span class="gd">-      when /\A(-u|--user)\Z/</span>
+<span class="gd">-        request.headers[&#39;Authorization&#39;] ||= &quot;Basic #{Base64.strict_encode64(words.shift)}&quot;</span>
+<span class="gd">-      when /\A(-b|--cookie)\Z/</span>
+<span class="gd">-        request.headers[&#39;Set-Cookie&#39;] ||= words.shift</span>
+<span class="gd">-      when /\A(-A|--user-agent)\Z/</span>
+<span class="gd">-        request.headers[&#39;User-Agent&#39;] ||= words.shift</span>
+<span class="gd">-      when /\A(-I|--head)\Z/</span>
+<span class="gd">-        request.method = &#39;HEAD&#39;</span>
+<span class="gd">-      when /\A(-d|--data|--data-ascii)\Z/</span>
+<span class="gd">-        parse_data</span>
+<span class="gd">-      when /\A--data-binary\Z/</span>
+<span class="gd">-        parse_data(strip_newlines: false)</span>
+<span class="gd">-      when /\A--data-raw\Z/</span>
+<span class="gd">-        parse_data(raw: true)</span>
+<span class="gd">-      when /\A--data-urlencode\Z/</span>
+<span class="gd">-        parse_data(url_encode: true)</span>
+<span class="gd">-      when /\./</span>
+<span class="gd">-        request.url = &quot;http://#{word}&quot; if request.url == &#39;&#39;</span>
+<span class="gi">+    module Word</span>
+<span class="gi">+      def self.parse(request, words, word)</span>
+<span class="gi">+        base_class = Word::Base.new(request, words)</span>
+<span class="gi">+        subclass = base_class.subclasses</span>
+<span class="gi">+                             .detect { |klass| klass === word }</span>
+<span class="gi">+        subclass&amp;.new(words, request)&amp;.parse(word)</span>
+<span class="gi">+      end</span>
+<span class="gi">+</span>
+<span class="gi">+      class Base</span>
+<span class="gi">+        def initialize(words, request)</span>
+<span class="gi">+          @words = words</span>
+<span class="gi">+          @request = request</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        # List of subclasses, first-inherited class appears first.</span>
+<span class="gi">+        def subclasses</span>
+<span class="gi">+          ObjectSpace.each_object(Base.singleton_class)</span>
+<span class="gi">+                     .reject { |klass| klass == Base }.reverse</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        def self.===(word)</span>
+<span class="gi">+          regex =~ word</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        def self.regex</span>
+<span class="gi">+          raise NotImplementedError, &quot;#{name} doesn&#39;t have regex defined&quot;</span>
+<span class="gi">+        end</span>
+<span class="gi">+</span>
+<span class="gi">+        private</span>
+<span class="gi">+</span>
+<span class="gi">+        attr_reader :words</span>
+<span class="gi">+        attr_reader :request</span>
+<span class="gi">+      end</span>
+</code></pre></div>
 <p>Much better if you ask me, since now it&#39;s more obvious I&#39;ve
 replaced the case statement in the method.</p>
 

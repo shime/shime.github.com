@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Pretty formatting JSON" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/pretty-formatting-json","headline":"Pretty formatting JSON","dateModified":"2019-01-21T00:00:00+01:00","datePublished":"2019-01-21T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/pretty-formatting-json"},"description":"I&#39;ve used to use some silly NPM package for pretty formatting of JSON before.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/pretty-formatting-json","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve used to use some silly NPM package for pretty formatting of JSON before.","headline":"Pretty formatting JSON","dateModified":"2019-01-21T00:00:00+01:00","datePublished":"2019-01-21T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/pretty-formatting-json"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -187,21 +187,21 @@ the pretty printed json.</p>
 
 <p>Let&#39;s say we have this ugliness
 saved in <code>ugly.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span><span class="s2">"foo"</span><span class="p">:</span><span class="s2">"bar"</span><span class="p">,</span><span class="s2">"wat"</span><span class="p">:</span><span class="s2">"lol"</span><span class="p">,</span><span class="s2">"user"</span><span class="p">:{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bugs Bunny"</span><span class="p">,</span><span class="s2">"address"</span><span class="p">:{</span><span class="s2">"street"</span><span class="p">:</span><span class="s2">"underground street"</span><span class="p">,</span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"acme town"</span><span class="p">}}}</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="o">:</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;wat&quot;</span><span class="o">:</span><span class="s2">&quot;lol&quot;</span><span class="p">,</span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Bugs Bunny&quot;</span><span class="p">,</span><span class="s2">&quot;address&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;street&quot;</span><span class="o">:</span><span class="s2">&quot;underground street&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span><span class="o">:</span><span class="s2">&quot;acme town&quot;</span><span class="p">}}}</span>
 </code></pre></div>
 <p>I&#39;ve used this command to pretty print it before:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cat </span>ugly.json | json
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json
 </code></pre></div>
 <p>Which outputs:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
-  <span class="s2">"wat"</span> <span class="p">:</span> <span class="s2">"lol"</span><span class="p">,</span>
-  <span class="s2">"foo"</span> <span class="p">:</span> <span class="s2">"bar"</span><span class="p">,</span>
-  <span class="s2">"user"</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"address"</span> <span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"street"</span> <span class="p">:</span> <span class="s2">"underground street"</span><span class="p">,</span>
-      <span class="s2">"city"</span> <span class="p">:</span> <span class="s2">"acme town"</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
+  <span class="s2">&quot;wat&quot;</span> <span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;foo&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
     <span class="p">},</span>
-    <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Bugs Bunny"</span>
+    <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -211,25 +211,25 @@ is not available anymore.</p>
 
 <p>Luckily, I&#39;ve found out that I don&#39;t need the NPM package
 at all. There&#39;s a Linux command that does this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cat </span>ugly.json | json_pp
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json_pp
 </code></pre></div>
 <p>Which outputs the same pretty formated JSON:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
-  <span class="s2">"wat"</span> <span class="p">:</span> <span class="s2">"lol"</span><span class="p">,</span>
-  <span class="s2">"foo"</span> <span class="p">:</span> <span class="s2">"bar"</span><span class="p">,</span>
-  <span class="s2">"user"</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"address"</span> <span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"street"</span> <span class="p">:</span> <span class="s2">"underground street"</span><span class="p">,</span>
-      <span class="s2">"city"</span> <span class="p">:</span> <span class="s2">"acme town"</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
+  <span class="s2">&quot;wat&quot;</span> <span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;foo&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
     <span class="p">},</span>
-    <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"Bugs Bunny"</span>
+    <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>I took it even further for my use case and
 directly copied the pretty JSON into clipboard
 which I then shared with someone:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cat </span>ugly.json | json_pp | pbcopy
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json_pp <span class="p">|</span> pbcopy
 </code></pre></div>
 <p><code>pbcopy</code> is OSX command for copying text
 to clipboard, use <code>xclip -sel clip</code> on Linux.</p>

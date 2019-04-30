@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Adding a hidden collection" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll","headline":"Adding a hidden collection","dateModified":"2018-12-18T00:00:00+01:00","datePublished":"2018-12-18T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll"},"description":"TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section.","headline":"Adding a hidden collection","dateModified":"2018-12-18T00:00:00+01:00","datePublished":"2018-12-18T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -182,35 +182,33 @@ learn how to add a new section.</p>
 
 <p>To add new collection to Jekyll, you have to first
 define it in <code>_config.yml</code>.</p>
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">collections</span><span class="pi">:</span> 
-  <span class="na">til</span><span class="pi">:</span>
-    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
-    <span class="na">permalink</span><span class="pi">:</span> <span class="s">/:collection/:title</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span></span><span class="l l-Scalar l-Scalar-Plain">collections</span><span class="p p-Indicator">:</span> 
+  <span class="l l-Scalar l-Scalar-Plain">til</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="l l-Scalar l-Scalar-Plain">permalink</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/:collection/:title</span>
 </code></pre></div>
 <p>After that, create a folder for that collection
 beginning with the underscore:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">mkdir _til
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>mkdir _til
 </code></pre></div>
 <p>Place all the posts related to that collection in that
 folder.</p>
 
 <p>You can now iterate that collection in some other page
 with</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html">
-{% for post in site.til %}
-  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"post"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ post.url }}"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span></span>{% for post in site.til %}
+  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-title&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ post.url }}&quot;</span><span class="p">&gt;</span>
         {{ post.title }}
-      <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/h3&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"post-date"</span><span class="nt">&gt;</span>
-      {{ post.date }} in {{ post.categories | join ', ' }}
-    <span class="nt">&lt;/span&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-date&quot;</span><span class="p">&gt;</span>
+      {{ post.date }} in {{ post.categories | join &#39;, &#39; }}
+    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 {% endfor %}
-
 </code></pre></div>
 <p>A good idea would be to place this logic in <code>til/index.html</code>, since
 then that will be rendered when someone visits <a href="/til">/til</a>.</p>

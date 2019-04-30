@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1555663762325366000">
-  <link rel="stylesheet" href="/public/css/style.css?1555663762325366000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1556630886147538000">
+  <link rel="stylesheet" href="/public/css/style.css?1556630886147538000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -40,7 +40,7 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<meta name="generator" content="Jekyll v3.7.4" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Refactoring a large case statement" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactoring-a-large-case-statement","headline":"Refactoring a large case statement","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactoring-a-large-case-statement"},"description":"I&#39;m currently building a gem for converting curl commands to something else, and one early problem I needed to deal with was parsing the curl command arguments.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/refactoring-a-large-case-statement","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;m currently building a gem for converting curl commands to something else, and one early problem I needed to deal with was parsing the curl command arguments.","headline":"Refactoring a large case statement","dateModified":"2019-02-03T00:00:00+01:00","datePublished":"2019-02-03T00:00:00+01:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/refactoring-a-large-case-statement"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -184,50 +184,50 @@ curl command arguments.</p>
 <p>The basic idea for a gem is to convert curl command to
 a sweet looking hash that we can use to do
 magical things. So when given:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://isrubydead.com/
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>curl https://isrubydead.com/
 </code></pre></div>
 <p>Our program converts it to:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
-  <span class="s2">"body"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{},</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://isrubydead.com/"</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="p">{</span>
+  <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://isrubydead.com/&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>We&#39;ll call this hash a <code>Request</code>, so let&#39;s define it:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Request</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span> <span class="k">do</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Request</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:body</span><span class="p">,</span> <span class="ss">:method</span><span class="p">,</span> <span class="ss">:headers</span><span class="p">,</span> <span class="ss">:url</span><span class="p">)</span> <span class="k">do</span>
   <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'GET'</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">headers</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s1">''</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;GET&#39;</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>Our program should expect the curl command as a command line
 argument, so let&#39;s use <code>ARGV.first</code> to read the curl
 command:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'shellwords'</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;shellwords&#39;</span>
 
 <span class="k">module</span> <span class="nn">ParseCurl</span>
   <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">request</span> <span class="o">=</span> <span class="no">Request</span><span class="p">.</span><span class="nf">new</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">parser</span> <span class="o">=</span> <span class="no">Parser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="no">Request</span><span class="o">.</span><span class="n">new</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="no">Parser</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 
-      <span class="n">parser</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">Shellwords</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="nf">strip</span><span class="p">))</span>
+      <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">Shellwords</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">strip</span><span class="p">))</span>
 
-      <span class="n">request</span><span class="p">.</span><span class="nf">to_h</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">to_h</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
-    <span class="nb">attr_accessor</span> <span class="ss">:request</span>
-    <span class="nb">attr_accessor</span> <span class="ss">:parser</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:request</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:parser</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="no">ParseCurl</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span>
+<span class="no">ParseCurl</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="p">)</span>
 </code></pre></div>
 <p>We use <code>Shellwords</code> here to convert the curl command
 to an array of tokens, to make it easier to parse.</p>
@@ -238,53 +238,53 @@ argument to a parser, it&#39;s time to write an actual parser.</p>
 
 <p>Being a very serious and very senior developer,
 I&#39;ve ended up with this very appealing class:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Parser</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Parser</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
     <span class="vi">@request</span> <span class="o">=</span> <span class="n">request</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">words</span> <span class="o">=</span> <span class="n">words</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">words</span> <span class="o">=</span> <span class="n">words</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">word</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">word</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span>
       <span class="n">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="kp">private</span>
 
-  <span class="nb">attr_accessor</span> <span class="ss">:words</span>
-  <span class="nb">attr_reader</span> <span class="ss">:request</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:words</span>
+  <span class="kp">attr_reader</span> <span class="ss">:request</span>
 
   <span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">case</span> <span class="n">word</span>
-    <span class="k">when</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="p">.</span><span class="nf">make_regexp</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="n">word</span>
+    <span class="k">when</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="o">.</span><span class="n">make_regexp</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">word</span>
     <span class="k">when</span> <span class="sr">/\A(-H|--header)\Z/</span>
       <span class="n">parse_header</span>
     <span class="k">when</span> <span class="sr">/\A--compressed\Z/</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Accept-Encoding'</span><span class="p">]</span> <span class="o">||=</span> <span class="s1">'deflate, gzip'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Accept-Encoding&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;deflate, gzip&#39;</span>
     <span class="k">when</span> <span class="sr">/\A-X|\A--request\Z/</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="n">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">when</span> <span class="sr">/\A(-u|--user)\Z/</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Authorization'</span><span class="p">]</span> <span class="o">||=</span>
-        <span class="s2">"Basic </span><span class="si">#{</span><span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Authorization&#39;</span><span class="o">]</span> <span class="o">||=</span>
+        <span class="s2">&quot;Basic </span><span class="si">#{</span><span class="no">Base64</span><span class="o">.</span><span class="n">strict_encode64</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">when</span> <span class="sr">/\A(-b|--cookie)\Z/</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Set-Cookie'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">when</span> <span class="sr">/\A(-A|--user-agent)\Z/</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'User-Agent'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;User-Agent&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">when</span> <span class="sr">/\A(-I|--head)\Z/</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'HEAD'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
     <span class="k">when</span> <span class="sr">/\A(-d|--data|--data-ascii)\Z/</span>
       <span class="n">parse_data</span>
     <span class="k">when</span> <span class="sr">/\A--data-binary\Z/</span>
-      <span class="n">parse_data</span><span class="p">(</span><span class="ss">strip_newlines: </span><span class="kp">false</span><span class="p">)</span>
+      <span class="n">parse_data</span><span class="p">(</span><span class="ss">strip_newlines</span><span class="p">:</span> <span class="kp">false</span><span class="p">)</span>
     <span class="k">when</span> <span class="sr">/\A--data-raw\Z/</span>
-      <span class="n">parse_data</span><span class="p">(</span><span class="ss">raw: </span><span class="kp">true</span><span class="p">)</span>
+      <span class="n">parse_data</span><span class="p">(</span><span class="ss">raw</span><span class="p">:</span> <span class="kp">true</span><span class="p">)</span>
     <span class="k">when</span> <span class="sr">/\A--data-urlencode\Z/</span>
-      <span class="n">parse_data</span><span class="p">(</span><span class="ss">url_encode: </span><span class="kp">true</span><span class="p">)</span>
+      <span class="n">parse_data</span><span class="p">(</span><span class="ss">url_encode</span><span class="p">:</span> <span class="kp">true</span><span class="p">)</span>
     <span class="k">when</span> <span class="sr">/\./</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s2">"http://</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">==</span> <span class="s1">''</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -297,67 +297,67 @@ from header and method arguments to various data arguments.</p>
 
 <p>Super nice! Just look at these beautiful methods, that
 all belong to this class:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Parser</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Parser</span>
   <span class="kp">private</span>
 
   <span class="k">def</span> <span class="nf">parse_data</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
-    <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'POST'</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">==</span> <span class="s1">'GET'</span> <span class="o">||</span>
-                               <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">==</span> <span class="s1">'HEAD'</span>
-    <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">]</span> <span class="o">||=</span>
-      <span class="s1">'application/x-www-form-urlencoded'</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;POST&#39;</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span> <span class="o">||</span>
+                               <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;HEAD&#39;</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">]</span> <span class="o">||=</span>
+      <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
 
     <span class="n">data</span> <span class="o">=</span> <span class="n">extract_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 
-    <span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">body</span><span class="p">.</span><span class="nf">empty?</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">empty?</span>
                      <span class="n">data</span>
                    <span class="k">else</span>
-                     <span class="s2">"</span><span class="si">#{</span><span class="n">request</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">&amp;</span><span class="si">#{</span><span class="n">data</span><span class="si">}</span><span class="s2">"</span>
+                     <span class="s2">&quot;</span><span class="si">#{</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="si">}</span><span class="s2">&amp;</span><span class="si">#{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
                    <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">parse_header</span>
-    <span class="n">header</span> <span class="o">=</span> <span class="n">extract_header</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">extract_header</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="k">unless</span> <span class="n">header</span>
 
-    <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="n">header</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">first</span><span class="p">]</span> <span class="o">=</span>
-      <span class="n">header</span><span class="p">.</span><span class="nf">values</span><span class="p">.</span><span class="nf">first</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">=</span>
+      <span class="n">header</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">first</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">extract_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span> <span class="o">=~</span> <span class="sr">/\A@/</span> <span class="o">||</span> <span class="n">args</span><span class="p">[</span><span class="ss">:raw</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span> <span class="o">=~</span> <span class="sr">/\A@/</span> <span class="o">||</span> <span class="n">args</span><span class="o">[</span><span class="ss">:raw</span><span class="o">]</span>
     <span class="n">data</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">word</span><span class="p">,</span>
-                <span class="ss">strip_newlines: </span><span class="kp">true</span><span class="p">,</span>
-                <span class="ss">raw: </span><span class="kp">false</span><span class="p">,</span>
-                <span class="ss">url_encode: </span><span class="kp">false</span><span class="p">)</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="n">raw</span> <span class="p">?</span> <span class="n">word</span> <span class="p">:</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-    <span class="n">content</span><span class="p">.</span><span class="nf">gsub!</span><span class="p">(</span><span class="sr">/\n|\r/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span> <span class="k">if</span> <span class="n">strip_newlines</span>
-    <span class="n">content</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">if</span> <span class="n">url_encode</span>
+                <span class="ss">strip_newlines</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+                <span class="ss">raw</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
+                <span class="ss">url_encode</span><span class="p">:</span> <span class="kp">false</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">raw</span> <span class="p">?</span> <span class="n">word</span> <span class="p">:</span> <span class="n">word</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">content</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/\n|\r/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">strip_newlines</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="no">CGI</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">if</span> <span class="n">url_encode</span>
     <span class="n">content</span>
   <span class="k">rescue</span> <span class="no">Errno</span><span class="o">::</span><span class="no">ENOENT</span>
-    <span class="n">file_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="n">data</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
     <span class="k">raise</span> <span class="no">FileNotFoundError</span><span class="p">,</span>
-      <span class="s2">"Cannot read file: </span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Does it exist?"</span>
+      <span class="s2">&quot;Cannot read file: </span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Does it exist?&quot;</span>
   <span class="k">end</span>
 
   <span class="c1"># Needed for extracting -XPUT and similar formats.</span>
   <span class="k">def</span> <span class="nf">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span> <span class="k">unless</span> <span class="n">word</span> <span class="o">=~</span> <span class="sr">/^-X/</span>
+    <span class="k">return</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span> <span class="k">unless</span> <span class="n">word</span> <span class="o">=~</span> <span class="sr">/^-X/</span>
 
-    <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="nb">method</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/^-X(.*)/</span><span class="p">)[</span><span class="mi">1</span><span class="p">]).</span><span class="nf">empty?</span>
+    <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="nb">method</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/^-X(.*)/</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">empty?</span>
       <span class="nb">method</span>
     <span class="k">else</span>
-      <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">extract_header</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-    <span class="p">[</span><span class="n">header</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/: (.+)/</span><span class="p">)].</span><span class="nf">to_h</span>
+    <span class="o">[</span><span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/: (.+)/</span><span class="p">)</span><span class="o">].</span><span class="n">to_h</span>
   <span class="k">rescue</span> <span class="no">StandardError</span>
     <span class="kp">nil</span>
   <span class="k">end</span>
@@ -385,9 +385,9 @@ but you can take a look at <a href="#final">the final result</a> if you&#39;d li
 skip.</em></p>
 
 <p>This class will from now on be ignorant of curl arguments, so the humongous case statement becomes:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Parser</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Parser</span>
   <span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-    <span class="no">Word</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+    <span class="no">Word</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -396,43 +396,43 @@ of the regex check and the parsing part, the idea is to abstract those into
 class.</p>
 
 <p>Let&#39;s introduce the <code>Word::Base</code> class:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Base</span>
-    <span class="c1"># Used to check if the word given matches the subclass' regex.</span>
+    <span class="c1"># Used to check if the word given matches the subclass&#39; regex.</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">===</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
       <span class="n">word</span> <span class="o">=~</span> <span class="n">regex</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
-      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn't have .regex defined"</span>
+      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn&#39;t have .regex defined&quot;</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2"> doesn't have #parse defined"</span>
+      <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> doesn&#39;t have #parse defined&quot;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>The plan is to have one base class, that will be inherited for every
 scenario we&#39;d like to cover. Here&#39;s the first example of one such class:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Header</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
       <span class="sr">/\A(-H|--header)\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">header</span> <span class="o">=</span> <span class="n">extract_header</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span>
+      <span class="n">header</span> <span class="o">=</span> <span class="n">extract_header</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span>
 
       <span class="k">return</span> <span class="k">unless</span> <span class="n">header</span>
 
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="n">header</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">first</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="p">.</span><span class="nf">values</span><span class="p">.</span><span class="nf">first</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">first</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
     <span class="k">def</span> <span class="nf">extract_header</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-      <span class="p">[</span><span class="n">header</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/: (.+)/</span><span class="p">)].</span><span class="nf">to_h</span>
+      <span class="o">[</span><span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/: (.+)/</span><span class="p">)</span><span class="o">].</span><span class="n">to_h</span>
     <span class="k">rescue</span> <span class="no">StandardError</span>
       <span class="kp">nil</span>
     <span class="k">end</span>
@@ -447,7 +447,7 @@ which we return in the end.</p>
 <p>Since this class has to know about <code>words</code> and <code>request</code>
 too, we&#39;ll add that to the base class. We expect other descendants
 to need that too:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Base</span>
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
       <span class="vi">@words</span> <span class="o">=</span> <span class="n">words</span>
@@ -456,26 +456,26 @@ to need that too:</p>
 
     <span class="kp">private</span>
 
-    <span class="nb">attr_reader</span> <span class="ss">:words</span>
-    <span class="nb">attr_reader</span> <span class="ss">:request</span>
+    <span class="kp">attr_reader</span> <span class="ss">:words</span>
+    <span class="kp">attr_reader</span> <span class="ss">:request</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>The next problem we have is that there&#39;s no connection between
 the original <code>parse_word</code> method and this new class we have created,
 so let&#39;s write a method that connects those two:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
-    <span class="n">subclass</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">subclasses</span>
-                         <span class="p">.</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
-    <span class="n">subclass</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">subclass</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">subclasses</span>
+                         <span class="o">.</span><span class="n">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
+    <span class="n">subclass</span><span class="o">&amp;.</span><span class="n">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;.</span><span class="n">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">Base</span>
     <span class="c1"># List of subclasses, first-inherited class first.</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">subclasses</span>
-      <span class="no">ObjectSpace</span><span class="p">.</span><span class="nf">each_object</span><span class="p">(</span><span class="no">Base</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">)</span>
-                 <span class="p">.</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}.</span><span class="nf">reverse</span>
+      <span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="no">Base</span><span class="o">.</span><span class="n">singleton_class</span><span class="p">)</span>
+                 <span class="o">.</span><span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}</span><span class="o">.</span><span class="n">reverse</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -487,14 +487,14 @@ for parsing <code>--header</code> or <code>-h</code> words from curl.</p>
 
 <p>Our code now supports parsing headers, so let&#39;s proceed to add
 classes for every argument we&#39;d like to support:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">class</span> <span class="nc">Compressed</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
       <span class="sr">/\A--compressed\Z/</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Accept-Encoding'</span><span class="p">]</span> <span class="o">||=</span> <span class="s1">'deflate, gzip'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Accept-Encoding&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;deflate, gzip&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -504,19 +504,19 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="n">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
     <span class="c1"># Needed for extracting -XPUT and similar formats.</span>
     <span class="k">def</span> <span class="nf">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="k">return</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span> <span class="k">unless</span> <span class="n">word</span> <span class="o">=~</span> <span class="sr">/^-X/</span>
+      <span class="k">return</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span> <span class="k">unless</span> <span class="n">word</span> <span class="o">=~</span> <span class="sr">/^-X/</span>
 
-      <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="nb">method</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/^-X(.*)/</span><span class="p">)[</span><span class="mi">1</span><span class="p">]).</span><span class="nf">empty?</span>
+      <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="nb">method</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/^-X(.*)/</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">empty?</span>
         <span class="nb">method</span>
       <span class="k">else</span>
-        <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+        <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
       <span class="k">end</span>
     <span class="k">end</span>
   <span class="k">end</span>
@@ -527,8 +527,8 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Authorization'</span><span class="p">]</span> <span class="o">||=</span>
-        <span class="s2">"Basic </span><span class="si">#{</span><span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Authorization&#39;</span><span class="o">]</span> <span class="o">||=</span>
+        <span class="s2">&quot;Basic </span><span class="si">#{</span><span class="no">Base64</span><span class="o">.</span><span class="n">strict_encode64</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -538,7 +538,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Set-Cookie'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -548,7 +548,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'User-Agent'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;User-Agent&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -558,7 +558,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'HEAD'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -572,40 +572,40 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'POST'</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">==</span> <span class="s1">'GET'</span> <span class="o">||</span>
-                                 <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">==</span> <span class="s1">'HEAD'</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">]</span> <span class="o">||=</span>
-        <span class="s1">'application/x-www-form-urlencoded'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;POST&#39;</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span> <span class="o">||</span>
+                                 <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;HEAD&#39;</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">]</span> <span class="o">||=</span>
+        <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
 
       <span class="n">data</span> <span class="o">=</span> <span class="n">extract_data</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 
-      <span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">body</span><span class="p">.</span><span class="nf">empty?</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">empty?</span>
                        <span class="n">data</span>
                      <span class="k">else</span>
-                       <span class="s2">"</span><span class="si">#{</span><span class="n">request</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">&amp;</span><span class="si">#{</span><span class="n">data</span><span class="si">}</span><span class="s2">"</span>
+                       <span class="s2">&quot;</span><span class="si">#{</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="si">}</span><span class="s2">&amp;</span><span class="si">#{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
                      <span class="k">end</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">extract_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-      <span class="n">data</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
       <span class="n">data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span> <span class="o">=~</span> <span class="sr">/\A@/</span> <span class="o">||</span>
-                                      <span class="n">args</span><span class="p">[</span><span class="ss">:raw</span><span class="p">]</span>
+                                      <span class="n">args</span><span class="o">[</span><span class="ss">:raw</span><span class="o">]</span>
       <span class="n">data</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">word</span><span class="p">,</span>
-                  <span class="ss">strip_newlines: </span><span class="kp">true</span><span class="p">,</span>
-                  <span class="ss">raw: </span><span class="kp">false</span><span class="p">,</span>
-                  <span class="ss">url_encode: </span><span class="kp">false</span><span class="p">)</span>
-      <span class="n">path</span> <span class="o">=</span> <span class="n">raw</span> <span class="p">?</span> <span class="n">word</span> <span class="p">:</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">]</span>
-      <span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-      <span class="n">content</span><span class="p">.</span><span class="nf">gsub!</span><span class="p">(</span><span class="sr">/\n|\r/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span> <span class="k">if</span> <span class="n">strip_newlines</span>
-      <span class="n">content</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">if</span> <span class="n">url_encode</span>
+                  <span class="ss">strip_newlines</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+                  <span class="ss">raw</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
+                  <span class="ss">url_encode</span><span class="p">:</span> <span class="kp">false</span><span class="p">)</span>
+      <span class="n">path</span> <span class="o">=</span> <span class="n">raw</span> <span class="p">?</span> <span class="n">word</span> <span class="p">:</span> <span class="n">word</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span>
+      <span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+      <span class="n">content</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/\n|\r/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">strip_newlines</span>
+      <span class="n">content</span> <span class="o">=</span> <span class="no">CGI</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">if</span> <span class="n">url_encode</span>
       <span class="n">content</span>
     <span class="k">rescue</span> <span class="no">Errno</span><span class="o">::</span><span class="no">ENOENT</span>
-      <span class="n">file_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">])</span>
+      <span class="n">file_path</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="n">data</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
       <span class="k">raise</span> <span class="no">FileNotFoundError</span><span class="p">,</span>
-            <span class="s2">"Cannot read file: </span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Does it exist?"</span>
+            <span class="s2">&quot;Cannot read file: </span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Does it exist?&quot;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -615,7 +615,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">options</span>
-      <span class="p">{</span> <span class="ss">strip_newlines: </span><span class="kp">false</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="ss">strip_newlines</span><span class="p">:</span> <span class="kp">false</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -625,7 +625,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">options</span>
-      <span class="p">{</span> <span class="ss">raw: </span><span class="kp">true</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="ss">raw</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -635,17 +635,17 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">options</span>
-      <span class="p">{</span> <span class="ss">url_encode: </span><span class="kp">true</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="ss">url_encode</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">URL</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">===</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">word</span> <span class="o">=~</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="p">.</span><span class="nf">make_regexp</span>
+      <span class="n">word</span> <span class="o">=~</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="o">.</span><span class="n">make_regexp</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="n">word</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">word</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -655,17 +655,17 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s2">"http://</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">==</span> <span class="s1">''</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
 <p>Here&#39;s the <a name="final">final</a> code we end up with:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Word</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Word</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
-    <span class="n">subclass</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">subclasses</span>
-                         <span class="p">.</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
-    <span class="n">subclass</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">subclass</span> <span class="o">=</span> <span class="no">Word</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">subclasses</span>
+                         <span class="o">.</span><span class="n">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">===</span> <span class="n">word</span> <span class="p">}</span>
+    <span class="n">subclass</span><span class="o">&amp;.</span><span class="n">new</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">&amp;.</span><span class="n">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">Base</span>
@@ -676,29 +676,29 @@ classes for every argument we&#39;d like to support:</p>
 
     <span class="c1"># List of subclasses, first-inherited class appears first.</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">subclasses</span>
-      <span class="no">ObjectSpace</span><span class="p">.</span><span class="nf">each_object</span><span class="p">(</span><span class="no">Base</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">)</span>
-                 <span class="p">.</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}.</span><span class="nf">reverse</span>
+      <span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="no">Base</span><span class="o">.</span><span class="n">singleton_class</span><span class="p">)</span>
+                 <span class="o">.</span><span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span> <span class="n">klass</span> <span class="o">==</span> <span class="no">Base</span> <span class="p">}</span><span class="o">.</span><span class="n">reverse</span>
     <span class="k">end</span>
 
-    <span class="c1"># Used to check if the word given matches the subclass' regex.</span>
+    <span class="c1"># Used to check if the word given matches the subclass&#39; regex.</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">===</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
       <span class="n">word</span> <span class="o">=~</span> <span class="n">regex</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">regex</span>
       <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span>
-            <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn't have .regex defined"</span>
+            <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> doesn&#39;t have .regex defined&quot;</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
       <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span>
-            <span class="s2">"</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2"> doesn't have #parse defined"</span>
+            <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> doesn&#39;t have #parse defined&quot;</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
-    <span class="nb">attr_reader</span> <span class="ss">:words</span>
-    <span class="nb">attr_reader</span> <span class="ss">:request</span>
+    <span class="kp">attr_reader</span> <span class="ss">:words</span>
+    <span class="kp">attr_reader</span> <span class="ss">:request</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">Header</span> <span class="o">&lt;</span> <span class="no">Base</span>
@@ -707,17 +707,17 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">header</span> <span class="o">=</span> <span class="n">extract_header</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span>
+      <span class="n">header</span> <span class="o">=</span> <span class="n">extract_header</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span>
 
       <span class="k">return</span> <span class="k">unless</span> <span class="n">header</span>
 
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="n">header</span><span class="p">.</span><span class="nf">keys</span><span class="p">.</span><span class="nf">first</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="p">.</span><span class="nf">values</span><span class="p">.</span><span class="nf">first</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">first</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
     <span class="k">def</span> <span class="nf">extract_header</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-      <span class="p">[</span><span class="n">header</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/: (.+)/</span><span class="p">)].</span><span class="nf">to_h</span>
+      <span class="o">[</span><span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/: (.+)/</span><span class="p">)</span><span class="o">].</span><span class="n">to_h</span>
     <span class="k">rescue</span> <span class="no">StandardError</span>
       <span class="kp">nil</span>
     <span class="k">end</span>
@@ -729,7 +729,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Accept-Encoding'</span><span class="p">]</span> <span class="o">||=</span> <span class="s1">'deflate, gzip'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Accept-Encoding&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;deflate, gzip&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -739,19 +739,19 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="n">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
     <span class="c1"># Needed for extracting -XPUT and similar formats.</span>
     <span class="k">def</span> <span class="nf">extract_method</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="k">return</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span> <span class="k">unless</span> <span class="n">word</span> <span class="o">=~</span> <span class="sr">/^-X/</span>
+      <span class="k">return</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span> <span class="k">unless</span> <span class="n">word</span> <span class="o">=~</span> <span class="sr">/^-X/</span>
 
-      <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="nb">method</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/^-X(.*)/</span><span class="p">)[</span><span class="mi">1</span><span class="p">]).</span><span class="nf">empty?</span>
+      <span class="k">if</span> <span class="o">!</span><span class="p">(</span><span class="nb">method</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sr">/^-X(.*)/</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">empty?</span>
         <span class="nb">method</span>
       <span class="k">else</span>
-        <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+        <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
       <span class="k">end</span>
     <span class="k">end</span>
   <span class="k">end</span>
@@ -762,8 +762,8 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Authorization'</span><span class="p">]</span> <span class="o">||=</span>
-        <span class="s2">"Basic </span><span class="si">#{</span><span class="no">Base64</span><span class="p">.</span><span class="nf">strict_encode64</span><span class="p">(</span><span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Authorization&#39;</span><span class="o">]</span> <span class="o">||=</span>
+        <span class="s2">&quot;Basic </span><span class="si">#{</span><span class="no">Base64</span><span class="o">.</span><span class="n">strict_encode64</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -773,7 +773,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Set-Cookie'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Set-Cookie&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -783,7 +783,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'User-Agent'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;User-Agent&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -793,7 +793,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'HEAD'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -807,40 +807,40 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">=</span> <span class="s1">'POST'</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">==</span> <span class="s1">'GET'</span> <span class="o">||</span>
-                                 <span class="n">request</span><span class="p">.</span><span class="nf">method</span> <span class="o">==</span> <span class="s1">'HEAD'</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">headers</span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">]</span> <span class="o">||=</span>
-        <span class="s1">'application/x-www-form-urlencoded'</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;POST&#39;</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span> <span class="o">||</span>
+                                 <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;HEAD&#39;</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">]</span> <span class="o">||=</span>
+        <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
 
       <span class="n">data</span> <span class="o">=</span> <span class="n">extract_data</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 
-      <span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">body</span><span class="p">.</span><span class="nf">empty?</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">empty?</span>
                        <span class="n">data</span>
                      <span class="k">else</span>
-                       <span class="s2">"</span><span class="si">#{</span><span class="n">request</span><span class="p">.</span><span class="nf">body</span><span class="si">}</span><span class="s2">&amp;</span><span class="si">#{</span><span class="n">data</span><span class="si">}</span><span class="s2">"</span>
+                       <span class="s2">&quot;</span><span class="si">#{</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="si">}</span><span class="s2">&amp;</span><span class="si">#{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
                      <span class="k">end</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">extract_data</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-      <span class="n">data</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span>
       <span class="n">data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span> <span class="o">=~</span> <span class="sr">/\A@/</span> <span class="o">||</span>
-                                      <span class="n">args</span><span class="p">[</span><span class="ss">:raw</span><span class="p">]</span>
+                                      <span class="n">args</span><span class="o">[</span><span class="ss">:raw</span><span class="o">]</span>
       <span class="n">data</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">word</span><span class="p">,</span>
-                  <span class="ss">strip_newlines: </span><span class="kp">true</span><span class="p">,</span>
-                  <span class="ss">raw: </span><span class="kp">false</span><span class="p">,</span>
-                  <span class="ss">url_encode: </span><span class="kp">false</span><span class="p">)</span>
-      <span class="n">path</span> <span class="o">=</span> <span class="n">raw</span> <span class="p">?</span> <span class="n">word</span> <span class="p">:</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">]</span>
-      <span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-      <span class="n">content</span><span class="p">.</span><span class="nf">gsub!</span><span class="p">(</span><span class="sr">/\n|\r/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span> <span class="k">if</span> <span class="n">strip_newlines</span>
-      <span class="n">content</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escape</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">if</span> <span class="n">url_encode</span>
+                  <span class="ss">strip_newlines</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+                  <span class="ss">raw</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
+                  <span class="ss">url_encode</span><span class="p">:</span> <span class="kp">false</span><span class="p">)</span>
+      <span class="n">path</span> <span class="o">=</span> <span class="n">raw</span> <span class="p">?</span> <span class="n">word</span> <span class="p">:</span> <span class="n">word</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span>
+      <span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+      <span class="n">content</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/\n|\r/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">strip_newlines</span>
+      <span class="n">content</span> <span class="o">=</span> <span class="no">CGI</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">if</span> <span class="n">url_encode</span>
       <span class="n">content</span>
     <span class="k">rescue</span> <span class="no">Errno</span><span class="o">::</span><span class="no">ENOENT</span>
-      <span class="n">file_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">])</span>
+      <span class="n">file_path</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="n">data</span><span class="o">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
       <span class="k">raise</span> <span class="no">FileNotFoundError</span><span class="p">,</span>
-            <span class="s2">"Cannot read file: </span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Does it exist?"</span>
+            <span class="s2">&quot;Cannot read file: </span><span class="si">#{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Does it exist?&quot;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -850,7 +850,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">options</span>
-      <span class="p">{</span> <span class="ss">strip_newlines: </span><span class="kp">false</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="ss">strip_newlines</span><span class="p">:</span> <span class="kp">false</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -860,7 +860,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">options</span>
-      <span class="p">{</span> <span class="ss">raw: </span><span class="kp">true</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="ss">raw</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -870,17 +870,17 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">options</span>
-      <span class="p">{</span> <span class="ss">url_encode: </span><span class="kp">true</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="ss">url_encode</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="k">class</span> <span class="nc">URL</span> <span class="o">&lt;</span> <span class="no">Base</span>
     <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">===</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">word</span> <span class="o">=~</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="p">.</span><span class="nf">make_regexp</span>
+      <span class="n">word</span> <span class="o">=~</span> <span class="no">URI</span><span class="o">::</span><span class="no">DEFAULT_PARSER</span><span class="o">.</span><span class="n">make_regexp</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="n">word</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">word</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -890,7 +890,7 @@ classes for every argument we&#39;d like to support:</p>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-      <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">=</span> <span class="s2">"http://</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="nf">url</span> <span class="o">==</span> <span class="s1">''</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -901,42 +901,42 @@ classes for every argument we&#39;d like to support:</p>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">words</span> <span class="o">=</span> <span class="n">words</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">words</span> <span class="o">=</span> <span class="n">words</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="n">word</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">word</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">shift</span><span class="p">)</span>
       <span class="n">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
   <span class="kp">private</span>
 
-  <span class="nb">attr_accessor</span> <span class="ss">:words</span>
-  <span class="nb">attr_reader</span> <span class="ss">:request</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:words</span>
+  <span class="kp">attr_reader</span> <span class="ss">:request</span>
 
   <span class="k">def</span> <span class="nf">parse_word</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-    <span class="no">Word</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+    <span class="no">Word</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">module</span> <span class="nn">ParseCurl</span>
   <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">request</span> <span class="o">=</span> <span class="no">Request</span><span class="p">.</span><span class="nf">new</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">parser</span> <span class="o">=</span> <span class="no">Parser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="no">Request</span><span class="o">.</span><span class="n">new</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="no">Parser</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 
-      <span class="n">parser</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">Shellwords</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="nf">strip</span><span class="p">))</span>
+      <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">Shellwords</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">strip</span><span class="p">))</span>
 
-      <span class="n">request</span><span class="p">.</span><span class="nf">to_h</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">to_h</span>
     <span class="k">end</span>
 
     <span class="kp">private</span>
 
-    <span class="nb">attr_accessor</span> <span class="ss">:request</span>
-    <span class="nb">attr_accessor</span> <span class="ss">:parser</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:request</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:parser</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="no">ParseCurl</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span>
+<span class="no">ParseCurl</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="p">)</span>
 </code></pre></div>
 <p>Note how each class contains knowledge specific to the 
 argument we&#39;re trying to cover with it and nothing else. I
