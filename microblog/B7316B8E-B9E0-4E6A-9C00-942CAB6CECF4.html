@@ -41,27 +41,27 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Headless testing of Ember apps with Gulp and Jasmine" />
+<meta property="og:title" content="B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="TL;DR: use Karma as a test runner for your JS apps. It&#39;s great because it adds DOM support without any effort and you need DOM support when you&#39;re testing browser apps." />
-<meta property="og:description" content="TL;DR: use Karma as a test runner for your JS apps. It&#39;s great because it adds DOM support without any effort and you need DOM support when you&#39;re testing browser apps." />
-<link rel="canonical" href="http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine" />
-<meta property="og:url" content="http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine" />
+<meta name="description" content="I&#39;ve just discovered microblogging. Took me a while. I&#39;ve already made an attempt to move away from Twitter and tried Mastodon before. Ditched it shortly after since it didn&#39;t feel right. This looks much healthier!" />
+<meta property="og:description" content="I&#39;ve just discovered microblogging. Took me a while. I&#39;ve already made an attempt to move away from Twitter and tried Mastodon before. Ditched it shortly after since it didn&#39;t feel right. This looks much healthier!" />
+<link rel="canonical" href="http://shime.sh/microblog/B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4" />
+<meta property="og:url" content="http://shime.sh/microblog/B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2014-08-28T00:00:00+02:00" />
+<meta property="article:published_time" content="2019-04-30T16:41:21+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"TL;DR: use Karma as a test runner for your JS apps. It&#39;s great because it adds DOM support without any effort and you need DOM support when you&#39;re testing browser apps.","headline":"Headless testing of Ember apps with Gulp and Jasmine","dateModified":"2014-08-28T00:00:00+02:00","datePublished":"2014-08-28T00:00:00+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine"},"@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/microblog/B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve just discovered microblogging. Took me a while. I&#39;ve already made an attempt to move away from Twitter and tried Mastodon before. Ditched it shortly after since it didn&#39;t feel right. This looks much healthier!","headline":"B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4","dateModified":"2019-04-30T16:41:21+02:00","datePublished":"2019-04-30T16:41:21+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/microblog/B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title> Headless testing of Ember apps with Gulp and Jasmine &middot; Hrvoje Šimić </title>
-  <meta name="title" content="Headless testing of Ember apps with Gulp and Jasmine &middot; Hrvoje Šimić">
+  <title> B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4 &middot; Hrvoje Šimić </title>
+  <meta name="title" content="B7316B8E-B9E0-4E6A-9C00-942CAB6CECF4 &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -162,65 +162,16 @@
       <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
         <div class="post max-w-full md:max-w-md">
           <div class="mb-8">
-            <h1>Headless testing of Ember apps with Gulp and Jasmine</h1>
             <div class="text-grey">
-              August 28, 2014
+              April 30, 2019
             </div>
 
             <div class="flex my-2">
               
-                <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  javascript
-                </span>
-              
             </div>
           </div>
 
-          <p><strong>TL;DR</strong>: use <a href="http://karma-runner.github.io/0.12/index.html">Karma</a> as a test runner for your JS apps. It&#39;s great because it adds DOM support without any effort and you need DOM support when you&#39;re testing browser apps.</p>
-
-<hr>
-
-<p>First of all - I love <a href="http://jasmine.github.io/">Jasmine</a>.</p>
-
-<p>It&#39;s a terrific testing framework. Maybe I&#39;m biased because I&#39;m a Ruby developer deep down, we Rubyists love expressiveness, but I love how readable test suites it produces.</p>
-
-<p>Secondly, I love <a href="http://phantomjs.org/">PhantomJS</a> because it means I can run JS tests without firing my browser. That is enough when you&#39;re working on projects that are okay with <em>modern browser support</em> and that&#39;s usually the case right now, I hope. When that&#39;s not the case you&#39;ll going to need cross-browser tests which are not going to be discussed in this blog post, but they will be addressed soon in one of the future posts.</p>
-
-<p>Thirdly, I love <a href="http://gulpjs.com/">Gulp</a> and I think it&#39;s way better than Grunt. Again, I might be biased - I value expressiveness and I&#39;m also amazed by Node.js and it&#39;s most valuable feature - streams.</p>
-
-<hr>
-
-<p>Having said all this, it&#39;s time to test this Ember app.</p>
-
-<p>When you try to setup your Ember app for testing with something like this:</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;ember-testing-container&quot;&gt;&lt;div id=&quot;ember-testing&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#39;</span><span class="p">);</span>
-</code></pre></div>
-<p>You&#39;ll receive this error message:
-<code>
-document is not defined
-</code></p>
-
-<p>Ember requires DOM to operate and using the aforementioned toolset only enables simple JS testing. Jasmine doesn&#39;t have the concept of <em>document</em> baked in.</p>
-
-<h2>The wrong way</h2>
-
-<p>The first solution would probably be adding the <a href="https://github.com/tmpvar/jsdom">jsdom</a> which is basically a DOM implementation in pure JavaScript. Seems crazy, right? It is.</p>
-
-<p>Suddenly we have to add a dependency to Jasmine and the only way to do that is to add the concept of RequireJS. Immediately we think of <a href="http://browserify.org/">Browserify</a> which is cool, but it also seems weird in the same time. So we now have weirdness squared. This generates a lot of FUD and it&#39;s time to discover other options.</p>
-
-<h2>The right way</h2>
-
-<p><a href="http://karma-runner.github.io/0.12/index.html">Karma</a> should ring a bell if you&#39;ve seen <a href="http://toranbillups.com/">Toran Billups&#39;</a> great tutorials about Ember testing. There&#39;s an <a href="https://github.com/toranb/ember-testing-example">example repo</a> that served me well a couple of times, but it&#39;s using Karma without Gulp and QUnit instead of Jasmine.</p>
-
-<p>Problems were basically gone when I added Karma to the test suite. Since I wanted to accomplish everything from Gulp, I had the feeling that something was wrong with adding a separate task runner only for tests.</p>
-
-<p>This was stupid, because <a href="https://github.com/karma-runner/gulp-karma#readme">gulp-karma</a> is a thing. It enables you to run Karma from within Gulp.</p>
-
-<hr>
-
-<p>All the things considered - I think it&#39;s good to make every task runnable from within one task manager. I&#39;m not sure I&#39;ve chosen the right task manager for that - only thing that&#39;s important is <strong>package.json</strong> or npm.</p>
-
-<p>npm is something you&#39;re going to need for almost every JS app there is, so it&#39;s good to think of it as a king of task runners. There&#39;s a good <a href="http://substack.net/task_automation_with_npm_run">blog post</a> about task management with npm which provides more detail and <a href="http://blog.millermedeiros.com/node-js-protip-avoid-global-test-runners/">another one</a> that explains why you should avoid global npm dependencies.</p>
+          <p>I&#39;ve just discovered microblogging. Took me a while. I&#39;ve already made an attempt to move away from Twitter and tried Mastodon before. Ditched it shortly after since it didn&#39;t feel right. This looks much healthier!</p>
 
         </div>
       </div>
