@@ -10,9 +10,12 @@
     <item>
       <title>Filtering records with endless ranges</title>
       
-      <description>&lt;p&gt;Ruby 2.6 has added support for &lt;a href=&quot;https://ruby-doc.org/core-2.6/Range.html#class-Range-label-Endless+Ranges&quot;&gt;endless ranges&lt;/a&gt;,
+        <description>
+          &lt;p&gt;Ruby 2.6 has added support for &lt;a href=&quot;https://ruby-doc.org/core-2.6/Range.html#class-Range-label-Endless+Ranges&quot;&gt;endless ranges&lt;/a&gt;,
 which means ranges no longer require the end argument.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/filtering-records-with-endless-ranges">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/filtering-records-with-endless-ranges</link>
@@ -22,10 +25,13 @@ which means ranges no longer require the end argument.&lt;/p&gt;
     <item>
       <title>Shorten Github link from the command line</title>
       
-      <description>&lt;p&gt;There&amp;#39;s a tool for shortening 
+        <description>
+          &lt;p&gt;There&amp;#39;s a tool for shortening 
 links from Github that I&amp;#39;ve known for a while
 but I imagine not everyone is aware of it.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/shorten-github-link-from-the-command-line">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/shorten-github-link-from-the-command-line</link>
@@ -35,11 +41,14 @@ but I imagine not everyone is aware of it.&lt;/p&gt;
     <item>
       <title>From class components to function components with hooks</title>
       
-      <description>&lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in
+        <description>
+          &lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in
 the super secret app I&amp;#39;m working on, and I appreciate the simplicity improvement.
 The learning curve is pretty minimal, and there are fewer levels of abstraction.
 The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/from-class-components-to-function-components-with-hooks">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Tue, 19 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/from-class-components-to-function-components-with-hooks</link>
@@ -49,11 +58,14 @@ The one thing that was annoying me was the non-optimal ergonomics of the API whe
     <item>
       <title>Refactoring a large case statement</title>
       
-      <description>&lt;p&gt;I&amp;#39;m currently building a gem for converting
+        <description>
+          &lt;p&gt;I&amp;#39;m currently building a gem for converting
 curl commands to something else, and one early
 problem I needed to deal with was parsing the 
 curl command arguments.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/refactoring-a-large-case-statement">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
@@ -63,10 +75,13 @@ curl command arguments.&lt;/p&gt;
     <item>
       <title>Git diff algorithm options</title>
       
-      <description>&lt;p&gt;I&amp;#39;ve recently refactored a method with
+        <description>
+          &lt;p&gt;I&amp;#39;ve recently refactored a method with
 a large case statement and wanted to check
 a diff of the changes.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/git-diff-algorithm-options">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/git-diff-algorithm-options</link>
@@ -76,10 +91,13 @@ a diff of the changes.&lt;/p&gt;
     <item>
       <title>Resizing panes in tmux with a shortcut</title>
       
-      <description>&lt;p&gt;I&amp;#39;ve been using tmux for years now, but
+        <description>
+          &lt;p&gt;I&amp;#39;ve been using tmux for years now, but
 I keep forgetting the shortcuts for resizing
 panes.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</link>
@@ -89,12 +107,15 @@ panes.&lt;/p&gt;
     <item>
       <title>Refactoring with simple polymorphism</title>
       
-      <description>&lt;p&gt;I&amp;#39;m in the process of writing a gem, and I&amp;#39;ve 
+        <description>
+          &lt;p&gt;I&amp;#39;m in the process of writing a gem, and I&amp;#39;ve 
 not been really focused on writing the best possible
 code, in order to build something in the least 
 amount of time. I now have some time on my hands,
 so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/refactoring-with-simple-polymorphism">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
@@ -104,11 +125,14 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
     <item>
       <title>Pretty formatting JSON in Vim</title>
       
-      <description>&lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
+        <description>
+          &lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
 in a &lt;a href=&quot;/til/pretty-format-json&quot;&gt;previous TIL post&lt;/a&gt;, but
 I&amp;#39;ve discovered another great tool for the job,
 with the shorter name.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/pretty-formatting-json-in-vim">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/pretty-formatting-json-in-vim</link>
@@ -118,11 +142,14 @@ with the shorter name.&lt;/p&gt;
     <item>
       <title>Making HTTP requests from Vim</title>
       
-      <description>&lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
+        <description>
+          &lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
 enables HTTP requests from inside the editor&lt;/a&gt;,
 I was delighted to find that there&amp;#39;s also a &lt;a href=&quot;https://github.com/nicwest/vim-http&quot;&gt;Vim
 plugin&lt;/a&gt; for that.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/making-http-requests-from-vim">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/making-http-requests-from-vim</link>
@@ -132,10 +159,13 @@ plugin&lt;/a&gt; for that.&lt;/p&gt;
     <item>
       <title>Pretty formatting JSON</title>
       
-      <description>&lt;p&gt;I&amp;#39;ve used to use some silly NPM
+        <description>
+          &lt;p&gt;I&amp;#39;ve used to use some silly NPM
 package for pretty formatting of
 JSON before.&lt;/p&gt;
-</description>
+
+          <a href="http://shime.sh/til/pretty-formatting-json">http://shime.sh{ post.url }}</a>
+        </description>
       
       <pubDate>Mon, 21 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/pretty-formatting-json</link>
