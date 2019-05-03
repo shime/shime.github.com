@@ -8,6 +8,23 @@
     
     
     <item>
+      <title>Commenting your own pull requests when requesting a review</title>
+      
+        <description>
+          &lt;p&gt;I&amp;#39;ve been practicing reviewing my own
+pull requests when I open them for some time
+now, but I&amp;#39;ve recently learned a trick for improving
+the reviewing process of a pull request.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 03 May 2019 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review</link>
+      <guid isPermaLink="true">http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review</guid>
+    </item>
+    
+    <item>
       <title>Filtering records with endless ranges</title>
       
         <description>
@@ -154,22 +171,6 @@ plugin&lt;/a&gt; for that.&lt;/p&gt;
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/making-http-requests-from-vim</link>
       <guid isPermaLink="true">http://shime.sh/til/making-http-requests-from-vim</guid>
-    </item>
-    
-    <item>
-      <title>Pretty formatting JSON</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve used to use some silly NPM
-package for pretty formatting of
-JSON before.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/pretty-formatting-json">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Mon, 21 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/pretty-formatting-json</link>
-      <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json</guid>
     </item>
     
   </channel>
