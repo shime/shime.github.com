@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1561361699348161000">
-  <link rel="stylesheet" href="/public/css/style.css?1561361699348161000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1561362729345004000">
+  <link rel="stylesheet" href="/public/css/style.css?1561362729345004000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -736,8 +736,8 @@ It looks like it&#39;s an array, but where did it come from?</p>
 <p>We track it down:</p>
 
 <figure class="highlight"><div class='source-location'>
-          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L146-L161'>
-            lib/minitest.rb#L146-L161
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L373-L378'>
+            lib/minitest.rb#L373-L378
           </a>
         </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
 <span class="c1"># Returns all subclasses of Runnable.</span>
@@ -1007,8 +1007,8 @@ using the <code>Runnable#methods_matching</code>:</p>
 provided from the command line. Let&#39;s get to the juicy part:</p>
 
 <figure class="highlight"><div class='source-location'>
-          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L297-L324'>
-            lib/minitest.rb#L297-L324
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L319-L323'>
+            lib/minitest.rb#L319-L323
           </a>
         </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1">##</span>
 <span class="c1"># Responsible for running all runnable methods in a given class,</span>
@@ -1042,8 +1042,8 @@ provided from the command line. Let&#39;s get to the juicy part:</p>
 <p>Which brings us to <code>Runnable.run_one_method</code>:</p>
 
 <figure class="highlight"><div class='source-location'>
-          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L297-L324'>
-            lib/minitest.rb#L297-L324
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L326-L335'>
+            lib/minitest.rb#L326-L335
           </a>
         </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
 <span class="c1"># Runs a single method and has the reporter record the result.</span>
