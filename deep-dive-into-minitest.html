@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/monokai.css?1561361699348161000">
+  <link rel="stylesheet" href="/public/css/style.css?1561361699348161000">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Deep dive into Minitest" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Have you ever wondered what happens when you run a Minitest test suite? How does it work?" />
+<meta property="og:description" content="Have you ever wondered what happens when you run a Minitest test suite? How does it work?" />
+<link rel="canonical" href="http://shime.sh/deep-dive-into-minitest" />
+<meta property="og:url" content="http://shime.sh/deep-dive-into-minitest" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-23T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/deep-dive-into-minitest","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Have you ever wondered what happens when you run a Minitest test suite? How does it work?","headline":"Deep dive into Minitest","dateModified":"2019-06-23T00:00:00+02:00","datePublished":"2019-06-23T00:00:00+02:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/deep-dive-into-minitest"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+    <title> Deep dive into Minitest &middot; Hrvoje Šimić </title>
+  
+
+  <meta name="title" content="Deep dive into Minitest &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+</head>
+
+
+  <body class="font-sans">
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
+
+
+
+
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold self-start" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1 self-start" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/microblog/'>Microblog</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/microblog/'>Microblog</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="post max-w-full md:max-w-md">
+          
+          
+
+          <div>
+            <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
+          </div>
+          <div class="mb-8">
+            <h1>Deep dive into Minitest</h1>
+            <div class="text-grey">
+              June 23, 2019
+            </div>
+
+            <div class="flex my-2">
+              
+                <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                  ruby
+                </span>
+              
+            </div>
+          </div>
+
+          <p>Have you ever wondered what happens when you run a Minitest test suite? How does it work?</p>
+
+<p>This article will demystify Minitest&#39;s magic by going deep into its source code. After reading
+it, you&#39;ll no longer consider Minitest a magical black box and will understand how Minitest
+discovers your tests methods and executes them.</p>
+
+<h2>Reinvent the wheel</h2>
+
+<p>Although the standard programming wisdom
+instructs us to avoid it,
+reinventing the wheel is a great way to learn
+the basic principles about the wheel.</p>
+
+<p>So how does Minitest work?</p>
+
+<p><a name="original-test-method"></a>
+Let&#39;s write a simplest code possible that demonstrates
+how it&#39;s used:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;minitest/autorun&quot;</span>
+
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>When we run it, we get the following output:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Run options: --seed 22395
+
+# Running:
+
+.
+
+Finished in 0.000802s, 1246.8827 runs/s, 1246.8827 assertions/s.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+</code></pre></div>
+<p>Let&#39;s try to figure out how it works by removing the require
+line. If we run it without the <code>require</code>, we&#39;ll get the following error:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Traceback (most recent call last):
+test.rb:3:in `&lt;main&gt;&#39;: uninitialized constant Minitest (NameError)
+</code></pre></div>
+<p>It looks like we&#39;re going to need to define that class, so let&#39;s do that:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="k">module</span> <span class="nn">Minitest</span>
+</span><span class="hll">  <span class="k">class</span> <span class="nc">Test</span><span class="p">;</span> <span class="k">end</span>
+</span><span class="hll"><span class="k">end</span>
+</span>
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>If we run it, absolutely nothing will happen, but at least
+it will not blow up.</p>
+
+<p>The next step is actually running the test. We need to do the following:</p>
+
+<ol>
+<li>figure out which classes have inherited our test class</li>
+<li>call instance methods that begin with <code>test_</code></li>
+</ol>
+
+<p>In order to do 1, we need to add some sort of descendant tracking
+to our <code>Test</code> class. Let&#39;s add it:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="k">module</span> <span class="nn">Minitest</span>
+</span><span class="hll">  <span class="k">class</span> <span class="nc">Test</span>
+</span><span class="hll">    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+</span><span class="hll">      <span class="vi">@descendants</span> <span class="o">||=</span> <span class="o">[]</span>
+</span><span class="hll">      <span class="vi">@descendants</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+</span><span class="hll">    <span class="k">end</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descendants</span>
+</span><span class="hll">      <span class="vi">@descendants</span> <span class="o">||</span> <span class="o">[]</span>
+</span><span class="hll">    <span class="k">end</span>
+</span><span class="hll">  <span class="k">end</span>
+</span><span class="hll"><span class="k">end</span>
+</span>
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Now we&#39;re ready for 2, so let&#39;s call the methods that start with <code>test_</code>.
+Since these methods are instance methods, it makes sense to instantiate
+descendant classes we have tracked:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="k">class</span> <span class="nc">Test</span>
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+      <span class="vi">@descendants</span> <span class="o">||=</span> <span class="o">[]</span>
+      <span class="vi">@descendants</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descendants</span>
+      <span class="vi">@descendants</span> <span class="o">||</span> <span class="o">[]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="hll"><span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span><span class="o">.</span><span class="n">descendants</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span>
+</span><span class="hll">  <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+</span><span class="hll">    <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+</span><span class="hll">      <span class="n">instance</span><span class="o">.</span><span class="n">public_send</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">end</span>
+</span><span class="hll">  <span class="k">end</span>
+</span><span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>If we run this we&#39;ll get another error:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Traceback (most recent call last):
+        6: from test.rb:22:in `&lt;main&gt;&#39;
+        5: from test.rb:22:in `each&#39;
+        4: from test.rb:24:in `block in &lt;main&gt;&#39;
+        3: from test.rb:24:in `each&#39;
+        2: from test.rb:25:in `block (2 levels) in &lt;main&gt;&#39;
+        1: from test.rb:25:in `public_send&#39;
+test.rb:18:in `test_two_plus_two&#39;: undefined method `assert&#39; for #&lt;MathTest:0x00007f8eeb0f4ef8&gt; (NoMethodError)
+</code></pre></div>
+<p>This is just what we&#39;ve expected since we didn&#39;t define
+the <code>assert</code> method yet. Let&#39;s add it:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="k">class</span> <span class="nc">Test</span>
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+      <span class="vi">@descendants</span> <span class="o">||=</span> <span class="o">[]</span>
+      <span class="vi">@descendants</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descendants</span>
+      <span class="vi">@descendants</span> <span class="o">||</span> <span class="o">[]</span>
+    <span class="k">end</span>
+
+<span class="hll">    <span class="k">def</span> <span class="nf">assert</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</span><span class="hll">      <span class="nb">print</span> <span class="s1">&#39;.&#39;</span> <span class="k">if</span> <span class="n">condition</span>
+</span><span class="hll">    <span class="k">end</span>
+</span>  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span><span class="o">.</span><span class="n">descendants</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span>
+  <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+      <span class="n">instance</span><span class="o">.</span><span class="n">public_send</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Run it and witness the dot that is printed out in all its glory:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>.
+</code></pre></div>
+<p>So far so good, but we need to report the number of runs, assertions and
+failures, in addition to dots.</p>
+
+<p><a name="hack-from-the-beginning"></a>
+Let&#39;s count the number of assertions:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="k">class</span> <span class="nc">Test</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">initialize</span>
+</span><span class="hll">      <span class="vi">@assertions_count</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll">    <span class="k">end</span>
+</span>
+<span class="hll">    <span class="kp">attr_reader</span> <span class="ss">:assertions_count</span>
+</span>
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+      <span class="vi">@descendants</span> <span class="o">||=</span> <span class="o">[]</span>
+      <span class="vi">@descendants</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descendants</span>
+      <span class="vi">@descendants</span> <span class="o">||</span> <span class="o">[]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">assert</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="hll">      <span class="vi">@assertions_count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span>      <span class="nb">print</span> <span class="s1">&#39;.&#39;</span> <span class="k">if</span> <span class="n">condition</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span><span class="o">.</span><span class="n">descendants</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span>
+  <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+      <span class="n">instance</span><span class="o">.</span><span class="n">public_send</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Nice, we&#39;re now counting the assertions. The only problem now
+is printing it. Let&#39;s start printing a simple report:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="k">class</span> <span class="nc">Test</span>
+    <span class="k">def</span> <span class="nf">initialize</span>
+      <span class="vi">@assertions_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">end</span>
+
+    <span class="kp">attr_reader</span> <span class="ss">:assertions_count</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+      <span class="vi">@descendants</span> <span class="o">||=</span> <span class="o">[]</span>
+      <span class="vi">@descendants</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descendants</span>
+      <span class="vi">@descendants</span> <span class="o">||</span> <span class="o">[]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">assert</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+      <span class="vi">@assertions_count</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="nb">print</span> <span class="s1">&#39;.&#39;</span> <span class="k">if</span> <span class="n">condition</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="hll"><span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span><span class="o">.</span><span class="n">descendants</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span>
+</span>  <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+      <span class="n">instance</span><span class="o">.</span><span class="n">public_send</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="hll"><span class="k">end</span><span class="o">.</span><span class="n">each_with_object</span><span class="p">(</span><span class="ss">runs</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="ss">assertions</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="p">,</span> <span class="n">counter</span><span class="o">|</span>
+</span><span class="hll">  <span class="n">counter</span><span class="o">[</span><span class="ss">:assertions</span><span class="o">]</span> <span class="o">+=</span> <span class="n">instance</span><span class="o">.</span><span class="n">assertions_count</span>
+</span><span class="hll">  <span class="n">counter</span><span class="o">[</span><span class="ss">:runs</span><span class="o">]</span> <span class="o">+=</span> <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+</span><span class="hll"><span class="k">end</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">counter</span><span class="o">|</span>
+</span><span class="hll">  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">#{</span><span class="n">counter</span><span class="o">[</span><span class="ss">:runs</span><span class="o">]</span><span class="si">}</span><span class="s2"> runs, &quot;</span> <span class="p">\</span>
+</span><span class="hll">       <span class="s2">&quot;</span><span class="si">#{</span><span class="n">counter</span><span class="o">[</span><span class="ss">:assertions</span><span class="o">]</span><span class="si">}</span><span class="s2"> assertions, &quot;</span> <span class="p">\</span>
+</span><span class="hll">       <span class="s1">&#39;0 failures, 0 errors, 0 skips&#39;</span>
+</span><span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>Run this code, and you&#39;ll get the report printed out:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>.
+
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+</code></pre></div>
+<p>Great!</p>
+
+<p>However, this is not precisely how Minitest works.  Minitest doesn&#39;t magically add code to the bottom
+of our tests to print its report. Remember, we require
+Minitest before our test code, so we need to keep our &quot;test library&quot;
+code before our tests.</p>
+
+<p>We need to print the report when everything else has finished
+executing, and luckily Ruby comes with the <a href="https://ruby-doc.org/core-2.6.3/Kernel.html#method-i-at_exit">Kernel#at_exit</a>
+method we can use for this:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="k">class</span> <span class="nc">Test</span>
+    <span class="k">def</span> <span class="nf">initialize</span>
+      <span class="vi">@assertions_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">end</span>
+
+    <span class="kp">attr_reader</span> <span class="ss">:assertions_count</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+      <span class="vi">@descendants</span> <span class="o">||=</span> <span class="o">[]</span>
+      <span class="vi">@descendants</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descendants</span>
+      <span class="vi">@descendants</span> <span class="o">||</span> <span class="o">[]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">assert</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+      <span class="vi">@assertions_count</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="nb">print</span> <span class="s1">&#39;.&#39;</span> <span class="k">if</span> <span class="n">condition</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="hll"><span class="k">def</span> <span class="nf">do_the_wizardry</span>
+</span><span class="hll">  <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span><span class="o">.</span><span class="n">descendants</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">klass</span><span class="o">|</span>
+</span><span class="hll">    <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="o">|</span>
+</span><span class="hll">      <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+</span><span class="hll">        <span class="n">instance</span><span class="o">.</span><span class="n">public_send</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+</span><span class="hll">      <span class="k">end</span>
+</span><span class="hll">    <span class="k">end</span>
+</span><span class="hll">  <span class="k">end</span><span class="o">.</span><span class="n">each_with_object</span><span class="p">(</span><span class="ss">runs</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="ss">assertions</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">instance</span><span class="p">,</span> <span class="n">counter</span><span class="o">|</span>
+</span><span class="hll">    <span class="n">counter</span><span class="o">[</span><span class="ss">:assertions</span><span class="o">]</span> <span class="o">+=</span> <span class="n">instance</span><span class="o">.</span><span class="n">assertions_count</span>
+</span><span class="hll">    <span class="n">counter</span><span class="o">[</span><span class="ss">:runs</span><span class="o">]</span> <span class="o">+=</span> <span class="n">instance</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+</span><span class="hll">  <span class="k">end</span><span class="o">.</span><span class="n">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">counter</span><span class="o">|</span>
+</span><span class="hll">    <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">#{</span><span class="n">counter</span><span class="o">[</span><span class="ss">:runs</span><span class="o">]</span><span class="si">}</span><span class="s2"> runs, &quot;</span> <span class="p">\</span>
+</span><span class="hll">         <span class="s2">&quot;</span><span class="si">#{</span><span class="n">counter</span><span class="o">[</span><span class="ss">:assertions</span><span class="o">]</span><span class="si">}</span><span class="s2"> assertions, &quot;</span> <span class="p">\</span>
+</span><span class="hll">         <span class="s1">&#39;0 failures, 0 errors, 0 skips&#39;</span>
+</span><span class="hll">  <span class="k">end</span>
+</span><span class="hll"><span class="k">end</span>
+</span><span class="hll">
+</span><span class="hll"><span class="nb">at_exit</span> <span class="p">{</span> <span class="n">do_the_wizardry</span> <span class="p">}</span>
+</span><span class="hll">
+</span><span class="k">class</span> <span class="nc">MathTest</span> <span class="o">&lt;</span> <span class="no">Minitest</span><span class="o">::</span><span class="no">Test</span>
+  <span class="k">def</span> <span class="nf">test_two_plus_two</span>
+    <span class="n">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Excellent! Our library code is now above the test code, which
+is also how Minitest works and does its magic.</p>
+
+<h2>A peek under the hood</h2>
+
+<p>Since we&#39;re now total experts when it comes to test libraries,
+we are no longer afraid to look under the hood of Minitest<sup>[<a href="#apology">1</a>]</sup>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git clone https://github.com/seattlerb/minitest.git
+cd minitest
+git checkout 1f2b132
+</code></pre></div>
+<p>Our assumption is that <code>at_exit</code> is used somewhere,
+to print the report we get when running our test suite. 
+Let&#39;s confirm it:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>grep at_exit -nR .
+</code></pre></div>
+<p>This will bring us to:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L52-L66'>
+            lib/minitest.rb#L52-L66
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">autorun</span>
+</span><span class="hll">  <span class="nb">at_exit</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">next</span> <span class="k">if</span> <span class="vg">$!</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="vg">$!</span><span class="o">.</span><span class="n">kind_of?</span> <span class="no">SystemExit</span> <span class="ow">and</span> <span class="vg">$!</span><span class="o">.</span><span class="n">success?</span><span class="p">)</span>
+</span><span class="hll">
+</span>    <span class="n">exit_code</span> <span class="o">=</span> <span class="kp">nil</span>
+
+    <span class="nb">at_exit</span> <span class="p">{</span>
+      <span class="vc">@@after_run</span><span class="o">.</span><span class="n">reverse_each</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:call</span><span class="p">)</span>
+      <span class="nb">exit</span> <span class="n">exit_code</span> <span class="o">||</span> <span class="kp">false</span>
+    <span class="p">}</span>
+
+    <span class="n">exit_code</span> <span class="o">=</span> <span class="no">Minitest</span><span class="o">.</span><span class="n">run</span> <span class="no">ARGV</span>
+<span class="hll">  <span class="p">}</span> <span class="k">unless</span> <span class="vc">@@installed_at_exit</span>
+</span><span class="hll">  <span class="vc">@@installed_at_exit</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>Which uses <code>at_exit</code> to instruct Minitest to run after all the other code has been executed and the program is exiting. The first line skips invoking Minitest if
+the exception is raised and it&#39;s not <code>SystemExit</code> with zero status. <sup>[<a href="#exit-example">2</a>]</sup></p>
+
+<p>This hook is only set up if <code>@@installed_at_exit</code> has not been set, ensuring
+the hook will only be set up once. This allows requiring <code>minitest/autorun</code> multiple
+times and not having to worry about what will happen with the <code>at_exit</code> hook (imagine
+multiple test files each requiring <code>minitest/autorun</code>).</p>
+
+<p>This brings us to the inside of the block:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L52-L66'>
+            lib/minitest.rb#L52-L66
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">autorun</span>
+  <span class="nb">at_exit</span> <span class="p">{</span>
+    <span class="k">next</span> <span class="k">if</span> <span class="vg">$!</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="vg">$!</span><span class="o">.</span><span class="n">kind_of?</span> <span class="no">SystemExit</span> <span class="ow">and</span> <span class="vg">$!</span><span class="o">.</span><span class="n">success?</span><span class="p">)</span>
+
+<span class="hll">    <span class="n">exit_code</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="nb">at_exit</span> <span class="p">{</span>
+</span><span class="hll">      <span class="vc">@@after_run</span><span class="o">.</span><span class="n">reverse_each</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:call</span><span class="p">)</span>
+</span><span class="hll">      <span class="nb">exit</span> <span class="n">exit_code</span> <span class="o">||</span> <span class="kp">false</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="n">exit_code</span> <span class="o">=</span> <span class="no">Minitest</span><span class="o">.</span><span class="n">run</span> <span class="no">ARGV</span>
+</span>  <span class="p">}</span> <span class="k">unless</span> <span class="vc">@@installed_at_exit</span>
+  <span class="vc">@@installed_at_exit</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Notice the little trick with <code>exit_code</code> being set to <code>nil</code> first, before
+assigning it to the result of <code>Minitest.run</code>. This is used to ensure that
+the <code>at_exit</code> block runs regardless of the result of <code>Minitest.run</code>.<sup>[<a href="#assign-nil-example">3</a>]</sup></p>
+
+<p>This second <code>at_exit</code> hook will be executed after Minitest finishes its execution,
+so this is setting up the second layer of code that&#39;s going to be run
+when the program is exiting.</p>
+
+<p>In its block <code>@@after_run</code> is being called in reverse order. Where is it coming from?</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L10-L15'>
+            lib/minitest.rb#L10-L15
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">module</span> <span class="nn">Minitest</span>
+  <span class="no">VERSION</span> <span class="o">=</span> <span class="s2">&quot;5.11.3&quot;</span> <span class="c1"># :nodoc:</span>
+  <span class="no">ENCS</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:encoding</span> <span class="c1"># :nodoc:</span>
+
+  <span class="vc">@@installed_at_exit</span> <span class="o">||=</span> <span class="kp">false</span>
+<span class="hll">  <span class="vc">@@after_run</span> <span class="o">=</span> <span class="o">[]</span>
+</span></code></pre></figure>
+
+<p>Ah, an ordinary array, but we&#39;re calling <code>.call</code> on its items. What does it store?</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L68-L76'>
+            lib/minitest.rb#L68-L76
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># A simple hook allowing you to run a block of code after everything</span>
+<span class="c1"># is done running. Eg:</span>
+<span class="c1">#</span>
+<span class="c1">#   Minitest.after_run { p $debugging_info }</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">after_run</span> <span class="o">&amp;</span><span class="n">block</span>
+  <span class="vc">@@after_run</span> <span class="o">&lt;&lt;</span> <span class="n">block</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Nice, so this is how Minitest keeps track of its <code>after_run</code> callbacks, it appends blocks
+passed to <code>Minitest.after_run</code> to an ordinary array - nothing magical.</p>
+
+<p>Now that we&#39;ve demystified other parts of the <code>at_exit</code> hook that Minitest uses
+to deploy its magic, let&#39;s take a look at the one thing that&#39;s left:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L52-L66'>
+            lib/minitest.rb#L52-L66
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">autorun</span>
+  <span class="nb">at_exit</span> <span class="p">{</span>
+    <span class="k">next</span> <span class="k">if</span> <span class="vg">$!</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="vg">$!</span><span class="o">.</span><span class="n">kind_of?</span> <span class="no">SystemExit</span> <span class="ow">and</span> <span class="vg">$!</span><span class="o">.</span><span class="n">success?</span><span class="p">)</span>
+
+    <span class="n">exit_code</span> <span class="o">=</span> <span class="kp">nil</span>
+
+    <span class="nb">at_exit</span> <span class="p">{</span>
+      <span class="vc">@@after_run</span><span class="o">.</span><span class="n">reverse_each</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:call</span><span class="p">)</span>
+      <span class="nb">exit</span> <span class="n">exit_code</span> <span class="o">||</span> <span class="kp">false</span>
+    <span class="p">}</span>
+
+<span class="hll">    <span class="n">exit_code</span> <span class="o">=</span> <span class="no">Minitest</span><span class="o">.</span><span class="n">run</span> <span class="no">ARGV</span>
+</span>  <span class="p">}</span> <span class="k">unless</span> <span class="vc">@@installed_at_exit</span>
+  <span class="vc">@@installed_at_exit</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>This is the most important line of that method since it actually runs the tests. Let&#39;s dig into it!</p>
+
+<h2>Starting the engine</h2>
+
+<p>Searching for it, we discover these methods:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L103-L144'>
+            lib/minitest.rb#L103-L144
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="c1">##</span>
+</span><span class="hll"><span class="c1"># This is the top-level run method. Everything starts from here. It</span>
+</span><span class="hll"><span class="c1"># tells each Runnable sub-class to run, and each of those are</span>
+</span><span class="hll"><span class="c1"># responsible for doing whatever they do.</span>
+</span><span class="hll"><span class="c1">#</span>
+</span><span class="hll"><span class="c1"># The overall structure of a run looks like this:</span>
+</span><span class="hll"><span class="c1">#</span>
+</span><span class="hll"><span class="c1">#   Minitest.autorun</span>
+</span><span class="hll"><span class="c1">#     Minitest.run(args)</span>
+</span><span class="hll"><span class="c1">#       Minitest.__run(reporter, options)</span>
+</span><span class="hll"><span class="c1">#         Runnable.runnables.each</span>
+</span><span class="hll"><span class="c1">#           runnable.run(reporter, options)</span>
+</span><span class="hll"><span class="c1">#             self.runnable_methods.each</span>
+</span><span class="hll"><span class="c1">#               self.run_one_method(self, runnable_method, reporter)</span>
+</span><span class="hll"><span class="c1">#                 Minitest.run_one_method(klass, runnable_method)</span>
+</span><span class="hll"><span class="c1">#                   klass.new(runnable_method).run</span>
+</span><span class="hll">
+</span><span class="hll"><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span> <span class="n">args</span> <span class="o">=</span> <span class="o">[]</span>
+</span>  <span class="nb">self</span><span class="o">.</span><span class="n">load_plugins</span> <span class="k">unless</span> <span class="n">args</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">&quot;--no-plugins&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;MT_NO_PLUGINS&quot;</span><span class="o">]</span>
+
+<span class="hll">  <span class="n">options</span> <span class="o">=</span> <span class="n">process_args</span> <span class="n">args</span>
+</span>
+<span class="hll">  <span class="n">reporter</span> <span class="o">=</span> <span class="no">CompositeReporter</span><span class="o">.</span><span class="n">new</span>
+</span><span class="hll">  <span class="n">reporter</span> <span class="o">&lt;&lt;</span> <span class="no">SummaryReporter</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">options</span><span class="o">[</span><span class="ss">:io</span><span class="o">]</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</span><span class="hll">  <span class="n">reporter</span> <span class="o">&lt;&lt;</span> <span class="no">ProgressReporter</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">options</span><span class="o">[</span><span class="ss">:io</span><span class="o">]</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">reporter</span> <span class="o">=</span> <span class="n">reporter</span> <span class="c1"># this makes it available to plugins</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">init_plugins</span> <span class="n">options</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">reporter</span> <span class="o">=</span> <span class="kp">nil</span> <span class="c1"># runnables shouldn&#39;t depend on the reporter, ever</span>
+
+  <span class="nb">self</span><span class="o">.</span><span class="n">parallel_executor</span><span class="o">.</span><span class="n">start</span> <span class="k">if</span> <span class="n">parallel_executor</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:start</span><span class="p">)</span>
+  <span class="n">reporter</span><span class="o">.</span><span class="n">start</span>
+<span class="hll">  <span class="k">begin</span>
+</span><span class="hll">    <span class="n">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+</span><span class="hll">  <span class="k">rescue</span> <span class="no">Interrupt</span>
+</span><span class="hll">    <span class="nb">warn</span> <span class="s2">&quot;Interrupted. Exiting...&quot;</span>
+</span><span class="hll">  <span class="k">end</span>
+</span>  <span class="nb">self</span><span class="o">.</span><span class="n">parallel_executor</span><span class="o">.</span><span class="n">shutdown</span>
+  <span class="n">reporter</span><span class="o">.</span><span class="n">report</span>
+
+  <span class="n">reporter</span><span class="o">.</span><span class="n">passed?</span>
+<span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L146-L161'>
+            lib/minitest.rb#L146-L161
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Internal run method. Responsible for telling all Runnable</span>
+<span class="c1"># sub-classes to run.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+  <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
+                    <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
+                    <span class="n">shuffle</span>
+  <span class="n">parallel</span><span class="p">,</span> <span class="n">serial</span> <span class="o">=</span> <span class="n">suites</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">test_order</span> <span class="o">==</span> <span class="ss">:parallel</span> <span class="p">}</span>
+
+  <span class="n">serial</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span> <span class="o">+</span>
+    <span class="n">parallel</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>So far so good, but we&#39;re little confused now about this <code>Runnable.runnables</code> invocation.
+It looks like it&#39;s an array, but where did it come from?</p>
+
+<p>We track it down:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L146-L161'>
+            lib/minitest.rb#L146-L161
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Returns all subclasses of Runnable.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">runnables</span>
+  <span class="vc">@@runnables</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>This doesn&#39;t clear things up, so we keep searching and find this code:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L977-L982'>
+            lib/minitest.rb#L977-L982
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Runnable</span> <span class="c1"># re-open</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span> <span class="n">klass</span> <span class="c1"># :nodoc:</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">runnables</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">super</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Ah! It uses the <a href="https://ruby-doc.org/core-2.6.3/Class.html#method-i-inherited">Class#inherited</a> to track all
+the classes that have inherited <code>Runnable</code>. It&#39;s a bit weird to discover that <code>@@runnables</code> is being 
+appended to, but not assigned to an array yet. Here&#39;s the missing piece:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L291-L295'>
+            lib/minitest.rb#L291-L295
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">reset</span> <span class="c1"># :nodoc:</span>
+  <span class="vc">@@runnables</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="k">end</span>
+
+<span class="n">reset</span></code></pre></figure>
+
+<p>This clears things up about <code>Runnable.runnables</code> being an array of classes that inherit
+<code>Runnable</code>, but we still know nothing about the nature of those classes. </p>
+
+<p>Doing a quick grep for <code>&lt; Runnable</code> gives us a suspect:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L496'>
+            lib/minitest.rb#L496
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Result</span> <span class="o">&lt;</span> <span class="no">Runnable</span></code></pre></figure>
+
+<p>Remember that we&#39;re still stuck at this line:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L146-L161'>
+            lib/minitest.rb#L146-L161
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1">##</span>
+<span class="c1"># Internal run method. Responsible for telling all Runnable</span>
+<span class="c1"># sub-classes to run.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+<span class="hll">  <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
+</span><span class="hll">                    <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
+</span><span class="hll">                    <span class="n">shuffle</span>
+</span>  <span class="n">parallel</span><span class="p">,</span> <span class="n">serial</span> <span class="o">=</span> <span class="n">suites</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">test_order</span> <span class="o">==</span> <span class="ss">:parallel</span> <span class="p">}</span>
+
+  <span class="n">serial</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span> <span class="o">+</span>
+    <span class="n">parallel</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>But we now know <sup>(or do we, cough, cough?)</sup> that <code>Runnable.runnables</code> is <code>[Result]</code>. Looks like
+we&#39;re rejecting classes from that array that have
+empty <code>runnable_methods</code>.</p>
+
+<p>Tracking this method down leads us to the dead end:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L365-L371'>
+            lib/minitest.rb#L365-L371
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Each subclass of Runnable is responsible for overriding this</span>
+<span class="c1"># method to return all runnable methods. See #methods_matching.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">runnable_methods</span>
+  <span class="k">raise</span> <span class="no">NotImplementedError</span><span class="p">,</span> <span class="s2">&quot;subclass responsibility&quot;</span>
+<span class="k">end</span></code></pre></figure>
+
+<p><a href="https://www.youtube.com/watch?v=a1Y73sPHKxw">What!?</a></p>
+
+<p>Turns out, this nifty re-opening
+of <code>Runnable</code> class has a purpose. The <code>Runnable.inherited</code> is defined
+on line <a href="https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L977">977</a>,
+while <code>Result &lt; Runnable</code> happens on line <a href="https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L496">496</a>. Looks like the order is important here. Who knew!? </p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># This happens first</span>
+<span class="k">class</span> <span class="nc">Runnable</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">reset</span> <span class="c1"># :nodoc:</span>
+    <span class="vc">@@runnables</span> <span class="o">=</span> <span class="o">[]</span>
+  <span class="k">end</span>
+
+  <span class="n">reset</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">runnables</span>
+    <span class="vc">@@runnables</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Result</span> <span class="o">&lt;</span> <span class="no">Runnable</span><span class="p">;</span> <span class="k">end</span>
+
+<span class="c1"># And then we re-open the class</span>
+<span class="k">class</span> <span class="nc">Runnable</span> <span class="c1"># re-open</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">inherited</span> <span class="n">klass</span> <span class="c1"># :nodoc:</span>
+    <span class="nb">self</span><span class="o">.</span><span class="n">runnables</span> <span class="o">&lt;&lt;</span> <span class="n">klass</span>
+    <span class="k">super</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># &gt; Runnable.runnables</span>
+<span class="c1"># =&gt; []</span></code></pre></figure>
+
+<p>Our suspect is free to go. We have found another one:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest/test.rb#L10'>
+            lib/minitest/test.rb#L10
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span>  <span class="k">class</span> <span class="nc">Test</span> <span class="o">&lt;</span> <span class="no">Runnable</span></code></pre></figure>
+
+<p>Interesting. But where do we even require that class?</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L987'>
+            lib/minitest.rb#L987
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;minitest/test&quot;</span></code></pre></figure>
+
+<p>Ah! That&#39;s the last line of that file, so the <code>inherited</code> will kick in and catch this class. This suspect is now confirmed, and
+we can happily declare that <code>Runnable.runnables</code> contains <code>[Test]</code>.</p>
+
+<p>We now track down <code>Test.runnable_methods</code>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest/test.rb#L60-L77'>
+            lib/minitest/test.rb#L60-L77
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Returns all instance methods starting with &quot;test_&quot;. Based on</span>
+<span class="c1"># #test_order, the methods are either sorted, randomized</span>
+<span class="c1"># (default), or run in parallel.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">runnable_methods</span>
+  <span class="nb">methods</span> <span class="o">=</span> <span class="n">methods_matching</span><span class="p">(</span><span class="sr">/^test_/</span><span class="p">)</span>
+
+  <span class="k">case</span> <span class="nb">self</span><span class="o">.</span><span class="n">test_order</span>
+  <span class="k">when</span> <span class="ss">:random</span><span class="p">,</span> <span class="ss">:parallel</span> <span class="k">then</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="nb">methods</span><span class="o">.</span><span class="n">size</span>
+    <span class="nb">methods</span><span class="o">.</span><span class="n">sort</span><span class="o">.</span><span class="n">sort_by</span> <span class="p">{</span> <span class="nb">rand</span> <span class="n">max</span> <span class="p">}</span>
+  <span class="k">when</span> <span class="ss">:alpha</span><span class="p">,</span> <span class="ss">:sorted</span> <span class="k">then</span>
+    <span class="nb">methods</span><span class="o">.</span><span class="n">sort</span>
+  <span class="k">else</span>
+    <span class="k">raise</span> <span class="s2">&quot;Unknown test_order: </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">test_order</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>This returns all the instance methods of this class, that start with <code>test_</code> by
+using the <code>Runnable#methods_matching</code>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L284-L289'>
+            lib/minitest.rb#L284-L289
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Returns all instance methods matching the pattern +re+.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">methods_matching</span> <span class="n">re</span>
+  <span class="nb">public_instance_methods</span><span class="p">(</span><span class="kp">true</span><span class="p">)</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_s</span><span class="p">)</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>We can now finally move a couple of lines:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L146-L161'>
+            lib/minitest.rb#L146-L161
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1">##</span>
+<span class="c1"># Internal run method. Responsible for telling all Runnable</span>
+<span class="c1"># sub-classes to run.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+  <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
+                    <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
+                    <span class="n">shuffle</span>
+<span class="hll">  <span class="n">parallel</span><span class="p">,</span> <span class="n">serial</span> <span class="o">=</span> <span class="n">suites</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">test_order</span> <span class="o">==</span> <span class="ss">:parallel</span> <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="n">serial</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span> <span class="o">+</span>
+</span><span class="hll">    <span class="n">parallel</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span>
+</span><span class="k">end</span></code></pre></figure>
+
+<p>It looks like some partitioning is happening, but we don&#39;t care because:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest/test.rb#L79-L85'>
+            lib/minitest/test.rb#L79-L85
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Defines the order to run tests (:random by default). Override</span>
+<span class="c1"># this or use a convenience method to change it for your tests.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">test_order</span>
+  <span class="ss">:random</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Which will put everything in <code>serial</code> (<code>parallel</code> will be empty array) and this leads us to:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L146-L161'>
+            lib/minitest.rb#L146-L161
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1">##</span>
+<span class="c1"># Internal run method. Responsible for telling all Runnable</span>
+<span class="c1"># sub-classes to run.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+  <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
+                    <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
+                    <span class="n">shuffle</span>
+  <span class="n">parallel</span><span class="p">,</span> <span class="n">serial</span> <span class="o">=</span> <span class="n">suites</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">test_order</span> <span class="o">==</span> <span class="ss">:parallel</span> <span class="p">}</span>
+
+<span class="hll">  <span class="n">serial</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span> <span class="o">+</span>
+</span>    <span class="n">parallel</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">suite</span><span class="o">|</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="p">}</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Which finally calls <code>Test.run</code>, which <code>Test</code> inherits from <code>Runnable</code>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L297-L324'>
+            lib/minitest.rb#L297-L324
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="c1">##</span>
+</span><span class="hll"><span class="c1"># Responsible for running all runnable methods in a given class,</span>
+</span><span class="hll"><span class="c1"># each in its own instance. Each instance is passed to the</span>
+</span><span class="hll"><span class="c1"># reporter to record.</span>
+</span><span class="hll">
+</span><span class="hll"><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class="hll">  <span class="n">filter</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:filter</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;/./&quot;</span>
+</span><span class="hll">  <span class="n">filter</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="vg">$1</span> <span class="k">if</span> <span class="n">filter</span> <span class="o">=~</span> <span class="sr">%r%/(.*)/%</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="n">filtered_methods</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">find_all</span> <span class="p">{</span> <span class="o">|</span><span class="n">m</span><span class="o">|</span>
+</span><span class="hll">    <span class="n">filter</span> <span class="o">===</span> <span class="n">m</span> <span class="o">||</span> <span class="n">filter</span> <span class="o">===</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="n">exclude</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:exclude</span><span class="o">]</span>
+</span><span class="hll">  <span class="n">exclude</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="vg">$1</span> <span class="k">if</span> <span class="n">exclude</span> <span class="o">=~</span> <span class="sr">%r%/(.*)/%</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="n">filtered_methods</span><span class="o">.</span><span class="n">delete_if</span> <span class="p">{</span> <span class="o">|</span><span class="n">m</span><span class="o">|</span>
+</span><span class="hll">    <span class="n">exclude</span> <span class="o">===</span> <span class="n">m</span> <span class="o">||</span> <span class="n">exclude</span> <span class="o">===</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class="hll">  <span class="p">}</span>
+</span><span class="hll">
+</span><span class="hll">  <span class="k">return</span> <span class="k">if</span> <span class="n">filtered_methods</span><span class="o">.</span><span class="n">empty?</span>
+</span>
+  <span class="n">with_info_handler</span> <span class="n">reporter</span> <span class="k">do</span>
+    <span class="n">filtered_methods</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+      <span class="n">run_one_method</span> <span class="nb">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">reporter</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>This filters methods by the <code>--name</code> and <code>--exclude</code> options
+provided from the command line. Let&#39;s get to the juicy part:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L297-L324'>
+            lib/minitest.rb#L297-L324
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1">##</span>
+<span class="c1"># Responsible for running all runnable methods in a given class,</span>
+<span class="c1"># each in its own instance. Each instance is passed to the</span>
+<span class="c1"># reporter to record.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">filter</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:filter</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;/./&quot;</span>
+  <span class="n">filter</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="vg">$1</span> <span class="k">if</span> <span class="n">filter</span> <span class="o">=~</span> <span class="sr">%r%/(.*)/%</span>
+
+  <span class="n">filtered_methods</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">find_all</span> <span class="p">{</span> <span class="o">|</span><span class="n">m</span><span class="o">|</span>
+    <span class="n">filter</span> <span class="o">===</span> <span class="n">m</span> <span class="o">||</span> <span class="n">filter</span> <span class="o">===</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="p">}</span>
+
+  <span class="n">exclude</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:exclude</span><span class="o">]</span>
+  <span class="n">exclude</span> <span class="o">=</span> <span class="no">Regexp</span><span class="o">.</span><span class="n">new</span> <span class="vg">$1</span> <span class="k">if</span> <span class="n">exclude</span> <span class="o">=~</span> <span class="sr">%r%/(.*)/%</span>
+
+  <span class="n">filtered_methods</span><span class="o">.</span><span class="n">delete_if</span> <span class="p">{</span> <span class="o">|</span><span class="n">m</span><span class="o">|</span>
+    <span class="n">exclude</span> <span class="o">===</span> <span class="n">m</span> <span class="o">||</span> <span class="n">exclude</span> <span class="o">===</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">#</span><span class="si">#{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="k">if</span> <span class="n">filtered_methods</span><span class="o">.</span><span class="n">empty?</span>
+
+<span class="hll">  <span class="n">with_info_handler</span> <span class="n">reporter</span> <span class="k">do</span>
+</span><span class="hll">    <span class="n">filtered_methods</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="o">|</span>
+</span><span class="hll">      <span class="n">run_one_method</span> <span class="nb">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">reporter</span>
+</span><span class="hll">    <span class="k">end</span>
+</span><span class="hll">  <span class="k">end</span>
+</span><span class="k">end</span></code></pre></figure>
+
+<p>Which brings us to <code>Runnable.run_one_method</code>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L297-L324'>
+            lib/minitest.rb#L297-L324
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Runs a single method and has the reporter record the result.</span>
+<span class="c1"># This was considered internal API but is factored out of run so</span>
+<span class="c1"># that subclasses can specialize the running of an individual</span>
+<span class="c1"># test. See Minitest::ParallelTest::ClassMethods for an example.</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run_one_method</span> <span class="n">klass</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">reporter</span>
+  <span class="n">reporter</span><span class="o">.</span><span class="n">prerecord</span> <span class="n">klass</span><span class="p">,</span> <span class="n">method_name</span>
+  <span class="n">reporter</span><span class="o">.</span><span class="n">record</span> <span class="no">Minitest</span><span class="o">.</span><span class="n">run_one_method</span><span class="p">(</span><span class="n">klass</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Which passes the potato to <code>Minitest.run_one_method</code>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L959-L963'>
+            lib/minitest.rb#L959-L963
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run_one_method</span> <span class="n">klass</span><span class="p">,</span> <span class="n">method_name</span> <span class="c1"># :nodoc:</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span><span class="o">.</span><span class="n">run</span>
+  <span class="k">raise</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">klass</span><span class="si">}</span><span class="s2">#run _must_ return a Result&quot;</span> <span class="k">unless</span> <span class="no">Result</span> <span class="o">===</span> <span class="n">result</span>
+  <span class="n">result</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Remember that <code>klass</code> here is <code>Minitest::Test</code> and <code>method_name</code> is each 
+method defined in that class that starts with <code>test_</code> and has survived
+filtering.</p>
+
+<p>Let&#39;s repeat this line since it&#39;s perhaps the most elegant line
+in the entire project.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L960'>
+            lib/minitest.rb#L960
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run_one_method</span> <span class="n">klass</span><span class="p">,</span> <span class="n">method_name</span> <span class="c1"># :nodoc:</span>
+<span class="hll">  <span class="n">result</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span><span class="o">.</span><span class="n">run</span>
+</span>  <span class="k">raise</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">klass</span><span class="si">}</span><span class="s2">#run _must_ return a Result&quot;</span> <span class="k">unless</span> <span class="no">Result</span> <span class="o">===</span> <span class="n">result</span>
+  <span class="n">result</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>This line creates a new instance of <code>Minitest::Test</code> class and passes the current method name as the first argument. <code>Minitest::Test</code> inherits initialize from <code>Minitest::Runnable</code> which looks like this:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L400-L404'>
+            lib/minitest.rb#L400-L404
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">initialize</span> <span class="nb">name</span> <span class="c1"># :nodoc:</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">name</span>       <span class="o">=</span> <span class="nb">name</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">failures</span>   <span class="o">=</span> <span class="o">[]</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">assertions</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>So every test method we&#39;ve created in our original test file gets its own <code>Minitest::Test</code> instance, which stores the name, failures, and number of assertions. A much better approach, compared to <a href="#hack-from-the-beginning">our hack from the beginning</a>, but there are some similarities.</p>
+
+<h2>The final layer</h2>
+
+<p>We still have one layer before we reach the end since we&#39;re calling
+<code>run</code> on an instance of <code>Minitest::Test</code>.</p>
+
+<p>Here is that final layer in its entirety:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest/test.rb#L89-L110'>
+            lib/minitest/test.rb#L89-L110
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1">##</span>
+<span class="c1"># Runs a single test with setup/teardown hooks.</span>
+
+<span class="k">def</span> <span class="nf">run</span>
+  <span class="n">with_info_handler</span> <span class="k">do</span>
+    <span class="n">time_it</span> <span class="k">do</span>
+      <span class="n">capture_exceptions</span> <span class="k">do</span>
+        <span class="n">before_setup</span><span class="p">;</span> <span class="n">setup</span><span class="p">;</span> <span class="n">after_setup</span>
+
+        <span class="nb">self</span><span class="o">.</span><span class="n">send</span> <span class="nb">self</span><span class="o">.</span><span class="n">name</span>
+      <span class="k">end</span>
+
+      <span class="no">TEARDOWN_METHODS</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">hook</span><span class="o">|</span>
+        <span class="n">capture_exceptions</span> <span class="k">do</span>
+          <span class="nb">self</span><span class="o">.</span><span class="n">send</span> <span class="n">hook</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="no">Result</span><span class="o">.</span><span class="n">from</span> <span class="nb">self</span> <span class="c1"># per contract</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Let&#39;s highlight the most important line in that method.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest/test.rb#L98'>
+            lib/minitest/test.rb#L98
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1">##</span>
+<span class="c1"># Runs a single test with setup/teardown hooks.</span>
+
+<span class="k">def</span> <span class="nf">run</span>
+  <span class="n">with_info_handler</span> <span class="k">do</span>
+    <span class="n">time_it</span> <span class="k">do</span>
+      <span class="n">capture_exceptions</span> <span class="k">do</span>
+        <span class="n">before_setup</span><span class="p">;</span> <span class="n">setup</span><span class="p">;</span> <span class="n">after_setup</span>
+
+<span class="hll">        <span class="nb">self</span><span class="o">.</span><span class="n">send</span> <span class="nb">self</span><span class="o">.</span><span class="n">name</span>
+</span>      <span class="k">end</span>
+
+      <span class="no">TEARDOWN_METHODS</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">hook</span><span class="o">|</span>
+        <span class="n">capture_exceptions</span> <span class="k">do</span>
+          <span class="nb">self</span><span class="o">.</span><span class="n">send</span> <span class="n">hook</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="no">Result</span><span class="o">.</span><span class="n">from</span> <span class="nb">self</span> <span class="c1"># per contract</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>This calls our <a href="#original-test-method">original test method</a> named <code>test_two_plus_two</code>. The name was stored in <code>Minitest::Runnable#initialize</code>, as explained earlier.</p>
+
+<p>Other parts of this method are pretty self-explanatory, and I will not go into details. The goal of this article is achieved since we have tracked down and found out exactly what happens when we run our Minitest tests. </p>
+
+<p>Hooray!</p>
+
+<hr>
+
+<h3>Notes and examples</h3>
+
+<ol>
+<li><p><a name="apology"></a>
+The commit <a href="https://github.com/seattlerb/minitest/commit/1f2b1328f286967926a381d7a34e0eadead0722d">1f2b132</a> is no longer
+the latest commit in the repository. The first draft of this post was written 8 weeks ago, and I apologize for not publishing
+it sooner.</p></li>
+<li><p><a name="exit-example"></a>
+This means it will
+be skipped for any exceptions except <code>exit 0</code> which raises <code>SystemExit</code> with <code>success?</code>
+set to true. You can test this with the following code:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;minitest/autorun&#39;</span>
+<span class="nb">exit</span> <span class="mi">0</span>
+</code></pre></div>
+<p>Which will result in the standard Minitest report being printed out. Try replacing
+the exit status like this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;minitest/autorun&#39;</span>
+<span class="nb">exit</span> <span class="mi">1</span>
+</code></pre></div>
+<p>And notice that the Minitest report was not printed out. The same thing happens
+if you raise an exception.</p></li>
+<li><p><a name="assign-nil-example"></a> The simplest example to confirm this behavior is:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">exit_code</span> <span class="o">=</span> <span class="kp">nil</span>
+
+<span class="nb">at_exit</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s1">&#39;inside at_exit&#39;</span>
+  <span class="nb">exit</span> <span class="n">exit_code</span>
+<span class="k">end</span>
+
+<span class="n">exit_code</span> <span class="o">=</span> <span class="k">raise</span>
+</code></pre></div>
+<p>Compare that with:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">exit_code</span> <span class="o">=</span> <span class="k">raise</span>
+
+<span class="nb">at_exit</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s1">&#39;inside at_exit&#39;</span>
+  <span class="nb">exit</span> <span class="n">exit_code</span>
+<span class="k">end</span>
+</code></pre></div></li>
+</ol>
+
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
+</script>
+
+</html>
+
