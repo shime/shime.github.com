@@ -8,6 +8,21 @@
     
     
     <item>
+      <title>Using git stash to test the bug fix</title>
+      
+        <description>
+          &lt;p&gt;Git stash has been a handy command in my 
+workflow for checking whether a test covers the bug.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/using-git-stash-to-test-the-bug-fix">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 19 Jul 2019 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/using-git-stash-to-test-the-bug-fix</link>
+      <guid isPermaLink="true">http://shime.sh/til/using-git-stash-to-test-the-bug-fix</guid>
+    </item>
+    
+    <item>
       <title>Commenting your own pull requests when requesting a review</title>
       
         <description>
@@ -154,23 +169,6 @@ with the shorter name.&lt;/p&gt;
       <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/pretty-formatting-json-in-vim</link>
       <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json-in-vim</guid>
-    </item>
-    
-    <item>
-      <title>Making HTTP requests from Vim</title>
-      
-        <description>
-          &lt;p&gt;After discovering that there is a Visual Studio code &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=humao.rest-client&quot;&gt;plugin which
-enables HTTP requests from inside the editor&lt;/a&gt;,
-I was delighted to find that there&amp;#39;s also a &lt;a href=&quot;https://github.com/nicwest/vim-http&quot;&gt;Vim
-plugin&lt;/a&gt; for that.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/making-http-requests-from-vim">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/making-http-requests-from-vim</link>
-      <guid isPermaLink="true">http://shime.sh/til/making-http-requests-from-vim</guid>
     </item>
     
   </channel>

@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Uninitialized class variable @@current_spec in Minitest" />
+<meta property="og:title" content="Using git stash to test the bug fix" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes." />
-<meta property="og:description" content="When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes." />
-<link rel="canonical" href="http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest" />
-<meta property="og:url" content="http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest" />
+<meta name="description" content="Git stash has been a handy command in my workflow for checking whether a test covers the bug." />
+<meta property="og:description" content="Git stash has been a handy command in my workflow for checking whether a test covers the bug." />
+<link rel="canonical" href="http://shime.sh/til/using-git-stash-to-test-the-bug-fix" />
+<meta property="og:url" content="http://shime.sh/til/using-git-stash-to-test-the-bug-fix" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2012-04-30T00:00:00+02:00" />
+<meta property="article:published_time" content="2019-07-19T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.","dateModified":"2012-04-30T00:00:00+02:00","datePublished":"2012-04-30T00:00:00+02:00","headline":"Uninitialized class variable @@current_spec in Minitest","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest"},"@context":"http://schema.org"}</script>
+{"image":"http://shime.sh/public/social.jpg","url":"http://shime.sh/til/using-git-stash-to-test-the-bug-fix","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Git stash has been a handy command in my workflow for checking whether a test covers the bug.","dateModified":"2019-07-19T00:00:00+02:00","datePublished":"2019-07-19T00:00:00+02:00","headline":"Using git stash to test the bug fix","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/using-git-stash-to-test-the-bug-fix"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Uninitialized class variable @@current_spec in Minitest &middot; Hrvoje Šimić </title>
+    <title> Using git stash to test the bug fix &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Uninitialized class variable @@current_spec in Minitest &middot; Hrvoje Šimić">
+  <meta name="title" content="Using git stash to test the bug fix &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -175,28 +175,41 @@
             <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
           </div>
           <div class="mb-8">
-            <h1>Uninitialized class variable @@current_spec in Minitest</h1>
+            <h1>Using git stash to test the bug fix</h1>
             <div class="text-grey">
-              April 30, 2012
+              July 19, 2019
             </div>
 
             <div class="flex my-2">
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  ruby
+                  git
                 </span>
               
             </div>
           </div>
 
-          <p>When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.</p>
+          <p>Git stash has been a handy command in my 
+workflow for checking whether a test covers the bug.</p>
 
-<p>It was happening because I used to run the tests with</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ rspec spec
-</code></pre></div>
-<p>The case is - you don&#39;t need rspec to run minitests. Just run it like this</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ruby spec/path/to/your/spec.rb
-</code></pre></div>
+<p>My usual workflow is:</p>
+
+<ul>
+<li>fix the bug by writing some code</li>
+<li>write a test that ensures a bug has been fixed</li>
+<li>stash the code that fixes the bug with <code>git stash push /path/to/files</code></li>
+<li>run the tests and ensure that they are failing now</li>
+<li>pop the stash with <code>git stash pop</code> and ensure that they are passing now</li>
+</ul>
+
+<p>This way I avoid writing tests before writing the code that fixes a bug, and
+I&#39;ve still ensured the test covering the bug is not a false positive - it was
+failing when I have stashed my code changes.</p>
+
+<p>Stashing only the code changes that fix the bug is critical for this workflow. Git
+has added support for stashing individual files since version 2.13, so make
+sure to update it if you&#39;re using an older version.</p>
+
         </div>
       </div>
     </div>
