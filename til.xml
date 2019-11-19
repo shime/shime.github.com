@@ -8,6 +8,23 @@
     
     
     <item>
+      <title>Stopping the fans with a script</title>
+      
+        <description>
+          &lt;p&gt;I find it irritating when fans on my
+laptop start spinning out of control, especially
+if it&amp;#39;s caused by something non-critical or 
+running in the background.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/stopping-the-fans-with-a-script">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/stopping-the-fans-with-a-script</link>
+      <guid isPermaLink="true">http://shime.sh/til/stopping-the-fans-with-a-script</guid>
+    </item>
+    
+    <item>
       <title>Using git stash to test the bug fix</title>
       
         <description>
@@ -152,23 +169,6 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
       <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
       <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
-    </item>
-    
-    <item>
-      <title>Pretty formatting JSON in Vim</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve explained how I&amp;#39;ve discovered &lt;code&gt;json_pp&lt;/code&gt;
-in a &lt;a href=&quot;/til/pretty-format-json&quot;&gt;previous TIL post&lt;/a&gt;, but
-I&amp;#39;ve discovered another great tool for the job,
-with the shorter name.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/pretty-formatting-json-in-vim">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Sat, 26 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/pretty-formatting-json-in-vim</link>
-      <guid isPermaLink="true">http://shime.sh/til/pretty-formatting-json-in-vim</guid>
     </item>
     
   </channel>

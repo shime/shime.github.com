@@ -578,4 +578,11 @@
     <priority>0.5</priority>
   </url>
   
+  <url>
+    <loc>http://shime.sh/til/stopping-the-fans-with-a-script</loc>
+    <lastmod>2019-11-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
 </urlset>

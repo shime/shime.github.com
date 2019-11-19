@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.5.0 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Quality vs popularity" />
+<meta property="og:title" content="Stopping the fans with a script" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="When validating library quality, we like to take a look at some metrics like the time of the last commit or the number of stars as if those relate to quality. It&#39;s the easiest thing to do, instead of validating the quality by other means, we go with the easiest approach of following everybody else." />
-<meta property="og:description" content="When validating library quality, we like to take a look at some metrics like the time of the last commit or the number of stars as if those relate to quality. It&#39;s the easiest thing to do, instead of validating the quality by other means, we go with the easiest approach of following everybody else." />
-<link rel="canonical" href="http://shime.sh/quality-vs-popularity" />
-<meta property="og:url" content="http://shime.sh/quality-vs-popularity" />
+<meta name="description" content="I find it irritating when fans on my laptop start spinning out of control, especially if it&#39;s caused by something non-critical or running in the background." />
+<meta property="og:description" content="I find it irritating when fans on my laptop start spinning out of control, especially if it&#39;s caused by something non-critical or running in the background." />
+<link rel="canonical" href="http://shime.sh/til/stopping-the-fans-with-a-script" />
+<meta property="og:url" content="http://shime.sh/til/stopping-the-fans-with-a-script" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-03-21T00:00:00+01:00" />
+<meta property="article:published_time" content="2019-11-19T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"datePublished":"2018-03-21T00:00:00+01:00","url":"http://shime.sh/quality-vs-popularity","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/quality-vs-popularity"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"When validating library quality, we like to take a look at some metrics like the time of the last commit or the number of stars as if those relate to quality. It&#39;s the easiest thing to do, instead of validating the quality by other means, we go with the easiest approach of following everybody else.","@type":"BlogPosting","headline":"Quality vs popularity","dateModified":"2018-03-21T00:00:00+01:00","@context":"http://schema.org"}</script>
+{"datePublished":"2019-11-19T00:00:00+01:00","url":"http://shime.sh/til/stopping-the-fans-with-a-script","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/stopping-the-fans-with-a-script"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I find it irritating when fans on my laptop start spinning out of control, especially if it&#39;s caused by something non-critical or running in the background.","@type":"BlogPosting","headline":"Stopping the fans with a script","dateModified":"2019-11-19T00:00:00+01:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Quality vs popularity &middot; Hrvoje Šimić </title>
+    <title> Stopping the fans with a script &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Quality vs popularity &middot; Hrvoje Šimić">
+  <meta name="title" content="Stopping the fans with a script &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -172,12 +172,12 @@
           
 
           <div>
-            <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
+            <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
           </div>
           <div class="mb-8">
-            <h1>Quality vs popularity</h1>
+            <h1>Stopping the fans with a script</h1>
             <div class="text-grey">
-              March 21, 2018
+              November 19, 2019
             </div>
 
             <div class="flex my-2">
@@ -189,81 +189,43 @@
             </div>
           </div>
 
-          <p>When validating library quality, we like to 
-take a look at some metrics like
-the time of the last commit or the number of
-stars as if those relate to quality.
-It&#39;s the easiest thing to do, instead of
-validating the quality by other means,
-we go with the easiest approach
-of following everybody else.</p>
+          <p>I find it irritating when fans on my
+laptop start spinning out of control, especially
+if it&#39;s caused by something non-critical or 
+running in the background.</p>
 
-<p>With this we save time, which means saving
-money for our employers, but there is a price we pay.
-It is not free. We risk choosing the popular 
-option instead of the better one. </p>
+<p>I caught myself going to <code>htop</code> regularly in
+order to find out what process is slamming
+the CPU and then <code>SIGKILL</code> it by pressing <code>F9</code>
+and then <code>9</code>. </p>
 
-<p>What if instead of looking at the stars, we
-focused on reading every library we included?
-It&#39;s all open source so this is a great benefit
-of it, being able to read the source code.</p>
+<p>That&#39;s why I decided to write a script
+that just kills the relevant process and
+therefore silences the fans. No <code>htop</code> necessary.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="ch">#! /usr/bin/env bash</span>
 
-<p>Easy, right? </p>
+<span class="c1"># Silences the fans of your computer. Kills processes</span>
+<span class="c1"># which use more than threshold percent</span>
+<span class="c1"># of your CPU.</span>
 
-<p>Not really. Reason for this
-is that we use the <em>baterries included</em> libraries,
-popularly known as frameworks, which are large
-in scope and that&#39;s what prevents us from reading the
-source code in a reasonable amount of time.
-Unfortunately those projects are usually more
-popular than the smaller alternatives.</p>
+<span class="c1"># The default threshold, processes using more than</span>
+<span class="c1"># this percentage of the CPU will be killed with</span>
+<span class="c1"># SIGKILL.</span>
+<span class="nv">threshold</span><span class="o">=</span><span class="m">90</span>
 
-<p>The larger the scope of a library, the more
-it needs to be maintained, so the perceived
-status of it is that it&#39;s being actively developed.
-Meanwhile, the smaller libraries don&#39;t need
-so much maintenance, so if we only look
-at the time of the last commit as a metric
-for determining the quality we&#39;ll go with
-the larger one and we&#39;ll perceive the smaller
-one as collecting dust.</p>
-
-<p>If we used libraries that are focused on a single feature
-more, we would end up having codebases that
-are more easily understandable by a single person in
-their entireties. <sup>[<a href="#wirth">1</a>]</sup></p>
-
-<p>We could say that the point of having
-libraries is abstraction, which hides away
-the nasty implementation details in a black
-box. In my opinion, programmers need to know
-at least the basics of how those black boxes
-work internally in order to be able to
-construct quality software with them. That&#39;s easier
-with libraries with narrower scope.</p>
-
-<p>The biggest risk of going of reading
-source code of libraries to be included is investing
-time in libraries we&#39;re not going to end up using.
-Good practice for alleviating this risk is by
-only considering small libraries. <sup>[<a href="#microrb">2</a>]</sup></p>
-
-<p>There are a lot of benefits from reading the source
-code, so why not do it more often? Especially
-when it comes to something as critical as deciding
-if library should be used or not.</p>
-
-<hr>
-
-<ol>
-<li><p><a name="wirth"></a> Niklaus Wirth writes that
-a system that&#39;s not understood by a single person
-in it&#39;s entirety shouldn&#39;t be built. Read more about
-that in his excellent paper <em><a href="http://cr.yp.to/bib/1995/wirth.pdf">A Plea for Lean Software [1995]</a></em>.</p></li>
-<li><p><a name="microrb"></a> Check out
-a mirror of <a href="https://eloyesp.github.io/microrb.com/">microrb.com</a>
-as a way of finding small libraries in Ruby community.</p></li>
-</ol>
+<span class="c1"># List PID, CPU percentage and command name.</span>
+ps -eo pid,%cpu,args <span class="p">|</span>
+  <span class="c1"># Filter processes that are above the threshold.</span>
+  awk -v <span class="nv">threshold</span><span class="o">=</span><span class="nv">$threshold</span> <span class="s1">&#39;{if($2==$2+0 &amp;&amp; $2 &gt; threshold) print $1 &quot; &quot; $3}&#39;</span> <span class="p">|</span>
+    <span class="c1"># Sort by CPU usage to kill the worst offenders first.</span>
+    sort -n <span class="p">|</span>
+      <span class="c1"># # Kill the passed process and report it being killed.</span>
+      xargs -L1 bash -c <span class="s1">&#39;kill -9 $0 &amp;&amp; printf &quot;killed: $1\n&quot;&#39;</span>
+</code></pre></div>
+<p>Put it in your <code>$PATH</code> and call it with</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ silencio
+</code></pre></div>
+<p>In order to go full Harry Potter on your fans.</p>
 
         </div>
       </div>
