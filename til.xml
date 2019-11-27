@@ -8,6 +8,23 @@
     
     
     <item>
+      <title>Building pagination from scratch</title>
+      
+        <description>
+          &lt;p&gt;Since a lot of my past projects included some sort
+of single-page application as the frontend and Rails
+as the backend, I wanted to check how hard would it
+be to implement pagination without using any gems.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/building-pagination-from-scratch">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Wed, 27 Nov 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/building-pagination-from-scratch</link>
+      <guid isPermaLink="true">http://shime.sh/til/building-pagination-from-scratch</guid>
+    </item>
+    
+    <item>
       <title>Stopping the fans with a script</title>
       
         <description>
@@ -151,24 +168,6 @@ panes.&lt;/p&gt;
       <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</link>
       <guid isPermaLink="true">http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</guid>
-    </item>
-    
-    <item>
-      <title>Refactoring with simple polymorphism</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;m in the process of writing a gem, and I&amp;#39;ve 
-not been really focused on writing the best possible
-code, in order to build something in the least 
-amount of time. I now have some time on my hands,
-so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/refactoring-with-simple-polymorphism">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
-      <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
     </item>
     
   </channel>

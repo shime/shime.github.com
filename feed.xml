@@ -81,10 +81,10 @@ of following everybody else.&lt;/p&gt;
     <item>
       <title>Git commit message syntax highlighting in Vim</title>
       
-      <description>&lt;p&gt;Writing git commit messages should be done inside your
-editor because it allows you to add a lengthier commit
-description, as opposed to &lt;code&gt;git commit -m&lt;/code&gt; which just
-puts everything as the first line.&lt;/p&gt;
+      <description>&lt;p&gt;Although you could use &lt;code&gt;git commit -m&lt;/code&gt; for writing
+a git commit message, it&amp;#39;s much better to use
+a proper editor for that, especially if you&amp;#39;re
+writing a multiline commit message.&lt;/p&gt;
 </description>
       
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
