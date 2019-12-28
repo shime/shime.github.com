@@ -8,6 +8,19 @@
 
     
     <item>
+      <title>Deep dive into Did You Mean</title>
+      
+      <description>&lt;p&gt;Since version 2.3.0, Ruby comes bundled
+with &lt;a href=&quot;https://github.com/ruby/did_you_mean&quot;&gt;did_you_mean&lt;/a&gt;,
+a handy gem for detecting typos.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/deep-dive-into-did-you-mean</link>
+      <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
+    </item>
+    
+    <item>
       <title>Deep dive into Minitest</title>
       
       <description>&lt;p&gt;Have you ever wondered what happens when you run a Minitest test suite? How does it work?&lt;/p&gt;
@@ -123,19 +136,6 @@ writing a multiline commit message.&lt;/p&gt;
       <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
       <link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
       <guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
-    </item>
-    
-    <item>
-      <title>Money and time</title>
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;It&amp;#39;s absolutely maddening to see so many people work a job they don&amp;#39;t want to work, so that they can pay for stuff they don&amp;#39;t really need. Time is by far the most valuable &amp;quot;thing/piece of stuff&amp;quot;. How much are you selling an hour of your life for (the whole aspect of the hour... time away from your family, time away from the things you enjoy doing)? Is it worth it?&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/money-and-time</link>
-      <guid isPermaLink="true">http://shime.sh/money-and-time</guid>
     </item>
     
   </channel>
