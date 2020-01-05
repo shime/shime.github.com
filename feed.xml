@@ -8,6 +8,19 @@
 
     
     <item>
+      <title>Fighting content overload</title>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;The abundance of books is a distraction.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/fighting-content-overload</link>
+      <guid isPermaLink="true">http://shime.sh/fighting-content-overload</guid>
+    </item>
+    
+    <item>
       <title>Deep dive into Did You Mean</title>
       
       <description>&lt;p&gt;Since version 2.3.0, Ruby comes bundled
@@ -125,17 +138,6 @@ writing a multiline commit message.&lt;/p&gt;
       <pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/freedom</link>
       <guid isPermaLink="true">http://shime.sh/freedom</guid>
-    </item>
-    
-    <item>
-      <title>Programming for $ until I'm too old to</title>
-      
-      <description>&lt;p&gt;The question I get from time to time is this one:&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 24 Sep 2017 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/programming-for-money-until-I'm-too-old-to</link>
-      <guid isPermaLink="true">http://shime.sh/programming-for-money-until-I'm-too-old-to</guid>
     </item>
     
   </channel>
