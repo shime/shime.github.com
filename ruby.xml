@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby • Hrvoje Šimić</title>
+    <description>Ruby related articles</description>		
+    <link>http://shime.sh</link>
+    <atom:link href="http://shime.sh/til.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    
+    <item>
+      <title>Deep dive into Did You Mean</title>
+      
+        <description>
+          &lt;p&gt;Since version 2.3.0, Ruby comes bundled
+with &lt;a href=&quot;https://github.com/ruby/did_you_mean&quot;&gt;did_you_mean&lt;/a&gt;,
+a handy gem for detecting typos.&lt;/p&gt;
+
+          <a href="http://shime.sh/deep-dive-into-did-you-mean">http://shime.sh/deep-dive-into-did-you-mean</a>
+        </description>
+      
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/deep-dive-into-did-you-mean</link>
+      <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
+    </item>
+    
+    
+    
+    <item>
+      <title>Deep dive into Minitest</title>
+      
+        <description>
+          &lt;p&gt;Have you ever wondered what happens when you run a Minitest test suite? How does it work?&lt;/p&gt;
+
+          <a href="http://shime.sh/deep-dive-into-minitest">http://shime.sh/deep-dive-into-minitest</a>
+        </description>
+      
+      <pubDate>Sun, 23 Jun 2019 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/deep-dive-into-minitest</link>
+      <guid isPermaLink="true">http://shime.sh/deep-dive-into-minitest</guid>
+    </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>
