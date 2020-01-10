@@ -7,55 +7,348 @@
     <atom:link href="http://shime.sh/til.xml" rel="self" type="application/rss+xml" />
     
     
-    
-    
-    
-    <item>
-      <title>Deep dive into Did You Mean</title>
       
-        <description>
-          &lt;p&gt;Since version 2.3.0, Ruby comes bundled
+    
+      
+      <item>
+        <title>Deep dive into Did You Mean</title>
+        
+          <description>
+            &lt;p&gt;Since version 2.3.0, Ruby comes bundled
 with &lt;a href=&quot;https://github.com/ruby/did_you_mean&quot;&gt;did_you_mean&lt;/a&gt;,
 a handy gem for detecting typos.&lt;/p&gt;
 
-          <a href="http://shime.sh/deep-dive-into-did-you-mean">http://shime.sh/deep-dive-into-did-you-mean</a>
-        </description>
+          </description>
+        
+        <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/deep-dive-into-did-you-mean</link>
+        <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
+      </item>
       
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/deep-dive-into-did-you-mean</link>
-      <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
-    </item>
     
-    
-    
-    <item>
-      <title>Deep dive into Minitest</title>
       
-        <description>
-          &lt;p&gt;Have you ever wondered what happens when you run a Minitest test suite? How does it work?&lt;/p&gt;
+      <item>
+        <title>Building pagination from scratch</title>
+        
+          <description>
+            &lt;p&gt;Since a lot of my past projects included some sort
+of single-page application as the frontend and Rails
+as the backend, I wanted to check how hard would it
+be to implement pagination without using any gems.&lt;/p&gt;
 
-          <a href="http://shime.sh/deep-dive-into-minitest">http://shime.sh/deep-dive-into-minitest</a>
-        </description>
+          </description>
+        
+        <pubDate>Wed, 27 Nov 2019 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/building-pagination-from-scratch</link>
+        <guid isPermaLink="true">http://shime.sh/til/building-pagination-from-scratch</guid>
+      </item>
       
-      <pubDate>Sun, 23 Jun 2019 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/deep-dive-into-minitest</link>
-      <guid isPermaLink="true">http://shime.sh/deep-dive-into-minitest</guid>
-    </item>
     
+      
     
+      
     
+      
+      <item>
+        <title>Deep dive into Minitest</title>
+        
+          <description>
+            &lt;p&gt;Have you ever wondered what happens when you run a Minitest test suite? How does it work?&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sun, 23 Jun 2019 00:00:00 +0200</pubDate>
+        <link>http://shime.sh/deep-dive-into-minitest</link>
+        <guid isPermaLink="true">http://shime.sh/deep-dive-into-minitest</guid>
+      </item>
+      
     
+      
     
+      
     
+      
     
+      
     
+      
     
+      
     
+      
+      <item>
+        <title>Refactoring a large case statement</title>
+        
+          <description>
+            &lt;p&gt;I&amp;#39;m currently building a gem for converting
+curl commands to something else, and one early
+problem I needed to deal with was parsing the 
+curl command arguments.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
+        <guid isPermaLink="true">http://shime.sh/til/refactoring-a-large-case-statement</guid>
+      </item>
+      
     
+      
     
+      
+      <item>
+        <title>Refactoring with simple polymorphism</title>
+        
+          <description>
+            &lt;p&gt;I&amp;#39;m in the process of writing a gem, and I&amp;#39;ve 
+not been really focused on writing the best possible
+code, in order to build something in the least 
+amount of time. I now have some time on my hands,
+so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
+        <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
+      </item>
+      
     
+      
     
+      
     
+      
+    
+      
+    
+      
+      <item>
+        <title>Mocking class methods using Minitest</title>
+        
+          <description>
+            &lt;p&gt;Minitest has a convoluted API for mocking 
+class methods, so in order to do so you&amp;#39;ll
+have to use another gem.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Fri, 21 Dec 2018 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/mocking-class-methods-using-minitest</link>
+        <guid isPermaLink="true">http://shime.sh/til/mocking-class-methods-using-minitest</guid>
+      </item>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      <item>
+        <title>5 reasons for adding a post-installation message to your gem</title>
+        
+          <description>
+            &lt;p&gt;Wondering whether you should add a post-installation message to your gem? Here&amp;#39;s a list situations
+in which doing so is desirable:&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sat, 30 Nov 2013 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
+        <guid isPermaLink="true">http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
+      </item>
+      
+    
+      
+    
+      
+      <item>
+        <title>Guard down, Vim and Tmux are here!</title>
+        
+          <description>
+            &lt;p&gt;Do you practice &lt;a href=&quot;http://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test Driven Development&lt;/a&gt;?  If you do, how do you do it?&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sun, 11 Aug 2013 00:00:00 +0200</pubDate>
+        <link>http://shime.sh/guard-down-vim-and-tmux-are-here</link>
+        <guid isPermaLink="true">http://shime.sh/guard-down-vim-and-tmux-are-here</guid>
+      </item>
+      
+    
+      
+    
+      
+      <item>
+        <title>Overriding instance method with a module</title>
+        
+          <description>
+            &lt;p&gt;This is the problem I come across every now and then, so I think a little write up explaining what&amp;#39;s happening could help me understand it better.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Mon, 06 Aug 2012 00:00:00 +0200</pubDate>
+        <link>http://shime.sh/overriding-instance-method-with-a-module</link>
+        <guid isPermaLink="true">http://shime.sh/overriding-instance-method-with-a-module</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Forwardable explained</title>
+        
+          <description>
+            &lt;p&gt;There&amp;#39;s a pretty cool module called &lt;a href=&quot;http://www.ruby-doc.org/stdlib-1.9.3/libdoc/forwardable/rdoc/Forwardable.html&quot;&gt;Forwardable&lt;/a&gt; and it&amp;#39;s used for delegation. Let me explain this a little better...&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sat, 12 May 2012 00:00:00 +0200</pubDate>
+        <link>http://shime.sh/til/forwardable-explained</link>
+        <guid isPermaLink="true">http://shime.sh/til/forwardable-explained</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Uninitialized class variable @@current_spec in Minitest</title>
+        
+          <description>
+            &lt;p&gt;When using this awesome testing framework, this error was happening to me. Google didn&amp;#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Mon, 30 Apr 2012 00:00:00 +0200</pubDate>
+        <link>http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest</link>
+        <guid isPermaLink="true">http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest</guid>
+      </item>
+      
+    
+      
+    
+      
+      <item>
+        <title>Insane can't find executable Rails for Rails error</title>
+        
+          <description>
+            &lt;p&gt;After running any rails command I was getting this error:&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Fri, 17 Feb 2012 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/insane-cant-find-executable-rails-for-rails-error</link>
+        <guid isPermaLink="true">http://shime.sh/til/insane-cant-find-executable-rails-for-rails-error</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Autotest and RSpec problems</title>
+        
+          <description>
+            &lt;p&gt;I was experiencing problems with running specs with autotest. By default it&amp;#39;s configured to run only &lt;em&gt;Test::Unit&lt;/em&gt; files and googling around retrieved several solutions.
+Some of them included creating &lt;em&gt;~/.autotest&lt;/em&gt; file which is read before any autotest session. In that file you should add&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sun, 29 Jan 2012 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/autotest-and-rspec2-problems</link>
+        <guid isPermaLink="true">http://shime.sh/til/autotest-and-rspec2-problems</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Hello world in Sinatra</title>
+        
+          <description>
+            &lt;p&gt;All you have to do to get a hello world in &lt;a href=&quot;https://github.com/sinatra/sinatra&quot;&gt;Sinatra&lt;/a&gt; is this:&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Thu, 26 Jan 2012 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/hello-world-in-sinatra</link>
+        <guid isPermaLink="true">http://shime.sh/til/hello-world-in-sinatra</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Debugging ActiveRecord queries in a Rails console</title>
+        
+          <description>
+            &lt;p&gt;I&amp;#39;m going to share a command that comes in very handy when debugging &lt;em&gt;ActiveRecord&lt;/em&gt; queries.
+With it you can see the &lt;em&gt;SQL&lt;/em&gt; queries generated by any method.
+It&amp;#39;s very useful when debugging your application in a console.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Thu, 19 Jan 2012 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/debugging-active-record-queries-in-a-rails-console</link>
+        <guid isPermaLink="true">http://shime.sh/til/debugging-active-record-queries-in-a-rails-console</guid>
+      </item>
+      
+    
+      
+    
+      
+      <item>
+        <title>Ruby! Y U SO BEAUTIFUL?</title>
+        
+          <description>
+            &lt;p&gt;Ever questioned how to easily prepend &amp;quot;a&amp;quot; or &amp;quot;an&amp;quot; to a word? Here is how
+I do it:&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sun, 20 Nov 2011 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/ruby-y-u-so-beautiful</link>
+        <guid isPermaLink="true">http://shime.sh/til/ruby-y-u-so-beautiful</guid>
+      </item>
+      
     
   </channel>
 </rss>
