@@ -8,6 +8,21 @@
     
     
     <item>
+      <title>Building emphasized code blocks in Jekyll</title>
+      
+        <description>
+          &lt;p&gt;Code blocks in these articles support emphasizing specific lines which
+helps to direct a reader&amp;#39;s attention.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/building-emphasized-code-blocks-in-jekyll">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</link>
+      <guid isPermaLink="true">http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</guid>
+    </item>
+    
+    <item>
       <title>Building pagination from scratch</title>
       
         <description>
@@ -152,22 +167,6 @@ a diff of the changes.&lt;/p&gt;
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/git-diff-algorithm-options</link>
       <guid isPermaLink="true">http://shime.sh/til/git-diff-algorithm-options</guid>
-    </item>
-    
-    <item>
-      <title>Resizing panes in tmux with a shortcut</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve been using tmux for years now, but
-I keep forgetting the shortcuts for resizing
-panes.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</link>
-      <guid isPermaLink="true">http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</guid>
     </item>
     
   </channel>
