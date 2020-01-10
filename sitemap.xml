@@ -208,6 +208,13 @@
 
   
   <url>
+    <loc>http://shime.sh/building-emphasized-code-blocks-in-jekyll</loc>
+    <lastmod>2020-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shime.sh/fighting-content-overload</loc>
     <lastmod>2020-01-10</lastmod>
     <changefreq>daily</changefreq>

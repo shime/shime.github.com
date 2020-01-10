@@ -8,6 +8,18 @@
 
     
     <item>
+      <title>Building emphasized code blocks in Jekyll</title>
+      
+      <description>&lt;p&gt;Code blocks in these articles support emphasizing specific lines which
+helps to direct a reader&amp;#39;s attention.&lt;/p&gt;
+</description>
+      
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/building-emphasized-code-blocks-in-jekyll</link>
+      <guid isPermaLink="true">http://shime.sh/building-emphasized-code-blocks-in-jekyll</guid>
+    </item>
+    
+    <item>
       <title>Fighting content overload</title>
       
       <description>&lt;blockquote&gt;
@@ -127,17 +139,6 @@ writing a multiline commit message.&lt;/p&gt;
       <pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/loving-vim</link>
       <guid isPermaLink="true">http://shime.sh/loving-vim</guid>
-    </item>
-    
-    <item>
-      <title>Freedom</title>
-      
-      <description>&lt;p&gt;I&amp;#39;m a freelancer and I love what I do. There is a thing I value the most in this type of work.&lt;/p&gt;
-</description>
-      
-      <pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/freedom</link>
-      <guid isPermaLink="true">http://shime.sh/freedom</guid>
     </item>
     
   </channel>

@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Git stash is awesome" />
+<meta property="og:title" content="Building emphasized code blocks in Jekyll" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I really like git stash command. It lets you save your current progress and rollback the head state to the last commit." />
-<meta property="og:description" content="I really like git stash command. It lets you save your current progress and rollback the head state to the last commit." />
-<link rel="canonical" href="http://shime.sh/til/git-stash-is-awesome" />
-<meta property="og:url" content="http://shime.sh/til/git-stash-is-awesome" />
+<meta name="description" content="Code blocks in these articles support emphasizing specific lines which helps to direct a reader&#39;s attention." />
+<meta property="og:description" content="Code blocks in these articles support emphasizing specific lines which helps to direct a reader&#39;s attention." />
+<link rel="canonical" href="http://shime.sh/building-emphasized-code-blocks-in-jekyll" />
+<meta property="og:url" content="http://shime.sh/building-emphasized-code-blocks-in-jekyll" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2012-01-16T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-01-10T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Git stash is awesome" />
+<meta property="twitter:title" content="Building emphasized code blocks in Jekyll" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Git stash is awesome","dateModified":"2012-01-16T00:00:00+01:00","url":"http://shime.sh/til/git-stash-is-awesome","datePublished":"2012-01-16T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/git-stash-is-awesome"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I really like git stash command. It lets you save your current progress and rollback the head state to the last commit.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Building emphasized code blocks in Jekyll","dateModified":"2020-01-10T00:00:00+01:00","url":"http://shime.sh/building-emphasized-code-blocks-in-jekyll","datePublished":"2020-01-10T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/building-emphasized-code-blocks-in-jekyll"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Code blocks in these articles support emphasizing specific lines which helps to direct a reader&#39;s attention.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Git stash is awesome &middot; Hrvoje Šimić </title>
+    <title> Building emphasized code blocks in Jekyll &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Git stash is awesome &middot; Hrvoje Šimić">
+  <meta name="title" content="Building emphasized code blocks in Jekyll &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -174,76 +174,92 @@
           
 
           <div>
-            <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+            <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
           </div>
           <div class="mb-8">
-            <h1>Git stash is awesome</h1>
+            <h1>Building emphasized code blocks in Jekyll</h1>
             
             <div class="text-grey">
-              January 16, 2012
+              January 10, 2020
             </div>
             
 
             <div class="flex my-2">
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  git
+                  jekyll
                 </span>
               
             </div>
           </div>
 
-          <p>I really like <code>git stash</code> command. It lets you save your current progress and rollback the head state to the last commit.</p>
+          <p>Code blocks in these articles support emphasizing specific lines which
+helps to direct a reader&#39;s attention.</p>
 
-<p>Let&#39;s say this is my current situation:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git status
+<p>Here&#39;s an example from <a href="/deep-dive-into-minitest">Deep dive into Minitest</a>:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span></span>{% source ruby location=&quot;https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L52-L66&quot; 
+               cssclass=emphasized
+               hl_lines=&quot;1 2 3 4 13 14 15&quot; %}
+def self.autorun
+  at_exit {
+    next if $! and not ($!.kind_of? SystemExit and $!.success?)
 
-<span class="c1"># On branch master</span>
-<span class="c1"># Changes not staged for commit:</span>
-<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
-<span class="c1">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
-<span class="c1">#</span>
-<span class="c1"># modified:   Gemfile.lock</span>
-<span class="c1"># modified:   Rakefile</span>
-<span class="c1"># modified:   _config.yml</span>
-<span class="c1">#</span>
-<span class="c1"># Untracked files:</span>
-<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="c1">#</span>
-<span class="c1"># sass/</span>
-<span class="c1"># source/</span>
-no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+    exit_code = nil
+
+    at_exit {
+      @@after_run.reverse_each(<span class="err">&amp;</span>:call)
+      exit exit_code || false
+    }
+
+    exit_code = Minitest.run ARGV
+  } unless @@installed_at_exit
+  @@installed_at_exit = true
+end
+{% endsource %}
 </code></pre></div>
-<p>We&#39;re going to save everything into stash.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git add .
-$ git stash save
-$ git status
+<p>Which renders:</p>
 
-<span class="c1"># On branch source</span>
-nothing to commit <span class="o">(</span>working directory clean<span class="o">)</span>
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/seattlerb/minitest/blob/1f2b1328f286967926a381d7a34e0eadead0722d/lib/minitest.rb#L52-L66'>
+            lib/minitest.rb#L52-L66
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">autorun</span>
+</span><span class="hll">  <span class="nb">at_exit</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">next</span> <span class="k">if</span> <span class="vg">$!</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="vg">$!</span><span class="o">.</span><span class="n">kind_of?</span> <span class="no">SystemExit</span> <span class="ow">and</span> <span class="vg">$!</span><span class="o">.</span><span class="n">success?</span><span class="p">)</span>
+</span><span class="hll">
+</span>    <span class="n">exit_code</span> <span class="o">=</span> <span class="kp">nil</span>
+
+    <span class="nb">at_exit</span> <span class="p">{</span>
+      <span class="vc">@@after_run</span><span class="o">.</span><span class="n">reverse_each</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:call</span><span class="p">)</span>
+      <span class="nb">exit</span> <span class="n">exit_code</span> <span class="o">||</span> <span class="kp">false</span>
+    <span class="p">}</span>
+
+    <span class="n">exit_code</span> <span class="o">=</span> <span class="no">Minitest</span><span class="o">.</span><span class="n">run</span> <span class="no">ARGV</span>
+<span class="hll">  <span class="p">}</span> <span class="k">unless</span> <span class="vc">@@installed_at_exit</span>
+</span><span class="hll">  <span class="vc">@@installed_at_exit</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>The key is using specific CSS classes and passing <code>hl_lines</code> option to Pygments which specifies line numbers to be emphasized. This instructs the code highlighter to wrap the emphasized line in an element that has <code>hll</code> as its class, so some CSS needs to be added to achieve the opacity effect seen above.</p>
+
+<p>Here&#39;s the CSS that makes this happen:</p>
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span></span><span class="nc">.highlight</span> <span class="nc">.emphasized</span> <span class="p">{</span>
+  <span class="k">&amp;</span> <span class="nt">span</span> <span class="p">{</span>
+    <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.3</span><span class="o">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span> <span class="nt">span</span><span class="nc">.hll</span> <span class="p">{</span>
+    <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">1</span><span class="o">;</span>
+
+    <span class="k">&amp;</span> <span class="nt">span</span> <span class="p">{</span>
+      <span class="nt">opacity</span><span class="nd">:</span> <span class="nt">1</span><span class="o">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>So it basically cleaned up the working directory.
-This comes very handy when you have to fix something on your last commit, but you already made some progress on the other part of your application.
-With this command you basically put your changes elsewhere and you&#39;re able to commit that fix.</p>
+<p>This simply lowers the opacity of non-emphasized lines in a code block.</p>
 
-<p>After the ordinary <code>git add -A &amp;&amp; git commit &amp;&amp; git push</code> command flow, you can issue <code>git stash list</code>. This shows you the current stash status.</p>
-
-<p>You can have multiple items in your stash, and when you do it&#39;s very handy to mark them with messages like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git stash save <span class="s2">&quot;started to work on task 3.2&quot;</span>
-</code></pre></div>
-<p>So let&#39;s say you got multiple items in your stash:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git stash list
-
-stash@<span class="o">{</span><span class="m">0</span><span class="o">}</span>: WIP on master: e106412 <span class="nb">test</span> fix and price display fix
-stash@<span class="o">{</span><span class="m">1</span><span class="o">}</span>: On master: fixing humanized attributes
-</code></pre></div>
-<p>If you execute <code>git stash apply</code> now, the last added item will be pulled out of the stash and merged with master (stashes really follow LIFO principle).
-We can still merge an item named “fixing humanized attributes” like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ git stash apply stash@<span class="o">{</span><span class="m">1</span><span class="o">}</span>.
-</code></pre></div>
-<p>This is not the only scenario where stash comes handy. It also does when you wish to switch branches, rollback states, but would like to keep your current changes.</p>
-
-<p>It&#39;s also nice to clean up your stash regularly so you don&#39;t get lost in too many items. You can do that with <code>git stash clear</code>, but be careful with it since it doesn&#39;t ask you to confirm your little stashocide.</p>
+<p>These code blocks have additional functionality of linking to the source location on Github with the <code>location</code> attribute. This is achieved by patching the original highlight plugin from Jekyll and appending the element when rendering the block.</p>
 
         </div>
       </div>
