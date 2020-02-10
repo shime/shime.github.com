@@ -12,6 +12,8 @@
       
     
       
+    
+      
       <item>
         <title>Deep dive into Did You Mean</title>
         
@@ -76,6 +78,8 @@ be to implement pagination without using any gems.&lt;/p&gt;
       
     
       
+    
+      
       <item>
         <title>Refactoring a large case statement</title>
         
@@ -91,10 +95,6 @@ curl command arguments.&lt;/p&gt;
         <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
         <guid isPermaLink="true">http://shime.sh/til/refactoring-a-large-case-statement</guid>
       </item>
-      
-    
-      
-    
       
     
       
@@ -114,6 +114,8 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
         <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
         <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
       </item>
+      
+    
       
     
       
