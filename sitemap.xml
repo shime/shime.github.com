@@ -7,7 +7,7 @@
   
     <url>
       <loc>http://shime.sh/feed.xml</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -16,7 +16,7 @@
   
     <url>
       <loc>http://shime.sh/articles/</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -25,7 +25,7 @@
   
     <url>
       <loc>http://shime.sh/til/</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -34,7 +34,7 @@
   
     <url>
       <loc>http://shime.sh/</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -43,7 +43,7 @@
   
     <url>
       <loc>http://shime.sh/reading/</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -52,7 +52,7 @@
   
     <url>
       <loc>http://shime.sh/photography/</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -61,7 +61,7 @@
   
     <url>
       <loc>http://shime.sh/ruby.xml</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -70,7 +70,7 @@
   
     <url>
       <loc>http://shime.sh/sitemap.xml</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -79,7 +79,7 @@
   
     <url>
       <loc>http://shime.sh/til.xml</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -88,7 +88,7 @@
   
     <url>
       <loc>http://shime.sh/how-to-waste-hours-on-your-idea</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -97,7 +97,7 @@
   
     <url>
       <loc>http://shime.sh/ruby-y-u-so-beautiful</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -106,7 +106,7 @@
   
     <url>
       <loc>http://shime.sh/git-stash-is-awesome</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -115,7 +115,7 @@
   
     <url>
       <loc>http://shime.sh/debugging-active-record-queries-in-a-rails-console</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -124,7 +124,7 @@
   
     <url>
       <loc>http://shime.sh/hello-world-in-sinatra</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -133,7 +133,7 @@
   
     <url>
       <loc>http://shime.sh/autotest-and-rspec2-problems</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -142,7 +142,7 @@
   
     <url>
       <loc>http://shime.sh/insane-cant-find-executable-rails-for-rails-error</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -151,7 +151,7 @@
   
     <url>
       <loc>http://shime.sh/using-edge-rails-locally</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -160,7 +160,7 @@
   
     <url>
       <loc>http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -169,7 +169,7 @@
   
     <url>
       <loc>http://shime.sh/forwardable-explained</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -178,7 +178,7 @@
   
     <url>
       <loc>http://shime.sh/thoughts</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -187,7 +187,7 @@
   
     <url>
       <loc>http://shime.sh/thoughts</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -196,7 +196,7 @@
   
     <url>
       <loc>http://shime.sh/books</loc>
-      <lastmod>2020-02-14</lastmod>
+      <lastmod>2020-02-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
@@ -209,224 +209,224 @@
   
   <url>
     <loc>http://shime.sh/achieving-balance-between-reading-and-writing</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/fighting-content-overload</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/deep-dive-into-did-you-mean</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/deep-dive-into-minitest</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/replacing-google-fonts-with-system-fonts</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/testing-stimulus</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/how-to-waste-time-on-your-idea</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/quality-vs-popularity</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/loving-vim</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/freedom</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/programming-for-money-until-I'm-too-old-to</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/money-and-time</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/landing-that-remote-job</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/thanks-via-email</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/the-8-week-writing-challenge</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/introducing-ephemeral-P2P-screenshot-sharing</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/on-criticism</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/just-ship-it</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/sleep-is-for-the-weak</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/osx-adventures</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/complexity-prettified</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/people-are-priceless</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/rubyists-view-on-nodejs</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/be-the-change-you-want-to-see</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/guard-down-vim-and-tmux-are-here</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/long-time-no-see</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/overriding-instance-method-with-a-module</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -435,196 +435,196 @@
   
   <url>
     <loc>http://shime.sh/til/ruby-y-u-so-beautiful</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/git-stash-is-awesome</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/debugging-active-record-queries-in-a-rails-console</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/hello-world-in-sinatra</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/autotest-and-rspec2-problems</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/insane-cant-find-executable-rails-for-rails-error</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/using-edge-rails-locally</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/forwardable-explained</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/adding-new-hidden-collection-in-jekyll</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/faster-database-resets-in-rails</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/strong-parameters-in-javascript</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/mocking-class-methods-using-minitest</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/pretty-formatting-json</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/making-http-requests-from-vim</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/pretty-formatting-json-in-vim</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/refactoring-with-simple-polymorphism</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/git-diff-algorithm-options</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/refactoring-a-large-case-statement</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/from-class-components-to-function-components-with-hooks</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/shorten-github-link-from-the-command-line</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/filtering-records-with-endless-ranges</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/using-git-stash-to-test-the-bug-fix</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/stopping-the-fans-with-a-script</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/building-pagination-from-scratch</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</loc>
-    <lastmod>2020-02-14</lastmod>
+    <lastmod>2020-02-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
