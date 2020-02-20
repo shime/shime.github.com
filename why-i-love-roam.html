@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Pretty formatting JSON" />
+<meta property="og:title" content="Why I love Roam" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I&#39;ve used to use some silly NPM package for pretty formatting of JSON before." />
-<meta property="og:description" content="I&#39;ve used to use some silly NPM package for pretty formatting of JSON before." />
-<link rel="canonical" href="http://shime.sh/til/pretty-formatting-json" />
-<meta property="og:url" content="http://shime.sh/til/pretty-formatting-json" />
+<meta name="description" content="Computers are like a bicycle for the mind." />
+<meta property="og:description" content="Computers are like a bicycle for the mind." />
+<link rel="canonical" href="http://shime.sh/why-i-love-roam" />
+<meta property="og:url" content="http://shime.sh/why-i-love-roam" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-01-21T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-02-20T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Pretty formatting JSON" />
+<meta property="twitter:title" content="Why I love Roam" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Pretty formatting JSON","dateModified":"2019-01-21T00:00:00+01:00","url":"http://shime.sh/til/pretty-formatting-json","datePublished":"2019-01-21T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/pretty-formatting-json"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve used to use some silly NPM package for pretty formatting of JSON before.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Why I love Roam","dateModified":"2020-02-20T00:00:00+01:00","url":"http://shime.sh/why-i-love-roam","datePublished":"2020-02-20T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/why-i-love-roam"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Computers are like a bicycle for the mind.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Pretty formatting JSON &middot; Hrvoje Šimić </title>
+    <title> Why I love Roam &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Pretty formatting JSON &middot; Hrvoje Šimić">
+  <meta name="title" content="Why I love Roam &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -174,82 +174,62 @@
           
 
           <div>
-            <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+            <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
           </div>
           <div class="mb-8">
-            <h1>Pretty formatting JSON</h1>
+            <h1>Why I love Roam</h1>
             
             <div class="text-grey">
-              January 21, 2019
+              February 20, 2020
             </div>
             
 
             <div class="flex my-2">
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  bash
+                  knowledge management
                 </span>
               
             </div>
           </div>
 
-          <p>I&#39;ve used to use some silly NPM
-package for pretty formatting of
-JSON before.</p>
+          <blockquote>
+<p>Computers are like a bicycle for the mind.</p>
 
-<p>It came with the <code>json</code> executable
-so I would just pipe the output
-of <code>cat</code> to it and it would give me
-the pretty printed json.</p>
+<p>Steve Jobs</p>
+</blockquote>
 
-<p>Let&#39;s say we have this ugliness
-saved in <code>ugly.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="o">:</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;wat&quot;</span><span class="o">:</span><span class="s2">&quot;lol&quot;</span><span class="p">,</span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Bugs Bunny&quot;</span><span class="p">,</span><span class="s2">&quot;address&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;street&quot;</span><span class="o">:</span><span class="s2">&quot;underground street&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span><span class="o">:</span><span class="s2">&quot;acme town&quot;</span><span class="p">}}}</span>
-</code></pre></div>
-<p>I&#39;ve used this command to pretty print it before:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json
-</code></pre></div>
-<p>Which outputs:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
-  <span class="s2">&quot;wat&quot;</span> <span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;foo&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>In the meantime I&#39;ve changed my
-global node version, so that executable
-is not available anymore.</p>
+<p><a href="https://roamresearch.com">Roam</a> has, simply put, transformed my relationship with reading, writing, and note-taking. I&#39;ve been using it regularly for the past couple of months and I enjoy it.</p>
 
-<p>Luckily, I&#39;ve found out that I don&#39;t need the NPM package
-at all. There&#39;s a Linux command that does this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json_pp
-</code></pre></div>
-<p>Which outputs the same pretty formated JSON:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
-  <span class="s2">&quot;wat&quot;</span> <span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;foo&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>I took it even further for my use case and
-directly copied the pretty JSON into clipboard
-which I then shared with someone:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json_pp <span class="p">|</span> pbcopy
-</code></pre></div>
-<p><code>pbcopy</code> is OSX command for copying text
-to clipboard, use <code>xclip -sel clip</code> on Linux.</p>
+<p>Using it is fun! I have never been so excited and had so much fun using a piece of software. Games included! The only thing that resembles this excitement was discovering Notion and its powerful flexibility capabilities.</p>
+
+<h2>Building a second archive</h2>
+
+<p>All roads lead to Roam, and my road started when I realized I had a problem with too much passive consumption. I&#39;ve discovered the wonders of personal knowledge management: <a href="https://www.buildingasecondbrain.com/">building a second brain</a>, <a href="https://praxis.fortelabs.co/the-p-a-r-a-method-a-universal-system-for-organizing-digital-information-75a9da8bfb37/">PARA</a> and <a href="https://praxis.fortelabs.co/progressive-summarization-a-practical-technique-for-designing-discoverable-notes-3459b257d3eb/">progressive summarization</a>, which changed my approach to reading. Consuming content finally made more sense, since I was not just passively reading it. I was highlighting stuff that resonated, making summaries and diligently categorizing everything.</p>
+
+<p>That was an improvement, but I realize in retrospect that the biggest drawback of that approach is not making enough connections. My notes were highlighted and summarized, but they were isolated. All hopes were put into search and tags which only gets you so far. Doing this in Notion felt more like building a second archive than the second brain, due to all the compartmentalization required.</p>
+
+<h2>Networks of ideas, instead of an archive of compartments</h2>
+
+<p>Roam, in contrast, frees me from unnecessary compartmentalization and makes it easier to explore my ideas. It encourages me to build networks of ideas instead of an archive of compartments. <strong>My brain is a network, not an archive</strong>. This is why Roam feels like an extension of my brain, like a bicycle for the mind.</p>
+
+<p>I write to learn and this is encouraged by Roam. It encourages me to go deep on a subject and explore if I need to. Hierarchy emerges organically from the bottom-up and not top-down like with other note-taking apps. Categories are optional.</p>
+
+<p>Roam emphasizes relationships and its two-way linking is the killer feature. Every page links other pages that are linking to it. Relationships are visible and easy to understand. It&#39;s super easy to create new pages, just surround the term with brackets. No need to go deep on the term, unless there is a need.</p>
+
+<blockquote>
+<p>Creativity is just connecting things.</p>
+
+<p>Steve Jobs</p>
+</blockquote>
+
+<p>Empty pages are okay. They can be used for making connections or as a glue for other pages. Sometimes I simply don&#39;t need to explain the concept, like &quot;writing&quot;, but I like to link to it all across my database so I can discover it more easily when I need to.</p>
+
+<h2>The dangers of Roam</h2>
+
+<p>The only potential problem with Roam is the danger of not being systematic with notes. Roam is a tool of endless possibilities and being systematic and deliberate with note-taking is key for getting value out of it. Otherwise, it can just become an interconnected mess that is not useful. </p>
+
+<p><a href="/achieving-balance-between-reading-and-writing">Zettelkasten</a> is a great system to follow to avoid that. Following it enables network effects for your notes: the value of your database starts increasing, instead of decreasing with each added note.</p>
 
 
           <hr />
@@ -269,7 +249,7 @@ to clipboard, use <code>xclip -sel clip</code> on Linux.</p>
     <input type="email" name="email" id="bd-email" class="bg-grey-lighter appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="Enter your best email address">
     <input type="hidden" value="1" name="embed"></input>
     
-    <input type="hidden" name="tag" value="til" />
+    <input type="hidden" name="tag" value="articles" />
     
     <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
   </div>

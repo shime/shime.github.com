@@ -8,6 +8,19 @@
 
     
     <item>
+      <title>Why I love Roam</title>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Computers are like a bicycle for the mind.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/why-i-love-roam</link>
+      <guid isPermaLink="true">http://shime.sh/why-i-love-roam</guid>
+    </item>
+    
+    <item>
       <title>Achieving balance between reading and writing</title>
       
       <description>&lt;blockquote&gt;
@@ -129,17 +142,6 @@ writing a multiline commit message.&lt;/p&gt;
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
       <guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
-    </item>
-    
-    <item>
-      <title>Loving Vim</title>
-      
-      <description>&lt;p&gt;&lt;em&gt;This post is inspired by &lt;a href=&quot;https://michaelsoolee.com/love-vim-again/&quot;&gt;Falling in love with Vim again&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/michaelsoolee&quot;&gt;@michaelsoolee&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-</description>
-      
-      <pubDate>Mon, 19 Mar 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/loving-vim</link>
-      <guid isPermaLink="true">http://shime.sh/loving-vim</guid>
     </item>
     
   </channel>
