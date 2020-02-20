@@ -257,6 +257,13 @@
   </url>
   
   <url>
+    <loc>http://shime.sh/network-tools-detox</loc>
+    <lastmod>2020-02-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shime.sh/how-to-waste-time-on-your-idea</loc>
     <lastmod>2020-02-20</lastmod>
     <changefreq>daily</changefreq>

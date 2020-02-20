@@ -100,6 +100,18 @@ I&amp;#39;d like to share my approach.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Taking time off from network tools</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve been away from all websites I spend the most
+of my time for 3 months.&lt;/p&gt;
+</description>
+      
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/network-tools-detox</link>
+      <guid isPermaLink="true">http://shime.sh/network-tools-detox</guid>
+    </item>
+    
+    <item>
       <title>A short guide for wasting hundreds of hours on your idea</title>
       
       <description>&lt;p&gt;I&amp;#39;ve killed two products I&amp;#39;ve spent a considerable amount of time
@@ -128,20 +140,6 @@ of following everybody else.&lt;/p&gt;
       <pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
       <link>http://shime.sh/quality-vs-popularity</link>
       <guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
-    </item>
-    
-    <item>
-      <title>Git commit message syntax highlighting in Vim</title>
-      
-      <description>&lt;p&gt;Although you could use &lt;code&gt;git commit -m&lt;/code&gt; for writing
-a git commit message, it&amp;#39;s much better to use
-a proper editor for that, especially if you&amp;#39;re
-writing a multiline commit message.&lt;/p&gt;
-</description>
-      
-      <pubDate>Tue, 20 Mar 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</link>
-      <guid isPermaLink="true">http://shime.sh/git-commit-message-syntax-highlighting-in-vim</guid>
     </item>
     
   </channel>
