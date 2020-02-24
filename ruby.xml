@@ -8,6 +8,23 @@
     
     
       
+      <item>
+        <title>Partitioning parallel tests on Heroku CI</title>
+        
+          <description>
+            &lt;p&gt;Running tests in parallel on Heroku CI can greatly reduce
+test suite execution time. Spinning up multiple nodes is as simple as changing &lt;code&gt;app.json&lt;/code&gt;
+to something like this:&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Mon, 24 Feb 2020 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</link>
+        <guid isPermaLink="true">http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</guid>
+      </item>
+      
+    
+      
     
       
     

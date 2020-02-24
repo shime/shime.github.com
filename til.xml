@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>Partitioning parallel tests on Heroku CI</title>
+      
+        <description>
+          &lt;p&gt;Running tests in parallel on Heroku CI can greatly reduce
+test suite execution time. Spinning up multiple nodes is as simple as changing &lt;code&gt;app.json&lt;/code&gt;
+to something like this:&lt;/p&gt;
+
+          <a href="http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</link>
+      <guid isPermaLink="true">http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</guid>
+    </item>
+    
+    <item>
       <title>Building emphasized code blocks in Jekyll</title>
       
         <description>
@@ -151,22 +167,6 @@ curl command arguments.&lt;/p&gt;
       <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
       <guid isPermaLink="true">http://shime.sh/til/refactoring-a-large-case-statement</guid>
-    </item>
-    
-    <item>
-      <title>Git diff algorithm options</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve recently refactored a method with
-a large case statement and wanted to check
-a diff of the changes.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/git-diff-algorithm-options">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/git-diff-algorithm-options</link>
-      <guid isPermaLink="true">http://shime.sh/til/git-diff-algorithm-options</guid>
     </item>
     
   </channel>
