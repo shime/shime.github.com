@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1582565446032677000">
-  <link rel="stylesheet" href="/public/css/style.css?1582565446032677000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1582718617220004000">
+  <link rel="stylesheet" href="/public/css/style.css?1582718617220004000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -223,7 +223,7 @@ for partitioning tests.</p>
               <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;CI_NODE_INDEX&quot;</span><span class="o">].</span><span class="n">to_i</span>
           <span class="k">end</span>
 
-<span class="nb">system</span> <span class="s2">&quot;rails test </span><span class="si">#{</span><span class="n">tests</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">exec</span> <span class="s2">&quot;rails test </span><span class="si">#{</span><span class="n">tests</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>This doesn&#39;t split the tests evenly by execution time, like Knapsack does,
 but it provides simple partitioning without too much fuss.</p>
