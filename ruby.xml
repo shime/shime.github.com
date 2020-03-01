@@ -9,6 +9,22 @@
     
       
       <item>
+        <title>Compiling latest Ruby from scratch with chruby</title>
+        
+          <description>
+            &lt;p&gt;Since &lt;a href=&quot;https://github.com/postmodern/chruby&quot;&gt;chruby&lt;/a&gt; officially does not support
+compiling latest Ruby (HEAD), here are the steps necessary to do it.&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Sun, 01 Mar 2020 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</link>
+        <guid isPermaLink="true">http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Partitioning parallel tests on Heroku CI</title>
         
           <description>
