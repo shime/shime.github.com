@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>How I apply Zettelkasten to Roam</title>
+      
+      <description>&lt;p&gt;In the &lt;a href=&quot;/why-i-love-roam&quot;&gt;previous article&lt;/a&gt;, I&amp;#39;ve claimed that the biggest danger of Roam is not being systematic with your note taking, which can lead to having notes that are not valuable.&lt;/p&gt;
+</description>
+      
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/how-i-apply-zettelkasten-to-roam</link>
+      <guid isPermaLink="true">http://shime.sh/how-i-apply-zettelkasten-to-roam</guid>
+    </item>
+    
+    <item>
       <title>Why I love Roam</title>
       
       <description>&lt;blockquote&gt;
@@ -122,24 +133,6 @@ this way. The clichéd &amp;quot;at least I&amp;#39;ve learned something&amp;quo
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0200</pubDate>
       <link>http://shime.sh/how-to-waste-time-on-your-idea</link>
       <guid isPermaLink="true">http://shime.sh/how-to-waste-time-on-your-idea</guid>
-    </item>
-    
-    <item>
-      <title>Quality vs popularity</title>
-      
-      <description>&lt;p&gt;When validating library quality, we like to 
-take a look at some metrics like
-the time of the last commit or the number of
-stars as if those relate to quality.
-It&amp;#39;s the easiest thing to do, instead of
-validating the quality by other means,
-we go with the easiest approach
-of following everybody else.&lt;/p&gt;
-</description>
-      
-      <pubDate>Wed, 21 Mar 2018 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/quality-vs-popularity</link>
-      <guid isPermaLink="true">http://shime.sh/quality-vs-popularity</guid>
     </item>
     
   </channel>
