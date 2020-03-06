@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Compiling latest Ruby from scratch with chruby" />
+<meta property="og:title" content="Do whatever you can&#39;t stop thinking about" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Since chruby officially does not support compiling latest Ruby (HEAD), here are the steps necessary to do it." />
-<meta property="og:description" content="Since chruby officially does not support compiling latest Ruby (HEAD), here are the steps necessary to do it." />
-<link rel="canonical" href="http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby" />
-<meta property="og:url" content="http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby" />
+<meta name="description" content="Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities." />
+<meta property="og:description" content="Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities." />
+<link rel="canonical" href="http://shime.sh/do-whatever-you-can't-stop-thinking-about" />
+<meta property="og:url" content="http://shime.sh/do-whatever-you-can't-stop-thinking-about" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-01T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-03-06T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Compiling latest Ruby from scratch with chruby" />
+<meta property="twitter:title" content="Do whatever you can&#39;t stop thinking about" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Compiling latest Ruby from scratch with chruby","dateModified":"2020-03-01T00:00:00+01:00","url":"http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby","datePublished":"2020-03-01T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Since chruby officially does not support compiling latest Ruby (HEAD), here are the steps necessary to do it.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Do whatever you can&#39;t stop thinking about","dateModified":"2020-03-06T00:00:00+01:00","url":"http://shime.sh/do-whatever-you-can't-stop-thinking-about","datePublished":"2020-03-06T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/do-whatever-you-can't-stop-thinking-about"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Compiling latest Ruby from scratch with chruby &middot; Hrvoje Šimić </title>
+    <title> Do whatever you can't stop thinking about &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Compiling latest Ruby from scratch with chruby &middot; Hrvoje Šimić">
+  <meta name="title" content="Do whatever you can't stop thinking about &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -174,43 +174,58 @@
           
 
           <div>
-            <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+            <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
           </div>
           <div class="mb-8">
-            <h1>Compiling latest Ruby from scratch with chruby</h1>
+            <h1>Do whatever you can't stop thinking about</h1>
             
             <div class="text-grey">
-              March 1, 2020
+              March 6, 2020
             </div>
             
 
             <div class="flex my-2">
               
                 <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  ruby
+                  random
                 </span>
               
             </div>
           </div>
 
-          <p>Since <a href="https://github.com/postmodern/chruby">chruby</a> officially does not support
-compiling latest Ruby (HEAD), here are the steps necessary to do it.</p>
+          <p>Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities.</p>
 
-<p>Current HEAD version of Ruby is <code>2.8.0dev</code>, so that&#39;s the version being compiled
-in this example. The only thing necessary for your custom compiled Ruby to
-play nicely with chruby is passing the <code>--with-dest-dir</code> option to <code>configure</code>. 
-This allows chruby to find this newly compiled version, so you can switch to
-it and use it.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git clone https://github.com/ruby/ruby.git
-<span class="nb">cd</span> ruby
-./autoconf
-./configure --with-dest-dir<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.rubies/ruby-2.8.0dev&quot;</span>
-make
-make install
-</code></pre></div>
-<p>After restarting the shell, you will be able to use this ruby version with:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>chruby 2.8.0dev
-</code></pre></div>
+<p>Wishing to improve in the open-source department, one of my New Year&#39;s resolutions was to become more active with Rails contributions. I would learn about Rails internals, help people with their issues and get feedback from Rails core team members. The plan was to work at least 30 minutes on Rails every day and I was using a habit tracker tool in order to ensure that.</p>
+
+<p>However, I&#39;ve noticed that doing that significantly drains my energy. I&#39;m not excited about doing maintenance work and it doesn&#39;t make me jump out of the bed in the morning.</p>
+
+<p>I haven’t realized how bad it was for my energy, until I decided to work on a <a href="https://getkuote.com">side project</a> last weekend. It made me super excited. The process of turning something from my head into reality will never stop feeling magical. I was eager to wake up and work on it. Working on it didn’t feel like work. Hours passed without me noticing. I wasn’t tired, I was excited afterwards. I&#39;ve neglected my other habits because of it. </p>
+
+<p>This was such a contrast to pushing myself to maintain Rails. That’s when I remembered having read about managing personal energy from<br>
+&quot;<a href="/summaries/how-to-fail-at-almost-everything-and-still-win-big">How to Fail at Almost Anything and Still Win Big</a>&quot;. I’ve read it, but haven’t thought about it much until now. Experiencing such a difference in excitement about something I do in my free time made me remember it.</p>
+
+<blockquote>
+<p>To the experts, what looks like hard work from the outside, is play from the inside.</p>
+
+<p>Naval Ravikant</p>
+</blockquote>
+
+<p>The basic idea of personal energy management is that you should focus on increasing your personal energy and lifting up your mood in your leisure time, instead of working on things that drain your personal energy. Hobbies should lift your mood, not drain you. This makes you better perform all the other tasks.</p>
+
+<p>I think the difference in my experience comes from the source of motivation. I am not intrinsically motivated to work on Rails. If money wasn’t the issue, I would probably not start working on maintaining it. The hidden motivation was external and it was rooted in the desire to make it more easy to find the next job.</p>
+
+<p>Building a side project, on the other hand, is something I can imagine myself doing, if money was not the issue. That’s why I should probably spend my leisure time doing that.</p>
+
+<blockquote>
+<p>Because every minute spent doing something other than what you love most today is a minute you’re more likely to regret when you’re 80.</p>
+
+<p>Julian Shapiro</p>
+</blockquote>
+
+<p>Another useful tool, for deciding what to work on is the Regret Minimization Framework: Project yourself being 80 years old and thinking whether you would regret your current decision. That&#39;s how <a href="https://www.youtube.com/watch?v=jwG_qR6XmDQ">Jeff Bezos decided to work on Amazon</a>. It&#39;s a useful tool for prioritizing over long-term and rationalizing decisions that make no sense in the short-term.</p>
+
+<p>Never work on anything you would regret looking back on your deathbed and spend as much time you can on doing whatever you can’t stop thinking about.</p>
+
 
           <hr />
 
@@ -229,7 +244,7 @@ make install
     <input type="email" name="email" id="bd-email" class="bg-grey-lighter appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="Enter your best email address">
     <input type="hidden" value="1" name="embed"></input>
     
-    <input type="hidden" name="tag" value="til" />
+    <input type="hidden" name="tag" value="articles" />
     
     <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
   </div>
