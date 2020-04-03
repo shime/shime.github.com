@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>The power of writing</title>
+      
+      <description>&lt;p&gt;The 1% rule says that within an Internet community, such as a wiki, 90% of participants only consume content, 9% edit or modify content and only 1% of participants create content.&lt;/p&gt;
+</description>
+      
+      <pubDate>Thu, 02 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/the-power-of-writing</link>
+      <guid isPermaLink="true">http://shime.sh/the-power-of-writing</guid>
+    </item>
+    
+    <item>
       <title>Do whatever you can't stop thinking about</title>
       
       <description>&lt;p&gt;Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities.&lt;/p&gt;
@@ -119,18 +130,6 @@ I&amp;#39;d like to share my approach.&lt;/p&gt;
       <pubDate>Sat, 19 Jan 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/testing-stimulus</link>
       <guid isPermaLink="true">http://shime.sh/testing-stimulus</guid>
-    </item>
-    
-    <item>
-      <title>Taking time off from network tools</title>
-      
-      <description>&lt;p&gt;I&amp;#39;ve been away from all websites I spend the most
-of my time for 3 months.&lt;/p&gt;
-</description>
-      
-      <pubDate>Tue, 17 Jul 2018 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/network-tools-detox</link>
-      <guid isPermaLink="true">http://shime.sh/network-tools-detox</guid>
     </item>
     
   </channel>

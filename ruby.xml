@@ -12,6 +12,8 @@
       
     
       
+    
+      
       <item>
         <title>Compiling latest Ruby from scratch with chruby</title>
         
@@ -137,6 +139,8 @@ curl command arguments.&lt;/p&gt;
       
     
       
+    
+      
       <item>
         <title>Refactoring with simple polymorphism</title>
         
@@ -153,8 +157,6 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
         <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
         <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
       </item>
-      
-    
       
     
       
