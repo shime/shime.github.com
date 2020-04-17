@@ -6,7 +6,7 @@
   
   
     <url>
-      <loc>http://shime.sh/feed.xml</loc>
+      <loc>http://shime.sh/blogchains</loc>
       <lastmod>2020-04-17</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -15,7 +15,7 @@
   
   
     <url>
-      <loc>http://shime.sh/photography/</loc>
+      <loc>http://shime.sh/feed.xml</loc>
       <lastmod>2020-04-17</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -42,15 +42,6 @@
   
   
     <url>
-      <loc>http://shime.sh/til/</loc>
-      <lastmod>2020-04-17</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-  
-  
-    <url>
       <loc>http://shime.sh/</loc>
       <lastmod>2020-04-17</lastmod>
       <changefreq>daily</changefreq>
@@ -60,7 +51,25 @@
   
   
     <url>
+      <loc>http://shime.sh/til/</loc>
+      <lastmod>2020-04-17</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
       <loc>http://shime.sh/privacy/</loc>
+      <lastmod>2020-04-17</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
+      <loc>http://shime.sh/photography/</loc>
       <lastmod>2020-04-17</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
