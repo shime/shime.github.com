@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1585901468861191000">
-  <link rel="stylesheet" href="/public/css/style.css?1585901468861191000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1587105517742897000">
+  <link rel="stylesheet" href="/public/css/style.css?1587105517742897000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -58,7 +58,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Uninitialized class variable @@current_spec in Minitest","dateModified":"2012-04-30T00:00:00+02:00","url":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest","datePublished":"2012-04-30T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest"},"image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Uninitialized class variable @@current_spec in Minitest","dateModified":"2012-04-30T00:00:00+02:00","datePublished":"2012-04-30T00:00:00+02:00","description":"When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -169,33 +169,39 @@
 
 
       <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
-        <div class="post max-w-full md:max-w-md">
-          
-          
-
-          
-          <div>
-            <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
-          </div>
-          
-          <div class="mb-8">
-            <h1>Uninitialized class variable @@current_spec in Minitest</h1>
-            
-            <div class="text-grey">
-              April 30, 2012
-            </div>
+        <div class="flex-col">
+          <div class="max-w-full">
             
 
-            <div class="flex my-2">
-              
-                <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                  ruby
-                </span>
-              
-            </div>
           </div>
 
-          <p>When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.</p>
+          <div class="post max-w-full md:max-w-md">
+            
+            
+
+            
+            <div>
+              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+            </div>
+            
+            <div class="mb-8">
+              <h1>Uninitialized class variable @@current_spec in Minitest</h1>
+              
+              <div class="text-grey">
+                April 30, 2012
+              </div>
+              
+
+              <div class="flex my-2">
+                
+                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                    ruby
+                  </span>
+                
+              </div>
+            </div>
+
+            <p>When using this awesome testing framework, this error was happening to me. Google didn&#39;t help and it was happening because of my stupidity, but I thought I should share a solution and save you a few minutes.</p>
 
 <p>It was happening because I used to run the tests with</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ rspec spec
@@ -204,14 +210,14 @@
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ruby spec/path/to/your/spec.rb
 </code></pre></div>
 
-          <hr />
+            <hr />
 
-          
-          <p class="mt-4">
-            Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
+            
+            <p class="mt-4">
+              Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
 
-            <div class="mt-2">
-              <form
+              <div class="mt-2">
+                <form
   action="https://buttondown.email/api/emails/embed-subscribe/shime"
   method="post"
   target="popupwindow"
@@ -229,9 +235,10 @@
   <div class="flex text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
 </form>
 
-            </div>
-          </p>
-          
+              </div>
+            </p>
+            
+          </div>
         </div>
       </div>
     </div>
