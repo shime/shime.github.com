@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Ruby! Y U SO BEAUTIFUL?" />
+<meta property="og:title" content="Listing categories of Jekyll collection" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:" />
-<meta property="og:description" content="Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:" />
-<link rel="canonical" href="http://shime.sh/til/ruby-y-u-so-beautiful" />
-<meta property="og:url" content="http://shime.sh/til/ruby-y-u-so-beautiful" />
+<meta name="description" content="I&#39;ve just reorganized the TIL page to alphabetically list all the categories I&#39;m writing about. TIL is a custom collection of this Jekyll website[1], so I couldn&#39;t simply use site.categories to get categories of this collection, even though it uses categories in its front matter:" />
+<meta property="og:description" content="I&#39;ve just reorganized the TIL page to alphabetically list all the categories I&#39;m writing about. TIL is a custom collection of this Jekyll website[1], so I couldn&#39;t simply use site.categories to get categories of this collection, even though it uses categories in its front matter:" />
+<link rel="canonical" href="http://shime.sh/til/listing-categories-of-jekyll-collection" />
+<meta property="og:url" content="http://shime.sh/til/listing-categories-of-jekyll-collection" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2011-11-20T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-04-20T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Ruby! Y U SO BEAUTIFUL?" />
+<meta property="twitter:title" content="Listing categories of Jekyll collection" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/ruby-y-u-so-beautiful","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Ruby! Y U SO BEAUTIFUL?","dateModified":"2011-11-20T00:00:00+01:00","datePublished":"2011-11-20T00:00:00+01:00","description":"Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how I do it:","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/ruby-y-u-so-beautiful"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/listing-categories-of-jekyll-collection","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Listing categories of Jekyll collection","dateModified":"2020-04-20T00:00:00+02:00","datePublished":"2020-04-20T00:00:00+02:00","description":"I&#39;ve just reorganized the TIL page to alphabetically list all the categories I&#39;m writing about. TIL is a custom collection of this Jekyll website[1], so I couldn&#39;t simply use site.categories to get categories of this collection, even though it uses categories in its front matter:","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/listing-categories-of-jekyll-collection"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić </title>
+    <title> Listing categories of Jekyll collection &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Ruby! Y U SO BEAUTIFUL? &middot; Hrvoje Šimić">
+  <meta name="title" content="Listing categories of Jekyll collection &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -198,41 +198,73 @@
             </div>
             
             <div class="mb-8">
-              <h1>Ruby! Y U SO BEAUTIFUL?</h1>
+              <h1>Listing categories of Jekyll collection</h1>
               
               <div class="text-grey">
-                November 20, 2011
+                April 20, 2020
               </div>
               
 
               <div class="flex my-2">
                 
                   <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    ruby
+                    jekyll
                   </span>
                 
               </div>
             </div>
 
-            <p>Ever questioned how to easily prepend &quot;a&quot; or &quot;an&quot; to a word? Here is how
-I do it:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">String</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
-  <span class="k">def</span> <span class="nf">a_or_an</span>
-    <span class="sx">%w(a e i o u)</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">downcase</span><span class="o">.</span><span class="n">first</span><span class="p">)</span> <span class="p">?</span> <span class="s2">&quot;an </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">:</span> <span class="s2">&quot;a </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+            <p>I&#39;ve just reorganized the <a href="/til">TIL</a> page to alphabetically
+list all the categories I&#39;m writing about. TIL is a custom collection
+of this Jekyll website<sup class="ml-1">[<a href="#til">1</a>]</sup>, so I couldn&#39;t simply use <code>site.categories</code> to
+get categories of this collection, even though it uses <code>categories</code> in its front matter:</p>
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span></span>---
+layout: post
+title: Listing categories of Jekyll collection
+categories: jekyll
+---
 </code></pre></div>
-<p>If you put this baby in some file inside config/initializers of your
-app, you will be able to do this:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="s2">&quot;carrot&quot;</span><span class="o">.</span><span class="n">a_or_an</span>
-<span class="o">=&gt;</span> <span class="s2">&quot;a carrot&quot;</span>
-<span class="s2">&quot;apple&quot;</span><span class="o">.</span><span class="n">a_or_an</span>
-<span class="o">=&gt;</span> <span class="s2">&quot;an apple&quot;</span>
+<p>I had to resort to some Liquid hackery.</p>
+<div class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span></span><span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">til</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>site.til<span class="w"> </span><span class="p">%}</span> 
+<span class="p">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="na">categories</span><span class="w"> </span><span class="o">=</span><span class="w">  </span>til<span class="w"> </span>|<span class="w"> </span><span class="na">map</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;categories&#39;</span>
+                            | join: &#39;,&#39;
+                            | split: &#39;,&#39;
+                            | group_by: category
+                            | sort: &quot;name&quot; %}
+<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>category<span class="w"> </span>in<span class="w"> </span>categories<span class="w"> </span><span class="p">%}</span>
+    &lt;h2&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">capitalize</span><span class="w"> </span><span class="p">}}</span><span class="nf">&lt;/h2&gt;</span><span class="w"></span>
+
+<span class="w">    </span>{%<span class="w"> </span>assign<span class="w"> </span><span class="na">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>til<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;categories&quot;</span><span class="p">,</span><span class="w"> </span>category.name
+                          | sort: &quot;date&quot; 
+                          | reverse  %}
+
+    <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>post<span class="w"> </span>in<span class="w"> </span>posts<span class="w"> </span><span class="p">%}</span>
+      &lt;li&gt;
+        &lt;a href=&quot;<span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span>&quot;&gt;
+          <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+        &lt;/a&gt;
+
+        &lt;p&gt;
+          <span class="p">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%B %-d, %Y&quot;</span><span class="w"> </span><span class="p">}}</span>
+        &lt;/p&gt;
+      &lt;/li&gt;
+    <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
 </code></pre></div>
-<p>Yeah I know, it&#39;s awesome! I&#39;ve just thought every instance of class &quot;String&quot; how to do something new.
-This is called metaprogramming and this is one of the coolest things I&#39;ve found out about Ruby. However, don&#39;t use my
-solution if you have more complex requirements, like support for
-acronyms and abbreviations.</p>
+<p>The end result:</p>
+
+<ul>
+<li>categories are sorted alphabetically</li>
+<li>posts inside each category are sorted by date, most recent first</li>
+</ul>
+
+<p>The biggest problem with this approach is the constraint of a single category per post. If multiple categories are used, the post will get listed multiple times in the TIL index, one time for each category.</p>
+
+<hr>
+
+<ol>
+<li><a name="til"></a> I&#39;ve written <a href="/til/adding-new-hidden-collection-in-jekyll">another post</a> explaining how to add a hidden collection to Jekyll.</li>
+</ol>
 
 
             <hr />

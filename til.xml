@@ -8,6 +8,23 @@
     
     
     <item>
+      <title>Listing categories of Jekyll collection</title>
+      
+        <description>
+          &lt;p&gt;I&amp;#39;ve just reorganized the &lt;a href=&quot;/til&quot;&gt;TIL&lt;/a&gt; page to alphabetically
+list all the categories I&amp;#39;m writing about. TIL is a custom collection
+of this Jekyll website&lt;sup class=&quot;ml-1&quot;&gt;[&lt;a href=&quot;#til&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;, so I couldn&amp;#39;t simply use &lt;code&gt;site.categories&lt;/code&gt; to
+get categories of this collection, even though it uses &lt;code&gt;categories&lt;/code&gt; in its front matter:&lt;/p&gt;
+
+          <a href="http://shime.sh/til/listing-categories-of-jekyll-collection">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/listing-categories-of-jekyll-collection</link>
+      <guid isPermaLink="true">http://shime.sh/til/listing-categories-of-jekyll-collection</guid>
+    </item>
+    
+    <item>
       <title>Compiling latest Ruby from scratch with chruby</title>
       
         <description>
@@ -148,23 +165,6 @@ but I imagine not everyone is aware of it.&lt;/p&gt;
       <pubDate>Tue, 12 Mar 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/shorten-github-link-from-the-command-line</link>
       <guid isPermaLink="true">http://shime.sh/til/shorten-github-link-from-the-command-line</guid>
-    </item>
-    
-    <item>
-      <title>From class components to function components with hooks</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve been using React &lt;sup&gt;16.5.2&lt;/sup&gt; context instead of Redux in
-the super secret app I&amp;#39;m working on, and I appreciate the simplicity improvement.
-The learning curve is pretty minimal, and there are fewer levels of abstraction.
-The one thing that was annoying me was the non-optimal ergonomics of the API when consuming the context.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/from-class-components-to-function-components-with-hooks">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Tue, 19 Feb 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/from-class-components-to-function-components-with-hooks</link>
-      <guid isPermaLink="true">http://shime.sh/til/from-class-components-to-function-components-with-hooks</guid>
     </item>
     
   </channel>
