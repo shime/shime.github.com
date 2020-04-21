@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>Testing migrations from sandboxed Rails console</title>
+      
+        <description>
+          &lt;p&gt;I usually download the staging or production
+database in order to test the migration locally. This enables getting migration errors before the deployment. However,
+I regularly screw up the database with some silly mistake in migration, which requires recreating the database.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/testing-migrations-from-sandboxed-rails-console">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</link>
+      <guid isPermaLink="true">http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</guid>
+    </item>
+    
+    <item>
       <title>Listing categories of Jekyll collection</title>
       
         <description>
@@ -149,22 +165,6 @@ which means ranges no longer require the end argument.&lt;/p&gt;
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/filtering-records-with-endless-ranges</link>
       <guid isPermaLink="true">http://shime.sh/til/filtering-records-with-endless-ranges</guid>
-    </item>
-    
-    <item>
-      <title>Shorten Github link from the command line</title>
-      
-        <description>
-          &lt;p&gt;There&amp;#39;s a tool for shortening 
-links from Github that I&amp;#39;ve known for a while
-but I imagine not everyone is aware of it.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/shorten-github-link-from-the-command-line">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Tue, 12 Mar 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/shorten-github-link-from-the-command-line</link>
-      <guid isPermaLink="true">http://shime.sh/til/shorten-github-link-from-the-command-line</guid>
     </item>
     
   </channel>

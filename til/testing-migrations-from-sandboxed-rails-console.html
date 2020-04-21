@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Pretty formatting JSON" />
+<meta property="og:title" content="Testing migrations from sandboxed Rails console" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I&#39;ve used to use some silly NPM package for pretty formatting of JSON before." />
-<meta property="og:description" content="I&#39;ve used to use some silly NPM package for pretty formatting of JSON before." />
-<link rel="canonical" href="http://shime.sh/til/pretty-formatting-json" />
-<meta property="og:url" content="http://shime.sh/til/pretty-formatting-json" />
+<meta name="description" content="I usually download the staging or production database in order to test the migration locally. This enables getting migration errors before the deployment. However, I regularly screw up the database with some silly mistake in migration, which requires recreating the database." />
+<meta property="og:description" content="I usually download the staging or production database in order to test the migration locally. This enables getting migration errors before the deployment. However, I regularly screw up the database with some silly mistake in migration, which requires recreating the database." />
+<link rel="canonical" href="http://shime.sh/til/testing-migrations-from-sandboxed-rails-console" />
+<meta property="og:url" content="http://shime.sh/til/testing-migrations-from-sandboxed-rails-console" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-01-21T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-04-21T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Pretty formatting JSON" />
+<meta property="twitter:title" content="Testing migrations from sandboxed Rails console" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/pretty-formatting-json","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Pretty formatting JSON","dateModified":"2019-01-21T00:00:00+01:00","datePublished":"2019-01-21T00:00:00+01:00","description":"I&#39;ve used to use some silly NPM package for pretty formatting of JSON before.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/pretty-formatting-json"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/testing-migrations-from-sandboxed-rails-console","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Testing migrations from sandboxed Rails console","dateModified":"2020-04-21T00:00:00+02:00","datePublished":"2020-04-21T00:00:00+02:00","description":"I usually download the staging or production database in order to test the migration locally. This enables getting migration errors before the deployment. However, I regularly screw up the database with some silly mistake in migration, which requires recreating the database.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/testing-migrations-from-sandboxed-rails-console"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Pretty formatting JSON &middot; Hrvoje Šimić </title>
+    <title> Testing migrations from sandboxed Rails console &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Pretty formatting JSON &middot; Hrvoje Šimić">
+  <meta name="title" content="Testing migrations from sandboxed Rails console &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -198,79 +198,39 @@
             </div>
             
             <div class="mb-8">
-              <h1>Pretty formatting JSON</h1>
+              <h1>Testing migrations from sandboxed Rails console</h1>
               
               <div class="text-grey">
-                January 21, 2019
+                April 21, 2020
               </div>
               
 
               <div class="flex my-2">
                 
                   <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    bash
+                    rails
                   </span>
                 
               </div>
             </div>
 
-            <p>I&#39;ve used to use some silly NPM
-package for pretty formatting of
-JSON before.</p>
+            <p>I usually download the staging or production
+database in order to test the migration locally. This enables getting migration errors before the deployment. However,
+I regularly screw up the database with some silly mistake in migration, which requires recreating the database.</p>
 
-<p>It came with the <code>json</code> executable
-so I would just pipe the output
-of <code>cat</code> to it and it would give me
-the pretty printed json.</p>
+<p>The mistake doesn&#39;t even have to be a schema change, it can be a simple data change that is wrong. In order to make it right, 
+I have to recreate the database and try again, which takes time.</p>
 
-<p>Let&#39;s say we have this ugliness
-saved in <code>ugly.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="o">:</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;wat&quot;</span><span class="o">:</span><span class="s2">&quot;lol&quot;</span><span class="p">,</span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Bugs Bunny&quot;</span><span class="p">,</span><span class="s2">&quot;address&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;street&quot;</span><span class="o">:</span><span class="s2">&quot;underground street&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span><span class="o">:</span><span class="s2">&quot;acme town&quot;</span><span class="p">}}}</span>
-</code></pre></div>
-<p>I&#39;ve used this command to pretty print it before:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json
-</code></pre></div>
-<p>Which outputs:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
-  <span class="s2">&quot;wat&quot;</span> <span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;foo&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>In the meantime I&#39;ve changed my
-global node version, so that executable
-is not available anymore.</p>
+<p>There&#39;s a trick to avoid that.</p>
 
-<p>Luckily, I&#39;ve found out that I don&#39;t need the NPM package
-at all. There&#39;s a Linux command that does this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json_pp
+<p>First run Rails console in a sandbox mode: <code>rails c --sandbox</code>. This will rollback any
+changes you make, including mistakes, once you exit the console. Next, require the migration:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">&gt;</span> <span class="nb">require</span> <span class="s2">&quot;./db/data/20200213144332_enable_invoice_editing&quot;</span>
 </code></pre></div>
-<p>Which outputs the same pretty formated JSON:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
-  <span class="s2">&quot;wat&quot;</span> <span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;foo&quot;</span> <span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;user&quot;</span> <span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>Now run the migration:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">&gt;</span> <span class="no">EnableInvoiceEditing</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">up</span>
 </code></pre></div>
-<p>I took it even further for my use case and
-directly copied the pretty JSON into clipboard
-which I then shared with someone:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat ugly.json <span class="p">|</span> json_pp <span class="p">|</span> pbcopy
-</code></pre></div>
-<p><code>pbcopy</code> is OSX command for copying text
-to clipboard, use <code>xclip -sel clip</code> on Linux.</p>
+<p>And that&#39;s it! You can now check if your migration is valid. Once you exit the console, the state of the database will rollback to the state before running the migration.</p>
 
 
             <hr />
