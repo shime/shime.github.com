@@ -559,6 +559,27 @@
   </url>
   
   <url>
+    <loc>http://shime.sh/til/stop-clearing-screen-when-suspending-from-vim</loc>
+    <lastmod>2020-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shime.sh/til/debugging-ember</loc>
+    <lastmod>2020-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shime.sh/til/using-ember's-element-id-helper</loc>
+    <lastmod>2020-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shime.sh/til/adding-new-hidden-collection-in-jekyll</loc>
     <lastmod>2020-04-21</lastmod>
     <changefreq>daily</changefreq>
@@ -707,6 +728,20 @@
   
   <url>
     <loc>http://shime.sh/til/listing-categories-of-jekyll-collection</loc>
+    <lastmod>2020-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shime.sh/til/comparing-branches-on-github</loc>
+    <lastmod>2020-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://shime.sh/til/encrypting-and-decrypting-a-folder</loc>
     <lastmod>2020-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

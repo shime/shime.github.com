@@ -24,6 +24,35 @@ I regularly screw up the database with some silly mistake in migration, which re
     </item>
     
     <item>
+      <title>Encrypting and decrypting a folder</title>
+      
+        <description>
+          &lt;p&gt;In order to encrypt a folder, we&amp;#39;ll create an archive of it and apply AES 256 bit encryption, using
+&lt;code&gt;$PASS&lt;/code&gt; as a password:&lt;/p&gt;
+
+          <a href="http://shime.sh/til/encrypting-and-decrypting-a-folder">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/encrypting-and-decrypting-a-folder</link>
+      <guid isPermaLink="true">http://shime.sh/til/encrypting-and-decrypting-a-folder</guid>
+    </item>
+    
+    <item>
+      <title>Comparing branches on Github</title>
+      
+        <description>
+          &lt;p&gt;Github has a hidden feature for comparing branches. This is the format used:&lt;/p&gt;
+
+          <a href="http://shime.sh/til/comparing-branches-on-github">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/comparing-branches-on-github</link>
+      <guid isPermaLink="true">http://shime.sh/til/comparing-branches-on-github</guid>
+    </item>
+    
+    <item>
       <title>Listing categories of Jekyll collection</title>
       
         <description>
@@ -133,38 +162,6 @@ workflow for checking whether a test covers the bug.&lt;/p&gt;
       <pubDate>Fri, 19 Jul 2019 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/using-git-stash-to-test-the-bug-fix</link>
       <guid isPermaLink="true">http://shime.sh/til/using-git-stash-to-test-the-bug-fix</guid>
-    </item>
-    
-    <item>
-      <title>Commenting your own pull requests when requesting a review</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve been practicing reviewing my own
-pull requests when I open them for some time
-now, but I&amp;#39;ve recently learned a trick for improving
-the reviewing process of a pull request.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Fri, 03 May 2019 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review</link>
-      <guid isPermaLink="true">http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review</guid>
-    </item>
-    
-    <item>
-      <title>Filtering records with endless ranges</title>
-      
-        <description>
-          &lt;p&gt;Ruby 2.6 has added support for &lt;a href=&quot;https://ruby-doc.org/core-2.6/Range.html#class-Range-label-Endless+Ranges&quot;&gt;endless ranges&lt;/a&gt;,
-which means ranges no longer require the end argument.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/filtering-records-with-endless-ranges">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/filtering-records-with-endless-ranges</link>
-      <guid isPermaLink="true">http://shime.sh/til/filtering-records-with-endless-ranges</guid>
     </item>
     
   </channel>
