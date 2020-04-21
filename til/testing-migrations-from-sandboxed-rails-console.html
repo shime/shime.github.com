@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1587458765429848000">
-  <link rel="stylesheet" href="/public/css/style.css?1587458765429848000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1587479912454248000">
+  <link rel="stylesheet" href="/public/css/style.css?1587479912454248000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -231,6 +231,13 @@ changes you make, including mistakes, once you exit the console. Next, require t
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">&gt;</span> <span class="no">EnableInvoiceEditing</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">up</span>
 </code></pre></div>
 <p>And that&#39;s it! You can now check if your migration is valid. Once you exit the console, the state of the database will rollback to the state before running the migration.</p>
+
+<div class="bg-red-lightest border-l-4 border-red-light text-red-darkest px-4 py-3 mb-4">
+<strong>Never use this in production</strong>
+<p> Do not use console in sandbox mode in production, since this locks the updated database rows with the ROW EXCLUSIVE lock. This will cause any subsequent updates to rows updated from console to hang until you exit console.</p>
+
+<p> Thanks to <a href="https://www.reddit.com/user/tomthecool/">/u/tomthecool</a> for pointing this out.</p>
+</div>
 
 
             <hr />
