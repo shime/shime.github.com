@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Why I love Github Pages</title>
+      
+      <description>&lt;p&gt;This website is powered by Jekyll and hosted on Github Pages. I’ve been using this setup since 2011 and I’m really happy with it, and there are multiple reasons for that.&lt;/p&gt;
+</description>
+      
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/why-i-love-github-pages</link>
+      <guid isPermaLink="true">http://shime.sh/why-i-love-github-pages</guid>
+    </item>
+    
+    <item>
       <title>The power of writing</title>
       
       <description>&lt;p&gt;The 1% rule says that within an Internet community, such as a wiki, 90% of participants only consume content, 9% edit or modify content and only 1% of participants create content.&lt;/p&gt;
@@ -117,19 +128,6 @@ so it&amp;#39;s now 100% Google free!&lt;/p&gt;
       <pubDate>Mon, 08 Apr 2019 00:00:00 +0200</pubDate>
       <link>http://shime.sh/replacing-google-fonts-with-system-fonts</link>
       <guid isPermaLink="true">http://shime.sh/replacing-google-fonts-with-system-fonts</guid>
-    </item>
-    
-    <item>
-      <title>Testing Stimulus</title>
-      
-      <description>&lt;p&gt;Since the &lt;a href=&quot;https://stimulusjs.org/handbook/origin&quot;&gt;official Stimulus handbook&lt;/a&gt;
-doesn&amp;#39;t include testing, and I recently had to cover a Stimulus controller with tests,
-I&amp;#39;d like to share my approach.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sat, 19 Jan 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/testing-stimulus</link>
-      <guid isPermaLink="true">http://shime.sh/testing-stimulus</guid>
     </item>
     
   </channel>
