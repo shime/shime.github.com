@@ -8,6 +8,23 @@
     
     
     <item>
+      <title>Updating indirect dependencies with Yarn</title>
+      
+        <description>
+          &lt;p&gt;Since JavaScript ecosystem consists of many small
+packages, your JavaScript project likely depends on
+many of them. Especially if you&amp;#39;re using a tool like
+Webpack.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/updating-indirect-dependencies-with-yarn">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/updating-indirect-dependencies-with-yarn</link>
+      <guid isPermaLink="true">http://shime.sh/til/updating-indirect-dependencies-with-yarn</guid>
+    </item>
+    
+    <item>
       <title>Testing migrations from sandboxed Rails console</title>
       
         <description>
@@ -147,21 +164,6 @@ running in the background.&lt;/p&gt;
       <pubDate>Tue, 19 Nov 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/stopping-the-fans-with-a-script</link>
       <guid isPermaLink="true">http://shime.sh/til/stopping-the-fans-with-a-script</guid>
-    </item>
-    
-    <item>
-      <title>Using git stash to test the bug fix</title>
-      
-        <description>
-          &lt;p&gt;Git stash has been a handy command in my 
-workflow for checking whether a test covers the bug.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/using-git-stash-to-test-the-bug-fix">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Fri, 19 Jul 2019 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/using-git-stash-to-test-the-bug-fix</link>
-      <guid isPermaLink="true">http://shime.sh/til/using-git-stash-to-test-the-bug-fix</guid>
     </item>
     
   </channel>

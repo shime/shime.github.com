@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="The courage to be disliked" />
+<meta property="og:title" content="Updating indirect dependencies with Yarn" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The goal of the book: explore ideas by Alfred Adler, the lesser known third giant of psychology" />
-<meta property="og:description" content="The goal of the book: explore ideas by Alfred Adler, the lesser known third giant of psychology" />
-<link rel="canonical" href="http://shime.sh/summaries/the-courage-to-be-disliked" />
-<meta property="og:url" content="http://shime.sh/summaries/the-courage-to-be-disliked" />
+<meta name="description" content="Since JavaScript ecosystem consists of many small packages, your JavaScript project likely depends on many of them. Especially if you&#39;re using a tool like Webpack." />
+<meta property="og:description" content="Since JavaScript ecosystem consists of many small packages, your JavaScript project likely depends on many of them. Especially if you&#39;re using a tool like Webpack." />
+<link rel="canonical" href="http://shime.sh/til/updating-indirect-dependencies-with-yarn" />
+<meta property="og:url" content="http://shime.sh/til/updating-indirect-dependencies-with-yarn" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-22T14:10:32+02:00" />
+<meta property="article:published_time" content="2020-04-22T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="The courage to be disliked" />
+<meta property="twitter:title" content="Updating indirect dependencies with Yarn" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/summaries/the-courage-to-be-disliked","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"The courage to be disliked","dateModified":"2020-04-22T14:10:32+02:00","datePublished":"2020-04-22T14:10:32+02:00","description":"The goal of the book: explore ideas by Alfred Adler, the lesser known third giant of psychology","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/summaries/the-courage-to-be-disliked"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/updating-indirect-dependencies-with-yarn","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Updating indirect dependencies with Yarn","dateModified":"2020-04-22T00:00:00+02:00","datePublished":"2020-04-22T00:00:00+02:00","description":"Since JavaScript ecosystem consists of many small packages, your JavaScript project likely depends on many of them. Especially if you&#39;re using a tool like Webpack.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/updating-indirect-dependencies-with-yarn"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> The courage to be disliked &middot; Hrvoje Šimić </title>
+    <title> Updating indirect dependencies with Yarn &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="The courage to be disliked &middot; Hrvoje Šimić">
+  <meta name="title" content="Updating indirect dependencies with Yarn &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -194,111 +194,91 @@
 
             
             <div>
-              <a class="no-underline uppercase text-sm" href="/reading"> ← reading </a>
+              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
             </div>
             
             <div class="mb-8">
-              <h1>The courage to be disliked</h1>
+              <h1>Updating indirect dependencies with Yarn</h1>
+              
+              <div class="text-grey">
+                April 22, 2020
+              </div>
               
 
               <div class="flex my-2">
                 
                   <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    book summary
+                    javascript
                   </span>
                 
               </div>
             </div>
 
-            <p>The goal of the book: explore ideas by Alfred Adler, the lesser known third giant of psychology</p>
+            <p>Since JavaScript ecosystem consists of many small
+packages, your JavaScript project likely depends on
+many of them. Especially if you&#39;re using a tool like
+Webpack.</p>
 
-<h2>Lessons</h2>
+<p>Well, these dependencies have a security issue every once
+in a while, which makes your project vulnerable to that
+security issue.</p>
 
-<h3>Life is simple</h3>
+<p>Recently, Minimist had a security issue, so I had to
+update it to version 1.2.3 or later. My project
+does not depend directly on Minimist.</p>
 
-<p>World is, in all ways, astonishingly simple place. The world is simple and life is simple too. We make the world complicated. Everyone lives inside their own subjective reality, that is unique to them. There is no escape from that subjectivity, we cannot see the world objectively. World seems complicated because of this subjectivity.</p>
+<p>Unfortunately, this command didn&#39;t help:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn upgrade minimist
+</code></pre></div>
+<p>Nothing happened since this command only
+updates direct dependencies.</p>
 
-<h3>Past does not control the future</h3>
+<p>There are two ways to solve this problem.</p>
 
-<p>We can choose not to be controlled by our past. Our current behavior is not determined by our past. Thinking about cause and effect means that the past controls the present in a very deterministic way. We should think less about past causes and focus more on present goals. Freudian etiology focuses on causes and effects and teleology focuses on present goals. If someone is anxious and doesn’t want to get out, he might have had the goal of not going out before being anxious and is producing anxiety in order not to go out.</p>
+<h2>1. Using resolutions</h2>
 
-<p>If the past determined everything and couldn’t be changed we who are living today would no longer be able to take effective steps forward in our lives. People are not driven by past causes, but by present goals. The important thing is not what one is born with, but what use one makes of that equipment.</p>
+<p>Yarn supports the <code>&quot;resolutions&quot;</code> field
+in <code>package.json</code> for specifying custom package
+versions or ranges <sup>[<a href="#resolutions">1</a>]</sup>.</p>
 
-<h3>Trauma doesn&#39;t define us</h3>
+<p>I had to add this to the <code>package.json</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="s2">&quot;resoultions&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;minimist&quot;</span><span class="o">:</span> <span class="s2">&quot;^1.2.3&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>After specifying this, I had to remove the <code>yarn.lock</code> file and
+run:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>yarn install
+</code></pre></div>
+<h2>2. Deleting dependents from the lock file manually</h2>
 
-<p>Adler goes one step further and denies trauma altogether. We don’t suffer from traumatic experiences, we make out of them whatever suits our purposes. Trauma doesn’t determine or define us. We can still choose by giving the meaning to those events. Your life is not something that someone gives you, but something you choose yourself. You are the one who decides how you live.</p>
+<p>This is another option, which doesn&#39;t require deleting entire
+lock file.</p>
 
-<h3>Anger is a tool for submission</h3>
+<p>Go through the lock file and delete anything that depends on
+the problematic package (Minimist in my case). Delete entire blocks
+of text that mention your package. After you have done that, run:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>yarn install
+</code></pre></div>
+<hr>
 
-<p>People fabricate anger in order to dominate others. Anger is a tool for submission. Anger is a means to achieve a goal.</p>
+<p>Both of these solutions will only work if the patch version of the problematic
+package is in the allowed range of it&#39;s dependants. Otherwise you will have 
+to update the packages that depend on it too.</p>
 
-<h3>We can always choose our lifestyle and change</h3>
+<hr>
 
-<p>People can always change. They just lack courage.</p>
-
-<p>We choose our lifestyle (view of world and self) to best fit our environment. Since we have chosen it in our childhood, we can choose it again in adulthood, and replace the old one if it’s no longer useful. It’s our responsibility to choose our lifestyle. Some courage is needed in order to do that and people find it hard since they don’t have the courage, so they remain in one lifestyle.</p>
-
-<h3>Don&#39;t be afraid of criticism</h3>
-
-<p>It’s easy to find an excuse for not pursuing your dreams. Sometimes the reason is the lack of courage to put up your work for criticism. There’s another reason of keeping the possibility open, beleiving that one is great without having the proof.</p>
-
-<h3>Separation of tasks</h3>
-
-<p>All interpersonal relationship troubles are caused by intruding on other people&#39;s tasks, or having one&#39;s tasks intruded on. You can&#39;t bring a horse to water and have it drink it too. Task has to be performed by the person who is going to receive the result of the choice that was made.</p>
-
-<p>If your parents are unhappy with the career you decide to pursue, it&#39;s not your job to make them coming to terms with that emotion. They are passing their judgment onto you, so that is their task and you shouldn&#39;t interfere. Your job is to choose the best path that you believe in, regardless of their emotions.</p>
-
-<h3>Living a life-lie</h3>
-
-<p>In order not to be disliked, people constantly gauge other people&#39;s feelings while swearing loyalty to all of them. This is a great contradiction - swearing loyalty to all people out of single-minded desire not to be disliked. If one is living to satisfy other people&#39;s expectations and one is entrusting one own&#39;s life to others, that is the way of living in which one is lying to oneself.</p>
-
-<h3>The two objectives for behavior</h3>
-
-<p>The two objectives for behavior:</p>
-
-<ul>
-<li>to be self-reliant </li>
-<li>to live in harmony with society</li>
-</ul>
-
-<p>The two objectives for psychology that supports this behavior:</p>
-
-<ul>
-<li>the consciousness that I have the ability </li>
-<li>the consciousness that people are my comrades</li>
-</ul>
+<ol>
+<li><a name="resolutions"></a> For more info, refer to <a href="https://classic.yarnpkg.com/en/docs/selective-version-resolutions/">Yarn documentation</a>.</li>
+</ol>
 
 
             <hr />
 
             
-
-              
               <p class="mt-4">
-                Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
-
-                <div class="mt-2">
-                  <form
-  action="https://buttondown.email/api/emails/embed-subscribe/shime"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
-  class="embeddable-buttondown-form"
-  >
-  <div class="flex max-w-sm m-auto">
-    <input type="email" name="email" id="bd-email" class="bg-grey-lighter appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="Enter your best email address">
-    <input type="hidden" value="1" name="embed"></input>
-    
-    <input type="hidden" name="tag" value="reading" />
-    
-    <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
-  </div>
-  <div class="flex text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
-</form>
-
-                </div>
+                Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a> or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
               </p>
-              
             
           </div>
         </div>
