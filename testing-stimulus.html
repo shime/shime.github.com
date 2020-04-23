@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1587557432139915000">
-  <link rel="stylesheet" href="/public/css/style.css?1587557432139915000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1587626881685289000">
+  <link rel="stylesheet" href="/public/css/style.css?1587626881685289000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -258,6 +258,7 @@ for MutationObserver as of this writing.</p>
 <p>We need to tell Jest to lookup this file before
 each test and execute it. Place this in <code>package.json</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span> <span class="s2">&quot;jest&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s2">&quot;testRegex&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;test/javascript/.*_test\\.js&quot;</span><span class="p">],</span>
    <span class="s2">&quot;setupFiles&quot;</span><span class="o">:</span> <span class="p">[</span>
      <span class="s2">&quot;./test/javascript/setup.js&quot;</span>
    <span class="p">]</span>
@@ -273,13 +274,7 @@ our first failing test.</p>
 <p>We need to set up Babel to play nice with Jest first.
 To do that, add <code>&quot;es2015&quot;</code> to <code>&quot;presets&quot;</code>.
 Place this in your <code>.babelrc</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
-  <span class="s2">&quot;presets&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;es2015&quot;</span><span class="p">,</span>
-    <span class="p">[</span> <span class="s2">&quot;env&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="c1">// rest of env config</span>
-    <span class="p">}]</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span> <span class="s2">&quot;presets&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;@babel/env&quot;</span><span class="p">]</span> <span class="p">}</span>
 </code></pre></div>
 <p>Place this in <code>test/javascript/first_test.js</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Failing test&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
