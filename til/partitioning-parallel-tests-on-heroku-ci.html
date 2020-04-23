@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1587626881685289000">
-  <link rel="stylesheet" href="/public/css/style.css?1587626881685289000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1587640126486908000">
+  <link rel="stylesheet" href="/public/css/style.css?1587640126486908000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -238,6 +238,7 @@ for partitioning tests.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="ch">#!/usr/bin/env ruby</span>
 
 <span class="n">tests</span> <span class="o">=</span> <span class="no">Dir</span><span class="o">[</span><span class="s2">&quot;test/**/*_test.rb&quot;</span><span class="o">].</span>
+          <span class="n">sort</span><span class="o">.</span>
           <span class="nb">select</span><span class="o">.</span>
           <span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
             <span class="n">index</span> <span class="o">%</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;NUMBER_OF_NODES&quot;</span><span class="o">].</span><span class="n">to_i</span> <span class="o">==</span>
