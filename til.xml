@@ -8,6 +8,38 @@
     
     
     <item>
+      <title>Using Git pre-push hook for linting</title>
+      
+        <description>
+          &lt;p&gt;In the past, I&amp;#39;ve used Git pre-commit hooks for linting.
+This started to get annoying incredibly fast, since it meant
+I had to wait for linting to complete before every commit.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/using-git-pre-push-hook-for-linting">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/using-git-pre-push-hook-for-linting</link>
+      <guid isPermaLink="true">http://shime.sh/til/using-git-pre-push-hook-for-linting</guid>
+    </item>
+    
+    <item>
+      <title>Opening the last migration</title>
+      
+        <description>
+          &lt;p&gt;I use Tim Pope&amp;#39;s excellent &lt;a href=&quot;https://github.com/tpope/vim-rails&quot;&gt;rails.vim&lt;/a&gt;
+and its shortcuts. One of the shortcuts I use pretty
+regularly is &lt;code&gt;:Emigration&lt;/code&gt; or &lt;code&gt;:Emi&lt;/code&gt; to edit the last migration.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/opening-the-last-migration">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/opening-the-last-migration</link>
+      <guid isPermaLink="true">http://shime.sh/til/opening-the-last-migration</guid>
+    </item>
+    
+    <item>
       <title>Updating indirect dependencies with Yarn</title>
       
         <description>
@@ -130,40 +162,6 @@ helps to direct a reader&amp;#39;s attention.&lt;/p&gt;
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</link>
       <guid isPermaLink="true">http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</guid>
-    </item>
-    
-    <item>
-      <title>Building pagination from scratch</title>
-      
-        <description>
-          &lt;p&gt;Since a lot of my past projects included some sort
-of single-page application as the frontend and Rails
-as the backend, I wanted to check how hard would it
-be to implement pagination without using any gems.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/building-pagination-from-scratch">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Wed, 27 Nov 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/building-pagination-from-scratch</link>
-      <guid isPermaLink="true">http://shime.sh/til/building-pagination-from-scratch</guid>
-    </item>
-    
-    <item>
-      <title>Stopping the fans with a script</title>
-      
-        <description>
-          &lt;p&gt;I find it irritating when fans on my
-laptop start spinning out of control, especially
-if it&amp;#39;s caused by something non-critical or 
-running in the background.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/stopping-the-fans-with-a-script">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Tue, 19 Nov 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/stopping-the-fans-with-a-script</link>
-      <guid isPermaLink="true">http://shime.sh/til/stopping-the-fans-with-a-script</guid>
     </item>
     
   </channel>

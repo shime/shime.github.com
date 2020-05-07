@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
   <head>
   <link href="//gmpg.org/xfn/11" rel="profile">
@@ -41,37 +41,40 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="404: Page not found" />
+<meta property="og:title" content="Opening the last migration" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://shime.sh/404.html" />
-<meta property="og:url" content="http://shime.sh/404.html" />
+<meta name="description" content="I use Tim Pope&#39;s excellent rails.vim and its shortcuts. One of the shortcuts I use pretty regularly is :Emigration or :Emi to edit the last migration." />
+<meta property="og:description" content="I use Tim Pope&#39;s excellent rails.vim and its shortcuts. One of the shortcuts I use pretty regularly is :Emigration or :Emi to edit the last migration." />
+<link rel="canonical" href="http://shime.sh/til/opening-the-last-migration" />
+<meta property="og:url" content="http://shime.sh/til/opening-the-last-migration" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-07T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="404: Page not found" />
+<meta property="twitter:title" content="Opening the last migration" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/404.html","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"404: Page not found","@type":"WebPage","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/opening-the-last-migration","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Opening the last migration","dateModified":"2020-05-07T00:00:00+02:00","datePublished":"2020-05-07T00:00:00+02:00","description":"I use Tim Pope&#39;s excellent rails.vim and its shortcuts. One of the shortcuts I use pretty regularly is :Emigration or :Emi to edit the last migration.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/opening-the-last-migration"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> 404: Page not found &middot; Hrvoje Šimić </title>
+    <title> Opening the last migration &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="404: Page not found &middot; Hrvoje Šimić">
+  <meta name="title" content="Opening the last migration &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
 
 
   <body class="font-sans">
-    <div class="w-full flex content-center justify-center">
-      <div class="lg:pt-16 lg:pb-32 p-6 relative">
-        
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
 
 
 
@@ -178,34 +181,71 @@
 </div>
 
 
-        <div class="max-w-sm text-lg mt-16 text-grey-darker font-light leading-normal">
-          <div class="page-description">
-  <h2> 404: Page not found </h2>
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="flex-col">
+          <div class="max-w-full">
+            
 
-  <p class="mt-4">
-    A bunch of words,</br>
-    On this link they stood,</br>
-    Someone hoped they're here,</br>
-    But it didn't turn out good.</br>
-  </p>
+          </div>
 
-  <p class="mt-4">
-    Rage not and don't despair,</br>
-    The mighty <a href="/articles">archive</a></br>
-    is where you'll find all that's there.</br>
-  </p>
+          <div class="post max-w-full md:max-w-md">
+            
+            
 
-  <p class="mt-4">
-    And excuse this poor soul,</br>
-    For sometimes being such a troll.</br>
-  </p>
-</div>
+            
+            <div>
+              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+            </div>
+            
+            <div class="mb-8">
+              <h1>Opening the last migration</h1>
+              
+              <div class="text-grey">
+                May 7, 2020
+              </div>
+              
 
+              <div class="flex my-2">
+                
+                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                    unix
+                  </span>
+                
+              </div>
+            </div>
+
+            <p>I use Tim Pope&#39;s excellent <a href="https://github.com/tpope/vim-rails">rails.vim</a>
+and its shortcuts. One of the shortcuts I use pretty
+regularly is <code>:Emigration</code> or <code>:Emi</code> to edit the last migration.</p>
+
+<p>I usually create the migration from bash, by invoking the usual Rails
+commands. After the migration is created, I find it hard to edit
+that file, because of the timestamp in the name. That&#39;s why
+I usually open Vim and then use <code>:Emi</code> to edit that file.</p>
+
+<p>Well, I&#39;ve decided to write a small bash function to edit
+that file straight from bash:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>emi<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">$EDITOR</span> <span class="k">$(</span>find -E db/migrate -type f <span class="p">|</span> sort <span class="p">|</span> tail -n <span class="m">1</span><span class="k">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Place it in your <code>.bashrc</code> or <code>.zshrc</code> and you&#39;re good to go.</p>
+
+
+            <hr />
+
+            
+              <p class="mt-4">
+                Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a> or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
+              </p>
+            
+          </div>
         </div>
       </div>
     </div>
+  </body>
 
-    <script>
+  <script>
   var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
   var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
   var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
@@ -252,5 +292,4 @@
   anchors.add()
 </script>
 
-  </body>
 </html>
