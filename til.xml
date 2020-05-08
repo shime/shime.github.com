@@ -8,6 +8,40 @@
     
     
     <item>
+      <title>Writing custom Vim template</title>
+      
+        <description>
+          &lt;p&gt;Since Rubocop warns me about missing
+pragma comment for freezing strings and
+I&amp;#39;m too lazy to write that every time 
+I open a Ruby file, I&amp;#39;ve decided to write
+a template.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/writing-custom-vim-template">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/writing-custom-vim-template</link>
+      <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-template</guid>
+    </item>
+    
+    <item>
+      <title>Writing custom Vim snippets</title>
+      
+        <description>
+          &lt;p&gt;&lt;a href=&quot;github.com/garbas/vim-snipmate&quot;&gt;vim-snipmate&lt;/a&gt; is a really useful
+Vim plugin that adds support for custom autocompletion. &lt;a href=&quot;https://github.com/honza/vim-snippets&quot;&gt;vim-snippets&lt;/a&gt;
+adds a bunch of useful snippets for various languages.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/writing-custom-vim-snippets">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/writing-custom-vim-snippets</link>
+      <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-snippets</guid>
+    </item>
+    
+    <item>
       <title>Using Git pre-push hook for linting</title>
       
         <description>
@@ -131,37 +165,6 @@ compiling latest Ruby (HEAD), here are the steps necessary to do it.&lt;/p&gt;
       <pubDate>Sun, 01 Mar 2020 00:00:00 +0100</pubDate>
       <link>http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</link>
       <guid isPermaLink="true">http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</guid>
-    </item>
-    
-    <item>
-      <title>Partitioning parallel tests on Heroku CI</title>
-      
-        <description>
-          &lt;p&gt;Running tests in parallel on Heroku CI can greatly reduce
-test suite execution time. Spinning up multiple nodes is as simple as changing &lt;code&gt;app.json&lt;/code&gt;
-to something like this:&lt;/p&gt;
-
-          <a href="http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</link>
-      <guid isPermaLink="true">http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</guid>
-    </item>
-    
-    <item>
-      <title>Building emphasized code blocks in Jekyll</title>
-      
-        <description>
-          &lt;p&gt;Code blocks in these articles support emphasizing specific lines which
-helps to direct a reader&amp;#39;s attention.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/building-emphasized-code-blocks-in-jekyll">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Fri, 10 Jan 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</link>
-      <guid isPermaLink="true">http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</guid>
     </item>
     
   </channel>
