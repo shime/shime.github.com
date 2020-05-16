@@ -227,6 +227,31 @@ have to use another gem.&lt;/p&gt;
       
     
       
+      <item>
+        <title>Fixing 'ld: warning: directory not found for option'</title>
+        
+          <description>
+            &lt;p&gt;While I was trying to install Ruby via &lt;a href=&quot;https://github.com/postmodern/ruby-install&quot;&gt;ruby-install&lt;/a&gt; on my MacBook Air, I kept getting the following error message:&lt;/p&gt;
+
+          </description>
+        
+        <pubDate>Fri, 27 Jan 2017 00:00:00 +0100</pubDate>
+        <link>http://shime.sh/til/fixing-ld-warning-directory-not-found-for-option</link>
+        <guid isPermaLink="true">http://shime.sh/til/fixing-ld-warning-directory-not-found-for-option</guid>
+      </item>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
       
     

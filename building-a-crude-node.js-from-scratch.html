@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/monokai.css?1589643109450549000">
+  <link rel="stylesheet" href="/public/css/style.css?1589643109450549000">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Building a crude Node.js from scratch" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps: [^1]: More info about V8 can be found at their wiki. [^2]: :wq or try searching Stack Overflow. [^3]: Taken from V8 repo here. [^4]: This example is based on this gist." />
+<meta property="og:description" content="Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps: [^1]: More info about V8 can be found at their wiki. [^2]: :wq or try searching Stack Overflow. [^3]: Taken from V8 repo here. [^4]: This example is based on this gist." />
+<link rel="canonical" href="http://shime.sh/building-a-crude-node.js-from-scratch" />
+<meta property="og:url" content="http://shime.sh/building-a-crude-node.js-from-scratch" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-10-10T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
+<meta property="twitter:title" content="Building a crude Node.js from scratch" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"url":"http://shime.sh/building-a-crude-node.js-from-scratch","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Building a crude Node.js from scratch","dateModified":"2017-10-10T00:00:00+02:00","datePublished":"2017-10-10T00:00:00+02:00","description":"Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps: [^1]: More info about V8 can be found at their wiki. [^2]: :wq or try searching Stack Overflow. [^3]: Taken from V8 repo here. [^4]: This example is based on this gist.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/building-a-crude-node.js-from-scratch"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+    <title> Building a crude Node.js from scratch &middot; Hrvoje Šimić </title>
+  
+
+  <meta name="title" content="Building a crude Node.js from scratch &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+</head>
+
+
+  <body class="font-sans">
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
+
+
+
+
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold self-start" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1 self-start" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="flex-col">
+          <div class="max-w-full">
+            
+
+          </div>
+
+          <div class="post max-w-full md:max-w-md">
+            
+            
+
+            
+            <div>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
+            </div>
+            
+            <div class="mb-8">
+              <h1>Building a crude Node.js from scratch</h1>
+              
+              <div class="text-grey">
+                October 10, 2017
+              </div>
+              
+
+              <div class="flex my-2">
+                
+                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                    javascript
+                  </span>
+                
+              </div>
+            </div>
+
+            <p>Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps:</p>
+
+<ul>
+<li>making a &quot;Hello World&quot; example in V8</li>
+<li>making a crude Node runtime with support for 3 statements: <code>console.log</code>, <code>console.error</code> and <code>quit</code> for quitting the process</li>
+</ul>
+
+<p>In our new crude runtime we&#39;ll execute the following script:
+```javascript
+console.log(&quot;🎉&quot;);
+b=4+4;
+console.error(b);
+quit();</p>
+
+<p>console.log(&quot;never reach this&quot;);
+```</p>
+
+<hr>
+
+<h2>Setting up the hello world example</h2>
+
+<p>First things first. Let&#39;s execute a JavaScript string concatenation in V8! We&#39;ll write an example that takes a JavaScript statement as a string argument, executes it as JavaScript code, and prints the result to standard out. The string will be
+<code>js
+&#39;Hello&#39; + &#39;, World!&#39;
+</code></p>
+
+<p>The setup will loosely follow <a href="https://gist.github.com/netpoetica/28ce31478cfc43edcaa7">this gist</a> in combination with the <a href="https://github.com/v8/v8/wiki/Getting-Started-with-Embedding">V8 getting started with embedding wiki</a>.</p>
+
+<p>We&#39;re going to use version 5.8 of V8. I&#39;m going to assume you&#39;re using MacOS with git, Python 2.7 and Xcode installed and that you&#39;re using Bash as your shell of choice.</p>
+
+<h3>Clone the v8 source</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git clone https://github.com/v8/v8.git
+</code></pre></div>
+<hr>
+
+<h3>Install depot tools and add it to our path</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+<span class="nb">cd</span> depot_tools
+<span class="nb">echo</span> <span class="s2">&quot;export PATH=`pwd`:\&quot;</span><span class="nv">$PATH</span><span class="s2">\&quot;&quot;</span> &gt;&gt; ~/.bashrc <span class="c1"># replace with ~/.zshrc if using ZSH</span>
+<span class="nb">source</span> ~/.bashrc <span class="c1"># or ~/.zshrc</span>
+<span class="nb">cd</span> -
+</code></pre></div>
+<hr>
+
+<h3>Make sure you have clang and clang++ installed</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>which clang <span class="o">&amp;&amp;</span> which clang++ <span class="c1"># should output paths to clangs</span>
+</code></pre></div>
+<p>If you don&#39;t have clang and clang++ make sure you have installed Xcode.</p>
+
+<hr>
+
+<h3>Add environment libraries for clang and clang++</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cat <span class="s">&lt;&lt;EOT &gt;&gt; ~/.bashrc # replace with ~/.zshrc if using ZSH</span>
+<span class="s">export CXX=&quot;`which clang++`&quot;</span>
+<span class="s">export CC=&quot;`which clang`&quot;</span>
+<span class="s">export CPP=&quot;`which clang` -E&quot;</span>
+<span class="s">export LINK=&quot;`which clang++`&quot;</span>
+<span class="s">export CXX_host=&quot;`which clang++`&quot;</span>
+<span class="s">export CC_host=&quot;`which clang`&quot;</span>
+<span class="s">export CPP_host=&quot;`which clang` -E&quot;</span>
+<span class="s">export LINK_host=&quot;`which clang++`&quot;</span>
+<span class="s">export GYP_DEFINES=&quot;clang=1&quot;</span>
+<span class="s">EOT</span>
+
+<span class="nb">source</span> ~/.bashrc <span class="c1"># or ~/.zshrc</span>
+</code></pre></div>
+<hr>
+
+<h3>Update .git/config of V8 to fetch remotes and tags</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="nb">cd</span> v8
+vim .git/config
+</code></pre></div>
+<p>Update config for remote origin to this</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>[remote &quot;origin&quot;]
+  url = https://chromium.googlesource.com/v8/v8.git
+  fetch = +refs/branch-heads/*:refs/remotes/branch-heads/*
+  fetch = +refs/tags/*:refs/tags/*
+</code></pre></div>
+<p>Exit vim[^2] and fetch origin.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git fetch
+</code></pre></div>
+<hr>
+
+<h3>Checkout to a new branch for version 5.8 of V8</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git checkout -b <span class="m">5</span>.8 -t branch-heads/5.8
+</code></pre></div>
+<hr>
+
+<h3>Sync this git repo</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gclient sync
+</code></pre></div>
+<hr>
+
+<h3>Create build configuration</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>tools/dev/v8gen.py x64.release
+</code></pre></div>
+<hr>
+
+<h3>Edit the default build configuration</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gn args out.gn/x64.release
+</code></pre></div>
+<p>And add these two lines to that configuration:</p>
+<div class="highlight"><pre><code class="language-makefile" data-lang="makefile"><span></span><span class="nv">is_component_build</span> <span class="o">=</span> <span class="nb">false</span>
+<span class="nv">v8_static_library</span> <span class="o">=</span> <span class="nb">true</span>
+</code></pre></div>
+<hr>
+
+<h3>Build v8</h3>
+
+<p>You&#39;ll have to detect a number of cores your CPU has. Go to Activity Monitor and click on <em>CPU LOAD</em> section. Window with graphs should pop up - the number of cores is the number of panels on that window.</p>
+
+<p>For my 2015 i7 CPU it&#39;s 4, so I&#39;m running the following command:
+<code>bash
+make native -j 4
+</code>
+If you&#39;re not sure just run it without <code>-j</code> flag</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>make native
+</code></pre></div>
+<p>Alternatively you can just use Ninja like this:
+```bash
+ninja -C out.gn/x64.release</p>
+
+<h2>```</h2>
+
+<h3>Add hello world</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>vim hello_world.cpp
+</code></pre></div>
+<p>Save this in <code>hello_world.cpp</code>[^3]:
+```clike
+// Copyright 2015 the V8 project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.</p>
+
+<h1>include <stdio.h></h1>
+
+<h1>include <stdlib.h></h1>
+
+<h1>include <string.h></h1>
+
+<h1>include &quot;include/libplatform/libplatform.h&quot;</h1>
+
+<h1>include &quot;include/v8.h&quot;</h1>
+
+<p>using namespace v8;
+int main(int argc, char* argv[]) {
+  // Initialize V8.
+  V8::InitializeICUDefaultLocation(argv[0]);
+  V8::InitializeExternalStartupData(argv[0]);
+  Platform* platform = platform::CreateDefaultPlatform();
+  V8::InitializePlatform(platform);
+  V8::Initialize();
+  // Create a new Isolate and make it the current one.
+  Isolate::CreateParams create<em>params;
+  create</em>params.array<em>buffer</em>allocator =
+      v8::ArrayBuffer::Allocator::NewDefaultAllocator();
+  Isolate* isolate = Isolate::New(create<em>params);
+  {
+    Isolate::Scope isolate</em>scope(isolate);
+    // Create a stack-allocated handle scope.
+    HandleScope handle<em>scope(isolate);
+    // Create a new context.
+    Local<Context> context = Context::New(isolate);
+    // Enter the context for compiling and running the hello world script.
+    Context::Scope context</em>scope(context);
+    // Create a string containing the JavaScript source code.
+    Local<String> source =
+        String::NewFromUtf8(isolate, &quot;&#39;Hello&#39; + &#39;, World!&#39;&quot;,
+                            NewStringType::kNormal).ToLocalChecked();
+    // Compile the source code.
+    Local<Script> script = Script::Compile(context, source).ToLocalChecked();
+    // Run the script to get the result.
+    Local<Value> result = script-&gt;Run(context).ToLocalChecked();
+    // Convert the result to an UTF8 string and print it.
+    String::Utf8Value utf8(result);
+    printf(&quot;%s\n&quot;, *utf8);
+  }
+  // Dispose the isolate and tear down V8.
+  isolate-&gt;Dispose();
+  V8::Dispose();
+  V8::ShutdownPlatform();
+  delete platform;
+  delete create<em>params.array</em>buffer_allocator;
+  return 0;
+}</p>
+
+<h2>```</h2>
+
+<h3>Copy snapshots</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cp out.gn/x64.release/*.bin .
+</code></pre></div>
+<hr>
+
+<h3>Compile the hello world example</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>clang++ -Iinclude out/native/*.a hello_world.cpp -o hello_world
+</code></pre></div>
+<hr>
+
+<h3>Run the hello world example</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>./hello_world
+</code></pre></div>
+<p>You should see
+<code>bash
+Hello, World!
+</code>
+in your shell. Now that we have a hello world example up and running, we can start adding support for <code>console.log</code>, <code>console.error</code> and <code>quit</code>.</p>
+
+<h2>Add support for console and quit statements</h2>
+
+<p>Add the following to <code>run_script.cpp</code>[^4]:
+```clike</p>
+
+<h1>include <stdio.h></h1>
+
+<h1>include <stdlib.h></h1>
+
+<h1>include <string.h></h1>
+
+<h1>include <fstream></h1>
+
+<h1>include <iostream></h1>
+
+<h1>include <sstream></h1>
+
+<h1>include &quot;include/libplatform/libplatform.h&quot;</h1>
+
+<h1>include &quot;include/v8.h&quot;</h1>
+
+<p>using namespace v8;</p>
+
+<p>// Define a quit function that exits.
+void quit(const v8::FunctionCallbackInfo<a href="v8::Value">v8::Value</a>&amp; args) {
+  std::exit(0);
+}</p>
+
+<p>// Store isolate in a global variable.
+Isolate* isolate<em>;
+Isolate* GetIsolate() { return isolate</em>; }</p>
+
+<p>// Define a Console class.
+class Console { };</p>
+
+<p>// Extracts a C string from a V8 Utf8Value.
+const char* ToCString(const v8::String::Utf8Value&amp; value) {
+  return *value ? *value : &quot;<string conversion failed>&quot;;
+}</p>
+
+<p>// Define a log function that prints to stdout.
+void log(const FunctionCallbackInfo<Value>&amp; args){
+  v8::String::Utf8Value str(args[0]);
+  const char* cstr = ToCString(str);
+  printf(&quot;%s\n&quot;, cstr);
+}</p>
+
+<p>// Define an error function that prints to stderr.
+void error(const FunctionCallbackInfo<Value>&amp; args){
+  v8::String::Utf8Value str(args[0]);
+  const char* cstr = ToCString(str);
+  fprintf(stderr,&quot;%s\n&quot;, cstr);
+}</p>
+
+<p>Local<Object> WrapConsoleObject(Console *c) {
+  EscapableHandleScope handle_scope(GetIsolate());</p>
+
+<p>Local<ObjectTemplate> class<em>t;
+  Local<ObjectTemplate> raw</em>t = ObjectTemplate::New(GetIsolate());
+  raw_t-&gt;SetInternalFieldCount(1);</p>
+
+<p>// Set log method.
+  raw_t-&gt;Set(
+      v8::String::NewFromUtf8(GetIsolate(), &quot;log&quot;, v8::NewStringType::kNormal).ToLocalChecked(),
+      v8::FunctionTemplate::New(GetIsolate(), log));</p>
+
+<p>// Set error method.
+  raw<em>t-&gt;Set(
+      v8::String::NewFromUtf8(GetIsolate(), &quot;error&quot;, v8::NewStringType::kNormal).ToLocalChecked(),
+      v8::FunctionTemplate::New(GetIsolate(), error));
+  class</em>t = Local<ObjectTemplate>::New(GetIsolate(),raw_t);</p>
+
+<p>// Create instance.
+  Local<Object> result = class_t-&gt;NewInstance(GetIsolate()-&gt;GetCurrentContext()).ToLocalChecked();</p>
+
+<p>// Create wrapper.
+  Local<External> ptr = External::New(GetIsolate(),c);
+  result-&gt;SetInternalField(0,ptr);
+  return handle_scope.Escape(result);
+}</p>
+
+<p>int main(int argc, char* argv[]) {
+  // Initialize V8.
+  V8::InitializeICUDefaultLocation(argv[0]);
+  V8::InitializeExternalStartupData(argv[0]);
+  Platform* platform = platform::CreateDefaultPlatform();
+  V8::InitializePlatform(platform);
+  V8::Initialize();</p>
+
+<p>// Get JavaScript script file from the first argument.
+  FILE* file = fopen(argv[1],&quot;r&quot;);
+  fseek(file, 0, SEEK<em>END);
+  size</em>t size = ftell(file);
+  rewind(file);
+  char* fileScript = new char[size + 1];
+  fileScript[size] = &#39;\0&#39;;
+  for (size_t i = 0; i &lt; size;) {
+    i += fread(&amp;fileScript[i], 1, size - i, file);
+  }
+  fclose(file);</p>
+
+<p>// Create a new Isolate and make it the current one.
+  Isolate::CreateParams create<em>params;
+  create</em>params.array<em>buffer</em>allocator =
+    v8::ArrayBuffer::Allocator::NewDefaultAllocator();
+  Isolate* isolate = Isolate::New(create<em>params);
+  {
+    Isolate::Scope isolate</em>scope(isolate);
+    isolate_ = isolate;</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>// Create a stack-allocated handle scope.
+HandleScope handle_scope(isolate);
+
+// Create a template.
+v8::Local&lt;v8::ObjectTemplate&gt; global = v8::ObjectTemplate::New(isolate);
+
+// Set a quit statement to global context.
+global-&gt;Set(
+    v8::String::NewFromUtf8(isolate, &quot;quit&quot;, v8::NewStringType::kNormal)
+    .ToLocalChecked(),
+    v8::FunctionTemplate::New(isolate, quit));
+
+// Create a new context.
+Local&lt;Context&gt; context = Context::New(isolate, NULL, global);
+
+// Enter the context for compiling and running the hello world script.
+Context::Scope context_scope(context);
+
+// Create a JavaScript console object.
+Console* c = new Console();
+Local&lt;Object&gt; con = WrapConsoleObject(c);
+// Set a console statement to global context.
+context-&gt;Global()-&gt;Set(String::NewFromUtf8(isolate, &quot;console&quot;, NewStringType::kNormal).ToLocalChecked(),
+    con);
+
+// Create a string containing the JavaScript source code.
+Local&lt;String&gt; source =
+  String::NewFromUtf8(isolate, fileScript,
+      NewStringType::kNormal).ToLocalChecked();
+
+// Compile the source code.
+Local&lt;Script&gt; script = Script::Compile(context, source).ToLocalChecked();
+
+// Run the script to get the result.
+Local&lt;Value&gt; result = script-&gt;Run(context).ToLocalChecked();
+</code></pre></div>
+<p>}
+  // Dispose the isolate and tear down V8.
+  isolate-&gt;Dispose();
+  V8::Dispose();
+  V8::ShutdownPlatform();
+  delete platform;
+  delete create<em>params.array</em>buffer_allocator;
+  return 0;
+}
+```</p>
+
+<p>After that, set up a JavaScript script at <code>test.js</code>:
+```javascript
+console.log(&quot;🎉&quot;);
+b=4+4;
+console.error(b);
+quit();</p>
+
+<p>console.log(&quot;never reach this&quot;);
+```</p>
+
+<p>Compile our new program with</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>clang++ -Iinclude out/native/*.a run_script.cpp -o run_script
+</code></pre></div>
+<p>And run it with</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>./run_script test.js
+</code></pre></div>
+<p>You should see the following output
+<code>bash
+🎉
+8
+</code></p>
+
+<p>Phew! That&#39;s it - congratulate yourself for building a crude version of Node that only supports <code>console.log</code>, <code>console.error</code> and <code>quit</code> statements.</p>
+
+<p>Having a global function <code>quit</code> like this is a little weird, so implementing a more normal <code>process.exit</code> is left as an exercise for the reader.</p>
+
+<hr>
+
+<p>If this article sparked your interest about Node internals, I strongly suggest you continue reading article named <em><a href="https://blog.ghaiklor.com/how-nodejs-works-bfe09efc80ca">How does NodeJS work</a></em>, which explains the concepts used in this article in greater detail.</p>
+
+<hr>
+
+<p>[^1]: More info about V8 can be found at their <a href="https://github.com/v8/v8/wiki">wiki</a>.
+[^2]: <strong>:wq</strong> or try searching <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Stack Overflow</a>.
+[^3]: Taken from V8 repo <a href="https://chromium.googlesource.com/v8/v8/+/branch-heads/5.8/samples/hello-world.cc">here</a>.
+[^4]: This example is based on <a href="https://gist.github.com/tejom/d335a6ab1ac86b45f149e5c10e14b132">this gist</a>.</p>
+
+
+            <hr />
+
+            
+
+              
+              <p class="mt-4">
+                Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a>, subscribe to the newsletter or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
+
+                <div class="mt-2">
+                  <form
+  action="https://buttondown.email/api/emails/embed-subscribe/shime"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+  class="embeddable-buttondown-form"
+  >
+  <div class="flex max-w-sm m-auto">
+    <input type="email" name="email" id="bd-email" class="bg-grey-lighter appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="Enter your best email address">
+    <input type="hidden" value="1" name="embed"></input>
+    
+    <input type="hidden" name="tag" value="articles" />
+    
+    <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+  </div>
+  <div class="flex text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+</form>
+
+                </div>
+              </p>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
+</script>
+
+</html>

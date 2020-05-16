@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/monokai.css?1589643109450549000">
+  <link rel="stylesheet" href="/public/css/style.css?1589643109450549000">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Git diff tips and tricks" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="git diff is one of the commands I use the most in my day to day development. For the record, I&#39;ve used this command to check if that&#39;s really the case" />
+<meta property="og:description" content="git diff is one of the commands I use the most in my day to day development. For the record, I&#39;ve used this command to check if that&#39;s really the case" />
+<link rel="canonical" href="http://shime.sh/til/git-diff-tips-and-tricks" />
+<meta property="og:url" content="http://shime.sh/til/git-diff-tips-and-tricks" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-10-08T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
+<meta property="twitter:title" content="Git diff tips and tricks" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"url":"http://shime.sh/til/git-diff-tips-and-tricks","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Git diff tips and tricks","dateModified":"2016-10-08T00:00:00+02:00","datePublished":"2016-10-08T00:00:00+02:00","description":"git diff is one of the commands I use the most in my day to day development. For the record, I&#39;ve used this command to check if that&#39;s really the case","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/git-diff-tips-and-tricks"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+    <title> Git diff tips and tricks &middot; Hrvoje Šimić </title>
+  
+
+  <meta name="title" content="Git diff tips and tricks &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+</head>
+
+
+  <body class="font-sans">
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
+
+
+
+
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/shime.jpg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold self-start" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1 self-start" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+            <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-blue-light" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-black no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="flex-col">
+          <div class="max-w-full">
+            
+
+          </div>
+
+          <div class="post max-w-full md:max-w-md">
+            
+            
+
+            
+            <div>
+              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+            </div>
+            
+            <div class="mb-8">
+              <h1>Git diff tips and tricks</h1>
+              
+              <div class="text-grey">
+                October 8, 2016
+              </div>
+              
+
+              <div class="flex my-2">
+                
+                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
+                    git
+                  </span>
+                
+              </div>
+            </div>
+
+            <p><code>git diff</code> is one of the commands I use the most in my day to day development. For the record, I&#39;ve used this command to check if that&#39;s really the case</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>awk &#39;{print $1 &quot; &quot; $2}&#39; ~/.bash_history |\
+  sort |\
+  uniq -c |\
+  sort -nr |\
+  head -n 10
+</code></pre></div>
+<p>This will print out a list of your top 10 most used bash commands. It&#39;s a good idea to look here for alias candidates.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span> 116 git s
+  38 ruby -Itest
+  36 ls
+  34 ..
+  22 git add
+  19 git d
+  17 git commit
+  12 git push
+  11 ./bin/deploy
+   7 vi new_apartment_notifier.rb
+</code></pre></div>
+<p>Turns out <code>git diff</code> is right below <code>git status</code> and <code>git add</code> and above <code>git commit</code> in my case (<code>d</code> is a git alias I use for <code>diff</code> and <code>s</code> is for <code>status</code>). I usually check the diff right before I commit, so it makes sense.</p>
+
+<p>With that in mind, I&#39;ve made sure to improve the look and feel of <code>git diff</code> over the years and I would like to share some tips.</p>
+
+<h3>Colour</h3>
+
+<p><img src="/public/Screen-Shot-2016-09-08-at-12-02-40-PM.png" alt="Before">
+<div style="text-align: center; margin-bottom: 20px"> <i>Before</i> </div></p>
+
+<p><img src="/public/Screen-Shot-2016-09-08-at-12-08-58-PM.png" alt="After">
+<div style="text-align: center; margin-bottom: 20px"> <i>After</i> </div></p>
+
+<p>Colour is the first thing that comes to mind when optimizing diff output. If you&#39;re using git that&#39;s newer than <code>1.8.4</code>, colour will be enabled by default. To enjoy some pretty colours in your output on older versions of git, all you have to do is</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git config --global color.ui auto
+</code></pre></div>
+<h3>No whitespace</h3>
+
+<p><img src="/public/Screen-Shot-2016-09-08-at-12-22-47-PM.png" alt="">
+<div style="text-align: center; margin-bottom: 20px"> <i>Before</i> </div></p>
+
+<div style="text-align: center">
+  <img src="/public/Screen-Shot-2016-09-08-at-12-23-28-PM.png"/>
+</div>
+
+<div style="text-align: center; margin-bottom: 20px"> <i>After</i> </div>
+
+<p>To ignore whitespace changes in a diff, you can either use <code>git diff -w</code> every time, or create an alias for it with</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git config --global alias.d &#39;diff -w&#39;
+</code></pre></div>
+<p>Now you can enjoy outputs without whitespace changes with <code>git d</code>.</p>
+
+<h3>Crazy styling</h3>
+
+<p>As you may know, git <code>2.10.0</code> has been released a couple of days ago and it comes with more styling options you might be interested in. It supports: <code>normal</code>, <code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code>, <code>blue</code>, <code>magenta</code>, <code>cyan</code> and <code>white</code> as colour options and <code>bold</code>, <code>dim</code>, <code>ul</code>, <code>blink</code>, <code>reverse</code>, <code>italic</code>, and <code>strike</code> as styling attributes.</p>
+
+<div style="text-align: center">
+<img src="/public/Screen-Shot-2016-09-08-at-12-23-28-PM-1.png"/>
+</div>
+
+<div style="text-align: center; margin-bottom: 20px"> <i>Before</i> </div>
+
+<div style="text-align: center">
+<img src="/public/Screen-Shot-2016-09-08-at-12-40-49-PM.png"/>
+</div>
+
+<div style="text-align: center; margin-bottom: 20px"> <i>After</i> </div>
+
+<p>To set up one of these options as a default, I&#39;ve used the following commands</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git config --global color.diff.old &quot;red dim&quot;
+git config --global color.diff.new &quot;green italic&quot;
+</code></pre></div>
+<h3>Better heuristics</h3>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Using <a href="https://twitter.com/hashtag/git?src=hash">#git</a> 2.9+? You should immediately enable `--compaction-heuristic` for improved diffs. Comparison below. <a href="https://t.co/vXmDmYg5l3">pic.twitter.com/vXmDmYg5l3</a></p>&mdash; John Feminella ✈ DFW (@jxxf) <a href="https://twitter.com/jxxf/status/742799938501890048">June 14, 2016</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Tweet sums it up pretty well. To make this a default option, all you have to do is</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git config --global diff.compactionHeuristic true
+</code></pre></div>
+<h3>Removing +/i signs from diff lines</h3>
+
+<p>As a cherry on top and as a reward for making it all the way, let&#39;s remove those pesky <strong>+/-</strong> from the start of diff lines, that always mess with copying something from the diff.</p>
+
+<p><img src="/public/Screen-Shot-2016-09-08-at-1-05-26-PM.png" alt="">
+<div style="text-align: center; margin-bottom: 20px"> <i>Before</i> </div></p>
+
+<p><img src="/public/Screen-Shot-2016-09-08-at-1-06-26-PM.png" alt="">
+<div style="text-align: center; margin-bottom: 20px"> <i>After</i> </div></p>
+
+<p>Use this command to make it happen</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git config --global pager.diff &#39;sed &quot;s/^\([^-+ ]*\)[-+ ]/\\1/&quot;&#39;
+</code></pre></div>
+<p>Bonus point for removing <strong>+/-</strong> from <code>git show</code> and <code>git log</code> too</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>git config --global pager.log &#39;sed &quot;s/^\([^-+ ]*\)[-+ ]/\\1/&quot;&#39;
+git config --global pager.show &#39;sed &quot;s/^\([^-+ ]*\)[-+ ]/\\1/&quot;&#39;
+</code></pre></div>
+<hr>
+
+<p>That sums up all the <code>diff</code> tricks I&#39;m aware of. If you happen to know something that&#39;s not mentioned here, feel free to shout at me on Twitter, I&#39;m <a href="https://twitter.com/shime_sh">@shime_sh</a>.</p>
+
+<p>Also, make sure to check out pretty popular library for dealing with git diffs called <a href="https://github.com/so-fancy/diff-so-fancy">diff-so-fancy</a> which comes with a lot of pre-baked tricks.</p>
+
+
+            <hr />
+
+            
+              <p class="mt-4">
+                Did you like this article?  You can <a href="https://twitter.com/shime_sh">follow me on Twitter</a> or <a  href="/feed.xml">subscribe to the RSS feed</a> if you'd like to follow along.
+              </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
+</script>
+
+</html>
