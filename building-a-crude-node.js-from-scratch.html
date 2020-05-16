@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1589643109450549000">
-  <link rel="stylesheet" href="/public/css/style.css?1589643109450549000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1589651812411836000">
+  <link rel="stylesheet" href="/public/css/style.css?1589651812411836000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -44,8 +44,8 @@
 <meta property="og:title" content="Building a crude Node.js from scratch" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps: [^1]: More info about V8 can be found at their wiki. [^2]: :wq or try searching Stack Overflow. [^3]: Taken from V8 repo here. [^4]: This example is based on this gist." />
-<meta property="og:description" content="Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps: [^1]: More info about V8 can be found at their wiki. [^2]: :wq or try searching Stack Overflow. [^3]: Taken from V8 repo here. [^4]: This example is based on this gist." />
+<meta name="description" content="Node is powered by the JavaScript engine used in Google Chrome, called V8[1]. In this post I&#39;m going to guide you through two steps:" />
+<meta property="og:description" content="Node is powered by the JavaScript engine used in Google Chrome, called V8[1]. In this post I&#39;m going to guide you through two steps:" />
 <link rel="canonical" href="http://shime.sh/building-a-crude-node.js-from-scratch" />
 <meta property="og:url" content="http://shime.sh/building-a-crude-node.js-from-scratch" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
@@ -58,7 +58,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/building-a-crude-node.js-from-scratch","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Building a crude Node.js from scratch","dateModified":"2017-10-10T00:00:00+02:00","datePublished":"2017-10-10T00:00:00+02:00","description":"Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps: [^1]: More info about V8 can be found at their wiki. [^2]: :wq or try searching Stack Overflow. [^3]: Taken from V8 repo here. [^4]: This example is based on this gist.","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/building-a-crude-node.js-from-scratch"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/building-a-crude-node.js-from-scratch","image":"http://shime.sh/public/social.jpg","author":{"@type":"Person","name":"Hrvoje Šimić"},"headline":"Building a crude Node.js from scratch","dateModified":"2017-10-10T00:00:00+02:00","datePublished":"2017-10-10T00:00:00+02:00","description":"Node is powered by the JavaScript engine used in Google Chrome, called V8[1]. In this post I&#39;m going to guide you through two steps:","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/building-a-crude-node.js-from-scratch"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -201,23 +201,21 @@
               </div>
             </div>
 
-            <p>Node is powered by the JavaScript engine used in Google Chrome, called V8[^1]. In this post I&#39;m going to guide you through two steps:</p>
+            <p>Node is powered by the JavaScript engine used in Google Chrome, called V8<sup>[<a href="#v8">1</a>]</sup>. In this post I&#39;m going to guide you through two steps:</p>
 
 <ul>
 <li>making a &quot;Hello World&quot; example in V8</li>
 <li>making a crude Node runtime with support for 3 statements: <code>console.log</code>, <code>console.error</code> and <code>quit</code> for quitting the process</li>
 </ul>
 
-<p>In our new crude runtime we&#39;ll execute the following script:
-```javascript
-console.log(&quot;🎉&quot;);
-b=4+4;
-console.error(b);
-quit();</p>
+<p>In our new crude runtime we&#39;ll execute the following script:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;🎉&quot;</span><span class="p">);</span>
+<span class="nx">b</span><span class="o">=</span><span class="mi">4</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">quit</span><span class="p">();</span>
 
-<p>console.log(&quot;never reach this&quot;);
-```</p>
-
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;never reach this&quot;</span><span class="p">);</span>
+</code></pre></div>
 <hr>
 
 <h2>Setting up the hello world example</h2>
@@ -279,7 +277,7 @@ vim .git/config
   fetch = +refs/branch-heads/*:refs/remotes/branch-heads/*
   fetch = +refs/tags/*:refs/tags/*
 </code></pre></div>
-<p>Exit vim[^2] and fetch origin.</p>
+<p>Exit vim<sup>[<a href="#wq">2</a>]</sup> and fetch origin.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git fetch
 </code></pre></div>
 <hr>
@@ -319,74 +317,66 @@ make native -j 4
 If you&#39;re not sure just run it without <code>-j</code> flag</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>make native
 </code></pre></div>
-<p>Alternatively you can just use Ninja like this:
-```bash
-ninja -C out.gn/x64.release</p>
-
-<h2>```</h2>
+<p>Alternatively you can just use Ninja like this:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>ninja -C out.gn/x64.release
+</code></pre></div>
+<hr>
 
 <h3>Add hello world</h3>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>vim hello_world.cpp
 </code></pre></div>
-<p>Save this in <code>hello_world.cpp</code>[^3]:
-```clike
-// Copyright 2015 the V8 project authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.</p>
-
-<h1>include <stdio.h></h1>
-
-<h1>include <stdlib.h></h1>
-
-<h1>include <string.h></h1>
-
-<h1>include &quot;include/libplatform/libplatform.h&quot;</h1>
-
-<h1>include &quot;include/v8.h&quot;</h1>
-
-<p>using namespace v8;
-int main(int argc, char* argv[]) {
-  // Initialize V8.
-  V8::InitializeICUDefaultLocation(argv[0]);
-  V8::InitializeExternalStartupData(argv[0]);
-  Platform* platform = platform::CreateDefaultPlatform();
-  V8::InitializePlatform(platform);
-  V8::Initialize();
-  // Create a new Isolate and make it the current one.
-  Isolate::CreateParams create<em>params;
-  create</em>params.array<em>buffer</em>allocator =
-      v8::ArrayBuffer::Allocator::NewDefaultAllocator();
-  Isolate* isolate = Isolate::New(create<em>params);
-  {
-    Isolate::Scope isolate</em>scope(isolate);
-    // Create a stack-allocated handle scope.
-    HandleScope handle<em>scope(isolate);
-    // Create a new context.
-    Local<Context> context = Context::New(isolate);
-    // Enter the context for compiling and running the hello world script.
-    Context::Scope context</em>scope(context);
-    // Create a string containing the JavaScript source code.
-    Local<String> source =
-        String::NewFromUtf8(isolate, &quot;&#39;Hello&#39; + &#39;, World!&#39;&quot;,
-                            NewStringType::kNormal).ToLocalChecked();
-    // Compile the source code.
-    Local<Script> script = Script::Compile(context, source).ToLocalChecked();
-    // Run the script to get the result.
-    Local<Value> result = script-&gt;Run(context).ToLocalChecked();
-    // Convert the result to an UTF8 string and print it.
-    String::Utf8Value utf8(result);
-    printf(&quot;%s\n&quot;, *utf8);
-  }
-  // Dispose the isolate and tear down V8.
-  isolate-&gt;Dispose();
-  V8::Dispose();
-  V8::ShutdownPlatform();
-  delete platform;
-  delete create<em>params.array</em>buffer_allocator;
-  return 0;
-}</p>
-
-<h2>```</h2>
+<p>Save this in <code>hello_world.cpp</code><sup>[<a href="#hello-world">3</a>]</sup>:</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span></span><span class="c1">// Copyright 2015 the V8 project authors. All rights reserved.</span>
+<span class="c1">// Use of this source code is governed by a BSD-style license that can be</span>
+<span class="c1">// found in the LICENSE file.</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;include/libplatform/libplatform.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;include/v8.h&quot;</span><span class="cp"></span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">v8</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="c1">// Initialize V8.</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">InitializeICUDefaultLocation</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">InitializeExternalStartupData</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="n">Platform</span><span class="o">*</span> <span class="n">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="o">::</span><span class="n">CreateDefaultPlatform</span><span class="p">();</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">InitializePlatform</span><span class="p">(</span><span class="n">platform</span><span class="p">);</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">Initialize</span><span class="p">();</span>
+  <span class="c1">// Create a new Isolate and make it the current one.</span>
+  <span class="n">Isolate</span><span class="o">::</span><span class="n">CreateParams</span> <span class="n">create_params</span><span class="p">;</span>
+  <span class="n">create_params</span><span class="p">.</span><span class="n">array_buffer_allocator</span> <span class="o">=</span>
+      <span class="n">v8</span><span class="o">::</span><span class="n">ArrayBuffer</span><span class="o">::</span><span class="n">Allocator</span><span class="o">::</span><span class="n">NewDefaultAllocator</span><span class="p">();</span>
+  <span class="n">Isolate</span><span class="o">*</span> <span class="n">isolate</span> <span class="o">=</span> <span class="n">Isolate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">create_params</span><span class="p">);</span>
+  <span class="p">{</span>
+    <span class="n">Isolate</span><span class="o">::</span><span class="n">Scope</span> <span class="n">isolate_scope</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+    <span class="c1">// Create a stack-allocated handle scope.</span>
+    <span class="n">HandleScope</span> <span class="n">handle_scope</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+    <span class="c1">// Create a new context.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Context</span><span class="o">&gt;</span> <span class="n">context</span> <span class="o">=</span> <span class="n">Context</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+    <span class="c1">// Enter the context for compiling and running the hello world script.</span>
+    <span class="n">Context</span><span class="o">::</span><span class="n">Scope</span> <span class="n">context_scope</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+    <span class="c1">// Create a string containing the JavaScript source code.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">source</span> <span class="o">=</span>
+        <span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="s">&quot;&#39;Hello&#39; + &#39;, World!&#39;&quot;</span><span class="p">,</span>
+                            <span class="n">NewStringType</span><span class="o">::</span><span class="n">kNormal</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
+    <span class="c1">// Compile the source code.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Script</span><span class="o">&gt;</span> <span class="n">script</span> <span class="o">=</span> <span class="n">Script</span><span class="o">::</span><span class="n">Compile</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">source</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
+    <span class="c1">// Run the script to get the result.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">script</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
+    <span class="c1">// Convert the result to an UTF8 string and print it.</span>
+    <span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span> <span class="n">utf8</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">utf8</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// Dispose the isolate and tear down V8.</span>
+  <span class="n">isolate</span><span class="o">-&gt;</span><span class="n">Dispose</span><span class="p">();</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">Dispose</span><span class="p">();</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">ShutdownPlatform</span><span class="p">();</span>
+  <span class="n">delete</span> <span class="n">platform</span><span class="p">;</span>
+  <span class="n">delete</span> <span class="n">create_params</span><span class="p">.</span><span class="n">array_buffer_allocator</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
 
 <h3>Copy snapshots</h3>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>cp out.gn/x64.release/*.bin .
@@ -401,190 +391,176 @@ int main(int argc, char* argv[]) {
 <h3>Run the hello world example</h3>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>./hello_world
 </code></pre></div>
-<p>You should see
-<code>bash
-Hello, World!
-</code>
-in your shell. Now that we have a hello world example up and running, we can start adding support for <code>console.log</code>, <code>console.error</code> and <code>quit</code>.</p>
+<p>You should see</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>Hello, World!
+</code></pre></div>
+<p>in your shell. Now that we have a hello world example up and running, we can start adding support for <code>console.log</code>, <code>console.error</code> and <code>quit</code>.</p>
 
 <h2>Add support for console and quit statements</h2>
 
-<p>Add the following to <code>run_script.cpp</code>[^4]:
-```clike</p>
+<p>Add the following to <code>run_script.cpp</code><sup>[<a href="#example">4</a>]</sup>:</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;include/libplatform/libplatform.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;include/v8.h&quot;</span><span class="cp"></span>
 
-<h1>include <stdio.h></h1>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">v8</span><span class="p">;</span>
 
-<h1>include <stdlib.h></h1>
+<span class="c1">// Define a quit function that exits.</span>
+<span class="kt">void</span> <span class="nf">quit</span><span class="p">(</span><span class="k">const</span> <span class="n">v8</span><span class="o">::</span><span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">v8</span><span class="o">::</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 
-<h1>include <string.h></h1>
+<span class="c1">// Store isolate in a global variable.</span>
+<span class="n">Isolate</span><span class="o">*</span> <span class="n">isolate_</span><span class="p">;</span>
+<span class="n">Isolate</span><span class="o">*</span> <span class="nf">GetIsolate</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">isolate_</span><span class="p">;</span> <span class="p">}</span>
 
-<h1>include <fstream></h1>
+<span class="c1">// Define a Console class.</span>
+<span class="n">class</span> <span class="n">Console</span> <span class="p">{</span> <span class="p">};</span>
 
-<h1>include <iostream></h1>
+<span class="c1">// Extracts a C string from a V8 Utf8Value.</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">ToCString</span><span class="p">(</span><span class="k">const</span> <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">*</span><span class="n">value</span> <span class="o">?</span> <span class="o">*</span><span class="nl">value</span> <span class="p">:</span> <span class="s">&quot;&lt;string conversion failed&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 
-<h1>include <sstream></h1>
+<span class="c1">// Define a log function that prints to stdout.</span>
+<span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="k">const</span> <span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">){</span>
+  <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span> <span class="n">str</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">cstr</span> <span class="o">=</span> <span class="n">ToCString</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cstr</span><span class="p">);</span>
+<span class="p">}</span>
 
-<h1>include &quot;include/libplatform/libplatform.h&quot;</h1>
+<span class="c1">// Define an error function that prints to stderr.</span>
+<span class="kt">void</span> <span class="nf">error</span><span class="p">(</span><span class="k">const</span> <span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">){</span>
+  <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span> <span class="n">str</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">cstr</span> <span class="o">=</span> <span class="n">ToCString</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cstr</span><span class="p">);</span>
+<span class="p">}</span>
 
-<h1>include &quot;include/v8.h&quot;</h1>
+<span class="n">Local</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">WrapConsoleObject</span><span class="p">(</span><span class="n">Console</span> <span class="o">*</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">EscapableHandleScope</span> <span class="n">handle_scope</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">());</span>
 
-<p>using namespace v8;</p>
+  <span class="n">Local</span><span class="o">&lt;</span><span class="n">ObjectTemplate</span><span class="o">&gt;</span> <span class="n">class_t</span><span class="p">;</span>
+  <span class="n">Local</span><span class="o">&lt;</span><span class="n">ObjectTemplate</span><span class="o">&gt;</span> <span class="n">raw_t</span> <span class="o">=</span> <span class="n">ObjectTemplate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">());</span>
+  <span class="n">raw_t</span><span class="o">-&gt;</span><span class="n">SetInternalFieldCount</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
-<p>// Define a quit function that exits.
-void quit(const v8::FunctionCallbackInfo<a href="v8::Value">v8::Value</a>&amp; args) {
-  std::exit(0);
-}</p>
+  <span class="c1">// Set log method.</span>
+  <span class="n">raw_t</span><span class="o">-&gt;</span><span class="n">Set</span><span class="p">(</span>
+      <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">(),</span> <span class="s">&quot;log&quot;</span><span class="p">,</span> <span class="n">v8</span><span class="o">::</span><span class="n">NewStringType</span><span class="o">::</span><span class="n">kNormal</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">(),</span>
+      <span class="n">v8</span><span class="o">::</span><span class="n">FunctionTemplate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">(),</span> <span class="n">log</span><span class="p">));</span>
 
-<p>// Store isolate in a global variable.
-Isolate* isolate<em>;
-Isolate* GetIsolate() { return isolate</em>; }</p>
+  <span class="c1">// Set error method.</span>
+  <span class="n">raw_t</span><span class="o">-&gt;</span><span class="n">Set</span><span class="p">(</span>
+      <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">(),</span> <span class="s">&quot;error&quot;</span><span class="p">,</span> <span class="n">v8</span><span class="o">::</span><span class="n">NewStringType</span><span class="o">::</span><span class="n">kNormal</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">(),</span>
+      <span class="n">v8</span><span class="o">::</span><span class="n">FunctionTemplate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">(),</span> <span class="n">error</span><span class="p">));</span>
+  <span class="n">class_t</span> <span class="o">=</span> <span class="n">Local</span><span class="o">&lt;</span><span class="n">ObjectTemplate</span><span class="o">&gt;::</span><span class="n">New</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">(),</span><span class="n">raw_t</span><span class="p">);</span>
 
-<p>// Define a Console class.
-class Console { };</p>
+  <span class="c1">// Create instance.</span>
+  <span class="n">Local</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">class_t</span><span class="o">-&gt;</span><span class="n">NewInstance</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetCurrentContext</span><span class="p">()).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
 
-<p>// Extracts a C string from a V8 Utf8Value.
-const char* ToCString(const v8::String::Utf8Value&amp; value) {
-  return *value ? *value : &quot;<string conversion failed>&quot;;
-}</p>
+  <span class="c1">// Create wrapper.</span>
+  <span class="n">Local</span><span class="o">&lt;</span><span class="n">External</span><span class="o">&gt;</span> <span class="n">ptr</span> <span class="o">=</span> <span class="n">External</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">(),</span><span class="n">c</span><span class="p">);</span>
+  <span class="n">result</span><span class="o">-&gt;</span><span class="n">SetInternalField</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ptr</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">handle_scope</span><span class="p">.</span><span class="n">Escape</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
 
-<p>// Define a log function that prints to stdout.
-void log(const FunctionCallbackInfo<Value>&amp; args){
-  v8::String::Utf8Value str(args[0]);
-  const char* cstr = ToCString(str);
-  printf(&quot;%s\n&quot;, cstr);
-}</p>
 
-<p>// Define an error function that prints to stderr.
-void error(const FunctionCallbackInfo<Value>&amp; args){
-  v8::String::Utf8Value str(args[0]);
-  const char* cstr = ToCString(str);
-  fprintf(stderr,&quot;%s\n&quot;, cstr);
-}</p>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="c1">// Initialize V8.</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">InitializeICUDefaultLocation</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">InitializeExternalStartupData</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+  <span class="n">Platform</span><span class="o">*</span> <span class="n">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="o">::</span><span class="n">CreateDefaultPlatform</span><span class="p">();</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">InitializePlatform</span><span class="p">(</span><span class="n">platform</span><span class="p">);</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">Initialize</span><span class="p">();</span>
 
-<p>Local<Object> WrapConsoleObject(Console *c) {
-  EscapableHandleScope handle_scope(GetIsolate());</p>
+  <span class="c1">// Get JavaScript script file from the first argument.</span>
+  <span class="kt">FILE</span><span class="o">*</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s">&quot;r&quot;</span><span class="p">);</span>
+  <span class="n">fseek</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SEEK_END</span><span class="p">);</span>
+  <span class="kt">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+  <span class="n">rewind</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+  <span class="kt">char</span><span class="o">*</span> <span class="n">fileScript</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+  <span class="n">fileScript</span><span class="p">[</span><span class="n">size</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;)</span> <span class="p">{</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fileScript</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">file</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
 
-<p>Local<ObjectTemplate> class<em>t;
-  Local<ObjectTemplate> raw</em>t = ObjectTemplate::New(GetIsolate());
-  raw_t-&gt;SetInternalFieldCount(1);</p>
+  <span class="c1">// Create a new Isolate and make it the current one.</span>
+  <span class="n">Isolate</span><span class="o">::</span><span class="n">CreateParams</span> <span class="n">create_params</span><span class="p">;</span>
+  <span class="n">create_params</span><span class="p">.</span><span class="n">array_buffer_allocator</span> <span class="o">=</span>
+    <span class="n">v8</span><span class="o">::</span><span class="n">ArrayBuffer</span><span class="o">::</span><span class="n">Allocator</span><span class="o">::</span><span class="n">NewDefaultAllocator</span><span class="p">();</span>
+  <span class="n">Isolate</span><span class="o">*</span> <span class="n">isolate</span> <span class="o">=</span> <span class="n">Isolate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">create_params</span><span class="p">);</span>
+  <span class="p">{</span>
+    <span class="n">Isolate</span><span class="o">::</span><span class="n">Scope</span> <span class="n">isolate_scope</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
+    <span class="n">isolate_</span> <span class="o">=</span> <span class="n">isolate</span><span class="p">;</span>
 
-<p>// Set log method.
-  raw_t-&gt;Set(
-      v8::String::NewFromUtf8(GetIsolate(), &quot;log&quot;, v8::NewStringType::kNormal).ToLocalChecked(),
-      v8::FunctionTemplate::New(GetIsolate(), log));</p>
+    <span class="c1">// Create a stack-allocated handle scope.</span>
+    <span class="n">HandleScope</span> <span class="nf">handle_scope</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
 
-<p>// Set error method.
-  raw<em>t-&gt;Set(
-      v8::String::NewFromUtf8(GetIsolate(), &quot;error&quot;, v8::NewStringType::kNormal).ToLocalChecked(),
-      v8::FunctionTemplate::New(GetIsolate(), error));
-  class</em>t = Local<ObjectTemplate>::New(GetIsolate(),raw_t);</p>
+    <span class="c1">// Create a template.</span>
+    <span class="n">v8</span><span class="o">::</span><span class="n">Local</span><span class="o">&lt;</span><span class="n">v8</span><span class="o">::</span><span class="n">ObjectTemplate</span><span class="o">&gt;</span> <span class="n">global</span> <span class="o">=</span> <span class="n">v8</span><span class="o">::</span><span class="n">ObjectTemplate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">isolate</span><span class="p">);</span>
 
-<p>// Create instance.
-  Local<Object> result = class_t-&gt;NewInstance(GetIsolate()-&gt;GetCurrentContext()).ToLocalChecked();</p>
+    <span class="c1">// Set a quit statement to global context.</span>
+    <span class="n">global</span><span class="o">-&gt;</span><span class="n">Set</span><span class="p">(</span>
+        <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="s">&quot;quit&quot;</span><span class="p">,</span> <span class="n">v8</span><span class="o">::</span><span class="n">NewStringType</span><span class="o">::</span><span class="n">kNormal</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">ToLocalChecked</span><span class="p">(),</span>
+        <span class="n">v8</span><span class="o">::</span><span class="n">FunctionTemplate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="n">quit</span><span class="p">));</span>
 
-<p>// Create wrapper.
-  Local<External> ptr = External::New(GetIsolate(),c);
-  result-&gt;SetInternalField(0,ptr);
-  return handle_scope.Escape(result);
-}</p>
+    <span class="c1">// Create a new context.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Context</span><span class="o">&gt;</span> <span class="n">context</span> <span class="o">=</span> <span class="n">Context</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">global</span><span class="p">);</span>
 
-<p>int main(int argc, char* argv[]) {
-  // Initialize V8.
-  V8::InitializeICUDefaultLocation(argv[0]);
-  V8::InitializeExternalStartupData(argv[0]);
-  Platform* platform = platform::CreateDefaultPlatform();
-  V8::InitializePlatform(platform);
-  V8::Initialize();</p>
+    <span class="c1">// Enter the context for compiling and running the hello world script.</span>
+    <span class="n">Context</span><span class="o">::</span><span class="n">Scope</span> <span class="n">context_scope</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
 
-<p>// Get JavaScript script file from the first argument.
-  FILE* file = fopen(argv[1],&quot;r&quot;);
-  fseek(file, 0, SEEK<em>END);
-  size</em>t size = ftell(file);
-  rewind(file);
-  char* fileScript = new char[size + 1];
-  fileScript[size] = &#39;\0&#39;;
-  for (size_t i = 0; i &lt; size;) {
-    i += fread(&amp;fileScript[i], 1, size - i, file);
-  }
-  fclose(file);</p>
+    <span class="c1">// Create a JavaScript console object.</span>
+    <span class="n">Console</span><span class="o">*</span> <span class="n">c</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Console</span><span class="p">();</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">WrapConsoleObject</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="c1">// Set a console statement to global context.</span>
+    <span class="n">context</span><span class="o">-&gt;</span><span class="n">Global</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Set</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="s">&quot;console&quot;</span><span class="p">,</span> <span class="n">NewStringType</span><span class="o">::</span><span class="n">kNormal</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">(),</span>
+        <span class="n">con</span><span class="p">);</span>
 
-<p>// Create a new Isolate and make it the current one.
-  Isolate::CreateParams create<em>params;
-  create</em>params.array<em>buffer</em>allocator =
-    v8::ArrayBuffer::Allocator::NewDefaultAllocator();
-  Isolate* isolate = Isolate::New(create<em>params);
-  {
-    Isolate::Scope isolate</em>scope(isolate);
-    isolate_ = isolate;</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>// Create a stack-allocated handle scope.
-HandleScope handle_scope(isolate);
+    <span class="c1">// Create a string containing the JavaScript source code.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">source</span> <span class="o">=</span>
+      <span class="n">String</span><span class="o">::</span><span class="n">NewFromUtf8</span><span class="p">(</span><span class="n">isolate</span><span class="p">,</span> <span class="n">fileScript</span><span class="p">,</span>
+          <span class="n">NewStringType</span><span class="o">::</span><span class="n">kNormal</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
 
-// Create a template.
-v8::Local&lt;v8::ObjectTemplate&gt; global = v8::ObjectTemplate::New(isolate);
+    <span class="c1">// Compile the source code.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Script</span><span class="o">&gt;</span> <span class="n">script</span> <span class="o">=</span> <span class="n">Script</span><span class="o">::</span><span class="n">Compile</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">source</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
 
-// Set a quit statement to global context.
-global-&gt;Set(
-    v8::String::NewFromUtf8(isolate, &quot;quit&quot;, v8::NewStringType::kNormal)
-    .ToLocalChecked(),
-    v8::FunctionTemplate::New(isolate, quit));
-
-// Create a new context.
-Local&lt;Context&gt; context = Context::New(isolate, NULL, global);
-
-// Enter the context for compiling and running the hello world script.
-Context::Scope context_scope(context);
-
-// Create a JavaScript console object.
-Console* c = new Console();
-Local&lt;Object&gt; con = WrapConsoleObject(c);
-// Set a console statement to global context.
-context-&gt;Global()-&gt;Set(String::NewFromUtf8(isolate, &quot;console&quot;, NewStringType::kNormal).ToLocalChecked(),
-    con);
-
-// Create a string containing the JavaScript source code.
-Local&lt;String&gt; source =
-  String::NewFromUtf8(isolate, fileScript,
-      NewStringType::kNormal).ToLocalChecked();
-
-// Compile the source code.
-Local&lt;Script&gt; script = Script::Compile(context, source).ToLocalChecked();
-
-// Run the script to get the result.
-Local&lt;Value&gt; result = script-&gt;Run(context).ToLocalChecked();
+    <span class="c1">// Run the script to get the result.</span>
+    <span class="n">Local</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">script</span><span class="o">-&gt;</span><span class="n">Run</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">ToLocalChecked</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="c1">// Dispose the isolate and tear down V8.</span>
+  <span class="n">isolate</span><span class="o">-&gt;</span><span class="n">Dispose</span><span class="p">();</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">Dispose</span><span class="p">();</span>
+  <span class="n">V8</span><span class="o">::</span><span class="n">ShutdownPlatform</span><span class="p">();</span>
+  <span class="n">delete</span> <span class="n">platform</span><span class="p">;</span>
+  <span class="n">delete</span> <span class="n">create_params</span><span class="p">.</span><span class="n">array_buffer_allocator</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>}
-  // Dispose the isolate and tear down V8.
-  isolate-&gt;Dispose();
-  V8::Dispose();
-  V8::ShutdownPlatform();
-  delete platform;
-  delete create<em>params.array</em>buffer_allocator;
-  return 0;
-}
-```</p>
+<p>After that, set up a JavaScript script at <code>test.js</code>:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;🎉&quot;</span><span class="p">);</span>
+<span class="nx">b</span><span class="o">=</span><span class="mi">4</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">quit</span><span class="p">();</span>
 
-<p>After that, set up a JavaScript script at <code>test.js</code>:
-```javascript
-console.log(&quot;🎉&quot;);
-b=4+4;
-console.error(b);
-quit();</p>
-
-<p>console.log(&quot;never reach this&quot;);
-```</p>
-
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;never reach this&quot;</span><span class="p">);</span>
+</code></pre></div>
 <p>Compile our new program with</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>clang++ -Iinclude out/native/*.a run_script.cpp -o run_script
 </code></pre></div>
 <p>And run it with</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>./run_script test.js
 </code></pre></div>
-<p>You should see the following output
-<code>bash
-🎉
-8
-</code></p>
-
+<p>You should see the following output</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>🎉
+<span class="m">8</span>
+</code></pre></div>
 <p>Phew! That&#39;s it - congratulate yourself for building a crude version of Node that only supports <code>console.log</code>, <code>console.error</code> and <code>quit</code> statements.</p>
 
 <p>Having a global function <code>quit</code> like this is a little weird, so implementing a more normal <code>process.exit</code> is left as an exercise for the reader.</p>
@@ -595,10 +571,15 @@ quit();</p>
 
 <hr>
 
-<p>[^1]: More info about V8 can be found at their <a href="https://github.com/v8/v8/wiki">wiki</a>.
-[^2]: <strong>:wq</strong> or try searching <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Stack Overflow</a>.
-[^3]: Taken from V8 repo <a href="https://chromium.googlesource.com/v8/v8/+/branch-heads/5.8/samples/hello-world.cc">here</a>.
-[^4]: This example is based on <a href="https://gist.github.com/tejom/d335a6ab1ac86b45f149e5c10e14b132">this gist</a>.</p>
+<ol>
+<li><a name="v8"></a>
+More info about V8 can be found at their <a href="https://github.com/v8/v8/wiki">wiki</a>.</li>
+<li><a name="wq"></a>
+<strong>:wq</strong> or try searching <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">Stack Overflow</a>.</li>
+<li><a name="hello-world"></a> Taken from V8 repo <a href="https://chromium.googlesource.com/v8/v8/+/branch-heads/5.8/samples/hello-world.cc">here</a>.</li>
+<li><a name="example"></a>
+This example is based on <a href="https://gist.github.com/tejom/d335a6ab1ac86b45f149e5c10e14b132">this gist</a>.</li>
+</ol>
 
 
             <hr />
