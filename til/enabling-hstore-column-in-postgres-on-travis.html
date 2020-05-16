@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1589651812411836000">
-  <link rel="stylesheet" href="/public/css/style.css?1589651812411836000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1589651966360949000">
+  <link rel="stylesheet" href="/public/css/style.css?1589651966360949000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -203,12 +203,11 @@
 
             <p>By default the <a href="https://www.postgresql.org/docs/9.0/static/hstore.html">hstore</a> column type is not supported on <a href="https://travis-ci.org">Travis</a>, so you have to enable that extension first.</p>
 
-<p>You can do so by adding the following line to your <code>.travis.yml</code>:
-<code>ruby
-before_script:
-  - psql template1 -c &#39;create extension hstore;&#39;
-</code>
-<br/></p>
+<p>You can do so by adding the following line to your <code>.travis.yml</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="ss">before_script</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">psql</span> <span class="n">template1</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;create extension hstore;&#39;</span>
+</code></pre></div>
+<p><br/></p>
 
 <p>Make sure that&#39;s the first line in the <code>before_script</code> block. If you create a database before that line, the database won&#39;t have that extension enabled.</p>
 
