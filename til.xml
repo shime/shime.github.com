@@ -11,7 +11,7 @@
       <title>Summoning the editor from the console</title>
       
         <description>
-          &lt;p&gt;I use Pry as my Ruby console and it supports a command that opens up an editor.
+          &lt;p&gt;I use Pry as my Ruby console and it supports a command that opens up the editor.
 This is helpful, since it gives me the full power of my editor when interacting with the console,
 so I don&amp;#39;t have to worry about typos in the second or third line of the script I&amp;#39;m writing.&lt;/p&gt;
 
