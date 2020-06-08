@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>Summoning the editor from the console</title>
+      
+        <description>
+          &lt;p&gt;I use Pry as my Ruby console and it supports a command that opens up an editor.
+This is helpful, since it gives me the full power of my editor when interacting with the console,
+so I don&amp;#39;t have to worry about typos in the second or third line of the script I&amp;#39;m writing.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/summoning-the-editor-from-the-console">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/summoning-the-editor-from-the-console</link>
+      <guid isPermaLink="true">http://shime.sh/til/summoning-the-editor-from-the-console</guid>
+    </item>
+    
+    <item>
       <title>Writing custom Vim template</title>
       
         <description>
@@ -150,21 +166,6 @@ get categories of this collection, even though it uses &lt;code&gt;categories&lt
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/listing-categories-of-jekyll-collection</link>
       <guid isPermaLink="true">http://shime.sh/til/listing-categories-of-jekyll-collection</guid>
-    </item>
-    
-    <item>
-      <title>Compiling latest Ruby from scratch with chruby</title>
-      
-        <description>
-          &lt;p&gt;Since &lt;a href=&quot;https://github.com/postmodern/chruby&quot;&gt;chruby&lt;/a&gt; officially does not support
-compiling latest Ruby (HEAD), here are the steps necessary to do it.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Sun, 01 Mar 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</link>
-      <guid isPermaLink="true">http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</guid>
     </item>
     
   </channel>
