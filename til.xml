@@ -8,6 +8,20 @@
     
     
     <item>
+      <title>Sorting git branches by the last commit date</title>
+      
+        <description>
+          &lt;p&gt;I love hopping between branches with&lt;/p&gt;
+
+          <a href="http://shime.sh/til/sorting-git-branches-by-the-last-commit-date">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</link>
+      <guid isPermaLink="true">http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</guid>
+    </item>
+    
+    <item>
       <title>Summoning the editor from the console</title>
       
         <description>
@@ -149,23 +163,6 @@ I regularly screw up the database with some silly mistake in migration, which re
       <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/comparing-branches-on-github</link>
       <guid isPermaLink="true">http://shime.sh/til/comparing-branches-on-github</guid>
-    </item>
-    
-    <item>
-      <title>Listing categories of Jekyll collection</title>
-      
-        <description>
-          &lt;p&gt;I&amp;#39;ve just reorganized the &lt;a href=&quot;/til&quot;&gt;TIL&lt;/a&gt; page to alphabetically
-list all the categories I&amp;#39;m writing about. TIL is a custom collection
-of this Jekyll website&lt;sup class=&quot;ml-1&quot;&gt;[&lt;a href=&quot;#til&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;, so I couldn&amp;#39;t simply use &lt;code&gt;site.categories&lt;/code&gt; to
-get categories of this collection, even though it uses &lt;code&gt;categories&lt;/code&gt; in its front matter:&lt;/p&gt;
-
-          <a href="http://shime.sh/til/listing-categories-of-jekyll-collection">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Mon, 20 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/listing-categories-of-jekyll-collection</link>
-      <guid isPermaLink="true">http://shime.sh/til/listing-categories-of-jekyll-collection</guid>
     </item>
     
   </channel>

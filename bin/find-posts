@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "date"
+
+options = { folders: ["_posts"] }
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: find-posts [options]"
+  opts.separator ""
+  opts.separator "Finds posts and filters them by provided dates."
+  opts.separator ""
+  opts.separator "Options:"
+
+  opts.on("--from-date DATE", "Begin date.") do |date|
+    options[:from] = Date.parse(date)
+  end
+
+  opts.on("--to-date DATE", "End date.") do |date|
+    options[:to] = Date.parse(date)
+  end
+
+  opts.on("--folders dir1,dir2,dir3", Array, "Folders to search in. Defaults to '_posts'.") do |folders|
+    options[:folders] = folders
+  end
+end.parse!
+
+files = Dir[*options[:folders].map {|f| "#{f}/*.md"}].sort.map do |file|
+  File.basename(file)
+end
+files = files.select do |file|
+  Date.parse(file) >= options[:from]
+rescue
+  true
+end if options[:from]
+files = files.select do |file|
+  Date.parse(file) <= options[:to]
+rescue
+  true
+end if options[:to]
+
+puts files

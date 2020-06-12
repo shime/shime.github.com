@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Stop clearing screen when suspending from Vim" />
+<meta property="og:title" content="Sorting git branches by the last commit date" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I&#39;ve been watching a lot of Gary Bernhardt&#39;s videos lately. I like how he constantly switches from Vim to terminal simply by using &lt;C-z&gt; to suspend Vim and $ fg to bring it back to the foreground." />
-<meta property="og:description" content="I&#39;ve been watching a lot of Gary Bernhardt&#39;s videos lately. I like how he constantly switches from Vim to terminal simply by using &lt;C-z&gt; to suspend Vim and $ fg to bring it back to the foreground." />
-<link rel="canonical" href="http://shime.sh/til/stop-clearing-screen-when-suspending-from-vim" />
-<meta property="og:url" content="http://shime.sh/til/stop-clearing-screen-when-suspending-from-vim" />
+<meta name="description" content="I love hopping between branches with" />
+<meta property="og:description" content="I love hopping between branches with" />
+<link rel="canonical" href="http://shime.sh/til/sorting-git-branches-by-the-last-commit-date" />
+<meta property="og:url" content="http://shime.sh/til/sorting-git-branches-by-the-last-commit-date" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2013-09-10T00:00:00+02:00" />
+<meta property="article:published_time" content="2020-06-12T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Stop clearing screen when suspending from Vim" />
+<meta property="twitter:title" content="Sorting git branches by the last commit date" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Stop clearing screen when suspending from Vim","dateModified":"2013-09-10T00:00:00+02:00","url":"http://shime.sh/til/stop-clearing-screen-when-suspending-from-vim","datePublished":"2013-09-10T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/stop-clearing-screen-when-suspending-from-vim"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve been watching a lot of Gary Bernhardt&#39;s videos lately. I like how he constantly switches from Vim to terminal simply by using &lt;C-z&gt; to suspend Vim and $ fg to bring it back to the foreground.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","@context":"https://schema.org"}</script>
+{"headline":"Sorting git branches by the last commit date","dateModified":"2020-06-12T00:00:00+02:00","url":"http://shime.sh/til/sorting-git-branches-by-the-last-commit-date","datePublished":"2020-06-12T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/sorting-git-branches-by-the-last-commit-date"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I love hopping between branches with","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Stop clearing screen when suspending from Vim &middot; Hrvoje Šimić </title>
+    <title> Sorting git branches by the last commit date &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Stop clearing screen when suspending from Vim &middot; Hrvoje Šimić">
+  <meta name="title" content="Sorting git branches by the last commit date &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 </head>
@@ -185,34 +185,38 @@
             </div>
             
             <div class="mb-8">
-              <h1>Stop clearing screen when suspending from Vim</h1>
+              <h1>Sorting git branches by the last commit date</h1>
               
               <div class="text-grey">
-                September 10, 2013
+                June 12, 2020
               </div>
               
 
               <div class="flex my-2">
                 
                   <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    vim
+                    git
                   </span>
                 
               </div>
             </div>
 
-            <p>I&#39;ve been watching a lot of Gary Bernhardt&#39;s videos lately. I like how he constantly switches from Vim to terminal simply by using
-<code>&lt;C-z&gt;</code> to suspend Vim and <code>$ fg</code> to bring it back to the foreground.</p>
-
-<p>The behavior of my local Vim was quite different, though. My screen was cleared every time I exit Vim. It was annoying. It was painful. I&#39;ve finally stumbled upon solution:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="c">&quot; place this in your ~/.vimrc</span>
-
-<span class="k">set</span> <span class="nb">t_ti</span><span class="p">=</span> <span class="nb">t_te</span><span class="p">=</span>
+            <p>I love hopping between branches with</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git checkout -
 </code></pre></div>
-<p>Read more about this unsearchable phenomenon here: <a href="http://www.shallowsky.com/linux/noaltscreen.html">http://www.shallowsky.com/linux/noaltscreen.html</a></p>
+<p>but sometimes I work with more than two branches, and
+I forget the exact naming of the branch.</p>
 
-<p>Enjoy!</p>
+<p>To find out the right name, I enter <code>git branch</code> and it outputs branches alphabetically
+sorted by default. This is never what I&#39;m looking for, since I&#39;m only interested
+in the branch that I was recently on.</p>
 
+<p>Well, there&#39;s an option to sort them by the date of last commit on them:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git branch --sort<span class="o">=</span>-committerdate
+</code></pre></div>
+<p>It&#39;s a good idea to use this as a default sort order:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>git config --global branch.sort -committerdate
+</code></pre></div>
 
             <hr />
 
