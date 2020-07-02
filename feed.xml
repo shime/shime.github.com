@@ -8,6 +8,18 @@
 
     
     <item>
+      <title>The beauty of journaling</title>
+      
+      <description>&lt;p&gt;Journaling is one of my favorite habits. I absolutely love doing it. If you&amp;#39;re not sure about the value it provides
+and are thinking about quitting it, this article is for you.&lt;/p&gt;
+</description>
+      
+      <pubDate>Thu, 02 Jul 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/the-beauty-of-journaling</link>
+      <guid isPermaLink="true">http://shime.sh/the-beauty-of-journaling</guid>
+    </item>
+    
+    <item>
       <title>Why I love Jekyll and Github Pages</title>
       
       <description>&lt;p&gt;This website is powered by Jekyll and hosted on Github Pages. I’ve been using this setup since 2011 and I’m really happy with it, and there are multiple reasons for that.&lt;/p&gt;
@@ -112,22 +124,6 @@ a handy gem for detecting typos.&lt;/p&gt;
       <pubDate>Sun, 23 Jun 2019 00:00:00 +0200</pubDate>
       <link>http://shime.sh/deep-dive-into-minitest</link>
       <guid isPermaLink="true">http://shime.sh/deep-dive-into-minitest</guid>
-    </item>
-    
-    <item>
-      <title>Replacing Google Fonts with system fonts</title>
-      
-      <description>&lt;p&gt;Redesigning this website was a fun little project I did over the past
-weekend.
-The most exciting part was removing the need for Google Fonts and
-replacing them with system fonts.
-Google Fonts was the last Google&amp;#39;s tentacle on this website,
-so it&amp;#39;s now 100% Google free!&lt;/p&gt;
-</description>
-      
-      <pubDate>Mon, 08 Apr 2019 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/replacing-google-fonts-with-system-fonts</link>
-      <guid isPermaLink="true">http://shime.sh/replacing-google-fonts-with-system-fonts</guid>
     </item>
     
   </channel>
