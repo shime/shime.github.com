@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>On the shoulders of giants</title>
+      
+      <description>&lt;p&gt;Robert Heinlein, claims that &amp;quot;specialization is for insects&amp;quot; in his science fiction book &amp;quot;Time Enough for Love&amp;quot;:&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 12 Jul 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/on-the-shoulders-of-giants</link>
+      <guid isPermaLink="true">http://shime.sh/on-the-shoulders-of-giants</guid>
+    </item>
+    
+    <item>
       <title>The beauty of journaling</title>
       
       <description>&lt;p&gt;Journaling is one of my favorite habits, and I love it. I do it almost every day. If you&amp;#39;re not sure about the value it provides and are thinking about quitting it, this article is for you.&lt;/p&gt;
@@ -112,17 +123,6 @@ a handy gem for detecting typos.&lt;/p&gt;
       <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
       <link>http://shime.sh/deep-dive-into-did-you-mean</link>
       <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
-    </item>
-    
-    <item>
-      <title>Deep dive into Minitest</title>
-      
-      <description>&lt;p&gt;Have you ever wondered what happens when you run a Minitest test suite? How does it work?&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 23 Jun 2019 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/deep-dive-into-minitest</link>
-      <guid isPermaLink="true">http://shime.sh/deep-dive-into-minitest</guid>
     </item>
     
   </channel>

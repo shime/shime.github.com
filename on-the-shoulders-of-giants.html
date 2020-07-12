@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Adding a hidden collection in Jekyll" />
+<meta property="og:title" content="On the shoulders of giants" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section." />
-<meta property="og:description" content="TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section." />
-<link rel="canonical" href="http://shime.sh/til/adding-new-hidden-collection-in-jekyll" />
-<meta property="og:url" content="http://shime.sh/til/adding-new-hidden-collection-in-jekyll" />
+<meta name="description" content="Robert Heinlein, claims that &quot;specialization is for insects&quot; in his science fiction book &quot;Time Enough for Love&quot;:" />
+<meta property="og:description" content="Robert Heinlein, claims that &quot;specialization is for insects&quot; in his science fiction book &quot;Time Enough for Love&quot;:" />
+<link rel="canonical" href="http://shime.sh/on-the-shoulders-of-giants" />
+<meta property="og:url" content="http://shime.sh/on-the-shoulders-of-giants" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-18T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-07-12T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Adding a hidden collection in Jekyll" />
+<meta property="twitter:title" content="On the shoulders of giants" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Adding a hidden collection in Jekyll","dateModified":"2018-12-18T00:00:00+01:00","url":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll","datePublished":"2018-12-18T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","@context":"https://schema.org"}</script>
+{"headline":"On the shoulders of giants","dateModified":"2020-07-12T00:00:00+02:00","url":"http://shime.sh/on-the-shoulders-of-giants","datePublished":"2020-07-12T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/on-the-shoulders-of-giants"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Robert Heinlein, claims that &quot;specialization is for insects&quot; in his science fiction book &quot;Time Enough for Love&quot;:","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Adding a hidden collection in Jekyll &middot; Hrvoje Šimić </title>
+    <title> On the shoulders of giants &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Adding a hidden collection in Jekyll &middot; Hrvoje Šimić">
+  <meta name="title" content="On the shoulders of giants &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -196,62 +196,90 @@
 
             
             <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
             </div>
             
             <div class="mb-8">
-              <h1>Adding a hidden collection in Jekyll</h1>
+              <h1>On the shoulders of giants</h1>
               
               <div class="text-grey">
-                December 18, 2018
+                July 12, 2020
               </div>
               
 
               <div class="flex my-2">
                 
-                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    jekyll
-                  </span>
-                
               </div>
             </div>
 
-            <p><a href="/til">TIL</a> is the hidden section of this site, and since
-I&#39;m using Jekyll as an engine, I needed to
-learn how to add a new section.</p>
+            <p>Robert Heinlein, claims that &quot;specialization is for insects&quot; in his science fiction book &quot;Time Enough for Love&quot;:</p>
 
-<p>To add new collection to Jekyll, you have to first
-define it in <code>_config.yml</code>.</p>
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span></span><span class="l l-Scalar l-Scalar-Plain">collections</span><span class="p p-Indicator">:</span> 
-  <span class="l l-Scalar l-Scalar-Plain">til</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="l l-Scalar l-Scalar-Plain">permalink</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/:collection/:title</span>
-</code></pre></div>
-<p>After that, create a folder for that collection
-beginning with the underscore:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>mkdir _til
-</code></pre></div>
-<p>Place all the posts related to that collection in that
-folder.</p>
+<blockquote>
+<p>A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects.</p>
 
-<p>You can now iterate that collection in some other page
-with</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span></span>{% for post in site.til %}
-  <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-title&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ post.url }}&quot;</span><span class="p">&gt;</span>
-        {{ post.title }}
-      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<p> Robert Heinlein, Time Enough for Love </p>
+</blockquote>
 
-    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-date&quot;</span><span class="p">&gt;</span>
-      {{ post.date }} in {{ post.categories | join &#39;, &#39; }}
-    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-{% endfor %}
-</code></pre></div>
-<p>A good idea would be to place this logic in <code>til/index.html</code>, since
-then that will be rendered when someone visits <a href="/til">/til</a>.</p>
+<p>But, this overlooks the benefits of specialization.</p>
+
+<p>How would the world of today look like if our ancestors didn&#39;t specialize? What would&#39;ve happened if everybody did everything?</p>
+
+<p>Would we even enjoy the most beautiful effects of our technological progress, like getting depressed due to constant comparison with our peers&#39; overpolished photos from their current vacation?</p>
+
+<h2>Inherited progress</h2>
+
+<p>When we are born, we inherit the entire human race&#39;s progress from the past. This progress produced infrastructure and tools and utilities. And we take a lot of this for granted. </p>
+
+<p>As Matt Ridley writes in &quot;Rational Optimist,&quot; hand ax and computer mouse are both tools, but they are vastly different. A single person made the ax, and hundreds or even millions of people made the mouse. Collective intelligence, using division of labor and specialization, created a computer mouse.</p>
+
+<h2>The advantages of specialization</h2>
+
+<p>Specialization enabled the division of labor. This division enabled the production of complex objects like this computer mouse and other complex products that we use to improve our lives&#39; quality. </p>
+
+<p>Since I&#39;m a software developer, the essential product I own is the Macbook Air. I use it to put food on the table. I know how it works and its components, but it would be impossible for me to build it from scratch. Where do I even start?</p>
+
+<p>The Macbook Air is the result of constant innovation over a long period.</p>
+
+<p>Specialization encouraged this innovation. It motivated people to spend time on tools that create other tools. This innovation increased the rate of progress. Tools that make tools make making tools more easy.</p>
+
+<p>Specialization also increased productivity. Many workers doing one task are more productive than a single worker doing many tasks. Specialized workers produce much more. They do it quickly and with higher quality. The companies using specialized workers are more productive than companies who have workers that do everything (do these exist?).</p>
+
+<p>Adam Smith said that the total output increases when one worker specializes in one activity and trades with other specialized workers. Everyone is better off with that exchange, since the production increases. </p>
+
+<p>Division of labor makes sense since those who specialize in a task become more proficient in it. This depth of specialization makes building very complicated products possible, that would be unimaginable if a single person made everything.</p>
+
+<h2>Idea sex</h2>
+
+<blockquote>
+<p>To create is to recombine.</p>
+
+<p>François Jacob</p>
+</blockquote>
+
+<p>The division of labor is not an invention of Adam Smith. It started much more early, right after the Agricultural revolution.
+People started specializing, and this benefited everyone — it encouraged trade.</p>
+
+<p>People initially bartered their goods and services, and money later replaced it. People needed a convenient tool for exchanging products of specializing, so money is a side effect of trading.</p>
+
+<p>Trading encouraged idea sex, which increased the rate of progress. Sex plays a crucial role in biological evolution and speeds it up. What sex is to biological evolution, the exchange is to cultural development. Exchanging ideas and making them have sex propelled the culture forward and increased growth.</p>
+
+<p>The idea sex didn&#39;t stop. It&#39;s very present in the modern era. Modern-day start-ups are being pitched to their potential investors as &quot;Uber for X&quot;, or &quot;Airbnb for Y&quot;.</p>
+
+<p>Every new thing is a remix of existing ideas, from Star Wars movies to songs from Led Zeppelin <sup>[<a href="#remix">1</a>]</sup>. PC was the remix of many things that preceded it, like the Memex and the typewriter.</p>
+
+<blockquote>
+<p>If you wish to make an apple pie from scratch, you must first invent the universe.</p>
+
+<p>Carl Sagan</p>
+</blockquote>
+
+<p>Nothing is created from scratch, and everything is a remix. You and I included.</p>
+
+<hr>
+
+<ol>
+<li><a name="remix"></a> These examples come from a beautiful free documentary &quot;<a href="https://www.youtube.com/watch?v=nJPERZDfyWc">Everything is a Remix</a>&quot;. I highly recommend watching it to dive deeper into the subject.</li>
+</ol>
 
 
             <hr />
