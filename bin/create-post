@@ -34,7 +34,6 @@ cat <<EOF > $fullpath
 ---
 layout: post
 title: `echo "${original_title^}"`
-categories: random
 ---
 EOF
 vim $fullpath
