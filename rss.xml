@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles • Hrvoje Šimić</title>
+    <description>A collection of long form articles by Hrvoje Šimić</description>		
+    <link>http://shime.sh</link>
+    <atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
+
+    
+    <item>
+      <title>On the shoulders of giants</title>
+      
+      <description>&lt;p&gt;Robert Heinlein, claims that &amp;quot;specialization is for insects&amp;quot; in his science fiction book &amp;quot;Time Enough for Love&amp;quot;:&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 12 Jul 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/on-the-shoulders-of-giants</link>
+      <guid isPermaLink="true">http://shime.sh/on-the-shoulders-of-giants</guid>
+    </item>
+    
+    <item>
+      <title>The beauty of journaling</title>
+      
+      <description>&lt;p&gt;Journaling is one of my favorite habits, and I love it. I do it almost every day. If you&amp;#39;re not sure about the value it provides and are thinking about quitting it, this article is for you.&lt;/p&gt;
+</description>
+      
+      <pubDate>Thu, 02 Jul 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/the-beauty-of-journaling</link>
+      <guid isPermaLink="true">http://shime.sh/the-beauty-of-journaling</guid>
+    </item>
+    
+    <item>
+      <title>Why I love Jekyll and Github Pages</title>
+      
+      <description>&lt;p&gt;This website is powered by Jekyll and hosted on Github Pages. I’ve been using this setup since 2011 and I’m really happy with it, and there are multiple reasons for that.&lt;/p&gt;
+</description>
+      
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/why-i-love-jekyll-and-github-pages</link>
+      <guid isPermaLink="true">http://shime.sh/why-i-love-jekyll-and-github-pages</guid>
+    </item>
+    
+    <item>
+      <title>The power of writing</title>
+      
+      <description>&lt;p&gt;The 1% rule says that within an Internet community, such as a wiki, 90% of participants only consume content, 9% edit or modify content and only 1% of participants create content.&lt;/p&gt;
+</description>
+      
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/the-power-of-writing</link>
+      <guid isPermaLink="true">http://shime.sh/the-power-of-writing</guid>
+    </item>
+    
+    <item>
+      <title>Do whatever you can't stop thinking about</title>
+      
+      <description>&lt;p&gt;Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities.&lt;/p&gt;
+</description>
+      
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/do-whatever-you-can't-stop-thinking-about</link>
+      <guid isPermaLink="true">http://shime.sh/do-whatever-you-can't-stop-thinking-about</guid>
+    </item>
+    
+    <item>
+      <title>How I apply Zettelkasten to Roam</title>
+      
+      <description>&lt;p&gt;In the &lt;a href=&quot;/why-i-love-roam&quot;&gt;previous article&lt;/a&gt;, I&amp;#39;ve claimed that the biggest danger of Roam is not being systematic with your note taking, which can lead to having notes that are not valuable.&lt;/p&gt;
+</description>
+      
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/how-i-apply-zettelkasten-to-roam</link>
+      <guid isPermaLink="true">http://shime.sh/how-i-apply-zettelkasten-to-roam</guid>
+    </item>
+    
+    <item>
+      <title>Why I love Roam</title>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Computers are like a bicycle for the mind.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/why-i-love-roam</link>
+      <guid isPermaLink="true">http://shime.sh/why-i-love-roam</guid>
+    </item>
+    
+    <item>
+      <title>Achieving balance between reading and writing</title>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Reading feeds the mind and replenishes it when it is worn from studying — even though it is not without work itself. We should not restrict ourselves to writing or to reading: endless writing saps our strength and then exhausts it. Too much reading can puff up or dilute our ability. Most commendable is to take them in their turn, to mix one with the other, so that the seeds of one’s reading may be grown anew with the pen.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/achieving-balance-between-reading-and-writing</link>
+      <guid isPermaLink="true">http://shime.sh/achieving-balance-between-reading-and-writing</guid>
+    </item>
+    
+    <item>
+      <title>Fighting content overload</title>
+      
+      <description>&lt;blockquote&gt;
+&lt;p&gt;The abundance of books is a distraction.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/fighting-content-overload</link>
+      <guid isPermaLink="true">http://shime.sh/fighting-content-overload</guid>
+    </item>
+    
+    <item>
+      <title>Deep dive into Did You Mean</title>
+      
+      <description>&lt;p&gt;Since version 2.3.0, Ruby comes bundled
+with &lt;a href=&quot;https://github.com/ruby/did_you_mean&quot;&gt;did_you_mean&lt;/a&gt;,
+a handy gem for detecting typos.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/deep-dive-into-did-you-mean</link>
+      <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
+    </item>
+    
+  </channel>
+</rss>
