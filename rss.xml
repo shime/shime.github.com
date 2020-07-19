@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Lessons from my third failed startup</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve recently quit the US company that I&amp;#39;ve co-founded.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 19 Jul 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/third-failed-startup</link>
+      <guid isPermaLink="true">http://shime.sh/third-failed-startup</guid>
+    </item>
+    
+    <item>
       <title>On the shoulders of giants</title>
       
       <description>&lt;p&gt;Robert Heinlein, claims that &amp;quot;specialization is for insects&amp;quot; in his science fiction book &amp;quot;Time Enough for Love&amp;quot;:&lt;/p&gt;
@@ -110,19 +121,6 @@
       <pubDate>Sun, 05 Jan 2020 00:00:00 +0100</pubDate>
       <link>http://shime.sh/fighting-content-overload</link>
       <guid isPermaLink="true">http://shime.sh/fighting-content-overload</guid>
-    </item>
-    
-    <item>
-      <title>Deep dive into Did You Mean</title>
-      
-      <description>&lt;p&gt;Since version 2.3.0, Ruby comes bundled
-with &lt;a href=&quot;https://github.com/ruby/did_you_mean&quot;&gt;did_you_mean&lt;/a&gt;,
-a handy gem for detecting typos.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/deep-dive-into-did-you-mean</link>
-      <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
     </item>
     
   </channel>

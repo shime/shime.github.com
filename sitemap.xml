@@ -271,6 +271,13 @@
 
   
   <url>
+    <loc>http://shime.sh/third-failed-startup</loc>
+    <lastmod>2020-07-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shime.sh/on-the-shoulders-of-giants</loc>
     <lastmod>2020-07-19</lastmod>
     <changefreq>daily</changefreq>
