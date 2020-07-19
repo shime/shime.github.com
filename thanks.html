@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
   <head>
   <link href="//gmpg.org/xfn/11" rel="profile">
@@ -41,32 +41,28 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="Updating indirect dependencies with Yarn" />
+<meta property="og:title" content="Thank you" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Since JavaScript ecosystem consists of many small packages, your JavaScript project likely depends on many of them. Especially if you&#39;re using a tool like Webpack." />
-<meta property="og:description" content="Since JavaScript ecosystem consists of many small packages, your JavaScript project likely depends on many of them. Especially if you&#39;re using a tool like Webpack." />
-<link rel="canonical" href="http://shime.sh/til/updating-indirect-dependencies-with-yarn" />
-<meta property="og:url" content="http://shime.sh/til/updating-indirect-dependencies-with-yarn" />
+<link rel="canonical" href="http://shime.sh/thanks" />
+<meta property="og:url" content="http://shime.sh/thanks" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-22T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Updating indirect dependencies with Yarn" />
+<meta property="twitter:title" content="Thank you" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"headline":"Updating indirect dependencies with Yarn","dateModified":"2020-04-22T00:00:00+02:00","url":"http://shime.sh/til/updating-indirect-dependencies-with-yarn","datePublished":"2020-04-22T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/updating-indirect-dependencies-with-yarn"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Since JavaScript ecosystem consists of many small packages, your JavaScript project likely depends on many of them. Especially if you&#39;re using a tool like Webpack.","@type":"BlogPosting","image":"http://shime.sh/public/social.jpg","@context":"https://schema.org"}</script>
+{"headline":"Thank you","url":"http://shime.sh/thanks","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"WebPage","image":"http://shime.sh/public/social.jpg","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Updating indirect dependencies with Yarn &middot; Hrvoje Šimić </title>
+    <title> Thank you &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Updating indirect dependencies with Yarn &middot; Hrvoje Šimić">
+  <meta name="title" content="Thank you &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -75,8 +71,9 @@
 
 
   <body class="font-sans">
-    <div class="lg:pt-16 lg:pb-32 p-6 relative">
-      
+    <div class="w-full flex content-center justify-center">
+      <div class="lg:pt-16 lg:pb-32 p-6 relative">
+        
 
 
 
@@ -183,106 +180,28 @@
 </div>
 
 
-      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
-        <div class="flex-col">
-          <div class="max-w-full">
-            
+        <div class="max-w-sm text-lg mt-16 text-grey-darker font-light leading-normal">
+          <p class="mt-16">
+  Thank you for subscribing. This means a lot to me and encourages me to keep writing.
+</p>
 
-          </div>
+<p class="mt-6">
+  If you're curious about what kind of articles you can expect, check out <a href="/the-power-of-writing">The power of writing</a>,
+  <a href="/do-whatever-you-can't-stop-thinking-about">Do whatever you can't stop thinking about</a>, or
+  <a href="/fighting-content-overload">Fighting content overload</a>.
+</p>
 
-          <div class="post max-w-full md:max-w-md">
-            
-            
+<p class="mt-6">
+  See you soon,
+</p>
 
-            <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
-            </div>
+<p>Shime</p>
 
-            <div class="mb-8">
-              <h1>Updating indirect dependencies with Yarn</h1>
-              
-              <div class="text-grey">
-                April 22, 2020
-              </div>
-              
-
-              <div class="flex my-2">
-                
-                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    javascript
-                  </span>
-                
-              </div>
-            </div>
-
-            <p>Since JavaScript ecosystem consists of many small
-packages, your JavaScript project likely depends on
-many of them. Especially if you&#39;re using a tool like
-Webpack.</p>
-
-<p>Well, these dependencies have a security issue every once
-in a while, which makes your project vulnerable to that
-security issue.</p>
-
-<p>Recently, Minimist had a security issue, so I had to
-update it to version 1.2.3 or later. My project
-does not depend directly on Minimist.</p>
-
-<p>Unfortunately, this command didn&#39;t help:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>yarn upgrade minimist
-</code></pre></div>
-<p>Nothing happened since this command only
-updates direct dependencies.</p>
-
-<p>There are two ways to solve this problem.</p>
-
-<h2>1. Using resolutions</h2>
-
-<p>Yarn supports the <code>&quot;resolutions&quot;</code> field
-in <code>package.json</code> for specifying custom package
-versions or ranges <sup>[<a href="#resolutions">1</a>]</sup>.</p>
-
-<p>I had to add this to the <code>package.json</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="s2">&quot;resoultions&quot;</span><span class="o">:</span> <span class="p">{</span>
-  <span class="s2">&quot;minimist&quot;</span><span class="o">:</span> <span class="s2">&quot;^1.2.3&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>After specifying this, I had to remove the <code>yarn.lock</code> file and
-run:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>yarn install
-</code></pre></div>
-<h2>2. Deleting dependents from the lock file manually</h2>
-
-<p>This is another option, which doesn&#39;t require deleting entire
-lock file.</p>
-
-<p>Go through the lock file and delete anything that depends on
-the problematic package (Minimist in my case). Delete entire blocks
-of text that mention your package. After you have done that, run:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>yarn install
-</code></pre></div>
-<hr>
-
-<p>Both of these solutions will only work if the patch version of the problematic
-package is in the allowed range of it&#39;s dependants. Otherwise you will have 
-to update the packages that depend on it too.</p>
-
-<hr>
-
-<ol>
-<li><a name="resolutions"></a> For more info, refer to <a href="https://classic.yarnpkg.com/en/docs/selective-version-resolutions/">Yarn documentation</a>.</li>
-</ol>
-
-
-
-            
-          </div>
         </div>
       </div>
     </div>
-  </body>
 
-  <script>
+    <script>
   var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
   var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
   var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
@@ -329,4 +248,5 @@ to update the packages that depend on it too.</p>
   anchors.add()
 </script>
 
+  </body>
 </html>
