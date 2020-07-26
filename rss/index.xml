@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Writing Regularly</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve stopped writing regularly. I&amp;#39;ve published a couple of articles about personal knowledge management and stopped. I&amp;#39;ve broken the habit. I&amp;#39;m trying to get back to it now, but at the time I felt that there is nothing else to say about the topic.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 26 Jul 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/writing-regularly</link>
+      <guid isPermaLink="true">http://shime.sh/writing-regularly</guid>
+    </item>
+    
+    <item>
       <title>Lessons from my third failed startup</title>
       
       <description>&lt;p&gt;I&amp;#39;ve recently quit the US company that I&amp;#39;ve co-founded.&lt;/p&gt;
@@ -108,19 +119,6 @@
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0100</pubDate>
       <link>http://shime.sh/achieving-balance-between-reading-and-writing</link>
       <guid isPermaLink="true">http://shime.sh/achieving-balance-between-reading-and-writing</guid>
-    </item>
-    
-    <item>
-      <title>Fighting content overload</title>
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;The abundance of books is a distraction.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      
-      <pubDate>Sun, 05 Jan 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/fighting-content-overload</link>
-      <guid isPermaLink="true">http://shime.sh/fighting-content-overload</guid>
     </item>
     
   </channel>

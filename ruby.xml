@@ -44,6 +44,8 @@
       
     
       
+    
+      
       <item>
         <title>Compiling latest Ruby from scratch with chruby</title>
         
@@ -133,6 +135,8 @@ a handy gem for detecting typos.&lt;/p&gt;
       
     
       
+    
+      
       <item>
         <title>Refactoring a large case statement</title>
         
@@ -169,8 +173,6 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
         <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
         <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
       </item>
-      
-    
       
     
       
