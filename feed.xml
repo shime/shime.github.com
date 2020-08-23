@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Word Rafting</title>
+      
+      <description>&lt;p&gt;I had a crazy idea in the morning two months ago. I was drinking a lot the night before, and that usually causes waking up earlier and with some unusual ideas. I&amp;#39;ve decided to start an online writing group.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/word-rafting</link>
+      <guid isPermaLink="true">http://shime.sh/word-rafting</guid>
+    </item>
+    
+    <item>
       <title>Goodbye Apple Watch</title>
       
       <description>&lt;p&gt;After over a year of everyday use, I&amp;#39;ve recently stopped using the Apple Watch.&lt;/p&gt;
@@ -104,19 +115,6 @@
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0100</pubDate>
       <link>http://shime.sh/how-i-apply-zettelkasten-to-roam</link>
       <guid isPermaLink="true">http://shime.sh/how-i-apply-zettelkasten-to-roam</guid>
-    </item>
-    
-    <item>
-      <title>Why I love Roam</title>
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Computers are like a bicycle for the mind.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      
-      <pubDate>Thu, 20 Feb 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/why-i-love-roam</link>
-      <guid isPermaLink="true">http://shime.sh/why-i-love-roam</guid>
     </item>
     
   </channel>
