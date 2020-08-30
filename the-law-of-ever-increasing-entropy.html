@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Shorten Github link from the command line" />
+<meta property="og:title" content="The law of ever-increasing entropy" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it." />
-<meta property="og:description" content="There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it." />
-<link rel="canonical" href="http://shime.sh/til/shorten-github-link-from-the-command-line" />
-<meta property="og:url" content="http://shime.sh/til/shorten-github-link-from-the-command-line" />
+<meta name="description" content="&quot;All happy families are alike; each unhappy family is unhappy in its own way.&quot; These are the famous words of Leo Tolstoy. But why is that the case? It all boils down to the law of ever-increasing entropy." />
+<meta property="og:description" content="&quot;All happy families are alike; each unhappy family is unhappy in its own way.&quot; These are the famous words of Leo Tolstoy. But why is that the case? It all boils down to the law of ever-increasing entropy." />
+<link rel="canonical" href="http://shime.sh/the-law-of-ever-increasing-entropy" />
+<meta property="og:url" content="http://shime.sh/the-law-of-ever-increasing-entropy" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-03-12T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-08-30T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Shorten Github link from the command line" />
+<meta property="twitter:title" content="The law of ever-increasing entropy" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/shorten-github-link-from-the-command-line","image":"http://shime.sh/public/social.jpg","headline":"Shorten Github link from the command line","dateModified":"2019-03-12T00:00:00+01:00","datePublished":"2019-03-12T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/shorten-github-link-from-the-command-line"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"There&#39;s a tool for shortening links from Github that I&#39;ve known for a while but I imagine not everyone is aware of it.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/the-law-of-ever-increasing-entropy","image":"http://shime.sh/public/social.jpg","headline":"The law of ever-increasing entropy","dateModified":"2020-08-30T00:00:00+02:00","datePublished":"2020-08-30T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/the-law-of-ever-increasing-entropy"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"&quot;All happy families are alike; each unhappy family is unhappy in its own way.&quot; These are the famous words of Leo Tolstoy. But why is that the case? It all boils down to the law of ever-increasing entropy.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Shorten Github link from the command line &middot; Hrvoje Šimić </title>
+    <title> The law of ever-increasing entropy &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Shorten Github link from the command line &middot; Hrvoje Šimić">
+  <meta name="title" content="The law of ever-increasing entropy &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -195,69 +195,90 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
             </div>
 
             <div class="mb-8">
-              <h1>Shorten Github link from the command line</h1>
+              <h1>The law of ever-increasing entropy</h1>
               
               <div class="text-grey">
-                March 12, 2019
+                August 30, 2020
               </div>
               
 
               <div class="flex my-2">
                 
-                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    github
-                  </span>
-                
               </div>
             </div>
 
-            <p>There&#39;s a tool for shortening 
-links from Github that I&#39;ve known for a while
-but I imagine not everyone is aware of it.</p>
+            <p>&quot;All happy families are alike; each unhappy family is unhappy in its own way.&quot; These are the famous words of Leo Tolstoy. But why is that the case? It all boils down to the law of ever-increasing entropy.</p>
 
-<p>It&#39;s called <a href="https://git.io/">git.io</a>, and the best
-thing about it is that you can use it from the command
-line with curl.</p>
+<p>This is the second law of thermodynamics. It states that the entropy, or the amount of disorder, in a closed system, increases over time.</p>
 
-<p>Use it like this:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>curl -si https://git.io -F <span class="s2">&quot;url=https://github.com/rails/rails&quot;</span> <span class="p">|</span> grep -Fi Location
-</code></pre></div>
-<p>I use it all the time for linking to anything that&#39;s on Github
-from code comments. The most recent example is linking to
-a deprecated Rails method, <code>deep_merge</code> which is available
-on this link:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>https://github.com/rails/rails/blob/c0c87922baf47eed64a53d3afceba978bb175da9/activesupport/lib/active_support/core_ext/hash/diff.rb/#L9
-</code></pre></div>
-<p>That&#39;s a huge link, so it&#39;s much better to have it shortened to:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>https://git.io/fhjSr
-</code></pre></div>
-<p>The advantage for using this instead of some other link shortening service
-is that you can be sure it&#39;s a link to Github since it only
-allows shortening of Github links.</p>
+<p>The harmony is one state, while the chaos comes in many forms. Murphy&#39;s law states that anything that can go wrong will go wrong. Again, there are more states of chaos and disorder.</p>
 
-<p>Bonus points if you turn it into a script:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="ch">#!/usr/bin/env bash</span>
+<p>It&#39;s generally much easier and much faster to destroy than to build. Weapons are usually invented before protection from them. The prototype of the firearm was invented in the tenth century. At the same time, the bulletproof vest wasn&#39;t invented until the nineteenth century. Nuclear weapons were invented before developing nuclear power plants. In cyber-security, it&#39;s easier to attack than to defend. While defending, you have to cover all the holes, while as an attacker, you have to find one vulnerable spot.</p>
 
-<span class="nv">url</span><span class="o">=</span><span class="nv">$1</span>
+<p>The bullshit asymmetry principle tells a similar story, coined by Alberto Brandolini (although half the internet credits Paul Kedrosky as the author). It says that the energy necessary to refute bullshit is an order of magnitude bigger than to produce it. Bullshit comes in many forms, and there are many ways in which an argument can be invalid. That&#39;s why it&#39;s easier to produce it. Finding truth takes a lot of effort since you have to make sure everything is valid. You have to find evidence for your claims, or better yet counter-evidence.</p>
 
-<span class="c1"># Append http:// to links without it.</span>
-<span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">&#39;/^http/! s/^/http:\/\//&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
-<span class="c1"># Convert http:// to https:// since git.io requires HTTPS.</span>
-<span class="nv">url</span><span class="o">=</span><span class="k">$(</span>sed <span class="s1">&#39;s/^http:/https:/&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$url</span><span class="k">)</span>
+<p>Spreading bullshit takes almost no effort and requires no critical thinking. As soon as I can write or speak, I can share nonsense that doesn&#39;t make sense. Babies learning how to speak, usually talk nonsense. They don&#39;t share logically sound arguments.</p>
 
-curl -si https://git.io -F <span class="s2">&quot;url=</span><span class="nv">$url</span><span class="s2">&quot;</span> <span class="p">|</span>
-  grep -Fi Location <span class="p">|</span>
-  cut -d <span class="s1">&#39; &#39;</span> -f <span class="m">2</span>
-</code></pre></div>
-<p>And call it with:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>shorten github.com/rails/rails
-</code></pre></div>
+<p>Where can we find more examples of this law? Peter Kaufman advocates that we can learn the most fundamental knowledge from the three oldest and biggest systems:</p>
+
+<ol>
+<li>the universe, 13.7 billion years old</li>
+<li>organic universe, 3.5 billion years old</li>
+<li>human history, 20,000 years old</li>
+</ol>
+
+<p>Let&#39;s see how the law of ever-increasing entropy applies to each of them.</p>
+
+<h2>Increase of entropy in the universe</h2>
+
+<p>It&#39;s the law of physics. So it applies to the largest and the oldest system that we know of — the universe, 13.7 billion years old. If we look at the entire universe as a closed system as time passes, there is more chaos. The most probable end game is the heat death of the universe — the point of maximum entropy.</p>
+
+<h2>Entropy in the organic universe</h2>
+
+<p>If we look in the second bucket — the organic universe, it also follows the law of increasing entropy.  Aging is nothing other than a constant increase in entropy since cells accumulate damage over time until they stop dividing. Normal human cells die after 50 divisions, which is known as a Hayflick Limit. The result of this is death, which is a point of maximum entropy. Living beings fight against the increase of entropy in their bodies.</p>
+
+<h2>Entropy in human history</h2>
+
+<p>We can see examples of this law in relationships, too. Every relationship is nothing but a fight against the increase of entropy. If you don&#39;t take any action in a relationship, and let the time pass, it ceases to exist. The entropy of a relationship increases until it dies. But, every positive interaction decreases entropy. Successful relationships are successful because of the energy input that eliminated entropy. The entropy would kill a relationship without the energy input. So, if you care about sustaining a relationship, fight entropy.</p>
+
+<h2>My daily encounters with this law</h2>
+
+<p>As a software developer, I encounter an increase of entropy on a day-to-day basis. In this universe, entropy is known under a different name: technical debt. As time passes, the natural tendency of this debt is to increase. Software developers need to fight this effect. Otherwise, a project will go off the rails. Not spending energy against this tendency, the project&#39;s entropy will increase and lead to maximum entropy — death.</p>
+
+<p>Generally, not spending energy leads to an increase in chaos. So whenever you are cleaning your desk or nurturing your relationships, you are fighting entropy.</p>
 
 
+
+            
+              <div class="mt-12 bg-blue-lightest p-8 text-blue-darkest border-t-4 border-blue-light">
+                <p class="mt-4 max-w-sm m-auto">
+                  I write a newsletter called Irregular Reveries. It consists of four sections:
+                  this week's article, the best of what I've read in a week, a quote that resonated with me and a question for you.
+
+                  <div class="mt-8">
+                    <form
+   action="https://buttondown.email/api/emails/embed-subscribe/shime"
+   method="post"
+   target="popupwindow"
+   onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+   class="embeddable-buttondown-form"
+   >
+   <div class="flex max-w-sm m-auto">
+     <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-blue-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+     <input type="hidden" value="1" name="embed"></input>
+     
+     <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+   </div>
+   <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+ </form>
+
+                  </div>
+                </p>
+              </div>
             
           </div>
         </div>
