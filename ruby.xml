@@ -52,6 +52,8 @@
       
     
       
+    
+      
       <item>
         <title>Compiling latest Ruby from scratch with chruby</title>
         
@@ -141,8 +143,6 @@ a handy gem for detecting typos.&lt;/p&gt;
       
     
       
-    
-      
       <item>
         <title>Refactoring a large case statement</title>
         
@@ -158,6 +158,8 @@ curl command arguments.&lt;/p&gt;
         <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
         <guid isPermaLink="true">http://shime.sh/til/refactoring-a-large-case-statement</guid>
       </item>
+      
+    
       
     
       

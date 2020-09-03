@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Mocking class methods using Minitest" />
+<meta property="og:title" content="Why I&#39;ve decided to switch to Hey" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem." />
-<meta property="og:description" content="Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem." />
-<link rel="canonical" href="http://shime.sh/til/mocking-class-methods-using-minitest" />
-<meta property="og:url" content="http://shime.sh/til/mocking-class-methods-using-minitest" />
+<meta name="description" content="When Hey came out, I wasn&#39;t sure that I&#39;m going to use it. But, I was interested in trying it out. I thought it was an overpriced email client and that there is too much hype around it. The App store drama didn&#39;t help. Yet, I was interested in it since I would like to stop using Gmail as my primary email address." />
+<meta property="og:description" content="When Hey came out, I wasn&#39;t sure that I&#39;m going to use it. But, I was interested in trying it out. I thought it was an overpriced email client and that there is too much hype around it. The App store drama didn&#39;t help. Yet, I was interested in it since I would like to stop using Gmail as my primary email address." />
+<link rel="canonical" href="http://shime.sh/why-i've-decided-to-switch-to-hey" />
+<meta property="og:url" content="http://shime.sh/why-i've-decided-to-switch-to-hey" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-21T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-09-03T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Mocking class methods using Minitest" />
+<meta property="twitter:title" content="Why I&#39;ve decided to switch to Hey" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/mocking-class-methods-using-minitest","image":"http://shime.sh/public/social.jpg","headline":"Mocking class methods using Minitest","dateModified":"2018-12-21T00:00:00+01:00","datePublished":"2018-12-21T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mocking-class-methods-using-minitest"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/why-i've-decided-to-switch-to-hey","image":"http://shime.sh/public/social.jpg","headline":"Why I&#39;ve decided to switch to Hey","dateModified":"2020-09-03T00:00:00+02:00","datePublished":"2020-09-03T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/why-i've-decided-to-switch-to-hey"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"When Hey came out, I wasn&#39;t sure that I&#39;m going to use it. But, I was interested in trying it out. I thought it was an overpriced email client and that there is too much hype around it. The App store drama didn&#39;t help. Yet, I was interested in it since I would like to stop using Gmail as my primary email address.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Mocking class methods using Minitest &middot; Hrvoje Šimić </title>
+    <title> Why I've decided to switch to Hey &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Mocking class methods using Minitest &middot; Hrvoje Šimić">
+  <meta name="title" content="Why I've decided to switch to Hey &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -195,57 +195,76 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
             </div>
 
             <div class="mb-8">
-              <h1>Mocking class methods using Minitest</h1>
+              <h1>Why I've decided to switch to Hey</h1>
               
               <div class="text-grey">
-                December 21, 2018
+                September 3, 2020
               </div>
               
 
               <div class="flex my-2">
                 
-                  <span class="bg-blue-lightest py-1 px-2 text-center text-blue-dark mr-2 rounded text-sm">
-                    ruby
-                  </span>
-                
               </div>
             </div>
 
-            <p>Minitest has a convoluted API for mocking 
-class methods, so in order to do so you&#39;ll
-have to use another gem.</p>
+            <p>When Hey came out, I wasn&#39;t sure that I&#39;m going to use it. But, I was interested in trying it out. I thought it was an overpriced email client and that there is too much hype around it. The App store drama didn&#39;t help. Yet, I was interested in it since I would like to stop using Gmail as my primary email address.</p>
 
-<p>I suggest <a href="https://github.com/freerange/mocha">Mocha</a>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;mocha/minitest&quot;</span>
+<p>That&#39;s why I&#39;ve tried to spin up my mail server. Tried is the keyword here. I thought, how hard can it be? Well, it can be pretty hard. After spending an entire morning of a Saturday trying to set everything up for it, I&#39;ve decided to stop trying. Although you&#39;ll learn a lot about the technology by setting up your mail server, this learning is sometimes not worth it.</p>
 
-<span class="k">class</span> <span class="nc">CronJobProcessor</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">process</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-     <span class="c1"># ...</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<p>I&#39;m not that interested in mail servers, and I like to spend my time on things that I enjoy more. I don&#39;t like spending my Saturdays on figuring out how to set up a server that I&#39;m not interested in maintaining.</p>
 
-<span class="k">class</span> <span class="nc">CronEngine</span>
-  <span class="k">def</span> <span class="nf">process_job</span>
-    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="o">.</span><span class="n">send_notification</span><span class="p">(</span><span class="ss">to</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<h2>Setting up my email server</h2>
 
-<span class="n">describe</span> <span class="no">CronEngine</span> <span class="k">do</span>
-  <span class="n">it</span> <span class="s2">&quot;does what cron engines do&quot;</span> <span class="k">do</span>
-    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
+<p>I&#39;ve used <a href="https://github.com/tomav/docker-mailserver">Docker Mailserver</a> and got lost in weeds with this thing. There were so many components I knew nothing about. The biggest issue is me being a total dummy with this, so I knew I didn&#39;t set up security correctly. And the goal is to use this email address as my primary email address. So it has to be secure.</p>
 
-    <span class="no">CronEngine</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">process_job</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>
+<p>This made me go back on a hunt for an email service that I could use to stop using Gmail for everything.</p>
+
+<p>After a lot of research, I&#39;ve come back to Hey. With the other services, there was always something missing. Either they didn&#39;t have strong enough security or were underdone or too privacy-focused for my taste.</p>
+
+<h2>The other email-hosting services</h2>
+
+<p>Initially, I&#39;ve tried <a href="https://privateemail.com/">Namecheap&#39;s email service</a> since they looked pretty cheap for $10/yr, and I wondered what I would get for that kind of money. Not much, it turns out. They have a polished landing page and a UI that looks like someone&#39;s learning project on the side. Not something that I would trust with being my primary email service.</p>
+
+<p>After that, I&#39;ve tried and ditched Protonmail since they encrypt everything, and I don&#39;t need that kind of privacy. I would not be able to use it with my email client, without setting up some sort of a bridge. I was also unsure whether I should trust this company for hosting my primary email address. I don&#39;t know much about them. I only know about them because of their privacy-focused email service. That&#39;s why I&#39;ve decided to keep looking.</p>
+
+<h2>Going back to Hey</h2>
+
+<p>At this point, I&#39;ve already spent more of a day searching for the Gmail alternative. But, I kept using Hey since I was still on the free trial. I loved how they separated inboxes and how I get to screen everyone before accepting their emails. I&#39;m also a big fan of Basecamp and their philosophy, and I know a lot about them. I trust them with hosting my primary email address.</p>
+
+<p>That&#39;s why I&#39;ve decided to buy the yearly subscription. A Saturday is worth much more than that to me, so I&#39;m glad to spend some money to make this problem go away. I&#39;m also glad that by doing so, I support the company that has given me Rails, which has changed my life and my attitude to programming.</p>
 
 
+
+            
+              <div class="mt-12 bg-blue-lightest p-8 text-blue-darkest border-t-4 border-blue-light">
+                <p class="mt-4 max-w-sm m-auto">
+                  I write a newsletter called Irregular Reveries. It consists of four sections:
+                  this week's article, the best of what I've read in a week, a quote that resonated with me and a question for you.
+
+                  <div class="mt-8">
+                    <form
+   action="https://buttondown.email/api/emails/embed-subscribe/shime"
+   method="post"
+   target="popupwindow"
+   onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+   class="embeddable-buttondown-form"
+   >
+   <div class="flex max-w-sm m-auto">
+     <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-blue-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+     <input type="hidden" value="1" name="embed"></input>
+     
+     <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+   </div>
+   <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+ </form>
+
+                  </div>
+                </p>
+              </div>
             
           </div>
         </div>
