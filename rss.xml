@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Writing-guided reading</title>
+      
+      <description>&lt;p&gt;There are so many great books to read, but so little time to do it. How to pick a book from a list of hundreds or even thousands of recommended books to read? It&amp;#39;s writing-guided reading.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 13 Sep 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/writing-guided-reading</link>
+      <guid isPermaLink="true">http://shime.sh/writing-guided-reading</guid>
+    </item>
+    
+    <item>
       <title>Why I've decided to switch to Hey</title>
       
       <description>&lt;p&gt;When Hey came out, I wasn&amp;#39;t sure that I&amp;#39;m going to use it. But, I was interested in trying it out. I thought it was an overpriced email client and that there is too much hype around it. The App store drama didn&amp;#39;t help. Yet, I was interested in it since I would like to stop using Gmail as my primary email address.&lt;/p&gt;
@@ -104,17 +115,6 @@
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/why-i-love-jekyll-and-github-pages</link>
       <guid isPermaLink="true">http://shime.sh/why-i-love-jekyll-and-github-pages</guid>
-    </item>
-    
-    <item>
-      <title>The power of writing</title>
-      
-      <description>&lt;p&gt;The 1% rule says that within an Internet community, such as a wiki, 90% of participants only consume content, 9% edit or modify content and only 1% of participants create content.&lt;/p&gt;
-</description>
-      
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/the-power-of-writing</link>
-      <guid isPermaLink="true">http://shime.sh/the-power-of-writing</guid>
     </item>
     
   </channel>
