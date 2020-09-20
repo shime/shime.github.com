@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Writing Bear templates with Automator and Ruby</title>
+      
+      <description>&lt;p&gt;Bear is one of my favorite apps. It&amp;#39;s simple, has a fantastic minimalist design, and uses Markdown. I&amp;#39;m happy to support its development since it&amp;#39;s one of the rare apps that delight me. But, I&amp;#39;ve also noticed that some features are missing.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/bear-automator-ruby</link>
+      <guid isPermaLink="true">http://shime.sh/bear-automator-ruby</guid>
+    </item>
+    
+    <item>
       <title>Writing-guided reading</title>
       
       <description>&lt;p&gt;There are so many great books to read, but so little time to do it. How to pick a book from a list of hundreds or even thousands of recommended books to read?&lt;/p&gt;
@@ -104,17 +115,6 @@
       <pubDate>Thu, 02 Jul 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/the-beauty-of-journaling</link>
       <guid isPermaLink="true">http://shime.sh/the-beauty-of-journaling</guid>
-    </item>
-    
-    <item>
-      <title>Why I love Jekyll and Github Pages</title>
-      
-      <description>&lt;p&gt;This website is powered by Jekyll and hosted on Github Pages. I’ve been using this setup since 2011 and I’m really happy with it, and there are multiple reasons for that.&lt;/p&gt;
-</description>
-      
-      <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/why-i-love-jekyll-and-github-pages</link>
-      <guid isPermaLink="true">http://shime.sh/why-i-love-jekyll-and-github-pages</guid>
     </item>
     
   </channel>

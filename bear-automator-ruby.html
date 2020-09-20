@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Do whatever you can&#39;t stop thinking about" />
+<meta property="og:title" content="Writing Bear templates with Automator and Ruby" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities." />
-<meta property="og:description" content="Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities." />
-<link rel="canonical" href="http://shime.sh/do-whatever-you-can't-stop-thinking-about" />
-<meta property="og:url" content="http://shime.sh/do-whatever-you-can't-stop-thinking-about" />
+<meta name="description" content="Bear is one of my favorite apps. It&#39;s simple, has a fantastic minimalist design, and uses Markdown. I&#39;m happy to support its development since it&#39;s one of the rare apps that delight me. But, I&#39;ve also noticed that some features are missing." />
+<meta property="og:description" content="Bear is one of my favorite apps. It&#39;s simple, has a fantastic minimalist design, and uses Markdown. I&#39;m happy to support its development since it&#39;s one of the rare apps that delight me. But, I&#39;ve also noticed that some features are missing." />
+<link rel="canonical" href="http://shime.sh/bear-automator-ruby" />
+<meta property="og:url" content="http://shime.sh/bear-automator-ruby" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-06T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-09-20T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.jpg" />
-<meta property="twitter:title" content="Do whatever you can&#39;t stop thinking about" />
+<meta property="twitter:title" content="Writing Bear templates with Automator and Ruby" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/do-whatever-you-can't-stop-thinking-about","image":"http://shime.sh/public/social.jpg","headline":"Do whatever you can&#39;t stop thinking about","dateModified":"2020-03-06T00:00:00+01:00","datePublished":"2020-03-06T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/do-whatever-you-can't-stop-thinking-about"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/bear-automator-ruby","image":"http://shime.sh/public/social.jpg","headline":"Writing Bear templates with Automator and Ruby","dateModified":"2020-09-20T00:00:00+02:00","datePublished":"2020-09-20T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/bear-automator-ruby"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Bear is one of my favorite apps. It&#39;s simple, has a fantastic minimalist design, and uses Markdown. I&#39;m happy to support its development since it&#39;s one of the rare apps that delight me. But, I&#39;ve also noticed that some features are missing.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Do whatever you can't stop thinking about &middot; Hrvoje Šimić </title>
+    <title> Writing Bear templates with Automator and Ruby &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Do whatever you can't stop thinking about &middot; Hrvoje Šimić">
+  <meta name="title" content="Writing Bear templates with Automator and Ruby &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -199,10 +199,10 @@
             </div>
 
             <div class="mb-8">
-              <h1>Do whatever you can't stop thinking about</h1>
+              <h1>Writing Bear templates with Automator and Ruby</h1>
               
               <div class="text-grey">
-                March 6, 2020
+                September 20, 2020
               </div>
               
 
@@ -211,38 +211,119 @@
               </div>
             </div>
 
-            <p>Since the start of the year, I’ve been making mistakes with with my free time. I’ve been spending some of my leisure time on wrong activities.</p>
+            <p>Bear is one of my favorite apps. It&#39;s simple, has a fantastic minimalist design, and uses Markdown. I&#39;m happy to support its development since it&#39;s one of the rare apps that delight me. But, I&#39;ve also noticed that some features are missing.</p>
 
-<p>Wishing to improve in the open-source department, one of my New Year&#39;s resolutions was to become more active with Rails contributions. I would learn about Rails internals, help people with their issues and get feedback from Rails core team members. The plan was to work at least 30 minutes on Rails every day and I was using a habit tracker tool in order to ensure that.</p>
+<p>I like to stick to the same format when creating some types of notes. For Zettelkasten notes, I use one format and add a meta info in the header. I also journal almost every day, and I&#39;ve started to use one format for all my journal entries.</p>
 
-<p>However, I&#39;ve noticed that doing that significantly drains my energy. I&#39;m not excited about doing maintenance work and it doesn&#39;t make me jump out of the bed in the morning.</p>
+<p>That&#39;s why I would love to see support for templates added to Bear. Actually, I&#39;m impatient with this, so I&#39;ve tried to find a workaround, and lo and behold, there is one.</p>
 
-<p>I haven’t realized how bad it was for my energy, until I decided to work on a <a href="https://getkuote.com">side project</a> last weekend. It made me super excited. The process of turning something from my head into reality will never stop feeling magical. I was eager to wake up and work on it. Working on it didn’t feel like work. Hours passed without me noticing. I wasn’t tired, I was excited afterwards. I&#39;ve neglected my other habits because of it. </p>
+<h2>Using a template for journal entries</h2>
 
-<p>This was such a contrast to pushing myself to maintain Rails. That’s when I remembered having read about managing personal energy from<br>
-&quot;<a href="/summaries/how-to-fail-at-almost-everything-and-still-win-big">How to Fail at Almost Anything and Still Win Big</a>&quot;. I’ve read it, but haven’t thought about it much until now. Experiencing such a difference in excitement about something I do in my free time made me remember it.</p>
+<p>The trick is to use Automator that executes a Ruby script and map it to a keyboard shortcut.</p>
 
-<blockquote>
-<p>To the experts, what looks like hard work from the outside, is play from the inside.</p>
+<p>So, in Automator, create a &quot;Quick Action&quot;. Drag &quot;Run Shell Script&quot;, select &quot;Workflow receives no input&quot;, and enable &quot;Output replaces selected text&quot;.</p>
 
-<p>Naval Ravikant</p>
-</blockquote>
+<p>Since I&#39;m writing a template for my journal, I want it to automatically:</p>
 
-<p>The basic idea of personal energy management is that you should focus on increasing your personal energy and lifting up your mood in your leisure time, instead of working on things that drain your personal energy. Hobbies should lift your mood, not drain you. This makes you better perform all the other tasks.</p>
+<ul>
+<li>set the title to the current date in the format I use</li>
+<li>write the day of the week and current time</li>
+<li>write the current location and weather</li>
+<li>write the placeholder for mood</li>
+<li>tag it properly (I use <code>#journal/year/month</code> format)</li>
+<li>write the placeholder for any thoughts I have that day</li>
+<li>write the placeholder for morning journal entry</li>
+<li>write the placeholder for evening journal entry</li>
+</ul>
 
-<p>I think the difference in my experience comes from the source of motivation. I am not intrinsically motivated to work on Rails. If money wasn’t the issue, I would probably not start working on maintaining it. The hidden motivation was external and it was rooted in the desire to make it more easy to find the next job.</p>
+<p>Here&#39;s the script for this that I&#39;ve put in Automator:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">ruby</span> <span class="o">&lt;&lt;</span><span class="dl">END</span>
+<span class="sh">  require &quot;date&quot;</span>
+<span class="sh">  require &quot;open3&quot;</span>
 
-<p>Building a side project, on the other hand, is something I can imagine myself doing, if money was not the issue. That’s why I should probably spend my leisure time doing that.</p>
+<span class="sh">  # I use my small NPM package for getting the location and weather</span>
+<span class="sh">  weather_and_location = Open3.popen3(&quot;npx wethr&quot;) do |_, stdout|</span>
+<span class="sh">    stdout.read</span>
+<span class="sh">  end.strip</span>
 
-<blockquote>
-<p>Because every minute spent doing something other than what you love most today is a minute you’re more likely to regret when you’re 80.</p>
+<span class="sh">  puts &lt;&lt;~TEMPLATE</span>
+<span class="sh">    #{Date.today}</span>
+<span class="sh">    #{Time.now.strftime(&quot;%A&quot;)} at #{Time.now.strftime(&quot;%I:%M %p&quot;)}</span>
+<span class="sh">    #{weather_and_location}</span>
+<span class="sh">    Mood:</span>
+<span class="sh">    #journal/#{Time.now.strftime(&quot;%Y/%m&quot;)}</span>
+<span class="sh">    ---</span>
 
-<p>Julian Shapiro</p>
-</blockquote>
+<span class="sh">    ## Thoughts</span>
+<span class="sh">    *</span>
 
-<p>Another useful tool, for deciding what to work on is the Regret Minimization Framework: Project yourself being 80 years old and thinking whether you would regret your current decision. That&#39;s how <a href="https://www.youtube.com/watch?v=jwG_qR6XmDQ">Jeff Bezos decided to work on Amazon</a>. It&#39;s a useful tool for prioritizing over long-term and rationalizing decisions that make no sense in the short-term.</p>
+<span class="sh">    ---</span>
 
-<p>Never work on anything you would regret looking back on your deathbed and spend as much time you can on doing whatever you can’t stop thinking about.</p>
+<span class="sh">    ## I am grateful for</span>
+<span class="sh">    *</span>
+<span class="sh">    *</span>
+<span class="sh">    *</span>
+
+<span class="sh">    ## What would make today great?</span>
+<span class="sh">    *</span>
+
+<span class="sh">    ---</span>
+
+<span class="sh">    ## What awesome things have happened today?</span>
+<span class="sh">    *</span>
+<span class="sh">    *</span>
+<span class="sh">    *</span>
+
+<span class="sh">    ## How could I have made today even better?</span>
+<span class="sh">    *</span>
+
+<span class="sh">  TEMPLATE</span>
+<span class="dl">END</span>
+</code></pre></div>
+<p>I&#39;ve saved it and went to <br/> <strong><code>System Preferences &gt; Keyboard &gt; Shortcuts &gt; Services</code></strong> and assigned a new keyboard shortcut to it. I&#39;ve mapped it to <code>⌃⇧⌘A</code>, which made this possible in Bear:</p>
+
+<div class="text-center">
+  <img src="/public/bear-new-journal.gif"/>
+</div>
+
+<h2>Fixing date formats</h2>
+
+<p>Templates are not the only thing where Automator
+is useful.</p>
+
+<p>I wanted to update all of the dates in Bear, to be consistent with the date formatting. It&#39;s much easier to find specific dates like this. Luckily, Ruby
+has excellent support for dates and <code>Date.parse</code> handled anything I threw at it:</p>
+<div class="highlight"><pre><code class="language-zsh" data-lang="zsh"><span></span>ruby -e <span class="s1">&#39;</span>
+<span class="s1">require &quot;date&quot;</span>
+<span class="s1">puts Date.parse(gets)&#39;</span>
+</code></pre></div>
+<p>I mapped this to <code>⌃⇧⌘D</code> and went ahead and highlighted all
+the dates.</p>
+
+<div class="text-center">
+  <img src="/public/bear-convert-date.gif"/>
+</div>
+
+<h2>Tagging people</h2>
+
+<p>Nested tags are useful to improve organization, but also
+to more easily find things. I like the idea of
+tagging people under <code>#@</code>, so <code>David</code> would be tagged under
+<code>#@/david</code>. This makes it easier to find all the mentions of him by just clicking on his tag.</p>
+
+<p>Since I haven&#39;t used this system before, I wanted to 
+convert some names to this format. All it took was another simple Ruby script:</p>
+<div class="highlight"><pre><code class="language-zsh" data-lang="zsh"><span></span>ruby -e <span class="s1">&#39;</span>
+<span class="s1">link = gets.strip</span>
+<span class="s1">bare = link.scan(/([[:alnum:]]+)/).flatten.join(&quot;-&quot;)</span>
+<span class="s1">print &quot;#@/#{bare.downcase}&quot;&#39;</span>
+</code></pre></div>
+<p>I mapped this to <code>⌃⇧⌘X</code> and then converted all names to use
+the nested tag.</p>
+
+<div class="text-center">
+  <img src="/public/bear-convert-person.gif"/>
+</div>
 
 
 

@@ -24,16 +24,20 @@ if [[ $1 =~ --til ]]; then
   original_title="${@:2}"
 fi
 
+# remove anything that's not alphanumeric or a space
+title="`echo $original_title| tr -cd '[:alnum:][:blank:]'`"
 # replaces spaces in title with dashes
-title="`echo $original_title| tr ' ' '-'`"
+title="`echo $title| tr ' ' '-'`"
 # adds required date format to file name of the post
 title="`date +"%Y-%m-%d"`-$title"
+
 filename="`echo $title | tr '[:upper:]' '[:lower:]'`"
 fullpath="$dir/$filename.md"
+
 cat <<EOF > $fullpath
 ---
 layout: post
-title: `echo "${original_title^}"`
+title: "`echo "${original_title^}"`"
 ---
 EOF
 vim $fullpath
