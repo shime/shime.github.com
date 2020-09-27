@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Knowing the port one is sailing to</title>
+      
+      <description>&lt;p&gt;For the past couple of months, I&amp;#39;ve been doing more planning and reviewing. So far, the most useful review session was also the longest one — the one I did for the current year. It gave me a kick in the butt to change things with my work and made me realize that I needed to change things.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/knowing-the-port-one-is-sailing-to</link>
+      <guid isPermaLink="true">http://shime.sh/knowing-the-port-one-is-sailing-to</guid>
+    </item>
+    
+    <item>
       <title>Writing Bear templates with Automator and Ruby</title>
       
       <description>&lt;p&gt;Bear is one of my favorite apps. It&amp;#39;s simple, has a fantastic minimalist design, and uses Markdown. I&amp;#39;m happy to support its development since it&amp;#39;s one of the rare apps that delight me. But, I&amp;#39;ve also noticed that some features are missing.&lt;/p&gt;
@@ -104,17 +115,6 @@
       <pubDate>Sun, 12 Jul 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/on-the-shoulders-of-giants</link>
       <guid isPermaLink="true">http://shime.sh/on-the-shoulders-of-giants</guid>
-    </item>
-    
-    <item>
-      <title>The beauty of journaling</title>
-      
-      <description>&lt;p&gt;Journaling is one of my favorite habits, and I love it. I do it almost every day. If you&amp;#39;re not sure about the value it provides and are thinking about quitting it, this article is for you.&lt;/p&gt;
-</description>
-      
-      <pubDate>Thu, 02 Jul 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/the-beauty-of-journaling</link>
-      <guid isPermaLink="true">http://shime.sh/the-beauty-of-journaling</guid>
     </item>
     
   </channel>
