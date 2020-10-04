@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Beware of programming puzzles</title>
+      
+      <description>&lt;p&gt;The most common piece of advice you&amp;#39;ll receive if you want to learn programming is that you should do programming to learn it. While this is well-meaning advice, since doing programming is better than reading about it, it&amp;#39;s incomplete.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/beware-of-programming-puzzles</link>
+      <guid isPermaLink="true">http://shime.sh/beware-of-programming-puzzles</guid>
+    </item>
+    
+    <item>
       <title>Knowing the port one is sailing to</title>
       
       <description>&lt;blockquote&gt;
@@ -106,17 +117,6 @@
       <pubDate>Sun, 19 Jul 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/third-failed-startup</link>
       <guid isPermaLink="true">http://shime.sh/third-failed-startup</guid>
-    </item>
-    
-    <item>
-      <title>On the shoulders of giants</title>
-      
-      <description>&lt;p&gt;Robert Heinlein, claims that &amp;quot;specialization is for insects&amp;quot; in his science fiction book &amp;quot;Time Enough for Love&amp;quot;:&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 12 Jul 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/on-the-shoulders-of-giants</link>
-      <guid isPermaLink="true">http://shime.sh/on-the-shoulders-of-giants</guid>
     </item>
     
   </channel>
