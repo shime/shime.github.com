@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Write for yourself</title>
+      
+      <description>&lt;p&gt;There’s a tension that you’ll discover if you start publishing articles. A tension between writing what the world wants from you and what you want to write about.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 11 Oct 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/write-for-yourself</link>
+      <guid isPermaLink="true">http://shime.sh/write-for-yourself</guid>
+    </item>
+    
+    <item>
       <title>Beware of programming puzzles</title>
       
       <description>&lt;p&gt;The most common piece of advice you&amp;#39;ll receive if you want to learn programming is that you should do programming to learn it. While this is well-meaning advice, since doing programming is better than reading about it, it&amp;#39;s incomplete.&lt;/p&gt;
@@ -106,17 +117,6 @@
       <pubDate>Sun, 26 Jul 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/writing-regularly</link>
       <guid isPermaLink="true">http://shime.sh/writing-regularly</guid>
-    </item>
-    
-    <item>
-      <title>Lessons from my third failed startup</title>
-      
-      <description>&lt;p&gt;I&amp;#39;ve recently quit the US company that I&amp;#39;ve co-founded.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/third-failed-startup</link>
-      <guid isPermaLink="true">http://shime.sh/third-failed-startup</guid>
     </item>
     
   </channel>
