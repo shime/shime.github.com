@@ -6,7 +6,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/almost</loc>
+      <loc>http://shime.sh/almost</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -15,7 +15,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/feed.xml</loc>
+      <loc>http://shime.sh/feed.xml</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -24,7 +24,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/articles/</loc>
+      <loc>http://shime.sh/articles/</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -33,7 +33,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/til/</loc>
+      <loc>http://shime.sh/til/</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -42,7 +42,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/reading/</loc>
+      <loc>http://shime.sh/reading/</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -51,7 +51,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/privacy/</loc>
+      <loc>http://shime.sh/privacy/</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -60,7 +60,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/photography/</loc>
+      <loc>http://shime.sh/photography/</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -69,7 +69,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/</loc>
+      <loc>http://shime.sh/</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -78,7 +78,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/rss/index.xml</loc>
+      <loc>http://shime.sh/rss/index.xml</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -87,7 +87,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/raft</loc>
+      <loc>http://shime.sh/raft</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -96,7 +96,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/rss.xml</loc>
+      <loc>http://shime.sh/rss.xml</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -105,7 +105,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/ruby.xml</loc>
+      <loc>http://shime.sh/ruby.xml</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -114,7 +114,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/sitemap.xml</loc>
+      <loc>http://shime.sh/sitemap.xml</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -123,7 +123,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/public/css/style.css</loc>
+      <loc>http://shime.sh/public/css/style.css</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -132,7 +132,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/subscribe</loc>
+      <loc>http://shime.sh/subscribe</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -141,7 +141,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/thanks</loc>
+      <loc>http://shime.sh/thanks</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -150,7 +150,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/til.xml</loc>
+      <loc>http://shime.sh/til.xml</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -159,7 +159,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/how-to-waste-hours-on-your-idea</loc>
+      <loc>http://shime.sh/how-to-waste-hours-on-your-idea</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -168,7 +168,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/ruby-y-u-so-beautiful</loc>
+      <loc>http://shime.sh/ruby-y-u-so-beautiful</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -177,7 +177,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/git-stash-is-awesome</loc>
+      <loc>http://shime.sh/git-stash-is-awesome</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -186,7 +186,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/debugging-active-record-queries-in-a-rails-console</loc>
+      <loc>http://shime.sh/debugging-active-record-queries-in-a-rails-console</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -195,7 +195,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/hello-world-in-sinatra</loc>
+      <loc>http://shime.sh/hello-world-in-sinatra</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -204,7 +204,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/autotest-and-rspec2-problems</loc>
+      <loc>http://shime.sh/autotest-and-rspec2-problems</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -213,7 +213,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/insane-cant-find-executable-rails-for-rails-error</loc>
+      <loc>http://shime.sh/insane-cant-find-executable-rails-for-rails-error</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -222,7 +222,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/using-edge-rails-locally</loc>
+      <loc>http://shime.sh/using-edge-rails-locally</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -231,7 +231,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
+      <loc>http://shime.sh/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -240,7 +240,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/forwardable-explained</loc>
+      <loc>http://shime.sh/forwardable-explained</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -249,7 +249,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/thoughts</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -258,7 +258,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/books</loc>
+      <loc>http://shime.sh/books</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -267,7 +267,7 @@
   
   
     <url>
-      <loc>http://localhost:4000/thoughts</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -280,378 +280,378 @@
 
   
   <url>
-    <loc>http://localhost:4000/the-overreaction-paradox</loc>
+    <loc>http://shime.sh/the-overreaction-paradox</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/write-for-yourself</loc>
+    <loc>http://shime.sh/write-for-yourself</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/beware-of-programming-puzzles</loc>
+    <loc>http://shime.sh/beware-of-programming-puzzles</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/knowing-the-port-one-is-sailing-to</loc>
+    <loc>http://shime.sh/knowing-the-port-one-is-sailing-to</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/bear-automator-ruby</loc>
+    <loc>http://shime.sh/bear-automator-ruby</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/writing-guided-reading</loc>
+    <loc>http://shime.sh/writing-guided-reading</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/why-i've-decided-to-switch-to-hey</loc>
+    <loc>http://shime.sh/why-i've-decided-to-switch-to-hey</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/the-law-of-ever-increasing-entropy</loc>
+    <loc>http://shime.sh/the-law-of-ever-increasing-entropy</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/word-rafting</loc>
+    <loc>http://shime.sh/word-rafting</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/goodbye-apple-watch</loc>
+    <loc>http://shime.sh/goodbye-apple-watch</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/writing-regularly</loc>
+    <loc>http://shime.sh/writing-regularly</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/third-failed-startup</loc>
+    <loc>http://shime.sh/third-failed-startup</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/on-the-shoulders-of-giants</loc>
+    <loc>http://shime.sh/on-the-shoulders-of-giants</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/the-beauty-of-journaling</loc>
+    <loc>http://shime.sh/the-beauty-of-journaling</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/why-i-love-jekyll-and-github-pages</loc>
+    <loc>http://shime.sh/why-i-love-jekyll-and-github-pages</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/the-power-of-writing</loc>
+    <loc>http://shime.sh/the-power-of-writing</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/do-whatever-you-can't-stop-thinking-about</loc>
+    <loc>http://shime.sh/do-whatever-you-can't-stop-thinking-about</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-i-apply-zettelkasten-to-roam</loc>
+    <loc>http://shime.sh/how-i-apply-zettelkasten-to-roam</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/why-i-love-roam</loc>
+    <loc>http://shime.sh/why-i-love-roam</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/achieving-balance-between-reading-and-writing</loc>
+    <loc>http://shime.sh/achieving-balance-between-reading-and-writing</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/fighting-content-overload</loc>
+    <loc>http://shime.sh/fighting-content-overload</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/deep-dive-into-did-you-mean</loc>
+    <loc>http://shime.sh/deep-dive-into-did-you-mean</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/deep-dive-into-minitest</loc>
+    <loc>http://shime.sh/deep-dive-into-minitest</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/replacing-google-fonts-with-system-fonts</loc>
+    <loc>http://shime.sh/replacing-google-fonts-with-system-fonts</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/testing-stimulus</loc>
+    <loc>http://shime.sh/testing-stimulus</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/network-tools-detox</loc>
+    <loc>http://shime.sh/network-tools-detox</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/how-to-waste-time-on-your-idea</loc>
+    <loc>http://shime.sh/how-to-waste-time-on-your-idea</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/quality-vs-popularity</loc>
+    <loc>http://shime.sh/quality-vs-popularity</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/git-commit-message-syntax-highlighting-in-vim</loc>
+    <loc>http://shime.sh/git-commit-message-syntax-highlighting-in-vim</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/loving-vim</loc>
+    <loc>http://shime.sh/loving-vim</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/freedom</loc>
+    <loc>http://shime.sh/freedom</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/building-a-crude-node.js-from-scratch</loc>
+    <loc>http://shime.sh/building-a-crude-node.js-from-scratch</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/programming-for-money-until-I'm-too-old-to</loc>
+    <loc>http://shime.sh/programming-for-money-until-I'm-too-old-to</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/money-and-time</loc>
+    <loc>http://shime.sh/money-and-time</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/landing-that-remote-job</loc>
+    <loc>http://shime.sh/landing-that-remote-job</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/thanks-via-email</loc>
+    <loc>http://shime.sh/thanks-via-email</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/4-tips-from-6-years-of-remote-freelancing</loc>
+    <loc>http://shime.sh/4-tips-from-6-years-of-remote-freelancing</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/the-8-week-writing-challenge</loc>
+    <loc>http://shime.sh/the-8-week-writing-challenge</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/landing-pages-for-hackers</loc>
+    <loc>http://shime.sh/landing-pages-for-hackers</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/introducing-ephemeral-P2P-screenshot-sharing</loc>
+    <loc>http://shime.sh/introducing-ephemeral-P2P-screenshot-sharing</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/on-criticism</loc>
+    <loc>http://shime.sh/on-criticism</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/just-ship-it</loc>
+    <loc>http://shime.sh/just-ship-it</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/sleep-is-for-the-weak</loc>
+    <loc>http://shime.sh/sleep-is-for-the-weak</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/osx-adventures</loc>
+    <loc>http://shime.sh/osx-adventures</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/complexity-prettified</loc>
+    <loc>http://shime.sh/complexity-prettified</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/people-are-priceless</loc>
+    <loc>http://shime.sh/people-are-priceless</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/headless-testing-of-ember-apps-with-gulp-and-jasmine</loc>
+    <loc>http://shime.sh/headless-testing-of-ember-apps-with-gulp-and-jasmine</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/rubyists-view-on-nodejs</loc>
+    <loc>http://shime.sh/rubyists-view-on-nodejs</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/micromachinejs-a-minimal-state-machine-for-javascript</loc>
+    <loc>http://shime.sh/micromachinejs-a-minimal-state-machine-for-javascript</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/5-reasons-for-adding-a-post-installation-message-to-your-gem</loc>
+    <loc>http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/be-the-change-you-want-to-see</loc>
+    <loc>http://shime.sh/be-the-change-you-want-to-see</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/guard-down-vim-and-tmux-are-here</loc>
+    <loc>http://shime.sh/guard-down-vim-and-tmux-are-here</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/long-time-no-see</loc>
+    <loc>http://shime.sh/long-time-no-see</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/overriding-instance-method-with-a-module</loc>
+    <loc>http://shime.sh/overriding-instance-method-with-a-module</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -660,336 +660,336 @@
 
   
   <url>
-    <loc>http://localhost:4000/til/ruby-y-u-so-beautiful</loc>
+    <loc>http://shime.sh/til/ruby-y-u-so-beautiful</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/git-stash-is-awesome</loc>
+    <loc>http://shime.sh/til/git-stash-is-awesome</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/debugging-active-record-queries-in-a-rails-console</loc>
+    <loc>http://shime.sh/til/debugging-active-record-queries-in-a-rails-console</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/hello-world-in-sinatra</loc>
+    <loc>http://shime.sh/til/hello-world-in-sinatra</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/autotest-and-rspec2-problems</loc>
+    <loc>http://shime.sh/til/autotest-and-rspec2-problems</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/insane-cant-find-executable-rails-for-rails-error</loc>
+    <loc>http://shime.sh/til/insane-cant-find-executable-rails-for-rails-error</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/using-edge-rails-locally</loc>
+    <loc>http://shime.sh/til/using-edge-rails-locally</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
+    <loc>http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/forwardable-explained</loc>
+    <loc>http://shime.sh/til/forwardable-explained</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/stop-clearing-screen-when-suspending-from-vim</loc>
+    <loc>http://shime.sh/til/stop-clearing-screen-when-suspending-from-vim</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/debugging-ember</loc>
+    <loc>http://shime.sh/til/debugging-ember</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/git-diff-tips-and-tricks</loc>
+    <loc>http://shime.sh/til/git-diff-tips-and-tricks</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/using-ember's-element-id-helper</loc>
+    <loc>http://shime.sh/til/using-ember's-element-id-helper</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/fixing-ld-warning-directory-not-found-for-option</loc>
+    <loc>http://shime.sh/til/fixing-ld-warning-directory-not-found-for-option</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/resetting-scroll-in-ember</loc>
+    <loc>http://shime.sh/til/resetting-scroll-in-ember</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/enabling-hstore-column-in-postgres-on-travis</loc>
+    <loc>http://shime.sh/til/enabling-hstore-column-in-postgres-on-travis</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/adding-new-hidden-collection-in-jekyll</loc>
+    <loc>http://shime.sh/til/adding-new-hidden-collection-in-jekyll</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/faster-database-resets-in-rails</loc>
+    <loc>http://shime.sh/til/faster-database-resets-in-rails</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/strong-parameters-in-javascript</loc>
+    <loc>http://shime.sh/til/strong-parameters-in-javascript</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/mocking-class-methods-using-minitest</loc>
+    <loc>http://shime.sh/til/mocking-class-methods-using-minitest</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/pretty-formatting-json</loc>
+    <loc>http://shime.sh/til/pretty-formatting-json</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/making-http-requests-from-vim</loc>
+    <loc>http://shime.sh/til/making-http-requests-from-vim</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/pretty-formatting-json-in-vim</loc>
+    <loc>http://shime.sh/til/pretty-formatting-json-in-vim</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/refactoring-with-simple-polymorphism</loc>
+    <loc>http://shime.sh/til/refactoring-with-simple-polymorphism</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/resizing-panes-in-tmux-with-a-shortcut</loc>
+    <loc>http://shime.sh/til/resizing-panes-in-tmux-with-a-shortcut</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/git-diff-algorithm-options</loc>
+    <loc>http://shime.sh/til/git-diff-algorithm-options</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/refactoring-a-large-case-statement</loc>
+    <loc>http://shime.sh/til/refactoring-a-large-case-statement</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/from-class-components-to-function-components-with-hooks</loc>
+    <loc>http://shime.sh/til/from-class-components-to-function-components-with-hooks</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/shorten-github-link-from-the-command-line</loc>
+    <loc>http://shime.sh/til/shorten-github-link-from-the-command-line</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/filtering-records-with-endless-ranges</loc>
+    <loc>http://shime.sh/til/filtering-records-with-endless-ranges</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/commenting-your-own-pull-requests-when-requesting-a-review</loc>
+    <loc>http://shime.sh/til/commenting-your-own-pull-requests-when-requesting-a-review</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/using-git-stash-to-test-the-bug-fix</loc>
+    <loc>http://shime.sh/til/using-git-stash-to-test-the-bug-fix</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/stopping-the-fans-with-a-script</loc>
+    <loc>http://shime.sh/til/stopping-the-fans-with-a-script</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/building-pagination-from-scratch</loc>
+    <loc>http://shime.sh/til/building-pagination-from-scratch</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/building-emphasized-code-blocks-in-jekyll</loc>
+    <loc>http://shime.sh/til/building-emphasized-code-blocks-in-jekyll</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/partitioning-parallel-tests-on-heroku-ci</loc>
+    <loc>http://shime.sh/til/partitioning-parallel-tests-on-heroku-ci</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/compiling-latest-ruby-from-scratch-with-chruby</loc>
+    <loc>http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/listing-categories-of-jekyll-collection</loc>
+    <loc>http://shime.sh/til/listing-categories-of-jekyll-collection</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/comparing-branches-on-github</loc>
+    <loc>http://shime.sh/til/comparing-branches-on-github</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/encrypting-and-decrypting-a-folder</loc>
+    <loc>http://shime.sh/til/encrypting-and-decrypting-a-folder</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/testing-migrations-from-sandboxed-rails-console</loc>
+    <loc>http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/updating-indirect-dependencies-with-yarn</loc>
+    <loc>http://shime.sh/til/updating-indirect-dependencies-with-yarn</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/opening-the-last-migration</loc>
+    <loc>http://shime.sh/til/opening-the-last-migration</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/using-git-pre-push-hook-for-linting</loc>
+    <loc>http://shime.sh/til/using-git-pre-push-hook-for-linting</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/writing-custom-vim-snippets</loc>
+    <loc>http://shime.sh/til/writing-custom-vim-snippets</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/writing-custom-vim-template</loc>
+    <loc>http://shime.sh/til/writing-custom-vim-template</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/summoning-the-editor-from-the-console</loc>
+    <loc>http://shime.sh/til/summoning-the-editor-from-the-console</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:4000/til/sorting-git-branches-by-the-last-commit-date</loc>
+    <loc>http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</loc>
     <lastmod>2020-10-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -998,28 +998,28 @@
 
   
     <url>
-      <loc>http://localhost:4000/summaries/homo-deus</loc>
+      <loc>http://shime.sh/summaries/homo-deus</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/summaries/how-to-fail-at-almost-everything-and-still-win-big</loc>
+      <loc>http://shime.sh/summaries/how-to-fail-at-almost-everything-and-still-win-big</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/summaries/smart-notes</loc>
+      <loc>http://shime.sh/summaries/smart-notes</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/summaries/the-courage-to-be-disliked</loc>
+      <loc>http://shime.sh/summaries/the-courage-to-be-disliked</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -1028,14 +1028,14 @@
 
   
     <url>
-      <loc>http://localhost:4000/blogchains/startup-post-mortem</loc>
+      <loc>http://shime.sh/blogchains/startup-post-mortem</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
-      <loc>http://localhost:4000/blogchains/zettelkasten</loc>
+      <loc>http://shime.sh/blogchains/zettelkasten</loc>
       <lastmod>2020-10-18</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
