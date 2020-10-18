@@ -3,9 +3,20 @@
   <channel>
     <title>Articles • Hrvoje Šimić</title>
     <description>A collection of long form articles by Hrvoje Šimić</description>		
-    <link>http://shime.sh</link>
-    <atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 
+    
+    <item>
+      <title>The overreaction paradox</title>
+      
+      <description>&lt;p&gt;My bike got stolen a while back. It happened because I got lazy carrying my bike up the stairs and left it in the much less secure basement. I thought that taking it up the stairs is not worth it. Nothing will happen. No one will steal a bike from my building since it hasn&amp;#39;t happened to any of my neighbors.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 18 Oct 2020 00:00:00 +0200</pubDate>
+      <link>http://localhost:4000/the-overreaction-paradox</link>
+      <guid isPermaLink="true">http://localhost:4000/the-overreaction-paradox</guid>
+    </item>
     
     <item>
       <title>Write for yourself</title>
@@ -14,8 +25,8 @@
 </description>
       
       <pubDate>Sun, 11 Oct 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/write-for-yourself</link>
-      <guid isPermaLink="true">http://shime.sh/write-for-yourself</guid>
+      <link>http://localhost:4000/write-for-yourself</link>
+      <guid isPermaLink="true">http://localhost:4000/write-for-yourself</guid>
     </item>
     
     <item>
@@ -25,8 +36,8 @@
 </description>
       
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/beware-of-programming-puzzles</link>
-      <guid isPermaLink="true">http://shime.sh/beware-of-programming-puzzles</guid>
+      <link>http://localhost:4000/beware-of-programming-puzzles</link>
+      <guid isPermaLink="true">http://localhost:4000/beware-of-programming-puzzles</guid>
     </item>
     
     <item>
@@ -38,8 +49,8 @@
 </description>
       
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/knowing-the-port-one-is-sailing-to</link>
-      <guid isPermaLink="true">http://shime.sh/knowing-the-port-one-is-sailing-to</guid>
+      <link>http://localhost:4000/knowing-the-port-one-is-sailing-to</link>
+      <guid isPermaLink="true">http://localhost:4000/knowing-the-port-one-is-sailing-to</guid>
     </item>
     
     <item>
@@ -49,8 +60,8 @@
 </description>
       
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/bear-automator-ruby</link>
-      <guid isPermaLink="true">http://shime.sh/bear-automator-ruby</guid>
+      <link>http://localhost:4000/bear-automator-ruby</link>
+      <guid isPermaLink="true">http://localhost:4000/bear-automator-ruby</guid>
     </item>
     
     <item>
@@ -60,8 +71,8 @@
 </description>
       
       <pubDate>Sun, 13 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/writing-guided-reading</link>
-      <guid isPermaLink="true">http://shime.sh/writing-guided-reading</guid>
+      <link>http://localhost:4000/writing-guided-reading</link>
+      <guid isPermaLink="true">http://localhost:4000/writing-guided-reading</guid>
     </item>
     
     <item>
@@ -71,8 +82,8 @@
 </description>
       
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/why-i've-decided-to-switch-to-hey</link>
-      <guid isPermaLink="true">http://shime.sh/why-i've-decided-to-switch-to-hey</guid>
+      <link>http://localhost:4000/why-i've-decided-to-switch-to-hey</link>
+      <guid isPermaLink="true">http://localhost:4000/why-i've-decided-to-switch-to-hey</guid>
     </item>
     
     <item>
@@ -82,8 +93,8 @@
 </description>
       
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/the-law-of-ever-increasing-entropy</link>
-      <guid isPermaLink="true">http://shime.sh/the-law-of-ever-increasing-entropy</guid>
+      <link>http://localhost:4000/the-law-of-ever-increasing-entropy</link>
+      <guid isPermaLink="true">http://localhost:4000/the-law-of-ever-increasing-entropy</guid>
     </item>
     
     <item>
@@ -93,8 +104,8 @@
 </description>
       
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/word-rafting</link>
-      <guid isPermaLink="true">http://shime.sh/word-rafting</guid>
+      <link>http://localhost:4000/word-rafting</link>
+      <guid isPermaLink="true">http://localhost:4000/word-rafting</guid>
     </item>
     
     <item>
@@ -104,19 +115,8 @@
 </description>
       
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/goodbye-apple-watch</link>
-      <guid isPermaLink="true">http://shime.sh/goodbye-apple-watch</guid>
-    </item>
-    
-    <item>
-      <title>Writing regularly</title>
-      
-      <description>&lt;p&gt;I&amp;#39;ve stopped writing regularly. I&amp;#39;ve published a couple of articles about personal knowledge management and stopped. I&amp;#39;ve broken the habit. I&amp;#39;m trying to get back to it now, but at the time I felt that there is nothing else to say about the topic.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 26 Jul 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/writing-regularly</link>
-      <guid isPermaLink="true">http://shime.sh/writing-regularly</guid>
+      <link>http://localhost:4000/goodbye-apple-watch</link>
+      <guid isPermaLink="true">http://localhost:4000/goodbye-apple-watch</guid>
     </item>
     
   </channel>

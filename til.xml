@@ -3,8 +3,8 @@
   <channel>
     <title>TIL • Hrvoje Šimić</title>
     <description>A collection of short form articles by Hrvoje Šimić</description>		
-    <link>http://shime.sh</link>
-    <atom:link href="http://shime.sh/til.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/til.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -13,12 +13,12 @@
         <description>
           &lt;p&gt;I love hopping between branches with&lt;/p&gt;
 
-          <a href="http://shime.sh/til/sorting-git-branches-by-the-last-commit-date">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/sorting-git-branches-by-the-last-commit-date">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</link>
-      <guid isPermaLink="true">http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</guid>
+      <link>http://localhost:4000/til/sorting-git-branches-by-the-last-commit-date</link>
+      <guid isPermaLink="true">http://localhost:4000/til/sorting-git-branches-by-the-last-commit-date</guid>
     </item>
     
     <item>
@@ -29,12 +29,12 @@
 This is helpful, since it gives me the full power of my editor when interacting with the console,
 so I don&amp;#39;t have to worry about typos in the second or third line of the script I&amp;#39;m writing.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/summoning-the-editor-from-the-console">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/summoning-the-editor-from-the-console">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/summoning-the-editor-from-the-console</link>
-      <guid isPermaLink="true">http://shime.sh/til/summoning-the-editor-from-the-console</guid>
+      <link>http://localhost:4000/til/summoning-the-editor-from-the-console</link>
+      <guid isPermaLink="true">http://localhost:4000/til/summoning-the-editor-from-the-console</guid>
     </item>
     
     <item>
@@ -47,12 +47,12 @@ I&amp;#39;m too lazy to write that every time
 I open a Ruby file, I&amp;#39;ve decided to write
 a template.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/writing-custom-vim-template">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/writing-custom-vim-template">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/writing-custom-vim-template</link>
-      <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-template</guid>
+      <link>http://localhost:4000/til/writing-custom-vim-template</link>
+      <guid isPermaLink="true">http://localhost:4000/til/writing-custom-vim-template</guid>
     </item>
     
     <item>
@@ -63,12 +63,12 @@ a template.&lt;/p&gt;
 Vim plugin that adds support for custom autocompletion. &lt;a href=&quot;https://github.com/honza/vim-snippets&quot;&gt;vim-snippets&lt;/a&gt;
 adds a bunch of useful snippets for various languages.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/writing-custom-vim-snippets">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/writing-custom-vim-snippets">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/writing-custom-vim-snippets</link>
-      <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-snippets</guid>
+      <link>http://localhost:4000/til/writing-custom-vim-snippets</link>
+      <guid isPermaLink="true">http://localhost:4000/til/writing-custom-vim-snippets</guid>
     </item>
     
     <item>
@@ -79,12 +79,12 @@ adds a bunch of useful snippets for various languages.&lt;/p&gt;
 This started to get annoying incredibly fast, since it meant
 I had to wait for linting to complete before every commit.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/using-git-pre-push-hook-for-linting">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/using-git-pre-push-hook-for-linting">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/using-git-pre-push-hook-for-linting</link>
-      <guid isPermaLink="true">http://shime.sh/til/using-git-pre-push-hook-for-linting</guid>
+      <link>http://localhost:4000/til/using-git-pre-push-hook-for-linting</link>
+      <guid isPermaLink="true">http://localhost:4000/til/using-git-pre-push-hook-for-linting</guid>
     </item>
     
     <item>
@@ -95,12 +95,12 @@ I had to wait for linting to complete before every commit.&lt;/p&gt;
 and its shortcuts. One of the shortcuts I use pretty
 regularly is &lt;code&gt;:Emigration&lt;/code&gt; or &lt;code&gt;:Emi&lt;/code&gt; to edit the last migration.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/opening-the-last-migration">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/opening-the-last-migration">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/opening-the-last-migration</link>
-      <guid isPermaLink="true">http://shime.sh/til/opening-the-last-migration</guid>
+      <link>http://localhost:4000/til/opening-the-last-migration</link>
+      <guid isPermaLink="true">http://localhost:4000/til/opening-the-last-migration</guid>
     </item>
     
     <item>
@@ -112,12 +112,12 @@ packages, your JavaScript project likely depends on
 many of them. Especially if you&amp;#39;re using a tool like
 Webpack.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/updating-indirect-dependencies-with-yarn">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/updating-indirect-dependencies-with-yarn">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/updating-indirect-dependencies-with-yarn</link>
-      <guid isPermaLink="true">http://shime.sh/til/updating-indirect-dependencies-with-yarn</guid>
+      <link>http://localhost:4000/til/updating-indirect-dependencies-with-yarn</link>
+      <guid isPermaLink="true">http://localhost:4000/til/updating-indirect-dependencies-with-yarn</guid>
     </item>
     
     <item>
@@ -128,12 +128,12 @@ Webpack.&lt;/p&gt;
 database in order to test the migration locally. This enables getting migration errors before the deployment. However,
 I regularly screw up the database with some silly mistake in migration, which requires recreating the database.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/testing-migrations-from-sandboxed-rails-console">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/testing-migrations-from-sandboxed-rails-console">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</link>
-      <guid isPermaLink="true">http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</guid>
+      <link>http://localhost:4000/til/testing-migrations-from-sandboxed-rails-console</link>
+      <guid isPermaLink="true">http://localhost:4000/til/testing-migrations-from-sandboxed-rails-console</guid>
     </item>
     
     <item>
@@ -143,12 +143,12 @@ I regularly screw up the database with some silly mistake in migration, which re
           &lt;p&gt;In order to encrypt a folder, we&amp;#39;ll create an archive of it and apply AES 256 bit encryption, using
 &lt;code&gt;$PASS&lt;/code&gt; as a password:&lt;/p&gt;
 
-          <a href="http://shime.sh/til/encrypting-and-decrypting-a-folder">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/encrypting-and-decrypting-a-folder">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/encrypting-and-decrypting-a-folder</link>
-      <guid isPermaLink="true">http://shime.sh/til/encrypting-and-decrypting-a-folder</guid>
+      <link>http://localhost:4000/til/encrypting-and-decrypting-a-folder</link>
+      <guid isPermaLink="true">http://localhost:4000/til/encrypting-and-decrypting-a-folder</guid>
     </item>
     
     <item>
@@ -157,12 +157,12 @@ I regularly screw up the database with some silly mistake in migration, which re
         <description>
           &lt;p&gt;Github has a hidden feature for comparing branches. This is the format used:&lt;/p&gt;
 
-          <a href="http://shime.sh/til/comparing-branches-on-github">http://shime.sh{ post.url }}</a>
+          <a href="http://localhost:4000/til/comparing-branches-on-github">http://localhost:4000{ post.url }}</a>
         </description>
       
       <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/comparing-branches-on-github</link>
-      <guid isPermaLink="true">http://shime.sh/til/comparing-branches-on-github</guid>
+      <link>http://localhost:4000/til/comparing-branches-on-github</link>
+      <guid isPermaLink="true">http://localhost:4000/til/comparing-branches-on-github</guid>
     </item>
     
   </channel>
