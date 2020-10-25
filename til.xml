@@ -8,6 +8,21 @@
     
     
     <item>
+      <title>Opening lines from the log file with Vim</title>
+      
+        <description>
+          &lt;p&gt;I&amp;#39;m sure a lot of people had the amazing experience
+of opening a long log file with Vim.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/opening-lines-from-the-log-file-with-vim">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/opening-lines-from-the-log-file-with-vim</link>
+      <guid isPermaLink="true">http://shime.sh/til/opening-lines-from-the-log-file-with-vim</guid>
+    </item>
+    
+    <item>
       <title>Sorting git branches by the last commit date</title>
       
         <description>
@@ -149,20 +164,6 @@ I regularly screw up the database with some silly mistake in migration, which re
       <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/encrypting-and-decrypting-a-folder</link>
       <guid isPermaLink="true">http://shime.sh/til/encrypting-and-decrypting-a-folder</guid>
-    </item>
-    
-    <item>
-      <title>Comparing branches on Github</title>
-      
-        <description>
-          &lt;p&gt;Github has a hidden feature for comparing branches. This is the format used:&lt;/p&gt;
-
-          <a href="http://shime.sh/til/comparing-branches-on-github">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/comparing-branches-on-github</link>
-      <guid isPermaLink="true">http://shime.sh/til/comparing-branches-on-github</guid>
     </item>
     
   </channel>
