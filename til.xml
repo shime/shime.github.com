@@ -8,6 +8,20 @@
     
     
     <item>
+      <title>Bear keyboard tricks you might not know</title>
+      
+        <description>
+          &lt;p&gt;Like many other developers, I don’t like using a mouse or touchpad for actions that can be done faster with keyboard shortcuts. So, here are some of the lesser-known Bear keyboard shortcuts that I’ve only discovered recently.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/bear-keyboard-tricks-you-might-not-know">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sat, 14 Nov 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/bear-keyboard-tricks-you-might-not-know</link>
+      <guid isPermaLink="true">http://shime.sh/til/bear-keyboard-tricks-you-might-not-know</guid>
+    </item>
+    
+    <item>
       <title>Opening lines from the log file with Vim</title>
       
         <description>
@@ -20,6 +34,20 @@ of opening a long log file with Vim.&lt;/p&gt;
       <pubDate>Sun, 25 Oct 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/opening-lines-from-the-log-file-with-vim</link>
       <guid isPermaLink="true">http://shime.sh/til/opening-lines-from-the-log-file-with-vim</guid>
+    </item>
+    
+    <item>
+      <title>Writing Bear templates with Automator and Ruby</title>
+      
+        <description>
+          &lt;p&gt;Bear is one of my favorite apps. It&amp;#39;s simple, has a fantastic minimalist design, and uses Markdown. I&amp;#39;m happy to support its development since it&amp;#39;s one of the rare apps that delight me. But, I&amp;#39;ve also noticed that some features are missing.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/bear-automator-ruby">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/bear-automator-ruby</link>
+      <guid isPermaLink="true">http://shime.sh/til/bear-automator-ruby</guid>
     </item>
     
     <item>
@@ -133,37 +161,6 @@ Webpack.&lt;/p&gt;
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/updating-indirect-dependencies-with-yarn</link>
       <guid isPermaLink="true">http://shime.sh/til/updating-indirect-dependencies-with-yarn</guid>
-    </item>
-    
-    <item>
-      <title>Testing migrations from sandboxed Rails console</title>
-      
-        <description>
-          &lt;p&gt;I usually download the staging or production
-database in order to test the migration locally. This enables getting migration errors before the deployment. However,
-I regularly screw up the database with some silly mistake in migration, which requires recreating the database.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/testing-migrations-from-sandboxed-rails-console">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</link>
-      <guid isPermaLink="true">http://shime.sh/til/testing-migrations-from-sandboxed-rails-console</guid>
-    </item>
-    
-    <item>
-      <title>Encrypting and decrypting a folder</title>
-      
-        <description>
-          &lt;p&gt;In order to encrypt a folder, we&amp;#39;ll create an archive of it and apply AES 256 bit encryption, using
-&lt;code&gt;$PASS&lt;/code&gt; as a password:&lt;/p&gt;
-
-          <a href="http://shime.sh/til/encrypting-and-decrypting-a-folder">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Tue, 21 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/encrypting-and-decrypting-a-folder</link>
-      <guid isPermaLink="true">http://shime.sh/til/encrypting-and-decrypting-a-folder</guid>
     </item>
     
   </channel>
