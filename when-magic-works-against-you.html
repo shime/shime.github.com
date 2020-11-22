@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Knowing the port one is sailing to" />
+<meta property="og:title" content="When magic works against you" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="If one does not know to which port one is sailing, no wind is favorable." />
-<meta property="og:description" content="If one does not know to which port one is sailing, no wind is favorable." />
-<link rel="canonical" href="http://shime.sh/knowing-the-port-one-is-sailing-to" />
-<meta property="og:url" content="http://shime.sh/knowing-the-port-one-is-sailing-to" />
+<meta name="description" content="When I first encountered this concern in the Rails app that I was working on, I was initially impressed. It felt like magic. Like a cool trick to avoid unnecessary complexity." />
+<meta property="og:description" content="When I first encountered this concern in the Rails app that I was working on, I was initially impressed. It felt like magic. Like a cool trick to avoid unnecessary complexity." />
+<link rel="canonical" href="http://shime.sh/when-magic-works-against-you" />
+<meta property="og:url" content="http://shime.sh/when-magic-works-against-you" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-09-27T00:00:00+02:00" />
+<meta property="article:published_time" content="2020-11-22T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.png" />
-<meta property="twitter:title" content="Knowing the port one is sailing to" />
+<meta property="twitter:title" content="When magic works against you" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Knowing the port one is sailing to","dateModified":"2020-09-27T00:00:00+02:00","datePublished":"2020-09-27T00:00:00+02:00","url":"http://shime.sh/knowing-the-port-one-is-sailing-to","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/knowing-the-port-one-is-sailing-to"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"If one does not know to which port one is sailing, no wind is favorable.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://shime.sh/public/social.png","headline":"When magic works against you","dateModified":"2020-11-22T00:00:00+01:00","datePublished":"2020-11-22T00:00:00+01:00","url":"http://shime.sh/when-magic-works-against-you","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/when-magic-works-against-you"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"When I first encountered this concern in the Rails app that I was working on, I was initially impressed. It felt like magic. Like a cool trick to avoid unnecessary complexity.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Knowing the port one is sailing to &middot; Hrvoje Šimić </title>
+    <title> When magic works against you &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Knowing the port one is sailing to &middot; Hrvoje Šimić">
+  <meta name="title" content="When magic works against you &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -199,10 +199,10 @@
             </div>
 
             <div class="mb-8">
-              <h1>Knowing the port one is sailing to</h1>
+              <h1>When magic works against you</h1>
               
               <div class="text-grey">
-                September 27, 2020
+                November 22, 2020
               </div>
               
 
@@ -211,36 +211,101 @@
               </div>
             </div>
 
-            <blockquote>
-<p>If one does not know to which port one is sailing, no wind is favorable.</p>
+            <p>When I first encountered this concern in the Rails app that I was working on, I was initially impressed. It felt like magic. Like a cool trick to avoid unnecessary complexity.</p>
 
-<p>Seneca the Younger</p>
-</blockquote>
+<p>This concern enabled using <code>let</code>  in Rails controllers. It inverts the relationship between controllers and views, so instead of controllers providing data for the views, it makes views ask for data from controllers. <a href="https://medium.com/@eric.programmer/removing-the-hack-in-rails-controllers-52396463c40d">This post shows the reasoning behind it</a>, and I will refer to it as “original post” in this article.</p>
 
-<p>For the past couple of months, I&#39;ve been doing more planning and reviewing. So far, the most useful review session was also the longest one — the one I did for the current year. It gave me a kick in the butt to change things with my work and made me realize that I needed to change things.</p>
+<p>This is the example from the original post:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">WidgetsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="n">let</span><span class="p">(</span><span class="ss">:widgets</span><span class="p">)</span> <span class="p">{</span> <span class="no">Widget</span><span class="o">.</span><span class="n">all</span> <span class="p">}</span>
+  <span class="n">let</span><span class="p">(</span><span class="ss">:widget</span><span class="p">)</span> <span class="p">{</span> <span class="n">widgets</span><span class="o">.</span><span class="n">find_or_initialize_by</span> <span class="nb">id</span><span class="p">:</span> <span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span> <span class="p">}</span>
 
-<p>Not doing these reviews results in being in the autopilot mode. Since it&#39;s hard to find time to reflect because of all the work that needs to be done, this leads to not questioning day-to-day activities. Because I&#39;m heads down, I don&#39;t have time to take a step back and ask myself if I&#39;m going in the right direction. But, sprinting in the wrong direction is worse than standing still.</p>
+  <span class="k">def</span> <span class="nf">new</span>
+    <span class="n">render</span> <span class="ss">:form</span>
+  <span class="k">end</span>
 
-<p>Because of the quote mentioned above, that keeps ricocheting in my head, I like to visualize myself as a ship. Not as the ordinary ship, but as the one that can either go forward or change direction. When I do the planning, I change the direction. When I execute the plan, I go straight ahead. That&#39;s why it&#39;s a good idea to spend some time planning and thinking about my goals. This time pays off.</p>
+  <span class="k">def</span> <span class="nf">edit</span>
+    <span class="n">render</span> <span class="ss">:form</span>
+  <span class="k">end</span>
 
-<p>Planning has given me much-needed guidance, and I&#39;m more deliberate with my day-to-day. I don&#39;t let weeks go by. It guides my daily habits. It&#39;s much easier to be intentional and know what needs to be done when there&#39;s a plan.</p>
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="n">save</span>
+  <span class="k">end</span>
 
-<p>Currently, there are four types of planning I do:</p>
+  <span class="k">def</span> <span class="nf">update</span>
+    <span class="n">save</span>
+  <span class="k">end</span>
 
-<ul>
-<li>mid-year planning - the big-picture planning</li>
-<li>42 days plan - planning for longer projects that need to get done</li>
-<li>weekly plan - planning for the current week</li>
-<li>daily plan - journaling for reflection and habit tracker for execution</li>
-</ul>
+  <span class="k">def</span> <span class="nf">destroy</span>
+    <span class="n">widget</span><span class="o">.</span><span class="n">destroy</span>
+    <span class="n">redirect_to</span> <span class="n">widgets_url</span><span class="p">,</span>
+                <span class="ss">notice</span><span class="p">:</span> <span class="s2">&quot;Widget was successfully destroyed.&quot;</span>
+  <span class="k">end</span>
 
-<p>Every planning type guides the one below it. So the mid-year planning guides the 42 days plan and so on. The planning session duration gets shorter as the plan period gets shorter. I spend a week thinking about my mid-year plan, a day thinking about a 42 days plan, half an hour for the weekly plan, and a couple of minutes for the daily plan.</p>
+  <span class="kp">private</span>
 
-<p>So far, I&#39;m thrilled with the results and feel much more confident with my day-to-day decisions. I have found more direction in my day-to-day. I find it much easier to stick with my habits when I know why I&#39;m doing them.</p>
+  <span class="k">def</span> <span class="nf">save</span>
+    <span class="k">if</span> <span class="n">widget</span><span class="o">.</span><span class="n">update</span> <span class="n">secure_params</span>
+      <span class="n">redirect_to</span> <span class="n">widget</span><span class="p">,</span>
+                  <span class="ss">notice</span><span class="p">:</span> <span class="s2">&quot;Widget was successfully saved.&quot;</span>
+    <span class="k">else</span>
+      <span class="n">render</span> <span class="ss">:form</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-<p>Reflection and assessing my success from week to week makes me take this planning more seriously. It&#39;s not something I write down and then forget about.</p>
+  <span class="k">def</span> <span class="nf">secure_params</span>
+    <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:widget</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span> <span class="ss">:name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>With this, the templates would simply use <code>widget</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">&lt;%=</span> <span class="n">widget</span><span class="o">.</span><span class="n">name</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>However, there are a lot of problems with this approach.</p>
 
-<p>I don&#39;t want to be like a ship that doesn&#39;t know to which port it&#39;s sailing. Goals are my port, and the planning is the map for how to get there.</p>
+<h2>1. It’s implicit</h2>
+
+<p>There’s a reason why ActiveRecord callbacks are not a great idea and why you should prefer not passing instance variables to your views. The Zen of Python famously generalizes this rule as “explicit is better than implicit”.</p>
+
+<p>Code that relies too much on magic is too difficult to understand and therefore maintain. I would rather have duplication that is visible and easy to understand than DRY magic that is hard to understand.</p>
+
+<h2>2. It’s a fake local</h2>
+
+<p>The original post sees passing instance variables to views as an improvement of explicitly passing locals. (I strongly disagree because I find views with instance variables hard to maintain.)</p>
+
+<p><code>let</code> is more implicit than using instance variables. It suffers from the same problems as using instance variables since it uses instance variables under the hood. It makes views too dependent on their controllers. Partials become difficult to move around.</p>
+
+<p><code>let</code> adds another problem and makes it more difficult for the reader to understand that this is, in fact, a memoized instance variable.</p>
+
+<p>It’s a memoized instance variable masquerading as a local.</p>
+
+<p>So, just adding this concern into your application controller, as the author suggests in his original post, makes all of your views more difficult to understand.</p>
+
+<p>Seeing:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">&lt;%=</span> <span class="n">user</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>In any of your views makes it difficult to track down. Is it a local or an instance variable?</p>
+
+<h2>3. It’s easy to make mistakes</h2>
+
+<p>If you’re not careful, you can easily open a can of worms. One example is using <code>let</code> inside the application controller. Here’s an example:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">include</span> <span class="no">Lettable</span>
+
+  <span class="n">let</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:user_id</span><span class="o">]</span><span class="p">)</span> <span class="k">if</span> <span class="n">params</span><span class="o">[</span><span class="ss">:user_id</span><span class="o">].</span><span class="n">present?</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Good luck tracking where <code>user</code> comes from in hundreds of your views or controllers.</p>
+
+<p class="text-center">
+*  *  * 
+</p>
+
+<p>So, by introducing the Lettable concern, you end up with somewhat cleaner controllers and views that become hard to understand. You avoid the issue of accidentally loading data for actions that don’t need it, as mentioned in the original post, but it makes your life much harder when it comes to maintenance.</p>
+
+<p>Beware of the long term consequences of including cool tricks in your codebase. They might temporarily solve smaller problems but sometimes cause even bigger problems. What starts as magic can end tragic.</p>
 
 
 

@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>When magic works against you</title>
+      
+      <description>&lt;p&gt;When I first encountered this concern in the Rails app that I was working on, I was initially impressed. It felt like magic. Like a cool trick to avoid unnecessary complexity.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/when-magic-works-against-you</link>
+      <guid isPermaLink="true">http://shime.sh/when-magic-works-against-you</guid>
+    </item>
+    
+    <item>
       <title>The importance of detachment</title>
       
       <description>&lt;p&gt;All my previous side projects flopped because of this. I looked at them from the perspective of a creator. I was stuck in that role. I didn’t have the experience of all the other people that were supposed to use the end product.&lt;/p&gt;
@@ -106,17 +117,6 @@
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/word-rafting</link>
       <guid isPermaLink="true">http://shime.sh/word-rafting</guid>
-    </item>
-    
-    <item>
-      <title>Goodbye Apple Watch</title>
-      
-      <description>&lt;p&gt;After over a year of everyday use, I&amp;#39;ve recently stopped using the Apple Watch.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 09 Aug 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/goodbye-apple-watch</link>
-      <guid isPermaLink="true">http://shime.sh/goodbye-apple-watch</guid>
     </item>
     
   </channel>
