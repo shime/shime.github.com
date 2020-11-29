@@ -8,6 +8,39 @@
     
     
     <item>
+      <title>Keeping a folder of Rails snippets</title>
+      
+        <description>
+          &lt;p&gt;I had used Github&amp;#39;s gists for saving snippets
+of useful code that I have used to solve a problem, but might still
+need in the future. This had usually included snippets on how to do
+something with Ruby, bash or vim.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/keeping-a-folder-of-rails-snippets">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/keeping-a-folder-of-rails-snippets</link>
+      <guid isPermaLink="true">http://shime.sh/til/keeping-a-folder-of-rails-snippets</guid>
+    </item>
+    
+    <item>
+      <title>Duplicating a tab in Chrome with a shortcut</title>
+      
+        <description>
+          &lt;p&gt;Duplicating a tab comes in handy when you want 
+to navigate to another page, while still referencing 
+the current one.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/duplicating-a-tab-in-chrome-with-a-shortcut">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/duplicating-a-tab-in-chrome-with-a-shortcut</link>
+      <guid isPermaLink="true">http://shime.sh/til/duplicating-a-tab-in-chrome-with-a-shortcut</guid>
+    </item>
+    
+    <item>
       <title>Bear keyboard tricks you might not know</title>
       
         <description>
@@ -128,39 +161,6 @@ I had to wait for linting to complete before every commit.&lt;/p&gt;
       <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/using-git-pre-push-hook-for-linting</link>
       <guid isPermaLink="true">http://shime.sh/til/using-git-pre-push-hook-for-linting</guid>
-    </item>
-    
-    <item>
-      <title>Opening the last migration</title>
-      
-        <description>
-          &lt;p&gt;I use Tim Pope&amp;#39;s excellent &lt;a href=&quot;https://github.com/tpope/vim-rails&quot;&gt;rails.vim&lt;/a&gt;
-and its shortcuts. One of the shortcuts I use pretty
-regularly is &lt;code&gt;:Emigration&lt;/code&gt; or &lt;code&gt;:Emi&lt;/code&gt; to edit the last migration.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/opening-the-last-migration">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/opening-the-last-migration</link>
-      <guid isPermaLink="true">http://shime.sh/til/opening-the-last-migration</guid>
-    </item>
-    
-    <item>
-      <title>Updating indirect dependencies with Yarn</title>
-      
-        <description>
-          &lt;p&gt;Since JavaScript ecosystem consists of many small
-packages, your JavaScript project likely depends on
-many of them. Especially if you&amp;#39;re using a tool like
-Webpack.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/updating-indirect-dependencies-with-yarn">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Wed, 22 Apr 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/updating-indirect-dependencies-with-yarn</link>
-      <guid isPermaLink="true">http://shime.sh/til/updating-indirect-dependencies-with-yarn</guid>
     </item>
     
   </channel>
