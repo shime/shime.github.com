@@ -12,9 +12,9 @@
       
         <description>
           &lt;p&gt;I had used Github&amp;#39;s gists for saving snippets
-of useful code that I have used to solve a problem, but might still
+of useful code that I have used to solve a problem but might still
 need in the future. This had usually included snippets on how to do
-something with Ruby, bash or vim.&lt;/p&gt;
+something with Ruby, bash, or vim.&lt;/p&gt;
 
           <a href="http://shime.sh/til/keeping-a-folder-of-rails-snippets">http://shime.sh{ post.url }}</a>
         </description>
@@ -28,9 +28,7 @@ something with Ruby, bash or vim.&lt;/p&gt;
       <title>Duplicating a tab in Chrome with a shortcut</title>
       
         <description>
-          &lt;p&gt;Duplicating a tab comes in handy when you want 
-to navigate to another page, while still referencing 
-the current one.&lt;/p&gt;
+          &lt;p&gt;Duplicating a tab comes in handy when you want to navigate to another page, while still referencing the current one.&lt;/p&gt;
 
           <a href="http://shime.sh/til/duplicating-a-tab-in-chrome-with-a-shortcut">http://shime.sh{ post.url }}</a>
         </description>

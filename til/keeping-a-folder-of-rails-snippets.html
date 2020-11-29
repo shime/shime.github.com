@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1606669834720266000">
-  <link rel="stylesheet" href="/public/css/style.css?1606669834720266000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1606670128398840000">
+  <link rel="stylesheet" href="/public/css/style.css?1606670128398840000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -44,8 +44,8 @@
 <meta property="og:title" content="Keeping a folder of Rails snippets" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I had used Github&#39;s gists for saving snippets of useful code that I have used to solve a problem, but might still need in the future. This had usually included snippets on how to do something with Ruby, bash or vim." />
-<meta property="og:description" content="I had used Github&#39;s gists for saving snippets of useful code that I have used to solve a problem, but might still need in the future. This had usually included snippets on how to do something with Ruby, bash or vim." />
+<meta name="description" content="I had used Github&#39;s gists for saving snippets of useful code that I have used to solve a problem but might still need in the future. This had usually included snippets on how to do something with Ruby, bash, or vim." />
+<meta property="og:description" content="I had used Github&#39;s gists for saving snippets of useful code that I have used to solve a problem but might still need in the future. This had usually included snippets on how to do something with Ruby, bash, or vim." />
 <link rel="canonical" href="http://shime.sh/til/keeping-a-folder-of-rails-snippets" />
 <meta property="og:url" content="http://shime.sh/til/keeping-a-folder-of-rails-snippets" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
@@ -58,7 +58,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Keeping a folder of Rails snippets","dateModified":"2020-11-29T00:00:00+01:00","datePublished":"2020-11-29T00:00:00+01:00","url":"http://shime.sh/til/keeping-a-folder-of-rails-snippets","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/keeping-a-folder-of-rails-snippets"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I had used Github&#39;s gists for saving snippets of useful code that I have used to solve a problem, but might still need in the future. This had usually included snippets on how to do something with Ruby, bash or vim.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://shime.sh/public/social.png","headline":"Keeping a folder of Rails snippets","dateModified":"2020-11-29T00:00:00+01:00","datePublished":"2020-11-29T00:00:00+01:00","url":"http://shime.sh/til/keeping-a-folder-of-rails-snippets","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/keeping-a-folder-of-rails-snippets"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I had used Github&#39;s gists for saving snippets of useful code that I have used to solve a problem but might still need in the future. This had usually included snippets on how to do something with Ruby, bash, or vim.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -216,26 +216,26 @@
             </div>
 
             <p>I had used Github&#39;s gists for saving snippets
-of useful code that I have used to solve a problem, but might still
+of useful code that I have used to solve a problem but might still
 need in the future. This had usually included snippets on how to do
-something with Ruby, bash or vim.</p>
+something with Ruby, bash, or vim.</p>
 
 <p>However, I got tired of saving everything in Github and decided to
 replace it with the local alternative.</p>
 
-<p>My first solution was putting everything in the single file for every
+<p>My first solution was putting everything in a single file for every
 project that I was working on. This was added to the global gitignore (<code>~/.gitignore</code>):</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>snippets.rb
 </code></pre></div>
 <p>This enabled having context for my snippets. I could place project-related snippets
-in that project&#39;s root directory, while keeping a global snippets file in my home directory.</p>
+in that project&#39;s root directory while keeping a global snippets file in my home directory.</p>
 
 <p>However, this has become a mess, for obvious reasons, so I&#39;ve recently added
 this to my global gitignore: </p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>snippets/
 </code></pre></div>
 <p>While still giving me all the benefits of <code>snippets.rb</code>, this also allows separating
-snippets into files, which is much more managable.</p>
+snippets into files, which is much more manageable.</p>
 
 
 
