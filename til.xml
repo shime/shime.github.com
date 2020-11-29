@@ -8,7 +8,7 @@
     
     
     <item>
-      <title>Keeping a folder of Rails snippets</title>
+      <title>Keeping a folder of snippets</title>
       
         <description>
           &lt;p&gt;I had used Github&amp;#39;s gists for saving snippets
@@ -16,12 +16,12 @@ of useful code that I have used to solve a problem but might still
 need in the future. This had usually included snippets on how to do
 something with Ruby, bash, or vim.&lt;/p&gt;
 
-          <a href="http://shime.sh/til/keeping-a-folder-of-rails-snippets">http://shime.sh{ post.url }}</a>
+          <a href="http://shime.sh/til/keeping-a-folder-of-snippets">http://shime.sh{ post.url }}</a>
         </description>
       
       <pubDate>Sun, 29 Nov 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/til/keeping-a-folder-of-rails-snippets</link>
-      <guid isPermaLink="true">http://shime.sh/til/keeping-a-folder-of-rails-snippets</guid>
+      <link>http://shime.sh/til/keeping-a-folder-of-snippets</link>
+      <guid isPermaLink="true">http://shime.sh/til/keeping-a-folder-of-snippets</guid>
     </item>
     
     <item>
