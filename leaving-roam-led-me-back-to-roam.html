@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/monokai.css?1607892219274190000">
+  <link rel="stylesheet" href="/public/css/style.css?1607892219274190000">
+
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+<link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
+<link rel="icon" type="image/png" sizes="160x160" href="/public/favicon-160.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/public/favicon-128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/public/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16.png">
+<link rel="apple-touch-icon" href="/public/favicon-57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicon-152.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicon-144.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicon-120.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicon-114.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicon-76.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicon-72.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicon-60.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/public/favicon-144.png">
+<meta name="msapplication-config" content="/public/browserconfig.xml">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="My experience with switching too many apps for personal knowledge management" />
+<meta name="author" content="Hrvoje Šimić" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Personal knowledge management (PKM) is the best thing I discovered in 2019. I&#39;ve since tried a couple of different approaches and too many (six) apps. In this article, I would like to share everything I&#39;ve learned about it over that period." />
+<meta property="og:description" content="Personal knowledge management (PKM) is the best thing I discovered in 2019. I&#39;ve since tried a couple of different approaches and too many (six) apps. In this article, I would like to share everything I&#39;ve learned about it over that period." />
+<link rel="canonical" href="http://shime.sh/leaving-roam-led-me-back-to-roam" />
+<meta property="og:url" content="http://shime.sh/leaving-roam-led-me-back-to-roam" />
+<meta property="og:site_name" content="Hrvoje Šimić" />
+<meta property="og:image" content="http://shime.sh/public/social.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-13T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://shime.sh/public/social.png" />
+<meta property="twitter:title" content="My experience with switching too many apps for personal knowledge management" />
+<meta name="twitter:site" content="@shime_sh" />
+<meta name="twitter:creator" content="@shime_sh" />
+<script type="application/ld+json">
+{"image":"http://shime.sh/public/social.png","headline":"My experience with switching too many apps for personal knowledge management","dateModified":"2020-12-13T00:00:00+01:00","datePublished":"2020-12-13T00:00:00+01:00","url":"http://shime.sh/leaving-roam-led-me-back-to-roam","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/leaving-roam-led-me-back-to-roam"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Personal knowledge management (PKM) is the best thing I discovered in 2019. I&#39;ve since tried a couple of different approaches and too many (six) apps. In this article, I would like to share everything I&#39;ve learned about it over that period.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+    <title> My experience with switching too many apps for personal knowledge management &middot; Hrvoje Šimić </title>
+  
+
+  <meta name="title" content="My experience with switching too many apps for personal knowledge management &middot; Hrvoje Šimić">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+
+  
+</head>
+
+
+  <body class="font-sans">
+    <div class="lg:pt-16 lg:pb-32 p-6 relative">
+      
+
+
+
+
+<div class="relative flex justify-between items-start w-full z-20 md:justify-center self-center">
+  <div class="flex items-center">
+    <a class="self-start w-16 h-16" href="/">
+      <img class="self-start rounded-full w-16 h-16" src='/public/bw.jpeg' alt='' />
+    </a>
+
+    <div class="flex flex-col ml-4">
+      <a class="text-black font-bold text-xl no-underline font-extrabold self-start" href="/">Hrvoje Šimić</a>
+      <a class="text-black font-bold no-underline font-extrabold my-1 self-start" href="https://twitter.com/shime_sh">@shime_sh</a>
+      <ul class="hidden md:block list-reset tracking-wide">
+        
+        <li class="inline">
+          
+          <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-black" href='/articles/'>Articles</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+          <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-black" href='/til/'>TIL</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+          <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-black" href='/photography/'>Photography</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+          <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-black" href='/reading/'>Reading list</a>
+          
+        </li>
+        
+        <li class="inline">
+          
+          <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-black" href='/subscribe'>Subscribe</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="block md:hidden self-center">
+    <button data-open-hamburger-menu="true">
+      <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="black" class="heroicon-ui" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+      </svg>
+    </button>
+
+    <button data-close-hamburger-menu="true" class="hidden">
+      <svg fill="black" height="32" id="close" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8 L8 4 L16 12 L24 4 L28 8 L20 16 L28 24 L24 28 L16 20 L8 28 L4 24 L12 16 z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="hidden md:hidden fixed pin bg-white z-10 mt-32 pt-12" data-hamburger-menu="true">
+  <ul class="list-reset tracking-wide flex flex-col items-center w-full">
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-grey no-underline uppercase" href='/articles/'>Articles</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-grey no-underline uppercase" href='/til/'>TIL</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-grey no-underline uppercase" href='/photography/'>Photography</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-grey no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-grey no-underline uppercase" href='/subscribe'>Subscribe</a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
+        <div class="flex-col">
+          <div class="max-w-full">
+            
+
+          </div>
+
+          <div class="post max-w-full md:max-w-md">
+            
+            
+
+            <div>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
+            </div>
+
+            <div class="mb-8">
+              <h1>My experience with switching too many apps for personal knowledge management</h1>
+              
+              <div class="text-grey">
+                December 13, 2020
+              </div>
+              
+
+              <div class="flex my-2">
+                
+              </div>
+            </div>
+
+            <p>Personal knowledge management (PKM) is the best thing I discovered in 2019. I&#39;ve since tried a couple of different approaches and too many (six) apps. In this article, I would like to share everything I&#39;ve learned about it over that period.</p>
+
+<blockquote>
+<p>Investment in knowledge pays the best interest.</p>
+
+<p>Benjamin Franklin</p>
+</blockquote>
+
+<h2>Why bother?</h2>
+
+<p>Given that every PKM system requires a significant time investment, it&#39;s worth asking yourself what&#39;s the point. What&#39;s the benefit of spending all this time on writing notes? For me personally, it boils down to having a higher return of investment on reading itself.</p>
+
+<p>I love reading and learning from the wins and mistakes of others since I can&#39;t live long enough to make them all by myself, in the words of Eleanor Roosevelt. I have noticed that I tend to forget ideas from the books by just reading and not taking notes. I&#39;ve fallen to the fallacy of &quot;transmissionism&quot;, as Andy Matuschak calls it in <a href="https://andymatuschak.org/books/">his great article about books</a>. The belief that by just reading a book, I&#39;m going to absorb the knowledge from it. In reality, I don&#39;t really learn much that way.</p>
+
+<p>Taking notes fights this effect of forgetting ideas. Instead of just reading, your goal becomes a search for interesting ideas that you can feed into your system. As you feed more interesting ideas into your PKM system, it becomes more valuable. PKM enables network effects for ideas. Instead of observing the radioactive decay of ideas from the books you read, their value starts compounding. <sup>[<a href="#radioactive-decay">1</a>]</sup></p>
+
+<p>I&#39;ve come to realize that reading is just one part of learning. The other part is writing. Or, as Sahil Livingia has said: &quot;Reading is the inhale, writing is the exhale.&quot;</p>
+
+<h2>The benefits of PKM</h2>
+
+<p>Although I&#39;ve tried using Building a Second Brain (BASB) as my PKM method, my current method is Zettelkasten (ZK). So, I&#39;ll try to explain its benefits.</p>
+
+<p>Zettelkasten is easy and fun for me. It makes reading, writing, and thinking more fun.</p>
+
+<p>Reading becomes fun since I&#39;m on the hunt for new ideas. Instead of just going through the book for bragging rights and signaling purposes, I&#39;m hunting for surprising. When I find it, I&#39;m happy since I can put it into my notes and improve all notes&#39; quality.</p>
+
+<p>Writing becomes more fun since I do it in smaller increments. Instead of staring at a blank page when writing new essays, they write themselves from the bottom up. Every note is what Tiago Forte calls an &quot;intermediate packet&quot;. The essay gets composed out of smaller, reusable packets that each make sense on its own. Topics start to emerge. And so do the ideas for essays.</p>
+
+<p>Thinking becomes more fun too. Making connections between notes and seeing contradictory notes triggers interesting questions. Instead of thinking just inside of your head, you get a system and environment that fosters that. As &quot;How To Take Smart Notes&quot; writes, storing permanent notes is a form of dialogue with your past notes. And this kind of dialogue encourages thinking more about the ideas that you encounter while reading.</p>
+
+<p>Just writing things down in my own words improves my thinking. As Niklas Luhmann, the Zettelkasten method&#39;s inventor has said, &quot;It&#39;s not possible to think systematically without writing&quot;. By writing things down in your own words, you start realizing how much you understand (or don&#39;t understand) about the subject. You realize the holes in your arguments. Questions start arising. Questions that wouldn&#39;t otherwise be asked had you just done thinking inside of your head. Writing reveals questions and gaps in arguments.</p>
+
+<h2>BASB in Notion</h2>
+
+<p>My first encounter with PKM was learning about BASB from Maria Aldrey. She has used Notion to take notes and organize them into four categories in a system called PARA:
+  - &quot;Projects&quot;, which have to have a deadline
+  - &quot;Areas&quot;, which are your specific long-term areas of improvement
+  - &quot;Resources&quot;, which contain categorized notes and highlights from articles and books
+  - &quot;Archive&quot;, which contain archived projects, areas, and resources</p>
+
+<p>Although I didn&#39;t take the official course from Tiago, I went through all of his articles about PARA. After adding many articles and book notes to it, I started categorizing them and going through the process of &quot;progressive summarization&quot;, one of the most important lessons from Tiago.</p>
+
+<p>It consists of adding layers of highlights to articles and books. Normally, bolding enables two layers of importance for content. Bolded text is important, while unbolded is unimportant. </p>
+
+<p>The PARA method adds some additional layers of importance:
+  - unbolded text
+  - bolded text
+  - highlighted (colored) text
+  - summary
+  - remix (original creation)</p>
+
+<p>Not every piece of content needs to go through all five steps, but the most interesting pieces will go through all of them. The most interesting step is the remix, in which you try to connect the ideas expressed here with other notes in your system.</p>
+
+<p>I gave this system a go for a couple of months, but it didn&#39;t stick in the end. I was too tired from deciding how to categorize every note and where to put it. I ended up thinking about the organization more than about the content I&#39;m saving. It felt too heavy for my taste, and it wasn&#39;t a fun process. The distinction between &quot;Areas&quot; and &quot;Resources&quot; always confused me, and I never got used to it. My summarized notes, in the end, weren&#39;t connecting and ended up being isolated islands. I was unable to find relevant concepts with the search. So after a couple of months, I&#39;ve stopped doing it.</p>
+
+<h2>No structure in Roam</h2>
+
+<p>This brings us to Roam. After totally cooling down from BASB and Notion, I&#39;ve discovered Roam and marveled at the beauty of it. Instead of writing notes and categorizing them, I started connecting them. As I wrote in <a href="https://shime.sh/why-i-love-roam">an article</a> from that time, Roam has freed me from unnecessary compartmentalization and encouraged me to build networks of ideas, which is more like how my brain works. It&#39;s a network, not an archive.</p>
+
+<p>However, I didn&#39;t follow any system for taking these notes. I&#39;ve later realized that not being systematic comes with a huge drawback. It all becomes a &quot;magical junkyard&quot; that is hard to navigate. I ended up with many notes and connections, but nothing in it ended up being useful. Each note was either empty, contained one idea, or hundreds of ideas. There was no way to differentiate them, so I ended up not knowing what&#39;s useful. Searching was also difficult since I didn&#39;t follow any method for naming my notes.</p>
+
+<p>That&#39;s why I&#39;ve started to investigate other methods like BASB and found out about Zettelkasten.</p>
+
+<h2>Zettelkasten in Roam</h2>
+
+<p>I&#39;ve decided to add some structure after realizing that my Roam database is turning into &quot;the magical junkyard&quot;. And that&#39;s what Zettelkasten gave me. I&#39;ve started keeping atomic notes, or notes that consisted of one idea only, and started being more careful with the note titles.</p>
+
+<p>I&#39;ve started thinking what the most useful title for each note is, considering my future searches. I&#39;ve realized that note titles are like APIs. But, only viscerally since I&#39;ve only later read <a href="https://notes.andymatuschak.org/Evergreen_note_titles_are_like_APIs">Andy Matuschak&#39;s notes on the subject</a>. I wasn&#39;t that good at naming my notes and started by using the <a href="https://www.swyx.io/two-words/">Two Words approach</a> that wasn&#39;t very useful for future searches.</p>
+
+<p>Using Zettelkasten in Roam meant that I got to preserve the fun I get from taking notes in Roam in an unstructured way while still fighting the fear of building a castle of sand. As &quot;How to Take Smart Notes&quot; writes, &quot;a standardized work environment is less taxing for our motivation&quot; and &quot;having a system we can rely on makes us reduce decisions we have to make during a work session&quot;. This standardized work environment is provided by BASB too, but with Zettelkasten, it&#39;s not as heavy and hierarchical. There are fewer decisions that have to be made when taking notes. The network is built organically, bottom-up and not top-down.</p>
+
+<p>However, after using Roam for some time, I got concerned about having my notes stored in a proprietary format, so I&#39;ve started experimenting with other apps. I am a software developer, and I spend most of the day in the terminal, manipulating text in Vim. The blog you&#39;re reading uses Jekyll, a static site generator that stores blog posts in Markdown.</p>
+
+<p>I am a fan of Markdown since it&#39;s easy to read for humans in its raw form, and it&#39;s still very powerful with formatting. It&#39;s just text that doesn&#39;t need a special app to be read (unlike Roam). I would rather bet that 100 years from now, people will still be able to read Markdown than I would on people being able to read Roam notes at that time. Simply put, I wanted my Zettelkasten notes to survive a long period, and that&#39;s why I started experimenting with other apps.</p>
+
+<h2>Switching to Zettlr</h2>
+
+<p>My first experiment was switching to <a href="https://www.zettlr.com/">Zettlr</a>. The most promising thing that pulled me to try it out was that it was built specifically for Zettelkasten and uses Markdown under the hood. However, this experiment lasted very briefly. After realizing that I can&#39;t create new notes by just surrounding the term with brackets, I&#39;ve decided to quit.</p>
+
+<p>Using Roam for a couple of months made me perceive this behavior as something very basic and essential. It&#39;s easy to forget that not every note-taking app supports creating new notes in such a low-friction way.</p>
+
+<h2>Switching to Vim</h2>
+
+<p>I loved reading <a href="https://superorganizers.substack.com/p/how-to-build-a-learning-machine">this article about building a Zettelkasten system directly in Vim, with help from bash</a>. Since I&#39;ve been using Vim for more than a decade, I am biased for using it for every context that I can. Or at least try.</p>
+
+<p>After some tweaking and playing around with <a href="https://github.com/vimwiki/vimwiki">Vim Wiki</a> and <a href="https://github.com/junegunn/fzf.vim">fzf.vim</a>, I&#39;ve ended with a somewhat functional environment.</p>
+
+<p><img src="/public/vim-pkm.png" alt=""></p>
+
+<p>I loved how everything was just plain Markdown, enhanced with Wiki-style links a la Roam. Creating new notes was effortless and worked by just surrounding the terms, unlike Zettlr. I especially loved how easy it was to open multiple notes at once for a higher picture. The only limit on how many notes I can view simultaneously was imposed by the screen size.</p>
+
+<p>However, backlinks were problematic and required hacks. I was not satisfied after installing <a href="https://github.com/andymatuschak/note-link-janitor">note link janitor</a> by Andy Matuschak, since it didn&#39;t come close to the power of backlinks in Roam. It was buggy, and often times the backlinks didn&#39;t provide enough context, but just the first line of the mention. Editing notes directly in backlinks, like in Roam, was not supported.</p>
+
+<p>What also bugged me was the fact that all of this was stored only on my computer. I&#39;ve added an auto-command in Vim that created an encrypted backup in the background every time I&#39;ve changed something and uploaded it to the cloud. However, I still wanted to edit my notes from the phone from time to time. Some people create their knowledge base directly on Google Drive and Dropbox and then edit text files from their phones, but this didn&#39;t seem attractive.</p>
+
+<p>I&#39;ve decided to try something else since this environment felt too crude for me, and I had a fear of missing out. The thought that I could probably make more connections and think better had I used something else was always in the back of my mind.</p>
+
+<h2>Switching to Obsidian</h2>
+
+<p>After being somewhat skeptical when first seeing it, since I couldn&#39;t find the name of the company behind it, I&#39;ve decided to give <a href="https://obsidian.md/">Obsidian</a> a go. I liked the fact that everything is stored locally and that it used Markdown. It felt similar to using Vim, but since it was specifically made to create and manage a &quot;second brain&quot;, it had some nice additional features.</p>
+
+<p>One of the nicest was the support for backlinks out-of-the-box. However, the excitement with backlinks wore off pretty quickly since I was used to the more powerful version from Roam. They support customization with CSS, which allows some pretty fun stuff, like <a href="https://github.com/kmaasrud/awesome-obsidian#andy-matuschak-mode">Andy Matuschak mode</a>.</p>
+
+<p>As with Vim, they support opening many notes simultaneously in the same window. This is perhaps the only thing regarding the user experience that is better than Roam. Although Roam offers the graph view for seeing connections between notes, I find it useful to look at the entire text from notes. It feels more like arranging physical notes on a table and then looking for connections.</p>
+
+<p>The drawbacks of using Obsidian were similar to those of Vim. I couldn&#39;t read or edit anything on my phone, and I felt a lot of FOMO. That&#39;s why I&#39;ve yet again decided to switch.</p>
+
+<h2>Switching to Bear</h2>
+
+<p>I&#39;ve been using Bear for a long time, and I was happy with their UI and features. Still, I never considered using them for personal knowledge management. They also use Markdown for everything and store data locally in an SQLite database.</p>
+
+<p>I love their emphasis on minimalism and how well-polished their mobile app is. The user experience on a computer, phone, and tablet is top-notch. There is no support for backlinks in Bear, although there&#39;s <a href="https://github.com/andymatuschak/bear-link-janitor">Andy Matuschak&#39;s hack</a> for this too. I didn&#39;t use it this time and wanted to see how far I can go without them.</p>
+
+<p>I&#39;ve found that they are not super critical for Zettelkasten. I had to be more intentional with the links and decide what kind of connection I want to make between every pair of connected notes. I&#39;ve found that not every connection needs to be two-sided, like with backlinks. <a href="https://notes.andymatuschak.org/z68tVM68dEAuH4acs7HY6K76tTVzBdoBGKMZB">Using fine-grained associations</a> instead of just listing notes that have something in common with a particular note has proven to be pretty useful. The backlinks provide another kind of relationship between notes, an implicit one, useful for discovery but not critical. Intentional relationships that are built by direct links are much more important.</p>
+
+<p>One thing that started bothering me after I&#39;ve created ~1500 notes in Bear is how slow it gets when renaming notes. Renaming a note that&#39;s referenced a lot freezes Bear for some reason. It becomes unresponsive for 30 seconds, which is very annoying.</p>
+
+<p>The benefit of opening multiple notes at the same time available in Vim and Obsidian is not present in Bear. To do so in Bear, each note has to be opened in a new window, which feels clunky and frictional.</p>
+
+<p>Although I&#39;ve been using some custom scripts for importing book highlights from Apple Books to Bear, which were useful to reference from my Zettelkasten, something was missing from my setup: the ability to save highlights from articles that I read online. Having all of the highlights in one place to connect, reference, and remix is a very powerful feature.</p>
+
+<p>To try to work around this problem, I&#39;ve tried using Bear&#39;s browser plugin for storing entire articles in Bear, but the results have been unsatisfactory. It doesn&#39;t come close to the quality of specialized read later apps like Instapaper and Pocket. What made it unusable is not that it couldn&#39;t store an article, but that it stored incomplete articles. It made me lose trust in using Bear&#39;s browser plugin and on the lookout for better solutions.</p>
+
+<p>This brings us to...</p>
+
+<h2>Readwise, or why I&#39;m back in Roam</h2>
+
+<p>Although it looked unpolished (at the time, they have since updated their design), Readwise was a very popular tool inside #roamcult, which is how I discovered it. It didn&#39;t take long to realize how useful it is. When connected with Instapaper, Kindle, and Apple Books, it really becomes one of the most useful tools in the PKM toolkit. By capturing highlights from absolutely everything I&#39;ve read, it becomes storage of the best of the best from my inputs. And then it resurfaces these best chunks to fight the forgetting curve. Marvelous.</p>
+
+<p>As I was still using Bear at the time, I was frustrated that it didn&#39;t have an automatic connection to Bear. Understandably, since Bear currently doesn&#39;t have a web app or an API. However, I&#39;ve noticed that there is such a connection with Roam, which made me go back to it.</p>
+
+<p>And now I&#39;m back at step one. I have both my Zettelkasten and all the things I&#39;ve highlighted in Roam, and I don&#39;t have to take action to make it happen. The only change I have to make is to read all the articles in Instapaper (I could use the browser extension for this, but I don&#39;t trust third-party plugins enough to share all my passwords with them).</p>
+
+<h2>Thoughts on coming back to Roam after a long time</h2>
+
+<p>Coming back to Roam after all of these switches has made me aware of other great features of Roam that are easy to get used to but which don&#39;t exist in other Markdown-based apps.</p>
+
+<p>One of the most prominent ones is probably blocks and their transclusion abilities. Just as how everything is an object in Ruby, so everything is a block in Roam. This has proven to be very helpful when writing articles by following <a href="https://www.youtube.com/watch?v=RvWic15iXjk">Nat Eliason&#39;s approach</a>. This article was written following that approach, along with zooming in into the blocks that follow titles from the outline. Writing this article has been the most enjoyable experience with writing so far (which is why this is the longest article I&#39;ve written). This is somewhat surprising for me, as I didn&#39;t think that the app I am using could greatly impact my writing experience.</p>
+
+<p>Another surprising thing with Roam is how much easier it made writing a weekly newsletter. It feels like Roam was made to synthesize the best of content, which is the same goal of my newsletter. It&#39;s very easy to either link to the next edition from wherever or just put the blank page of the next edition of the newsletter in the sidebar and go on the hunt for juicy blocks. As with writing, this has surprised me since I didn&#39;t expect the app to make such a difference.</p>
+
+<p>A couple of other worthy mentions missing from all the other apps I&#39;ve tried are the sidebar and links in note titles. Sidebar enables exploration and makes transclusion easier, while links in note titles make linking even more effortless. With them, I can even create links from blank pages. I found it the most useful when linking to a concept that I&#39;ve picked from another person (e.g., &quot;How to think for yourself per [[Paul Graham]]&quot;).</p>
+
+<p>Since coming back to Roam, I&#39;ve also made some changes with how I do Zettelkasten. I no longer follow <a href="https://www.youtube.com/watch?v=ljyo_WAJevQ">Shu Omi&#39;s approach</a> for taking notes. The biggest flaw with that approach is that I&#39;ve ended with many notes that express ideas from other authors in my own words and few ideas of my own. To fix that, I&#39;ve added another layer of abstraction on top of what he calls permanent notes in his video. I&#39;ll share more about that in a future article since this one is too long as it is.</p>
+
+<p>As I&#39;ve discovered that Roam is a superior environment for writing, and therefore thinking, I&#39;m glad to sacrifice the longevity of my notes that I might have gotten with Markdown. After all, longevity is less important than the impact on the quality and enjoyment of thinking. Without enjoyment and a supportive environment, the notes will never reach the quality required to have them preserved in the first place.</p>
+
+<hr>
+
+<ol>
+<li><a name="radioactive-decay"></a>
+The idea about radioactive decay is stolen from my co-rafter Nick Ang and <a href="https://www.nickang.com/2020-07-05-personal-knowledge-management-system/">his essay on personal knowledge management</a>.</li>
+</ol>
+
+
+
+            
+              <div class="mt-12 bg-grey-lightest p-8 text-grey-darkest border-t-4 border-grey-light">
+                
+
+
+<p class="mt-4 max-w-sm m-auto">
+  I send a newsletter called Regular Reveries every Wednesday. It consists of four sections:
+  this week's article, the best of what I've read in a week, a quote that resonated with me, and a question for you.
+
+  <div class="mt-8">
+    <form
+       action="https://buttondown.email/api/emails/embed-subscribe/shime"
+       method="post"
+       target="popupwindow"
+       onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+       class="embeddable-buttondown-form"
+       >
+       <div class="flex max-w-sm m-auto">
+         <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+         <input type="hidden" value="1" name="embed"></input>
+         
+         <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+       </div>
+       <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+     </form>
+  </div>
+</p>
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+  var menu = document.querySelectorAll('[data-hamburger-menu]')[0]
+  var openMenu = document.querySelectorAll('[data-open-hamburger-menu]')[0]
+  var closeMenu = document.querySelectorAll('[data-close-hamburger-menu]')[0]
+  var body = document.body
+
+  openMenu.onclick = toggleMenu.bind(this, true);
+  closeMenu.onclick = toggleMenu.bind(this, false);
+
+  function toggleMenu(show) {
+    toggleElements([openMenu], !show);
+    toggleElements([menu, closeMenu], show);
+    toggleScrolling(body, show);
+  }
+
+  function toggleElements(elements, show) {
+    elements.forEach(function(element) {
+      if (show) {
+        element.classList.remove("hidden")
+        element.classList.add("block");
+      } else {
+        element.classList.remove("block")
+        element.classList.add("hidden");
+      }
+    })
+  }
+
+  function toggleScrolling(element, scrollDisabled) {
+    var classes = ["scrolling-auto", "overflow-hidden", "fixed", "pin-x"];
+    if (scrollDisabled) {
+      classes.forEach(function(klass){
+        element.classList.add(klass);
+      })
+    } else {
+      classes.forEach(function(klass){
+        element.classList.remove(klass);
+      })
+    }
+  }
+
+  var anchors = new AnchorJS();
+  anchors.options = {
+    placement: 'left'
+  }
+  anchors.add()
+</script>
+
+</html>

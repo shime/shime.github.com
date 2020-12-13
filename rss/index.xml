@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>My experience with switching too many apps for personal knowledge management</title>
+      
+      <description>&lt;p&gt;Personal knowledge management (PKM) is the best thing I discovered in 2019. I&amp;#39;ve since tried a couple of different approaches and too many (six) apps. In this article, I would like to share everything I&amp;#39;ve learned about it over that period.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/leaving-roam-led-me-back-to-roam</link>
+      <guid isPermaLink="true">http://shime.sh/leaving-roam-led-me-back-to-roam</guid>
+    </item>
+    
+    <item>
       <title>When magic works against you</title>
       
       <description>&lt;p&gt;When I first encountered this concern in the Rails app that I was working on, I was initially impressed. It felt like magic. Like a cool trick to avoid unnecessary complexity.&lt;/p&gt;
@@ -106,17 +117,6 @@
       <pubDate>Sun, 30 Aug 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/the-law-of-ever-increasing-entropy</link>
       <guid isPermaLink="true">http://shime.sh/the-law-of-ever-increasing-entropy</guid>
-    </item>
-    
-    <item>
-      <title>Word rafting</title>
-      
-      <description>&lt;p&gt;I had a crazy idea in the morning two months ago. I was drinking a lot the night before, and that usually causes waking up earlier and with some unusual ideas. I&amp;#39;ve decided to start an online writing group.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 23 Aug 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/word-rafting</link>
-      <guid isPermaLink="true">http://shime.sh/word-rafting</guid>
     </item>
     
   </channel>
