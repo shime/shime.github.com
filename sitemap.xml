@@ -289,6 +289,13 @@
 
   
   <url>
+    <loc>http://shime.sh/my-experience-with-switching-apps-for-pkm</loc>
+    <lastmod>2020-12-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shime.sh/when-magic-works-against-you</loc>
     <lastmod>2020-12-13</lastmod>
     <changefreq>daily</changefreq>
