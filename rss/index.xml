@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Why you should keep a learning journal</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve had a learning journal since 2011, but only recently have I realized the main benefit from it: it makes me learn more by paying more attention to bugs.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/why-you-should-keep-a-learning-journal</link>
+      <guid isPermaLink="true">http://shime.sh/why-you-should-keep-a-learning-journal</guid>
+    </item>
+    
+    <item>
       <title>My experience with switching apps for personal knowledge management</title>
       
       <description>&lt;p&gt;Personal knowledge management (PKM) is the best thing I discovered in 2019. I&amp;#39;ve since tried a couple of different approaches and too many (six) apps. In this article, I would like to share everything I&amp;#39;ve learned about it over that period.&lt;/p&gt;
@@ -106,17 +117,6 @@
       <pubDate>Thu, 03 Sep 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/why-i've-decided-to-switch-to-hey</link>
       <guid isPermaLink="true">http://shime.sh/why-i've-decided-to-switch-to-hey</guid>
-    </item>
-    
-    <item>
-      <title>The law of ever-increasing entropy</title>
-      
-      <description>&lt;p&gt;&amp;quot;All happy families are alike; each unhappy family is unhappy in its own way.&amp;quot; These are the famous words of Leo Tolstoy. But why is that the case? It all boils down to the law of ever-increasing entropy.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 30 Aug 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/the-law-of-ever-increasing-entropy</link>
-      <guid isPermaLink="true">http://shime.sh/the-law-of-ever-increasing-entropy</guid>
     </item>
     
   </channel>
