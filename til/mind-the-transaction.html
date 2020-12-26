@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Mocking class methods using Minitest" />
+<meta property="og:title" content="Mind the transaction" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem." />
-<meta property="og:description" content="Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem." />
-<link rel="canonical" href="http://shime.sh/til/mocking-class-methods-using-minitest" />
-<meta property="og:url" content="http://shime.sh/til/mocking-class-methods-using-minitest" />
+<meta name="description" content="Decorators are a great alternative to ActiveRecord callbacks, since they make it harder to shoot oneself in the foot." />
+<meta property="og:description" content="Decorators are a great alternative to ActiveRecord callbacks, since they make it harder to shoot oneself in the foot." />
+<link rel="canonical" href="http://shime.sh/til/mind-the-transaction" />
+<meta property="og:url" content="http://shime.sh/til/mind-the-transaction" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-21T00:00:00+01:00" />
+<meta property="article:published_time" content="2020-12-26T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.png" />
-<meta property="twitter:title" content="Mocking class methods using Minitest" />
+<meta property="twitter:title" content="Mind the transaction" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Mocking class methods using Minitest","dateModified":"2018-12-21T00:00:00+01:00","datePublished":"2018-12-21T00:00:00+01:00","url":"http://shime.sh/til/mocking-class-methods-using-minitest","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mocking-class-methods-using-minitest"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Minitest has a convoluted API for mocking class methods, so in order to do so you&#39;ll have to use another gem.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://shime.sh/public/social.png","headline":"Mind the transaction","dateModified":"2020-12-26T00:00:00+01:00","datePublished":"2020-12-26T00:00:00+01:00","url":"http://shime.sh/til/mind-the-transaction","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/mind-the-transaction"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Decorators are a great alternative to ActiveRecord callbacks, since they make it harder to shoot oneself in the foot.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Mocking class methods using Minitest &middot; Hrvoje Šimić </title>
+    <title> Mind the transaction &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Mocking class methods using Minitest &middot; Hrvoje Šimić">
+  <meta name="title" content="Mind the transaction &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
 
@@ -199,50 +199,115 @@
             </div>
 
             <div class="mb-8">
-              <h1>Mocking class methods using Minitest</h1>
+              <h1>Mind the transaction</h1>
               
               <div class="text-grey">
-                December 21, 2018
+                December 26, 2020
               </div>
               
 
               <div class="flex my-2">
                 
                   <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    ruby
+                    rails
                   </span>
                 
               </div>
             </div>
 
-            <p>Minitest has a convoluted API for mocking 
-class methods, so in order to do so you&#39;ll
-have to use another gem.</p>
+            <p>Decorators are a great alternative to ActiveRecord callbacks,
+since they make it harder to shoot oneself in the foot.</p>
 
-<p>I suggest <a href="https://github.com/freerange/mocha">Mocha</a>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;mocha/minitest&quot;</span>
+<p>Instead of using a callback to send an email:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Payment</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">after_commit</span> <span class="ss">:send_email</span><span class="p">,</span> <span class="ss">on</span><span class="p">:</span> <span class="ss">:create</span>
 
-<span class="k">class</span> <span class="nc">CronJobProcessor</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">process</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-     <span class="c1"># ...</span>
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">send_email</span>
+    <span class="no">UserMailer</span><span class="o">.</span><span class="n">payment_created</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_later</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="k">class</span> <span class="nc">CronEngine</span>
-  <span class="k">def</span> <span class="nf">process_job</span>
-    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="o">.</span><span class="n">send_notification</span><span class="p">(</span><span class="ss">to</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">)</span>
+<span class="no">Payment</span><span class="o">.</span><span class="n">create</span> <span class="c1"># sends an email</span>
+</code></pre></div>
+<p>I prefer to use a decorator for that:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Payment</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">PaymentWithEmail</span> <span class="o">&lt;</span> <span class="no">SimpleDelegator</span>
+  <span class="k">def</span> <span class="nf">save</span>
+    <span class="k">super</span> <span class="o">&amp;&amp;</span> <span class="n">send_email</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">save!</span>
+    <span class="k">super</span> <span class="o">&amp;&amp;</span> <span class="n">send_email</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">send_email</span>
+    <span class="no">UserMailer</span><span class="o">.</span><span class="n">payment_created</span><span class="p">(</span><span class="n">__getobj__</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_later</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="n">describe</span> <span class="no">CronEngine</span> <span class="k">do</span>
-  <span class="n">it</span> <span class="s2">&quot;does what cron engines do&quot;</span> <span class="k">do</span>
-    <span class="no">CronJobProcessor</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:process</span><span class="p">)</span><span class="o">.</span><span class="n">with</span><span class="p">(</span><span class="ss">foo</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-    <span class="no">EmailSender</span><span class="o">.</span><span class="n">expects</span><span class="p">(</span><span class="ss">:send_notification</span><span class="p">)</span>
+<span class="no">Payment</span><span class="o">.</span><span class="n">create</span> <span class="c1"># does not send an email</span>
+<span class="no">PaymentWithEmail</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Payment</span><span class="o">.</span><span class="n">new</span><span class="p">)</span><span class="o">.</span><span class="n">save</span> <span class="c1"># sends an email</span>
+</code></pre></div>
+<p>This makes saving a payment less surprising since there are no
+unintended side effects. Saving a payment will only save it and
+not send any emails, or worse yet communicate with the third party
+API (with the payment gateway, for example, to process it).</p>
 
-    <span class="no">CronEngine</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">process_job</span>
+<p>However, the decorator only temporarily saves the foot from being shot. It
+gets hurt if there are transactions involved:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">PaymentForm</span>
+  <span class="kp">include</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Model</span>
+
+  <span class="k">def</span> <span class="nf">save</span>
+    <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">transaction</span> <span class="k">do</span>
+      <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">create!</span>
+      <span class="n">invoice</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">invoices</span><span class="o">.</span><span class="n">create!</span>
+      <span class="no">PaymentWithEmail</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">invoice</span><span class="o">.</span><span class="n">payments</span><span class="o">.</span><span class="n">build</span><span class="p">)</span><span class="o">.</span><span class="n">save!</span>
+    <span class="k">rescue</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">RecordInvalid</span> <span class="o">=&gt;</span> <span class="n">e</span>
+      <span class="n">errors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="ss">:base</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+      <span class="kp">false</span>
+    <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
+
+<span class="no">PaymentForm</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">save</span> <span class="c1"># no email will be delivered</span>
+</code></pre></div>
+<p>This behavior is somewhat surprising and could&#39;ve been avoided had we used the
+standard Rails&#39; callback approach. As with many other things, we are punished
+for not doing things the Rails way.</p>
+
+<p>Here, our decorator wrongly assumes that <code>save</code> returning <code>true</code> means that the model is saved in a database. This
+is not the case if <code>save</code> is wrapped in a transaction block. This is why the original example with callbacks
+had used <code>after_commit</code> instead of <code>after_save</code>.</p>
+
+<p>Thankfully, using transactions with decorators like this is still possible, with help from <a href="https://github.com/Envek/after_commit_everywhere">after_commit everywhere gem</a>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">PaymentWithEmail</span> <span class="o">&lt;</span> <span class="no">SimpleDelegator</span>
+  <span class="kp">include</span> <span class="no">AfterCommitEverywhere</span>
+
+  <span class="k">def</span> <span class="nf">save</span>
+    <span class="k">super</span> <span class="o">&amp;&amp;</span> <span class="n">send_email</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">save!</span>
+    <span class="k">super</span> <span class="o">&amp;&amp;</span> <span class="n">send_email</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">send_email</span>
+    <span class="n">after_commit</span> <span class="k">do</span>
+      <span class="no">UserMailer</span><span class="o">.</span><span class="n">payment_created</span><span class="p">(</span><span class="n">__getobj__</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_later</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">PaymentForm</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">save</span> <span class="c1"># emails will now be delivered, as expected</span>
 </code></pre></div>
 
 

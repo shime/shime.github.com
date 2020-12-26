@@ -8,6 +8,21 @@
     
     
     <item>
+      <title>Mind the transaction</title>
+      
+        <description>
+          &lt;p&gt;Decorators are a great alternative to ActiveRecord callbacks,
+since they make it harder to shoot oneself in the foot.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/mind-the-transaction">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/mind-the-transaction</link>
+      <guid isPermaLink="true">http://shime.sh/til/mind-the-transaction</guid>
+    </item>
+    
+    <item>
       <title>Keeping a folder of snippets</title>
       
         <description>
@@ -143,22 +158,6 @@ adds a bunch of useful snippets for various languages.&lt;/p&gt;
       <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/writing-custom-vim-snippets</link>
       <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-snippets</guid>
-    </item>
-    
-    <item>
-      <title>Using Git pre-push hook for linting</title>
-      
-        <description>
-          &lt;p&gt;In the past, I&amp;#39;ve used Git pre-commit hooks for linting.
-This started to get annoying incredibly fast, since it meant
-I had to wait for linting to complete before every commit.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/using-git-pre-push-hook-for-linting">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Thu, 07 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/using-git-pre-push-hook-for-linting</link>
-      <guid isPermaLink="true">http://shime.sh/til/using-git-pre-push-hook-for-linting</guid>
     </item>
     
   </channel>
