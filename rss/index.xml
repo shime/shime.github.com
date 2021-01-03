@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Writing a lot is not enough</title>
+      
+      <description>&lt;p&gt;I&amp;#39;ve published an article or a book review every week for the past six months. But is publishing consistently the right thing to do to get better at writing?&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 03 Jan 2021 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/writing-a-lot</link>
+      <guid isPermaLink="true">http://shime.sh/writing-a-lot</guid>
+    </item>
+    
+    <item>
       <title>Why you should keep a learning journal</title>
       
       <description>&lt;p&gt;I&amp;#39;ve had a learning journal since 2011, but only recently have I realized the main benefit from it: it makes me learn more by paying more attention to bugs.&lt;/p&gt;
@@ -106,17 +117,6 @@
       <pubDate>Sun, 13 Sep 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/writing-guided-reading</link>
       <guid isPermaLink="true">http://shime.sh/writing-guided-reading</guid>
-    </item>
-    
-    <item>
-      <title>Why I've decided to switch to Hey</title>
-      
-      <description>&lt;p&gt;When Hey came out, I wasn&amp;#39;t sure that I&amp;#39;m going to use it. But, I was interested in trying it out. I thought it was an overpriced email client and that there is too much hype around it. The App store drama didn&amp;#39;t help. Yet, I was interested in it since I would like to stop using Gmail as my primary email address.&lt;/p&gt;
-</description>
-      
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/why-i've-decided-to-switch-to-hey</link>
-      <guid isPermaLink="true">http://shime.sh/why-i've-decided-to-switch-to-hey</guid>
     </item>
     
   </channel>

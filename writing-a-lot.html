@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Git commit message syntax highlighting in Vim" />
+<meta property="og:title" content="Writing a lot is not enough" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Although you could use git commit -m for writing a git commit message, it&#39;s much better to use a proper editor for that, especially if you&#39;re writing a multiline commit message." />
-<meta property="og:description" content="Although you could use git commit -m for writing a git commit message, it&#39;s much better to use a proper editor for that, especially if you&#39;re writing a multiline commit message." />
-<link rel="canonical" href="http://shime.sh/git-commit-message-syntax-highlighting-in-vim" />
-<meta property="og:url" content="http://shime.sh/git-commit-message-syntax-highlighting-in-vim" />
+<meta name="description" content="I&#39;ve published an article or a book review every week for the past six months. But is publishing consistently the right thing to do to get better at writing?" />
+<meta property="og:description" content="I&#39;ve published an article or a book review every week for the past six months. But is publishing consistently the right thing to do to get better at writing?" />
+<link rel="canonical" href="http://shime.sh/writing-a-lot" />
+<meta property="og:url" content="http://shime.sh/writing-a-lot" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-03-20T00:00:00+01:00" />
+<meta property="article:published_time" content="2021-01-03T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.png" />
-<meta property="twitter:title" content="Git commit message syntax highlighting in Vim" />
+<meta property="twitter:title" content="Writing a lot is not enough" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Git commit message syntax highlighting in Vim","dateModified":"2018-03-20T00:00:00+01:00","datePublished":"2018-03-20T00:00:00+01:00","url":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/git-commit-message-syntax-highlighting-in-vim"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Although you could use git commit -m for writing a git commit message, it&#39;s much better to use a proper editor for that, especially if you&#39;re writing a multiline commit message.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://shime.sh/public/social.png","headline":"Writing a lot is not enough","dateModified":"2021-01-03T00:00:00+01:00","datePublished":"2021-01-03T00:00:00+01:00","url":"http://shime.sh/writing-a-lot","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/writing-a-lot"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"I&#39;ve published an article or a book review every week for the past six months. But is publishing consistently the right thing to do to get better at writing?","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić </title>
+    <title> Writing a lot is not enough &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Git commit message syntax highlighting in Vim &middot; Hrvoje Šimić">
+  <meta name="title" content="Writing a lot is not enough &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -201,12 +201,12 @@
             </div>
 
             <div class="mb-8">
-              <h1>Git commit message syntax highlighting in Vim</h1>
+              <h1>Writing a lot is not enough</h1>
 
               <div class="flex justify-between">
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    March 20, 2018
+                    January 3, 2021
                   </div>
                 
 
@@ -217,66 +217,60 @@
 
               <div class="flex my-2">
                 
-                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    vim
-                  </span>
-                
-                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    git
-                  </span>
-                
               </div>
             </div>
 
-            <p>Although you could use <code>git commit -m</code> for writing
-a git commit message, it&#39;s much better to use
-a proper editor for that, especially if you&#39;re
-writing a multiline commit message.</p>
+            <p>I&#39;ve published an article or a book review every week for the past six months. But is publishing consistently the right thing to do to get better at writing?</p>
 
-<p>Well if your editor of choice is Vim, this is what
-happens after you enter <code>git commit</code>.</p>
+<h2>The lesson of the pottery class</h2>
 
-<p><img src="/public/vim-commit-old.png" alt=""></p>
+<p>The pottery class parable is a story about the two groups that each wanted to create the perfect pot during a single month of practice. One group wanted to create as many pots as possible in order to create a perfect pot, while the other group wanted to create just one perfect pot. The highest quality pots were produced in a group that created a lot of pots.</p>
 
-<p>Notice how first 50 chars of a commit message are
-highlighted in red. This is used to notify you about
-the length of the first line of a commit message so you
-know when it&#39;s too lengthy. For Vim, 50 chars is the
-suggested size of the first line of commit message.</p>
+<p>I wanted to apply this lesson to my writing, which is why I’ve created <a href="/raft">Word Raft</a>, a community for writers that want to improve by publishing weekly. Each published article is like a pot, and the more pots we produce, the more we improve our writing.</p>
 
-<p>Well this isn&#39;t a good default for me, since the only
-thing that&#39;s worrying me is the truncation of the first
-line of commit message when my code ends up on Github. 
-I&#39;m only interested if the first line of my commit
-message is short enough to be displayed in full
-on Github.</p>
+<h2>Do a hundred of something to become great at it</h2>
 
-<p>If that&#39;s not the case I&#39;ll end up with something
-like this.</p>
+<p>This parable is similar to &quot;the rule of making a hundred things&quot;. I’ve heard it from <a href="https://twitter.com/visakanv">Visakan Veerasamy</a>, and it says that you need to do something a hundred times to become great at it. To become great at making omelets, you need to make a hundred of them. Only then will you notice how great omelets are made and notice the differences between great ones and bad ones.</p>
 
-<div style="text-align: center">
- <img src="/public/long-commit.png" style="margin: auto"/>
-</div>
+<p>This is true for writing too.</p>
 
-<p>Yuck.</p>
+<p>You won’t have a taste for great writing unless you produce a larger quantity of written pieces. And a hundred written articles is a good goal to aim for.</p>
 
-<p>Preventing this is easy. Just make Vim highlight the first
-72 chars in red, which is the maximum number of characters
-Github allows in the first line.</p>
+<h2>Writing a lot does not make you a great writer</h2>
 
-<p>In order to do so, alter Vim&#39;s syntax rules for git commit
-messages, by editing <code>~/.vim/after/syntax/gitcommit.vim</code>
-like this.</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="k">syn</span> clear gitcommitSummary
-<span class="k">syn</span> <span class="k">match</span> gitcommitSummary    <span class="s2">&quot;^.\{0,72\}&quot;</span> contained containedin<span class="p">=</span>gitcommitFirstLine nextgroup<span class="p">=</span>gitcommitOverflow contains<span class="p">=</span>@Spell
-</code></pre></div>
-<p>This will make Vim look like this.</p>
+<p>But just doing something a lot of times is not enough. Speaking a lot does not make you a great speaker. Writing a lot does not make you a great writer. As David Perell says, everyone who writes hundreds of emails a day would write like Hemingway if it did.</p>
 
-<p><img src="/public/vim-commit-new.png" alt=""></p>
+<p>What does matter is how much time you spend perfecting the craft. How much time you spend trying to improve and recognizing errors. In other words, how much time you spend editing and rewriting.</p>
 
-<p>Now you&#39;ll be notified if you cross the length limit
-for the first line of git commit message on Github and you&#39;ll
-know exactly where it starts truncating it.</p>
+<p>I&#39;ve noticed that my articles are better if I spend more time rewriting them. There&#39;s a <a href="https://www.quora.com/What-are-some-tips-for-advanced-writers-How-do-you-push-your-writing-into-excellency-territory/answer/Venkatesh-Rao">great Quora answer by Venkatesh Rao about that</a>. He thinks that we should spend 80-90% of the total time of writing an article on editing and rewriting. The first draft should only take a small percent of the total writing time.</p>
+
+<h2>Let the articles marinate instead of publishing them right away</h2>
+
+<p>In &quot;Learning How to Learn&quot;, Barbara Oakley mentions two modes of thinking: focused and diffused mode. While focused mode is good for analytical problems, diffused mode produces novel ideas and makes interesting connections.</p>
+
+<p>I would like for diffused mode to be a bigger part of my articles, but there&#39;s limited time available for that. Since Word Raft sets a deadline for publishing articles on Sunday at midnight, I usually start writing them on Fridays. So there are usually around two days for the marination period, and that&#39;s why I end up not thinking about my articles in diffused mode.</p>
+
+<p>Of course, the diffused mode produces the idea for each article. But it’s replaced by the focused mode after the title is written. This is why my articles usually don&#39;t explore interesting new paths.</p>
+
+<h2>The title lock-in</h2>
+
+<p>Since there&#39;s no time for diffused thinking, my articles usually start with the initial statement in the title followed by a lengthy elaboration. I would like to change that and become more exploratory with my writing. And the good first step is not getting locked-in by the title of the article.</p>
+
+<p>The article that only follows the initial statement expressed in the title is the most boring to read and the most boring to write. I find it more interesting to write an article that will guide me wherever it wants to. I want to follow interesting paths instead of only expressing my opinions.</p>
+
+<p>I think a right way to change this is to stop giving that much importance to the title while writing the article.</p>
+
+<h2>Developing a taste for writing</h2>
+
+<p>We usually don&#39;t have the patience to put in the work to become better at something. We seek shortcuts, hacks, and tricks that should give us the results right away. The same goes for writing. No one has a patience to write a hundred articles to become a better writer. Usually, they&#39;ll write ten and then wonder why they haven&#39;t advanced much.</p>
+
+<p>I&#39;m also guilty of this. Since 2011, I&#39;ve only produced 44 longer-form articles. Yet, I&#39;m arrogant enough to believe that I&#39;ve already learned how to produce a quality article.</p>
+
+<p>This is why I have started to question whether being consistent is the right goal for me. Whether I should stop publishing every week and publish higher quality articles less often instead.</p>
+
+<p>I realize now that I was just seeking excuses to stop writing as regularly as I do now.</p>
+
+<p>Quality should be the top priority, but it&#39;s hard to produce quality article unless you have some experience under your belt. It&#39;s much more difficult than just deciding to make it a top priority. That&#39;s why I&#39;ll continue to publish weekly.</p>
 
 
             <div class="kudo">
