@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1609705380247383000">
-  <link rel="stylesheet" href="/public/css/style.css?1609705380247383000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1609752059958424000">
+  <link rel="stylesheet" href="/public/css/style.css?1609752059958424000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -249,7 +249,17 @@ to disk automatically, in order to refresh the buffer.</p>
 let me know on <a href="https://twitter.com/shime_sh">Twitter</a>.</p>
 
 
-            <div class="kudo">
+            <div class="flex items-center">
+              <div class="kudo">
+              </div>
+
+              <div class="ml-2 font-bold text-black">
+                <span data-js-kudos-count>
+                  0
+                </span>
+
+                kudos
+              </div>
             </div>
 
 
@@ -1774,6 +1784,7 @@ return function update(newList) {
 
   var timeAgoElement = document.querySelector("[data-js-time-ago]")
   var ta = timeago();
+  var url = window.location.pathname
 
   if (timeAgoElement && timeAgoElement.innerHTML.match(/\w/)) {
     var ago = ta.ago(timeAgoElement.innerHTML + " 12:00:00", true);
@@ -1783,12 +1794,16 @@ return function update(newList) {
     timeAgoElement.appendChild(span);
   }
 
+  var updateKudos = function(count) {
+    document.querySelector("[data-js-kudos-count]").innerHTML = count;
+  }
+
   fetch("https://backend.shime.sh/analytics", {
     method: "POST",
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ "url": window.location.pathname })
+    body: JSON.stringify({ "url": url })
   }).then(function(response) {
     return response.json()
   }).then(function(body) {
@@ -1799,22 +1814,33 @@ return function update(newList) {
 
       container.classList.remove("hidden");
     }
-  });
 
-  if (false) {
     if (typeof(kudos) !== "undefined") {
+      updateKudos(body.kudos);
+
       var k = kudos(document.querySelector('.kudo'),{
         // set initial state(true:already kudoed.)
-        state:false,
+        state: localStorage.getItem(url),
         // on kudo
         onkudo:function(next) {
-          someajaxrequest(function(err,result) {
+          localStorage.setItem(url, true);
+
+          fetch("https://backend.shime.sh/kudos", {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "url": window.location.pathname })
+          }).then(function(response) {
+            return response.json()
+          }).then(function(body){
+            updateKudos(body.kudos);
             next();
           });
         }
       });
     }
-  }
+  });
 </script>
 
 </html>
