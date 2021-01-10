@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1609752695409892000">
-  <link rel="stylesheet" href="/public/css/style.css?1609752695409892000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1610312052032696000">
+  <link rel="stylesheet" href="/public/css/style.css?1610312052032696000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -1911,49 +1911,51 @@ return function update(newList) {
     document.querySelector("[data-js-kudos-count]").innerHTML = count;
   }
 
-  fetch("https://backend.shime.sh/analytics", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ "url": url })
-  }).then(function(response) {
-    return response.json()
-  }).then(function(body) {
-    if (window.location.search.match(/analytics/)) {
-      var container = document.querySelector("[data-js-views-container]");
-      var views = document.querySelector("[data-js-views]");
-      views.innerHTML = body.pageviews;
+  if (window.location.hostname !== "localhost") {
+    fetch("https://backend.shime.sh/analytics", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ "url": url })
+    }).then(function(response) {
+      return response.json()
+    }).then(function(body) {
+      if (window.location.search.match(/analytics/)) {
+        var container = document.querySelector("[data-js-views-container]");
+        var views = document.querySelector("[data-js-views]");
+        views.innerHTML = body.pageviews;
 
-      container.classList.remove("hidden");
-    }
+        container.classList.remove("hidden");
+      }
 
-    if (typeof(kudos) !== "undefined") {
-      updateKudos(body.kudos);
+      if (typeof(kudos) !== "undefined") {
+        updateKudos(body.kudos);
 
-      var k = kudos(document.querySelector('.kudo'),{
-        // set initial state(true:already kudoed.)
-        state: localStorage.getItem(url),
-        // on kudo
-        onkudo:function(next) {
-          localStorage.setItem(url, true);
+        var k = kudos(document.querySelector('.kudo'),{
+          // set initial state(true:already kudoed.)
+          state: localStorage.getItem(url),
+          // on kudo
+          onkudo:function(next) {
+            localStorage.setItem(url, true);
 
-          fetch("https://backend.shime.sh/kudos", {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "url": window.location.pathname })
-          }).then(function(response) {
-            return response.json()
-          }).then(function(body){
-            updateKudos(body.kudos);
-            next();
-          });
-        }
-      });
-    }
-  });
+            fetch("https://backend.shime.sh/kudos", {
+              method: "POST",
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ "url": window.location.pathname })
+            }).then(function(response) {
+              return response.json()
+            }).then(function(body){
+              updateKudos(body.kudos);
+              next();
+            });
+          }
+        });
+      }
+    });
+  }
 </script>
 
 </html>

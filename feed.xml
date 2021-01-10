@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Build aspirins for friends</title>
+      
+      <description>&lt;p&gt;As a developer, I easily get carried away building new things. Side projects are fun for me, especially when they are useful. In fact, I actively avoid programming that is useful only as a learning exercise, like puzzles and tests. Instead of that, I try to build useful things.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/build-aspirins-for-friends</link>
+      <guid isPermaLink="true">http://shime.sh/build-aspirins-for-friends</guid>
+    </item>
+    
+    <item>
       <title>Writing a lot is not enough</title>
       
       <description>&lt;p&gt;I&amp;#39;ve published an article or a book review every week for the past six months. But is publishing consistently the right thing to do to get better at writing?&lt;/p&gt;
@@ -106,17 +117,6 @@
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/knowing-the-port-one-is-sailing-to</link>
       <guid isPermaLink="true">http://shime.sh/knowing-the-port-one-is-sailing-to</guid>
-    </item>
-    
-    <item>
-      <title>Writing-guided reading</title>
-      
-      <description>&lt;p&gt;There are so many great books to read, but so little time to do it. How to pick a book from a list of hundreds or even thousands of recommended books to read?&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 13 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/writing-guided-reading</link>
-      <guid isPermaLink="true">http://shime.sh/writing-guided-reading</guid>
     </item>
     
   </channel>
