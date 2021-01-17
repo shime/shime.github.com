@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Filtering records with endless ranges" />
+<meta property="og:title" content="Reading and conversation" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Ruby 2.6 has added support for endless ranges, which means ranges no longer require the end argument." />
-<meta property="og:description" content="Ruby 2.6 has added support for endless ranges, which means ranges no longer require the end argument." />
-<link rel="canonical" href="http://shime.sh/til/filtering-records-with-endless-ranges" />
-<meta property="og:url" content="http://shime.sh/til/filtering-records-with-endless-ranges" />
+<meta name="description" content="René Descartes famously said that reading books is like a conversation with the finest minds of past centuries." />
+<meta property="og:description" content="René Descartes famously said that reading books is like a conversation with the finest minds of past centuries." />
+<link rel="canonical" href="http://shime.sh/reading-and-conversation" />
+<meta property="og:url" content="http://shime.sh/reading-and-conversation" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-04-11T00:00:00+02:00" />
+<meta property="article:published_time" content="2021-01-17T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.png" />
-<meta property="twitter:title" content="Filtering records with endless ranges" />
+<meta property="twitter:title" content="Reading and conversation" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Filtering records with endless ranges","dateModified":"2019-04-11T00:00:00+02:00","datePublished":"2019-04-11T00:00:00+02:00","url":"http://shime.sh/til/filtering-records-with-endless-ranges","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/filtering-records-with-endless-ranges"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Ruby 2.6 has added support for endless ranges, which means ranges no longer require the end argument.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://shime.sh/public/social.png","headline":"Reading and conversation","dateModified":"2021-01-17T00:00:00+01:00","datePublished":"2021-01-17T00:00:00+01:00","url":"http://shime.sh/reading-and-conversation","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/reading-and-conversation"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"René Descartes famously said that reading books is like a conversation with the finest minds of past centuries.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Filtering records with endless ranges &middot; Hrvoje Šimić </title>
+    <title> Reading and conversation &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Filtering records with endless ranges &middot; Hrvoje Šimić">
+  <meta name="title" content="Reading and conversation &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -197,16 +197,16 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
             </div>
 
             <div class="mb-8">
-              <h1>Filtering records with endless ranges</h1>
+              <h1>Reading and conversation</h1>
 
               <div class="flex justify-between">
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    April 11, 2019
+                    January 17, 2021
                   </div>
                 
 
@@ -217,38 +217,57 @@
 
               <div class="flex my-2">
                 
-                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    rails
-                  </span>
-                
               </div>
             </div>
 
-            <p>Ruby 2.6 has added support for <a href="https://ruby-doc.org/core-2.6/Range.html#class-Range-label-Endless+Ranges">endless ranges</a>,
-which means ranges no longer require the end argument.</p>
+            <p>René Descartes famously said that reading books is like a conversation with the finest minds of past centuries.</p>
 
-<p>Endless ranges can be used in Rails applications, to filter
-records that were created after a date, for example.</p>
+<p>But, I don&#39;t agree with that statement. Reading is not like a conversation; writing is more like it. Reading is more like seeing the thought process. It doesn&#39;t allow us to ask questions, unlike writing, which invites us to ask questions and seek answers.</p>
 
-<p>Before this, the most common way of doing that was:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;created_at &gt;= ?&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
-</code></pre></div>
-<p>Or with a range, to avoid passing strings to <code>where</code>:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">created_at</span><span class="p">:</span> <span class="mi">1</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">ago</span><span class="o">..</span><span class="no">DateTime</span><span class="o">::</span><span class="no">Infinity</span><span class="p">)</span>
-</code></pre></div>
-<p>With an endless range, this can be replaced with:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">created_at</span><span class="p">:</span> <span class="mi">1</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">ago</span><span class="o">..</span><span class="p">)</span>
-</code></pre></div>
-<p>Unfortunately, this is currently not supported
-with the current stable version of Rails<sup>(5.2.3)</sup>, but it will
-be supported in the next major release of Rails<sup>(6.0.0)</sup>.</p>
+<h2>The problem with infomania</h2>
 
-<p>Speaking of next releases, it <a href="https://github.com/ruby/ruby/commit/95f7992b89efd35de6b28ac095c4d3477019c583">looks like</a> the next minor version of Ruby<sup>(2.7.0)</sup>
-will come with support for beginless ranges.</p>
+<p>We are bombarded with information every day. We consume around 100,000 words of information per day by some metrics <sup>[<a href="#truth">1</a>]</sup>, but compared to ancient Greeks, we are not much wiser. More information is not making us smarter. It is making us dumber.</p>
 
-<p>When Rails adds support for that, filtering records older than a date will be pretty straightforward:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">created_at</span><span class="p">:</span> <span class="o">..</span><span class="mi">1</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
-</code></pre></div>
+<p>Our dopamine seeking brain rewards us for constantly jumping from article to article or from book to book. It rewards shallow and short-term thinking while punishing deep and long-term thinking. We are wired to seek new information instead of thinking deeply about things we are already aware of.</p>
+
+<p>Charlie Munger believes that we should take a simple idea and take it seriously. Instead of that, most of us are always on the quest for new information. The next piece of the puzzle that is going to make us smarter. Instead of connecting the pieces of the puzzle we already have, we are constantly searching for the next piece. Which prevents us from ever finishing the puzzle in the first place.</p>
+
+<h2>Writing might be like painting</h2>
+
+<p>Ancient Greek philosophers were opposed to writing. They didn&#39;t believe it was the right medium for transferring knowledge.</p>
+
+<p>Socrates compared writing to painting:</p>
+
+<blockquote>
+<p>You know, Phaedrus, that is the strange thing about writing, which makes it truly correspond to painting.
+<br/></br>
+The painter&#39;s products stand before us as though they were alive. But if you question them, they maintain a most majestic silence. It is the same with written words.  <br/><br/>
+They seem to talk to you as though they were intelligent, but if you ask them anything about what they say from a desire to be instructed they go on telling just the same thing forever.</p>
+</blockquote>
+
+<p>Plato was against the invention of writing in the 4th century BCE. He didn&#39;t have access to the internet, television, radio, or social media. Yet, he is one of the founders of western philosophy.</p>
+
+<p>Unlike Plato and Socrates, we are struggling with abundance in most of modern life. Throughout history, our ancestors didn&#39;t have access to everything we do today. And the change to abundance was too fast for our brains to adapt.</p>
+
+<p>One of the things that was scarce in the past is access to information. The game has changed. We no longer have to fight to get to the information. We have to put effort to figure out what&#39;s valuable. We are swamped with the garbage that is easy to produce. Figuring out the signal through the noise is the struggle of modern times.</p>
+
+<h2>The beauty of the conversation</h2>
+
+<p>Since I&#39;ve started this article by mentioning conversation, I want to end it with a couple of thoughts on conversation.</p>
+
+<p>John O&#39;Donohue asks us about the time we last had a great conversation in which we overheard ourselves the things we never knew we knew.</p>
+
+<p>While reading can give us great insights, it can&#39;t compare with a great conversation. It reveals not only what others think but what we think in the first place. In a great conversation, we not only learn from others, but we learn from ourselves as well.</p>
+
+<p>Conversation allows asking questions, which allows going deeper in a way that is never going to be possible by reading a book.</p>
+
+<hr>
+
+<ol>
+<li><a name="truth"></a>
+<a href="https://ijoc.org/index.php/ijoc/article/viewFile/1566/743">I&#39;ve read it in a PDF</a> written by a person with an email address ending with .edu, so it must be true. </li>
+</ol>
+
 
             <div class="flex items-center">
               <div class="kudo">
@@ -263,6 +282,35 @@ will come with support for beginless ranges.</p>
               </div>
             </div>
 
+            
+              <div class="mt-12 bg-grey-lightest p-8 text-grey-darkest border-t-4 border-grey-light">
+                
+
+
+<p class="mt-4 max-w-sm m-auto">
+  I send a newsletter called Regular Reveries every Wednesday. It consists of four sections:
+  this week's article, the best of what I've read in a week, a quote that resonated with me, and a question for you.
+
+  <div class="mt-8">
+    <form
+       action="https://buttondown.email/api/emails/embed-subscribe/shime"
+       method="post"
+       target="popupwindow"
+       onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+       class="embeddable-buttondown-form"
+       >
+       <div class="flex max-w-sm m-auto">
+         <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+         <input type="hidden" value="1" name="embed"></input>
+         
+         <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+       </div>
+       <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+     </form>
+  </div>
+</p>
+
+              </div>
             
           </div>
         </div>

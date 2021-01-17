@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Reading and conversation</title>
+      
+      <description>&lt;p&gt;René Descartes famously said that reading books is like a conversation with the finest minds of past centuries.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/reading-and-conversation</link>
+      <guid isPermaLink="true">http://shime.sh/reading-and-conversation</guid>
+    </item>
+    
+    <item>
       <title>Build aspirins for friends</title>
       
       <description>&lt;p&gt;As a developer, I easily get carried away building new things. Side projects are fun for me, especially when they are useful. In fact, I actively avoid programming that is useful only as a learning exercise, like puzzles and tests. Instead of that, I try to build useful things.&lt;/p&gt;
@@ -104,19 +115,6 @@
       <pubDate>Sun, 04 Oct 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/beware-of-programming-puzzles</link>
       <guid isPermaLink="true">http://shime.sh/beware-of-programming-puzzles</guid>
-    </item>
-    
-    <item>
-      <title>Knowing the port one is sailing to</title>
-      
-      <description>&lt;blockquote&gt;
-&lt;p&gt;If one does not know to which port one is sailing, no wind is favorable.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      
-      <pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/knowing-the-port-one-is-sailing-to</link>
-      <guid isPermaLink="true">http://shime.sh/knowing-the-port-one-is-sailing-to</guid>
     </item>
     
   </channel>
