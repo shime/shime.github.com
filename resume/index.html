@@ -1,506 +1,529 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <title>Hrvoje Šimić</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
-    <style>html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}body,html{font-family:"Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;font-size:13px;color:#40484f;font-weight:400;letter-spacing:0;line-height:1.46153846;text-align:left;webkit-text-size-adjust:100%;}p{display:block;margin-bottom:1.3em;}a{color:#0095ff;text-decoration:none;}a:hover{color:#0c65a5;text-decoration:underline;}ul{margin-top:1rem;}li{list-style-type:square;list-style-position:outside;margin-left:1.3em;}h1{font-size:2rem;}h2{font-size:1.67rem;}h3{font-size:1.27rem;}em{color:#757575;}blockquote{margin-bottom:1em;}strong{font-weight:700;}#resume{padding:1rem;margin-top:2rem;}.section{margin-bottom:1rem;}section .location{margin-right:.5em;color:#606d76;font-weight:700;}#contact{margin-top:.5rem;}#profiles .item{padding:0;}#header>#profiles,#header>#contact,#skills,#languages,#interests{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-flow:row wrap;flex-flow:row wrap;-webkit-justify-content:flex-start;justify-content:flex-start;}#header>div{line-height:1.5;}#header>div>div{margin-right:1.2em;}#header h1.name{font-size:2.8rem;font-weight:100;line-height:100%;}#header h2.label{color:#202931;font-size:1.47rem;font-weight:300;}#header .picture{width:11em;float:right;border-radius:4px;}.main-summary{background:#f1f8ff;padding:1.2em 1em;margin-top:1rem;}.main-summary p{margin:.15em 0 0;}h2.section-title{display:inline-block;background:#fff;padding:0 1em 0.3em 0;color:#ff6d1f;text-transform:uppercase;font-weight:600;border:none;font-size:.9rem;}.section>header{position:relative;}.fa{margin-right:0.25em;}.section>header::after{position:absolute;left:0;top:.7em;height:1px;background:#ccc;content:"";width:100%;z-index:-100;display:block;}.section.main-summary>section{margin:0;}.section>section>header{font-size:1.38rem;position:relative;margin-top:.7em;}.section>section>header:first-of-type{margin:0;}.section>section>header .space-left{position:absolute;left:-1.56rem;top:5px;color:#aaa;line-height:1;opacity:0;}.position,.company,.organization,.institution,.date,.area,.studyType,.title,.awarder{display:inline-block;}.position,.studyType,.area,.title,.language,.name{font-weight:600;}.company::before,.institution::before,.organization::before,.awarder::before{content:"at "}.company,.institution,.organization,.awarder{color:#606d76;font-weight:400;}.section header .date{font-size:1rem;display:block;padding:.1em 0;font-weight:600;}ul.keywords,ul.courses{margin-top:.5em;}ul.keywords li,ul.courses li{display:inline-block;margin:2px 2px 2px 0;padding:4px 5px 5px;font-size:.9rem;line-height:1;text-transform:lowercase;color:#3e6d8e;background-color:#dfeaf1;border:0 solid #dfeaf1;white-space:nowrap;}ul.keywords li:hover,ul.courses li:hover{background:#dfeaf0;}.item{padding:.5em 0;}.gpa{padding-bottom:.5em;}.fa.social{font-size:1.1em;}.google-plus{color:#dd4b39;}.tumblr{color:#32506d;}.foursquare{color:#0072b1;}.facebook{color:#3b5998;}.linkedin{color:#007bb6;}.pinterest{color:#cb2027;}.dribbble{color:#ea4c89;}.instagram{color:#517fa4;}.twitter{color:#00aced;}.soundcloud{color:#ff3a00;}.wordpress{color:#21759b;}.youtube{color:#bb0000;}.github{color:#171515;}.stack-overflow{color:#828386;position:relative;}.flickr{color:#ff0084;}.stack-overflow::after{position:absolute;left:0;content:'\f16c';color:#f68a1f;overflow:hidden;height:40%;}#languages .item,#skills .item,#interests .item{width:15em;padding:0 .5em .5em 0;border-bottom:none;}#skills .item{width:16em;}#skills .item .keywords{width:15em;}.level{margin-bottom:.5em;}.level .bar{border:1px solid #ddd;display:block;width:10em;height:5px;position:relative;}.level .bar::after{position:absolute;content:" ";top:0;left:0;background:black;height:5px;}.level.beginner .bar::after{background:#EB5F51;width:2.5em;}.level.intermediate .bar::after{background:#ffdf1f;width:5em;}.level.advanced .bar::after,.level.fluent .bar::after{background:#5CB85C;width:7.5em;}.level.master .bar::after,.level.native.speaker .bar::after{background:#59C596;width:10em;}#references .item{padding-left:.5em;border-left:5px solid #ff6d1f;}.clear::after{content:"";display:table;clear:both;}.display{display:block;opacity:1!important;}.margin1{margin-bottom:.5rem;}@media screen and (min-width: 602px) {#resume{width:80%;margin:0 auto;}}@media screen and (min-width: 1025px) {li{margin-left:1.5em;}#resume{width:820px;margin:2rem auto;opacity:0;-webkit-transition:opacity .5s ease-in-out;transition:opacity .5s ease-in-out;}.section>section>header .space-left{opacity:1;cursor:pointer;}.section>section{margin-left:1.67rem;}.company::before,.institution::before,.organization::before,.awarder::before{content:"| ";}.header-left{float:left;width:70%;word-break:normal;}.section header .date{float:right;padding:.2em;}.display{display:none;}.display:not(.none){display:block;}}@media print {#resume{margin:0;padding:0;-ms-word-wrap:break-word;word-wrap:break-word;line-height:1.3;}@page{margin:1cm 1.4cm;}.item-count{display:none;}.company::before,.institution::before,.organization::before,.awarder::before{content:"at ";}.main-summary{padding:2rem 0;}.section{margin:.8rem 0;padding:0;}.section header{padding-bottom:.15rem;}.section .location{padding-bottom:.15rem;}.stack-overflow::after{content:"";}.fa.social{color:#828386;}ul{margin-top:.4em;}ul,li{padding:0;}ul.keywords li,ul.courses li{margin:0;padding:0;font-size:.8rem;text-transform:lowercase;}ul.keywords li::after,ul.courses li::after{padding:0 0 0 .1rem;content:" |";}ul.keywords::before,ul.courses::before{font-size:.8rem;font-weight:600;}ul.keywords::before{content:"Skills acquired: ";}#skills .keywords::before{content:'';}.section p{margin:0;padding:0;}ul.courses::before{content:"Major courses: ";}ul.keywords li:last-of-type::after,ul.courses li:last-of-type::after{content:"";}.level em{font-style:normal;padding:.1em 0;}.level .bar{display:none;}#profiles .item{padding:0;}.item.display{display:block;opacity:1!important;}}</style>
-    <style>
-      .item.display {
-        margin-left: 10px;
-        padding: 0 0 1em 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="resume">
-      <header id="header" class="clear">
-        <img class="picture" src="https://avatars1.githubusercontent.com/u/703563?v&#x3D;3&amp;s&#x3D;466" alt="Hrvoje Šimić"/>
-        <div class="middle">
-          <h1 class="name">Hrvoje Šimić</h1>
-          <h2 class="label">Full Stack Developer</h2>
-        </div>
-        <span class="location">
-          <span class="city">
-            Zagreb,
-          </span>
-          <span class="countryCode">
-            Croatia
-          </span>
-        </span>
-        <div id="contact">
-          <div class="website">
-            <span class="fa fa-external-link"></span>
-            <a target="_blank" href="https://shime.sh">https://shime.sh</a>
-          </div>
-          <div class="email">
-            <span class="fa fa-envelope-o"></span>
-            <a href="/cdn-cgi/l/email-protection#e08892968f8a85a094978f8295838b93ce838f"><span class="__cf_email__" data-cfemail="2b43595d44414e6b5f5c44495e484058054844">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>
-          </div>
-        </div>
-        <div id="profiles">
-          <div class="item">
-            <div class="username">
-              <span class="fa fa-github github social"></span>
-              <span class="url">
-                <a href="https://github.com/shime">shime</a>
-              </span>
-            </div>
-          </div>
-          <div class="item">
-            <div class="username">
-              <span class="fa fa-stack-overflow stack-overflow social"></span>
-              <span class="url">
-                <a href="http://stackoverflow.com/users/726020/shime">shime</a>
-              </span>
-            </div>
-          </div>
-          <div class="item">
-            <div class="username">
-              <span class="fa fa-twitter twitter social"></span>
-              <span class="url">
-                <a href="https://twitter.com/shime_sh">shime_sh</a>
-              </span>
-            </div>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Full-stack Ruby and JavaScript developer">
+  <meta name="keywords" content="resume,cv,Hrvoje Šimić">
+  <meta name="author" content="Hrvoje Šimić">
+  <!-- <meta name="robots" content="noindex"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/public/css/resume.css?1610963382184536000">
+  <title>Hrvoje Šimić — Resume</title>
+</head>
+
+<body>
+  <main class="font-firago hyphens-manual py-12">
+
+    <!-- Page -->
+    <div class="px-6 py-12 mx-auto page max-w-2xl md:max-w-letter md:h-letter xsm:px-8 sm:px-9 md:px-16 bg-white">
+
+      <!-- Name -->
+      <header class="flex items-center mb-8 md:mb-11">
+        <h1 class="text-2xl font-semibold text-gray-750 pb-px">
+          Hrvoje Šimić
+        </h1>
       </header>
-      <section class="section main-summary">
-        <section>
-          <div><p>Full-stack Ruby and JavaScript developer with 9 years of experience. Worked mostly with US-based startups over the years and <a href="https://github.com/rails/rails/commits?author=shime">made some commits</a> to Ruby on Rails core. Focused on working with small teams and building small products from the ground up.</p></div>
+      <!-- end Name -->
+
+      <!-- Column -->
+      <div class="pb-16">
+        <section class="mt-8 first:mt-0">
+
+          <!-- To keep in the same column -->
+          <div class="break-inside-avoid col-count-2">
+
+            <div class="break-inside-avoid">
+              <h2 class="mb-4 font-bold tracking-widest text-sm2 text-gray-550 print:font-normal">
+                ABOUT ME
+              </h2>
+
+              <section class="mb-4.5 break-inside-avoid">
+                <p class="text-md text-gray-700 leading-normal">
+                  Full-stack Ruby and JavaScript developer with ten years of experience. Worked mostly with US-based startups over the years and <a class="underline" href="https://contributors.rubyonrails.org/contributors/hrvoje-simic/commits">made some commits to Ruby on Rails core</a>.
+                </p>
+              </section>
+            </div>
+
+            <div class="break-inside-avoid float-right">
+              <h2 class="mb-4 font-bold tracking-widest text-sm2 text-gray-550 print:font-normal">
+                CONTACT
+              </h2>
+
+              <section class="mb-4.5 break-inside-avoid">
+                <ul class="list-inside pr-7">
+                  <li class="mt-1.5 leading-normal text-gray-700 text-md">
+                    <a href="//shime.sh" class="group">
+                      shime.sh
+                      <span class="inline-block text-gray-550 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+                    </a>
+                  </li>
+                  <li class="mt-1.5 leading-normal text-gray-700 text-md">
+                    <a href="//twitter.com/shime_sh" class="group">
+                      twitter.com/shime_sh
+                      <span class="inline-block text-gray-550 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+                    </a>
+                  </li>
+                  <li class="mt-1.5 leading-normal text-gray-700 text-md">
+                    10430 Samobor, Croatia
+                  </li>
+                  <li class="mt-1.5 leading-normal text-gray-700 text-md">
+                    shime@hey.com
+                  </li>
+                </ul>
+              </section>
+
+            </div>
+
+          </div>
+
         </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Work Experience <span class="item-count">(10)</span></h2>
-        </header>
-        <section id="work">
-          <header>
-            <div class="position">
-              Backend Developer
-            </div>
-            <div class="company">
-              AmaZix
-            </div>
-            <div class="date">
-              <span class="startDate">
-                Jan 2018
-              </span>
-              <span class="endDate">
-                - Jul 2018
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="http://amazix.com/">http://amazix.com/</a>
-          </span>
-          <div class="item display" style="opacity:1">
-            <div class="summary">
-              <p><p>AmaZix is a world leading community management company for crypto-currencies.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Built a system for automatic bounty validation from scratch</li>
-              <li>Implemented system for validating reported posts from big social networks like Facebook and Twitter</li>
+
+        <section class="mt-8 first:mt-0 experience">
+          <!-- To keep in the same column -->
+          <div class="">
+            <h2 class="mb-4 font-bold tracking-widest text-sm2 text-gray-550 print:font-normal">
+              EXPERIENCE
+            </h2>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                CareGrove
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Apr 2019 – Current | Lead Developer
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+              CareGrove is an online payment platform for senior living communities.
+            </p>
+
+            <ul class="">
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Built and scaled a Rails app from serving one community to hundreds of them
+              </li>
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Built a payment system with support for scheduled payments that processed over $5MM in transactions
+              </li>
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Lead a development team and improved organization in the company
+              </li>
             </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Ivyspace
-            </div>
-            <div class="date">
-              <span class="startDate">
-                May 2017
-              </span>
-              <span class="endDate">
-                - Jan 2018
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="http://ivyspace.com/">http://ivypsace.com/</a>
-          </span>
-          <div class="item display" style="opacity:1">
-            <div class="summary">
-              <p><p>Ivypsace is an online knowledge sharing service between mentors from Ivy-league colleges and students from China.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Converted Reflux based React application to Redux and Redux Saga</li>
-              <li>Implemented fallback for currency conversion API</li>
-              <li>Converted various translation related models to new JSON based schema with some fancy usage of Postgres functions</li>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Booster Stage
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Aug 2018 – Apr 2019 | Full Stack Developer
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+              Booster Stage is a small agency that helps entrepreneurs build and launch web applications rapidly.
+            </p>
+
+            <ul class="">
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Built two Rails apps for accepting payments from scratch
+              </li>
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Built an embeddable payment form modal for accepting payments on third-party websites
+              </li>
             </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Synectics Media
-            </div>
-            <div class="date">
-              <span class="startDate">
-                August 2016
-              </span>
-              <span class="endDate">
-                - May 2017
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="http://synecticsmedia.com/">http://synecticsmedia.com/</a>
-          </span>
-          <div class="item display" style="opacity:1">
-            <div class="summary">
-              <p><p>Synectics Media is a media company from Detroit, specialized in making small MVPs. I built a marketplace focused on automotive parts and primarily intended for mobile use.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Built an MVP from scratch using Ember.js and Ruby on Rails</li>
-              <li>Implemented integration with peer to peer payment services using both PayPal and Stripe</li>
-              <li>Implemented integration with shipping APIs which supported printing international shipping labels from bunch of providers</li>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                AmaZix
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Jan 2018 – Jul 2018 | Backend Developer
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+              AmaZix is a world-leading community management company for crypto-currencies.
+            </p>
+
+            <ul class="">
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Built a system for automatic bounty validation from scratch
+              </li>
+              <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                Implemented system for validating reported posts from big social networks like Facebook and Twitter
+              </li>
             </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Airbrake
-            </div>
-            <div class="date">
-              <span class="startDate">
-                January 2016
-              </span>
-              <span class="endDate">
-                - April 2016
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="https://airbrake.io">https://airbrake.io</a>
-          </span>
-          <div class="item display">
-            <div class="summary">
-              <p><p>Airbrake is the first and the most popular exception tracking service.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Maintained their open-source <a href="https://github.com/airbrake/airbrake-js">JavaScript</a> and <a href="https://github.com/airbrake/node-airbrake">Node.js</a> libraries with thousands of downloads</li>
-            </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Lessonhub
-            </div>
-            <div class="date">
-              <span class="startDate">
-                January 2015
-              </span>
-              <span class="endDate">
-                - January 2016
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="https://www.catapulthub.com/">https://www.catapulthub.com/</a>
-          </span>
-          <div class="item display">
-            <div class="summary">
-              <p><p>Lessonhub is a custom education-focused content management system used by teachers across the US.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Built a custom content management system from scratch, with support for math functions and various custom lesson elements, used by teachers for their educational purposes every day</li>
-              <li>Implemented frontend in Ember.js and the backend in Ruby on Rails</li>
-              <li>Implemented small analytics platform, backed by Redis</li>
-              <li>Was in charge of everything related to development, including managing other people that worked on the project</li>
-            </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Particle
-            </div>
-            <div class="date">
-              <span class="startDate">
-                October 2013
-              </span>
-              <span class="endDate">
-                - June 2014
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="https://www.particle.io/">https://www.particle.io/</a>
-          </span>
-          <div class="item display" style="opacity:0">
-            <div class="summary">
-              <p><p>Particle is an internet of things cloud platform with a focus of providing easy internet access to Arduino-like boards.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Built a <a href="https://build.particle.io/build/">custom browser-based IDE for their platform from scratch</a>, using Ember.js that communicated with multiple APIs</li>
-              <li>Built a Rails API with support for submissions of custom third party libraries for the IDE usage </li>
-            </ul>
-          </div>
-          <header>
-            <div class="position">
-              Backend Developer
-            </div>
-            <div class="company">
-              Betterdoc
-            </div>
-            <div class="date">
-              <span class="startDate">
-                August 2013
-              </span>
-              <span class="endDate">
-                - October 2013
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="https://www.betterdoc.org/">https://www.betterdoc.org/</a>
-          </span>
-          <div class="item display" style="opacity:0">
-            <div class="summary">
-              <p><p>Betterdoc is a SaaS that helps its customers with finding the best doctor for their needs.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Improved the test suite and raised the quality of the existing Ruby on Rails codebase</li>
-            </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Hiiro
-            </div>
-            <div class="date">
-              <span class="startDate">
-                February 2013
-              </span>
-              <span class="endDate">
-                - May 2013
-              </span>
-            </div>
-          </header>
-          <div class="item display" style="opacity:0">
-            <div class="summary">
-              <p><p>Hiiro was a SaaS for finding high quality contractors, meant to be an alternative to Toptal. Unfortunately, it didn't gain enough traction, so development was discontinued.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Implemented private exception tracking system for the Ruby on Rails API</li>
-              <li>Implemented various features using TDD for frontend that was using Angular.js and the backend which was using Ruby on Rails</li>
-              <li>Refactored large portion of codebase which improved the performance of the API</li>
-            </ul>
-          </div>
-          <header>
-            <div class="position">
-              Backend Developer
-            </div>
-            <div class="company">
-              Rackspace
-            </div>
-            <div class="date">
-              <span class="startDate">
-                February 2012
-              </span>
-              <span class="endDate">
-                - August 2013
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="https://rackspace.com">https://rackspace.com</a>
-          </span>
-          <div class="item display" style="opacity:0">
-            <div class="summary">
-              <p><p>Rackspace is a popular cloud provider and I worked on Airbrake. Airbrake is the first and the most popular exception tracking service.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Implemented various third party service integrations like Engineyard, Heroku and Jira using TDD</li>
-              <li>Maintained an <a href="https://github.com/airbrake/airbrake/graphs/contributors">open source Ruby gem that integrates with Rails with millions of downloads</a></li>
-              <li>Added support for newer versions of Rails to an open source gem</li>
-              <li>Resolved support issues for over 40,000 monthly active users</li>
-            </ul>
-          </div>
-          <header>
-            <div class="position">
-              Full Stack Developer
-            </div>
-            <div class="company">
-              Showmojo
-            </div>
-            <div class="date">
-              <span class="startDate">
-                September 2011
-              </span>
-              <span class="endDate">
-                - February 2012
-              </span>
-            </div>
-          </header>
-          <span class="website">
-            <a href="http://showmojo.com">http://showmojo.com</a>
-          </span>
-          <div class="item display" style="opacity:0">
-            <div class="summary">
-              <p><p>Showmojo is a small website for managing real estate showings. Backend is written in Ruby on Rails and the frontend is using jQuery.</p></p>
-            </div>
-            <ul class="highlights">
-              <li>Implemented analytics for images rendered on third-party services</li>
-              <li>Implemented various CSS and JavaScript hacks for IE6</li>
-              <li>Improved user experience for photo uploads</li>
-            </ul>
-          </div>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Volunteer</h2>
-        </header>
-        <section id="volunteer">
-          <header class="clear">
-            <div class="header-left">
-              <div class="position">
-                Author, Maintainer
-              </div>
-              <div class="organization">
-                Open source
-              </div>
-            </div>
-            <div class="date">
-              <span class="startDate">
-                September 2011
-              </span>
-              <span class="endDate">
-                - Current
-              </span>
-            </div>
-          </header>
-          <div class="item display" style="opacity:1">
-            <div class="summary">
-              <p><p>Actively contributing and raising quality of open source software.</p></p>
-            </div>
-            <ul class="highlights">
-              <li><a href="https://github.com/rails/rails/commits?author=shime">Contributed to Ruby on Rails</a> and made it to <a href="http://contributors.rubyonrails.org/contributors/hrvoje-simic/commits">top 200 Ruby on Rails contributors of all time</a></li>
-              <li>Maintained <a href="https://rubygems.org/gems/exceptional">multiple</a> <a href="https://rubygems.org/gems/airbrake">Ruby gems</a> with millions of downloads</li>
-              <li>Authored <a href="https://npmjs.org/~shime">multiple NPM packages</a> with thousands of downloads</li>
-              <li>Authored <a href="https://github.com/shime/livedown">a popular Markdown preview tool</a></li>
-            </ul>
-          </div>
-        </section>
-      </section>
-      <section class="section">
-        <header>
-          <h2 class='section-title'>Education <span class="item-count">(1)</span></h2>
-        </header>
-        <section id="education">
-          <header class="clear">
-            <div class="header-left">
-              <div class="studyType">
-                Bachelor
-              </div>
-              <div class="area">
-                of Computer Science
-              </div>
-              <div class="institution">
-                University of Zagreb
-              </div>
-            </div>
-            <div class="date">
-              <span class="startDate">
-                2008
-              </span>
-              <span class="endDate">
-                - 2013
-              </span>
-            </div>
-          </header>
-        </section>
-      </section>
-      <section class="section margin1">
-        <header>
-          <h2 class='section-title'>Languages</h2>
-        </header>
-        <section id="languages">
-          <div class="display">
-            <h3 class="language">
-              English
-            </h3>
-            <div class="item">
-              <div class="level fluency fluent">
-                <em>Fluent</em>
-                <div class="bar"></div>
-              </div>
-            </div>
-          </div>
-          <div class="display">
-            <h3 class="language">
-              Croatian
-            </h3>
-            <div class="item">
-              <div class="level fluency native speaker">
-                <em>Native Speaker</em>
-                <div class="bar"></div>
-              </div>
-            </div>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                IvySpace
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                May 2017 – Jan 2018 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                IvySpace is an online knowledge sharing service between mentors from Ivy-league colleges and students from China.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Converted Reflux based React application to Redux and Redux Saga
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented fallback for currency conversion API
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Converted various translation-related models to new JSON based schema with some fancy usage of Postgres functions
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Synectics Media
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Aug 2016 – May 2017 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Synectics Media is a media company from Detroit, specialized in making small MVPs. I built a marketplace focused on automotive parts and primarily intended for mobile use.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Built an MVP from scratch using Ember.js and Ruby on Rails
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented integration with peer to peer payment services using both PayPal and Stripe
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented integration with shipping APIs which supported printing international shipping labels from a bunch of providers
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Airbrake
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Jan 2016 – Apr 2017 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Airbrake is the first and most popular exception tracking service.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Maintained their open-source JavaScript and Node.js libraries with thousands of downloads
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Lessonhub
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Jan 2015 – Jan 2016 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Lessonhub is a custom education-focused content management system used by teachers across the US.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Built a custom content management system from scratch, with support for math functions and various custom lesson elements
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented frontend in Ember.js and the backend in Ruby on Rails
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented a small analytics platform, backed by Redis
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Was in charge of everything related to development, including managing other people that worked on the project
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Particle
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Oct 2013 – Jun 2014 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Particle is an internet of things cloud platform focusing on providing easy internet access to Arduino-like boards.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Built a custom browser-based IDE for their platform from scratch, using Ember.js that communicated with multiple APIs
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Built a Rails API with support for submissions of custom third-party libraries for the IDE usage
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Betterdoc
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Aug 2013 – Oct 2013 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Betterdoc is a SaaS that helps its customers with finding the best doctor for their needs.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Improved the test suite and raised the quality of the existing Ruby on Rails codebase
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Hiiro
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Feb 2013 – May 2013 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Hiiro was a SaaS for finding high-quality contractors, meant to be an alternative to Toptal. Unfortunately, it didn't gain enough traction, so development was discontinued.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented private exception tracking system for the Ruby on Rails API
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented various features using TDD for a frontend that was using Angular.js and the backend which was using Ruby on Rails
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Refactored large portion of the codebase, which improved the performance of the API
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Rackspace
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Feb 2012 – Aug 2013 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Rackspace is a popular cloud provider, and I worked on Airbrake. Airbrake is the first and most popular exception tracking service.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented various third-party service integrations like Engineyard, Heroku, and Jira using TDD
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Maintained an open-source Ruby gem that integrates with Rails with millions of downloads
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Added support for newer versions of Rails to an open-source gem
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Resolved support issues for over 40,000 monthly active users
+                </li>
+              </ul>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                Showmojo
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                Sep 2011 – Feb 2012 | Full Stack Developer
+              </p>
+            </header>
+              <p class="mt-2.1 text-md text-gray-700 leading-normal italic">
+                Showmojo is a small website for managing real estate showings. The backend is written in Ruby on Rails, and the frontend is using jQuery.
+              </p>
+              <ul class="">
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented analytics for images rendered on third-party services
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Implemented various CSS and JavaScript hacks for IE6
+                </li>
+                <li class="mt-2.1 text-md text-gray-700 leading-normal">
+                  <span class="absolute -ml-3 sm:-ml-3.2 select-none transform -translate-y-px">›</span>
+                  Improved user experience for photo uploads
+                </li>
+              </ul>
+          </section>
           </div>
         </section>
-      </section>
+
+        <section class="mt-8 first:mt-0">
+
+          <!-- To keep in the same column -->
+          <div class="break-inside-avoid">
+
+            <h2 class="mb-4 font-bold tracking-widest text-sm2 text-gray-550 print:font-normal">
+              EDUCATION
+            </h2>
+
+            <section class="mb-4.5 break-inside-avoid">
+              <header>
+                <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                  University of Zagreb
+                </h3>
+                <p class="leading-normal text-md text-gray-650">
+                  2008 – 2013 | Bachelor's Degree in Computer Science
+                </p>
+              </header>
+            </section>
+
+          </div>
+
+        </section>
+
+        <section class="my-8 first:mt-0">
+
+          <!-- To keep in the same column -->
+          <div class="break-inside-avoid">
+
+            <h2 class="mb-4 font-bold tracking-widest text-sm2 text-gray-550 print:font-normal">
+              PROJECTS
+            </h2>
+          </div>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                <a href="https://github.com/shime/kuote" class="group">
+                  Kuote
+                  <span
+                    class="inline-block text-gray-550 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+                </a>
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                2020 | author | JavaScript
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal">
+              Kuote is a small website for creating beautiful Medium-like quotes, perfect for sharing on Twitter or Instagram.
+            </p>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                <a href="https://github.com/shime/journmail" class="group">
+                  Journmail
+                  <span
+                    class="inline-block text-gray-550 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+                </a>
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                2017 | author | Ruby
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal">
+              Journmail is a service that reminds you to write in your journal every day by sending reminder emails.
+            </p>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                <a href="https://github.com/twobucks/zapsnap" class="group">
+                  Zapsnap
+                  <span
+                    class="inline-block text-gray-550 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+                </a>
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                2017 | author | JavaScript
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal">
+              Zapsnap is a fun little service for temporary peer-to-peer screenshot sharing.
+            </p>
+          </section>
+
+          <section class="mb-4.5 break-inside-avoid">
+            <header>
+              <h3 class="text-lg font-semibold text-gray-700 leading-snugish">
+                <a href="https://github.com/shime/livedown" class="group">
+                  Livedown
+                  <span
+                    class="inline-block text-gray-550 print:text-black font-normal group-hover:text-gray-700 transition duration-100 ease-in">↗</span>
+                </a>
+              </h3>
+              <p class="leading-normal text-md text-gray-650">
+                2014 | author | JavaScript
+              </p>
+            </header>
+            <p class="mt-2.1 text-md text-gray-700 leading-normal">
+              Livedown is a small tool that enables live Markdown previews from your favorite editor.
+            </p>
+          </section>
+
+        </section>
+
+      </div>
+      <!-- end Column -->
+
     </div>
-    <script>
-      (function(){
-        var elements = document.querySelector("#resume");
+    <!-- end Page -->
 
-        // adding the element to the all container
-        // and using event delegation
-        elements.addEventListener("click", function(e) {
-          var current = e.target;
-          // font awesone arrows
-          var arrowRight = current.classList.contains('fa-caret-down');
-          var arrowDown = current.classList.contains('fa-caret-down');
+  </main>
 
-          if(current && current.nodeName == "SPAN" && (arrowRight || arrowDown)) {
-            var header = e.target.parentNode.parentNode;
-            var item = header.nextSibling;
+</body>
 
-            // select the .item element from the siblings
-            while (!item || !item.classList || !item.classList.contains('item')) {
-              item = item.nextSibling;
-            }
-
-            // hide or show the .item element
-            item.classList.toggle('none');
-
-            // if the .item is going to be shown then imcrease is opacity
-            // every 20 milliseconds to make a fadeIn effect
-            if (!item.classList.contains('none')) {
-              var id = setInterval(function() {
-                item.style.opacity = parseFloat(item.style.opacity) + 0.09;
-                if (parseFloat(item.style.opacity) >= 1) {
-                  clearInterval(id);
-                }
-              }, 20);
-            } else {
-              item.style.opacity = 0;
-            }
-
-            current.classList.toggle('fa-caret-down');
-            current.classList.toggle('fa-caret-down');
-          }
-
-        }, false);
-
-        // Make the #resume visible only when the DOM is fully loaded
-        elements.style.opacity = '1';
-      })();
-    </script>
-    <script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
 </html>
