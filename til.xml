@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>Running parallel Rails tests on Github Actions</title>
+      
+        <description>
+          &lt;p&gt;Since I&amp;#39;ve already written &lt;a href=&quot;/til/partitioning-parallel-tests-on-heroku-ci&quot;&gt;an article about how
+to run parallel Rails tests on Heroku CI&lt;/a&gt;,
+I wanted to share how to do it on Github Actions.&lt;/p&gt;
+
+          <a href="http://shime.sh/til/running-parallel-rails-tests-on-github-actions">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/til/running-parallel-rails-tests-on-github-actions</link>
+      <guid isPermaLink="true">http://shime.sh/til/running-parallel-rails-tests-on-github-actions</guid>
+    </item>
+    
+    <item>
       <title>Mind the transaction</title>
       
         <description>
@@ -142,22 +158,6 @@ a template.&lt;/p&gt;
       <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/writing-custom-vim-template</link>
       <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-template</guid>
-    </item>
-    
-    <item>
-      <title>Writing custom Vim snippets</title>
-      
-        <description>
-          &lt;p&gt;&lt;a href=&quot;github.com/garbas/vim-snipmate&quot;&gt;vim-snipmate&lt;/a&gt; is a really useful
-Vim plugin that adds support for custom autocompletion. &lt;a href=&quot;https://github.com/honza/vim-snippets&quot;&gt;vim-snippets&lt;/a&gt;
-adds a bunch of useful snippets for various languages.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/writing-custom-vim-snippets">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Fri, 08 May 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/writing-custom-vim-snippets</link>
-      <guid isPermaLink="true">http://shime.sh/til/writing-custom-vim-snippets</guid>
     </item>
     
   </channel>

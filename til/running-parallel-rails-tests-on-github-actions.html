@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Using edge Rails locally" />
+<meta property="og:title" content="Running parallel Rails tests on Github Actions" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="If you ever wanted to test the latest rails version locally, here&#39;s the command which helps you a lot." />
-<meta property="og:description" content="If you ever wanted to test the latest rails version locally, here&#39;s the command which helps you a lot." />
-<link rel="canonical" href="http://shime.sh/til/using-edge-rails-locally" />
-<meta property="og:url" content="http://shime.sh/til/using-edge-rails-locally" />
+<meta name="description" content="Since I&#39;ve already written an article about how to run parallel Rails tests on Heroku CI, I wanted to share how to do it on Github Actions." />
+<meta property="og:description" content="Since I&#39;ve already written an article about how to run parallel Rails tests on Heroku CI, I wanted to share how to do it on Github Actions." />
+<link rel="canonical" href="http://shime.sh/til/running-parallel-rails-tests-on-github-actions" />
+<meta property="og:url" content="http://shime.sh/til/running-parallel-rails-tests-on-github-actions" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2012-04-03T00:00:00+02:00" />
+<meta property="article:published_time" content="2021-01-22T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.png" />
-<meta property="twitter:title" content="Using edge Rails locally" />
+<meta property="twitter:title" content="Running parallel Rails tests on Github Actions" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Using edge Rails locally","dateModified":"2012-04-03T00:00:00+02:00","datePublished":"2012-04-03T00:00:00+02:00","url":"http://shime.sh/til/using-edge-rails-locally","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/using-edge-rails-locally"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"If you ever wanted to test the latest rails version locally, here&#39;s the command which helps you a lot.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"image":"http://shime.sh/public/social.png","headline":"Running parallel Rails tests on Github Actions","dateModified":"2021-01-22T00:00:00+01:00","datePublished":"2021-01-22T00:00:00+01:00","url":"http://shime.sh/til/running-parallel-rails-tests-on-github-actions","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/running-parallel-rails-tests-on-github-actions"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Since I&#39;ve already written an article about how to run parallel Rails tests on Heroku CI, I wanted to share how to do it on Github Actions.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Using edge Rails locally &middot; Hrvoje Šimić </title>
+    <title> Running parallel Rails tests on Github Actions &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Using edge Rails locally &middot; Hrvoje Šimić">
+  <meta name="title" content="Running parallel Rails tests on Github Actions &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -201,12 +201,12 @@
             </div>
 
             <div class="mb-8">
-              <h1>Using edge Rails locally</h1>
+              <h1>Running parallel Rails tests on Github Actions</h1>
 
               <div class="flex justify-between">
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    April 3, 2012
+                    January 22, 2021
                   </div>
                 
 
@@ -224,10 +224,61 @@
               </div>
             </div>
 
-            <p>If you ever wanted to test the latest rails version locally, here&#39;s the command which helps you a lot.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ruby /path/to/rails/railties/bin/rails new myapp --dev
+            <p>Since I&#39;ve already written <a href="/til/partitioning-parallel-tests-on-heroku-ci">an article about how
+to run parallel Rails tests on Heroku CI</a>,
+I wanted to share how to do it on Github Actions.</p>
+
+<p>Here&#39;s a simple way to partition your tests,
+without using third party services.</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span></span><span class="nn">---</span>
+<span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Test</span>
+<span class="l l-Scalar l-Scalar-Plain">on</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">]</span>
+
+<span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+ <span class="c1"># Specifies how many jobs you would like to run in parallel</span>
+ <span class="l l-Scalar l-Scalar-Plain">NUMBER_OF_NODES</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+
+<span class="l l-Scalar l-Scalar-Plain">jobs</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">tests</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Tests</span>
+    <span class="l l-Scalar l-Scalar-Plain">runs-on</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">strategy</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">matrix</span><span class="p p-Indicator">:</span> 
+        <span class="c1"># Specify an index for each job ran in parallel</span>
+        <span class="l l-Scalar l-Scalar-Plain">index</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">1</span><span class="p p-Indicator">,</span> <span class="nv">2</span><span class="p p-Indicator">,</span> <span class="nv">3</span><span class="p p-Indicator">,</span> <span class="nv">4</span><span class="p p-Indicator">]</span>
+    <span class="l l-Scalar l-Scalar-Plain">steps</span><span class="p p-Indicator">:</span>
+      <span class="c1"># ...</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Run tests</span>
+        <span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
+          <span class="c1"># Use the index from matrix as an environment variable</span>
+          <span class="l l-Scalar l-Scalar-Plain">CI_NODE_INDEX</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${{ matrix.index }}</span>
+        <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">./bin/test</span>
 </code></pre></div>
-<p>With this, you use your local clone of rails/rails to develop new applications.</p>
+<p>This will run 5 jobs in parallel and it assumes you have a
+<code>./bin/test</code> script for partitioning your tests.</p>
+
+<p>This is how that script looks like:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="ch">#!/usr/bin/env ruby</span>
+
+<span class="nb">require</span> <span class="s2">&quot;date&quot;</span>
+
+<span class="n">tests</span> <span class="o">=</span> <span class="no">Dir</span><span class="o">[</span><span class="s2">&quot;test/**/*_test.rb&quot;</span><span class="o">].</span>
+  <span class="c1"># Add some randomization. Different test order every day.</span>
+  <span class="n">shuffle</span><span class="p">(</span><span class="ss">random</span><span class="p">:</span> <span class="no">Random</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">Date</span><span class="o">.</span><span class="n">today</span><span class="o">.</span><span class="n">to_time</span><span class="o">.</span><span class="n">to_i</span><span class="p">))</span><span class="o">.</span>
+  <span class="nb">select</span><span class="o">.</span>
+  <span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">el</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+    <span class="n">i</span> <span class="o">%</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;NUMBER_OF_NODES&quot;</span><span class="o">].</span><span class="n">to_i</span> <span class="o">==</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;CI_NODE_INDEX&quot;</span><span class="o">].</span><span class="n">to_i</span>
+  <span class="k">end</span>
+
+<span class="nb">exec</span> <span class="s2">&quot;bundle exec rails test </span><span class="si">#{</span><span class="n">tests</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>The script assumes you are using Minitest, so replace the <code>rails test</code> with <code>rspec</code>
+if you&#39;re using RSpec.</p>
+
+<p>The downside of this approach is that your tests will not be split
+based on the duration of tests, so some jobs might take longer than others.</p>
 
 
             <div class="flex items-center">
