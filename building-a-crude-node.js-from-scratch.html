@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1611312931960582000">
-  <link rel="stylesheet" href="/public/css/style.css?1611312931960582000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1611483281826574000">
+  <link rel="stylesheet" href="/public/css/style.css?1611483281826574000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -39,7 +39,7 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Building a crude Node.js from scratch" />
 <meta name="author" content="Hrvoje Šimić" />
@@ -58,7 +58,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Building a crude Node.js from scratch","dateModified":"2017-10-10T00:00:00+02:00","datePublished":"2017-10-10T00:00:00+02:00","url":"http://shime.sh/building-a-crude-node.js-from-scratch","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/building-a-crude-node.js-from-scratch"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"Node is powered by the JavaScript engine used in Google Chrome, called V8[1]. In this post I&#39;m going to guide you through two steps:","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/building-a-crude-node.js-from-scratch","image":"http://shime.sh/public/social.png","headline":"Building a crude Node.js from scratch","dateModified":"2017-10-10T00:00:00+02:00","datePublished":"2017-10-10T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/building-a-crude-node.js-from-scratch"},"description":"Node is powered by the JavaScript engine used in Google Chrome, called V8[1]. In this post I&#39;m going to guide you through two steps:","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -233,7 +233,7 @@
 
 <p>In our new crude runtime we&#39;ll execute the following script:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;🎉&quot;</span><span class="p">);</span>
-<span class="nx">b</span><span class="o">=</span><span class="mi">4</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+<span class="nx">b</span><span class="o">=</span><span class="mf">4</span><span class="o">+</span><span class="mf">4</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
 <span class="nx">quit</span><span class="p">();</span>
 
@@ -446,26 +446,26 @@ If you&#39;re not sure just run it without <code>-j</code> flag</p>
 <span class="n">class</span> <span class="n">Console</span> <span class="p">{</span> <span class="p">};</span>
 
 <span class="c1">// Extracts a C string from a V8 Utf8Value.</span>
-<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="nf">ToCString</span><span class="p">(</span><span class="k">const</span> <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">ToCString</span><span class="p">(</span><span class="k">const</span> <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="o">*</span><span class="n">value</span> <span class="o">?</span> <span class="o">*</span><span class="nl">value</span> <span class="p">:</span> <span class="s">&quot;&lt;string conversion failed&gt;&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Define a log function that prints to stdout.</span>
-<span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="k">const</span> <span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">){</span>
+<span class="kt">void</span> <span class="n">log</span><span class="p">(</span><span class="k">const</span> <span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">){</span>
   <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span> <span class="n">str</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
   <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">cstr</span> <span class="o">=</span> <span class="n">ToCString</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cstr</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// Define an error function that prints to stderr.</span>
-<span class="kt">void</span> <span class="nf">error</span><span class="p">(</span><span class="k">const</span> <span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">){</span>
+<span class="kt">void</span> <span class="n">error</span><span class="p">(</span><span class="k">const</span> <span class="n">FunctionCallbackInfo</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;&amp;</span> <span class="n">args</span><span class="p">){</span>
   <span class="n">v8</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">Utf8Value</span> <span class="n">str</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
   <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">cstr</span> <span class="o">=</span> <span class="n">ToCString</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
   <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">cstr</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="n">Local</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">WrapConsoleObject</span><span class="p">(</span><span class="n">Console</span> <span class="o">*</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">EscapableHandleScope</span> <span class="n">handle_scope</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">());</span>
+  <span class="n">EscapableHandleScope</span> <span class="nf">handle_scope</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">());</span>
 
   <span class="n">Local</span><span class="o">&lt;</span><span class="n">ObjectTemplate</span><span class="o">&gt;</span> <span class="n">class_t</span><span class="p">;</span>
   <span class="n">Local</span><span class="o">&lt;</span><span class="n">ObjectTemplate</span><span class="o">&gt;</span> <span class="n">raw_t</span> <span class="o">=</span> <span class="n">ObjectTemplate</span><span class="o">::</span><span class="n">New</span><span class="p">(</span><span class="n">GetIsolate</span><span class="p">());</span>
@@ -568,7 +568,7 @@ If you&#39;re not sure just run it without <code>-j</code> flag</p>
 </code></pre></div>
 <p>After that, set up a JavaScript script at <code>test.js</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;🎉&quot;</span><span class="p">);</span>
-<span class="nx">b</span><span class="o">=</span><span class="mi">4</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span>
+<span class="nx">b</span><span class="o">=</span><span class="mf">4</span><span class="o">+</span><span class="mf">4</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
 <span class="nx">quit</span><span class="p">();</span>
 

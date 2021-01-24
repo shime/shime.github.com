@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1611312931960582000">
-  <link rel="stylesheet" href="/public/css/style.css?1611312931960582000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1611483281826574000">
+  <link rel="stylesheet" href="/public/css/style.css?1611483281826574000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -39,7 +39,7 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Adding a hidden collection in Jekyll" />
 <meta name="author" content="Hrvoje Šimić" />
@@ -58,7 +58,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"image":"http://shime.sh/public/social.png","headline":"Adding a hidden collection in Jekyll","dateModified":"2018-12-18T00:00:00+01:00","datePublished":"2018-12-18T00:00:00+01:00","url":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll"},"author":{"@type":"Person","name":"Hrvoje Šimić"},"description":"TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll","image":"http://shime.sh/public/social.png","headline":"Adding a hidden collection in Jekyll","dateModified":"2018-12-18T00:00:00+01:00","datePublished":"2018-12-18T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/adding-new-hidden-collection-in-jekyll"},"description":"TIL is the hidden section of this site, and since I&#39;m using Jekyll as an engine, I needed to learn how to add a new section.","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -230,10 +230,10 @@ learn how to add a new section.</p>
 
 <p>To add new collection to Jekyll, you have to first
 define it in <code>_config.yml</code>.</p>
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span></span><span class="l l-Scalar l-Scalar-Plain">collections</span><span class="p p-Indicator">:</span> 
-  <span class="l l-Scalar l-Scalar-Plain">til</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="l l-Scalar l-Scalar-Plain">permalink</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/:collection/:title</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span></span><span class="nt">collections</span><span class="p">:</span> 
+  <span class="nt">til</span><span class="p">:</span>
+    <span class="nt">output</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">permalink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/:collection/:title</span>
 </code></pre></div>
 <p>After that, create a folder for that collection
 beginning with the underscore:</p>
