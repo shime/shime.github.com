@@ -41,32 +41,32 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="The Rational Optimist" />
+<meta property="og:title" content="Stopping Spring from using 100% CPU" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Although I don’t agree with the author’s views on climate change, I’ve appreciated the optimism and interesting insights of this book." />
-<meta property="og:description" content="Although I don’t agree with the author’s views on climate change, I’ve appreciated the optimism and interesting insights of this book." />
-<link rel="canonical" href="http://shime.sh/summaries/rational-optimist" />
-<meta property="og:url" content="http://shime.sh/summaries/rational-optimist" />
+<meta name="description" content="I&#39;ve noticed that running Spring often causes 100% CPU usage, which results in fans spinning out of control. I&#39;ve shared the script that I use for killing these processes, but that is a band-aid solution." />
+<meta property="og:description" content="I&#39;ve noticed that running Spring often causes 100% CPU usage, which results in fans spinning out of control. I&#39;ve shared the script that I use for killing these processes, but that is a band-aid solution." />
+<link rel="canonical" href="http://shime.sh/til/stopping-spring-from-using-100-cpu" />
+<meta property="og:url" content="http://shime.sh/til/stopping-spring-from-using-100-cpu" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:image" content="http://shime.sh/public/social.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-01-30T16:40:16+01:00" />
+<meta property="article:published_time" content="2021-01-30T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://shime.sh/public/social.png" />
-<meta property="twitter:title" content="The Rational Optimist" />
+<meta property="twitter:title" content="Stopping Spring from using 100% CPU" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/summaries/rational-optimist","image":"http://shime.sh/public/social.png","headline":"The Rational Optimist","dateModified":"2021-01-30T16:40:16+01:00","datePublished":"2021-01-30T16:40:16+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/summaries/rational-optimist"},"description":"Although I don’t agree with the author’s views on climate change, I’ve appreciated the optimism and interesting insights of this book.","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/stopping-spring-from-using-100-cpu","image":"http://shime.sh/public/social.png","headline":"Stopping Spring from using 100% CPU","dateModified":"2021-01-30T00:00:00+01:00","datePublished":"2021-01-30T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/stopping-spring-from-using-100-cpu"},"description":"I&#39;ve noticed that running Spring often causes 100% CPU usage, which results in fans spinning out of control. I&#39;ve shared the script that I use for killing these processes, but that is a band-aid solution.","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> The Rational Optimist &middot; Hrvoje Šimić </title>
+    <title> Stopping Spring from using 100% CPU &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="The Rational Optimist &middot; Hrvoje Šimić">
+  <meta name="title" content="Stopping Spring from using 100% CPU &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -197,13 +197,17 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/reading"> ← reading </a>
+              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
             </div>
 
             <div class="mb-8">
-              <h1>The Rational Optimist</h1>
+              <h1>Stopping Spring from using 100% CPU</h1>
 
               <div class="flex justify-between" data-nosnippet>
+                
+                  <div class="text-grey text-sm" data-js-time-ago>
+                    January 30, 2021
+                  </div>
                 
 
                 <div data-js-views-container class="hidden inline text-grey text-sm">
@@ -214,183 +218,31 @@
               <div class="flex my-2" data-nosnippet>
                 
                   <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    book summary
+                    rails
                   </span>
                 
               </div>
             </div>
 
-            <p>Although I don’t agree with the author’s views on climate change, I’ve appreciated the optimism and interesting insights of this book. </p>
-
-<p>The funniest thing about the book is that the author ridicules almost all past predictions mentioned and gives examples of how “they were wrong before the ink was dry”, while making a prediction himself that also turned out to be wrong. He predicts that the seven billionth person won’t be born until 2013, yet this happened in 2011. This is just another proof that no one can make a meaningful prediction about the future.</p>
-
-<p>Still, this book is an excellent read. Filled with interesting observations and easy to digest. </p>
-
-<p>Here are some of my favorite lessons from the book.</p>
-
-<h2>Progress is visible, even if you only compare today to the 20th century</h2>
-
-<p>If we look back to 1950s, we can see visible progress with infant mortality, GDP and car pollution for instance.</p>
-
-<p>Examples from the book:</p>
-
-<blockquote>
-<p>“The average Mexican lives longer now than the average Briton did in 1955. The average Botswanan earns more than the average Finn did in 1955.”*  </p>
-
-<p>“Infant mortality is lower today in Nepal than it was in Italy in 1951.”*  </p>
-
-<p>“Today, a car emits less pollution traveling at full speed than a parked car did in 1970 from leaks.”*  </p>
-
-<p>In 1900, the average American spent $76 of every $100 on food, clothing and shelter. Today he spends $37  </p>
-</blockquote>
-
-<h2>Humans took reciprocity a step further</h2>
-
-<p>There’s an animal instinct of reciprocity and animals use that to exchange the same kinds of objects.</p>
-
-<p>However, humans have taken this a step further and started bartering different objects, which enabled progress. </p>
-
-<p>Humans are unique in this regard, as no other species barter different objects. This has enabled progress since each individual started specializing, which benefited everyone. This progress is nothing more than technology and habits changing faster than anatomy.</p>
-
-<p>Bartering different objects like this is a human breakthrough and perhaps a chief thing that led to ecological dominance.</p>
-
-<h2>Idea sex</h2>
-
-<p>What sex is to biological evolution, exchange is to cultural evolution. Exchanging ideas and making them have sex propels the culture forward and enables progress. </p>
-
-<h2>Specialization enabled prosperity</h2>
-
-<p>Idea sex made people discover the division of labor, or the individual specialization for mutual gain. This made everyone better off.</p>
-
-<p>Specialization encouraged innovation since it encouraged spending time on tools that create other tools. This innovation enabled prosperity.</p>
-
-<h2>Prosperity is inherited</h2>
-
-<p>When we are born, we inherit the progress of entire human race over the past. From the infrastructure, to tools and utilities. We take a lot of this for granted.</p>
-
-<p>Hand axe and computer mouse are both tools, but they are vastly different. The axe was made by a single person and the mouse is made by hundreds or even millions of people. Collective intelligence, which manifested in division of labor and specialization, created computer mouse.</p>
-
-<p>Specialization enabled division of labor which enabled production of complex objects like computer mouse and other high tech tools that we use to improve the quality of our lives.</p>
-
-<h2>You have more servants than Louis XIV</h2>
-
-<p>Although Louis XIV had 498 servants at his disposal, you can use the labor of many other people and therefore you have more servants than him.  </p>
-
-<p>The abundance of choice you are greeted with when you enter a supermarket is far beyond what Louis XIV had at his disposal. You can choose what restaurant to visit and you have a myriad of options here as well. You can order things online that Louis XIV never dreamed of. Airplane pilot serves you and takes you to hundreds of destinations that Sun King never visited.</p>
-
-<p>Never before in history has the average person been able to afford to have somebody else prepare his meals.</p>
-
-<p>This is the effect of specialization.</p>
-
-<h2>Growing government is not as modern a problem as it seems</h2>
-
-<p>There are historic records from Lactantius, an advisor to Roman emperor, Constantine I, that even during Rome “tax collectors outnumbered taxpayers”.</p>
-
-<blockquote>
-<p>For a while the Romans achieved a sort of European unity, and the result was just like the Ming: stagnation and bureaucracy. Under the emperor Diocletian (just as under the emperor Yong-Le) ‘tax collectors began to outnumber taxpayers’, said Lactantius, and ‘a multitude of governors and hordes of directors oppressed every region – almost every city; and to these were added countless collectors and secretaries and assistants to the directors.’  </p>
-</blockquote>
-
-<h2>Average IQ score keeps increasing</h2>
-
-<p>Average IQ score increases at the rate of 3 per cent per decade. This is known as the Flynn effect. At first, this effect was dismissed because it was explained as the changes in tests or because of the longer and better schooling. </p>
-
-<p>This effect is weakest in the cleverest of children and in tests that relate most to educational content, so the original explanation for the cause does not hold true.</p>
-
-<p>Therefore, it’s believed that it’s caused by an equalization of nutrition, stimulation or diversity of childhood experience.</p>
-
-<h2>True metric of progress is time</h2>
-
-<p>Failing consumer prices enrich people because it makes people work less in order to buy something.</p>
-
-<p>This saves them time and this is the true metric of prosperity. If an innovator like Henry Ford, not only moves you faster, but also requires you to work fewer hours to earn the ticket price, then he has enriched you with a lot of free time.</p>
-
-<h2>Countries that trade are more prosperous than countries that rely on natural resources</h2>
-
-<p>Spain of Charles V and Philip II wasted the gigantic wealth of the Peruvian silver mines. This same ‘curse of resources’ has afflicted countries ever since, especially those with oil (Russia, Venezuela, Iraq, Nigeria) that end up run by rent-seeking autocrats. </p>
-
-<p>Despite hitting the jackpot when it comes to natural resources, these countries experience lower economic growth than countries that entirely lack resources but get busy trading and selling - Hong Kong, Singapore, Taiwan, South Korea, Japan, Holland.</p>
-
-<h2>Diverse consumption and simplified production is the defining feature of a high standard of living</h2>
-
-<p>The defining feature of a high standard of living is: diverse consumption and simplified production. Make one thing, use lots.</p>
-
-<p>In contrast, our self-sufficient hunter-gatherer predecessors were defined by multiple production and simple consumption. Since they could only consume what they produced, they didn’t consume very much.</p>
-
-<h2>What being poor means</h2>
-
-<p>You are poor when you can’t sell your time for sufficient price to buy the services you need. </p>
-
-<p>You are rich when you can not only afford the services you need, but also those you crave.</p>
-
-<h2>Cooking encourages specialization by sex</h2>
-
-<p>Fire enabled cooking which encourages specialization by sex. </p>
-
-<p>“Men hunt, women and children gather” is an iron rule documented in almost all foraging people.</p>
-
-<p>This specialization made sense since men had to hunt to get protein, while women generally collect carbohydrates. The combination is the best of both worlds. At the cost of some extra work, the women get to eat some good protein without having to chase it, and men get to know where the next meal is coming from if they fail with their hunt.</p>
-
-<p>Everybody gains from this trade.</p>
-
-<h2>Human beings are the only great apes with long pair bonds</h2>
-
-<p>In exchange for sexual exclusivity, the man brings meat and protects from thieves and bullies; in exchange for help bringing the children, the woman brings vegetables and cooks. </p>
-
-<p>This may explain why human beings are the only great apes with long pair bonds. </p>
-
-<h2>Cities exist for trade</h2>
-
-<p>Cities are places where people go to trade, specialize and exchange. They grow as trade grows and shrink as trade dries down. Hong Kong’s population grew by thirty times in the twentieth century, while Rome’s population declined from a million inhabitants in 100 BC to less than 20,000 in Middle Ages.</p>
-
-<p>Traders gather as tightly together as possible to maximize information flow and minimize costs.</p>
-
-<h2>Monopoly rewards caution and discourages experiment</h2>
-
-<p>A Bronze Age empire stagnated for much the same reason a nationalized industry stagnates. The income is gradually captured by the interests of the producers at the expense of the interests of consumers.</p>
-
-<p>The list of innovations achieved by the pharaohs is as thin as the list of innovations achieved by British Rail or the US Postal Service.</p>
-
-<h2>China is the only place in the world with lower GDP per capita in 1950 than in 1000</h2>
-
-<p>China went from a state of economic exuberance at 1000 AD to one of dense population and agrarian backwardness and desperate poverty in 1950.</p>
-
-<h2>Governments tend to be good things at first and bad things the longer they last</h2>
-
-<p>At first, the governments remove impediments to trade and specialization and therefore improve society’s ability to flourish. But then, they gradually start to employ more and more ambitious elites who capture a greater and greater share of the society’s income by interfering more and more in people’s lives as they give themselves more rules to enforce, until they kill the goose that lays the golden eggs.</p>
-
-<h2>Free trade causes mutual prosperity while protectionism causes poverty</h2>
-
-<p>When a country opens its border to trade it never becomes poorer. This works even when a country opens its borders and its neighbors don’t.</p>
-
-<p>Every country that tried protectionism suffered: Albania under Hoxha, China under Zedong, Cuba under Castro.</p>
-
-<p>Countries that went the other way include Singapore, Hong Kong, Taiwan, South Korea and Mauritius. Bywords for miraculous growth.</p>
-
-<h2>Fossil fuels made slavery uneconomic</h2>
-
-<p>It would’ve been harder to eliminate slavery without fossil fuels.</p>
-
-<blockquote>
-<p>‘History supports this truth,’ writes the economist Don Boudreaux: ‘Capitalism exterminated slavery.  </p>
-</blockquote>
-
-<p>Were it not for fossil fuels, 99 per cent of people would have to live in slavery for the rest to have a decent standard of living.</p>
-
-<blockquote>
-<p>Coal makes the electricity that lights your house, spins your washing machine and smelts the aluminium from which your aeroplane was made; oil fuels the ships, trucks and planes that filled your supermarket and makes the plastic from which your children’s toys are made; gas heats your home, bakes your bread and makes the fertiliser that grows your food. These are your slaves.  </p>
-</blockquote>
-
-<h2>Nobody planned the industrial revolution</h2>
-
-<p>Centralized plans don’t work and they have been proven disastrous in history. Nobody planned the industrial revolution or China’s economic surge. The planners role was to get out of the way of bottom-up solutions.</p>
-
-<h2>Internet’s similarity to Marxism</h2>
-
-<p>People share their photos on Flickr, their thoughts on Twitter, their friends on Facebook, their knowledge on Wikipedia, their software patches on Linux, their genomes on 23AndMe, even their medical records on PatientsLikeMe.</p>
-
-<blockquote>
-<p>Thanks to the internet, each is giving according to his ability to each according to his needs, to a degree that never happened in Marxism.  </p>
-</blockquote>
+            <p>I&#39;ve noticed that running Spring often causes 
+100% CPU usage, which results in fans spinning
+out of control. <a href="/til/stopping-the-fans-with-a-script">I&#39;ve shared the script that I use for killing
+these processes</a>,
+but that is a band-aid solution.</p>
+
+<p>Instead of just killing the processes, why not
+prevent it from happening in the first place?</p>
+
+<p>To do that, remove the listen gem from
+the Gemfile:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s2">&quot;listen&quot;</span>
+<span class="n">gem</span> <span class="s2">&quot;spring-watcher-listen&quot;</span>
+</code></pre></div>
+<p>Since Rails&#39; default file watcher depends on this gem,
+comment out this line in <code>config/environments/development.rb</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># config.file_watcher = ActiveSupport::EventedFileUpdateChecker</span>
+</code></pre></div>
+<p>This makes the fans much more silent.</p>
 
 
             <div class="flex items-center" data-nosnippet>
