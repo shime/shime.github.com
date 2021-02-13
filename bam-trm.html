@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/public/css/monokai.css?1613213985605365000">
-    <link rel="stylesheet" href="/public/css/style.css?1613213985605365000">
+    <link rel="stylesheet" href="/public/css/monokai.css?1613215290994175000">
+    <link rel="stylesheet" href="/public/css/style.css?1613215290994175000">
 
     <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -68,10 +68,10 @@
   </head>
 
   <body class="font-sans">
-    <div class="lg:pt-16 lg:pb-16 p-6 relative">
+    <div class="lg:pt-16 lg:pb-16 p-8 relative">
       <div class="w-full flex justify-center text-lg mt-16 text-grey-darker font-light leading-normal">
         <div class="flex-col">
-          <div class="post max-w-full md:max-w-md text-2xl">
+          <div class="post max-w-full md:max-w-md text-2xl p-6">
             <h1>Dragi Šifi,</h1>
 
             <p>
@@ -103,13 +103,16 @@
 
             <iframe src="public/kula.mp3" allow="autoplay" style="display:none" id="iframeAudio">
 </iframe>
+            <audio id="player" autoplay loop>
+               <source src="/public/kula.mp3" type="audio/mp3">
+            </audio>
 
             <div class="pt-8 overflow-hidden w-full">
               <p class=>Do svih battle-anja...</p>
             </div>
 
             <div id="video-container">
-            <iframe id="video" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video" width="300" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
 
