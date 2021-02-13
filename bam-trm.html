@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/public/css/monokai.css?1613215552514422000">
-    <link rel="stylesheet" href="/public/css/style.css?1613215552514422000">
+    <link rel="stylesheet" href="/public/css/monokai.css?1613239483357473000">
+    <link rel="stylesheet" href="/public/css/style.css?1613239483357473000">
 
     <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -80,23 +80,27 @@
 
             <p>
               Koliko je bilo kafica, pljugica, cugica i trebica?
-              Koliko zajebancija, bam trm-ova, ti mater-a,
+
+              Koliko zajebancija, bam tarimoj-eva, ti mater-a,
+              a zizija, mrtvih divljaštava, jazo jazo-a,
+              grunut ću te majmuna, zilji, dve kune briji,
               štreberskog smijanja i žešćih retardacija?
             </p>
 
             <p>
-              Od Ultre, do svih druzenja...
+              Od svih druženja i rođendana...
             </p>
+
             <img class="float-left m-auto block polaroid" src='/public/rockas.jpg' alt='' />
 
             <div class="py-8 overflow-hidden w-full">
-              <p class=>Od svih dramica i kafica na faksu...</p>
+              <p class=>Preko svih divljaštava na faksu...</p>
             </div>
 
             <img class="float-left m-auto block polaroid" src='/public/auto.jpg' alt='' />
 
             <div class="pt-8 overflow-hidden w-full">
-              <p class=>Od planinarenja...</p>
+              <p class=>I planinarenja...</p>
             </div>
 
             <img class="float-left m-auto block polaroid" src='/public/planinarenje.jpg' alt='' />
@@ -106,9 +110,8 @@
             </div>
 
             <div id="video-container">
-            <iframe id="video" width="300" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe id="video" width="300" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-
 
 
             <p class="pt-8 overflow-hidden w-full">
@@ -135,7 +138,7 @@
       var v = document.getElementById('video');
       if ((window.scrollY < (dv.offsetTop + dv.offsetHeight)) && ((window.scrollY + window.outerHeight) > dv.offsetTop)) {
         if (v.src=='' || v.src==location.href) {
-          v.src='https://www.youtube.com/embed/XtxqOCjnB5M?autoplay=1&controls=0';
+          v.src='https://www.youtube.com/embed/XtxqOCjnB5M?autoplay=1&mute=1&controls=0';
         }
       } else {
         v.src='';
