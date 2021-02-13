@@ -40,4 +40,4 @@ layout: post
 title: "`echo "${original_title^}"`"
 ---
 EOF
-vim $fullpath
+nvim $fullpath
