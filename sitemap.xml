@@ -307,6 +307,13 @@
 
   
   <url>
+    <loc>http://shime.sh/meetings-vs-documents</loc>
+    <lastmod>2021-02-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://shime.sh/dealing-with-bureaucracy</loc>
     <lastmod>2021-02-14</lastmod>
     <changefreq>daily</changefreq>

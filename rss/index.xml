@@ -8,6 +8,19 @@
 
     
     <item>
+      <title>Meetings vs documents</title>
+      
+      <description>&lt;div style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;/public/documents.png&quot;/&gt;
+&lt;/div&gt;
+</description>
+      
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0100</pubDate>
+      <link>http://shime.sh/meetings-vs-documents</link>
+      <guid isPermaLink="true">http://shime.sh/meetings-vs-documents</guid>
+    </item>
+    
+    <item>
       <title>Dealing with bureaucracy</title>
       
       <description>&lt;div style=&quot;text-align: center&quot;&gt;
@@ -106,17 +119,6 @@
       <pubDate>Sun, 18 Oct 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/the-overreaction-paradox</link>
       <guid isPermaLink="true">http://shime.sh/the-overreaction-paradox</guid>
-    </item>
-    
-    <item>
-      <title>Write for yourself</title>
-      
-      <description>&lt;p&gt;There’s a tension that you’ll discover if you start publishing articles. A tension between writing what the world wants from you and what you want to write about.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 11 Oct 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/write-for-yourself</link>
-      <guid isPermaLink="true">http://shime.sh/write-for-yourself</guid>
     </item>
     
   </channel>
