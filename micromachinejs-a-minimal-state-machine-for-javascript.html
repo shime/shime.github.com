@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1613308053802469000">
-  <link rel="stylesheet" href="/public/css/style.css?1613308053802469000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1613308752842659000">
+  <link rel="stylesheet" href="/public/css/style.css?1613308752842659000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -114,6 +114,12 @@
           
         </li>
         
+        <li class="inline">
+          
+          <a class="font-medium text-xs text-grey no-underline uppercase mr-2 hover:text-black" href='/subscribe'>Subscribe</a>
+          
+        </li>
+        
       </ul>
     </div>
   </div>
@@ -161,6 +167,13 @@
     <li class="my-2">
       
         <a class="font-semibold text-xl text-grey no-underline uppercase" href='/reading/'>Reading list</a>
+      
+    </li>
+    
+
+    <li class="my-2">
+      
+        <a class="font-semibold text-xl text-grey no-underline uppercase" href='/subscribe'>Subscribe</a>
       
     </li>
     
@@ -296,12 +309,42 @@ with states and it provides a simple API for managing a minimalistic implementat
               </div>
             </div>
 
+            
+              <div class="mt-12 bg-grey-lightest p-8 text-grey-darkest border-t-4 border-grey-light">
+                
+
+
+<p class="mt-4 max-w-sm m-auto">
+  I send a newsletter called Irregular Reveries. It consists of four sections:
+  the best article I've written, the best of what I've read, a quote that resonated with me, and a question for you.
+
+  <div class="mt-8">
+    <form
+       action="https://buttondown.email/api/emails/embed-subscribe/shime"
+       method="post"
+       target="popupwindow"
+       onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+       class="embeddable-buttondown-form"
+       >
+       <div class="flex max-w-sm m-auto">
+         <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+         <input type="hidden" value="1" name="embed"></input>
+         
+         <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+       </div>
+       <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+     </form>
+  </div>
+</p>
+
+              </div>
+            
           </div>
         </div>
       </div>
     </div>
 
-    <script>
+  <script>
   (function webpackUniversalModuleDefinition(root, factory) {
     if(typeof exports === 'object' && typeof module === 'object')
       module.exports = factory();
@@ -1766,22 +1809,6 @@ return function update(newList) {
                });
                ;
                </script>
-
-
-    
-      <div class="p-8 py-16 bg-my-soul text-grey-light">
-        
-
-
-<p class="mt-4 max-w-sm m-auto">
-  John O'Donohue said that a conversation is a food and drink for the soul.
-  If this article has sparked some ideas or you want to
-  discuss it, please email me at <span class="text-white font-bold">shime@hey.com</span>.
-</p>
-
-      </div>
-    
-  </body>
 
   <script>
   var menu = document.querySelectorAll('[data-hamburger-menu]')[0]

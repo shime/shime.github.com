@@ -51,7 +51,25 @@
   
   
     <url>
+      <loc>http://shime.sh/reading/</loc>
+      <lastmod>2021-02-14</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
       <loc>http://shime.sh/privacy/</loc>
+      <lastmod>2021-02-14</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
+      <loc>http://shime.sh/resume/</loc>
       <lastmod>2021-02-14</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -70,24 +88,6 @@
   
     <url>
       <loc>http://shime.sh/</loc>
-      <lastmod>2021-02-14</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-  
-  
-    <url>
-      <loc>http://shime.sh/resume/</loc>
-      <lastmod>2021-02-14</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
-    </url>
-    
-  
-  
-    <url>
-      <loc>http://shime.sh/reading/</loc>
       <lastmod>2021-02-14</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -142,6 +142,15 @@
   
     <url>
       <loc>http://shime.sh/public/css/style.css</loc>
+      <lastmod>2021-02-14</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+    
+  
+  
+    <url>
+      <loc>http://shime.sh/subscribe</loc>
       <lastmod>2021-02-14</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -276,7 +285,7 @@
   
   
     <url>
-      <loc>http://shime.sh/thoughts</loc>
+      <loc>http://shime.sh/books</loc>
       <lastmod>2021-02-14</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
@@ -285,7 +294,7 @@
   
   
     <url>
-      <loc>http://shime.sh/books</loc>
+      <loc>http://shime.sh/thoughts</loc>
       <lastmod>2021-02-14</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.5</priority>
