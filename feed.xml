@@ -3,9 +3,20 @@
   <channel>
     <title>Articles • Hrvoje Šimić</title>
     <description>A collection of long form articles by Hrvoje Šimić</description>		
-    <link>http://shime.sh</link>
-    <atom:link href="http://shime.sh/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 
+    
+    <item>
+      <title>Stop thinking what others would like to read</title>
+      
+      <description>&lt;p&gt;As a writer, you can fall into the trap of thinking about your readers too much. Will they like what you write? Will it resonate? But, the best writing is the one you don’t care how many people read. &lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0100</pubDate>
+      <link>http://localhost:4000/stop-thinking-what-others-would-like-to-read</link>
+      <guid isPermaLink="true">http://localhost:4000/stop-thinking-what-others-would-like-to-read</guid>
+    </item>
     
     <item>
       <title>Meetings vs documents</title>
@@ -16,8 +27,8 @@
 </description>
       
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/meetings-vs-documents</link>
-      <guid isPermaLink="true">http://shime.sh/meetings-vs-documents</guid>
+      <link>http://localhost:4000/meetings-vs-documents</link>
+      <guid isPermaLink="true">http://localhost:4000/meetings-vs-documents</guid>
     </item>
     
     <item>
@@ -29,8 +40,8 @@
 </description>
       
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/dealing-with-bureaucracy</link>
-      <guid isPermaLink="true">http://shime.sh/dealing-with-bureaucracy</guid>
+      <link>http://localhost:4000/dealing-with-bureaucracy</link>
+      <guid isPermaLink="true">http://localhost:4000/dealing-with-bureaucracy</guid>
     </item>
     
     <item>
@@ -40,8 +51,8 @@
 </description>
       
       <pubDate>Sun, 17 Jan 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/reading-and-conversation</link>
-      <guid isPermaLink="true">http://shime.sh/reading-and-conversation</guid>
+      <link>http://localhost:4000/reading-and-conversation</link>
+      <guid isPermaLink="true">http://localhost:4000/reading-and-conversation</guid>
     </item>
     
     <item>
@@ -51,8 +62,8 @@
 </description>
       
       <pubDate>Sun, 10 Jan 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/build-aspirins-for-friends</link>
-      <guid isPermaLink="true">http://shime.sh/build-aspirins-for-friends</guid>
+      <link>http://localhost:4000/build-aspirins-for-friends</link>
+      <guid isPermaLink="true">http://localhost:4000/build-aspirins-for-friends</guid>
     </item>
     
     <item>
@@ -62,8 +73,8 @@
 </description>
       
       <pubDate>Sun, 03 Jan 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/writing-a-lot</link>
-      <guid isPermaLink="true">http://shime.sh/writing-a-lot</guid>
+      <link>http://localhost:4000/writing-a-lot</link>
+      <guid isPermaLink="true">http://localhost:4000/writing-a-lot</guid>
     </item>
     
     <item>
@@ -73,8 +84,8 @@
 </description>
       
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/why-you-should-keep-a-learning-journal</link>
-      <guid isPermaLink="true">http://shime.sh/why-you-should-keep-a-learning-journal</guid>
+      <link>http://localhost:4000/why-you-should-keep-a-learning-journal</link>
+      <guid isPermaLink="true">http://localhost:4000/why-you-should-keep-a-learning-journal</guid>
     </item>
     
     <item>
@@ -84,8 +95,8 @@
 </description>
       
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/my-experience-with-switching-apps-for-pkm</link>
-      <guid isPermaLink="true">http://shime.sh/my-experience-with-switching-apps-for-pkm</guid>
+      <link>http://localhost:4000/my-experience-with-switching-apps-for-pkm</link>
+      <guid isPermaLink="true">http://localhost:4000/my-experience-with-switching-apps-for-pkm</guid>
     </item>
     
     <item>
@@ -95,8 +106,8 @@
 </description>
       
       <pubDate>Sun, 22 Nov 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/when-magic-works-against-you</link>
-      <guid isPermaLink="true">http://shime.sh/when-magic-works-against-you</guid>
+      <link>http://localhost:4000/when-magic-works-against-you</link>
+      <guid isPermaLink="true">http://localhost:4000/when-magic-works-against-you</guid>
     </item>
     
     <item>
@@ -106,19 +117,8 @@
 </description>
       
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/the-importance-of-detachment</link>
-      <guid isPermaLink="true">http://shime.sh/the-importance-of-detachment</guid>
-    </item>
-    
-    <item>
-      <title>The overreaction paradox</title>
-      
-      <description>&lt;p&gt;My bike got stolen a while back. It happened because I got lazy carrying my bike up the stairs and left it in the much less secure basement. I thought that taking it up the stairs is not worth it. Nothing will happen. No one will steal a bike from my building since it hasn&amp;#39;t happened to any of my neighbors.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 18 Oct 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/the-overreaction-paradox</link>
-      <guid isPermaLink="true">http://shime.sh/the-overreaction-paradox</guid>
+      <link>http://localhost:4000/the-importance-of-detachment</link>
+      <guid isPermaLink="true">http://localhost:4000/the-importance-of-detachment</guid>
     </item>
     
   </channel>
