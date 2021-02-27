@@ -3,8 +3,8 @@
   <channel>
     <title>Ruby • Hrvoje Šimić</title>
     <description>Ruby related articles</description>		
-    <link>http://localhost:4000</link>
-    <atom:link href="http://localhost:4000/til.xml" rel="self" type="application/rss+xml" />
+    <link>http://shime.sh</link>
+    <atom:link href="http://shime.sh/til.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -108,8 +108,8 @@ compiling latest Ruby (HEAD), here are the steps necessary to do it.&lt;/p&gt;
           </description>
         
         <pubDate>Sun, 01 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/compiling-latest-ruby-from-scratch-with-chruby</link>
-        <guid isPermaLink="true">http://localhost:4000/til/compiling-latest-ruby-from-scratch-with-chruby</guid>
+        <link>http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</link>
+        <guid isPermaLink="true">http://shime.sh/til/compiling-latest-ruby-from-scratch-with-chruby</guid>
       </item>
       
     
@@ -135,8 +135,8 @@ a handy gem for detecting typos.&lt;/p&gt;
           </description>
         
         <pubDate>Sat, 28 Dec 2019 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/deep-dive-into-did-you-mean</link>
-        <guid isPermaLink="true">http://localhost:4000/deep-dive-into-did-you-mean</guid>
+        <link>http://shime.sh/deep-dive-into-did-you-mean</link>
+        <guid isPermaLink="true">http://shime.sh/deep-dive-into-did-you-mean</guid>
       </item>
       
     
@@ -156,8 +156,8 @@ a handy gem for detecting typos.&lt;/p&gt;
           </description>
         
         <pubDate>Sun, 23 Jun 2019 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/deep-dive-into-minitest</link>
-        <guid isPermaLink="true">http://localhost:4000/deep-dive-into-minitest</guid>
+        <link>http://shime.sh/deep-dive-into-minitest</link>
+        <guid isPermaLink="true">http://shime.sh/deep-dive-into-minitest</guid>
       </item>
       
     
@@ -186,8 +186,8 @@ curl command arguments.&lt;/p&gt;
           </description>
         
         <pubDate>Sun, 03 Feb 2019 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/refactoring-a-large-case-statement</link>
-        <guid isPermaLink="true">http://localhost:4000/til/refactoring-a-large-case-statement</guid>
+        <link>http://shime.sh/til/refactoring-a-large-case-statement</link>
+        <guid isPermaLink="true">http://shime.sh/til/refactoring-a-large-case-statement</guid>
       </item>
       
     
@@ -205,8 +205,8 @@ so I&amp;#39;ve decided to try to make it clearer.&lt;/p&gt;
           </description>
         
         <pubDate>Sat, 02 Feb 2019 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/refactoring-with-simple-polymorphism</link>
-        <guid isPermaLink="true">http://localhost:4000/til/refactoring-with-simple-polymorphism</guid>
+        <link>http://shime.sh/til/refactoring-with-simple-polymorphism</link>
+        <guid isPermaLink="true">http://shime.sh/til/refactoring-with-simple-polymorphism</guid>
       </item>
       
     
@@ -232,8 +232,8 @@ have to use another gem.&lt;/p&gt;
           </description>
         
         <pubDate>Fri, 21 Dec 2018 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/mocking-class-methods-using-minitest</link>
-        <guid isPermaLink="true">http://localhost:4000/til/mocking-class-methods-using-minitest</guid>
+        <link>http://shime.sh/til/mocking-class-methods-using-minitest</link>
+        <guid isPermaLink="true">http://shime.sh/til/mocking-class-methods-using-minitest</guid>
       </item>
       
     
@@ -285,8 +285,8 @@ have to use another gem.&lt;/p&gt;
           </description>
         
         <pubDate>Fri, 27 Jan 2017 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/fixing-ld-warning-directory-not-found-for-option</link>
-        <guid isPermaLink="true">http://localhost:4000/til/fixing-ld-warning-directory-not-found-for-option</guid>
+        <link>http://shime.sh/til/fixing-ld-warning-directory-not-found-for-option</link>
+        <guid isPermaLink="true">http://shime.sh/til/fixing-ld-warning-directory-not-found-for-option</guid>
       </item>
       
     
@@ -327,8 +327,8 @@ in which doing so is desirable:&lt;/p&gt;
           </description>
         
         <pubDate>Sat, 30 Nov 2013 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
-        <guid isPermaLink="true">http://localhost:4000/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
+        <link>http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</link>
+        <guid isPermaLink="true">http://shime.sh/5-reasons-for-adding-a-post-installation-message-to-your-gem</guid>
       </item>
       
     
@@ -346,8 +346,8 @@ in which doing so is desirable:&lt;/p&gt;
           </description>
         
         <pubDate>Sun, 11 Aug 2013 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/guard-down-vim-and-tmux-are-here</link>
-        <guid isPermaLink="true">http://localhost:4000/guard-down-vim-and-tmux-are-here</guid>
+        <link>http://shime.sh/guard-down-vim-and-tmux-are-here</link>
+        <guid isPermaLink="true">http://shime.sh/guard-down-vim-and-tmux-are-here</guid>
       </item>
       
     
@@ -363,8 +363,8 @@ in which doing so is desirable:&lt;/p&gt;
           </description>
         
         <pubDate>Mon, 06 Aug 2012 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/overriding-instance-method-with-a-module</link>
-        <guid isPermaLink="true">http://localhost:4000/overriding-instance-method-with-a-module</guid>
+        <link>http://shime.sh/overriding-instance-method-with-a-module</link>
+        <guid isPermaLink="true">http://shime.sh/overriding-instance-method-with-a-module</guid>
       </item>
       
     
@@ -378,8 +378,8 @@ in which doing so is desirable:&lt;/p&gt;
           </description>
         
         <pubDate>Sat, 12 May 2012 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/til/forwardable-explained</link>
-        <guid isPermaLink="true">http://localhost:4000/til/forwardable-explained</guid>
+        <link>http://shime.sh/til/forwardable-explained</link>
+        <guid isPermaLink="true">http://shime.sh/til/forwardable-explained</guid>
       </item>
       
     
@@ -393,8 +393,8 @@ in which doing so is desirable:&lt;/p&gt;
           </description>
         
         <pubDate>Mon, 30 Apr 2012 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/til/uninitialized-class-variable-at-at-current-spec-in-minitest</link>
-        <guid isPermaLink="true">http://localhost:4000/til/uninitialized-class-variable-at-at-current-spec-in-minitest</guid>
+        <link>http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest</link>
+        <guid isPermaLink="true">http://shime.sh/til/uninitialized-class-variable-at-at-current-spec-in-minitest</guid>
       </item>
       
     
@@ -413,8 +413,8 @@ Some of them included creating &lt;em&gt;~/.autotest&lt;/em&gt; file which is re
           </description>
         
         <pubDate>Sun, 29 Jan 2012 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/autotest-and-rspec2-problems</link>
-        <guid isPermaLink="true">http://localhost:4000/til/autotest-and-rspec2-problems</guid>
+        <link>http://shime.sh/til/autotest-and-rspec2-problems</link>
+        <guid isPermaLink="true">http://shime.sh/til/autotest-and-rspec2-problems</guid>
       </item>
       
     
@@ -428,8 +428,8 @@ Some of them included creating &lt;em&gt;~/.autotest&lt;/em&gt; file which is re
           </description>
         
         <pubDate>Thu, 26 Jan 2012 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/hello-world-in-sinatra</link>
-        <guid isPermaLink="true">http://localhost:4000/til/hello-world-in-sinatra</guid>
+        <link>http://shime.sh/til/hello-world-in-sinatra</link>
+        <guid isPermaLink="true">http://shime.sh/til/hello-world-in-sinatra</guid>
       </item>
       
     
@@ -448,8 +448,8 @@ I do it:&lt;/p&gt;
           </description>
         
         <pubDate>Sun, 20 Nov 2011 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/til/ruby-y-u-so-beautiful</link>
-        <guid isPermaLink="true">http://localhost:4000/til/ruby-y-u-so-beautiful</guid>
+        <link>http://shime.sh/til/ruby-y-u-so-beautiful</link>
+        <guid isPermaLink="true">http://shime.sh/til/ruby-y-u-so-beautiful</guid>
       </item>
       
     
