@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Encrypting and decrypting a folder" />
+<meta property="og:title" content="The story of the ringing bell" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In order to encrypt a folder, we&#39;ll create an archive of it and apply AES 256 bit encryption, using $PASS as a password:" />
-<meta property="og:description" content="In order to encrypt a folder, we&#39;ll create an archive of it and apply AES 256 bit encryption, using $PASS as a password:" />
-<link rel="canonical" href="http://shime.sh/til/encrypting-and-decrypting-a-folder" />
-<meta property="og:url" content="http://shime.sh/til/encrypting-and-decrypting-a-folder" />
+<meta name="description" content="Since I&#39;ve moved this week, I didn&#39;t write as much as I would like to. So here&#39;s something unusual. Inspired by Eliezer Yudkowsky&#39;s essay: Guessing The Teacher&#39;s Password." />
+<meta property="og:description" content="Since I&#39;ve moved this week, I didn&#39;t write as much as I would like to. So here&#39;s something unusual. Inspired by Eliezer Yudkowsky&#39;s essay: Guessing The Teacher&#39;s Password." />
+<link rel="canonical" href="http://shime.sh/the-story-of-the-ringing-bell" />
+<meta property="og:url" content="http://shime.sh/the-story-of-the-ringing-bell" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-04-21T00:00:00+02:00" />
+<meta property="article:published_time" content="2021-03-21T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Encrypting and decrypting a folder" />
+<meta property="twitter:title" content="The story of the ringing bell" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/encrypting-and-decrypting-a-folder","headline":"Encrypting and decrypting a folder","dateModified":"2020-04-21T00:00:00+02:00","datePublished":"2020-04-21T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/encrypting-and-decrypting-a-folder"},"description":"In order to encrypt a folder, we&#39;ll create an archive of it and apply AES 256 bit encryption, using $PASS as a password:","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/the-story-of-the-ringing-bell","headline":"The story of the ringing bell","dateModified":"2021-03-21T00:00:00+01:00","datePublished":"2021-03-21T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/the-story-of-the-ringing-bell"},"description":"Since I&#39;ve moved this week, I didn&#39;t write as much as I would like to. So here&#39;s something unusual. Inspired by Eliezer Yudkowsky&#39;s essay: Guessing The Teacher&#39;s Password.","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Encrypting and decrypting a folder &middot; Hrvoje Šimić </title>
+    <title> The story of the ringing bell &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Encrypting and decrypting a folder &middot; Hrvoje Šimić">
+  <meta name="title" content="The story of the ringing bell &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -191,16 +191,16 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
             </div>
 
             <div class="mb-8">
-              <h1>Encrypting and decrypting a folder</h1>
+              <h1>The story of the ringing bell</h1>
 
               <div class="flex justify-between" data-nosnippet>
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    April 21, 2020
+                    March 21, 2021
                   </div>
                 
 
@@ -211,22 +211,31 @@
 
               <div class="flex my-2" data-nosnippet>
                 
-                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    unix
-                  </span>
-                
               </div>
             </div>
 
-            <p>In order to encrypt a folder, we&#39;ll create an archive of it and apply AES 256 bit encryption, using
-<code>$PASS</code> as a password:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>tar cz * <span class="se">\</span>
-<span class="p">|</span> openssl enc -aes-256-cbc -e -pass pass:<span class="nv">$PASS</span> <span class="se">\</span>
-&gt; archive.tar.gz.enc
-</code></pre></div>
-<p>In order to decrypt it use the following command:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>openssl enc -aes-256-cbc -d -in archive.tar.gz.enc -out archive.tar.gz
-</code></pre></div>
+            <blockquote>
+  <i>Since I've moved this week, I didn't write as much as I would like to. So here's something unusual. Inspired by Eliezer Yudkowsky's essay: <a href="https://www.lesswrong.com/posts/NMoLJuDJEms7Ku9XS/guessing-the-teacher-s-password">Guessing The Teacher's Password</a>.</i>
+</blockquote>
+
+<p>Please sit.</p>
+
+<p>Here&#39;s the set of questions some committee has decided we should ask you. Give us the correct answer from a set we have provided you.</p>
+
+<p>&quot;What set?&quot; you ask. The set of question/answer pairs we are currently learning. </p>
+
+<p>Don&#39;t worry. We will tell you what set we are asking questions about. That way, you don&#39;t have to think outside of this set. Just focus on the set you have to memorize this month. </p>
+
+<p>If we ask you about a magic word you don&#39;t understand, don&#39;t worry about that either. Just give us another magic word as an explanation. Go up in abstraction in your answer.</p>
+
+<p>Memorize the pairs. Give us the password for each question we ask. We will give you the points if you guess the password correctly.</p>
+
+<p>Your understanding is not of great importance to us. How would we test that? What standard would we use? We don&#39;t have the resources for that. We just want to know whether you know the answers — whether you can fetch the correct password for each of our questions.</p>
+
+<p>Don&#39;t bother explaining things in simple terms. We are not your average Joe; don&#39;t insult us. We know the subject&#39;s lingo. Give us as much subject lingo as possible since that means you know what you&#39;re talking about. </p>
+
+<p>Happy learning!</p>
+
 
             <div class="flex items-center justify-between pt-8 pb-8 md:pb-0" data-nosnippet>
               <div class="flex items-center">
@@ -243,6 +252,34 @@
               </div>
             </div>
 
+            
+              <div class="mt-12 bg-grey-lightest p-8 text-grey-darkest border-t-4 border-grey-light">
+                Join my newsletter and get articles that sometimes end up on the front page of Hacker News straight in your inbox.
+
+                
+
+
+<p class="mt-4 max-w-sm m-auto">
+  <div class="mt-8">
+    <form
+       action="https://buttondown.email/api/emails/embed-subscribe/shime"
+       method="post"
+       target="popupwindow"
+       onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+       class="embeddable-buttondown-form"
+       >
+       <div class="flex max-w-sm m-auto">
+         <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+         <input type="hidden" value="1" name="embed"></input>
+         
+         <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+       </div>
+       <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+     </form>
+  </div>
+</p>
+
+              </div>
             
 
             <div id="commento" class="mt-16"></div>
