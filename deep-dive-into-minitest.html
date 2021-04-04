@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1616965750072855000">
-  <link rel="stylesheet" href="/public/css/style.css?1616965750072855000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1617559129794161000">
+  <link rel="stylesheet" href="/public/css/style.css?1617559129794161000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/deep-dive-into-minitest","headline":"Deep dive into Minitest","dateModified":"2019-06-23T00:00:00+02:00","datePublished":"2019-06-23T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/deep-dive-into-minitest"},"description":"Have you ever wondered what happens when you run a Minitest test suite? How does it work?","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/deep-dive-into-minitest","headline":"Deep dive into Minitest","dateModified":"2019-06-23T00:00:00+02:00","datePublished":"2019-06-23T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/deep-dive-into-minitest"},"description":"Have you ever wondered what happens when you run a Minitest test suite? How does it work?","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -740,7 +740,7 @@ to deploy its magic, let&#39;s take a look at the one thing that&#39;s left:</p>
 <span class="c1"># Internal run method. Responsible for telling all Runnable</span>
 <span class="c1"># sub-classes to run.</span>
 
-<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+<span class="k">def</span> <span class="nf">self</span><span class="o">.</span><span class="n">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
   <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
                     <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
                     <span class="n">shuffle</span>
@@ -814,7 +814,7 @@ appended to, but not assigned to an array yet. Here&#39;s the missing piece:</p>
 <span class="c1"># Internal run method. Responsible for telling all Runnable</span>
 <span class="c1"># sub-classes to run.</span>
 
-<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+<span class="k">def</span> <span class="nf">self</span><span class="o">.</span><span class="n">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
 <span class="hll">  <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
 </span><span class="hll">                    <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
 </span><span class="hll">                    <span class="n">shuffle</span>
@@ -943,7 +943,7 @@ using the <code>Runnable#methods_matching</code>:</p>
 <span class="c1"># Internal run method. Responsible for telling all Runnable</span>
 <span class="c1"># sub-classes to run.</span>
 
-<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+<span class="k">def</span> <span class="nf">self</span><span class="o">.</span><span class="n">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
   <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
                     <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
                     <span class="n">shuffle</span>
@@ -977,7 +977,7 @@ using the <code>Runnable#methods_matching</code>:</p>
 <span class="c1"># Internal run method. Responsible for telling all Runnable</span>
 <span class="c1"># sub-classes to run.</span>
 
-<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
+<span class="k">def</span> <span class="nf">self</span><span class="o">.</span><span class="n">__run</span> <span class="n">reporter</span><span class="p">,</span> <span class="n">options</span>
   <span class="n">suites</span> <span class="o">=</span> <span class="no">Runnable</span><span class="o">.</span><span class="n">runnables</span><span class="o">.</span>
                     <span class="n">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="n">runnable_methods</span><span class="o">.</span><span class="n">empty?</span> <span class="p">}</span><span class="o">.</span>
                     <span class="n">shuffle</span>

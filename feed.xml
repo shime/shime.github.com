@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Morning Pages are the wastewater</title>
+      
+      <description>&lt;p&gt;Most ideas are bad.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/wastewater</link>
+      <guid isPermaLink="true">http://shime.sh/wastewater</guid>
+    </item>
+    
+    <item>
       <title>Thoughts on social media</title>
       
       <description>&lt;p&gt;I.&lt;/p&gt;
@@ -114,17 +125,6 @@
       <pubDate>Sun, 17 Jan 2021 00:00:00 +0100</pubDate>
       <link>http://shime.sh/reading-and-conversation</link>
       <guid isPermaLink="true">http://shime.sh/reading-and-conversation</guid>
-    </item>
-    
-    <item>
-      <title>Build aspirins for friends</title>
-      
-      <description>&lt;p&gt;As a developer, I easily get carried away building new things. Side projects are fun for me, especially when they are useful. In fact, I actively avoid programming that is useful only as a learning exercise, like puzzles and tests. Instead of that, I try to build useful things.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 10 Jan 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/build-aspirins-for-friends</link>
-      <guid isPermaLink="true">http://shime.sh/build-aspirins-for-friends</guid>
     </item>
     
   </channel>

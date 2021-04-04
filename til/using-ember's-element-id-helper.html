@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/monokai.css?1616965750072855000">
-  <link rel="stylesheet" href="/public/css/style.css?1616965750072855000">
+  <link rel="stylesheet" href="/public/css/monokai.css?1617559129794161000">
+  <link rel="stylesheet" href="/public/css/style.css?1617559129794161000">
 
   <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
 <link rel="icon" type="image/png" sizes="196x196" href="/public/favicon-196.png">
@@ -56,7 +56,7 @@
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/using-ember's-element-id-helper","headline":"Using Ember&#39;s element ID helper","dateModified":"2016-12-08T00:00:00+01:00","datePublished":"2016-12-08T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/using-ember's-element-id-helper"},"description":"Had multiple input file fields and I&#39;ve set them to","author":{"@type":"Person","name":"Hrvoje Šimić"},"@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/til/using-ember's-element-id-helper","headline":"Using Ember&#39;s element ID helper","dateModified":"2016-12-08T00:00:00+01:00","datePublished":"2016-12-08T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/using-ember's-element-id-helper"},"description":"Had multiple input file fields and I&#39;ve set them to","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -227,9 +227,9 @@ gets rendered multiple times, so we&#39;ll arrive at a problem of having multipl
 on the page.</p>
 
 <p>We could use a naive approach and then add a property for <code>id</code> attribute with random number like so:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">import</span> <span class="nx">Ember</span> <span class="nx">from</span> <span class="s1">&#39;ember&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="k">import</span> <span class="nx">Ember</span> <span class="nx">from</span> <span class="s1">&#39;ember&#39;</span><span class="p">;</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
   <span class="nx">elementId</span><span class="o">:</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">computed</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1000</span><span class="p">);</span>
   <span class="p">});</span>
