@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Overriding instance method with a module" />
+<meta property="og:title" content="Writing before programming" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better." />
-<meta property="og:description" content="This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better." />
-<link rel="canonical" href="http://shime.sh/overriding-instance-method-with-a-module" />
-<meta property="og:url" content="http://shime.sh/overriding-instance-method-with-a-module" />
+<meta name="description" content="If you have studied computer science, you have probably encountered UML diagrams and the waterfall model. Like with a lot of things from the college days, I&#39;ve never had any use of that in the real world. But since I&#39;ve studied it, I assume some people still use it. To be honest, I don&#39;t have much exposure to the &quot;Enterprise&quot; world, where I think UML diagrams are much more popular." />
+<meta property="og:description" content="If you have studied computer science, you have probably encountered UML diagrams and the waterfall model. Like with a lot of things from the college days, I&#39;ve never had any use of that in the real world. But since I&#39;ve studied it, I assume some people still use it. To be honest, I don&#39;t have much exposure to the &quot;Enterprise&quot; world, where I think UML diagrams are much more popular." />
+<link rel="canonical" href="http://shime.sh/writing-before-programming" />
+<meta property="og:url" content="http://shime.sh/writing-before-programming" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2012-08-06T00:00:00+02:00" />
+<meta property="article:published_time" content="2021-04-11T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Overriding instance method with a module" />
+<meta property="twitter:title" content="Writing before programming" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/overriding-instance-method-with-a-module","headline":"Overriding instance method with a module","dateModified":"2012-08-06T00:00:00+02:00","datePublished":"2012-08-06T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/overriding-instance-method-with-a-module"},"description":"This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/writing-before-programming","headline":"Writing before programming","dateModified":"2021-04-11T00:00:00+02:00","datePublished":"2021-04-11T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/writing-before-programming"},"description":"If you have studied computer science, you have probably encountered UML diagrams and the waterfall model. Like with a lot of things from the college days, I&#39;ve never had any use of that in the real world. But since I&#39;ve studied it, I assume some people still use it. To be honest, I don&#39;t have much exposure to the &quot;Enterprise&quot; world, where I think UML diagrams are much more popular.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Overriding instance method with a module &middot; Hrvoje Šimić </title>
+    <title> Writing before programming &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Overriding instance method with a module &middot; Hrvoje Šimić">
+  <meta name="title" content="Writing before programming &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -195,12 +195,12 @@
             </div>
 
             <div class="mb-8">
-              <h1>Overriding instance method with a module</h1>
+              <h1>Writing before programming</h1>
 
               <div class="flex justify-between" data-nosnippet>
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    August 6, 2012
+                    April 11, 2021
                   </div>
                 
 
@@ -211,368 +211,26 @@
 
               <div class="flex my-2" data-nosnippet>
                 
-                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    ruby
-                  </span>
-                
               </div>
             </div>
 
-            <p>This is the problem I come across every now and then, so I think a little write up explaining what&#39;s happening could help me understand it better.</p>
+            <p>If you have studied computer science, you have probably encountered UML diagrams and the waterfall model. Like with a lot of things from the college days, I&#39;ve never had any use of that in the real world. But since I&#39;ve studied it, I assume some people still use it. To be honest, I don&#39;t have much exposure to the &quot;Enterprise&quot; world, where I think UML diagrams are much more popular.</p>
 
-<p>Let me describe the problem:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<p>As I use Ruby, I am more under the Agile way&#39;s influence, where planning doesn&#39;t have much weight. Delivering frequently and getting feedback early has much higher importance here. This means that Ruby developers are much more eager to &quot;get things done&quot; and get into the nitty-gritty details as soon as possible. &quot;Done is better than perfect&quot; is a mantra that is followed here. And how do you get it done if not by programming?</p>
 
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<p>But, over time, I&#39;ve realized that a small amount of planning is still better than just going straight to programming, at least for anything non-trivial. When programming, it&#39;s like I have blinders on. I see only straight. I don&#39;t have a lot of time to think about my approach and question things on a higher level. It&#39;s like sprinting straight ahead. </p>
 
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="kp">include</span> <span class="no">CanCook</span>
-<span class="k">end</span>
+<p>But, sprinting in one direction for too long and then realizing that you have not hit the mark means wasting a lot of resources. Instead, you can think about where you want to go before sprinting and save resources. Writing allows you to do that.</p>
 
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I don&#39;t know how to bake tortillas :(</span>
-</code></pre></div>
-<p>Poor Mario doesn&#39;t know how to bake anything. We want to teach him how to bake, to stand out from other programmers!</p>
+<p>Writing things you plan to do before doing any programming illuminates the problems in your approach before you implement it. You act as if you have already done the hard work of implementing the requirements and then ask yourself whether there are some problems that can be avoided. </p>
 
-<p>The problem is described in the following diagram made by Gavin Kistner:</p>
+<p>Can what you&#39;re planning be implemented more elegantly? Since no code is the best code, is what you are trying to implement even necessary? Are you going to have problems going down this path, and what are the alternatives? These are the questions you start asking yourself by writing things down beforehand. </p>
 
-<p><img src="http://i.stack.imgur.com/40zfE.png" alt=""></p>
+<p>The beauty of it is that you can go into as much detail as you want. Heck, no one will stop you from writing pseudocode if you want. The beauty of Ruby is that it will look very similar to what you&#39;ll ship to production.</p>
 
-<p>There&#39;s a <a href="http://stackoverflow.com/a/5944385/726020">post on StackOverflow</a> where Gavin presents workarounds for this. I&#39;m going to explain them and add some more:</p>
+<p>Doing so makes you avoid unnecessary work. It makes your plan visible, which also makes wrong assumptions visible. It saves resources, which can now be invested elsewhere.</p>
 
-<h2>Subclass Programmer and then include module</h2>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">CulinaryProgrammer</span> <span class="o">&lt;</span> <span class="no">Programmer</span>
-  <span class="kp">include</span> <span class="no">CanCook</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">CulinaryProgrammer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p><em>What&#39;s wrong with this?</em></p>
-
-<p>This isn&#39;t a real world example, just a simple one that describes this behavior. This would rarely fit you, since you now have to create instances of a new class that will fit your needs. In the real world, you would want instances of the original class to behave like this.</p>
-
-<h2>Extend just the instances you need</h2>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">extend</span> <span class="no">CanCook</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p><em>What&#39;s wrong with this?</em></p>
-
-<p>This is better than the previous solution, it skips the part of inheriting the original class, but you still have to extend each instance. What happens with already used instances in your application?</p>
-
-<h2>Perform a gross hack that removes the original method</h2>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
-      <span class="n">remove_method</span> <span class="ss">:bake</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="kp">include</span> <span class="no">CanCook</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p><em>What&#39;s wrong with this?</em></p>
-
-<p>Just as Gavin describes it in his post, this strategy is invasive.
-Your old method will be deleted and you will not going to be able to use it afterwards. This is the best solution so far, even though <em>remove_method</em> seems dirty.
-The good part is that your instances of <em>Programmer</em> will now know how to bake things automatically. Hooray!</p>
-
-<h2>No need to use module if using remove_method</h2>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="n">alias_method</span> <span class="ss">:_real_bake</span><span class="p">,</span> <span class="ss">:bake</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p><em>What&#39;s wrong with this?</em></p>
-
-<p>This post describes modules overriding instance methods, that&#39;s what&#39;s wrong. :) It makes sense to not use the module, though.
-The original method is preserved and available for later usage. However, this is not that clean.
-Modules are used to describe behavior that can be shared between objects. This removes that flexibility.</p>
-
-<p>Here&#39;s the alternative:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nf">override_bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="kp">include</span> <span class="no">CanCook</span>
-  <span class="n">alias_method</span> <span class="ss">:bake</span><span class="p">,</span> <span class="ss">:override_bake</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p>I like this more since it still preserves the original, but we&#39;re still using a module, even though the methods don&#39;t share the name.</p>
-
-<h2>Use (prepend) library by John Mair</h2>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s2">&quot;prepend&quot;</span>
-<span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="n">prepend</span> <span class="no">CanCook</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p><em>What&#39;s wrong with this?</em></p>
-
-<p>It&#39;s depending on external library.</p>
-
-<h2>The ultimate solution of them all</h2>
-
-<p>These are all the solutions presented in that SO post,
-but we haven&#39;t yet found the ultimate one.
-Does any of these make you jump around your room screaming how great this code is?
-I didn&#39;t think so.</p>
-
-<p>But behold! This is the solution by <a href="https://github.com/rkh">@rkh</a> which pretty much encapsulates why I love his work.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
-  <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">module</span> <span class="nn">CanCook</span>
-
-  <span class="kp">extend</span> <span class="no">Prepending</span>
-
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="kp">include</span> <span class="no">CanCook</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p>I&#39;m going to describe this solution in detail, so if you&#39;re not amazed, this post will not get any more interesting.</p>
-
-<p>So where to begin?</p>
-
-<ul>
-<li>Any external dependencies? No.</li>
-<li>Are we getting invasive on original method? No.</li>
-<li>Do we have to do something special with the instances we would like to have the method overridden? Not at all.</li>
-<li>Is this code awesome? Hell yeah!</li>
-</ul>
-
-<p>Isn&#39;t this what you first think of when you wish to override instance method with a module?</p>
-
-<p>Okay, enough with the praising, let&#39;s start explaining!
-Our code is nicely organised, but the whole beauty lays in a module named <em>Prepending</em>. All logic needed to prepend instance methods is located there.</p>
-
-<p>From ruby documentation:</p>
-
-<blockquote>
-<p>append_features(p1)</p>
-
-<p>When this module is included in another, Ruby calls append_features in
-   this module, passing it the receiving module in mod.</p>
-</blockquote>
-
-<p>Documentation is somewhat confusing. This method will get called even when the module is included in a class, since Class inherits from Module.
-In our code it happens when we include CanCook into Programmer on line 24.</p>
-
-<p>Note that self will refer to CanCook, and base will refer to Programmer class.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span>    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-</code></pre></div>
-<p><em>Save this module to a variable, so we can use it later.</em></p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="p">{</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span> <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span> <span class="p">}}</span>
-</code></pre></div>
-<h2>Extend the Programmer class with anonymous module</h2>
-
-<p>This is somewhat more expressive:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
-  <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">beauty</span> <span class="o">=</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span>
-      <span class="n">define_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
-        <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="n">beauty</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>
-<p><em>Why are we using anonymous module here?</em></p>
-
-<p>By defining the module and the method in block, we stay in the same lexical closure, so we can access the local variables.</p>
-
-<p><em>What is wrong with this line of code?</em></p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
-  <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">beauty</span> <span class="o">=</span> <span class="no">Module</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span>
-      <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-        <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="n">beauty</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div>
-<p><em>prepend</em> doesn&#39;t exist in the context of the <em>new</em> method, since it&#39;s a local variable. We have to define a method dynamically to make it available by preserving original context.</p>
-
-<p>Okay, let&#39;s explain the code inside this dynamically created method.
-It&#39;s called <em>new</em> and it overrides a Programmer&#39;s constructor, so when <em>Programmer.new</em> is called, this method will get called instead.</p>
-
-<p>It calls the original constructor with <em>super</em>,
-which returns a new instance of Programmer and then extends it dynamically with itself (this module, or the module that extends this module).
-This enables overriding instance methods.</p>
-
-<h2>Update</h2>
-
-<p>Thank you all for discussing this post and sharing your opinions.</p>
-
-<p><a href="https://github.com/ryanlecompte">Ryan LeCompte</a> has another, more easily understandable solution.
-Instead of using an anonymous module, we could simply use <em>define<em>singleton</em>method</em>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">Prepending</span>
-  <span class="k">def</span> <span class="nf">append_features</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-    <span class="n">prepend</span> <span class="o">=</span> <span class="nb">self</span>
-    <span class="n">base</span><span class="o">.</span><span class="n">define_singleton_method</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
-      <span class="k">super</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">prepend</span><span class="p">)</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">module</span> <span class="nn">CanCook</span>
-
-  <span class="kp">extend</span> <span class="no">Prepending</span>
-
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="kp">include</span> <span class="no">CanCook</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p>As Markus explains, we could have extended the instance directly in a constructor.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">module</span> <span class="nn">CanCook</span>
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I&#39;m baking the </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2">!&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Programmer</span>
-  <span class="k">def</span> <span class="nf">initialize</span>
-    <span class="nb">self</span><span class="o">.</span><span class="n">extend</span> <span class="no">CanCook</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">bake</span><span class="p">(</span><span class="n">food_name</span><span class="p">)</span>
-    <span class="s2">&quot;I don&#39;t know how to bake </span><span class="si">#{</span><span class="n">food_name</span><span class="si">}</span><span class="s2"> :(&quot;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-
-<span class="no">Mario</span> <span class="o">=</span> <span class="no">Programmer</span><span class="o">.</span><span class="n">new</span>
-<span class="no">Mario</span><span class="o">.</span><span class="n">bake</span><span class="p">(</span><span class="s2">&quot;tortillas&quot;</span><span class="p">)</span> <span class="c1">#=&gt; I&#39;m baking the tortillas!</span>
-</code></pre></div>
-<p><a href="http://twitter.com/hanke">Florian Hanke</a> explains that this code doesn&#39;t express its intent very well and I couldn&#39;t agree more with him.
-I was very excited when I first saw Konstantin Haase&#39;s technique of achieving this behavior (here is the original <a href="https://gist.github.com/2720016">gist</a>).
-I&#39;ve written this post with the intent of describing that interesting technique. I didn&#39;t analyse possible future usages.</p>
-
-<p>You should also read an <a href="http://blog.8thlight.com/josh-cheek/2012/02/03/modules-called-they-want-their-integrity-back.html">interesting post</a> by Josh Cheek about dangers of using hooks.</p>
-
-<p>Finally, thanks to <a href="https://twitter.com/neektza">Nikica</a> for a suggestion about lexical context.</p>
+<p>Writing a plan before doing anything non-trivial is one of the practices I wish I had picked up earlier — another one being not blaming other people&#39;s code when debugging.</p>
 
 
             <div class="flex items-center justify-between pt-8 pb-8 md:pb-0" data-nosnippet>

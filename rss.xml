@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Writing before programming</title>
+      
+      <description>&lt;p&gt;If you have studied computer science, you have probably encountered UML diagrams and the waterfall model. Like with a lot of things from the college days, I&amp;#39;ve never had any use of that in the real world. But since I&amp;#39;ve studied it, I assume some people still use it. To be honest, I don&amp;#39;t have much exposure to the &amp;quot;Enterprise&amp;quot; world, where I think UML diagrams are much more popular.&lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/writing-before-programming</link>
+      <guid isPermaLink="true">http://shime.sh/writing-before-programming</guid>
+    </item>
+    
+    <item>
       <title>Morning Pages are the wastewater</title>
       
       <description>&lt;p&gt;Most ideas are bad.&lt;/p&gt;
@@ -114,17 +125,6 @@
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0100</pubDate>
       <link>http://shime.sh/dealing-with-bureaucracy</link>
       <guid isPermaLink="true">http://shime.sh/dealing-with-bureaucracy</guid>
-    </item>
-    
-    <item>
-      <title>Reading and conversation</title>
-      
-      <description>&lt;p&gt;René Descartes famously said that reading books is like a conversation with the finest minds of past centuries.&lt;/p&gt;
-</description>
-      
-      <pubDate>Sun, 17 Jan 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/reading-and-conversation</link>
-      <guid isPermaLink="true">http://shime.sh/reading-and-conversation</guid>
     </item>
     
   </channel>
