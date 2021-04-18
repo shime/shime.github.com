@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="OSX adventures" />
+<meta property="og:title" content="Thoughts on debugging" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I&#39;ve borrowed a MacBook Air for a week and decided to share my thoughts as I look back." />
-<meta property="og:description" content="I&#39;ve borrowed a MacBook Air for a week and decided to share my thoughts as I look back." />
-<link rel="canonical" href="http://shime.sh/osx-adventures" />
-<meta property="og:url" content="http://shime.sh/osx-adventures" />
+<meta name="description" content="Not all developers like debugging." />
+<meta property="og:description" content="Not all developers like debugging." />
+<link rel="canonical" href="http://shime.sh/thoughts-on-debugging" />
+<meta property="og:url" content="http://shime.sh/thoughts-on-debugging" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2015-04-01T00:00:00+02:00" />
+<meta property="article:published_time" content="2021-04-18T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="OSX adventures" />
+<meta property="twitter:title" content="Thoughts on debugging" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/osx-adventures","headline":"OSX adventures","dateModified":"2015-04-01T00:00:00+02:00","datePublished":"2015-04-01T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/osx-adventures"},"description":"I&#39;ve borrowed a MacBook Air for a week and decided to share my thoughts as I look back.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/thoughts-on-debugging","headline":"Thoughts on debugging","dateModified":"2021-04-18T00:00:00+02:00","datePublished":"2021-04-18T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/thoughts-on-debugging"},"description":"Not all developers like debugging.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> OSX adventures &middot; Hrvoje Šimić </title>
+    <title> Thoughts on debugging &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="OSX adventures &middot; Hrvoje Šimić">
+  <meta name="title" content="Thoughts on debugging &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -206,12 +206,12 @@
             </div>
 
             <div class="mb-8">
-              <h1>OSX adventures</h1>
+              <h1>Thoughts on debugging</h1>
 
               <div class="flex justify-between" data-nosnippet>
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    April 1, 2015
+                    April 18, 2021
                   </div>
                 
 
@@ -225,84 +225,17 @@
               </div>
             </div>
 
-            <p>I&#39;ve borrowed a MacBook Air for a week and decided to share my
-thoughts as I look back.</p>
+            <p>Not all developers like debugging. </p>
 
-<p>Why? A great magnetic 1TB disk in my <em>premium</em> Dell XPS 15 got borked after
-1 year of its loud and hot service, so I had to replace it. I also kinda sorta have
-to code every day, so I had to borrow something.</p>
+<p>They consider it a chore and, in fact, actively avoid it. There is no glory in the grueling work of fixing bugs all day. When debugging is done, there’s little to show to the client. It feels like there’s no value added when all you do is make things work the way they should have worked from the start. </p>
 
-<p>I decided to borrow a MacBook because it has the reputation of being a &quot;<em>it just works</em>&quot;
-kind of machine, and since I had to have a working environment as soon as possible, it seemed like
-a great idea.</p>
+<p>But I’ve always enjoyed finding and fixing bugs. </p>
 
-<h2>The tiger or whatever</h2>
+<p>Every bug teaches something interesting: whether it’s something about timezones, Rails callbacks, or validations,  my overly optimistic quality expectations from third-party software, or how The Curse of Knowledge tricks me when imagining the average user. Every time there’s a lesson. And the best part is that these lessons are personal. They don’t teach you about mistakes made by other developers working on other software. No. They teach you about <em>your</em> mistakes. About mistakes that <em>you</em> have made on <em>this</em> software.</p>
 
-<p>The OS had a brief wow effect on me, because everything looked gorgeous. I also found consistency of notification
-sounds across applications pretty surprising and pretty cool. That&#39;s the privilege you don&#39;t get on Linux.</p>
+<p>And the developers that don’t like debugging are not interested in those lessons. They want to ship things and add value, not realizing something. Debugging also means adding value. Not only do you make the software more robust, but you also learn from your mistakes and therefore increase your value to the client. </p>
 
-<p>Being able to run shitty Safari natively was also something I enjoyed a lot! I would sometimes just open Safari when I
-was bored to see it come up and kill it immediately afterwards, like any sane person would do. I had such great time.</p>
-
-<p>Something was pretty obvious from the start, though. The trackpad is a pretty serious business in the Apple world, apparently.
-These guys don&#39;t mess around with their cursors. Prepare plenty of your fingers for some exercise!</p>
-
-<p>As a Linux elitist and a terminal addict that I am, I find that to be annoying. I use <a href="https://wiki.archlinux.org/index.php/Openbox">Openbox</a>
-as my window manager for a year now and I&#39;m enjoying it so much, because it gives my keyboard so much power, a power that is being neglected in OSX.
-I can do everything with keyboard, from standard hotkeys for opening applications to window movement, resizing and layouting.
-That&#39;s why I just hate mice and their successors - I might be biased though, since I own two cats.</p>
-
-<p>Installing applications confused me a lot too.</p>
-
-<figure>
-  <figcaption>
-    Me discovering that you have to drag one icon above another icon in order to install something.
-  </figcaption>
-  <img src="http://www.clotureclub.com/wp-content/uploads/2014/02/43689-Christian-Bale-dafuq-wtf-gif-4Vsk.gif"></img>
-</figure>
-
-<figure>
-  <figcaption>
-    Me seeing something that looks like mounted hard disks on desktop casually titled 'Skype'.
-  </figcaption>
-  <img src="/public/dafuq.gif"></img>
-</figure>
-
-<p>The Dock is another annoyance. I don&#39;t understand the reasoning behind using it on a screen with a max resolution of
-1366x768px, where every pixel matters. It&#39;s also remarkably bloated with, let&#39;s face it Apple, crap no one uses by default.
-Trying to kill it, like any sane person would, revealed another hidden gem of OSX - the famous iNability.
-It manifests itself in preventing you from doing something. Being a Linux user, obsessive about configuring anything that you
-could possibly think of, that&#39;s something I&#39;m definitely not used too. As <a href="http://apple.stackexchange.com/a/34874">this StackExchange answer</a> shows,
-there are some workarounds but they are really lame. I don&#39;t know for you, but I had some trouble sleeping knowing the dock was still alive and well.</p>
-
-<figure>
-  <figcaption>
-    Me discovering the joy of closing applications while they still remain open
-    in Dock but when opening them on Dock they don't actually exist and instead just
-    change focus and then I have to maximize window or something like that because logic
-  </figcaption>
-  <img src="http://i.imgur.com/xH10wu2.gif"></img>
-</figure>
-
-<p>In the brief period of my usage of OSX, I&#39;ve managed to discover another iNability, without really working hard to find it. I like to
-use just the external monitor so yeah, I like the internal monitor powered down, thank you very much. You apparently can&#39;t do that without closing
-the lid, which makes typing pretty difficult. The workaround people use is to just minimize brightness
-and go on with their lives. It&#39;s true, they don&#39;t even care if their internal monitor is still consuming power or not. They don&#39;t even care
-about their GPU still having to render stuff on both monitors. It&#39;s crazy sometimes, but yeah - I don&#39;t even words.</p>
-
-<h2>To MacBook or not to</h2>
-
-<p>I&#39;m pretty sure I&#39;ll never leave Arch Linux and even replacing it with another distro would be somewhat weird for me,
-let alone replacing it with another OS. Sure there are some benefits, like running certain apps and browsers without VMs and
-and the more polished look of the UI, but the cons outweight them.</p>
-
-<p>I don&#39;t want to sacrifice the keyboard and insane customizability just for the flashy looks. There is no <em>you can&#39;t</em> in Linux.</p>
-
-<p>Speaking of hardware, MacBook Air is a great machine, no doubt about it, I regret buying this Dell instead of it, since
-Air costs less and is better at everything except CPU, but meh - i5 instead of i7 so it&#39;s not a deal breaker.
-I&#39;d exchange my Dell for Air in no time.</p>
-
-<p><em>EDIT: I&#39;m now using a Macbook Air with OSX as my primary machine and I&#39;m really happy with it.</em></p>
+<p>Even though there’s no glory in fixing bugs, doing so can teach you lessons that are hard to find elsewhere.</p>
 
 
             <div class="flex items-center justify-between pt-8 pb-8 md:pb-0" data-nosnippet>

@@ -8,6 +8,17 @@
 
     
     <item>
+      <title>Thoughts on debugging</title>
+      
+      <description>&lt;p&gt;Not all developers like debugging. &lt;/p&gt;
+</description>
+      
+      <pubDate>Sun, 18 Apr 2021 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/thoughts-on-debugging</link>
+      <guid isPermaLink="true">http://shime.sh/thoughts-on-debugging</guid>
+    </item>
+    
+    <item>
       <title>Writing before programming</title>
       
       <description>&lt;p&gt;If you have studied computer science, you have probably encountered UML diagrams and the waterfall model. Like with a lot of things from the college days, I&amp;#39;ve never had any use of that in the real world. But since I&amp;#39;ve studied it, I assume some people still use it. To be honest, I don&amp;#39;t have much exposure to the &amp;quot;Enterprise&amp;quot; world, where I think UML diagrams are much more popular.&lt;/p&gt;
@@ -112,19 +123,6 @@
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0100</pubDate>
       <link>http://shime.sh/meetings-vs-documents</link>
       <guid isPermaLink="true">http://shime.sh/meetings-vs-documents</guid>
-    </item>
-    
-    <item>
-      <title>Dealing with bureaucracy</title>
-      
-      <description>&lt;div style=&quot;text-align: center&quot;&gt;
-  &lt;img src=&quot;/public/bureaucracy.jpg&quot;/&gt;
-&lt;/div&gt;
-</description>
-      
-      <pubDate>Sun, 07 Feb 2021 00:00:00 +0100</pubDate>
-      <link>http://shime.sh/dealing-with-bureaucracy</link>
-      <guid isPermaLink="true">http://shime.sh/dealing-with-bureaucracy</guid>
     </item>
     
   </channel>
