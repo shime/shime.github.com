@@ -8,6 +8,20 @@
     
     
     <item>
+      <title>Reproducing a bug in the lowest test level possible</title>
+      
+        <description>
+          &lt;p&gt;Tests are a great way to reproduce bugs. Instead of clicking and fiddling with the app, you end up with a deterministic scenario that reproduces each bug. &lt;/p&gt;
+
+          <a href="http://shime.sh/til/reproducing-a-bug-in-the-lowest-test-level-possible">http://shime.sh{ post.url }}</a>
+        </description>
+      
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0200</pubDate>
+      <link>http://shime.sh/til/reproducing-a-bug-in-the-lowest-test-level-possible</link>
+      <guid isPermaLink="true">http://shime.sh/til/reproducing-a-bug-in-the-lowest-test-level-possible</guid>
+    </item>
+    
+    <item>
       <title>Stopping Spring from using 100% CPU</title>
       
         <description>
@@ -142,22 +156,6 @@ of opening a long log file with Vim.&lt;/p&gt;
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0200</pubDate>
       <link>http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</link>
       <guid isPermaLink="true">http://shime.sh/til/sorting-git-branches-by-the-last-commit-date</guid>
-    </item>
-    
-    <item>
-      <title>Summoning the editor from the console</title>
-      
-        <description>
-          &lt;p&gt;I use Pry as my Ruby console and it supports a command that opens up the editor.
-This is helpful, since it gives me the full power of my editor when interacting with the console,
-so I don&amp;#39;t have to worry about typos in the second or third line of the script I&amp;#39;m writing.&lt;/p&gt;
-
-          <a href="http://shime.sh/til/summoning-the-editor-from-the-console">http://shime.sh{ post.url }}</a>
-        </description>
-      
-      <pubDate>Mon, 08 Jun 2020 00:00:00 +0200</pubDate>
-      <link>http://shime.sh/til/summoning-the-editor-from-the-console</link>
-      <guid isPermaLink="true">http://shime.sh/til/summoning-the-editor-from-the-console</guid>
     </item>
     
   </channel>
