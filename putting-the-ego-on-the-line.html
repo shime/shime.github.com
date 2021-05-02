@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Pretty formatting JSON in Vim" />
+<meta property="og:title" content="Putting the ego on the line" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I&#39;ve explained how I&#39;ve discovered json_pp in a previous TIL post, but I&#39;ve discovered another great tool for the job, with the shorter name." />
-<meta property="og:description" content="I&#39;ve explained how I&#39;ve discovered json_pp in a previous TIL post, but I&#39;ve discovered another great tool for the job, with the shorter name." />
-<link rel="canonical" href="http://shime.sh/til/pretty-formatting-json-in-vim" />
-<meta property="og:url" content="http://shime.sh/til/pretty-formatting-json-in-vim" />
+<meta name="description" content="The main reason insurance is such a powerful industry is because people are more afraid to lose than they are eager to gain." />
+<meta property="og:description" content="The main reason insurance is such a powerful industry is because people are more afraid to lose than they are eager to gain." />
+<link rel="canonical" href="http://shime.sh/putting-the-ego-on-the-line" />
+<meta property="og:url" content="http://shime.sh/putting-the-ego-on-the-line" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-01-26T00:00:00+01:00" />
+<meta property="article:published_time" content="2021-05-02T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Pretty formatting JSON in Vim" />
+<meta property="twitter:title" content="Putting the ego on the line" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/til/pretty-formatting-json-in-vim","headline":"Pretty formatting JSON in Vim","dateModified":"2019-01-26T00:00:00+01:00","datePublished":"2019-01-26T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/til/pretty-formatting-json-in-vim"},"description":"I&#39;ve explained how I&#39;ve discovered json_pp in a previous TIL post, but I&#39;ve discovered another great tool for the job, with the shorter name.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/putting-the-ego-on-the-line","headline":"Putting the ego on the line","dateModified":"2021-05-02T00:00:00+02:00","datePublished":"2021-05-02T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/putting-the-ego-on-the-line"},"description":"The main reason insurance is such a powerful industry is because people are more afraid to lose than they are eager to gain.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Pretty formatting JSON in Vim &middot; Hrvoje Šimić </title>
+    <title> Putting the ego on the line &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Pretty formatting JSON in Vim &middot; Hrvoje Šimić">
+  <meta name="title" content="Putting the ego on the line &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -202,16 +202,16 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/til"> ← til </a>
+              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
             </div>
 
             <div class="mb-8">
-              <h1>Pretty formatting JSON in Vim</h1>
+              <h1>Putting the ego on the line</h1>
 
               <div class="flex justify-between" data-nosnippet>
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    January 26, 2019
+                    May 2, 2021
                   </div>
                 
 
@@ -222,55 +222,22 @@
 
               <div class="flex my-2" data-nosnippet>
                 
-                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
-                    vim
-                  </span>
-                
               </div>
             </div>
 
-            <p>I&#39;ve explained how I&#39;ve discovered <code>json_pp</code>
-in a <a href="/til/pretty-format-json">previous TIL post</a>, but
-I&#39;ve discovered another great tool for the job,
-with the shorter name.</p>
+            <p>The main reason insurance is such a powerful industry is because people are more afraid to lose than they are eager to gain.</p>
 
-<p>It&#39;s called <code>jq</code> and it blows my mind. You probably already
-have it installed on your machine. It&#39;s bascially 
-<code>sed</code> for JSON. Its man pages describe pretty formatting of JSON as the most boring
-job it can do, so it&#39;s pretty powerful. You can check
-the examples on its <a href="https://stedolan.github.io/jq/tutorial">tutorial page</a> and
-see everything it can do on its <a href="https://stedolan.github.io/jq/manual/">manual page</a>.</p>
+<p>The Loss Aversion Principle says that you get more displeasure from losing $50 than you get pleasure from finding $50. Everyone wants to have a fifty-fifty chance of winning $100 if they have to put $50 on the line. People go out of their way to avoid loss.</p>
 
-<p>After you have it installed, you can pretty format that large chunk of JSON
-straight from Vim.</p>
+<p>Because of this principle, people are also afraid to take action first. They would rather stay in their comfort zone than risk even a tiny amount. But the best things in life happen when you take action first and risk a little.</p>
 
-<p>Let&#39;s say your cursor is on this line in your buffer:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="o">:</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span><span class="s2">&quot;wat&quot;</span><span class="o">:</span><span class="s2">&quot;lol&quot;</span><span class="p">,</span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Bugs Bunny&quot;</span><span class="p">,</span><span class="s2">&quot;address&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;street&quot;</span><span class="o">:</span><span class="s2">&quot;underground street&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span><span class="o">:</span><span class="s2">&quot;acme town&quot;</span><span class="p">}}}</span>
-</code></pre></div>
-<p>Issuing this command will pretty format the JSON from the current line and replace it:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="p">:</span>.<span class="p">!</span>jq .
-</code></pre></div>
-<p>Which results in:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
-  <span class="s2">&quot;foo&quot;</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;wat&quot;</span><span class="o">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bugs Bunny&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;address&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;street&quot;</span><span class="o">:</span> <span class="s2">&quot;underground street&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;city&quot;</span><span class="o">:</span> <span class="s2">&quot;acme town&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>If you&#39;d like to put the output to another buffer, you can do this instead:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="p">:</span>.<span class="k">w</span> <span class="p">!</span>jq .
-</code></pre></div>
-<p>So to achieve feature parity with my previous TIL post, all I needed to do to pretty format
-and copy that JSON was:</p>
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span></span><span class="p">:</span>.<span class="k">w</span> <span class="p">!</span>jq . <span class="p">|</span> pb_copy
-</code></pre></div>
-<p>Sending current line from a buffer as an input to an external command is as easy as that! How great is that!?</p>
+<p>I wouldn’t start Word Raft, one of the best things that happened to me last year, had I not started messaging people I don’t know on Twitter. What’s the risk of messaging someone out of the blue on Twitter? I think the only thing that’s at risk is one’s ego. What is a fear of rejection other than fear of getting your ego hurt? But if you’re willing to put your ego on the line a little, wonderful things can happen.</p>
+
+<p>Meeting my fiancee, the best thing that ever happened to me, also wouldn’t happen had I not risked a little. Had I not put my ego on the line and risked being rejected.</p>
+
+<p>Risking even a tiny amount is not the easiest thing in the world. It’s much harder than being passive and expecting good things to fall into one’s lap. Risking even a tiny amount means taking action instead of being passive. Risking means leaving the comfort zone, fighting the inertia, and fighting the pull of passivity, which ultimately leads to depression.</p>
+
+<p>Taking action, on the other hand, means that you can at least potentially get what you want. Being passive about it means there’s no way you can.</p>
 
 
             <div class="flex items-center justify-between pt-8 pb-8 md:pb-0" data-nosnippet>
@@ -289,6 +256,34 @@ and copy that JSON was:</p>
               <a class="text-black font-bold no-underline font-extrabold my-1 self-start" href="https://twitter.com/shime_sh">@shime_sh</a>
             </div>
 
+            
+              <div class="mt-12 bg-grey-lightest p-8 text-grey-darkest border-t-4 border-grey-light">
+                Join my newsletter and get articles that sometimes end up on the front page of Hacker News straight in your inbox.
+
+                
+
+
+<p class="mt-4 max-w-sm m-auto">
+  <div class="mt-8">
+    <form
+       action="https://buttondown.email/api/emails/embed-subscribe/shime"
+       method="post"
+       target="popupwindow"
+       onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
+       class="embeddable-buttondown-form"
+       >
+       <div class="flex max-w-sm m-auto">
+         <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
+         <input type="hidden" value="1" name="embed"></input>
+         
+         <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
+       </div>
+       <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
+     </form>
+  </div>
+</p>
+
+              </div>
             
 
           </div>
