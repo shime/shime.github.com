@@ -41,30 +41,30 @@
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Be the change you want to see" />
+<meta property="og:title" content="Deep dive into rackup" />
 <meta name="author" content="Hrvoje Šimić" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="World wide web is such a great medium. Its impact is gaining momentum every single day and I couldn&#39;t be more happy about it. I&#39;m convinced it will replace all other mediums and it is a global brain of sorts. Transparency is probably why I like it the most and I&#39;m under impression that most of the society is not aware how important role transparency plays in our lives." />
-<meta property="og:description" content="World wide web is such a great medium. Its impact is gaining momentum every single day and I couldn&#39;t be more happy about it. I&#39;m convinced it will replace all other mediums and it is a global brain of sorts. Transparency is probably why I like it the most and I&#39;m under impression that most of the society is not aware how important role transparency plays in our lives." />
-<link rel="canonical" href="http://shime.sh/be-the-change-you-want-to-see" />
-<meta property="og:url" content="http://shime.sh/be-the-change-you-want-to-see" />
+<meta name="description" content="Rack is a bridge between web servers and web applications. Most of the web frameworks in Ruby are based on Rack. In this article, I&#39;d like to explore and demystify how its rackup tool works." />
+<meta property="og:description" content="Rack is a bridge between web servers and web applications. Most of the web frameworks in Ruby are based on Rack. In this article, I&#39;d like to explore and demystify how its rackup tool works." />
+<link rel="canonical" href="http://shime.sh/deep-dive/rackup" />
+<meta property="og:url" content="http://shime.sh/deep-dive/rackup" />
 <meta property="og:site_name" content="Hrvoje Šimić" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2013-10-13T00:00:00+02:00" />
+<meta property="article:published_time" content="2020-02-25T00:00:00+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Be the change you want to see" />
+<meta property="twitter:title" content="Deep dive into rackup" />
 <meta name="twitter:site" content="@shime_sh" />
 <meta name="twitter:creator" content="@shime_sh" />
 <script type="application/ld+json">
-{"url":"http://shime.sh/be-the-change-you-want-to-see","headline":"Be the change you want to see","dateModified":"2013-10-13T00:00:00+02:00","datePublished":"2013-10-13T00:00:00+02:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/be-the-change-you-want-to-see"},"description":"World wide web is such a great medium. Its impact is gaining momentum every single day and I couldn&#39;t be more happy about it. I&#39;m convinced it will replace all other mediums and it is a global brain of sorts. Transparency is probably why I like it the most and I&#39;m under impression that most of the society is not aware how important role transparency plays in our lives.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"http://shime.sh/deep-dive/rackup","headline":"Deep dive into rackup","dateModified":"2020-02-25T00:00:00+01:00","datePublished":"2020-02-25T00:00:00+01:00","author":{"@type":"Person","name":"Hrvoje Šimić"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://shime.sh/deep-dive/rackup"},"description":"Rack is a bridge between web servers and web applications. Most of the web frameworks in Ruby are based on Rack. In this article, I&#39;d like to explore and demystify how its rackup tool works.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-    <title> Be the change you want to see &middot; Hrvoje Šimić </title>
+    <title> Deep dive into rackup &middot; Hrvoje Šimić </title>
   
 
-  <meta name="title" content="Be the change you want to see &middot; Hrvoje Šimić">
+  <meta name="title" content="Deep dive into rackup &middot; Hrvoje Šimić">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
   <script src="https://unpkg.com/time-ago@0.2.1/timeago.js"></script>
@@ -215,16 +215,16 @@
             
 
             <div>
-              <a class="no-underline uppercase text-sm" href="/articles"> ← articles </a>
+              <a class="no-underline uppercase text-sm" href="/deep-dive"> ← deep-dive </a>
             </div>
 
             <div class="mb-8">
-              <h1>Be the change you want to see</h1>
+              <h1>Deep dive into rackup</h1>
 
               <div class="flex justify-between" data-nosnippet>
                 
                   <div class="text-grey text-sm" data-js-time-ago>
-                    October 13, 2013
+                    February 25, 2020
                   </div>
                 
 
@@ -235,50 +235,451 @@
 
               <div class="flex my-2" data-nosnippet>
                 
+                  <span class="bg-grey-lightest py-1 px-2 text-center text-grey-dark mr-2 rounded text-sm">
+                    ruby
+                  </span>
+                
               </div>
             </div>
 
-            <p>World wide web is such a great medium. Its impact is gaining momentum every single day and I couldn&#39;t be more happy about it. I&#39;m convinced it will replace all other mediums and it is a <a href="http://theratchet.ca/what-is-the-global-brain">global brain</a> of sorts. Transparency is probably why I like it the most and I&#39;m under impression that most of the society is not aware how important role transparency plays in our lives.</p>
+            <p>Rack is a bridge between web servers and web applications. Most of the
+web frameworks in Ruby are based on Rack. In this article, I&#39;d like
+to explore and demystify how its <code>rackup</code> tool works. </p>
 
-<p>Open source is closely related to transparency. I know exactly what I&#39;m using and therefore I can alter it to fit my needs. If I&#39;m interested, I have the opportunity to learn about all of the details because the details are just hanging around and waiting for my set of eyes.</p>
+<p>Diving deep into its source code revealed that some eval wizardry is
+being used. Here&#39;s a sneak-peak of its beauty.</p>
 
-<p>I&#39;m writing all of this on an open source operating system, using the open source editor to enter this markdown, which will be outputted into the web-friendly format by a little help of the open source blog engine, which will in fact get hosted on the open source repo provided to me for free.</p>
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/builder.rb#L110-L118'>
+            lib/rack/builder.rb#L110-L118
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># Evaluate the given +builder_script+ string in the context of</span>
+<span class="c1"># a Rack::Builder block, returning a Rack application.</span>
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_from_string</span><span class="p">(</span><span class="n">builder_script</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;(rackup)&quot;</span><span class="p">)</span>
+  <span class="c1"># We want to build a variant of TOPLEVEL_BINDING with self as a Rack::Builder instance.</span>
+  <span class="c1"># We cannot use instance_eval(String) as that would resolve constants differently.</span>
+  <span class="nb">binding</span><span class="p">,</span> <span class="n">builder</span> <span class="o">=</span> 
+    <span class="no">TOPLEVEL_BINDING</span><span class="o">.</span>
+      <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;Rack::Builder.new.instance_eval { [binding, self] }&#39;</span><span class="p">)</span>
+  <span class="nb">eval</span> <span class="n">builder_script</span><span class="p">,</span> <span class="nb">binding</span><span class="p">,</span> <span class="n">file</span>
+  <span class="n">builder</span><span class="o">.</span><span class="n">to_app</span>
+<span class="k">end</span></code></pre></figure>
 
-<p>Isn&#39;t that amazing?</p>
+<p>I&#39;ll get to it later and explain how it works and why it&#39;s needed.</p>
 
-<h2>What are you talking about, I don&#39;t even</h2>
+<p>For now, let&#39;s get started with a &quot;Hello World&quot; example:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># in config.ru</span>
 
-<p>I mean, there are a lot of projects online involving really clever people who are building stuff that&#39;s changing the world. They are not only helping people to get stuff done, but also sharing their knowledge with everyone who is interested.</p>
+<span class="n">run</span><span class="p">(</span><span class="nb">proc</span> <span class="p">{</span> <span class="o">[</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;text/plain&#39;</span> <span class="p">},</span> <span class="o">[</span><span class="s1">&#39;Hello World&#39;</span><span class="o">]]</span> <span class="p">})</span>
+</code></pre></div>
+<p>Running this with <code>rackup</code> will start Webrick and serve our little &quot;Hello World&quot; app on port 9292. </p>
 
-<p>Take <a href="http://stackoverflow.com">StackOverflow</a>, for example. It has been an immense stack of knowledge bits, carefully partitioned into Q/A pairs, waiting to help others with the same problems. I&#39;m infinitely thankful for such a great service and it doesn&#39;t ask for anything in return, other than my optional beans of wisdom. Not only do I feel like a hero when my little beans help someone on the other part of the globe with their problem, but I also get rewarded for it. I get certain reputation points. It amazes me how great concept this is.</p>
+<h2>Getting started</h2>
 
-<p><a href="http://try.discourse.com">Discourse</a> is the new cool thing I would like to get involved in. Let&#39;s admit it, the most of the forums today are still stuck in the 90&#39;s. They all look and feel the same, so I&#39;m excited to see Discourse setting the future of forums. I&#39;ve only known about it since I started to learn JavaScript MVC framework, called <a href="http://emberjs.com">EmberJS</a>. Discourse, <a href="https://github.com/discourse/discourse">being an open source project</a> has been a great aid for me in the world of Ember, because I can refer to its source code when things get messy. Being able to see how Robin Ward, known as <a href="http://eviltrout.com">Evil Trout</a>, solves Ember problems has taught me a lot. He also posts some great learning stuff on his blog, so if you&#39;re also learning Ember, make sure to check it out.</p>
+<p>It looks like running the <code>rackup</code> command somehow started the server and provided the <code>run</code> method to the top-level context. Let&#39;s find where it&#39;s coming from.</p>
 
-<p><a href="http://travis-ci.org">TravisCI</a> is another example of a vibrant open source project. I haven&#39;t managed to find time to check its Ember <a href="https://github.com/travis-ci/travis-web">source</a>, but I&#39;m sure I could also learn a lot of interesting stuff.</p>
+<p>Looking at <a href="https://github.com/rack/rack">Rack&#39;s source code</a> we discover this file sitting in a <code>bin/</code> directory:</p>
 
-<h2>The other side</h2>
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/bin/rackup'>
+            bin/rackup
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="ch">#!/usr/bin/env ruby</span>
+<span class="c1"># frozen_string_literal: true</span>
 
-<p>I don&#39;t know about you, but I&#39;m aware of plenty of sites which are exactly the opposite of the aforementioned ones. They&#39;re usually utility sites, aimed to help a certain group of people. More often, than not, they are related to some political institution or they represent a government agency of some sort.</p>
+<span class="nb">require</span> <span class="s2">&quot;rack&quot;</span>
+<span class="no">Rack</span><span class="o">::</span><span class="no">Server</span><span class="o">.</span><span class="n">start</span></code></pre></figure>
 
-<p>The most obvious example of shitty websites is the public transportation sites, at least in my experience. I don&#39;t know what&#39;s the experience in other cities or countries, but in Croatia it&#39;s unbearable. People are, kind of, used to the shitty websites when they need some sort of public service on the web. They are n aware that things can be improved a lot, but seeing same pages over and over again for a long period of time has had the effect of minimizing the problem.</p>
+<p>Looks like we&#39;re starting the server here. Let&#39;s dig into the source code to find out what happens.</p>
 
-<h2>How you can help</h2>
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L286-L328'>
+            lib/rack/server.rb#L286-L328
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span>  <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:warn</span><span class="o">]</span>
+    <span class="vg">$-</span><span class="n">w</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
 
-<p>If you have any programming experience for the web, you might want to give it a shot and try to build something better. It will not only help others and reward you in eternal glory, but it will also make your life a lot easier!</p>
+  <span class="k">if</span> <span class="n">includes</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:include</span><span class="o">]</span>
+    <span class="vg">$LOAD_PATH</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="o">*</span><span class="n">includes</span><span class="p">)</span>
+  <span class="k">end</span>
 
-<p>Why not help your fellow citizens, if you have the knowledge?</p>
+  <span class="nb">Array</span><span class="p">(</span><span class="n">options</span><span class="o">[</span><span class="ss">:require</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">library</span><span class="o">|</span>
+    <span class="nb">require</span> <span class="n">library</span>
+  <span class="k">end</span>
 
-<p>Imagine learning new interesting language or framework while helping other people at the same time! Building interesting new stuff and solving problems you&#39;ve never experienced before makes you a better programmer.</p>
+  <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:debug</span><span class="o">]</span>
+    <span class="vg">$DEBUG</span> <span class="o">=</span> <span class="kp">true</span>
+    <span class="nb">require</span> <span class="s1">&#39;pp&#39;</span>
+    <span class="nb">p</span> <span class="n">options</span><span class="o">[</span><span class="ss">:server</span><span class="o">]</span>
+    <span class="n">pp</span> <span class="n">wrapped_app</span>
+    <span class="n">pp</span> <span class="n">app</span>
+  <span class="k">end</span>
 
-<blockquote>
-<p>When you don&#39;t create things, you become defined by your tastes rather than ability. Your tastes only narrow &amp; exclude people. So create.</p>
+  <span class="n">check_pid!</span> <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:pid</span><span class="o">]</span>
 
-<p><cite>Why The Lucky Stiff</cite></p>
-</blockquote>
+  <span class="c1"># Touch the wrapped app, so that the config.ru is loaded before</span>
+  <span class="c1"># daemonization (i.e. before chdir, etc).</span>
+  <span class="n">handle_profiling</span><span class="p">(</span><span class="n">options</span><span class="o">[</span><span class="ss">:heapfile</span><span class="o">]</span><span class="p">,</span> <span class="n">options</span><span class="o">[</span><span class="ss">:profile_mode</span><span class="o">]</span><span class="p">,</span> <span class="n">options</span><span class="o">[</span><span class="ss">:profile_file</span><span class="o">]</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">wrapped_app</span>
+  <span class="k">end</span>
 
-<p>Instead of ranting about the poor user experience, why not revolutionize it?</p>
+  <span class="n">daemonize_app</span> <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:daemonize</span><span class="o">]</span>
 
-<p>To wrap it up, don&#39;t expect the world to change by itself. <em>Be that change!</em></p>
+  <span class="n">write_pid</span> <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:pid</span><span class="o">]</span>
+
+  <span class="nb">trap</span><span class="p">(</span><span class="ss">:INT</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="n">server</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:shutdown</span><span class="p">)</span>
+      <span class="n">server</span><span class="o">.</span><span class="n">shutdown</span>
+    <span class="k">else</span>
+      <span class="nb">exit</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="hll">  <span class="n">server</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">wrapped_app</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>Let&#39;s ignore <code>server.run</code> <a name="server_run"></a> for a bit and dive deeper into the <code>wrapped_app</code> <a name="wrapped_app"></a>.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L421-L423'>
+            lib/rack/server.rb#L421-L423
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">wrapped_app</span>
+  <span class="vi">@wrapped_app</span> <span class="o">||=</span> <span class="n">build_app</span> <span class="n">app</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Let&#39;s also ignore <code>build_app</code> and focus on the <code>app</code>.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L248-L250'>
+            lib/rack/server.rb#L248-L250
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">app</span>
+  <span class="vi">@app</span> <span class="o">||=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:builder</span><span class="o">]</span> <span class="p">?</span>
+    <span class="n">build_app_from_string</span> <span class="p">:</span>
+    <span class="n">build_app_and_options_from_config</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>We are not passing any options, so in our case we&#39;re interested in <code>build_app_and_options_from_config</code>.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L344-L352'>
+            lib/rack/server.rb#L344-L352
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">build_app_and_options_from_config</span>
+</span>  <span class="k">if</span> <span class="o">!::</span><span class="no">File</span><span class="o">.</span><span class="n">exist?</span> <span class="n">options</span><span class="o">[</span><span class="ss">:config</span><span class="o">]</span>
+    <span class="nb">abort</span> <span class="s2">&quot;configuration </span><span class="si">#{</span><span class="n">options</span><span class="o">[</span><span class="ss">:config</span><span class="o">]</span><span class="si">}</span><span class="s2"> not found&quot;</span>
+  <span class="k">end</span>
+
+<span class="hll">  <span class="n">app</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Builder</span><span class="o">.</span><span class="n">parse_file</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">options</span><span class="o">[</span><span class="ss">:config</span><span class="o">]</span><span class="p">,</span>
+</span><span class="hll">                                          <span class="n">opt_parser</span><span class="p">)</span>
+</span>  <span class="vi">@options</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="kp">new</span><span class="o">|</span> <span class="n">old</span> <span class="p">}</span>
+  <span class="n">app</span>
+<span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>This leads us to <code>Rack::Builder.parse_file</code> which explains it&#39;s purpose in the comments.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/builder.rb#L38-L72'>
+            lib/rack/builder.rb#L38-L72
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1"># Parse the given config file to get a Rack application.</span>
+<span class="c1">#</span>
+<span class="c1"># If the config file ends in +.ru+, it is treated as a</span>
+<span class="c1"># rackup file and the contents will be treated as if</span>
+<span class="c1"># specified inside a Rack::Builder block, using the given</span>
+<span class="c1"># options.</span>
+<span class="c1">#</span>
+<span class="c1"># If the config file does not end in +.ru+, it is</span>
+<span class="c1"># required and Rack will use the basename of the file</span>
+<span class="c1"># to guess which constant will be the Rack application to run.</span>
+<span class="c1"># The options given will be ignored in this case.</span>
+<span class="c1">#</span>
+<span class="c1"># Examples:</span>
+<span class="c1">#</span>
+<span class="c1">#   Rack::Builder.parse_file(&#39;config.ru&#39;)</span>
+<span class="c1">#   # Rack application built using Rack::Builder.new</span>
+<span class="c1">#</span>
+<span class="c1">#   Rack::Builder.parse_file(&#39;app.rb&#39;)</span>
+<span class="c1">#   # requires app.rb, which can be anywhere in Ruby&#39;s</span>
+<span class="c1">#   # load path. After requiring, assumes App constant</span>
+<span class="c1">#   # contains Rack application</span>
+<span class="c1">#</span>
+<span class="c1">#   Rack::Builder.parse_file(&#39;./my_app.rb&#39;)</span>
+<span class="c1">#   # requires ./my_app.rb, which should be in the</span>
+<span class="c1">#   # process&#39;s current directory.  After requiring,</span>
+<span class="c1">#   # assumes MyApp constant contains Rack application</span>
+<span class="hll"><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse_file</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">opts</span> <span class="o">=</span> <span class="no">Server</span><span class="o">::</span><span class="no">Options</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+</span><span class="hll">  <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">end_with?</span><span class="p">(</span><span class="s1">&#39;.ru&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">return</span> <span class="nb">self</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+</span><span class="hll">  <span class="k">else</span>
+</span>    <span class="nb">require</span> <span class="n">config</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">const_get</span><span class="p">(</span><span class="o">::</span><span class="no">File</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;.rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:capitalize</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">app</span><span class="p">,</span> <span class="p">{}</span>
+<span class="hll">  <span class="k">end</span>
+</span><span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>Our file ends with <code>.ru</code>, so let&#39;s look at <code>Rack::Builder.load_file</code>.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/builder.rb#L74-L108'>
+            lib/rack/builder.rb#L74-L108
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><div class="emphasized"><pre><span></span><span class="c1"># Load the given file as a rackup file, treating the</span>
+<span class="c1"># contents as if specified inside a Rack::Builder block.</span>
+<span class="c1">#</span>
+<span class="c1"># Treats the first comment at the beginning of a line</span>
+<span class="c1"># that starts with a backslash as options similar to</span>
+<span class="c1"># options passed on a rackup command line.</span>
+<span class="c1">#</span>
+<span class="c1"># Ignores content in the file after +__END__+, so that</span>
+<span class="c1"># use of +__END__+ will not result in a syntax error.</span>
+<span class="c1">#</span>
+<span class="c1"># Example config.ru file:</span>
+<span class="c1">#</span>
+<span class="c1">#   $ cat config.ru</span>
+<span class="c1">#</span>
+<span class="c1">#   #\ -p 9393</span>
+<span class="c1">#</span>
+<span class="c1">#   use Rack::ContentLength</span>
+<span class="c1">#   require &#39;./app.rb&#39;</span>
+<span class="c1">#   run App</span>
+<span class="hll"><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">load_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">opts</span> <span class="o">=</span> <span class="no">Server</span><span class="o">::</span><span class="no">Options</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+</span>  <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="hll">  <span class="n">cfgfile</span> <span class="o">=</span> <span class="o">::</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span>  <span class="n">cfgfile</span><span class="o">.</span><span class="n">slice!</span><span class="p">(</span><span class="sr">/\A</span><span class="si">#{</span><span class="no">UTF_8_BOM</span><span class="si">}</span><span class="sr">/</span><span class="p">)</span> <span class="k">if</span> <span class="n">cfgfile</span><span class="o">.</span><span class="n">encoding</span> <span class="o">==</span> <span class="no">Encoding</span><span class="o">::</span><span class="no">UTF_8</span>
+
+  <span class="k">if</span> <span class="n">cfgfile</span><span class="o">[</span><span class="sr">/^#\\(.*)/</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">opts</span>
+    <span class="nb">warn</span> <span class="s2">&quot;Parsing options from the first comment line is deprecated!&quot;</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">parse!</span> <span class="vg">$1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">cfgfile</span><span class="o">.</span><span class="n">sub!</span><span class="p">(</span><span class="sr">/^__END__\n.*\Z/m</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="hll">  <span class="n">app</span> <span class="o">=</span> <span class="n">new_from_string</span> <span class="n">cfgfile</span><span class="p">,</span> <span class="n">path</span>
+</span>
+  <span class="k">return</span> <span class="n">app</span><span class="p">,</span> <span class="n">options</span>
+<span class="hll"><span class="k">end</span>
+</span></code></pre></figure>
+
+<p>Looks like <code>Builder.new_from_string</code> is the key for getting to bottom of this. Let&#39;s look it up.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/builder.rb#L110-L118'>
+            lib/rack/builder.rb#L110-L118
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># Evaluate the given +builder_script+ string in the context of</span>
+<span class="c1"># a Rack::Builder block, returning a Rack application.</span>
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_from_string</span><span class="p">(</span><span class="n">builder_script</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;(rackup)&quot;</span><span class="p">)</span>
+  <span class="c1"># We want to build a variant of TOPLEVEL_BINDING with self as a Rack::Builder instance.</span>
+  <span class="c1"># We cannot use instance_eval(String) as that would resolve constants differently.</span>
+  <span class="nb">binding</span><span class="p">,</span> <span class="n">builder</span> <span class="o">=</span> 
+    <span class="no">TOPLEVEL_BINDING</span><span class="o">.</span>
+      <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;Rack::Builder.new.instance_eval { [binding, self] }&#39;</span><span class="p">)</span>
+  <span class="nb">eval</span> <span class="n">builder_script</span><span class="p">,</span> <span class="nb">binding</span><span class="p">,</span> <span class="n">file</span>
+  <span class="n">builder</span><span class="o">.</span><span class="n">to_app</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Wow, look at that! This is where the magic happens. Let&#39;s dive into it.</p>
+
+<h2>Double eval magic</h2>
+
+<p>This code makes <code>Rack::Builder</code> instance a top level context and evaluates
+our script within that context. This provides the <code>run</code> method to our <code>config.ru</code> script, which is 
+actually defined in <code>Rack::Builder#run</code> <sup>[<a href="#simplified">1</a>]</sup>.</p>
+
+<p><code>TOPLEVEL_BINDING</code> is, simply, a binding of the top-level context<sup>[<a href="#binding">2</a>]</sup>.
+Why do we need it here? Couldn&#39;t we simply write:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_from_string</span><span class="p">(</span><span class="n">builder_script</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;(rackup)&quot;</span><span class="p">)</span>
+  <span class="n">bind</span><span class="p">,</span> <span class="n">builder</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Builder</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">instance_eval</span> <span class="p">{</span> <span class="o">[</span><span class="nb">binding</span><span class="p">,</span> <span class="nb">self</span><span class="o">]</span> <span class="p">}</span>
+  <span class="nb">eval</span> <span class="n">builder_script</span><span class="p">,</span> <span class="n">bind</span><span class="p">,</span> <span class="n">file</span>
+  <span class="n">builder</span><span class="o">.</span><span class="n">to_app</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>I was confused by this, so I&#39;ve asked the author, Benoit Daloze, to explain it and <a href="https://github.com/rack/rack/pull/1545#issuecomment-590522238">he did</a>. Not having
+<code>TOPLEVEL_BINDING</code> would give the <code>Rack</code> namespace to constants defined in our <code>config.ru</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># config.ru</span>
+
+<span class="nb">p</span> <span class="no">Builder</span> <span class="c1"># would print out Rack::Builder</span>
+</code></pre></div>
+<p>That&#39;s why we need to evaluate within <code>TOPLEVEL_BINDING</code>.</p>
+
+<p>A simpler, and a previously used version of this magic is: </p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_from_string</span><span class="p">(</span><span class="n">builder_script</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;(rackup)&quot;</span><span class="p">)</span>
+  <span class="nb">eval</span> <span class="s2">&quot;Rack::Builder.new {</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">builder_script</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">}.to_app&quot;</span><span class="p">,</span>
+    <span class="no">TOPLEVEL_BINDING</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>However, this means that magic comments from <code>config.ru</code> would be ignored, since they are not present at the beginning of the <code>eval</code>-ed string. We would have to check for them and add them at the beginning of the string like this:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">new_from_string</span><span class="p">(</span><span class="n">builder_script</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;(rackup)&quot;</span><span class="p">)</span>
+  <span class="nb">eval</span> <span class="s2">&quot;# frozen_string_literal: true</span><span class="se">\n</span><span class="s2">Rack::Builder.new {</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span>
+       <span class="n">builder_script</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">}.to_app&quot;</span><span class="p">,</span>
+       <span class="no">TOPLEVEL_BINDING</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Benoit&#39;s solution to this is much more elegant.</p>
+
+<h2>Going deeper</h2>
+
+<p>Calling <code>run</code> in our <code>config.ru</code> script, means that our journey continues to <code>Rack::Builder#run</code>:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># Takes an argument that is an object that responds to #call and returns a Rack response.</span>
+<span class="c1"># The simplest form of this is a lambda object:</span>
+<span class="c1">#</span>
+<span class="c1">#   run lambda { |env| [200, { &quot;Content-Type&quot; =&gt; &quot;text/plain&quot; }, [&quot;OK&quot;]] }</span>
+<span class="c1">#</span>
+<span class="c1"># However this could also be a class:</span>
+<span class="c1">#</span>
+<span class="c1">#   class Heartbeat</span>
+<span class="c1">#     def self.call(env)</span>
+<span class="c1">#      [200, { &quot;Content-Type&quot; =&gt; &quot;text/plain&quot; }, [&quot;OK&quot;]]</span>
+<span class="c1">#     end</span>
+<span class="c1">#   end</span>
+<span class="c1">#</span>
+<span class="c1">#   run Heartbeat</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+  <span class="vi">@run</span> <span class="o">=</span> <span class="n">app</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Since there are no other method calls to follow, it looks like we&#39;ve come the end. Let&#39;s continue looking at branches that we&#39;ve ignored previously.</p>
+
+<p>The last thing we ignored was <code>build_app</code> in <code>wrapped_app</code><sup>[<a href="#wrapped_app">&nearr;</a>]</sup>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L411-L419'>
+            lib/rack/server.rb#L411-L419
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">build_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+  <span class="n">middleware</span><span class="o">[</span><span class="n">options</span><span class="o">[</span><span class="ss">:environment</span><span class="o">]].</span><span class="n">reverse_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">middleware</span><span class="o">|</span>
+    <span class="n">middleware</span> <span class="o">=</span> <span class="n">middleware</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="k">if</span> <span class="n">middleware</span><span class="o">.</span><span class="n">respond_to?</span><span class="p">(</span><span class="ss">:call</span><span class="p">)</span>
+    <span class="k">next</span> <span class="k">unless</span> <span class="n">middleware</span>
+    <span class="n">klass</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="o">=</span> <span class="n">middleware</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">klass</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="n">app</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Inspecting <code>middleware</code> further leads us to:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L259-L279'>
+            lib/rack/server.rb#L259-L279
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">middleware</span>
+  <span class="n">default_middleware_by_environment</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">default_middleware_by_environment</span>
+  <span class="n">m</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="o">|</span><span class="n">h</span><span class="p">,</span> <span class="n">k</span><span class="o">|</span> <span class="n">h</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="o">[]</span><span class="p">}</span>
+  <span class="n">m</span><span class="o">[</span><span class="s2">&quot;deployment&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="o">[</span><span class="no">Rack</span><span class="o">::</span><span class="no">ContentLength</span><span class="o">]</span><span class="p">,</span>
+    <span class="n">logging_middleware</span><span class="p">,</span>
+    <span class="o">[</span><span class="no">Rack</span><span class="o">::</span><span class="no">TempfileReaper</span><span class="o">]</span>
+  <span class="o">]</span>
+  <span class="n">m</span><span class="o">[</span><span class="s2">&quot;development&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span>
+    <span class="o">[</span><span class="no">Rack</span><span class="o">::</span><span class="no">ContentLength</span><span class="o">]</span><span class="p">,</span>
+    <span class="n">logging_middleware</span><span class="p">,</span>
+    <span class="o">[</span><span class="no">Rack</span><span class="o">::</span><span class="no">ShowExceptions</span><span class="o">]</span><span class="p">,</span>
+    <span class="o">[</span><span class="no">Rack</span><span class="o">::</span><span class="no">Lint</span><span class="o">]</span><span class="p">,</span>
+    <span class="o">[</span><span class="no">Rack</span><span class="o">::</span><span class="no">TempfileReaper</span><span class="o">]</span>
+  <span class="o">]</span>
+
+  <span class="n">m</span>
+<span class="k">end</span></code></pre></figure>
+
+<p><code>wrapped_app</code> is going to become a chain of middleware that&#39;s going to look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Rack::ContentLength ⟶
+Rack::CommonLogger ⟶
+Rack::ShowExceptions ⟶
+Rack::Lint ⟶
+Rack::TempfileReaper ⟶
+our app
+</code></pre></div>
+<p>The next thing we ignored is <code>server.run</code><sup>[<a href="#server_run">&nearr;</a>]</sup>.</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/server.rb#L330-L341'>
+            lib/rack/server.rb#L330-L341
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nf">server</span>
+  <span class="vi">@_server</span> <span class="o">||=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Handler</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">options</span><span class="o">[</span><span class="ss">:server</span><span class="o">]</span><span class="p">)</span>
+
+  <span class="k">unless</span> <span class="vi">@_server</span>
+    <span class="vi">@_server</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Handler</span><span class="o">.</span><span class="n">default</span>
+
+    <span class="c1"># We already speak FastCGI</span>
+    <span class="vi">@ignore_options</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:File</span><span class="p">,</span> <span class="ss">:Port</span><span class="o">]</span> <span class="k">if</span> <span class="vi">@_server</span><span class="o">.</span><span class="n">to_s</span> <span class="o">==</span> <span class="s1">&#39;Rack::Handler::FastCGI&#39;</span>
+  <span class="k">end</span>
+
+  <span class="vi">@_server</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>The default Rack handler is Webrick, so in our case, <code>server.run</code> is actually <code>Rack::Handler::Webrick.run</code>:</p>
+
+<figure class="highlight"><div class='source-location'>
+          <a href='https://github.com/rack/rack/blob/2b22be07f189fd852fb66a601573c38439b1f7b4/lib/rack/handler/webrick.rb#L26-L42'>
+            lib/rack/handler/webrick.rb#L26-L42
+          </a>
+        </div><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+  <span class="n">environment</span>  <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;RACK_ENV&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s1">&#39;development&#39;</span>
+  <span class="n">default_host</span> <span class="o">=</span> <span class="n">environment</span> <span class="o">==</span> <span class="s1">&#39;development&#39;</span> <span class="p">?</span> <span class="s1">&#39;localhost&#39;</span> <span class="p">:</span> <span class="kp">nil</span>
+
+  <span class="k">if</span> <span class="o">!</span><span class="n">options</span><span class="o">[</span><span class="ss">:BindAddress</span><span class="o">]</span> <span class="o">||</span> <span class="n">options</span><span class="o">[</span><span class="ss">:Host</span><span class="o">]</span>
+    <span class="n">options</span><span class="o">[</span><span class="ss">:BindAddress</span><span class="o">]</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="ss">:Host</span><span class="p">)</span> <span class="o">||</span> <span class="n">default_host</span>
+  <span class="k">end</span>
+  <span class="n">options</span><span class="o">[</span><span class="ss">:Port</span><span class="o">]</span> <span class="o">||=</span> <span class="mi">8080</span>
+  <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:SSLEnable</span><span class="o">]</span>
+    <span class="nb">require</span> <span class="s1">&#39;webrick/https&#39;</span>
+  <span class="k">end</span>
+
+  <span class="vi">@server</span> <span class="o">=</span> <span class="o">::</span><span class="no">WEBrick</span><span class="o">::</span><span class="no">HTTPServer</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="vi">@server</span><span class="o">.</span><span class="n">mount</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Handler</span><span class="o">::</span><span class="no">WEBrick</span><span class="p">,</span> <span class="n">app</span>
+  <span class="k">yield</span> <span class="vi">@server</span>  <span class="k">if</span> <span class="nb">block_given?</span>
+  <span class="vi">@server</span><span class="o">.</span><span class="n">start</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>This simply starts the Webrick server and passes our middleware to it as <code>app</code>.</p>
+
+<p>And that&#39;s it! This article hopefully demystified what happens behind the curtain when you run <code>rackup</code> and you hopefully better understand how it works now.</p>
+
+<hr>
+
+<h3>Notes and examples</h3>
+
+<ol>
+<li><p><a name="simplified"></a>
+Here&#39;s the simplified version of what <code>Rack::Builder.new_from_string</code> is doing:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Context</span>
+  <span class="k">def</span> <span class="nf">test</span>
+    <span class="nb">puts</span> <span class="s2">&quot;testing&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">bind</span> <span class="o">=</span> <span class="no">Context</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">instance_eval</span> <span class="p">{</span> <span class="nb">binding</span> <span class="p">}</span>
+<span class="nb">eval</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="n">bind</span>
+</code></pre></div>
+<p>The first argument for <code>eval</code> is our
+simplified <code>config.ru</code>. Running this will print out <code>&quot;testing&quot;</code>. </p></li>
+<li><p><a name="binding"></a>
+I&#39;m just kidding. It&#39;s not &quot;simply&quot;. Let me explain what the hell I am talking about. <a href="https://ruby-doc.org/core-2.7.0/Binding.html">Ruby documentation</a> says that <code>Binding</code> &quot;encapsulates the execution context at some particular place in the code and retain this context for future use&quot;. <code>TOPLEVEL_BINDING</code> is simply <code>Binding</code> of the top level-context. Here&#39;s an example:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">foo</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="k">def</span> <span class="nf">print_foo</span>
+  <span class="nb">print</span> <span class="n">foo</span> <span class="c1"># undefined local variable or method `foo&#39; for main:Object</span>
+<span class="k">end</span>
+<span class="k">begin</span><span class="p">;</span> <span class="n">print_foo</span><span class="p">;</span> <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">ex</span><span class="p">;</span> <span class="nb">puts</span> <span class="n">ex</span><span class="o">.</span><span class="n">message</span><span class="p">;</span> <span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">print_foo_with_top_level_binding</span>
+  <span class="nb">print</span> <span class="no">TOPLEVEL_BINDING</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span> <span class="c1"># 42</span>
+<span class="k">end</span>
+<span class="n">print_foo_with_top_level_binding</span>
+</code></pre></div></li>
+</ol>
 
 
             <div class="flex items-center justify-between pt-8 pb-8 md:pb-0" data-nosnippet>
@@ -297,34 +698,6 @@
               <a class="text-black font-bold no-underline font-extrabold my-1 self-start" href="https://twitter.com/shime_sh">@shime_sh</a>
             </div>
 
-            
-              <div class="mt-12 bg-grey-lightest p-8 text-grey-darkest border-t-4 border-grey-light">
-                Join my newsletter and get articles that sometimes end up on the front page of Hacker News straight in your inbox.
-
-                
-
-
-<p class="mt-4 max-w-sm m-auto">
-  <div class="mt-8">
-    <form
-       action="https://buttondown.email/api/emails/embed-subscribe/shime"
-       method="post"
-       target="popupwindow"
-       onsubmit="window.open('https://buttondown.email/shime', 'popupwindow')"
-       class="embeddable-buttondown-form"
-       >
-       <div class="flex max-w-sm m-auto">
-         <input type="email" name="email" id="bd-email" class="bg-white appearance-none rounded rounded-r-none w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none"  placeholder="you@domain.com">
-         <input type="hidden" value="1" name="embed"></input>
-         
-         <input type="submit" value="Subscribe" class="cursor-pointer shadow bg-black hover:bg-grey-darkest focus:outline-none text-white font-bold py-2 px-4 rounded rounded-l-none"></input>
-       </div>
-       <div class="flex justify-center text-xs max-w-sm m-auto"><span>Unsubscribe anytime. By submitting your email, you agree to our <a href="/privacy">privacy policy</a>.</span></div>
-     </form>
-  </div>
-</p>
-
-              </div>
             
 
           </div>
